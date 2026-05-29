@@ -37,7 +37,7 @@ vector_db = Neo4jVector.from_existing_index(
     retrieval_query=retrieval_query
 )
 
-retriever = vector_db.as_retriever(search_kwargs={"k": 4})
+retriever = vector_db.as_retriever(search_kwargs={"k": 3})
 
 MAX_CONCEPTOS = 8
 
@@ -54,21 +54,16 @@ def normalizar(texto: str) -> str:
     return unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode("ascii").lower()
 
 
-def extraer_consulta(pregunta: str) -> tuple[str, list[str]]:
-    prompt = f"""Eres un experto en derecho societario argentino y arquitecto de bases de datos de grafos.
-    Analizá la pregunta jurídica e identificá el sujeto principal y los conceptos legales involucrados.
+def extraer_consulta(pregunta: str) -> tuple[str, list[str], list[str]]:
+    prompt = f"""Eres un experto en derecho societario argentino y arquitecto de sistemas de búsqueda híbrida (RAG).
+    Analizá la pregunta jurídica y extraé los términos de búsqueda optimizados para dos motores distintos: uno vectorial (semántico) y uno de grafos (ontológico).
 
-    Devolvé un JSON con dos campos:
-    - "sujeto": El tipo societario u objeto jurídico principal (ej: "SociedadAnonima", "SociedadDeResponsabilidadLimitada") convertido a PascalCase.
-    - "conceptos": Lista de hasta {MAX_CONCEPTOS} términos o entidades legales completamente ATÓMICOS y breves (de 1 a 3 palabras máximo) que describan los sub-temas (ej: "ReservaLegal", "CapitalSocial", "CondicionExcepcional", "ParticipacionesSociales"). 
-
-    CRÍTICO: No concatenes el sujeto dentro de los conceptos. Deben ser conceptos puros y aislados.
+    Devolvé un JSON con tres campos:
+    - "sujeto": El tipo societario u objeto jurídico en lenguaje natural (ej: "sociedad anonima", "sociedad de responsabilidad limitada", "sociedad comercial").
+    - "frases_vectoriales": Lista de 2 o 3 frases descriptivas en lenguaje natural para búsqueda semántica. CRÍTICO: Si la pregunta menciona un número de artículo específico, INCLÚYELO aquí (ej: ["requisitos instrumento constitutivo art 11", "contenido contrato social"]).
+    - "nodos_grafo": Lista de hasta {MAX_CONCEPTOS} términos completamente ATÓMICOS (de 1 a 3 palabras máximo) en formato PascalCase para buscar en la ontología (ej: "InstrumentoConstitutivo", "CapitalSocial", "DenominacionSocial").
 
     Devuelve SOLO el JSON. Sin explicación, sin markdown.
-
-    Ejemplo entrada: "¿Cuáles son las características de la sociedad anónima?"
-    Ejemplo salida:
-    {{"sujeto": "SociedadAnonima", "conceptos": ["EstatutoSocial", "Directorio", "AsambleaAccionistas", "ConstitucionSocietaria", "Publicidad", "CapitalSocial", "Accion"]}}
 
     Pregunta: {pregunta}"""
 
@@ -77,12 +72,12 @@ def extraer_consulta(pregunta: str) -> tuple[str, list[str]]:
     try:
         data = json.loads(content)
         sujeto = str(data.get("sujeto", ""))
-        conceptos = data.get("conceptos", [])
-        if isinstance(conceptos, list):
-            return sujeto, conceptos[:MAX_CONCEPTOS]
-        return sujeto, [pregunta]
+        frases_vectoriales = data.get("frases_vectoriales", [pregunta])
+        nodos_grafo = data.get("nodos_grafo", [])
+        return sujeto, frases_vectoriales, nodos_grafo[:MAX_CONCEPTOS]
     except Exception:
-        return "", [pregunta]
+        # Fallback de seguridad: usamos la pregunta entera para el vector y nada para el grafo
+        return "", [pregunta], []
 
 
 _STOPWORDS = {"sociedad", "capital", "social", "socios"}
@@ -209,35 +204,29 @@ review_chain = prompt_revision | llm | StrOutputParser()
 
 
 def responder(pregunta: str) -> str:
-    # 1. Extraer sujeto y conceptos
-    sujeto, conceptos = extraer_consulta(pregunta)
-    print(f"\nSujeto:    '{sujeto}'")
-    print(f"Conceptos: {conceptos}")
+    # 1. Extraer sujeto y conceptos diferenciados
+    sujeto, frases_vectoriales, nodos_grafo = extraer_consulta(pregunta)
+    print(f"\nSujeto (Filtro): '{sujeto}'")
+    print(f"Frases Vectoriales: {frases_vectoriales}")
+    print(f"Nodos Grafo: {nodos_grafo}")
 
     vistos = set()
     textos_contexto = []
     article_ids = []
 
-    # 2A. BÚSQUEDA HÍBRIDA - Fase Ontológica (Grafo)
-    # Aquí es donde Neo4j atrapa el Artículo 31 usando los nodos puente
-    print("\nBuscando en Grafo Ontológico...")
-    articulos_grafo = buscar_articulos_por_conceptos(conceptos, sujeto)
-    for art in articulos_grafo:
-        art_id = str(art["id"])
-        if art_id not in vistos:
-            vistos.add(art_id)
-            article_ids.append(art_id)
-            textos_contexto.append(f"ARTICULO: {art['numero']}\nTEXTO: {art['texto']}")
-            print(f"  • [Grafo] Art. {art['numero']} recuperado.")
-
-    # 2B. BÚSQUEDA HÍBRIDA - Fase Semántica (Vectorial LangChain)
+    # 2. BÚSQUEDA VECTORIAL (Motor Principal - Usa las frases naturales)
     print("\nBuscando en Base Vectorial...")
     docs_raw = []
-    for i, concepto in enumerate(conceptos, 1):
-        for doc in retriever.invoke(concepto):
+    # También inyectamos la pregunta original directamente por seguridad
+    terminos_semanticos = frases_vectoriales + [pregunta] 
+    
+    for i, frase in enumerate(terminos_semanticos, 1):
+        print(f"  [{i}/{len(terminos_semanticos)}] Buscando vector: '{frase}'")
+        for doc in retriever.invoke(frase):
             docs_raw.append(doc)
 
     docs = filtrar_por_sujeto(docs_raw, sujeto)
+    descartados = len(docs_raw) - len(docs)
     
     for doc in docs:
         doc_id = str(doc.metadata.get("id", ""))
@@ -247,19 +236,33 @@ def responder(pregunta: str) -> str:
             textos_contexto.append(doc.page_content)
             print(f"  • [Vector] Art. {doc.metadata.get('art', '')} recuperado.")
 
+    if descartados:
+        print(f"  (+ {descartados} descartados por filtro de sujeto)")
+
+    # 3. BÚSQUEDA EN GRAFO ONTOLÓGICO (El Rescatista - Usa los nodos PascalCase)
+    print("\nBuscando en Grafo Ontológico...")
+    if nodos_grafo:
+        articulos_grafo = buscar_articulos_por_conceptos(nodos_grafo, sujeto)
+        for art in articulos_grafo:
+            art_id = str(art["id"])
+            if art_id not in vistos:
+                vistos.add(art_id)
+                article_ids.append(art_id)
+                textos_contexto.append(f"ARTICULO: {art['numero']}\nTEXTO: {art['texto']}")
+                print(f"  • [Grafo] Art. {art['numero']} recuperado (Rescate Ontológico).")
+
     print(f"\n{'─'*50}")
     print(f"Total Artículos únicos recuperados: {len(article_ids)}")
 
-    # 3. Entidades del grafo (Construcción del vecindario)
+    # 4. ENTIDADES DEL GRAFO (Construcción del vecindario)
     entidades = obtener_entidades_relacionadas(article_ids)
     print(f"Entidades relacionadas extraídas: {len(entidades)}")
     print(f"{'─'*50}")
 
-    # 4. Generar y revisar respuesta
+    # 5. Generar y revisar respuesta
     context = "\n\n---\n\n".join(textos_contexto) + format_entidades(entidades)
     print("Generando respuesta...")
     respuesta_inicial = answer_chain.invoke({"context": context, "question": pregunta})
-    
     print("Revisando...")
     return review_chain.invoke({
         "context": context,
@@ -269,7 +272,7 @@ def responder(pregunta: str) -> str:
 
 
 # --- Ejecución ---
-pregunta = "¿Cuáles son los requisitos ineludibles que debe contener el instrumento de constitución de cualquier sociedad según el artículo 11?"
+pregunta = "¿Qué nivel de diligencia y responsabilidad asume un director de una sociedad anonima, y cuál es el mecanismo exacto para eximirse de dicha responsabilidad?"
 
 print(f"\nPREGUNTA: {pregunta}")
 respuesta = responder(pregunta)

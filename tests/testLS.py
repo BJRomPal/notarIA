@@ -227,7 +227,7 @@ def responder(pregunta: str) -> str:
 
 
 # --- Ejecución ---
-pregunta = "¿Cuáles son los requisitos ineludibles que debe contener el instrumento de constitución de cualquier sociedad según el artículo 11?"
+pregunta = "¿Qué sucede con la responsabilidad de los socios frente a terceros si una sociedad se constituye omitiendo requisitos esenciales tipificantes (Sección IV)?"
 
 print(f"\nPREGUNTA: {pregunta}")
 respuesta = responder(pregunta)
