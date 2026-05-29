@@ -1,0 +1,755 @@
+16:22:39 [INFO] Conexión a Neo4j establecida correctamente.
+16:22:40 [INFO] Nodo madre Ley_19550 creado/verificado en Neo4j.
+16:22:40 [INFO] Archivo de log: ./logs/LSC_extract_20260524_162238.log
+16:22:40 [INFO] Archivos encontrados: 359
+16:22:40 [INFO] SALTADO (ya existe): Art_232_Ley_19550
+16:22:40 [INFO] SALTADO (ya existe): Art_236_Ley_19550
+16:22:40 [INFO] SALTADO (ya existe): Art_127_Ley_19550
+16:22:41 [INFO] SALTADO (ya existe): Art_207_Ley_19550
+16:22:41 [INFO] SALTADO (ya existe): Art_41_Ley_19550
+16:22:41 [INFO] SALTADO (ya existe): Art_175_Ley_19550
+16:22:41 [INFO] SALTADO (ya existe): Art_71_Ley_19550
+16:22:41 [INFO] SALTADO (ya existe): Art_36_Ley_19550
+16:22:42 [INFO] SALTADO (ya existe): Art_179_Ley_19550
+16:22:42 [INFO] SALTADO (ya existe): Art_295_Ley_19550
+16:22:42 [INFO] SALTADO (ya existe): Art_302_Ley_19550
+16:22:42 [INFO] SALTADO (ya existe): Art_216_Ley_19550
+16:22:42 [INFO] SALTADO (ya existe): Art_64_Ley_19550
+16:22:42 [INFO] SALTADO (ya existe): Art_291_Ley_19550
+16:22:43 [INFO] SALTADO (ya existe): Art_35_Ley_19550
+16:22:43 [INFO] SALTADO (ya existe): Art_115_Ley_19550
+16:22:43 [INFO] SALTADO (ya existe): Art_177_Ley_19550
+16:22:43 [INFO] SALTADO (ya existe): Art_225_Ley_19550
+16:22:43 [INFO] SALTADO (ya existe): Art_354_Ley_19550
+16:22:44 [INFO] SALTADO (ya existe): Art_25_Ley_19550
+16:22:44 [INFO] SALTADO (ya existe): Art_303_Ley_19550
+16:22:44 [INFO] SALTADO (ya existe): Art_137_Ley_19550
+16:22:44 [INFO] SALTADO (ya existe): Art_320_Ley_19550
+16:22:44 [INFO] SALTADO (ya existe): Art_215_Ley_19550
+16:22:44 [INFO] SALTADO (ya existe): Art_347_Ley_19550
+16:22:45 [INFO] SALTADO (ya existe): Art_243_Ley_19550
+16:22:45 [INFO] SALTADO (ya existe): Art_306_Ley_19550
+16:22:45 [INFO] SALTADO (ya existe): Art_184_Ley_19550
+16:22:45 [INFO] SALTADO (ya existe): Art_351_Ley_19550
+16:22:45 [INFO] SALTADO (ya existe): Art_46_Ley_19550
+16:22:46 [INFO] SALTADO (ya existe): Art_79_Ley_19550
+16:22:46 [INFO] SALTADO (ya existe): Art_81_Ley_19550
+16:22:46 [INFO] SALTADO (ya existe): Art_195_Ley_19550
+16:22:46 [INFO] SALTADO (ya existe): Art_355_Ley_19550
+16:22:46 [INFO] SALTADO (ya existe): Art_120_Ley_19550
+16:22:47 [INFO] SALTADO (ya existe): Art_315_Ley_19550
+16:22:47 [INFO] SALTADO (ya existe): Art_97_Ley_19550
+16:22:47 [INFO] SALTADO (ya existe): Art_92_Ley_19550
+16:22:47 [INFO] SALTADO (ya existe): Art_208_Ley_19550
+16:22:47 [INFO] SALTADO (ya existe): Art_318_Ley_19550
+16:22:47 [INFO] SALTADO (ya existe): Art_235_Ley_19550
+16:22:48 [INFO] SALTADO (ya existe): Art_280_Ley_19550
+16:22:48 [INFO] SALTADO (ya existe): Art_156_Ley_19550
+16:22:48 [INFO] SALTADO (ya existe): Art_199_Ley_19550
+16:22:48 [INFO] SALTADO (ya existe): Art_245_Ley_19550
+16:22:48 [INFO] SALTADO (ya existe): Art_130_Ley_19550
+16:22:49 [INFO] SALTADO (ya existe): Art_51_Ley_19550
+16:22:49 [INFO] SALTADO (ya existe): Art_356_Ley_19550
+16:22:49 [INFO] SALTADO (ya existe): Art_349_Ley_19550
+16:22:49 [INFO] SALTADO (ya existe): Art_288_Ley_19550
+16:22:49 [INFO] SALTADO (ya existe): Art_23_Ley_19550
+16:22:50 [INFO] SALTADO (ya existe): Art_256_Ley_19550
+16:22:50 [INFO] SALTADO (ya existe): Art_170_Ley_19550
+16:22:50 [INFO] SALTADO (ya existe): Art_274_Ley_19550
+16:22:50 [INFO] SALTADO (ya existe): Art_337_Ley_19550
+16:22:50 [INFO] SALTADO (ya existe): Art_14_Ley_19550
+16:22:51 [INFO] SALTADO (ya existe): Art_135_Ley_19550
+16:22:51 [INFO] SALTADO (ya existe): Art_323_Ley_19550
+16:22:51 [INFO] SALTADO (ya existe): Art_190_Ley_19550
+16:22:51 [INFO] SALTADO (ya existe): Art_9_Ley_19550
+16:22:51 [INFO] SALTADO (ya existe): Art_132_Ley_19550
+16:22:52 [INFO] SALTADO (ya existe): Art_345_Ley_19550
+16:22:52 [INFO] SALTADO (ya existe): Art_105_Ley_19550
+16:22:52 [INFO] SALTADO (ya existe): Art_229_Ley_19550
+16:22:52 [INFO] SALTADO (ya existe): Art_308_Ley_19550
+16:22:52 [INFO] SALTADO (ya existe): Art_340_Ley_19550
+16:22:52 [INFO] SALTADO (ya existe): Art_241_Ley_19550
+16:22:53 [INFO] SALTADO (ya existe): Art_240_Ley_19550
+16:22:53 [INFO] SALTADO (ya existe): Art_47_Ley_19550
+16:22:53 [INFO] SALTADO (ya existe): Art_218_Ley_19550
+16:22:53 [INFO] SALTADO (ya existe): Art_203_Ley_19550
+16:22:53 [INFO] SALTADO (ya existe): Art_289_Ley_19550
+16:22:54 [INFO] SALTADO (ya existe): Art_331_Ley_19550
+16:22:54 [INFO] SALTADO (ya existe): Art_24_Ley_19550
+16:22:54 [INFO] SALTADO (ya existe): Art_192_Ley_19550
+16:22:54 [INFO] SALTADO (ya existe): Art_194_Ley_19550
+16:22:54 [INFO] SALTADO (ya existe): Art_316_Ley_19550
+16:22:54 [INFO] SALTADO (ya existe): Art_139_Ley_19550
+16:22:55 [INFO] SALTADO (ya existe): Art_282_Ley_19550
+16:22:55 [INFO] SALTADO (ya existe): Art_360_Ley_19550
+16:22:55 [INFO] SALTADO (ya existe): Art_133_Ley_19550
+16:22:55 [INFO] SALTADO (ya existe): Art_304_Ley_19550
+16:22:55 [INFO] SALTADO (ya existe): Art_162_Ley_19550
+16:22:56 [INFO] SALTADO (ya existe): Art_297_Ley_19550
+16:22:56 [INFO] SALTADO (ya existe): Art_30_Ley_19550
+16:22:56 [INFO] SALTADO (ya existe): Art_93_Ley_19550
+16:22:56 [INFO] SALTADO (ya existe): Art_78_Ley_19550
+16:22:56 [INFO] SALTADO (ya existe): Art_209_Ley_19550
+16:22:56 [INFO] SALTADO (ya existe): Art_37_Ley_19550
+16:22:57 [INFO] SALTADO (ya existe): Art_153_Ley_19550
+16:22:57 [INFO] SALTADO (ya existe): Art_148_Ley_19550
+16:22:57 [INFO] SALTADO (ya existe): Art_305_Ley_19550
+16:22:57 [INFO] SALTADO (ya existe): Art_152_Ley_19550
+16:22:57 [INFO] SALTADO (ya existe): Art_119_Ley_19550
+16:22:58 [INFO] SALTADO (ya existe): Art_128_Ley_19550
+16:22:58 [INFO] SALTADO (ya existe): Art_217_Ley_19550
+16:22:58 [INFO] SALTADO (ya existe): Art_219_Ley_19550
+16:22:58 [INFO] SALTADO (ya existe): Art_88_Ley_19550
+16:22:58 [INFO] SALTADO (ya existe): Art_268_Ley_19550
+16:22:59 [INFO] SALTADO (ya existe): Art_298_Ley_19550
+16:22:59 [INFO] SALTADO (ya existe): Art_163_Ley_19550
+16:22:59 [INFO] SALTADO (ya existe): Art_121_Ley_19550
+16:22:59 [INFO] SALTADO (ya existe): Art_180_Ley_19550
+16:23:00 [INFO] SALTADO (ya existe): Art_123_Ley_19550
+16:23:01 [INFO] SALTADO (ya existe): Art_251_Ley_19550
+16:23:01 [INFO] SALTADO (ya existe): Art_164_Ley_19550
+16:23:01 [INFO] SALTADO (ya existe): Art_202_Ley_19550
+16:23:01 [INFO] SALTADO (ya existe): Art_213_Ley_19550
+16:23:01 [INFO] SALTADO (ya existe): Art_269_Ley_19550
+16:23:01 [INFO] SALTADO (ya existe): Art_106_Ley_19550
+16:23:02 [INFO] SALTADO (ya existe): Art_1_Ley_19550
+16:23:02 [INFO] SALTADO (ya existe): Art_266_Ley_19550
+16:23:02 [INFO] SALTADO (ya existe): Art_70_Ley_19550
+16:23:02 [INFO] SALTADO (ya existe): Art_234_Ley_19550
+16:23:02 [INFO] SALTADO (ya existe): Art_181_Ley_19550
+16:23:03 [INFO] SALTADO (ya existe): Art_166_Ley_19550
+16:23:03 [INFO] SALTADO (ya existe): Art_248_Ley_19550
+16:23:03 [INFO] SALTADO (ya existe): Art_176_Ley_19550
+16:23:03 [INFO] SALTADO (ya existe): Art_48_Ley_19550
+16:23:03 [INFO] SALTADO (ya existe): Art_141_Ley_19550
+16:23:03 [INFO] SALTADO (ya existe): Art_53_Ley_19550
+16:23:04 [INFO] SALTADO (ya existe): Art_129_Ley_19550
+16:23:04 [INFO] SALTADO (ya existe): Art_76_Ley_19550
+16:23:04 [INFO] SALTADO (ya existe): Art_263_Ley_19550
+16:23:04 [INFO] SALTADO (ya existe): Art_86_Ley_19550
+16:23:04 [INFO] SALTADO (ya existe): Art_307_Ley_19550
+16:23:05 [INFO] SALTADO (ya existe): Art_322_Ley_19550
+16:23:05 [INFO] SALTADO (ya existe): Art_7_Ley_19550
+16:23:05 [INFO] SALTADO (ya existe): Art_168_Ley_19550
+16:23:05 [INFO] SALTADO (ya existe): Art_211_Ley_19550
+16:23:05 [INFO] SALTADO (ya existe): Art_279_Ley_19550
+16:23:06 [INFO] SALTADO (ya existe): Art_113_Ley_19550
+16:23:06 [INFO] SALTADO (ya existe): Art_359_Ley_19550
+16:23:06 [INFO] SALTADO (ya existe): Art_60_Ley_19550
+16:23:06 [INFO] SALTADO (ya existe): Art_253_Ley_19550
+16:23:06 [INFO] SALTADO (ya existe): Art_73_Ley_19550
+16:23:06 [INFO] SALTADO (ya existe): Art_66_Ley_19550
+16:23:07 [INFO] SALTADO (ya existe): Art_353_Ley_19550
+16:23:07 [INFO] SALTADO (ya existe): Art_90_Ley_19550
+16:23:07 [INFO] SALTADO (ya existe): Art_21_Ley_19550
+16:23:07 [INFO] SALTADO (ya existe): Art_112_Ley_19550
+16:23:07 [INFO] SALTADO (ya existe): Art_277_Ley_19550
+16:23:08 [INFO] SALTADO (ya existe): Art_150_Ley_19550
+16:23:08 [INFO] SALTADO (ya existe): Art_204_Ley_19550
+16:23:08 [INFO] SALTADO (ya existe): Art_265_Ley_19550
+16:23:08 [INFO] SALTADO (ya existe): Art_324_Ley_19550
+16:23:08 [INFO] SALTADO (ya existe): Art_187_Ley_19550
+16:23:09 [INFO] SALTADO (ya existe): Art_144_Ley_19550
+16:23:09 [INFO] SALTADO (ya existe): Art_52_Ley_19550
+16:23:09 [INFO] SALTADO (ya existe): Art_154_Ley_19550
+16:23:09 [INFO] SALTADO (ya existe): Art_174_Ley_19550
+16:23:09 [INFO] SALTADO (ya existe): Art_317_Ley_19550
+16:23:09 [INFO] SALTADO (ya existe): Art_169_Ley_19550
+16:23:10 [INFO] SALTADO (ya existe): Art_247_Ley_19550
+16:23:10 [INFO] SALTADO (ya existe): Art_193_Ley_19550
+16:23:10 [INFO] SALTADO (ya existe): Art_227_Ley_19550
+16:23:11 [INFO] SALTADO (ya existe): Art_312_Ley_19550
+16:23:12 [INFO] SALTADO (ya existe): Art_75_Ley_19550
+16:23:12 [INFO] SALTADO (ya existe): Art_74_Ley_19550
+16:23:12 [INFO] SALTADO (ya existe): Art_13_Ley_19550
+16:23:12 [INFO] SALTADO (ya existe): Art_83_Ley_19550
+16:23:12 [INFO] SALTADO (ya existe): Art_210_Ley_19550
+16:23:13 [INFO] SALTADO (ya existe): Art_165_Ley_19550
+16:23:13 [INFO] SALTADO (ya existe): Art_38_Ley_19550
+16:23:13 [INFO] SALTADO (ya existe): Art_329_Ley_19550
+16:23:13 [INFO] SALTADO (ya existe): Art_200_Ley_19550
+16:23:13 [INFO] SALTADO (ya existe): Art_188_Ley_19550
+16:23:13 [INFO] SALTADO (ya existe): Art_4_Ley_19550
+16:23:14 [INFO] SALTADO (ya existe): Art_96_Ley_19550
+16:23:14 [INFO] SALTADO (ya existe): Art_145_Ley_19550
+16:23:14 [INFO] SALTADO (ya existe): Art_328_Ley_19550
+16:23:14 [INFO] SALTADO (ya existe): Art_136_Ley_19550
+16:23:14 [INFO] SALTADO (ya existe): Art_22_Ley_19550
+16:23:15 [INFO] SALTADO (ya existe): Art_198_Ley_19550
+16:23:15 [INFO] SALTADO (ya existe): Art_191_Ley_19550
+16:23:15 [INFO] SALTADO (ya existe): Art_309_Ley_19550
+16:23:15 [INFO] SALTADO (ya existe): Art_261_Ley_19550
+16:23:15 [INFO] SALTADO (ya existe): Art_228_Ley_19550
+16:23:16 [INFO] SALTADO (ya existe): Art_171_Ley_19550
+16:23:16 [INFO] SALTADO (ya existe): Art_257_Ley_19550
+16:23:16 [INFO] SALTADO (ya existe): Art_72_Ley_19550
+16:23:16 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_80.txt
+16:23:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:23:42 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:23:42 [INFO]   Nodos extraídos    : 1
+16:23:42 [INFO]   Relaciones extraídas: 0
+16:23:42 [INFO]     [Articulo] Art_80_Ley_19550
+16:23:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:23:45 [INFO]   Guardado en Neo4j correctamente.
+16:23:45 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_94_bis.txt
+16:23:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:24:06 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:24:06 [INFO]   Nodos extraídos    : 1
+16:24:06 [INFO]   Relaciones extraídas: 0
+16:24:06 [INFO]     [Articulo] Art_94_bis_Ley_19550
+16:24:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:24:09 [INFO]   Guardado en Neo4j correctamente.
+16:24:09 [INFO] SALTADO (ya existe): Art_222_Ley_19550
+16:24:09 [INFO] SALTADO (ya existe): Art_84_Ley_19550
+16:24:09 [INFO] SALTADO (ya existe): Art_89_Ley_19550
+16:24:10 [INFO] SALTADO (ya existe): Art_258_Ley_19550
+16:24:10 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_327.txt
+16:24:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:24:32 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:24:32 [INFO]   Nodos extraídos    : 1
+16:24:32 [INFO]   Relaciones extraídas: 0
+16:24:32 [INFO]     [Articulo] Art_327_Ley_19550
+16:24:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:24:34 [INFO]   Guardado en Neo4j correctamente.
+16:24:35 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_350.txt
+16:24:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:24:58 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:24:58 [INFO]   Nodos extraídos    : 1
+16:24:58 [INFO]   Relaciones extraídas: 0
+16:24:58 [INFO]     [Articulo] Art_350_Ley_19550
+16:24:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:25:01 [INFO]   Guardado en Neo4j correctamente.
+16:25:01 [INFO] SALTADO (ya existe): Art_237_Ley_19550
+16:25:01 [INFO] SALTADO (ya existe): Art_292_Ley_19550
+16:25:02 [INFO] SALTADO (ya existe): Art_116_Ley_19550
+16:25:02 [INFO] SALTADO (ya existe): Art_201_Ley_19550
+16:25:02 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_147.txt
+16:25:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:25:26 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:25:26 [INFO]   Nodos extraídos    : 1
+16:25:26 [INFO]   Relaciones extraídas: 0
+16:25:26 [INFO]     [Articulo] Art_147_Ley_19550
+16:25:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:25:28 [INFO]   Guardado en Neo4j correctamente.
+16:25:29 [INFO] SALTADO (ya existe): Art_246_Ley_19550
+16:25:29 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_95.txt
+16:25:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:25:55 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:25:55 [INFO]   Nodos extraídos    : 1
+16:25:55 [INFO]   Relaciones extraídas: 0
+16:25:55 [INFO]     [Articulo] Art_95_Ley_19550
+16:25:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:25:58 [INFO]   Guardado en Neo4j correctamente.
+16:25:59 [INFO] SALTADO (ya existe): Art_108_Ley_19550
+16:25:59 [INFO] SALTADO (ya existe): Art_252_Ley_19550
+16:25:59 [INFO] SALTADO (ya existe): Art_155_Ley_19550
+16:25:59 [INFO] SALTADO (ya existe): Art_77_Ley_19550
+16:25:59 [INFO] SALTADO (ya existe): Art_17_Ley_19550
+16:26:00 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_54.txt
+16:26:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:26:25 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:26:25 [INFO]   Nodos extraídos    : 1
+16:26:25 [INFO]   Relaciones extraídas: 0
+16:26:25 [INFO]     [Articulo] Art_54_Ley_19550
+16:26:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:26:27 [INFO]   Guardado en Neo4j correctamente.
+16:26:27 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_99.txt
+16:26:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:26:48 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:26:48 [INFO]   Nodos extraídos    : 1
+16:26:48 [INFO]   Relaciones extraídas: 0
+16:26:48 [INFO]     [Articulo] Art_99_Ley_19550
+16:26:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:26:51 [INFO]   Guardado en Neo4j correctamente.
+16:26:51 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_206.txt
+16:26:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:27:12 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:27:12 [INFO]   Nodos extraídos    : 1
+16:27:12 [INFO]   Relaciones extraídas: 0
+16:27:12 [INFO]     [Articulo] Art_206_Ley_19550
+16:27:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:27:15 [INFO]   Guardado en Neo4j correctamente.
+16:27:15 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_158.txt
+16:27:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:27:37 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:27:37 [INFO]   Nodos extraídos    : 1
+16:27:37 [INFO]   Relaciones extraídas: 0
+16:27:37 [INFO]     [Articulo] Art_158_Ley_19550
+16:27:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:27:40 [INFO]   Guardado en Neo4j correctamente.
+16:27:40 [INFO] SALTADO (ya existe): Art_278_Ley_19550
+16:27:40 [INFO] SALTADO (ya existe): Art_348_Ley_19550
+16:27:40 [INFO] SALTADO (ya existe): Art_267_Ley_19550
+16:27:41 [INFO] SALTADO (ya existe): Art_31_Ley_19550
+16:27:41 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_325.txt
+16:27:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:28:04 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:28:04 [INFO]   Nodos extraídos    : 1
+16:28:04 [INFO]   Relaciones extraídas: 0
+16:28:04 [INFO]     [Articulo] Art_325_Ley_19550
+16:28:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:28:06 [INFO]   Guardado en Neo4j correctamente.
+16:28:07 [INFO] SALTADO (ya existe): Art_102_Ley_19550
+16:28:07 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_107.txt
+16:28:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:28:27 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:28:27 [INFO]   Nodos extraídos    : 1
+16:28:27 [INFO]   Relaciones extraídas: 0
+16:28:27 [INFO]     [Articulo] Art_107_Ley_19550
+16:28:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:28:29 [INFO]   Guardado en Neo4j correctamente.
+16:28:30 [INFO] SALTADO (ya existe): Art_126_Ley_19550
+16:28:30 [INFO] SALTADO (ya existe): Art_301_Ley_19550
+16:28:30 [INFO] SALTADO (ya existe): Art_69_Ley_19550
+16:28:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_223.txt
+16:28:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:28:53 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:28:53 [INFO]   Nodos extraídos    : 1
+16:28:53 [INFO]   Relaciones extraídas: 0
+16:28:53 [INFO]     [Articulo] Art_223_Ley_19550
+16:28:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:28:56 [INFO]   Guardado en Neo4j correctamente.
+16:28:56 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_159.txt
+16:28:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:29:18 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:29:18 [INFO]   Nodos extraídos    : 1
+16:29:18 [INFO]   Relaciones extraídas: 0
+16:29:18 [INFO]     [Articulo] Art_159_Ley_19550
+16:29:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:29:21 [INFO]   Guardado en Neo4j correctamente.
+16:29:22 [INFO] SALTADO (ya existe): Art_19_Ley_19550
+16:29:22 [INFO] SALTADO (ya existe): Art_254_Ley_19550
+16:29:22 [INFO] SALTADO (ya existe): Art_28_Ley_19550
+16:29:22 [INFO] SALTADO (ya existe): Art_173_Ley_19550
+16:29:22 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_197.txt
+16:29:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:29:43 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:29:43 [INFO]   Nodos extraídos    : 1
+16:29:43 [INFO]   Relaciones extraídas: 0
+16:29:43 [INFO]     [Articulo] Art_197_Ley_19550
+16:29:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:29:45 [INFO]   Guardado en Neo4j correctamente.
+16:29:46 [INFO] SALTADO (ya existe): Art_42_Ley_19550
+16:29:46 [INFO] SALTADO (ya existe): Art_134_Ley_19550
+16:29:46 [INFO] SALTADO (ya existe): Art_8_Ley_19550
+16:29:46 [INFO] SALTADO (ya existe): Art_186_Ley_19550
+16:29:46 [INFO] SALTADO (ya existe): Art_286_Ley_19550
+16:29:47 [INFO] SALTADO (ya existe): Art_45_Ley_19550
+16:29:47 [INFO] SALTADO (ya existe): Art_61_Ley_19550
+16:29:47 [INFO] SALTADO (ya existe): Art_357_Ley_19550
+16:29:47 [INFO] SALTADO (ya existe): Art_276_Ley_19550
+16:29:47 [INFO] SALTADO (ya existe): Art_294_Ley_19550
+16:29:47 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_196.txt
+16:29:48 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:30:11 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:30:11 [INFO]   Nodos extraídos    : 1
+16:30:11 [INFO]   Relaciones extraídas: 0
+16:30:11 [INFO]     [Articulo] Art_196_Ley_19550
+16:30:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:30:14 [INFO]   Guardado en Neo4j correctamente.
+16:30:14 [INFO] SALTADO (ya existe): Art_300_Ley_19550
+16:30:14 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_55.txt
+16:30:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:30:34 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:30:34 [INFO]   Nodos extraídos    : 1
+16:30:34 [INFO]   Relaciones extraídas: 0
+16:30:34 [INFO]     [Articulo] Art_55_Ley_19550
+16:30:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:30:37 [INFO]   Guardado en Neo4j correctamente.
+16:30:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_91.txt
+16:30:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:31:01 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:31:01 [INFO]   Nodos extraídos    : 1
+16:31:01 [INFO]   Relaciones extraídas: 0
+16:31:01 [INFO]     [Articulo] Art_91_Ley_19550
+16:31:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:31:03 [INFO]   Guardado en Neo4j correctamente.
+16:31:04 [INFO] SALTADO (ya existe): Art_281_Ley_19550
+16:31:04 [INFO] SALTADO (ya existe): Art_131_Ley_19550
+16:31:04 [INFO] SALTADO (ya existe): Art_124_Ley_19550
+16:31:04 [INFO] SALTADO (ya existe): Art_143_Ley_19550
+16:31:05 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_29.txt
+16:31:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:31:33 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:31:33 [INFO]   Nodos extraídos    : 1
+16:31:33 [INFO]   Relaciones extraídas: 0
+16:31:33 [INFO]     [Articulo] Art_29_Ley_19550
+16:31:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:31:35 [INFO]   Guardado en Neo4j correctamente.
+16:31:36 [INFO] SALTADO (ya existe): Art_58_Ley_19550
+16:31:36 [INFO] SALTADO (ya existe): Art_238_Ley_19550
+16:31:36 [INFO] SALTADO (ya existe): Art_336_Ley_19550
+16:31:36 [INFO] SALTADO (ya existe): Art_224_Ley_19550
+16:31:36 [INFO] SALTADO (ya existe): Art_275_Ley_19550
+16:31:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_26.txt
+16:31:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:31:58 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:31:58 [INFO]   Nodos extraídos    : 1
+16:31:58 [INFO]   Relaciones extraídas: 0
+16:31:58 [INFO]     [Articulo] Art_26_Ley_19550
+16:31:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:32:01 [INFO]   Guardado en Neo4j correctamente.
+16:32:01 [INFO] SALTADO (ya existe): Art_338_Ley_19550
+16:32:01 [INFO] SALTADO (ya existe): Art_242_Ley_19550
+16:32:01 [INFO] SALTADO (ya existe): Art_62_Ley_19550
+16:32:02 [INFO] SALTADO (ya existe): Art_50_Ley_19550
+16:32:02 [INFO] SALTADO (ya existe): Art_273_Ley_19550
+16:32:02 [INFO] SALTADO (ya existe): Art_43_Ley_19550
+16:32:02 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_5.txt
+16:32:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:32:25 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:32:25 [INFO]   Nodos extraídos    : 1
+16:32:25 [INFO]   Relaciones extraídas: 0
+16:32:25 [INFO]     [Articulo] Art_5_Ley_19550
+16:32:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:32:27 [INFO]   Guardado en Neo4j correctamente.
+16:32:27 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_333.txt
+16:32:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:32:49 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:32:49 [INFO]   Nodos extraídos    : 1
+16:32:49 [INFO]   Relaciones extraídas: 0
+16:32:49 [INFO]     [Articulo] Art_333_Ley_19550
+16:32:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:32:52 [INFO]   Guardado en Neo4j correctamente.
+16:32:52 [INFO] SALTADO (ya existe): Art_262_Ley_19550
+16:32:53 [INFO] SALTADO (ya existe): Art_250_Ley_19550
+16:32:53 [INFO] SALTADO (ya existe): Art_310_Ley_19550
+16:32:53 [INFO] SALTADO (ya existe): Art_34_Ley_19550
+16:32:53 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_239.txt
+16:32:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:33:24 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:33:24 [INFO]   Nodos extraídos    : 1
+16:33:24 [INFO]   Relaciones extraídas: 0
+16:33:24 [INFO]     [Articulo] Art_239_Ley_19550
+16:33:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:33:27 [INFO]   Guardado en Neo4j correctamente.
+16:33:27 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_358.txt
+16:33:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:33:50 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:33:50 [INFO]   Nodos extraídos    : 1
+16:33:50 [INFO]   Relaciones extraídas: 0
+16:33:50 [INFO]     [Articulo] Art_358_Ley_19550
+16:33:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:33:53 [INFO]   Guardado en Neo4j correctamente.
+16:33:53 [INFO] SALTADO (ya existe): Art_283_Ley_19550
+16:33:54 [INFO] SALTADO (ya existe): Art_98_Ley_19550
+16:33:54 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_140.txt
+16:33:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:34:21 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:34:21 [INFO]   Nodos extraídos    : 1
+16:34:21 [INFO]   Relaciones extraídas: 0
+16:34:21 [INFO]     [Articulo] Art_140_Ley_19550
+16:34:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:34:24 [INFO]   Guardado en Neo4j correctamente.
+16:34:24 [INFO] SALTADO (ya existe): Art_151_Ley_19550
+16:34:24 [INFO] SALTADO (ya existe): Art_339_Ley_19550
+16:34:25 [INFO] SALTADO (ya existe): Art_319_Ley_19550
+16:34:25 [INFO] SALTADO (ya existe): Art_326_Ley_19550
+16:34:25 [INFO] SALTADO (ya existe): Art_12_Ley_19550
+16:34:25 [INFO] SALTADO (ya existe): Art_149_Ley_19550
+16:34:25 [INFO] SALTADO (ya existe): Art_293_Ley_19550
+16:34:25 [INFO] SALTADO (ya existe): Art_146_Ley_19550
+16:34:26 [INFO] SALTADO (ya existe): Art_18_Ley_19550
+16:34:26 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_56.txt
+16:34:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:34:55 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:34:55 [INFO]   Nodos extraídos    : 1
+16:34:55 [INFO]   Relaciones extraídas: 0
+16:34:55 [INFO]     [Articulo] Art_56_Ley_19550
+16:34:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:34:58 [INFO]   Guardado en Neo4j correctamente.
+16:34:58 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_270.txt
+16:34:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:35:22 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:35:22 [INFO]   Nodos extraídos    : 1
+16:35:22 [INFO]   Relaciones extraídas: 0
+16:35:22 [INFO]     [Articulo] Art_270_Ley_19550
+16:35:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:35:24 [INFO]   Guardado en Neo4j correctamente.
+16:35:24 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_82.txt
+16:35:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:35:46 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:35:46 [INFO]   Nodos extraídos    : 1
+16:35:46 [INFO]   Relaciones extraídas: 0
+16:35:46 [INFO]     [Articulo] Art_82_Ley_19550
+16:35:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:35:49 [INFO]   Guardado en Neo4j correctamente.
+16:35:49 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_57.txt
+16:35:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:36:15 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:36:15 [INFO]   Nodos extraídos    : 1
+16:36:15 [INFO]   Relaciones extraídas: 0
+16:36:15 [INFO]     [Articulo] Art_57_Ley_19550
+16:36:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:36:18 [INFO]   Guardado en Neo4j correctamente.
+16:36:18 [INFO] SALTADO (ya existe): Art_178_Ley_19550
+16:36:19 [INFO] SALTADO (ya existe): Art_255_Ley_19550
+16:36:19 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_311.txt
+16:36:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:36:44 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:36:44 [INFO]   Nodos extraídos    : 1
+16:36:44 [INFO]   Relaciones extraídas: 0
+16:36:44 [INFO]     [Articulo] Art_311_Ley_19550
+16:36:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:36:47 [INFO]   Guardado en Neo4j correctamente.
+16:36:48 [INFO] SALTADO (ya existe): Art_101_Ley_19550
+16:36:48 [INFO] SALTADO (ya existe): Art_142_Ley_19550
+16:36:48 [INFO] SALTADO (ya existe): Art_6_Ley_19550
+16:36:48 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_59.txt
+16:36:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:37:18 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:37:18 [INFO]   Nodos extraídos    : 1
+16:37:18 [INFO]   Relaciones extraídas: 0
+16:37:18 [INFO]     [Articulo] Art_59_Ley_19550
+16:37:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:37:21 [INFO]   Guardado en Neo4j correctamente.
+16:37:21 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_104.txt
+16:37:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:37:42 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:37:42 [INFO]   Nodos extraídos    : 1
+16:37:42 [INFO]   Relaciones extraídas: 0
+16:37:42 [INFO]     [Articulo] Art_104_Ley_19550
+16:37:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:37:44 [INFO]   Guardado en Neo4j correctamente.
+16:37:45 [INFO] SALTADO (ya existe): Art_221_Ley_19550
+16:37:45 [INFO] SALTADO (ya existe): Art_32_Ley_19550
+16:37:45 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_67.txt
+16:37:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:38:14 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:38:14 [INFO]   Nodos extraídos    : 1
+16:38:14 [INFO]   Relaciones extraídas: 0
+16:38:14 [INFO]     [Articulo] Art_67_Ley_19550
+16:38:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:38:16 [INFO]   Guardado en Neo4j correctamente.
+16:38:17 [INFO] SALTADO (ya existe): Art_343_Ley_19550
+16:38:17 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_167.txt
+16:38:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:38:40 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:38:40 [INFO]   Nodos extraídos    : 1
+16:38:40 [INFO]   Relaciones extraídas: 0
+16:38:40 [INFO]     [Articulo] Art_167_Ley_19550
+16:38:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:38:43 [INFO]   Guardado en Neo4j correctamente.
+16:38:43 [INFO] SALTADO (ya existe): Art_20_Ley_19550
+16:38:43 [INFO] SALTADO (ya existe): Art_109_Ley_19550
+16:38:44 [INFO] SALTADO (ya existe): Art_183_Ley_19550
+16:38:44 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_346.txt
+16:38:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:39:05 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:39:05 [INFO]   Nodos extraídos    : 1
+16:39:05 [INFO]   Relaciones extraídas: 0
+16:39:05 [INFO]     [Articulo] Art_346_Ley_19550
+16:39:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:39:08 [INFO]   Guardado en Neo4j correctamente.
+16:39:08 [INFO] SALTADO (ya existe): Art_10_Ley_19550
+16:39:08 [INFO] SALTADO (ya existe): Art_117_Ley_19550
+16:39:08 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_103.txt
+16:39:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:39:33 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:39:33 [INFO]   Nodos extraídos    : 1
+16:39:33 [INFO]   Relaciones extraídas: 0
+16:39:33 [INFO]     [Articulo] Art_103_Ley_19550
+16:39:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:39:36 [INFO]   Guardado en Neo4j correctamente.
+16:39:36 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_157.txt
+16:39:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:40:06 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:40:06 [INFO]   Nodos extraídos    : 1
+16:40:06 [INFO]   Relaciones extraídas: 0
+16:40:06 [INFO]     [Articulo] Art_157_Ley_19550
+16:40:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:40:08 [INFO]   Guardado en Neo4j correctamente.
+16:40:09 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_334.txt
+16:40:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:40:32 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:40:32 [INFO]   Nodos extraídos    : 1
+16:40:32 [INFO]   Relaciones extraídas: 0
+16:40:32 [INFO]     [Articulo] Art_334_Ley_19550
+16:40:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:40:34 [INFO]   Guardado en Neo4j correctamente.
+16:40:35 [INFO] SALTADO (ya existe): Art_49_Ley_19550
+16:40:35 [INFO] SALTADO (ya existe): Art_85_Ley_19550
+16:40:35 [INFO] SALTADO (ya existe): Art_87_Ley_19550
+16:40:35 [INFO] SALTADO (ya existe): Art_65_Ley_19550
+16:40:36 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_285.txt
+16:40:36 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:40:55 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:40:55 [INFO]   Nodos extraídos    : 1
+16:40:55 [INFO]   Relaciones extraídas: 0
+16:40:55 [INFO]     [Articulo] Art_285_Ley_19550
+16:40:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:40:58 [INFO]   Guardado en Neo4j correctamente.
+16:40:59 [INFO] SALTADO (ya existe): Art_290_Ley_19550
+16:40:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_182.txt
+16:40:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:41:19 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:41:19 [INFO]   Nodos extraídos    : 1
+16:41:19 [INFO]   Relaciones extraídas: 0
+16:41:19 [INFO]     [Articulo] Art_182_Ley_19550
+16:41:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:41:21 [INFO]   Guardado en Neo4j correctamente.
+16:41:22 [INFO] SALTADO (ya existe): Art_68_Ley_19550
+16:41:22 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_111.txt
+16:41:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:41:43 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:41:43 [INFO]   Nodos extraídos    : 1
+16:41:43 [INFO]   Relaciones extraídas: 0
+16:41:43 [INFO]     [Articulo] Art_111_Ley_19550
+16:41:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:41:46 [INFO]   Guardado en Neo4j correctamente.
+16:41:46 [INFO] SALTADO (ya existe): Art_2_Ley_19550
+16:41:46 [INFO] SALTADO (ya existe): Art_212_Ley_19550
+16:41:46 [INFO] SALTADO (ya existe): Art_125_Ley_19550
+16:41:47 [INFO] SALTADO (ya existe): Art_259_Ley_19550
+16:41:47 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_185.txt
+16:41:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:42:10 [INFO]   Nodos extraídos    : 1
+16:42:10 [INFO]   Relaciones extraídas: 0
+16:42:10 [INFO]     [Articulo] Art_185_Ley_19550
+16:42:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:42:12 [INFO]   Guardado en Neo4j correctamente.
+16:42:12 [INFO] SALTADO (ya existe): Art_321_Ley_19550
+16:42:12 [INFO] SALTADO (ya existe): Art_332_Ley_19550
+16:42:12 [INFO] SALTADO (ya existe): Art_352_Ley_19550
+16:42:13 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_63.txt
+16:42:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:42:34 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:42:34 [INFO]   Nodos extraídos    : 1
+16:42:34 [INFO]   Relaciones extraídas: 0
+16:42:34 [INFO]     [Articulo] Art_63_Ley_19550
+16:42:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:42:37 [INFO]   Guardado en Neo4j correctamente.
+16:42:37 [INFO] SALTADO (ya existe): Art_214_Ley_19550
+16:42:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_287.txt
+16:42:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:42:56 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:42:56 [INFO]   Nodos extraídos    : 1
+16:42:56 [INFO]   Relaciones extraídas: 0
+16:42:56 [INFO]     [Articulo] Art_287_Ley_19550
+16:42:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:42:59 [INFO]   Guardado en Neo4j correctamente.
+16:42:59 [INFO] SALTADO (ya existe): Art_138_Ley_19550
+16:42:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_341.txt
+16:43:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:43:27 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:43:27 [INFO]   Nodos extraídos    : 1
+16:43:27 [INFO]   Relaciones extraídas: 0
+16:43:27 [INFO]     [Articulo] Art_341_Ley_19550
+16:43:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:43:30 [INFO]   Guardado en Neo4j correctamente.
+16:43:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_160.txt
+16:43:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:43:52 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:43:52 [INFO]   Nodos extraídos    : 1
+16:43:52 [INFO]   Relaciones extraídas: 0
+16:43:52 [INFO]     [Articulo] Art_160_Ley_19550
+16:43:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:43:55 [INFO]   Guardado en Neo4j correctamente.
+16:43:56 [INFO] SALTADO (ya existe): Art_330_Ley_19550
+16:43:56 [INFO] SALTADO (ya existe): Art_271_Ley_19550
+16:43:56 [INFO] SALTADO (ya existe): Art_40_Ley_19550
+16:43:56 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_205.txt
+16:43:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:44:15 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:44:15 [INFO]   Nodos extraídos    : 1
+16:44:15 [INFO]   Relaciones extraídas: 0
+16:44:15 [INFO]     [Articulo] Art_205_Ley_19550
+16:44:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:44:18 [INFO]   Guardado en Neo4j correctamente.
+16:44:18 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_110.txt
+16:44:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:44:40 [INFO]   Nodos extraídos    : 1
+16:44:40 [INFO]   Relaciones extraídas: 0
+16:44:40 [INFO]     [Articulo] Art_110_Ley_19550
+16:44:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:44:42 [INFO]   Guardado en Neo4j correctamente.
+16:44:43 [INFO] SALTADO (ya existe): Art_44_Ley_19550
+16:44:43 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_230.txt
+16:44:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:45:00 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:45:00 [INFO]   Nodos extraídos    : 1
+16:45:00 [INFO]   Relaciones extraídas: 0
+16:45:00 [INFO]     [Articulo] Art_230_Ley_19550
+16:45:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:45:03 [INFO]   Guardado en Neo4j correctamente.
+16:45:04 [INFO] SALTADO (ya existe): Art_335_Ley_19550
+16:45:04 [INFO] SALTADO (ya existe): Art_11_Ley_19550
+16:45:04 [INFO] SALTADO (ya existe): Art_33_Ley_19550
+16:45:04 [INFO] SALTADO (ya existe): Art_220_Ley_19550
+16:45:04 [INFO] SALTADO (ya existe): Art_118_Ley_19550
+16:45:04 [INFO] SALTADO (ya existe): Art_3_Ley_19550
+16:45:05 [INFO] SALTADO (ya existe): Art_233_Ley_19550
+16:45:05 [INFO] SALTADO (ya existe): Art_172_Ley_19550
+16:45:05 [INFO] SALTADO (ya existe): Art_189_Ley_19550
+16:45:05 [INFO] SALTADO (ya existe): Art_231_Ley_19550
+16:45:05 [INFO] SALTADO (ya existe): Art_299_Ley_19550
+16:45:06 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_100.txt
+16:45:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:45:25 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:45:25 [INFO]   Nodos extraídos    : 1
+16:45:25 [INFO]   Relaciones extraídas: 0
+16:45:25 [INFO]     [Articulo] Art_100_Ley_19550
+16:45:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:45:28 [INFO]   Guardado en Neo4j correctamente.
+16:45:28 [INFO] SALTADO (ya existe): Art_284_Ley_19550
+16:45:28 [INFO] SALTADO (ya existe): Art_15_Ley_19550
+16:45:28 [INFO] SALTADO (ya existe): Art_114_Ley_19550
+16:45:29 [INFO] SALTADO (ya existe): Art_39_Ley_19550
+16:45:29 [INFO] SALTADO (ya existe): Art_264_Ley_19550
+16:45:29 [INFO] SALTADO (ya existe): Art_272_Ley_19550
+16:45:29 [INFO] SALTADO (ya existe): Art_161_Ley_19550
+16:45:29 [INFO] SALTADO (ya existe): Art_260_Ley_19550
+16:45:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_27.txt
+16:45:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:45:48 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:45:48 [INFO]   Nodos extraídos    : 1
+16:45:48 [INFO]   Relaciones extraídas: 0
+16:45:48 [INFO]     [Articulo] Art_27_Ley_19550
+16:45:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:45:50 [INFO]   Guardado en Neo4j correctamente.
+16:45:50 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_344.txt
+16:45:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:46:12 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:46:12 [INFO]   Nodos extraídos    : 1
+16:46:12 [INFO]   Relaciones extraídas: 0
+16:46:12 [INFO]     [Articulo] Art_344_Ley_19550
+16:46:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:46:15 [INFO]   Guardado en Neo4j correctamente.
+16:46:15 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_296.txt
+16:46:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:46:37 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:46:37 [INFO]   Nodos extraídos    : 1
+16:46:37 [INFO]   Relaciones extraídas: 0
+16:46:37 [INFO]     [Articulo] Art_296_Ley_19550
+16:46:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:46:40 [INFO]   Guardado en Neo4j correctamente.
+16:46:40 [INFO] SALTADO (ya existe): Art_244_Ley_19550
+16:46:41 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_226.txt
+16:46:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:47:00 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:47:00 [INFO]   Nodos extraídos    : 1
+16:47:00 [INFO]   Relaciones extraídas: 0
+16:47:00 [INFO]     [Articulo] Art_226_Ley_19550
+16:47:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:47:02 [INFO]   Guardado en Neo4j correctamente.
+16:47:03 [INFO] SALTADO (ya existe): Art_94_Ley_19550
+16:47:03 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_16.txt
+16:47:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:47:32 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:47:32 [INFO]   Nodos extraídos    : 1
+16:47:32 [INFO]   Relaciones extraídas: 0
+16:47:32 [INFO]     [Articulo] Art_16_Ley_19550
+16:47:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:47:34 [INFO]   Guardado en Neo4j correctamente.
+16:47:35 [INFO] SALTADO (ya existe): Art_122_Ley_19550
+16:47:35 [INFO] SALTADO (ya existe): Art_249_Ley_19550
+16:47:35 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_342.txt
+16:47:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+16:47:58 [WARNING]   1 relación(es) descartadas por campos nulos.
+16:47:58 [INFO]   Nodos extraídos    : 1
+16:47:58 [INFO]   Relaciones extraídas: 0
+16:47:58 [INFO]     [Articulo] Art_342_Ley_19550
+16:47:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+16:48:00 [INFO]   Guardado en Neo4j correctamente.
+16:48:00 [INFO] 
+Procesamiento completado. OK: 56 | Saltados: 303 | Errores: 0 | Duración: 25.34 min.

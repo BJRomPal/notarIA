@@ -1,0 +1,1547 @@
+09:29:03 [INFO] Conexión a Neo4j establecida correctamente.
+09:29:03 [INFO] Nodo madre Ley_19550 creado/verificado en Neo4j.
+09:29:03 [INFO] Archivo de log: /home/mariano/projects/notaria/logs/LSC_extract_20260526_092901.log
+09:29:03 [INFO] Archivos encontrados: 359
+09:29:03 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N50', status_description='warn: label does not exist. The label `Articulo` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=1, column=10, offset=9>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 9, 'line': 1, 'column': 10}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: 'MATCH (n:Articulo {id: $id}) RETURN n LIMIT 1'
+09:29:03 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_232.txt
+09:29:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:30:32 [INFO]   Nodos extraídos    : 1
+09:30:32 [INFO]   Relaciones extraídas: 1
+09:30:32 [INFO]     [Articulo] Art_232_Ley_19550
+09:30:32 [INFO]     Art_232_Ley_19550 -[REGULA]-> SociedadAnonima
+09:30:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:30:34 [INFO]   Guardado en Neo4j correctamente.
+09:30:35 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_236.txt
+09:30:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:31:02 [INFO]   Nodos extraídos    : 1
+09:31:02 [INFO]   Relaciones extraídas: 6
+09:31:02 [INFO]     [Articulo] Art_236_Ley_19550
+09:31:02 [INFO]     Art_236_Ley_19550 -[REGULA]-> SociedadAnonima
+09:31:02 [INFO]     Art_236_Ley_19550 -[REGULA]-> AsambleaExtraordinaria
+09:31:02 [INFO]     Art_236_Ley_19550 -[REGULA]-> AsambleaOrdinaria
+09:31:02 [INFO]     Art_236_Ley_19550 -[REPRESENTA]-> Director
+09:31:02 [INFO]     Art_236_Ley_19550 -[REPRESENTA]-> Sindico
+09:31:02 [INFO]     Art_236_Ley_19550 -[REGULA]-> Accionista
+09:31:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:31:06 [INFO]   Guardado en Neo4j correctamente.
+09:31:06 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_127.txt
+09:31:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:31:27 [INFO]   Nodos extraídos    : 1
+09:31:27 [INFO]   Relaciones extraídas: 1
+09:31:27 [INFO]     [Articulo] Art_127_Ley_19550
+09:31:27 [INFO]     Art_127_Ley_19550 -[REGULA]-> SociedadColectiva
+09:31:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:31:29 [INFO]   Guardado en Neo4j correctamente.
+09:31:29 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_207.txt
+09:31:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:31:50 [INFO]   Nodos extraídos    : 1
+09:31:50 [INFO]   Relaciones extraídas: 1
+09:31:50 [INFO]     [Articulo] Art_207_Ley_19550
+09:31:50 [INFO]     Art_207_Ley_19550 -[REGULA]-> Accion
+09:31:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:31:53 [INFO]   Guardado en Neo4j correctamente.
+09:31:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_41.txt
+09:31:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:32:16 [INFO]   Nodos extraídos    : 1
+09:32:16 [INFO]   Relaciones extraídas: 1
+09:32:16 [INFO]     [Articulo] Art_41_Ley_19550
+09:32:16 [INFO]     Art_41_Ley_19550 -[REGULA]-> Socio
+09:32:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:32:18 [INFO]   Guardado en Neo4j correctamente.
+09:32:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_175.txt
+09:32:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:32:38 [INFO]   Nodos extraídos    : 1
+09:32:38 [INFO]   Relaciones extraídas: 1
+09:32:38 [INFO]     [Articulo] Art_175_Ley_19550
+09:32:38 [INFO]     Art_175_Ley_19550 -[REGULA]-> SociedadAnonima
+09:32:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:32:41 [INFO]   Guardado en Neo4j correctamente.
+09:32:41 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_71.txt
+09:32:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:33:05 [INFO]   Nodos extraídos    : 1
+09:33:05 [INFO]   Relaciones extraídas: 1
+09:33:05 [INFO]     [Articulo] Art_71_Ley_19550
+09:33:05 [INFO]     Art_71_Ley_19550 -[REGULA]-> Dividendos
+09:33:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:33:08 [INFO]   Guardado en Neo4j correctamente.
+09:33:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_36.txt
+09:33:08 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:33:31 [INFO]   Nodos extraídos    : 1
+09:33:31 [INFO]   Relaciones extraídas: 1
+09:33:31 [INFO]     [Articulo] Art_36_Ley_19550
+09:33:31 [INFO]     Art_36_Ley_19550 -[REGULA]-> Socio
+09:33:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:33:34 [INFO]   Guardado en Neo4j correctamente.
+09:33:34 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_179.txt
+09:33:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:34:07 [INFO]   Nodos extraídos    : 1
+09:34:07 [INFO]   Relaciones extraídas: 9
+09:34:07 [INFO]     [Articulo] Art_179_Ley_19550
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> AsambleaConstitutiva
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> Director
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> Sindico
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> ConsejoDeVigilancia
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> Promotor
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> EstatutoSocial
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> AporteEnEspecie
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> Accionista
+09:34:07 [INFO]     Art_179_Ley_19550 -[MENCIONA]-> ActaDeAsamblea
+09:34:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:34:11 [INFO]   Guardado en Neo4j correctamente.
+09:34:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_295.txt
+09:34:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:34:29 [INFO]   Nodos extraídos    : 1
+09:34:29 [INFO]   Relaciones extraídas: 1
+09:34:29 [INFO]     [Articulo] Art_295_Ley_19550
+09:34:29 [INFO]     Art_295_Ley_19550 -[REGULA]-> Sindico
+09:34:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:34:32 [INFO]   Guardado en Neo4j correctamente.
+09:34:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_302.txt
+09:34:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:34:53 [INFO]   Nodos extraídos    : 1
+09:34:53 [INFO]   Relaciones extraídas: 1
+09:34:53 [INFO]     [Articulo] Art_302_Ley_19550
+09:34:53 [INFO]     Art_302_Ley_19550 -[REGULA]-> SociedadAnonima
+09:34:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:34:55 [INFO]   Guardado en Neo4j correctamente.
+09:34:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_216.txt
+09:34:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:35:21 [INFO]   Nodos extraídos    : 1
+09:35:21 [INFO]   Relaciones extraídas: 4
+09:35:21 [INFO]     [Articulo] Art_216_Ley_19550
+09:35:21 [INFO]     Art_216_Ley_19550 -[REGULA]-> AccionOrdinaria
+09:35:21 [INFO]     Art_216_Ley_19550 -[REGULA]-> Accion
+09:35:21 [INFO]     Art_216_Ley_19550 -[REGULA]-> SociedadAnonima
+09:35:21 [INFO]     Art_216_Ley_19550 -[REGULA]-> OfertaPublica
+09:35:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:35:24 [INFO]   Guardado en Neo4j correctamente.
+09:35:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_64.txt
+09:35:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:36:01 [INFO]   Nodos extraídos    : 6
+09:36:01 [INFO]   Relaciones extraídas: 5
+09:36:01 [INFO]     [Articulo] Art_64_Ley_19550
+09:36:01 [INFO]     [EstadoDeResultados] ESTADO_DE_RESULTADOS
+09:36:01 [INFO]     [Director] DIRECTOR
+09:36:01 [INFO]     [Sindico] SINDICO
+09:36:01 [INFO]     [Director] ADMINISTRADOR
+09:36:01 [INFO]     [SociedadAnonima] SOCIEDAD_ANONIMA
+09:36:01 [INFO]     Art_64_Ley_19550 -[REGULA]-> ESTADO_DE_RESULTADOS
+09:36:01 [INFO]     Art_64_Ley_19550 -[MENCIONA]-> DIRECTOR
+09:36:01 [INFO]     Art_64_Ley_19550 -[MENCIONA]-> SINDICO
+09:36:01 [INFO]     Art_64_Ley_19550 -[MENCIONA]-> ADMINISTRADOR
+09:36:01 [INFO]     Art_64_Ley_19550 -[REGULA]-> SOCIEDAD_ANONIMA
+09:36:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:36:05 [INFO]   Guardado en Neo4j correctamente.
+09:36:05 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_291.txt
+09:36:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:36:31 [INFO]   Nodos extraídos    : 1
+09:36:31 [INFO]   Relaciones extraídas: 4
+09:36:31 [INFO]     [Articulo] Art_291_Ley_19550
+09:36:31 [INFO]     Art_291_Ley_19550 -[REGULA]-> Sindico
+09:36:31 [INFO]     Art_291_Ley_19550 -[REGULA]-> Director
+09:36:31 [INFO]     Art_291_Ley_19550 -[REGULA]-> AsambleaOrdinaria
+09:36:31 [INFO]     Art_291_Ley_19550 -[REGULA]-> SociedadAnonima
+09:36:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:36:35 [INFO]   Guardado en Neo4j correctamente.
+09:36:35 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_35.txt
+09:36:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:36:56 [INFO]   Nodos extraídos    : 1
+09:36:56 [INFO]   Relaciones extraídas: 1
+09:36:56 [INFO]     [Articulo] Art_35_Ley_19550
+09:36:56 [INFO]     Art_35_Ley_19550 -[REGULA]-> Socio
+09:36:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:36:59 [INFO]   Guardado en Neo4j correctamente.
+09:36:59 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_115.txt
+09:37:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:37:17 [INFO]   Nodos extraídos    : 1
+09:37:17 [INFO]   Relaciones extraídas: 0
+09:37:17 [INFO]     [Articulo] Art_115_Ley_19550
+09:37:18 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:37:20 [INFO]   Guardado en Neo4j correctamente.
+09:37:20 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_177.txt
+09:37:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:37:39 [INFO]   Nodos extraídos    : 1
+09:37:39 [INFO]   Relaciones extraídas: 1
+09:37:39 [INFO]     [Articulo] Art_177_Ley_19550
+09:37:39 [INFO]     Art_177_Ley_19550 -[REGULA]-> SociedadAnonima
+09:37:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:37:42 [INFO]   Guardado en Neo4j correctamente.
+09:37:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_225.txt
+09:37:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:37:57 [INFO]   Nodos extraídos    : 1
+09:37:57 [INFO]   Relaciones extraídas: 0
+09:37:57 [INFO]     [Articulo] Art_225_Ley_19550
+09:37:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:38:00 [INFO]   Guardado en Neo4j correctamente.
+09:38:00 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_354.txt
+09:38:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:38:29 [INFO]   Nodos extraídos    : 1
+09:38:29 [INFO]   Relaciones extraídas: 2
+09:38:29 [INFO]     [Articulo] Art_354_Ley_19550
+09:38:29 [INFO]     Art_354_Ley_19550 -[REGULA]-> SociedadAnonima
+09:38:29 [INFO]     Art_354_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+09:38:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:38:32 [INFO]   Guardado en Neo4j correctamente.
+09:38:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_25.txt
+09:38:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:39:10 [INFO]   Nodos extraídos    : 1
+09:39:10 [INFO]   Relaciones extraídas: 3
+09:39:10 [INFO]     [Articulo] Art_25_Ley_19550
+09:39:10 [INFO]     Art_25_Ley_19550 -[MENCIONA]-> Socio
+09:39:10 [INFO]     Art_25_Ley_19550 -[MENCIONA]-> DerechoDeReceso
+09:39:10 [INFO]     Art_25_Ley_19550 -[MENCIONA]-> Socio
+09:39:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:39:13 [INFO]   Guardado en Neo4j correctamente.
+09:39:13 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_303.txt
+09:39:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:39:37 [INFO]   Nodos extraídos    : 1
+09:39:37 [INFO]   Relaciones extraídas: 1
+09:39:37 [INFO]     [Articulo] Art_303_Ley_19550
+09:39:37 [INFO]     Art_303_Ley_19550 -[REGULA]-> SociedadAnonima
+09:39:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:39:40 [INFO]   Guardado en Neo4j correctamente.
+09:39:40 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_137.txt
+09:39:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:39:58 [INFO]   Nodos extraídos    : 1
+09:39:58 [INFO]   Relaciones extraídas: 1
+09:39:58 [INFO]     [Articulo] Art_137_Ley_19550
+09:39:58 [INFO]     Art_137_Ley_19550 -[REGULA]-> SociedadEnComanditaSimple
+09:39:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:40:01 [INFO]   Guardado en Neo4j correctamente.
+09:40:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_320.txt
+09:40:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:40:27 [INFO]   Nodos extraídos    : 1
+09:40:27 [INFO]   Relaciones extraídas: 1
+09:40:27 [INFO]     [Articulo] Art_320_Ley_19550
+09:40:27 [INFO]     Art_320_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+09:40:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:40:30 [INFO]   Guardado en Neo4j correctamente.
+09:40:30 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_215.txt
+09:40:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:40:57 [INFO]   Nodos extraídos    : 1
+09:40:57 [INFO]   Relaciones extraídas: 3
+09:40:57 [INFO]     [Articulo] Art_215_Ley_19550
+09:40:57 [INFO]     Art_215_Ley_19550 -[REGULA]-> SociedadAnonima
+09:40:57 [INFO]     Art_215_Ley_19550 -[REGULA]-> Accion
+09:40:57 [INFO]     Art_215_Ley_19550 -[REGULA]-> Accionista
+09:40:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:41:00 [INFO]   Guardado en Neo4j correctamente.
+09:41:00 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_347.txt
+09:41:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:41:21 [INFO]   Nodos extraídos    : 1
+09:41:21 [INFO]   Relaciones extraídas: 1
+09:41:21 [INFO]     [Articulo] Art_347_Ley_19550
+09:41:21 [INFO]     Art_347_Ley_19550 -[REGULA]-> Debenture
+09:41:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:41:24 [INFO]   Guardado en Neo4j correctamente.
+09:41:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_243.txt
+09:41:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:41:45 [INFO]   Nodos extraídos    : 1
+09:41:45 [INFO]   Relaciones extraídas: 3
+09:41:45 [INFO]     [Articulo] Art_243_Ley_19550
+09:41:45 [INFO]     Art_243_Ley_19550 -[REGULA]-> AsambleaOrdinaria
+09:41:45 [INFO]     Art_243_Ley_19550 -[REGULA]-> Accionista
+09:41:45 [INFO]     Art_243_Ley_19550 -[REGULA]-> Accion
+09:41:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:41:49 [INFO]   Guardado en Neo4j correctamente.
+09:41:49 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_306.txt
+09:41:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:42:03 [INFO]   Nodos extraídos    : 1
+09:42:03 [INFO]   Relaciones extraídas: 0
+09:42:03 [INFO]     [Articulo] Art_306_Ley_19550
+09:42:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:42:06 [INFO]   Guardado en Neo4j correctamente.
+09:42:06 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_184.txt
+09:42:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:42:30 [INFO]   Nodos extraídos    : 1
+09:42:30 [INFO]   Relaciones extraídas: 1
+09:42:30 [INFO]     [Articulo] Art_184_Ley_19550
+09:42:30 [INFO]     Art_184_Ley_19550 -[REGULA]-> SociedadAnonima
+09:42:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:42:33 [INFO]   Guardado en Neo4j correctamente.
+09:42:33 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_351.txt
+09:42:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:42:58 [INFO]   Nodos extraídos    : 1
+09:42:58 [INFO]   Relaciones extraídas: 1
+09:42:58 [INFO]     [Articulo] Art_351_Ley_19550
+09:42:58 [INFO]     Art_351_Ley_19550 -[MENCIONA]-> Debenture
+09:43:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:43:01 [INFO]   Guardado en Neo4j correctamente.
+09:43:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_46.txt
+09:43:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:43:26 [INFO]   Nodos extraídos    : 1
+09:43:26 [INFO]   Relaciones extraídas: 1
+09:43:26 [INFO]     [Articulo] Art_46_Ley_19550
+09:43:26 [INFO]     Art_46_Ley_19550 -[REGULA]-> Socio
+09:43:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:43:28 [INFO]   Guardado en Neo4j correctamente.
+09:43:29 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_79.txt
+09:43:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:43:49 [INFO]   Nodos extraídos    : 1
+09:43:49 [INFO]   Relaciones extraídas: 1
+09:43:49 [INFO]     [Articulo] Art_79_Ley_19550
+09:43:49 [INFO]     Art_79_Ley_19550 -[MENCIONA]-> Socio
+09:43:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:43:51 [INFO]   Guardado en Neo4j correctamente.
+09:43:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_81.txt
+09:43:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:44:16 [INFO]   Nodos extraídos    : 3
+09:44:16 [INFO]   Relaciones extraídas: 2
+09:44:16 [INFO]     [Articulo] Art_81_Ley_19550
+09:44:16 [INFO]     [RegistroPublico] REGISTRO_PUBLICO
+09:44:16 [INFO]     [Director] DIRECTOR
+09:44:16 [INFO]     Art_81_Ley_19550 -[MENCIONA]-> RegistroPublico
+09:44:16 [INFO]     Art_81_Ley_19550 -[MENCIONA]-> Director
+09:44:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:44:20 [INFO]   Guardado en Neo4j correctamente.
+09:44:20 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_195.txt
+09:44:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:44:53 [INFO]   Nodos extraídos    : 1
+09:44:53 [INFO]   Relaciones extraídas: 4
+09:44:53 [INFO]     [Articulo] Art_195_Ley_19550
+09:44:53 [INFO]     Art_195_Ley_19550 -[REGULA]-> Accionista
+09:44:53 [INFO]     Art_195_Ley_19550 -[REGULA]-> SociedadAnonima
+09:44:53 [INFO]     Art_195_Ley_19550 -[REGULA]-> Director
+09:44:53 [INFO]     Art_195_Ley_19550 -[REGULA]-> Accion
+09:44:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:44:57 [INFO]   Guardado en Neo4j correctamente.
+09:44:57 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_355.txt
+09:44:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:45:24 [INFO]   Nodos extraídos    : 1
+09:45:24 [INFO]   Relaciones extraídas: 1
+09:45:24 [INFO]     [Articulo] Art_355_Ley_19550
+09:45:24 [INFO]     Art_355_Ley_19550 -[REGULA]-> Debenture
+09:45:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:45:26 [INFO]   Guardado en Neo4j correctamente.
+09:45:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_120.txt
+09:45:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:45:46 [INFO]   Nodos extraídos    : 1
+09:45:46 [INFO]   Relaciones extraídas: 1
+09:45:46 [INFO]     [Articulo] Art_120_Ley_19550
+09:45:46 [INFO]     Art_120_Ley_19550 -[REGULA]-> SociedadConstituidaEnElExtranjero
+09:45:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:45:49 [INFO]   Guardado en Neo4j correctamente.
+09:45:49 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_315.txt
+09:45:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:46:09 [INFO]   Nodos extraídos    : 1
+09:46:09 [INFO]   Relaciones extraídas: 1
+09:46:09 [INFO]     [Articulo] Art_315_Ley_19550
+09:46:09 [INFO]     Art_315_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+09:46:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:46:12 [INFO]   Guardado en Neo4j correctamente.
+09:46:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_97.txt
+09:46:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:46:38 [INFO]   Nodos extraídos    : 1
+09:46:38 [INFO]   Relaciones extraídas: 0
+09:46:38 [INFO]     [Articulo] Art_97_Ley_19550
+09:46:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:46:40 [INFO]   Guardado en Neo4j correctamente.
+09:46:40 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_92.txt
+09:46:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:47:11 [INFO]   Nodos extraídos    : 1
+09:47:11 [INFO]   Relaciones extraídas: 8
+09:47:11 [INFO]     [Articulo] Art_92_Ley_19550
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> Socio
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> ParteDeInteres
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> Sociedad
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> Accionista
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> Director
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> Gerente
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> Sindico
+09:47:11 [INFO]     Art_92_Ley_19550 -[MENCIONA]-> Liquidador
+09:47:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:47:15 [INFO]   Guardado en Neo4j correctamente.
+09:47:15 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_208.txt
+09:47:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:47:42 [INFO]   Nodos extraídos    : 1
+09:47:42 [INFO]   Relaciones extraídas: 1
+09:47:42 [INFO]     [Articulo] Art_208_Ley_19550
+09:47:42 [INFO]     Art_208_Ley_19550 -[REGULA]-> SociedadAnonima
+09:47:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:47:45 [INFO]   Guardado en Neo4j correctamente.
+09:47:45 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_318.txt
+09:47:45 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:48:04 [INFO]   Nodos extraídos    : 1
+09:48:04 [INFO]   Relaciones extraídas: 1
+09:48:04 [INFO]     [Articulo] Art_318_Ley_19550
+09:48:04 [INFO]     Art_318_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+09:48:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:48:07 [INFO]   Guardado en Neo4j correctamente.
+09:48:07 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_235.txt
+09:48:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:48:44 [INFO]   Nodos extraídos    : 1
+09:48:44 [INFO]   Relaciones extraídas: 12
+09:48:44 [INFO]     [Articulo] Art_235_Ley_19550
+09:48:44 [INFO]     Art_235_Ley_19550 -[DEFINE]-> AsambleaExtraordinaria
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> AumentoDeCapital
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> ReduccionDeCapital
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> Accion
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> Fusion
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> Transformacion
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> Disolucion
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> Liquidador
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> Escision
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> DerechoDePreferencia
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> Debenture
+09:48:44 [INFO]     Art_235_Ley_19550 -[MENCIONA]-> BonoDeGoce
+09:48:45 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:48:48 [INFO]   Guardado en Neo4j correctamente.
+09:48:49 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_280.txt
+09:48:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:49:15 [INFO]   Nodos extraídos    : 1
+09:49:15 [INFO]   Relaciones extraídas: 6
+09:49:15 [INFO]     [Articulo] Art_280_Ley_19550
+09:49:15 [INFO]     Art_280_Ley_19550 -[REGULA]-> SociedadAnonima
+09:49:15 [INFO]     Art_280_Ley_19550 -[AUTORIZA]-> EstatutoSocial
+09:49:15 [INFO]     Art_280_Ley_19550 -[INTEGRA]-> Accionista
+09:49:15 [INFO]     Art_280_Ley_19550 -[APRUEBA]-> AsambleaOrdinaria
+09:49:15 [INFO]     Art_280_Ley_19550 -[ESTABLECE_REQUISITOS_DE]-> ConsejoDeVigilancia
+09:49:15 [INFO]     Art_280_Ley_19550 -[MENCIONA]-> Director
+09:49:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:49:19 [INFO]   Guardado en Neo4j correctamente.
+09:49:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_156.txt
+09:49:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:49:41 [INFO]   Nodos extraídos    : 1
+09:49:41 [INFO]   Relaciones extraídas: 3
+09:49:41 [INFO]     [Articulo] Art_156_Ley_19550
+09:49:41 [INFO]     Art_156_Ley_19550 -[REGULA]-> CuotaSocial
+09:49:41 [INFO]     Art_156_Ley_19550 -[REGULA]-> ParteDeInteres
+09:49:41 [INFO]     Art_156_Ley_19550 -[MENCIONA]-> RegistroPublico
+09:49:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:49:43 [INFO]   Guardado en Neo4j correctamente.
+09:49:43 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_199.txt
+09:49:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:50:04 [INFO]   Nodos extraídos    : 1
+09:50:04 [INFO]   Relaciones extraídas: 1
+09:50:04 [INFO]     [Articulo] Art_199_Ley_19550
+09:50:04 [INFO]     Art_199_Ley_19550 -[REGULA]-> SociedadAnonima
+09:50:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:50:07 [INFO]   Guardado en Neo4j correctamente.
+09:50:07 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_245.txt
+09:50:08 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:50:38 [INFO]   Nodos extraídos    : 1
+09:50:38 [INFO]   Relaciones extraídas: 7
+09:50:38 [INFO]     [Articulo] Art_245_Ley_19550
+09:50:38 [INFO]     Art_245_Ley_19550 -[REGULA]-> Accionista
+09:50:38 [INFO]     Art_245_Ley_19550 -[REGULA]-> DerechoDeReceso
+09:50:38 [INFO]     Art_245_Ley_19550 -[REGULA]-> SociedadAnonima
+09:50:38 [INFO]     Art_245_Ley_19550 -[REGULA]-> Accion
+09:50:38 [INFO]     Art_245_Ley_19550 -[REGULA]-> AsambleaExtraordinaria
+09:50:38 [INFO]     Art_245_Ley_19550 -[REGULA]-> OfertaPublica
+09:50:38 [INFO]     Art_245_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+09:50:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:50:42 [INFO]   Guardado en Neo4j correctamente.
+09:50:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_130.txt
+09:50:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:51:04 [INFO]   Nodos extraídos    : 1
+09:51:04 [INFO]   Relaciones extraídas: 1
+09:51:04 [INFO]     [Articulo] Art_130_Ley_19550
+09:51:04 [INFO]     Art_130_Ley_19550 -[MENCIONA]-> Director
+09:51:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:51:07 [INFO]   Guardado en Neo4j correctamente.
+09:51:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_51.txt
+09:51:08 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:51:34 [INFO]   Nodos extraídos    : 1
+09:51:34 [INFO]   Relaciones extraídas: 3
+09:51:34 [INFO]     [Articulo] Art_51_Ley_19550
+09:51:34 [INFO]     Art_51_Ley_19550 -[REGULA]-> AporteEnEspecie
+09:51:34 [INFO]     Art_51_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+09:51:34 [INFO]     Art_51_Ley_19550 -[REGULA]-> SociedadColectiva
+09:51:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:51:37 [INFO]   Guardado en Neo4j correctamente.
+09:51:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_356.txt
+09:51:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:51:57 [INFO]   Nodos extraídos    : 1
+09:51:57 [INFO]   Relaciones extraídas: 3
+09:51:57 [INFO]     [Articulo] Art_356_Ley_19550
+09:51:57 [INFO]     Art_356_Ley_19550 -[REGULA]-> SociedadAnonima
+09:51:57 [INFO]     Art_356_Ley_19550 -[REGULA]-> Debenture
+09:51:57 [INFO]     Art_356_Ley_19550 -[REGULA]-> ReduccionDeCapital
+09:51:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:52:00 [INFO]   Guardado en Neo4j correctamente.
+09:52:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_349.txt
+09:52:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:52:24 [INFO]   Nodos extraídos    : 1
+09:52:24 [INFO]   Relaciones extraídas: 1
+09:52:24 [INFO]     [Articulo] Art_349_Ley_19550
+09:52:24 [INFO]     Art_349_Ley_19550 -[REGULA]-> Debenture
+09:52:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:52:27 [INFO]   Guardado en Neo4j correctamente.
+09:52:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_288.txt
+09:52:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:52:49 [INFO]   Nodos extraídos    : 1
+09:52:49 [INFO]   Relaciones extraídas: 1
+09:52:49 [INFO]     [Articulo] Art_288_Ley_19550
+09:52:49 [INFO]     Art_288_Ley_19550 -[REGULA]-> SociedadAnonima
+09:52:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:52:52 [INFO]   Guardado en Neo4j correctamente.
+09:52:52 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_23.txt
+09:52:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:53:20 [INFO]   Nodos extraídos    : 1
+09:53:20 [INFO]   Relaciones extraídas: 5
+09:53:20 [INFO]     [Articulo] Art_23_Ley_19550
+09:53:20 [INFO]     Art_23_Ley_19550 -[DEFINE]-> Socio
+09:53:20 [INFO]     Art_23_Ley_19550 -[REGULA]-> Sociedad
+09:53:20 [INFO]     Art_23_Ley_19550 -[REGULA]-> ContratoSocial
+09:53:20 [INFO]     Art_23_Ley_19550 -[ESTABLECE_REQUISITOS_DE]-> InstrumentoPublico
+09:53:20 [INFO]     Art_23_Ley_19550 -[ESTABLECE_REQUISITOS_DE]-> InstrumentoPrivado
+09:53:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:53:24 [INFO]   Guardado en Neo4j correctamente.
+09:53:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_256.txt
+09:53:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:53:52 [INFO]   Nodos extraídos    : 1
+09:53:52 [INFO]   Relaciones extraídas: 4
+09:53:52 [INFO]     [Articulo] Art_256_Ley_19550
+09:53:52 [INFO]     Art_256_Ley_19550 -[REGULA]-> Director
+09:53:52 [INFO]     Art_256_Ley_19550 -[REGULA]-> SociedadAnonima
+09:53:52 [INFO]     Art_256_Ley_19550 -[REGULA]-> EstatutoSocial
+09:53:52 [INFO]     Art_256_Ley_19550 -[MENCIONA]-> Accionista
+09:53:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:53:55 [INFO]   Guardado en Neo4j correctamente.
+09:53:55 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_170.txt
+09:53:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:54:20 [INFO]   Nodos extraídos    : 1
+09:54:20 [INFO]   Relaciones extraídas: 1
+09:54:20 [INFO]     [Articulo] Art_170_Ley_19550
+09:54:20 [INFO]     Art_170_Ley_19550 -[REGULA]-> SociedadAnonima
+09:54:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:54:22 [INFO]   Guardado en Neo4j correctamente.
+09:54:23 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_274.txt
+09:54:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:54:53 [INFO]   Nodos extraídos    : 1
+09:54:53 [INFO]   Relaciones extraídas: 4
+09:54:53 [INFO]     [Articulo] Art_274_Ley_19550
+09:54:53 [INFO]     Art_274_Ley_19550 -[REGULA]-> SociedadAnonima
+09:54:53 [INFO]     Art_274_Ley_19550 -[REGULA]-> Director
+09:54:53 [INFO]     Art_274_Ley_19550 -[REGULA]-> Accionista
+09:54:53 [INFO]     Art_274_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+09:54:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:54:56 [INFO]   Guardado en Neo4j correctamente.
+09:54:57 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_337.txt
+09:54:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:55:23 [INFO]   Nodos extraídos    : 1
+09:55:23 [INFO]   Relaciones extraídas: 1
+09:55:23 [INFO]     [Articulo] Art_337_Ley_19550
+09:55:23 [INFO]     Art_337_Ley_19550 -[REGULA]-> BonoDeGoce
+09:55:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:55:26 [INFO]   Guardado en Neo4j correctamente.
+09:55:26 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_14.txt
+09:55:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:55:43 [INFO]   Nodos extraídos    : 1
+09:55:43 [INFO]   Relaciones extraídas: 0
+09:55:43 [INFO]     [Articulo] Art_14_Ley_19550
+09:55:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:55:46 [INFO]   Guardado en Neo4j correctamente.
+09:55:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_135.txt
+09:55:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:56:04 [INFO]   Nodos extraídos    : 1
+09:56:04 [INFO]   Relaciones extraídas: 1
+09:56:04 [INFO]     [Articulo] Art_135_Ley_19550
+09:56:04 [INFO]     Art_135_Ley_19550 -[REGULA]-> SociedadEnComanditaSimple
+09:56:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:56:07 [INFO]   Guardado en Neo4j correctamente.
+09:56:07 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_323.txt
+09:56:08 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:56:38 [INFO]   Nodos extraídos    : 1
+09:56:38 [INFO]   Relaciones extraídas: 2
+09:56:38 [INFO]     [Articulo] Art_323_Ley_19550
+09:56:38 [INFO]     Art_323_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+09:56:38 [INFO]     Art_323_Ley_19550 -[MENCIONA]-> AsambleaExtraordinaria
+09:56:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:56:41 [INFO]   Guardado en Neo4j correctamente.
+09:56:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_190.txt
+09:56:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:56:55 [INFO]   Nodos extraídos    : 1
+09:56:55 [INFO]   Relaciones extraídas: 1
+09:56:55 [INFO]     [Articulo] Art_190_Ley_19550
+09:56:55 [INFO]     Art_190_Ley_19550 -[REGULA]-> SociedadAnonima
+09:56:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:56:57 [INFO]   Guardado en Neo4j correctamente.
+09:56:57 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_9.txt
+09:56:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:57:16 [INFO]   Nodos extraídos    : 1
+09:57:16 [INFO]   Relaciones extraídas: 1
+09:57:16 [INFO]     [Articulo] Art_9_Ley_19550
+09:57:16 [INFO]     Art_9_Ley_19550 -[MENCIONA]-> LegajoSocietario
+09:57:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:57:19 [INFO]   Guardado en Neo4j correctamente.
+09:57:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_132.txt
+09:57:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:57:38 [INFO]   Nodos extraídos    : 1
+09:57:38 [INFO]   Relaciones extraídas: 0
+09:57:38 [INFO]     [Articulo] Art_132_Ley_19550
+09:57:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:57:41 [INFO]   Guardado en Neo4j correctamente.
+09:57:41 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_345.txt
+09:57:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:58:07 [INFO]   Nodos extraídos    : 1
+09:58:07 [INFO]   Relaciones extraídas: 1
+09:58:07 [INFO]     [Articulo] Art_345_Ley_19550
+09:58:07 [INFO]     Art_345_Ley_19550 -[REGULA]-> Debenture
+09:58:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:58:10 [INFO]   Guardado en Neo4j correctamente.
+09:58:10 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_105.txt
+09:58:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:58:36 [INFO]   Nodos extraídos    : 1
+09:58:36 [INFO]   Relaciones extraídas: 3
+09:58:36 [INFO]     [Articulo] Art_105_Ley_19550
+09:58:36 [INFO]     Art_105_Ley_19550 -[REGULA]-> RepresentanteLegal
+09:58:36 [INFO]     Art_105_Ley_19550 -[REGULA]-> Liquidador
+09:58:36 [INFO]     Art_105_Ley_19550 -[REGULA]-> Socio
+09:58:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:58:39 [INFO]   Guardado en Neo4j correctamente.
+09:58:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_229.txt
+09:58:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:58:57 [INFO]   Nodos extraídos    : 1
+09:58:57 [INFO]   Relaciones extraídas: 1
+09:58:57 [INFO]     [Articulo] Art_229_Ley_19550
+09:58:57 [INFO]     Art_229_Ley_19550 -[REGULA]-> BonoDeParticipacion
+09:58:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:59:00 [INFO]   Guardado en Neo4j correctamente.
+09:59:00 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_308.txt
+09:59:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:59:20 [INFO]   Nodos extraídos    : 1
+09:59:20 [INFO]   Relaciones extraídas: 1
+09:59:20 [INFO]     [Articulo] Art_308_Ley_19550
+09:59:20 [INFO]     Art_308_Ley_19550 -[MENCIONA]-> SociedadAnonima
+09:59:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:59:23 [INFO]   Guardado en Neo4j correctamente.
+09:59:23 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_340.txt
+09:59:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+09:59:50 [INFO]   Nodos extraídos    : 1
+09:59:50 [INFO]   Relaciones extraídas: 6
+09:59:50 [INFO]     [Articulo] Art_340_Ley_19550
+09:59:50 [INFO]     Art_340_Ley_19550 -[MENCIONA]-> SociedadAnonima
+09:59:50 [INFO]     Art_340_Ley_19550 -[MENCIONA]-> SociedadEnComanditaPorAcciones
+09:59:50 [INFO]     Art_340_Ley_19550 -[REGULA]-> Debenture
+09:59:50 [INFO]     Art_340_Ley_19550 -[MENCIONA]-> RegistroPublico
+09:59:50 [INFO]     Art_340_Ley_19550 -[MENCIONA]-> Director
+09:59:50 [INFO]     Art_340_Ley_19550 -[MENCIONA]-> Sindico
+09:59:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+09:59:54 [INFO]   Guardado en Neo4j correctamente.
+09:59:54 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_241.txt
+09:59:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:00:21 [INFO]   Nodos extraídos    : 1
+10:00:21 [INFO]   Relaciones extraídas: 4
+10:00:21 [INFO]     [Articulo] Art_241_Ley_19550
+10:00:21 [INFO]     Art_241_Ley_19550 -[PROHIBE]-> Director
+10:00:21 [INFO]     Art_241_Ley_19550 -[PROHIBE]-> Sindico
+10:00:21 [INFO]     Art_241_Ley_19550 -[PROHIBE]-> ComisionFiscalizadora
+10:00:21 [INFO]     Art_241_Ley_19550 -[PROHIBE]-> Gerente
+10:00:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:00:24 [INFO]   Guardado en Neo4j correctamente.
+10:00:25 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_240.txt
+10:00:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:00:54 [INFO]   Nodos extraídos    : 1
+10:00:54 [INFO]   Relaciones extraídas: 5
+10:00:54 [INFO]     [Articulo] Art_240_Ley_19550
+10:00:54 [INFO]     Art_240_Ley_19550 -[MENCIONA]-> Director
+10:00:54 [INFO]     Art_240_Ley_19550 -[MENCIONA]-> Sindico
+10:00:54 [INFO]     Art_240_Ley_19550 -[MENCIONA]-> Gerente
+10:00:54 [INFO]     Art_240_Ley_19550 -[REGULA]-> AsambleaOrdinaria
+10:00:54 [INFO]     Art_240_Ley_19550 -[REGULA]-> Accionista
+10:00:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:00:58 [INFO]   Guardado en Neo4j correctamente.
+10:00:58 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_47.txt
+10:00:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:01:17 [INFO]   Nodos extraídos    : 1
+10:01:17 [INFO]   Relaciones extraídas: 1
+10:01:17 [INFO]     [Articulo] Art_47_Ley_19550
+10:01:17 [INFO]     Art_47_Ley_19550 -[REGULA]-> Socio
+10:01:18 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:01:20 [INFO]   Guardado en Neo4j correctamente.
+10:01:20 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_218.txt
+10:01:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:01:44 [INFO]   Nodos extraídos    : 1
+10:01:44 [INFO]   Relaciones extraídas: 4
+10:01:44 [INFO]     [Articulo] Art_218_Ley_19550
+10:01:44 [INFO]     Art_218_Ley_19550 -[REGULA]-> Socionista
+10:01:44 [INFO]     Art_218_Ley_19550 -[REGULA]-> Accion
+10:01:44 [INFO]     Art_218_Ley_19550 -[REGULA]-> Dividendo
+10:01:44 [INFO]     Art_218_Ley_19550 -[REGULA]-> CapitalSocial
+10:01:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:01:47 [INFO]   Guardado en Neo4j correctamente.
+10:01:47 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_203.txt
+10:01:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:02:10 [INFO]   Nodos extraídos    : 1
+10:02:10 [INFO]   Relaciones extraídas: 1
+10:02:10 [INFO]     [Articulo] Art_203_Ley_19550
+10:02:10 [INFO]     Art_203_Ley_19550 -[REGULA]-> SociedadAnonima
+10:02:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:02:13 [INFO]   Guardado en Neo4j correctamente.
+10:02:13 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_289.txt
+10:02:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:02:32 [INFO]   Nodos extraídos    : 1
+10:02:32 [INFO]   Relaciones extraídas: 2
+10:02:32 [INFO]     [Articulo] Art_289_Ley_19550
+10:02:32 [INFO]     Art_289_Ley_19550 -[MENCIONA]-> Accionista
+10:02:32 [INFO]     Art_289_Ley_19550 -[MENCIONA]-> DerechoDeReceso
+10:02:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:02:35 [INFO]   Guardado en Neo4j correctamente.
+10:02:35 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_331.txt
+10:02:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:02:57 [INFO]   Nodos extraídos    : 1
+10:02:57 [INFO]   Relaciones extraídas: 2
+10:02:57 [INFO]     [Articulo] Art_331_Ley_19550
+10:02:57 [INFO]     Art_331_Ley_19550 -[REGULA]-> Debenture
+10:02:57 [INFO]     Art_331_Ley_19550 -[MENCIONA]-> AsambleaOrdinaria
+10:02:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:03:00 [INFO]   Guardado en Neo4j correctamente.
+10:03:00 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_24.txt
+10:03:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:03:16 [INFO]   Nodos extraídos    : 1
+10:03:16 [INFO]   Relaciones extraídas: 1
+10:03:16 [INFO]     [Articulo] Art_24_Ley_19550
+10:03:16 [INFO]     Art_24_Ley_19550 -[REGULA]-> Socio
+10:03:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:03:19 [INFO]   Guardado en Neo4j correctamente.
+10:03:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_192.txt
+10:03:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:03:35 [INFO]   Nodos extraídos    : 1
+10:03:35 [INFO]   Relaciones extraídas: 1
+10:03:35 [INFO]     [Articulo] Art_192_Ley_19550
+10:03:35 [INFO]     Art_192_Ley_19550 -[REGULA]-> Accion
+10:03:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:03:37 [INFO]   Guardado en Neo4j correctamente.
+10:03:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_194.txt
+10:03:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:04:07 [INFO]   Nodos extraídos    : 1
+10:04:07 [INFO]   Relaciones extraídas: 6
+10:04:07 [INFO]     [Articulo] Art_194_Ley_19550
+10:04:07 [INFO]     Art_194_Ley_19550 -[REGULA]-> AccionOrdinaria
+10:04:07 [INFO]     Art_194_Ley_19550 -[REGULA]-> Accionista
+10:04:07 [INFO]     Art_194_Ley_19550 -[REGULA]-> Accion
+10:04:07 [INFO]     Art_194_Ley_19550 -[REGULA]-> DerechoDePreferencia
+10:04:07 [INFO]     Art_194_Ley_19550 -[REGULA]-> AsambleaExtraordinaria
+10:04:07 [INFO]     Art_194_Ley_19550 -[REGULA]-> Debenture
+10:04:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:04:10 [INFO]   Guardado en Neo4j correctamente.
+10:04:11 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_316.txt
+10:04:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:04:30 [INFO]   Nodos extraídos    : 1
+10:04:30 [INFO]   Relaciones extraídas: 2
+10:04:30 [INFO]     [Articulo] Art_316_Ley_19550
+10:04:30 [INFO]     Art_316_Ley_19550 -[REGULA]-> SociedadAnonima
+10:04:30 [INFO]     Art_316_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:04:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:04:33 [INFO]   Guardado en Neo4j correctamente.
+10:04:34 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_139.txt
+10:04:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:04:54 [INFO]   Nodos extraídos    : 1
+10:04:54 [INFO]   Relaciones extraídas: 1
+10:04:54 [INFO]     [Articulo] Art_139_Ley_19550
+10:04:54 [INFO]     Art_139_Ley_19550 -[REGULA]-> SociedadEnComanditaSimple
+10:04:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:04:56 [INFO]   Guardado en Neo4j correctamente.
+10:04:57 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_282.txt
+10:04:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:05:18 [INFO]   Nodos extraídos    : 1
+10:05:18 [INFO]   Relaciones extraídas: 1
+10:05:18 [INFO]     [Articulo] Art_282_Ley_19550
+10:05:18 [INFO]     Art_282_Ley_19550 -[REGULA]-> SociedadAnonima
+10:05:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:05:21 [INFO]   Guardado en Neo4j correctamente.
+10:05:21 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_360.txt
+10:05:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:05:48 [INFO]   Nodos extraídos    : 1
+10:05:48 [INFO]   Relaciones extraídas: 2
+10:05:48 [INFO]     [Articulo] Art_360_Ley_19550
+10:05:48 [INFO]     Art_360_Ley_19550 -[MENCIONA]-> SociedadConstituidaEnElExtranjero
+10:05:48 [INFO]     Art_360_Ley_19550 -[MENCIONA]-> Debenture
+10:05:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:05:51 [INFO]   Guardado en Neo4j correctamente.
+10:05:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_133.txt
+10:05:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:06:14 [INFO]   Nodos extraídos    : 1
+10:06:14 [INFO]   Relaciones extraídas: 1
+10:06:14 [INFO]     [Articulo] Art_133_Ley_19550
+10:06:14 [INFO]     Art_133_Ley_19550 -[REGULA]-> SociedadColectiva
+10:06:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:06:17 [INFO]   Guardado en Neo4j correctamente.
+10:06:17 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_304.txt
+10:06:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:06:34 [INFO]   Nodos extraídos    : 1
+10:06:34 [INFO]   Relaciones extraídas: 1
+10:06:34 [INFO]     [Articulo] Art_304_Ley_19550
+10:06:34 [INFO]     Art_304_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:06:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:06:37 [INFO]   Guardado en Neo4j correctamente.
+10:06:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_162.txt
+10:06:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:07:02 [INFO]   Nodos extraídos    : 1
+10:07:02 [INFO]   Relaciones extraídas: 1
+10:07:02 [INFO]     [Articulo] Art_162_Ley_19550
+10:07:02 [INFO]     Art_162_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:07:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 429 Too Many Requests"
+10:07:03 [ERROR]   FALLO guardado Neo4j: Error embedding content (RESOURCE_EXHAUSTED): 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'Resource exhausted. Please try again later. Please refer to https://cloud.google.com/vertex-ai/generative-ai/docs/error-code-429 for more details.', 'status': 'RESOURCE_EXHAUSTED'}}
+10:07:05 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_297.txt
+10:07:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:07:25 [INFO]   Nodos extraídos    : 1
+10:07:25 [INFO]   Relaciones extraídas: 1
+10:07:25 [INFO]     [Articulo] Art_297_Ley_19550
+10:07:25 [INFO]     Art_297_Ley_19550 -[REGULA]-> Director
+10:07:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:07:27 [INFO]   Guardado en Neo4j correctamente.
+10:07:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_30.txt
+10:07:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:07:49 [INFO]   Nodos extraídos    : 1
+10:07:49 [INFO]   Relaciones extraídas: 5
+10:07:49 [INFO]     [Articulo] Art_30_Ley_19550
+10:07:49 [INFO]     Art_30_Ley_19550 -[REGULA]-> SociedadAnonima
+10:07:49 [INFO]     Art_30_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:07:49 [INFO]     Art_30_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:07:49 [INFO]     Art_30_Ley_19550 -[REGULA]-> SociedadAnonima
+10:07:49 [INFO]     Art_30_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:07:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:07:52 [INFO]   Guardado en Neo4j correctamente.
+10:07:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_93.txt
+10:07:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:08:14 [INFO]   Nodos extraídos    : 1
+10:08:14 [INFO]   Relaciones extraídas: 1
+10:08:14 [INFO]     [Articulo] Art_93_Ley_19550
+10:08:14 [INFO]     Art_93_Ley_19550 -[MENCIONA]-> Socio
+10:08:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:08:17 [INFO]   Guardado en Neo4j correctamente.
+10:08:17 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_78.txt
+10:08:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:08:47 [INFO]   Nodos extraídos    : 1
+10:08:47 [INFO]   Relaciones extraídas: 5
+10:08:47 [INFO]     [Articulo] Art_78_Ley_19550
+10:08:47 [INFO]     Art_78_Ley_19550 -[REGULA]-> DerechoDeReceso
+10:08:47 [INFO]     Art_78_Ley_19550 -[MENCIONA]-> RegistroPublico
+10:08:47 [INFO]     Art_78_Ley_19550 -[MENCIONA]-> Socio
+10:08:47 [INFO]     Art_78_Ley_19550 -[REGULA]-> SociedadAnonima
+10:08:47 [INFO]     Art_78_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:08:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:08:50 [INFO]   Guardado en Neo4j correctamente.
+10:08:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_209.txt
+10:08:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:09:13 [INFO]   Nodos extraídos    : 1
+10:09:13 [INFO]   Relaciones extraídas: 1
+10:09:13 [INFO]     [Articulo] Art_209_Ley_19550
+10:09:13 [INFO]     Art_209_Ley_19550 -[REGULA]-> Accion
+10:09:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:09:16 [INFO]   Guardado en Neo4j correctamente.
+10:09:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_37.txt
+10:09:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:09:43 [INFO]   Nodos extraídos    : 1
+10:09:43 [INFO]   Relaciones extraídas: 3
+10:09:43 [INFO]     [Articulo] Art_37_Ley_19550
+10:09:43 [INFO]     Art_37_Ley_19550 -[REGULA]-> Socio
+10:09:43 [INFO]     Art_37_Ley_19550 -[REGULA]-> SociedadAnonima
+10:09:43 [INFO]     Art_37_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:09:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:09:46 [INFO]   Guardado en Neo4j correctamente.
+10:09:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_153.txt
+10:09:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:10:20 [INFO]   Nodos extraídos    : 1
+10:10:20 [INFO]   Relaciones extraídas: 6
+10:10:20 [INFO]     [Articulo] Art_153_Ley_19550
+10:10:20 [INFO]     Art_153_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:10:20 [INFO]     Art_153_Ley_19550 -[REGULA]-> CuotaSocial
+10:10:20 [INFO]     Art_153_Ley_19550 -[REGULA]-> Socio
+10:10:20 [INFO]     Art_153_Ley_19550 -[REGULA]-> DerechoDePreferencia
+10:10:20 [INFO]     Art_153_Ley_19550 -[REGULA]-> ReservaLegal
+10:10:20 [INFO]     Art_153_Ley_19550 -[REGULA]-> CapitalSocial
+10:10:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:10:24 [INFO]   Guardado en Neo4j correctamente.
+10:10:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_148.txt
+10:10:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:10:42 [INFO]   Nodos extraídos    : 1
+10:10:42 [INFO]   Relaciones extraídas: 1
+10:10:42 [INFO]     [Articulo] Art_148_Ley_19550
+10:10:42 [INFO]     Art_148_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:10:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:10:45 [INFO]   Guardado en Neo4j correctamente.
+10:10:45 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_305.txt
+10:10:45 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:11:06 [INFO]   Nodos extraídos    : 1
+10:11:06 [INFO]   Relaciones extraídas: 2
+10:11:06 [INFO]     [Articulo] Art_305_Ley_19550
+10:11:06 [INFO]     Art_305_Ley_19550 -[REGULA]-> Director
+10:11:06 [INFO]     Art_305_Ley_19550 -[REGULA]-> Sindico
+10:11:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:11:08 [INFO]   Guardado en Neo4j correctamente.
+10:11:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_152.txt
+10:11:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:11:39 [INFO]   Nodos extraídos    : 1
+10:11:39 [INFO]   Relaciones extraídas: 5
+10:11:39 [INFO]     [Articulo] Art_152_Ley_19550
+10:11:39 [INFO]     Art_152_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:11:39 [INFO]     Art_152_Ley_19550 -[REGULA]-> CuotaSocial
+10:11:39 [INFO]     Art_152_Ley_19550 -[REGULA]-> Gerente
+10:11:39 [INFO]     Art_152_Ley_19550 -[REGULA]-> RegistroPublico
+10:11:39 [INFO]     Art_152_Ley_19550 -[REGULA]-> Socio
+10:11:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:11:42 [INFO]   Guardado en Neo4j correctamente.
+10:11:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_119.txt
+10:11:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:12:02 [INFO]   Nodos extraídos    : 1
+10:12:02 [INFO]   Relaciones extraídas: 1
+10:12:02 [INFO]     [Articulo] Art_119_Ley_19550
+10:12:02 [INFO]     Art_119_Ley_19550 -[REGULA]-> SociedadConstituidaEnElExtranjero
+10:12:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:12:05 [INFO]   Guardado en Neo4j correctamente.
+10:12:05 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_128.txt
+10:12:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:12:23 [INFO]   Nodos extraídos    : 1
+10:12:23 [INFO]   Relaciones extraídas: 1
+10:12:23 [INFO]     [Articulo] Art_128_Ley_19550
+10:12:23 [INFO]     Art_128_Ley_19550 -[REGULA]-> SociedadColectiva
+10:12:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:12:26 [INFO]   Guardado en Neo4j correctamente.
+10:12:26 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_217.txt
+10:12:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:12:47 [INFO]   Nodos extraídos    : 1
+10:12:47 [INFO]   Relaciones extraídas: 1
+10:12:47 [INFO]     [Articulo] Art_217_Ley_19550
+10:12:47 [INFO]     Art_217_Ley_19550 -[MENCIONA]-> AccionPreferida
+10:12:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:12:49 [INFO]   Guardado en Neo4j correctamente.
+10:12:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_219.txt
+10:12:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:13:11 [INFO]   Nodos extraídos    : 1
+10:13:11 [INFO]   Relaciones extraídas: 1
+10:13:11 [INFO]     [Articulo] Art_219_Ley_19550
+10:13:11 [INFO]     Art_219_Ley_19550 -[REGULA]-> SociedadAnonima
+10:13:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:13:14 [INFO]   Guardado en Neo4j correctamente.
+10:13:14 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_88.txt
+10:13:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:13:49 [INFO]   Nodos extraídos    : 1
+10:13:49 [INFO]   Relaciones extraídas: 2
+10:13:49 [INFO]     [Articulo] Art_88_Ley_19550
+10:13:49 [INFO]     Art_88_Ley_19550 -[REGULA]-> SociedadAnonima
+10:13:49 [INFO]     Art_88_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:13:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:13:52 [INFO]   Guardado en Neo4j correctamente.
+10:13:52 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_268.txt
+10:13:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:14:16 [INFO]   Nodos extraídos    : 1
+10:14:16 [INFO]   Relaciones extraídas: 3
+10:14:16 [INFO]     [Articulo] Art_268_Ley_19550
+10:14:16 [INFO]     Art_268_Ley_19550 -[REPRESENTA]-> Director
+10:14:16 [INFO]     Art_268_Ley_19550 -[REGULA]-> SociedadAnonima
+10:14:16 [INFO]     Art_268_Ley_19550 -[MENCIONA]-> EstatutoSocial
+10:14:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:14:19 [INFO]   Guardado en Neo4j correctamente.
+10:14:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_298.txt
+10:14:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:14:37 [INFO]   Nodos extraídos    : 1
+10:14:37 [INFO]   Relaciones extraídas: 1
+10:14:37 [INFO]     [Articulo] Art_298_Ley_19550
+10:14:37 [INFO]     Art_298_Ley_19550 -[REGULA]-> Sindico
+10:14:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:14:40 [INFO]   Guardado en Neo4j correctamente.
+10:14:41 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_163.txt
+10:14:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:15:01 [INFO]   Nodos extraídos    : 1
+10:15:01 [INFO]   Relaciones extraídas: 3
+10:15:01 [INFO]     [Articulo] Art_163_Ley_19550
+10:15:01 [INFO]     Art_163_Ley_19550 -[REGULA]-> SociedadAnonima
+10:15:01 [INFO]     Art_163_Ley_19550 -[ESTABLECE_REQUISITOS_DE]-> Accion
+10:15:01 [INFO]     Art_163_Ley_19550 -[REGULA]-> Socio
+10:15:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:15:04 [INFO]   Guardado en Neo4j correctamente.
+10:15:04 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_121.txt
+10:15:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:15:32 [INFO]   Nodos extraídos    : 1
+10:15:32 [INFO]   Relaciones extraídas: 3
+10:15:32 [INFO]     [Articulo] Art_121_Ley_19550
+10:15:32 [INFO]     Art_121_Ley_19550 -[REGULA]-> SociedadConstituidaEnElExtranjero
+10:15:32 [INFO]     Art_121_Ley_19550 -[REGULA]-> Director
+10:15:32 [INFO]     Art_121_Ley_19550 -[REGULA]-> Director
+10:15:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:15:35 [INFO]   Guardado en Neo4j correctamente.
+10:15:36 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_180.txt
+10:15:36 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:16:01 [INFO]   Nodos extraídos    : 1
+10:16:01 [INFO]   Relaciones extraídas: 1
+10:16:01 [INFO]     [Articulo] Art_180_Ley_19550
+10:16:01 [INFO]     Art_180_Ley_19550 -[REGULA]-> SociedadAnonima
+10:16:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:16:03 [INFO]   Guardado en Neo4j correctamente.
+10:16:03 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_123.txt
+10:16:04 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:16:26 [INFO]   Nodos extraídos    : 1
+10:16:26 [INFO]   Relaciones extraídas: 4
+10:16:26 [INFO]     [Articulo] Art_123_Ley_19550
+10:16:26 [INFO]     Art_123_Ley_19550 -[REGULA]-> SociedadConstituidaEnElExtranjero
+10:16:26 [INFO]     Art_123_Ley_19550 -[SE_INSCRIBE_EN]-> InstrumentoPublico
+10:16:26 [INFO]     Art_123_Ley_19550 -[SE_INSCRIBE_EN]-> RegistroPublico
+10:16:26 [INFO]     Art_123_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:16:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:16:30 [INFO]   Guardado en Neo4j correctamente.
+10:16:30 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_251.txt
+10:16:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:16:56 [INFO]   Nodos extraídos    : 1
+10:16:56 [INFO]   Relaciones extraídas: 5
+10:16:56 [INFO]     [Articulo] Art_251_Ley_19550
+10:16:56 [INFO]     Art_251_Ley_19550 -[MENCIONA]-> Accionista
+10:16:56 [INFO]     Art_251_Ley_19550 -[REGULA]-> SociedadAnonima
+10:16:56 [INFO]     Art_251_Ley_19550 -[MENCIONA]-> Director
+10:16:56 [INFO]     Art_251_Ley_19550 -[MENCIONA]-> Sindico
+10:16:56 [INFO]     Art_251_Ley_19550 -[MENCIONA]-> ConsejoDeVigilancia
+10:16:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:16:59 [INFO]   Guardado en Neo4j correctamente.
+10:16:59 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_164.txt
+10:17:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:17:19 [INFO]   Nodos extraídos    : 1
+10:17:19 [INFO]   Relaciones extraídas: 2
+10:17:19 [INFO]     [Articulo] Art_164_Ley_19550
+10:17:19 [INFO]     Art_164_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:17:19 [INFO]     Art_164_Ley_19550 -[MENCIONA]-> SociedadAnonimaUnipersonal
+10:17:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:17:22 [INFO]   Guardado en Neo4j correctamente.
+10:17:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_202.txt
+10:17:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:17:50 [INFO]   Nodos extraídos    : 1
+10:17:50 [INFO]   Relaciones extraídas: 6
+10:17:50 [INFO]     [Articulo] Art_202_Ley_19550
+10:17:50 [INFO]     Art_202_Ley_19550 -[REGULA]-> SociedadAnonima
+10:17:50 [INFO]     Art_202_Ley_19550 -[REGULA]-> Accion
+10:17:50 [INFO]     Art_202_Ley_19550 -[REGULA]-> AsambleaExtraordinaria
+10:17:50 [INFO]     Art_202_Ley_19550 -[REGULA]-> Directorio
+10:17:50 [INFO]     Art_202_Ley_19550 -[REGULA]-> AsambleaOrdinaria
+10:17:50 [INFO]     Art_202_Ley_19550 -[ESTABLECE_REQUISITOS_DE]-> ReservaLegal
+10:17:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:17:53 [INFO]   Guardado en Neo4j correctamente.
+10:17:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_213.txt
+10:17:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:18:15 [INFO]   Nodos extraídos    : 1
+10:18:15 [INFO]   Relaciones extraídas: 4
+10:18:15 [INFO]     [Articulo] Art_213_Ley_19550
+10:18:15 [INFO]     Art_213_Ley_19550 -[MENCIONA]-> RegistroPublico
+10:18:15 [INFO]     Art_213_Ley_19550 -[MENCIONA]-> LibroDeRegistroDeAcciones
+10:18:15 [INFO]     Art_213_Ley_19550 -[MENCIONA]-> Accionista
+10:18:15 [INFO]     Art_213_Ley_19550 -[MENCIONA]-> Accion
+10:18:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:18:19 [INFO]   Guardado en Neo4j correctamente.
+10:18:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_269.txt
+10:18:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:18:43 [INFO]   Nodos extraídos    : 1
+10:18:43 [INFO]   Relaciones extraídas: 1
+10:18:43 [INFO]     [Articulo] Art_269_Ley_19550
+10:18:43 [INFO]     Art_269_Ley_19550 -[REGULA]-> SociedadAnonima
+10:18:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:18:45 [INFO]   Guardado en Neo4j correctamente.
+10:18:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_106.txt
+10:18:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:19:07 [INFO]   Nodos extraídos    : 1
+10:19:07 [INFO]   Relaciones extraídas: 1
+10:19:07 [INFO]     [Articulo] Art_106_Ley_19550
+10:19:07 [INFO]     Art_106_Ley_19550 -[REGULA]-> Socio
+10:19:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:19:10 [INFO]   Guardado en Neo4j correctamente.
+10:19:10 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_1.txt
+10:19:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:19:27 [INFO]   Nodos extraídos    : 1
+10:19:27 [INFO]   Relaciones extraídas: 3
+10:19:27 [INFO]     [Articulo] Art_1_Ley_19550
+10:19:27 [INFO]     Art_1_Ley_19550 -[DEFINE]-> Sociedad
+10:19:27 [INFO]     Art_1_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:19:27 [INFO]     Art_1_Ley_19550 -[MENCIONA]-> SociedadAnonimaUnipersonal
+10:19:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:19:30 [INFO]   Guardado en Neo4j correctamente.
+10:19:30 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_266.txt
+10:19:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:19:52 [INFO]   Nodos extraídos    : 1
+10:19:52 [INFO]   Relaciones extraídas: 1
+10:19:52 [INFO]     [Articulo] Art_266_Ley_19550
+10:19:52 [INFO]     Art_266_Ley_19550 -[REGULA]-> Director
+10:19:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:19:55 [INFO]   Guardado en Neo4j correctamente.
+10:19:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_70.txt
+10:19:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:20:24 [INFO]   Nodos extraídos    : 1
+10:20:24 [INFO]   Relaciones extraídas: 8
+10:20:24 [INFO]     [Articulo] Art_70_Ley_19550
+10:20:24 [INFO]     Art_70_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:20:24 [INFO]     Art_70_Ley_19550 -[REGULA]-> SociedadAnonima
+10:20:24 [INFO]     Art_70_Ley_19550 -[REGULA]-> ReservaLegal
+10:20:24 [INFO]     Art_70_Ley_19550 -[REGULA]-> EstadoDeResultados
+10:20:24 [INFO]     Art_70_Ley_19550 -[REGULA]-> CapitalSocial
+10:20:24 [INFO]     Art_70_Ley_19550 -[REGULA]-> Dividendo
+10:20:24 [INFO]     Art_70_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:20:24 [INFO]     Art_70_Ley_19550 -[MENCIONA]-> SociedadDeResponsabilidadLimitada
+10:20:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:20:28 [INFO]   Guardado en Neo4j correctamente.
+10:20:28 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_234.txt
+10:20:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:21:00 [INFO]   Nodos extraídos    : 1
+10:21:00 [INFO]   Relaciones extraídas: 8
+10:21:00 [INFO]     [Articulo] Art_234_Ley_19550
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> AsambleaOrdinaria
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> BalanceGeneral
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> EstadoDeResultados
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> Director
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> Sindico
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> ConsejoDeVigilancia
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> Accionista
+10:21:00 [INFO]     Art_234_Ley_19550 -[REGULA]-> AumentoDeCapital
+10:21:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:21:03 [INFO]   Guardado en Neo4j correctamente.
+10:21:03 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_181.txt
+10:21:04 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:21:28 [INFO]   Nodos extraídos    : 1
+10:21:28 [INFO]   Relaciones extraídas: 1
+10:21:28 [INFO]     [Articulo] Art_181_Ley_19550
+10:21:28 [INFO]     Art_181_Ley_19550 -[REGULA]-> Director
+10:21:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:21:30 [INFO]   Guardado en Neo4j correctamente.
+10:21:31 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_166.txt
+10:21:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:21:59 [INFO]   Nodos extraídos    : 1
+10:21:59 [INFO]   Relaciones extraídas: 1
+10:21:59 [INFO]     [Articulo] Art_166_Ley_19550
+10:21:59 [INFO]     Art_166_Ley_19550 -[REGULA]-> SociedadAnonima
+10:22:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:22:02 [INFO]   Guardado en Neo4j correctamente.
+10:22:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_248.txt
+10:22:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:22:21 [INFO]   Nodos extraídos    : 1
+10:22:21 [INFO]   Relaciones extraídas: 1
+10:22:21 [INFO]     [Articulo] Art_248_Ley_19550
+10:22:21 [INFO]     Art_248_Ley_19550 -[REGULA]-> Accionista
+10:22:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:22:24 [INFO]   Guardado en Neo4j correctamente.
+10:22:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_176.txt
+10:22:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:22:42 [INFO]   Nodos extraídos    : 1
+10:22:42 [INFO]   Relaciones extraídas: 2
+10:22:42 [INFO]     [Articulo] Art_176_Ley_19550
+10:22:42 [INFO]     Art_176_Ley_19550 -[REGULA]-> AsambleaConstitutiva
+10:22:42 [INFO]     Art_176_Ley_19550 -[REGULA]-> SociedadAnonima
+10:22:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:22:46 [INFO]   Guardado en Neo4j correctamente.
+10:22:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_48.txt
+10:22:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:23:06 [INFO]   Nodos extraídos    : 1
+10:23:06 [INFO]   Relaciones extraídas: 1
+10:23:06 [INFO]     [Articulo] Art_48_Ley_19550
+10:23:06 [INFO]     Art_48_Ley_19550 -[MENCIONA]-> AporteEnEspecie
+10:23:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:23:08 [INFO]   Guardado en Neo4j correctamente.
+10:23:09 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_141.txt
+10:23:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:23:30 [INFO]   Nodos extraídos    : 1
+10:23:30 [INFO]   Relaciones extraídas: 1
+10:23:30 [INFO]     [Articulo] Art_141_Ley_19550
+10:23:30 [INFO]     Art_141_Ley_19550 -[REGULA]-> SociedadDeCapitalEIndustria
+10:23:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:23:33 [INFO]   Guardado en Neo4j correctamente.
+10:23:33 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_53.txt
+10:23:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:23:56 [INFO]   Nodos extraídos    : 1
+10:23:56 [INFO]   Relaciones extraídas: 2
+10:23:56 [INFO]     [Articulo] Art_53_Ley_19550
+10:23:56 [INFO]     Art_53_Ley_19550 -[REGULA]-> SociedadAnonima
+10:23:56 [INFO]     Art_53_Ley_19550 -[REGULA]-> SociedadPorAcciones
+10:23:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:23:59 [INFO]   Guardado en Neo4j correctamente.
+10:23:59 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_129.txt
+10:23:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:24:21 [INFO]   Nodos extraídos    : 1
+10:24:21 [INFO]   Relaciones extraídas: 1
+10:24:21 [INFO]     [Articulo] Art_129_Ley_19550
+10:24:21 [INFO]     Art_129_Ley_19550 -[REGULA]-> SociedadColectiva
+10:24:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:24:24 [INFO]   Guardado en Neo4j correctamente.
+10:24:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_76.txt
+10:24:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:24:43 [INFO]   Nodos extraídos    : 1
+10:24:43 [INFO]   Relaciones extraídas: 1
+10:24:43 [INFO]     [Articulo] Art_76_Ley_19550
+10:24:43 [INFO]     Art_76_Ley_19550 -[REGULA]-> Transformacion
+10:24:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:24:46 [INFO]   Guardado en Neo4j correctamente.
+10:24:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_263.txt
+10:24:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:25:12 [INFO]   Nodos extraídos    : 1
+10:25:12 [INFO]   Relaciones extraídas: 4
+10:25:12 [INFO]     [Articulo] Art_263_Ley_19550
+10:25:12 [INFO]     Art_263_Ley_19550 -[REGULA]-> ACCIONISTA
+10:25:12 [INFO]     Art_263_Ley_19550 -[REGULA]-> SOCIEDAD_ANONIMA
+10:25:12 [INFO]     Art_263_Ley_19550 -[PROHIBE]-> ESTATUTO_SOCIAL
+10:25:12 [INFO]     Art_263_Ley_19550 -[REGULA]-> DIRECTOR
+10:25:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:25:15 [INFO]   Guardado en Neo4j correctamente.
+10:25:15 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_86.txt
+10:25:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:25:36 [INFO]   Nodos extraídos    : 1
+10:25:36 [INFO]   Relaciones extraídas: 0
+10:25:36 [INFO]     [Articulo] Art_86_Ley_19550
+10:25:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:25:38 [INFO]   Guardado en Neo4j correctamente.
+10:25:38 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_307.txt
+10:25:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:25:55 [INFO]   Nodos extraídos    : 1
+10:25:55 [INFO]   Relaciones extraídas: 1
+10:25:55 [INFO]     [Articulo] Art_307_Ley_19550
+10:25:55 [INFO]     Art_307_Ley_19550 -[REGULA]-> SociedadAnonima
+10:25:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:25:57 [INFO]   Guardado en Neo4j correctamente.
+10:25:57 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_322.txt
+10:25:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:26:23 [INFO]   Nodos extraídos    : 1
+10:26:23 [INFO]   Relaciones extraídas: 1
+10:26:23 [INFO]     [Articulo] Art_322_Ley_19550
+10:26:23 [INFO]     Art_322_Ley_19550 -[MENCIONA]-> Socio
+10:26:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:26:26 [INFO]   Guardado en Neo4j correctamente.
+10:26:26 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_7.txt
+10:26:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:26:45 [INFO]   Nodos extraídos    : 1
+10:26:45 [INFO]   Relaciones extraídas: 3
+10:26:45 [INFO]     [Articulo] Art_7_Ley_19550
+10:26:45 [INFO]     Art_7_Ley_19550 -[REGULA]-> SociedadAnonima
+10:26:45 [INFO]     Art_7_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:26:45 [INFO]     Art_7_Ley_19550 -[MENCIONA]-> RegistroPublico
+10:26:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:26:48 [INFO]   Guardado en Neo4j correctamente.
+10:26:49 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_168.txt
+10:26:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:27:22 [INFO]   Nodos extraídos    : 1
+10:27:22 [INFO]   Relaciones extraídas: 4
+10:27:22 [INFO]     [Articulo] Art_168_Ley_19550
+10:27:22 [INFO]     Art_168_Ley_19550 -[REGULA]-> SociedadAnonima
+10:27:22 [INFO]     Art_168_Ley_19550 -[SE_INSTRUMENTA_EN]-> InstrumentoPublico
+10:27:22 [INFO]     Art_168_Ley_19550 -[SE_INSTRUMENTA_EN]-> InstrumentoPrivado
+10:27:22 [INFO]     Art_168_Ley_19550 -[SE_INSCRIBE_EN]-> RegistroPublico
+10:27:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:27:25 [INFO]   Guardado en Neo4j correctamente.
+10:27:25 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_211.txt
+10:27:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:27:48 [INFO]   Nodos extraídos    : 1
+10:27:48 [INFO]   Relaciones extraídas: 1
+10:27:48 [INFO]     [Articulo] Art_211_Ley_19550
+10:27:48 [INFO]     Art_211_Ley_19550 -[REGULA]-> SociedadAnonima
+10:27:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:27:51 [INFO]   Guardado en Neo4j correctamente.
+10:27:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_279.txt
+10:27:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:28:13 [INFO]   Nodos extraídos    : 1
+10:28:13 [INFO]   Relaciones extraídas: 2
+10:28:13 [INFO]     [Articulo] Art_279_Ley_19550
+10:28:13 [INFO]     Art_279_Ley_19550 -[MENCIONA]-> ACCIONISTA
+10:28:13 [INFO]     Art_279_Ley_19550 -[MENCIONA]-> DIRECTOR
+10:28:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:28:16 [INFO]   Guardado en Neo4j correctamente.
+10:28:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_113.txt
+10:28:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:28:42 [INFO]   Nodos extraídos    : 1
+10:28:42 [INFO]   Relaciones extraídas: 1
+10:28:42 [INFO]     [Articulo] Art_113_Ley_19550
+10:28:42 [INFO]     Art_113_Ley_19550 -[MENCIONA]-> Director
+10:28:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:28:45 [INFO]   Guardado en Neo4j correctamente.
+10:28:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_359.txt
+10:28:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:29:03 [INFO]   Nodos extraídos    : 1
+10:29:03 [INFO]   Relaciones extraídas: 0
+10:29:03 [INFO]     [Articulo] Art_359_Ley_19550
+10:29:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:29:06 [INFO]   Guardado en Neo4j correctamente.
+10:29:06 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_60.txt
+10:29:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:29:31 [INFO]   Nodos extraídos    : 1
+10:29:31 [INFO]   Relaciones extraídas: 3
+10:29:31 [INFO]     [Articulo] Art_60_Ley_19550
+10:29:31 [INFO]     Art_60_Ley_19550 -[REGULA]-> Director
+10:29:31 [INFO]     Art_60_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:29:31 [INFO]     Art_60_Ley_19550 -[REGULA]-> SociedadPorAcciones
+10:29:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:29:34 [INFO]   Guardado en Neo4j correctamente.
+10:29:34 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_253.txt
+10:29:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:29:59 [INFO]   Nodos extraídos    : 1
+10:29:59 [INFO]   Relaciones extraídas: 3
+10:29:59 [INFO]     [Articulo] Art_253_Ley_19550
+10:29:59 [INFO]     Art_253_Ley_19550 -[REGULA]-> Accionista
+10:29:59 [INFO]     Art_253_Ley_19550 -[REGULA]-> Director
+10:29:59 [INFO]     Art_253_Ley_19550 -[REGULA]-> AsambleaExtraordinaria
+10:30:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:30:02 [INFO]   Guardado en Neo4j correctamente.
+10:30:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_73.txt
+10:30:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:30:26 [INFO]   Nodos extraídos    : 1
+10:30:26 [INFO]   Relaciones extraídas: 4
+10:30:26 [INFO]     [Articulo] Art_73_Ley_19550
+10:30:26 [INFO]     Art_73_Ley_19550 -[MENCIONA]-> ActaDeDirectorio
+10:30:26 [INFO]     Art_73_Ley_19550 -[MENCIONA]-> ActaDeAsamblea
+10:30:26 [INFO]     Art_73_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:30:26 [INFO]     Art_73_Ley_19550 -[MENCIONA]-> SociedadEnComanditaPorAcciones
+10:30:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:30:29 [INFO]   Guardado en Neo4j correctamente.
+10:30:29 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_66.txt
+10:30:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:30:53 [INFO]   Nodos extraídos    : 1
+10:30:53 [INFO]   Relaciones extraídas: 1
+10:30:53 [INFO]     [Articulo] Art_66_Ley_19550
+10:30:53 [INFO]     Art_66_Ley_19550 -[MENCIONA]-> Director
+10:30:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:30:55 [INFO]   Guardado en Neo4j correctamente.
+10:30:55 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_353.txt
+10:30:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:31:14 [INFO]   Nodos extraídos    : 1
+10:31:14 [INFO]   Relaciones extraídas: 0
+10:31:14 [INFO]     [Articulo] Art_353_Ley_19550
+10:31:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:31:17 [INFO]   Guardado en Neo4j correctamente.
+10:31:17 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_90.txt
+10:31:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:31:48 [INFO]   Nodos extraídos    : 1
+10:31:48 [INFO]   Relaciones extraídas: 4
+10:31:48 [INFO]     [Articulo] Art_90_Ley_19550
+10:31:48 [INFO]     Art_90_Ley_19550 -[REGULA]-> SociedadColectiva
+10:31:48 [INFO]     Art_90_Ley_19550 -[REGULA]-> SociedadEnComanditaSimple
+10:31:48 [INFO]     Art_90_Ley_19550 -[REGULA]-> SociedadDeCapitalEIndustria
+10:31:48 [INFO]     Art_90_Ley_19550 -[REGULA]-> SociedadEnParticipacion
+10:31:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:31:51 [INFO]   Guardado en Neo4j correctamente.
+10:31:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_21.txt
+10:31:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:32:10 [INFO]   Nodos extraídos    : 1
+10:32:10 [INFO]   Relaciones extraídas: 0
+10:32:10 [INFO]     [Articulo] Art_21_Ley_19550
+10:32:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:32:12 [INFO]   Guardado en Neo4j correctamente.
+10:32:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_112.txt
+10:32:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:32:40 [INFO]   Nodos extraídos    : 1
+10:32:40 [INFO]   Relaciones extraídas: 8
+10:32:40 [INFO]     [Articulo] Art_112_Ley_19550
+10:32:40 [INFO]     Art_112_Ley_19550 -[MENCIONA]-> SociedadColectiva
+10:32:40 [INFO]     Art_112_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:32:40 [INFO]     Art_112_Ley_19550 -[MENCIONA]-> SociedadDeResponsabilidadLimitada
+10:32:40 [INFO]     Art_112_Ley_19550 -[MENCIONA]-> SociedadEnComanditaSimple
+10:32:40 [INFO]     Art_112_Ley_19550 -[MENCIONA]-> SociedadEnComanditaPorAcciones
+10:32:40 [INFO]     Art_112_Ley_19550 -[MENCIONA]-> RegistroPublico
+10:32:40 [INFO]     Art_112_Ley_19550 -[MENCIONA]-> ContratoSocial
+10:32:40 [INFO]     Art_112_Ley_19550 -[REGULA]-> Liquidacion
+10:32:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:32:44 [INFO]   Guardado en Neo4j correctamente.
+10:32:44 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_277.txt
+10:32:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:33:08 [INFO]   Nodos extraídos    : 1
+10:33:08 [INFO]   Relaciones extraídas: 1
+10:33:08 [INFO]     [Articulo] Art_277_Ley_19550
+10:33:08 [INFO]     Art_277_Ley_19550 -[REGULA]-> Accionista
+10:33:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:33:11 [INFO]   Guardado en Neo4j correctamente.
+10:33:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_150.txt
+10:33:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:33:36 [INFO]   Nodos extraídos    : 1
+10:33:36 [INFO]   Relaciones extraídas: 1
+10:33:36 [INFO]     [Articulo] Art_150_Ley_19550
+10:33:36 [INFO]     Art_150_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:33:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:33:39 [INFO]   Guardado en Neo4j correctamente.
+10:33:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_204.txt
+10:33:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:34:01 [INFO]   Nodos extraídos    : 1
+10:34:01 [INFO]   Relaciones extraídas: 1
+10:34:01 [INFO]     [Articulo] Art_204_Ley_19550
+10:34:01 [INFO]     Art_204_Ley_19550 -[REGULA]-> SociedadAnonima
+10:34:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:34:04 [INFO]   Guardado en Neo4j correctamente.
+10:34:04 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_265.txt
+10:34:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:34:34 [INFO]   Nodos extraídos    : 1
+10:34:34 [INFO]   Relaciones extraídas: 6
+10:34:34 [INFO]     [Articulo] Art_265_Ley_19550
+10:34:34 [INFO]     Art_265_Ley_19550 -[MENCIONA]-> Director
+10:34:34 [INFO]     Art_265_Ley_19550 -[MENCIONA]-> Sindico
+10:34:34 [INFO]     Art_265_Ley_19550 -[MENCIONA]-> Accionista
+10:34:34 [INFO]     Art_265_Ley_19550 -[AUTORIZA]-> AsambleaOrdinaria
+10:34:34 [INFO]     Art_265_Ley_19550 -[MENCIONA]-> Director
+10:34:34 [INFO]     Art_265_Ley_19550 -[MENCIONA]-> Gerente
+10:34:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:34:38 [INFO]   Guardado en Neo4j correctamente.
+10:34:38 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_324.txt
+10:34:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:34:53 [INFO]   Nodos extraídos    : 1
+10:34:53 [INFO]   Relaciones extraídas: 0
+10:34:53 [INFO]     [Articulo] Art_324_Ley_19550
+10:34:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:34:55 [INFO]   Guardado en Neo4j correctamente.
+10:34:55 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_187.txt
+10:34:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:35:18 [INFO]   Nodos extraídos    : 1
+10:35:18 [INFO]   Relaciones extraídas: 2
+10:35:18 [INFO]     [Articulo] Art_187_Ley_19550
+10:35:18 [INFO]     Art_187_Ley_19550 -[REGULA]-> SociedadAnonima
+10:35:18 [INFO]     Art_187_Ley_19550 -[REGULA]-> SociedadAnonimaUnipersonal
+10:35:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:35:21 [INFO]   Guardado en Neo4j correctamente.
+10:35:21 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_144.txt
+10:35:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:35:42 [INFO]   Nodos extraídos    : 1
+10:35:42 [INFO]   Relaciones extraídas: 1
+10:35:42 [INFO]     [Articulo] Art_144_Ley_19550
+10:35:42 [INFO]     Art_144_Ley_19550 -[REGULA]-> SociedadDeCapitalEIndustria
+10:35:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:35:45 [INFO]   Guardado en Neo4j correctamente.
+10:35:45 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_52.txt
+10:35:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:36:03 [INFO]   Nodos extraídos    : 1
+10:36:03 [INFO]   Relaciones extraídas: 0
+10:36:03 [INFO]     [Articulo] Art_52_Ley_19550
+10:36:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:36:05 [INFO]   Guardado en Neo4j correctamente.
+10:36:05 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_154.txt
+10:36:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:36:27 [INFO]   Nodos extraídos    : 1
+10:36:27 [INFO]   Relaciones extraídas: 1
+10:36:27 [INFO]     [Articulo] Art_154_Ley_19550
+10:36:27 [INFO]     Art_154_Ley_19550 -[REGULA]-> SociedadDeResponsabilidadLimitada
+10:36:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:36:30 [INFO]   Guardado en Neo4j correctamente.
+10:36:30 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_174.txt
+10:36:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:36:50 [INFO]   Nodos extraídos    : 1
+10:36:50 [INFO]   Relaciones extraídas: 1
+10:36:50 [INFO]     [Articulo] Art_174_Ley_19550
+10:36:50 [INFO]     Art_174_Ley_19550 -[REGULA]-> SociedadAnonima
+10:36:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:36:53 [INFO]   Guardado en Neo4j correctamente.
+10:36:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_317.txt
+10:36:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:37:13 [INFO]   Nodos extraídos    : 1
+10:37:13 [INFO]   Relaciones extraídas: 1
+10:37:13 [INFO]     [Articulo] Art_317_Ley_19550
+10:37:13 [INFO]     Art_317_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:37:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:37:15 [INFO]   Guardado en Neo4j correctamente.
+10:37:15 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_169.txt
+10:37:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:37:36 [INFO]   Nodos extraídos    : 1
+10:37:36 [INFO]   Relaciones extraídas: 1
+10:37:36 [INFO]     [Articulo] Art_169_Ley_19550
+10:37:36 [INFO]     Art_169_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:37:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:37:39 [INFO]   Guardado en Neo4j correctamente.
+10:37:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_247.txt
+10:37:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:38:02 [INFO]   Nodos extraídos    : 1
+10:38:02 [INFO]   Relaciones extraídas: 1
+10:38:02 [INFO]     [Articulo] Art_247_Ley_19550
+10:38:02 [INFO]     Art_247_Ley_19550 -[REGULA]-> AsambleaOrdinaria
+10:38:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:38:04 [INFO]   Guardado en Neo4j correctamente.
+10:38:04 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_193.txt
+10:38:04 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:38:24 [INFO]   Nodos extraídos    : 1
+10:38:24 [INFO]   Relaciones extraídas: 1
+10:38:24 [INFO]     [Articulo] Art_193_Ley_19550
+10:38:24 [INFO]     Art_193_Ley_19550 -[REGULA]-> SociedadAnonima
+10:38:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:38:27 [INFO]   Guardado en Neo4j correctamente.
+10:38:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_227.txt
+10:38:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:38:50 [INFO]   Nodos extraídos    : 1
+10:38:50 [INFO]   Relaciones extraídas: 3
+10:38:50 [INFO]     [Articulo] Art_227_Ley_19550
+10:38:50 [INFO]     Art_227_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:38:50 [INFO]     Art_227_Ley_19550 -[AUTORIZA]-> BonoDeGoce
+10:38:50 [INFO]     Art_227_Ley_19550 -[AUTORIZA]-> BonoDeParticipacion
+10:38:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:38:53 [INFO]   Guardado en Neo4j correctamente.
+10:38:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_312.txt
+10:38:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:39:12 [INFO]   Nodos extraídos    : 1
+10:39:12 [INFO]   Relaciones extraídas: 2
+10:39:12 [INFO]     [Articulo] Art_312_Ley_19550
+10:39:12 [INFO]     Art_312_Ley_19550 -[MENCIONA]-> SociedadAnonima
+10:39:12 [INFO]     Art_312_Ley_19550 -[MENCIONA]-> Art_308_Ley_19550
+10:39:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:39:15 [INFO]   Guardado en Neo4j correctamente.
+10:39:15 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_75.txt
+10:39:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:39:35 [INFO]   Nodos extraídos    : 1
+10:39:35 [INFO]   Relaciones extraídas: 2
+10:39:35 [INFO]     [Articulo] Art_75_Ley_19550
+10:39:35 [INFO]     Art_75_Ley_19550 -[REGULA]-> SociedadAnonima
+10:39:35 [INFO]     Art_75_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:39:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:39:38 [INFO]   Guardado en Neo4j correctamente.
+10:39:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_74.txt
+10:39:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:40:00 [WARNING]   Relación descartada (tipo no permitido): Art_74_Ley_19550 -[SociedadAnonima]-> SE_TRANSFORMA_EN
+10:40:00 [WARNING]   Relación descartada (tipo no permitido): Art_74_Ley_19550 -[SociedadEnComanditaPorAcciones]-> SE_TRANSFORMA_EN
+10:40:00 [INFO]   Nodos extraídos    : 1
+10:40:00 [INFO]   Relaciones extraídas: 0
+10:40:00 [INFO]     [Articulo] Art_74_Ley_19550
+10:40:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:40:02 [INFO]   Guardado en Neo4j correctamente.
+10:40:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_13.txt
+10:40:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:40:20 [INFO]   Nodos extraídos    : 1
+10:40:20 [INFO]   Relaciones extraídas: 0
+10:40:20 [INFO]     [Articulo] Art_13_Ley_19550
+10:40:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:40:23 [INFO]   Guardado en Neo4j correctamente.
+10:40:23 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_83.txt
+10:40:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:41:03 [INFO]   Nodos extraídos    : 1
+10:41:03 [INFO]   Relaciones extraídas: 2
+10:41:03 [INFO]     [Articulo] Art_83_Ley_19550
+10:41:03 [INFO]     Art_83_Ley_19550 -[REGULA]-> SociedadAnonima
+10:41:03 [INFO]     Art_83_Ley_19550 -[REGULA]-> SociedadEnComanditaPorAcciones
+10:41:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:41:06 [INFO]   Guardado en Neo4j correctamente.
+10:41:06 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_210.txt
+10:41:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:41:26 [INFO]   Nodos extraídos    : 1
+10:41:26 [INFO]   Relaciones extraídas: 1
+10:41:26 [INFO]     [Articulo] Art_210_Ley_19550
+10:41:26 [INFO]     Art_210_Ley_19550 -[REGULA]-> Accion
+10:41:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:41:28 [INFO]   Guardado en Neo4j correctamente.
+10:41:28 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_165.txt
+10:41:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:41:50 [INFO]   Nodos extraídos    : 1
+10:41:50 [INFO]   Relaciones extraídas: 1
+10:41:50 [INFO]     [Articulo] Art_165_Ley_19550
+10:41:50 [INFO]     Art_165_Ley_19550 -[REGULA]-> SociedadAnonima
+10:41:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:41:52 [INFO]   Guardado en Neo4j correctamente.
+10:41:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_38.txt
+10:41:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:42:14 [INFO]   Nodos extraídos    : 1
+10:42:14 [INFO]   Relaciones extraídas: 3
+10:42:14 [INFO]     [Articulo] Art_38_Ley_19550
+10:42:14 [INFO]     Art_38_Ley_19550 -[REGULA]-> AporteEnDinero
+10:42:14 [INFO]     Art_38_Ley_19550 -[REGULA]-> AporteEnEspecie
+10:42:14 [INFO]     Art_38_Ley_19550 -[REGULA]-> Socio
+10:42:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:42:17 [INFO]   Guardado en Neo4j correctamente.
+10:42:18 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_329.txt
+10:42:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:42:36 [INFO]   Nodos extraídos    : 1
+10:42:36 [INFO]   Relaciones extraídas: 0
+10:42:36 [INFO]     [Articulo] Art_329_Ley_19550
+10:42:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:42:39 [INFO]   Guardado en Neo4j correctamente.
+10:42:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_200.txt
+10:42:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:43:04 [INFO]   Nodos extraídos    : 1
+10:43:04 [INFO]   Relaciones extraídas: 5
+10:43:04 [INFO]     [Articulo] Art_200_Ley_19550
+10:43:04 [INFO]     Art_200_Ley_19550 -[REGULA]-> Director
+10:43:04 [INFO]     Art_200_Ley_19550 -[REGULA]-> ComisionFiscalizadora
+10:43:04 [INFO]     Art_200_Ley_19550 -[REGULA]-> Sindico
+10:43:04 [INFO]     Art_200_Ley_19550 -[REGULA]-> SociedadAnonima
+10:43:04 [INFO]     Art_200_Ley_19550 -[REGULA]-> Accionista
+10:43:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:43:07 [INFO]   Guardado en Neo4j correctamente.
+10:43:07 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_188.txt
+10:43:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+10:43:38 [INFO]   Nodos extraídos    : 1
+10:43:38 [INFO]   Relaciones extraídas: 1
+10:43:38 [INFO]     [Articulo] Art_188_Ley_19550
+10:43:38 [INFO]     Art_188_Ley_19550 -[REGULA]-> SociedadAnonima
+10:43:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+10:43:41 [INFO]   Guardado en Neo4j correctamente.
+10:43:41 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/Ley/articulos_lsc/Articulo_4.txt
+10:43:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"

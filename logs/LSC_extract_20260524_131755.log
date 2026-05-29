@@ -1,0 +1,2042 @@
+13:17:57 [INFO] Conexión a Neo4j establecida correctamente.
+13:17:57 [INFO] Nodo madre Ley_19550 creado/verificado en Neo4j.
+13:17:57 [INFO] Archivo de log: ./logs/LSC_extract_20260524_131755.log
+13:17:57 [INFO] Archivos encontrados: 359
+13:17:58 [INFO] SALTADO (ya existe): Art_232_Ley_19550
+13:17:58 [INFO] SALTADO (ya existe): Art_236_Ley_19550
+13:17:58 [INFO] SALTADO (ya existe): Art_127_Ley_19550
+13:17:58 [INFO] SALTADO (ya existe): Art_207_Ley_19550
+13:17:58 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_41.txt
+13:17:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:18:30 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:18:31 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:18:32 [INFO] SALTADO (ya existe): Art_175_Ley_19550
+13:18:32 [INFO] SALTADO (ya existe): Art_71_Ley_19550
+13:18:32 [INFO] SALTADO (ya existe): Art_36_Ley_19550
+13:18:32 [INFO] SALTADO (ya existe): Art_179_Ley_19550
+13:18:32 [INFO] SALTADO (ya existe): Art_295_Ley_19550
+13:18:33 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_302.txt
+13:18:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:19:10 [INFO]   Nodos extraídos    : 4
+13:19:10 [INFO]   Relaciones extraídas: 5
+13:19:10 [INFO]     [Articulo] Art_302_Ley_19550
+13:19:10 [INFO]     [Organismo] AUTORIDAD_DE_CONTROL
+13:19:10 [INFO]     [Organismo] PODER_EJECUTIVO
+13:19:10 [INFO]     [Organismo] MINISTERIO_DE_JUSTICIA
+13:19:10 [INFO]     Art_302_Ley_19550 -[APLICA_A]-> AUTORIDAD_DE_CONTROL
+13:19:10 [INFO]     Art_302_Ley_19550 -[EXIGE]-> AUTORIDAD_DE_CONTROL
+13:19:10 [INFO]     Art_302_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> AUTORIDAD_DE_CONTROL
+13:19:10 [INFO]     Art_302_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> PODER_EJECUTIVO
+13:19:10 [INFO]     Art_302_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> MINISTERIO_DE_JUSTICIA
+13:19:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:19:14 [INFO]   Guardado en Neo4j correctamente.
+13:19:14 [INFO] SALTADO (ya existe): Art_216_Ley_19550
+13:19:14 [INFO] SALTADO (ya existe): Art_64_Ley_19550
+13:19:15 [INFO] SALTADO (ya existe): Art_291_Ley_19550
+13:19:15 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_35.txt
+13:19:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:19:50 [INFO]   Nodos extraídos    : 1
+13:19:50 [INFO]   Relaciones extraídas: 2
+13:19:50 [INFO]     [Articulo] Art_35_Ley_19550
+13:19:50 [INFO]     Art_35_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_anterior_Ley_19550
+13:19:50 [INFO]     Art_35_Ley_19550 -[REMITE_A]-> Art_125_Ley_19550
+13:19:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:19:53 [INFO]   Guardado en Neo4j correctamente.
+13:19:53 [INFO] SALTADO (ya existe): Art_115_Ley_19550
+13:19:53 [INFO] SALTADO (ya existe): Art_177_Ley_19550
+13:19:54 [INFO] SALTADO (ya existe): Art_225_Ley_19550
+13:19:54 [INFO] SALTADO (ya existe): Art_354_Ley_19550
+13:19:54 [INFO] SALTADO (ya existe): Art_25_Ley_19550
+13:19:54 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_303.txt
+13:19:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:20:50 [INFO]   Nodos extraídos    : 9
+13:20:50 [INFO]   Relaciones extraídas: 8
+13:20:50 [INFO]     [Articulo] Art_303_Ley_19550
+13:20:50 [INFO]     [Organismo] AUTORIDAD_DE_CONTRALOR
+13:20:50 [INFO]     [Organismo] JUEZ_DEL_DOMICILIO_DE_LA_SOCIEDAD
+13:20:50 [INFO]     [ConceptoJuridico] SOCIEDAD
+13:20:50 [INFO]     [ConceptoJuridico] RESOLUCIONES_DE_SUS_ORGANOS
+13:20:50 [INFO]     [ConceptoJuridico] OFERTA_PUBLICA_DE_SUS_ACCIONES_O_DEBENTURES
+13:20:50 [INFO]     [ConceptoJuridico] OPERACIONES_DE_CAPITALIZACION_AHORRO
+13:20:50 [INFO]     [ConceptoJuridico] REQUERIR_DINERO_O_VALORES_AL_PUBLICO
+13:20:50 [INFO]     [ConceptoJuridico] DISOLUCION_Y_LIQUIDACION
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[REQUIERE_INTERVENCION_DE]-> JUEZ_DEL_DOMICILIO_DE_LA_SOCIEDAD
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[APLICA_A]-> SOCIEDAD
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[EXIGE]-> RESOLUCIONES_DE_SUS_ORGANOS
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[EXIGE]-> INTERVENCION_DE_SU_ADMINISTRACION
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[EXIGE]-> OFERTA_PUBLICA_DE_SUS_ACCIONES_O_DEBENTURES
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[EXIGE]-> OPERACIONES_DE_CAPITALIZACION_AHORRO
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[EXIGE]-> REQUERIR_DINERO_O_VALORES_AL_PUBLICO
+13:20:50 [INFO]     AUTORIDAD_DE_CONTRALOR -[EXIGE]-> DISOLUCION_Y_LIQUIDACION
+13:20:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:20:56 [INFO]   Guardado en Neo4j correctamente.
+13:20:56 [INFO] SALTADO (ya existe): Art_137_Ley_19550
+13:20:56 [INFO] SALTADO (ya existe): Art_320_Ley_19550
+13:20:57 [INFO] SALTADO (ya existe): Art_215_Ley_19550
+13:20:57 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_347.txt
+13:20:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:21:20 [INFO]   Nodos extraídos    : 1
+13:21:20 [INFO]   Relaciones extraídas: 0
+13:21:20 [INFO]     [Articulo] Art_347_Ley_19550
+13:21:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:21:22 [INFO]   Guardado en Neo4j correctamente.
+13:21:23 [INFO] SALTADO (ya existe): Art_243_Ley_19550
+13:21:23 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_306.txt
+13:21:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:21:44 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:21:45 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:21:46 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_184.txt
+13:21:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:22:26 [INFO]   Nodos extraídos    : 8
+13:22:26 [INFO]   Relaciones extraídas: 8
+13:22:26 [INFO]     [Articulo] Art_184_Ley_19550
+13:22:26 [INFO]     [Organismo] DIRECTORIO
+13:22:26 [INFO]     [Organismo] ASAMBLEA_ORDINARIA
+13:22:26 [INFO]     [SujetoDeDerecho] TERCEROS
+13:22:26 [INFO]     [SujetoDeDerecho] PROMOTORES
+13:22:26 [INFO]     [SujetoDeDerecho] FUNDADORES
+13:22:26 [INFO]     [SujetoDeDerecho] DIRECTORES
+13:22:26 [INFO]     [Articulo] ARTICULO_274
+13:22:26 [INFO]     Art_184_Ley_19550 -[EXIGE]-> DIRECTORES
+13:22:26 [INFO]     Art_184_Ley_19550 -[EXIGE]-> PROMOTORES
+13:22:26 [INFO]     Art_184_Ley_19550 -[EXIGE]-> FUNDADORES
+13:22:26 [INFO]     Art_184_Ley_19550 -[EXIGE]-> TERCEROS
+13:22:26 [INFO]     Art_184_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> DIRECTORIO
+13:22:26 [INFO]     Art_184_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ASAMBLEA_ORDINARIA
+13:22:26 [INFO]     Art_184_Ley_19550 -[SIENTA_PRECEDENTE_SOBRE]-> DIRECTORES
+13:22:26 [INFO]     Art_184_Ley_19550 -[REMITE_A]-> ARTICULO_274
+13:22:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:22:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:22:32 [INFO]   Guardado en Neo4j correctamente.
+13:22:33 [INFO] SALTADO (ya existe): Art_351_Ley_19550
+13:22:33 [INFO] SALTADO (ya existe): Art_46_Ley_19550
+13:22:33 [INFO] SALTADO (ya existe): Art_79_Ley_19550
+13:22:33 [INFO] SALTADO (ya existe): Art_81_Ley_19550
+13:22:33 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_195.txt
+13:22:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:23:05 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:23:05 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:23:07 [INFO] SALTADO (ya existe): Art_355_Ley_19550
+13:23:07 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_120.txt
+13:23:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:23:26 [INFO]   Nodos extraídos    : 1
+13:23:26 [INFO]   Relaciones extraídas: 0
+13:23:26 [INFO]     [Articulo] Art_120_Ley_19550
+13:23:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:23:29 [INFO]   Guardado en Neo4j correctamente.
+13:23:29 [INFO] SALTADO (ya existe): Art_315_Ley_19550
+13:23:29 [INFO] SALTADO (ya existe): Art_97_Ley_19550
+13:23:29 [INFO] SALTADO (ya existe): Art_92_Ley_19550
+13:23:30 [INFO] SALTADO (ya existe): Art_208_Ley_19550
+13:23:30 [INFO] SALTADO (ya existe): Art_318_Ley_19550
+13:23:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_235.txt
+13:23:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:23:58 [INFO]   Nodos extraídos    : 1
+13:23:58 [INFO]   Relaciones extraídas: 2
+13:23:58 [INFO]     [Articulo] Art_235_Ley_19550
+13:23:58 [INFO]     Art_235_Ley_19550 -[REMITE_A]-> Art_188_Ley_19550
+13:23:58 [INFO]     Art_235_Ley_19550 -[REMITE_A]-> Art_197_Ley_19550
+13:23:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:24:01 [INFO]   Guardado en Neo4j correctamente.
+13:24:01 [INFO] SALTADO (ya existe): Art_280_Ley_19550
+13:24:01 [INFO] SALTADO (ya existe): Art_156_Ley_19550
+13:24:01 [INFO] SALTADO (ya existe): Art_199_Ley_19550
+13:24:02 [INFO] SALTADO (ya existe): Art_245_Ley_19550
+13:24:02 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_130.txt
+13:24:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:24:34 [INFO]   Nodos extraídos    : 1
+13:24:34 [INFO]   Relaciones extraídas: 0
+13:24:34 [INFO]     [Articulo] Art_130_Ley_19550
+13:24:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:24:37 [INFO]   Guardado en Neo4j correctamente.
+13:24:37 [INFO] SALTADO (ya existe): Art_51_Ley_19550
+13:24:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_356.txt
+13:24:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:24:57 [INFO]   Nodos extraídos    : 1
+13:24:57 [INFO]   Relaciones extraídas: 0
+13:24:57 [INFO]     [Articulo] Art_356_Ley_19550
+13:24:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:24:59 [INFO]   Guardado en Neo4j correctamente.
+13:24:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_349.txt
+13:24:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:25:37 [INFO]   Nodos extraídos    : 4
+13:25:37 [INFO]   Relaciones extraídas: 3
+13:25:37 [INFO]     [Articulo] Art_349_Ley_19550
+13:25:37 [INFO]     [SujetoDeDerecho] FIDUCIARIO
+13:25:37 [INFO]     [ConceptoJuridico] CONCURSO
+13:25:37 [INFO]     [SujetoDeDerecho] SINDICO
+13:25:37 [INFO]     Art_349_Ley_19550 -[APLICA_A]-> FIDUCIARIO
+13:25:37 [INFO]     Art_349_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> CONCURSO
+13:25:37 [INFO]     Art_349_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> SINDICO
+13:25:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:25:41 [INFO]   Guardado en Neo4j correctamente.
+13:25:42 [INFO] SALTADO (ya existe): Art_288_Ley_19550
+13:25:42 [INFO] SALTADO (ya existe): Art_23_Ley_19550
+13:25:42 [INFO] SALTADO (ya existe): Art_256_Ley_19550
+13:25:42 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_170.txt
+13:25:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:26:05 [INFO]   Nodos extraídos    : 1
+13:26:05 [INFO]   Relaciones extraídas: 0
+13:26:05 [INFO]     [Articulo] Art_170_Ley_19550
+13:26:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:26:08 [INFO]   Guardado en Neo4j correctamente.
+13:26:08 [INFO] SALTADO (ya existe): Art_274_Ley_19550
+13:26:08 [INFO] SALTADO (ya existe): Art_337_Ley_19550
+13:26:08 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_14.txt
+13:26:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:26:37 [INFO]   Nodos extraídos    : 1
+13:26:37 [INFO]   Relaciones extraídas: 0
+13:26:37 [INFO]     [Articulo] Art_14_Ley_19550
+13:26:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:26:40 [INFO]   Guardado en Neo4j correctamente.
+13:26:40 [INFO] SALTADO (ya existe): Art_135_Ley_19550
+13:26:40 [INFO] SALTADO (ya existe): Art_323_Ley_19550
+13:26:40 [INFO] SALTADO (ya existe): Art_190_Ley_19550
+13:26:41 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_9.txt
+13:26:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:27:07 [INFO]   Nodos extraídos    : 1
+13:27:07 [INFO]   Relaciones extraídas: 0
+13:27:07 [INFO]     [Articulo] Art_9_Ley_19550
+13:27:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:27:10 [INFO]   Guardado en Neo4j correctamente.
+13:27:11 [INFO] SALTADO (ya existe): Art_132_Ley_19550
+13:27:11 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_345.txt
+13:27:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:27:44 [INFO]   Nodos extraídos    : 4
+13:27:44 [INFO]   Relaciones extraídas: 3
+13:27:44 [INFO]     [Articulo] Art_345_Ley_19550
+13:27:44 [INFO]     [SujetoDeDerecho] FIDUCIARIO
+13:27:44 [INFO]     [SujetoDeDerecho] SOCIEDAD_DEUDORA
+13:27:44 [INFO]     [ConceptoJuridico] DEBENTURES
+13:27:44 [INFO]     Art_345_Ley_19550 -[APLICA_A]-> FIDUCIARIO
+13:27:44 [INFO]     Art_345_Ley_19550 -[APLICA_A]-> SOCIEDAD_DEUDORA
+13:27:44 [INFO]     Art_345_Ley_19550 -[APLICA_A]-> DEBENTURES
+13:27:45 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:27:48 [INFO]   Guardado en Neo4j correctamente.
+13:27:49 [INFO] SALTADO (ya existe): Art_105_Ley_19550
+13:27:49 [INFO] SALTADO (ya existe): Art_229_Ley_19550
+13:27:49 [INFO] SALTADO (ya existe): Art_308_Ley_19550
+13:27:49 [INFO] SALTADO (ya existe): Art_340_Ley_19550
+13:27:49 [INFO] SALTADO (ya existe): Art_241_Ley_19550
+13:27:50 [INFO] SALTADO (ya existe): Art_240_Ley_19550
+13:27:50 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_47.txt
+13:27:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:28:13 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:28:14 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:28:16 [INFO] SALTADO (ya existe): Art_218_Ley_19550
+13:28:16 [INFO] SALTADO (ya existe): Art_203_Ley_19550
+13:28:16 [INFO] SALTADO (ya existe): Art_289_Ley_19550
+13:28:16 [INFO] SALTADO (ya existe): Art_331_Ley_19550
+13:28:16 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_24.txt
+13:28:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:28:42 [INFO]   Nodos extraídos    : 1
+13:28:42 [INFO]   Relaciones extraídas: 2
+13:28:42 [INFO]     [Articulo] Art_24_Ley_19550
+13:28:42 [INFO]     Art_24_Ley_19550 -[APLICA_A]-> SOCIOS
+13:28:42 [INFO]     Art_24_Ley_19550 -[APLICA_A]-> TERCEROS
+13:28:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:28:45 [INFO]   Guardado en Neo4j correctamente.
+13:28:46 [INFO] SALTADO (ya existe): Art_192_Ley_19550
+13:28:46 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_194.txt
+13:28:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:29:25 [INFO]   Nodos extraídos    : 1
+13:29:25 [INFO]   Relaciones extraídas: 4
+13:29:25 [INFO]     [Articulo] Art_194_Ley_19550
+13:29:25 [INFO]     Art_194_Ley_19550 -[EXCEPCIONA_A]-> Art_216_Ley_19550
+13:29:25 [INFO]     Art_194_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_250_Ley_19550
+13:29:25 [INFO]     Art_194_Ley_19550 -[APLICA_A]-> Art_299_Ley_19550
+13:29:25 [INFO]     Art_194_Ley_19550 -[EXCEPCIONA_A]-> Art_197_Ley_19550
+13:29:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:29:29 [INFO]   Guardado en Neo4j correctamente.
+13:29:29 [INFO] SALTADO (ya existe): Art_316_Ley_19550
+13:29:30 [INFO] SALTADO (ya existe): Art_139_Ley_19550
+13:29:30 [INFO] SALTADO (ya existe): Art_282_Ley_19550
+13:29:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_360.txt
+13:29:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:29:52 [INFO]   Nodos extraídos    : 1
+13:29:52 [INFO]   Relaciones extraídas: 1
+13:29:52 [INFO]     [Articulo] Art_360_Ley_19550
+13:29:52 [INFO]     Art_360_Ley_19550 -[APLICA_A]-> SOCIEDAD_CONSTITUIDA_EN_EL_EXTRANJERO
+13:29:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:29:55 [INFO]   Guardado en Neo4j correctamente.
+13:29:55 [INFO] SALTADO (ya existe): Art_133_Ley_19550
+13:29:55 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_304.txt
+13:29:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:30:16 [INFO]   Nodos extraídos    : 1
+13:30:16 [INFO]   Relaciones extraídas: 0
+13:30:16 [INFO]     [Articulo] Art_304_Ley_19550
+13:30:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:30:19 [INFO]   Guardado en Neo4j correctamente.
+13:30:19 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_162.txt
+13:30:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:30:52 [INFO]   Nodos extraídos    : 1
+13:30:52 [INFO]   Relaciones extraídas: 0
+13:30:52 [INFO]     [Articulo] Art_162_Ley_19550
+13:30:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:30:54 [INFO]   Guardado en Neo4j correctamente.
+13:30:55 [INFO] SALTADO (ya existe): Art_297_Ley_19550
+13:30:55 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_30.txt
+13:30:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:31:29 [INFO]   Nodos extraídos    : 1
+13:31:29 [INFO]   Relaciones extraídas: 0
+13:31:29 [INFO]     [Articulo] Art_30_Ley_19550
+13:31:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:31:32 [INFO]   Guardado en Neo4j correctamente.
+13:31:32 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_93.txt
+13:31:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:31:57 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:31:58 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:31:59 [INFO] SALTADO (ya existe): Art_78_Ley_19550
+13:31:59 [INFO] SALTADO (ya existe): Art_209_Ley_19550
+13:32:00 [INFO] SALTADO (ya existe): Art_37_Ley_19550
+13:32:00 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_153.txt
+13:32:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:32:28 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:32:29 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:32:30 [INFO] SALTADO (ya existe): Art_148_Ley_19550
+13:32:30 [INFO] SALTADO (ya existe): Art_305_Ley_19550
+13:32:30 [INFO] SALTADO (ya existe): Art_152_Ley_19550
+13:32:31 [INFO] SALTADO (ya existe): Art_119_Ley_19550
+13:32:31 [INFO] SALTADO (ya existe): Art_128_Ley_19550
+13:32:31 [INFO] SALTADO (ya existe): Art_217_Ley_19550
+13:32:31 [INFO] SALTADO (ya existe): Art_219_Ley_19550
+13:32:31 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_88.txt
+13:32:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:33:08 [INFO]   Nodos extraídos    : 1
+13:33:08 [INFO]   Relaciones extraídas: 4
+13:33:08 [INFO]     [Articulo] Art_88_Ley_19550
+13:33:08 [INFO]     Art_88_Ley_19550 -[REMITE_A]-> Art_83_Ley_19550
+13:33:08 [INFO]     Art_88_Ley_19550 -[REMITE_A]-> Art_84_Ley_19550
+13:33:08 [INFO]     Art_88_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_78_Ley_19550
+13:33:08 [INFO]     Art_88_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_79_Ley_19550
+13:33:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:33:11 [INFO]   Guardado en Neo4j correctamente.
+13:33:12 [INFO] SALTADO (ya existe): Art_268_Ley_19550
+13:33:12 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_298.txt
+13:33:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:33:40 [INFO]   Nodos extraídos    : 1
+13:33:40 [INFO]   Relaciones extraídas: 2
+13:33:40 [INFO]     [Articulo] Art_298_Ley_19550
+13:33:40 [INFO]     Art_298_Ley_19550 -[REMITE_A]-> Art_271_Ley_19550
+13:33:40 [INFO]     Art_298_Ley_19550 -[REMITE_A]-> Art_279_Ley_19550
+13:33:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:33:43 [INFO]   Guardado en Neo4j correctamente.
+13:33:44 [INFO] SALTADO (ya existe): Art_163_Ley_19550
+13:33:44 [INFO] SALTADO (ya existe): Art_121_Ley_19550
+13:33:44 [INFO] SALTADO (ya existe): Art_180_Ley_19550
+13:33:44 [INFO] SALTADO (ya existe): Art_123_Ley_19550
+13:33:44 [INFO] SALTADO (ya existe): Art_251_Ley_19550
+13:33:44 [INFO] SALTADO (ya existe): Art_164_Ley_19550
+13:33:45 [INFO] SALTADO (ya existe): Art_202_Ley_19550
+13:33:45 [INFO] SALTADO (ya existe): Art_213_Ley_19550
+13:33:45 [INFO] SALTADO (ya existe): Art_269_Ley_19550
+13:33:45 [INFO] SALTADO (ya existe): Art_106_Ley_19550
+13:33:45 [INFO] SALTADO (ya existe): Art_1_Ley_19550
+13:33:46 [INFO] SALTADO (ya existe): Art_266_Ley_19550
+13:33:46 [INFO] SALTADO (ya existe): Art_70_Ley_19550
+13:33:46 [INFO] SALTADO (ya existe): Art_234_Ley_19550
+13:33:46 [INFO] SALTADO (ya existe): Art_181_Ley_19550
+13:33:46 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_166.txt
+13:33:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:34:19 [INFO]   Nodos extraídos    : 1
+13:34:19 [INFO]   Relaciones extraídas: 0
+13:34:19 [INFO]     [Articulo] Art_166_Ley_19550
+13:34:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:34:21 [INFO]   Guardado en Neo4j correctamente.
+13:34:22 [INFO] SALTADO (ya existe): Art_248_Ley_19550
+13:34:22 [INFO] SALTADO (ya existe): Art_176_Ley_19550
+13:34:22 [INFO] SALTADO (ya existe): Art_48_Ley_19550
+13:34:22 [INFO] SALTADO (ya existe): Art_141_Ley_19550
+13:34:22 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_53.txt
+13:34:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:34:49 [INFO]   Nodos extraídos    : 2
+13:34:49 [INFO]   Relaciones extraídas: 1
+13:34:49 [INFO]     [Articulo] Art_53_Ley_19550
+13:34:49 [INFO]     [Organismo] AUTORIDAD_DE_CONTRALOR
+13:34:49 [INFO]     Art_53_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> AUTORIDAD_DE_CONTRALOR
+13:34:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:34:52 [INFO]   Guardado en Neo4j correctamente.
+13:34:52 [INFO] SALTADO (ya existe): Art_129_Ley_19550
+13:34:53 [INFO] SALTADO (ya existe): Art_76_Ley_19550
+13:34:53 [INFO] SALTADO (ya existe): Art_263_Ley_19550
+13:34:53 [INFO] SALTADO (ya existe): Art_86_Ley_19550
+13:34:53 [INFO] SALTADO (ya existe): Art_307_Ley_19550
+13:34:53 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_322.txt
+13:34:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:35:24 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:35:25 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:35:26 [INFO] SALTADO (ya existe): Art_7_Ley_19550
+13:35:27 [INFO] SALTADO (ya existe): Art_168_Ley_19550
+13:35:27 [INFO] SALTADO (ya existe): Art_211_Ley_19550
+13:35:27 [INFO] SALTADO (ya existe): Art_279_Ley_19550
+13:35:27 [INFO] SALTADO (ya existe): Art_113_Ley_19550
+13:35:27 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_359.txt
+13:35:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:35:50 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:35:51 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:35:52 [INFO] SALTADO (ya existe): Art_60_Ley_19550
+13:35:52 [INFO] SALTADO (ya existe): Art_253_Ley_19550
+13:35:52 [INFO] SALTADO (ya existe): Art_73_Ley_19550
+13:35:52 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_66.txt
+13:35:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:36:15 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:36:16 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:36:17 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_353.txt
+13:36:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:36:46 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:36:47 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:36:48 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_90.txt
+13:36:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:37:13 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:37:14 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:37:15 [INFO] SALTADO (ya existe): Art_21_Ley_19550
+13:37:15 [INFO] SALTADO (ya existe): Art_112_Ley_19550
+13:37:16 [INFO] SALTADO (ya existe): Art_277_Ley_19550
+13:37:16 [INFO] SALTADO (ya existe): Art_150_Ley_19550
+13:37:16 [INFO] SALTADO (ya existe): Art_204_Ley_19550
+13:37:16 [INFO] SALTADO (ya existe): Art_265_Ley_19550
+13:37:16 [INFO] SALTADO (ya existe): Art_324_Ley_19550
+13:37:17 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_187.txt
+13:37:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:37:38 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:37:38 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:37:40 [INFO] SALTADO (ya existe): Art_144_Ley_19550
+13:37:40 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_52.txt
+13:37:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:38:01 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:38:02 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:38:04 [INFO] SALTADO (ya existe): Art_154_Ley_19550
+13:38:04 [INFO] SALTADO (ya existe): Art_174_Ley_19550
+13:38:04 [INFO] SALTADO (ya existe): Art_317_Ley_19550
+13:38:04 [INFO] SALTADO (ya existe): Art_169_Ley_19550
+13:38:05 [INFO] SALTADO (ya existe): Art_247_Ley_19550
+13:38:05 [INFO] SALTADO (ya existe): Art_193_Ley_19550
+13:38:05 [INFO] SALTADO (ya existe): Art_227_Ley_19550
+13:38:05 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_312.txt
+13:38:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:38:33 [INFO]   Nodos extraídos    : 1
+13:38:33 [INFO]   Relaciones extraídas: 1
+13:38:33 [INFO]     [Articulo] Art_312_Ley_19550
+13:38:33 [INFO]     Art_312_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_308_Ley_19550
+13:38:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:38:36 [INFO]   Guardado en Neo4j correctamente.
+13:38:37 [INFO] SALTADO (ya existe): Art_75_Ley_19550
+13:38:37 [INFO] SALTADO (ya existe): Art_74_Ley_19550
+13:38:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_13.txt
+13:38:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:39:10 [INFO]   Nodos extraídos    : 1
+13:39:10 [INFO]   Relaciones extraídas: 0
+13:39:10 [INFO]     [Articulo] Art_13_Ley_19550
+13:39:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:39:13 [INFO]   Guardado en Neo4j correctamente.
+13:39:13 [INFO] SALTADO (ya existe): Art_83_Ley_19550
+13:39:14 [INFO] SALTADO (ya existe): Art_210_Ley_19550
+13:39:14 [INFO] SALTADO (ya existe): Art_165_Ley_19550
+13:39:14 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_38.txt
+13:39:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:39:41 [INFO]   Nodos extraídos    : 1
+13:39:41 [INFO]   Relaciones extraídas: 0
+13:39:41 [INFO]     [Articulo] Art_38_Ley_19550
+13:39:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:39:44 [INFO]   Guardado en Neo4j correctamente.
+13:39:44 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_329.txt
+13:39:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:40:15 [INFO]   Nodos extraídos    : 1
+13:40:15 [INFO]   Relaciones extraídas: 0
+13:40:15 [INFO]     [Articulo] Art_329_Ley_19550
+13:40:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:40:18 [INFO]   Guardado en Neo4j correctamente.
+13:40:18 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_200.txt
+13:40:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:40:58 [INFO]   Nodos extraídos    : 1
+13:40:58 [INFO]   Relaciones extraídas: 3
+13:40:58 [INFO]     [Articulo] Art_200_Ley_19550
+13:40:58 [INFO]     Art_200_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> DIRECTORES
+13:40:58 [INFO]     Art_200_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> MIEMBROS_DEL_CONSEJO_DE_VIGILANCIA
+13:40:58 [INFO]     Art_200_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> SINDICOS
+13:40:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:41:01 [INFO]   Guardado en Neo4j correctamente.
+13:41:02 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_188.txt
+13:41:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:41:35 [INFO]   Nodos extraídos    : 3
+13:41:35 [INFO]   Relaciones extraídas: 2
+13:41:35 [INFO]     [Articulo] Art_188_Ley_19550
+13:41:35 [INFO]     [Organismo] ASAMBLEA
+13:41:35 [INFO]     [Organismo] DIRECTORIO
+13:41:35 [INFO]     Art_188_Ley_19550 -[EXIGE]-> ASAMBLEA
+13:41:35 [INFO]     Art_188_Ley_19550 -[EXIGE]-> DIRECTORIO
+13:41:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:41:37 [INFO]   Guardado en Neo4j correctamente.
+13:41:38 [INFO] SALTADO (ya existe): Art_4_Ley_19550
+13:41:38 [INFO] SALTADO (ya existe): Art_96_Ley_19550
+13:41:38 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_145.txt
+13:41:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:42:07 [INFO]   Nodos extraídos    : 1
+13:42:07 [INFO]   Relaciones extraídas: 2
+13:42:07 [INFO]     [Articulo] Art_145_Ley_19550
+13:42:07 [INFO]     Art_145_Ley_19550 -[APLICA_A]-> Art_139_Ley_19550
+13:42:07 [INFO]     Art_145_Ley_19550 -[APLICA_A]-> Art_140_Ley_19550
+13:42:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:42:10 [INFO]   Guardado en Neo4j correctamente.
+13:42:10 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_328.txt
+13:42:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:42:40 [INFO]   Nodos extraídos    : 1
+13:42:40 [INFO]   Relaciones extraídas: 0
+13:42:40 [INFO]     [Articulo] Art_328_Ley_19550
+13:42:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:42:43 [INFO]   Guardado en Neo4j correctamente.
+13:42:43 [INFO] SALTADO (ya existe): Art_136_Ley_19550
+13:42:43 [INFO] SALTADO (ya existe): Art_22_Ley_19550
+13:42:43 [INFO] SALTADO (ya existe): Art_198_Ley_19550
+13:42:44 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_191.txt
+13:42:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:43:13 [INFO]   Nodos extraídos    : 1
+13:43:13 [INFO]   Relaciones extraídas: 0
+13:43:13 [INFO]     [Articulo] Art_191_Ley_19550
+13:43:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:43:16 [INFO]   Guardado en Neo4j correctamente.
+13:43:16 [INFO] SALTADO (ya existe): Art_309_Ley_19550
+13:43:16 [INFO] SALTADO (ya existe): Art_261_Ley_19550
+13:43:16 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_228.txt
+13:43:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:43:38 [INFO]   Nodos extraídos    : 1
+13:43:38 [INFO]   Relaciones extraídas: 0
+13:43:38 [INFO]     [Articulo] Art_228_Ley_19550
+13:43:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:43:40 [INFO]   Guardado en Neo4j correctamente.
+13:43:40 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_171.txt
+13:43:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:44:10 [INFO]   Nodos extraídos    : 1
+13:44:10 [INFO]   Relaciones extraídas: 0
+13:44:10 [INFO]     [Articulo] Art_171_Ley_19550
+13:44:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:44:12 [INFO]   Guardado en Neo4j correctamente.
+13:44:13 [INFO] SALTADO (ya existe): Art_257_Ley_19550
+13:44:13 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_72.txt
+13:44:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:44:57 [INFO]   Nodos extraídos    : 1
+13:44:57 [INFO]   Relaciones extraídas: 0
+13:44:57 [INFO]     [Articulo] Art_72_Ley_19550
+13:44:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:44:59 [INFO]   Guardado en Neo4j correctamente.
+13:45:00 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_80.txt
+13:45:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:45:27 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:45:28 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:45:29 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_94_bis.txt
+13:45:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:45:59 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:46:00 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:46:01 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_222.txt
+13:46:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:46:20 [INFO]   Nodos extraídos    : 1
+13:46:20 [INFO]   Relaciones extraídas: 0
+13:46:20 [INFO]     [Articulo] Art_222_Ley_19550
+13:46:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:46:23 [INFO]   Guardado en Neo4j correctamente.
+13:46:23 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_84.txt
+13:46:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:46:56 [INFO]   Nodos extraídos    : 3
+13:46:56 [INFO]   Relaciones extraídas: 2
+13:46:56 [INFO]     [Articulo] Art_84_Ley_19550
+13:46:56 [INFO]     [Organismo] ORGANISMO_ADMINISTRACION
+13:46:56 [INFO]     [Organismo] ORGANISMO_JUEZ_AUTORIDAD_REGISTRO
+13:46:56 [INFO]     Art_84_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ORGANISMO_ADMINISTRACION
+13:46:56 [INFO]     Art_84_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ORGANISMO_JUEZ_AUTORIDAD_REGISTRO
+13:46:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:46:59 [INFO]   Guardado en Neo4j correctamente.
+13:46:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_89.txt
+13:47:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:47:20 [INFO]   Nodos extraídos    : 1
+13:47:20 [INFO]   Relaciones extraídas: 0
+13:47:20 [INFO]     [Articulo] Art_89_Ley_19550
+13:47:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:47:23 [INFO]   Guardado en Neo4j correctamente.
+13:47:23 [INFO] SALTADO (ya existe): Art_258_Ley_19550
+13:47:24 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_327.txt
+13:47:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:47:49 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:47:49 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:47:51 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_350.txt
+13:47:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:48:25 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:48:26 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:48:27 [INFO] SALTADO (ya existe): Art_237_Ley_19550
+13:48:27 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_292.txt
+13:48:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:48:53 [INFO]   Nodos extraídos    : 1
+13:48:53 [INFO]   Relaciones extraídas: 0
+13:48:53 [INFO]     [Articulo] Art_292_Ley_19550
+13:48:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:48:56 [INFO]   Guardado en Neo4j correctamente.
+13:48:56 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_116.txt
+13:48:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:49:18 [INFO]   Nodos extraídos    : 1
+13:49:18 [INFO]   Relaciones extraídas: 0
+13:49:18 [INFO]     [Articulo] Art_116_Ley_19550
+13:49:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:49:21 [INFO]   Guardado en Neo4j correctamente.
+13:49:21 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_201.txt
+13:49:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:49:45 [INFO]   Nodos extraídos    : 1
+13:49:45 [INFO]   Relaciones extraídas: 0
+13:49:45 [INFO]     [Articulo] Art_201_Ley_19550
+13:49:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:49:48 [INFO]   Guardado en Neo4j correctamente.
+13:49:48 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_147.txt
+13:49:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:50:13 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:50:14 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:50:15 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_246.txt
+13:50:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:50:46 [INFO]   Nodos extraídos    : 1
+13:50:46 [INFO]   Relaciones extraídas: 0
+13:50:46 [INFO]     [Articulo] Art_246_Ley_19550
+13:50:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:50:49 [INFO]   Guardado en Neo4j correctamente.
+13:50:49 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_95.txt
+13:50:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:51:14 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:51:15 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:51:16 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_108.txt
+13:51:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:51:35 [INFO]   Nodos extraídos    : 1
+13:51:35 [INFO]   Relaciones extraídas: 0
+13:51:35 [INFO]     [Articulo] Art_108_Ley_19550
+13:51:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:51:38 [INFO]   Guardado en Neo4j correctamente.
+13:51:38 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_252.txt
+13:51:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:52:06 [INFO]   Nodos extraídos    : 3
+13:52:06 [INFO]   Relaciones extraídas: 2
+13:52:06 [INFO]     [Articulo] Art_252_Ley_19550
+13:52:06 [INFO]     [Organismo] JUEZ
+13:52:06 [INFO]     [ConceptoJuridico] SOCIEDAD
+13:52:06 [INFO]     Art_252_Ley_19550 -[APLICA_A]-> JUEZ
+13:52:06 [INFO]     Art_252_Ley_19550 -[APLICA_A]-> SOCIEDAD
+13:52:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:52:09 [INFO]   Guardado en Neo4j correctamente.
+13:52:09 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_155.txt
+13:52:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:52:30 [INFO]   Nodos extraídos    : 1
+13:52:30 [INFO]   Relaciones extraídas: 0
+13:52:30 [INFO]     [Articulo] Art_155_Ley_19550
+13:52:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:52:33 [INFO]   Guardado en Neo4j correctamente.
+13:52:33 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_77.txt
+13:52:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:53:06 [INFO]   Nodos extraídos    : 1
+13:53:06 [INFO]   Relaciones extraídas: 1
+13:53:06 [INFO]     [Articulo] Art_77_Ley_19550
+13:53:06 [INFO]     Art_77_Ley_19550 -[EXIGE]-> JUEZ_O_AUTORIDAD_A_CARGO_DEL_REGISTRO_PUBLICO_DE_COMERCIO
+13:53:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:53:09 [INFO]   Guardado en Neo4j correctamente.
+13:53:09 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_17.txt
+13:53:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:53:30 [INFO]   Nodos extraídos    : 1
+13:53:30 [INFO]   Relaciones extraídas: 1
+13:53:30 [INFO]     [Articulo] Art_17_Ley_19550
+13:53:30 [INFO]     Art_17_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_17_Ley_19550
+13:53:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:53:33 [INFO]   Guardado en Neo4j correctamente.
+13:53:33 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_54.txt
+13:53:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:53:58 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:53:59 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:54:00 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_99.txt
+13:54:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:54:30 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:54:31 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:54:32 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_206.txt
+13:54:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:54:54 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:54:55 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:54:56 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_158.txt
+13:54:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:55:22 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:55:23 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:55:24 [INFO] SALTADO (ya existe): Art_278_Ley_19550
+13:55:24 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_348.txt
+13:55:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:56:00 [INFO]   Nodos extraídos    : 5
+13:56:00 [INFO]   Relaciones extraídas: 4
+13:56:00 [INFO]     [Articulo] Art_348_Ley_19550
+13:56:00 [INFO]     [ConceptoJuridico] FIDUCIARIO
+13:56:00 [INFO]     [SujetoDeDerecho] DEBENTURISTAS
+13:56:00 [INFO]     [Organismo] JUEZ
+13:56:00 [INFO]     [SujetoDeDerecho] SOCIEDAD_DEUDORA
+13:56:00 [INFO]     Art_348_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> FIDUCIARIO
+13:56:00 [INFO]     Art_348_Ley_19550 -[APLICA_A]-> DEBENTURISTAS
+13:56:00 [INFO]     Art_348_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> JUEZ
+13:56:00 [INFO]     Art_348_Ley_19550 -[APLICA_A]-> SOCIEDAD_DEUDORA
+13:56:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:56:04 [INFO]   Guardado en Neo4j correctamente.
+13:56:05 [INFO] SALTADO (ya existe): Art_267_Ley_19550
+13:56:05 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_31.txt
+13:56:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:56:33 [INFO]   Nodos extraídos    : 1
+13:56:33 [INFO]   Relaciones extraídas: 3
+13:56:33 [INFO]     [Articulo] Art_31_Ley_19550
+13:56:33 [INFO]     Art_31_Ley_19550 -[APLICA_A]-> ORGANISMO
+13:56:33 [INFO]     Art_31_Ley_19550 -[APLICA_A]-> ORGANISMO
+13:56:33 [INFO]     Art_31_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ORGANISMO
+13:56:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:56:36 [INFO]   Guardado en Neo4j correctamente.
+13:56:36 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_325.txt
+13:56:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:57:04 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:57:05 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:57:06 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_102.txt
+13:57:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:57:32 [INFO]   Nodos extraídos    : 1
+13:57:32 [INFO]   Relaciones extraídas: 3
+13:57:32 [INFO]     [Articulo] Art_102_Ley_19550
+13:57:32 [INFO]     Art_102_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> JUEZ
+13:57:32 [INFO]     Art_102_Ley_19550 -[APLICA_A]-> SOCIO
+13:57:32 [INFO]     Art_102_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> REGISTRO_PUBLICO_DE_COMERCIO
+13:57:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:57:35 [INFO]   Guardado en Neo4j correctamente.
+13:57:35 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_107.txt
+13:57:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:57:57 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:57:58 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:57:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_126.txt
+13:57:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:58:19 [INFO]   Nodos extraídos    : 1
+13:58:19 [INFO]   Relaciones extraídas: 0
+13:58:19 [INFO]     [Articulo] Art_126_Ley_19550
+13:58:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:58:21 [INFO]   Guardado en Neo4j correctamente.
+13:58:21 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_301.txt
+13:58:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:58:55 [INFO]   Nodos extraídos    : 1
+13:58:55 [INFO]   Relaciones extraídas: 3
+13:58:55 [INFO]     [Articulo] Art_301_Ley_19550
+13:58:55 [INFO]     Art_301_Ley_19550 -[APLICA_A]-> AUTORIDAD_DE_CONTRALOR
+13:58:55 [INFO]     Art_301_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ACCIONISTAS
+13:58:55 [INFO]     Art_301_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> SINDICO
+13:58:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:58:58 [INFO]   Guardado en Neo4j correctamente.
+13:58:58 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_69.txt
+13:58:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:59:19 [INFO]   Nodos extraídos    : 1
+13:59:19 [INFO]   Relaciones extraídas: 0
+13:59:19 [INFO]     [Articulo] Art_69_Ley_19550
+13:59:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+13:59:22 [INFO]   Guardado en Neo4j correctamente.
+13:59:22 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_223.txt
+13:59:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+13:59:45 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+13:59:46 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+13:59:47 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_159.txt
+13:59:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:00:13 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:00:13 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:00:15 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_19.txt
+14:00:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:00:46 [INFO]   Nodos extraídos    : 1
+14:00:46 [INFO]   Relaciones extraídas: 1
+14:00:46 [INFO]     [Articulo] Art_19_Ley_19550
+14:00:46 [INFO]     Art_19_Ley_19550 -[REMITE_A]-> Art_18_Ley_19550
+14:00:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:00:49 [INFO]   Guardado en Neo4j correctamente.
+14:00:49 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_254.txt
+14:00:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:01:21 [INFO]   Nodos extraídos    : 1
+14:01:21 [INFO]   Relaciones extraídas: 4
+14:01:21 [INFO]     [Articulo] Art_254_Ley_19550
+14:01:21 [INFO]     Art_254_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ACCIONISTAS
+14:01:21 [INFO]     Art_254_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> DIRECTORES
+14:01:21 [INFO]     Art_254_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> SINDICOS
+14:01:21 [INFO]     Art_254_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> CONSEJO_DE_VIGILANCIA
+14:01:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:01:25 [INFO]   Guardado en Neo4j correctamente.
+14:01:25 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_28.txt
+14:01:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:01:52 [INFO]   Nodos extraídos    : 1
+14:01:52 [INFO]   Relaciones extraídas: 1
+14:01:52 [INFO]     [Articulo] Art_28_Ley_19550
+14:01:52 [INFO]     Art_28_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> JUEZ_DE_LA_SUCESION
+14:01:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:01:55 [INFO]   Guardado en Neo4j correctamente.
+14:01:55 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_173.txt
+14:01:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:02:20 [INFO]   Nodos extraídos    : 1
+14:02:20 [INFO]   Relaciones extraídas: 0
+14:02:20 [INFO]     [Articulo] Art_173_Ley_19550
+14:02:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:02:23 [INFO]   Guardado en Neo4j correctamente.
+14:02:23 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_197.txt
+14:02:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:02:51 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:02:52 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:02:53 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_42.txt
+14:02:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:03:16 [INFO]   Nodos extraídos    : 1
+14:03:16 [INFO]   Relaciones extraídas: 0
+14:03:16 [INFO]     [Articulo] Art_42_Ley_19550
+14:03:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:03:18 [INFO]   Guardado en Neo4j correctamente.
+14:03:19 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_134.txt
+14:03:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:03:47 [INFO]   Nodos extraídos    : 1
+14:03:47 [INFO]   Relaciones extraídas: 5
+14:03:47 [INFO]     [Articulo] Art_134_Ley_19550
+14:03:47 [INFO]     Art_134_Ley_19550 -[APLICA_A]-> ConceptoJuridico
+14:03:47 [INFO]     Art_134_Ley_19550 -[APLICA_A]-> ConceptoJuridico
+14:03:47 [INFO]     Art_134_Ley_19550 -[APLICA_A]-> ConceptoJuridico
+14:03:47 [INFO]     Art_134_Ley_19550 -[APLICA_A]-> ConceptoJuridico
+14:03:47 [INFO]     Art_134_Ley_19550 -[REMITE_A]-> Art_126_Ley_19550
+14:03:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:03:50 [INFO]   Guardado en Neo4j correctamente.
+14:03:50 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_8.txt
+14:03:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:04:18 [INFO]   Nodos extraídos    : 3
+14:04:18 [INFO]   Relaciones extraídas: 2
+14:04:18 [INFO]     [Articulo] Art_8_Ley_19550
+14:04:18 [INFO]     [Organismo] MINISTERIO_DE_JUSTICIA_Y_DERECHOS_HUMANOS
+14:04:18 [INFO]     [Organismo] MINISTERIO_DE_MODERNIZACION
+14:04:18 [INFO]     Art_8_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> MINISTERIO_DE_JUSTICIA_Y_DERECHOS_HUMANOS
+14:04:18 [INFO]     Art_8_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> MINISTERIO_DE_MODERNIZACION
+14:04:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:04:21 [INFO]   Guardado en Neo4j correctamente.
+14:04:21 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_186.txt
+14:04:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:04:46 [INFO]   Nodos extraídos    : 1
+14:04:46 [INFO]   Relaciones extraídas: 0
+14:04:46 [INFO]     [Articulo] Art_186_Ley_19550
+14:04:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:04:49 [INFO]   Guardado en Neo4j correctamente.
+14:04:49 [INFO] SALTADO (ya existe): Art_286_Ley_19550
+14:04:49 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_45.txt
+14:04:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:05:18 [INFO]   Nodos extraídos    : 1
+14:05:18 [INFO]   Relaciones extraídas: 0
+14:05:18 [INFO]     [Articulo] Art_45_Ley_19550
+14:05:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:05:21 [INFO]   Guardado en Neo4j correctamente.
+14:05:21 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_61.txt
+14:05:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:05:55 [INFO]   Nodos extraídos    : 2
+14:05:55 [INFO]   Relaciones extraídas: 1
+14:05:55 [INFO]     [Articulo] Art_61_Ley_19550
+14:05:55 [INFO]     [Organismo] CNV
+14:05:55 [INFO]     Art_61_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> CNV
+14:05:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:05:58 [INFO]   Guardado en Neo4j correctamente.
+14:05:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_357.txt
+14:05:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:06:19 [INFO]   Nodos extraídos    : 1
+14:06:19 [INFO]   Relaciones extraídas: 0
+14:06:19 [INFO]     [Articulo] Art_357_Ley_19550
+14:06:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:06:21 [INFO]   Guardado en Neo4j correctamente.
+14:06:22 [INFO] SALTADO (ya existe): Art_276_Ley_19550
+14:06:22 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_294.txt
+14:06:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:06:49 [INFO]   Nodos extraídos    : 1
+14:06:49 [INFO]   Relaciones extraídas: 1
+14:06:49 [INFO]     [Articulo] Art_294_Ley_19550
+14:06:49 [INFO]     Art_294_Ley_19550 -[APLICA_A]-> SINDICO
+14:06:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:06:51 [INFO]   Guardado en Neo4j correctamente.
+14:06:52 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_196.txt
+14:06:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:07:15 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:07:16 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:07:17 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_300.txt
+14:07:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:07:56 [INFO]   Nodos extraídos    : 7
+14:07:56 [INFO]   Relaciones extraídas: 6
+14:07:56 [INFO]     [Articulo] Art_300_Ley_19550
+14:07:56 [INFO]     [Organismo] AUTORIDAD_DE_CONTRALOR
+14:07:56 [INFO]     [ConceptoJuridico] SOCIEDADES_ANONIMAS
+14:07:56 [INFO]     [ConceptoJuridico] CONTRATO_CONSTITUTIVO
+14:07:56 [INFO]     [Articulo] ARTICULO_299
+14:07:56 [INFO]     [Articulo] ARTICULO_53
+14:07:56 [INFO]     [Articulo] ARTICULO_167
+14:07:56 [INFO]     Art_300_Ley_19550 -[APLICA_A]-> AUTORIDAD_DE_CONTRALOR
+14:07:56 [INFO]     Art_300_Ley_19550 -[APLICA_A]-> SOCIEDADES_ANONIMAS
+14:07:56 [INFO]     Art_300_Ley_19550 -[APLICA_A]-> CONTRATO_CONSTITUTIVO
+14:07:56 [INFO]     Art_300_Ley_19550 -[EXCLUYE_A]-> ARTICULO_299
+14:07:56 [INFO]     Art_300_Ley_19550 -[APLICA_A]-> ARTICULO_53
+14:07:56 [INFO]     Art_300_Ley_19550 -[APLICA_A]-> ARTICULO_167
+14:07:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:08:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:08:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:08:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:08:04 [INFO]   Guardado en Neo4j correctamente.
+14:08:04 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_55.txt
+14:08:04 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:08:28 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:08:29 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:08:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_91.txt
+14:08:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:09:05 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:09:06 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:09:08 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_281.txt
+14:09:08 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:09:35 [INFO]   Nodos extraídos    : 1
+14:09:35 [INFO]   Relaciones extraídas: 1
+14:09:35 [INFO]     [Articulo] Art_281_Ley_19550
+14:09:35 [INFO]     Art_281_Ley_19550 -[APLICA_A]-> CONTIENE
+14:09:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:09:38 [INFO]   Guardado en Neo4j correctamente.
+14:09:38 [INFO] SALTADO (ya existe): Art_131_Ley_19550
+14:09:38 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_124.txt
+14:09:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:10:05 [INFO]   Nodos extraídos    : 1
+14:10:05 [INFO]   Relaciones extraídas: 0
+14:10:05 [INFO]     [Articulo] Art_124_Ley_19550
+14:10:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:10:08 [INFO]   Guardado en Neo4j correctamente.
+14:10:08 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_143.txt
+14:10:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:10:30 [INFO]   Nodos extraídos    : 1
+14:10:30 [INFO]   Relaciones extraídas: 0
+14:10:30 [INFO]     [Articulo] Art_143_Ley_19550
+14:10:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:10:32 [INFO]   Guardado en Neo4j correctamente.
+14:10:32 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_29.txt
+14:10:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:10:59 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:10:59 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:11:01 [INFO] SALTADO (ya existe): Art_58_Ley_19550
+14:11:01 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_238.txt
+14:11:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:11:42 [INFO]   Nodos extraídos    : 5
+14:11:42 [INFO]   Relaciones extraídas: 4
+14:11:42 [INFO]     [Articulo] Art_238_Ley_19550
+14:11:42 [INFO]     [SujetoDeDerecho] ACCIONISTA
+14:11:42 [INFO]     [SujetoDeDerecho] SOCIEDAD
+14:11:42 [INFO]     [Organismo] BANCO_O_INSTITUCION_AUTORIZADA
+14:11:42 [INFO]     [Organismo] AUTORIDAD_DE_CONTRALOR
+14:11:42 [INFO]     Art_238_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ACCIONISTA
+14:11:42 [INFO]     Art_238_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> SOCIEDAD
+14:11:42 [INFO]     Art_238_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> BANCO_O_INSTITUCION_AUTORIZADA
+14:11:42 [INFO]     Art_238_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> AUTORIDAD_DE_CONTRALOR
+14:11:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:11:46 [INFO]   Guardado en Neo4j correctamente.
+14:11:46 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_336.txt
+14:11:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:12:09 [INFO]   Nodos extraídos    : 1
+14:12:09 [INFO]   Relaciones extraídas: 0
+14:12:09 [INFO]     [Articulo] Art_336_Ley_19550
+14:12:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:12:12 [INFO]   Guardado en Neo4j correctamente.
+14:12:12 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_224.txt
+14:12:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:12:39 [INFO]   Nodos extraídos    : 1
+14:12:39 [INFO]   Relaciones extraídas: 1
+14:12:39 [INFO]     [Articulo] Art_224_Ley_19550
+14:12:39 [INFO]     Art_224_Ley_19550 -[APLICA_A]-> ACCIONISTAS
+14:12:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:12:42 [INFO]   Guardado en Neo4j correctamente.
+14:12:43 [INFO] SALTADO (ya existe): Art_275_Ley_19550
+14:12:43 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_26.txt
+14:12:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:13:08 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:13:09 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:13:11 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_338.txt
+14:13:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:13:36 [INFO]   Nodos extraídos    : 1
+14:13:36 [INFO]   Relaciones extraídas: 1
+14:13:36 [INFO]     [Articulo] Art_338_Ley_19550
+14:13:36 [INFO]     Art_338_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> BANCO
+14:13:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:13:39 [INFO]   Guardado en Neo4j correctamente.
+14:13:39 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_242.txt
+14:13:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:14:03 [INFO]   Nodos extraídos    : 1
+14:14:03 [INFO]   Relaciones extraídas: 0
+14:14:03 [INFO]     [Articulo] Art_242_Ley_19550
+14:14:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:14:06 [INFO]   Guardado en Neo4j correctamente.
+14:14:06 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_62.txt
+14:14:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:14:34 [INFO]   Nodos extraídos    : 2
+14:14:34 [INFO]   Relaciones extraídas: 1
+14:14:34 [INFO]     [Articulo] Art_62_Ley_19550
+14:14:34 [INFO]     [Organismo] CNV
+14:14:34 [INFO]     Art_62_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> CNV
+14:14:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:14:37 [INFO]   Guardado en Neo4j correctamente.
+14:14:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_50.txt
+14:14:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:15:28 [INFO]   Nodos extraídos    : 9
+14:15:28 [INFO]   Relaciones extraídas: 10
+14:15:28 [INFO]     [Articulo] Art_50_Ley_19550
+14:15:28 [INFO]     [SujetoDeDerecho] SOCIO
+14:15:28 [INFO]     [ConceptoJuridico] PRESTACIONES_ACCESORIAS
+14:15:28 [INFO]     [ConceptoJuridico] SOCIEDAD
+14:15:28 [INFO]     [ConceptoJuridico] CAPITAL
+14:15:28 [INFO]     [ConceptoJuridico] CONTRATO
+14:15:28 [INFO]     [ConceptoJuridico] SOCIETADES_DE_RESPONSABILIDAD_LIMITADA
+14:15:28 [INFO]     [ConceptoJuridico] ACCIONES
+14:15:28 [INFO]     [Organismo] DIRECTORIO
+14:15:28 [INFO]     Art_50_Ley_19550 -[APLICA_A]-> SOCIO
+14:15:28 [INFO]     Art_50_Ley_19550 -[APLICA_A]-> PRESTACIONES_ACCESORIAS
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[APLICA_A]-> SOCIEDAD
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[EXCLUYE_A]-> CAPITAL
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[REQUIERE_INTERVENCION_DE]-> CONTRATO
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[REQUIERE_INTERVENCION_DE]-> SOCIO
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[REQUIERE_INTERVENCION_DE]-> CONTRATO
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[REQUIERE_INTERVENCION_DE]-> SOCIO
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[APLICA_A]-> SOCIEDADES_DE_RESPONSABILIDAD_LIMITADA
+14:15:28 [INFO]     PRESTACIONES_ACCESORIAS -[APLICA_A]-> ACCIONES
+14:15:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:15:34 [INFO]   Guardado en Neo4j correctamente.
+14:15:34 [INFO] SALTADO (ya existe): Art_273_Ley_19550
+14:15:34 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_43.txt
+14:15:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:15:56 [INFO]   Nodos extraídos    : 1
+14:15:56 [INFO]   Relaciones extraídas: 0
+14:15:56 [INFO]     [Articulo] Art_43_Ley_19550
+14:15:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:15:59 [INFO]   Guardado en Neo4j correctamente.
+14:15:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_5.txt
+14:16:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:16:20 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:16:21 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:16:23 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_333.txt
+14:16:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:16:46 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:16:46 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:16:48 [INFO] SALTADO (ya existe): Art_262_Ley_19550
+14:16:48 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_250.txt
+14:16:48 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:17:08 [INFO]   Nodos extraídos    : 1
+14:17:08 [INFO]   Relaciones extraídas: 0
+14:17:08 [INFO]     [Articulo] Art_250_Ley_19550
+14:17:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:17:10 [INFO]   Guardado en Neo4j correctamente.
+14:17:10 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_310.txt
+14:17:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:17:45 [INFO]   Nodos extraídos    : 1
+14:17:45 [INFO]   Relaciones extraídas: 1
+14:17:45 [INFO]     [Articulo] Art_310_Ley_19550
+14:17:45 [INFO]     Art_310_Ley_19550 -[REMITE_A]-> Art_264_Ley_19550
+14:17:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:17:48 [INFO]   Guardado en Neo4j correctamente.
+14:17:48 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_34.txt
+14:17:48 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:18:10 [INFO]   Nodos extraídos    : 1
+14:18:10 [INFO]   Relaciones extraídas: 0
+14:18:10 [INFO]     [Articulo] Art_34_Ley_19550
+14:18:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:18:13 [INFO]   Guardado en Neo4j correctamente.
+14:18:13 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_239.txt
+14:18:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:18:43 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:18:44 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:18:45 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_358.txt
+14:18:45 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:19:12 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:19:13 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:19:14 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_283.txt
+14:19:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:19:42 [INFO]   Nodos extraídos    : 1
+14:19:42 [INFO]   Relaciones extraídas: 1
+14:19:42 [INFO]     [Articulo] Art_283_Ley_19550
+14:19:42 [INFO]     Art_283_Ley_19550 -[EXCLUYE_A]-> Art_284_Ley_19550
+14:19:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:19:45 [INFO]   Guardado en Neo4j correctamente.
+14:19:45 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_98.txt
+14:19:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:20:10 [INFO]   Nodos extraídos    : 1
+14:20:10 [INFO]   Relaciones extraídas: 0
+14:20:10 [INFO]     [Articulo] Art_98_Ley_19550
+14:20:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:20:12 [INFO]   Guardado en Neo4j correctamente.
+14:20:12 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_140.txt
+14:20:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:20:54 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:20:55 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:20:56 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_151.txt
+14:20:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:21:27 [INFO]   Nodos extraídos    : 1
+14:21:27 [INFO]   Relaciones extraídas: 0
+14:21:27 [INFO]     [Articulo] Art_151_Ley_19550
+14:21:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:21:30 [INFO]   Guardado en Neo4j correctamente.
+14:21:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_339.txt
+14:21:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:22:01 [INFO]   Nodos extraídos    : 1
+14:22:01 [INFO]   Relaciones extraídas: 3
+14:22:01 [INFO]     [Articulo] Art_339_Ley_19550
+14:22:01 [INFO]     Art_339_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> BANCO_FIDUCIARIO
+14:22:01 [INFO]     Art_339_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> REGISTRO_PUBLICO_DE_COMERCIO
+14:22:01 [INFO]     Art_339_Ley_19550 -[REMITE_A]-> AUTORIDAD_DE_CONTRALOR
+14:22:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:22:04 [INFO]   Guardado en Neo4j correctamente.
+14:22:04 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_319.txt
+14:22:04 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:22:29 [INFO]   Nodos extraídos    : 1
+14:22:29 [INFO]   Relaciones extraídas: 1
+14:22:29 [INFO]     [Articulo] Art_319_Ley_19550
+14:22:29 [INFO]     Art_319_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_129_Ley_19550
+14:22:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:22:31 [INFO]   Guardado en Neo4j correctamente.
+14:22:32 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_326.txt
+14:22:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:22:53 [INFO]   Nodos extraídos    : 1
+14:22:53 [INFO]   Relaciones extraídas: 0
+14:22:53 [INFO]     [Articulo] Art_326_Ley_19550
+14:22:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:22:56 [INFO]   Guardado en Neo4j correctamente.
+14:22:56 [INFO] SALTADO (ya existe): Art_12_Ley_19550
+14:22:56 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_149.txt
+14:22:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:23:26 [INFO]   Nodos extraídos    : 1
+14:23:26 [INFO]   Relaciones extraídas: 3
+14:23:26 [INFO]     [Articulo] Art_149_Ley_19550
+14:23:26 [INFO]     Art_149_Ley_19550 -[Registro Público de Comercio]-> REQUIERE_INTERVENCION_DE
+14:23:26 [INFO]     Art_149_Ley_19550 -[Art_51_Ley_19550]-> REMITE_A
+14:23:26 [INFO]     Art_149_Ley_19550 -[Art_150_Ley_19550]-> REMITE_A
+14:23:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:23:28 [ERROR]   FALLO guardado Neo4j: {neo4j_code: Neo.ClientError.Statement.SyntaxError} {message: Invalid input 'Público': expected a parameter, '&', '*', ':', 'WHERE', ']', '{' or '|' (line 4, column 35 (offset: 104))
+"            MERGE (a)-[r:Registro Público de Comercio]->(b)"
+                                   ^} {gql_status: 42001} {gql_status_description: error: syntax error or access rule violation - invalid syntax}
+14:23:29 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:23:29 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_293.txt
+14:23:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:23:48 [INFO]   Nodos extraídos    : 1
+14:23:48 [INFO]   Relaciones extraídas: 0
+14:23:48 [INFO]     [Articulo] Art_293_Ley_19550
+14:23:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:23:51 [INFO]   Guardado en Neo4j correctamente.
+14:23:51 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_146.txt
+14:23:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:24:14 [INFO]   Nodos extraídos    : 1
+14:24:14 [INFO]   Relaciones extraídas: 0
+14:24:14 [INFO]     [Articulo] Art_146_Ley_19550
+14:24:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:24:17 [INFO]   Guardado en Neo4j correctamente.
+14:24:17 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_18.txt
+14:24:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:25:02 [INFO]   Nodos extraídos    : 6
+14:25:02 [INFO]   Relaciones extraídas: 6
+14:25:02 [INFO]     [Articulo] Art_18_Ley_19550
+14:25:02 [INFO]     [SujetoDeDerecho] TERCEROS_DE_BUENA_FE
+14:25:02 [INFO]     [SujetoDeDerecho] SOCIOS
+14:25:02 [INFO]     [SujetoDeDerecho] ADMINISTRADORES
+14:25:02 [INFO]     [Organismo] JUEZ
+14:25:02 [INFO]     [ConceptoJuridico] PATRIMONIO_ESTATAL
+14:25:02 [INFO]     Art_18_Ley_19550 -[APLICA_A]-> SOCIOS
+14:25:02 [INFO]     Art_18_Ley_19550 -[APLICA_A]-> TERCEROS_DE_BUENA_FE
+14:25:02 [INFO]     Art_18_Ley_19550 -[EXIGE]-> SOCIOS
+14:25:02 [INFO]     Art_18_Ley_19550 -[APLICA_A]-> ADMINISTRADORES
+14:25:02 [INFO]     Art_18_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> JUEZ
+14:25:02 [INFO]     Art_18_Ley_19550 -[APLICA_A]-> SOCIOS
+14:25:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:25:07 [INFO]   Guardado en Neo4j correctamente.
+14:25:07 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_56.txt
+14:25:08 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:25:38 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:25:39 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:25:40 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_270.txt
+14:25:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:26:06 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:26:07 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:26:08 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_82.txt
+14:26:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:26:35 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:26:35 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:26:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_57.txt
+14:26:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:27:09 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:27:10 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:27:11 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_178.txt
+14:27:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:27:34 [INFO]   Nodos extraídos    : 1
+14:27:34 [INFO]   Relaciones extraídas: 0
+14:27:34 [INFO]     [Articulo] Art_178_Ley_19550
+14:27:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:27:37 [INFO]   Guardado en Neo4j correctamente.
+14:27:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_255.txt
+14:27:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:28:08 [INFO]   Nodos extraídos    : 1
+14:28:08 [INFO]   Relaciones extraídas: 2
+14:28:08 [INFO]     [Articulo] Art_255_Ley_19550
+14:28:08 [INFO]     Art_255_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ASAMBLEA_DE_ACCIONISTAS
+14:28:08 [INFO]     Art_255_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> CONSEJO_DE_VIGILANCIA
+14:28:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:28:11 [INFO]   Guardado en Neo4j correctamente.
+14:28:12 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_311.txt
+14:28:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:28:42 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:28:43 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:28:44 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_101.txt
+14:28:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:29:03 [INFO]   Nodos extraídos    : 1
+14:29:03 [INFO]   Relaciones extraídas: 0
+14:29:03 [INFO]     [Articulo] Art_101_Ley_19550
+14:29:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:29:06 [INFO]   Guardado en Neo4j correctamente.
+14:29:06 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_142.txt
+14:29:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:29:27 [INFO]   Nodos extraídos    : 1
+14:29:27 [INFO]   Relaciones extraídas: 0
+14:29:27 [INFO]     [Articulo] Art_142_Ley_19550
+14:29:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:29:30 [INFO]   Guardado en Neo4j correctamente.
+14:29:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_6.txt
+14:29:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:29:52 [INFO]   Nodos extraídos    : 1
+14:29:52 [INFO]   Relaciones extraídas: 3
+14:29:52 [INFO]     [Articulo] Art_6_Ley_19550
+14:29:52 [INFO]     Art_6_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ORGANISMO
+14:29:52 [INFO]     Art_6_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> ORGANISMO
+14:29:52 [INFO]     Art_6_Ley_19550 -[APLICA_A]-> SOCIOS
+14:29:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:29:54 [INFO]   Guardado en Neo4j correctamente.
+14:29:55 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_59.txt
+14:29:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:30:17 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:30:18 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:30:19 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_104.txt
+14:30:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:30:50 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:30:51 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:30:53 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_221.txt
+14:30:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:31:19 [INFO]   Nodos extraídos    : 1
+14:31:19 [INFO]   Relaciones extraídas: 1
+14:31:19 [INFO]     [Articulo] Art_221_Ley_19550
+14:31:19 [INFO]     Art_221_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_194_Ley_19550
+14:31:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:31:22 [INFO]   Guardado en Neo4j correctamente.
+14:31:23 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_32.txt
+14:31:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:31:59 [INFO]   Nodos extraídos    : 1
+14:31:59 [INFO]   Relaciones extraídas: 5
+14:31:59 [INFO]     [Articulo] Art_32_Ley_19550
+14:31:59 [INFO]     Art_32_Ley_19550 -[APLICA_A]-> FUNDADORES
+14:31:59 [INFO]     Art_32_Ley_19550 -[APLICA_A]-> ADMINISTRADORES
+14:31:59 [INFO]     Art_32_Ley_19550 -[APLICA_A]-> DIRECTORES
+14:31:59 [INFO]     Art_32_Ley_19550 -[APLICA_A]-> SINDYCOS
+14:31:59 [INFO]     Art_32_Ley_19550 -[REMITE_A]-> ART_31_Ley_19550
+14:32:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:32:03 [INFO]   Guardado en Neo4j correctamente.
+14:32:03 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_67.txt
+14:32:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:32:27 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:32:27 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:32:29 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_343.txt
+14:32:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:32:50 [INFO]   Nodos extraídos    : 1
+14:32:50 [INFO]   Relaciones extraídas: 0
+14:32:50 [INFO]     [Articulo] Art_343_Ley_19550
+14:32:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:32:53 [INFO]   Guardado en Neo4j correctamente.
+14:32:53 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_167.txt
+14:32:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:33:17 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:33:18 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:33:19 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_20.txt
+14:33:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:33:56 [INFO]   Nodos extraídos    : 1
+14:33:56 [INFO]   Relaciones extraídas: 2
+14:33:56 [INFO]     [Articulo] Art_20_Ley_19550
+14:33:56 [INFO]     Art_20_Ley_19550 -[APLICA_A]-> Art_18_Ley_19550
+14:33:56 [INFO]     Art_20_Ley_19550 -[REMITE_A]-> SECCION_XIII_DEL_REMANENTE
+14:33:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:33:59 [INFO]   Guardado en Neo4j correctamente.
+14:33:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_109.txt
+14:34:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:34:22 [INFO]   Nodos extraídos    : 1
+14:34:22 [INFO]   Relaciones extraídas: 0
+14:34:22 [INFO]     [Articulo] Art_109_Ley_19550
+14:34:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:34:24 [INFO]   Guardado en Neo4j correctamente.
+14:34:25 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_183.txt
+14:34:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:34:54 [INFO]   Nodos extraídos    : 1
+14:34:54 [INFO]   Relaciones extraídas: 3
+14:34:54 [INFO]     [Articulo] Art_183_Ley_19550
+14:34:54 [INFO]     Art_183_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> DIRECTORES
+14:34:54 [INFO]     Art_183_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> FUNDADORES
+14:34:54 [INFO]     Art_183_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> SOCIEDAD
+14:34:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:34:57 [INFO]   Guardado en Neo4j correctamente.
+14:34:57 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_346.txt
+14:34:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:35:31 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:35:32 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:35:33 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_10.txt
+14:35:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:35:58 [INFO]   Nodos extraídos    : 1
+14:35:58 [INFO]   Relaciones extraídas: 0
+14:35:58 [INFO]     [Articulo] Art_10_Ley_19550
+14:35:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:36:00 [INFO]   Guardado en Neo4j correctamente.
+14:36:00 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_117.txt
+14:36:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:36:27 [INFO]   Nodos extraídos    : 1
+14:36:27 [INFO]   Relaciones extraídas: 0
+14:36:27 [INFO]     [Articulo] Art_117_Ley_19550
+14:36:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:36:30 [INFO]   Guardado en Neo4j correctamente.
+14:36:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_103.txt
+14:36:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:36:56 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:36:57 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:36:58 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_157.txt
+14:36:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:37:21 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:37:22 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:37:23 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_334.txt
+14:37:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:37:48 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:37:49 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:37:50 [INFO] SALTADO (ya existe): Art_49_Ley_19550
+14:37:50 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_85.txt
+14:37:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:38:14 [INFO]   Nodos extraídos    : 1
+14:38:14 [INFO]   Relaciones extraídas: 2
+14:38:14 [INFO]     [Articulo] Art_85_Ley_19550
+14:38:14 [INFO]     Art_85_Ley_19550 -[REMITE_A]-> Art_78_Ley_19550
+14:38:14 [INFO]     Art_85_Ley_19550 -[REMITE_A]-> Art_79_Ley_19550
+14:38:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:38:16 [INFO]   Guardado en Neo4j correctamente.
+14:38:16 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_87.txt
+14:38:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:38:48 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:38:49 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:38:50 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_65.txt
+14:38:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:39:28 [INFO]   Nodos extraídos    : 1
+14:39:28 [INFO]   Relaciones extraídas: 1
+14:39:28 [INFO]     [Articulo] Art_65_Ley_19550
+14:39:28 [INFO]     Art_65_Ley_19550 -[APLICA_A]-> CONTIENE
+14:39:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:39:30 [INFO]   Guardado en Neo4j correctamente.
+14:39:31 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_285.txt
+14:39:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:39:55 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:39:55 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:39:57 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_290.txt
+14:39:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:40:22 [INFO]   Nodos extraídos    : 1
+14:40:22 [INFO]   Relaciones extraídas: 0
+14:40:22 [INFO]     [Articulo] Art_290_Ley_19550
+14:40:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:40:25 [INFO]   Guardado en Neo4j correctamente.
+14:40:25 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_182.txt
+14:40:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:40:51 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:40:51 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:40:53 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_68.txt
+14:40:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:41:25 [INFO]   Nodos extraídos    : 1
+14:41:25 [INFO]   Relaciones extraídas: 2
+14:41:25 [INFO]     [Articulo] Art_68_Ley_19550
+14:41:25 [INFO]     Art_68_Ley_19550 -[REMITE_A]-> Art_224_Ley_19550
+14:41:25 [INFO]     Art_68_Ley_19550 -[EXCEPCIONA_A]-> Art_225_Ley_19550
+14:41:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:41:28 [INFO]   Guardado en Neo4j correctamente.
+14:41:28 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_111.txt
+14:41:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:41:58 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:41:58 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:42:00 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_2.txt
+14:42:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:42:27 [INFO]   Nodos extraídos    : 1
+14:42:27 [INFO]   Relaciones extraídas: 1
+14:42:27 [INFO]     [Articulo] Art_2_Ley_19550
+14:42:27 [INFO]     Art_2_Ley_19550 -[APLICA_A]-> SUJETO_DE_DERECHO
+14:42:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:42:30 [INFO]   Guardado en Neo4j correctamente.
+14:42:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_212.txt
+14:42:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:42:59 [INFO]   Nodos extraídos    : 1
+14:42:59 [INFO]   Relaciones extraídas: 0
+14:42:59 [INFO]     [Articulo] Art_212_Ley_19550
+14:43:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:43:02 [INFO]   Guardado en Neo4j correctamente.
+14:43:02 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_125.txt
+14:43:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:43:25 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:43:26 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:43:27 [INFO] SALTADO (ya existe): Art_259_Ley_19550
+14:43:27 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_185.txt
+14:43:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:43:51 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:43:52 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:43:54 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_321.txt
+14:43:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:44:16 [INFO]   Nodos extraídos    : 1
+14:44:16 [INFO]   Relaciones extraídas: 0
+14:44:16 [INFO]     [Articulo] Art_321_Ley_19550
+14:44:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:44:18 [INFO]   Guardado en Neo4j correctamente.
+14:44:18 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_332.txt
+14:44:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:44:40 [INFO]   Nodos extraídos    : 1
+14:44:40 [INFO]   Relaciones extraídas: 0
+14:44:40 [INFO]     [Articulo] Art_332_Ley_19550
+14:44:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:44:42 [INFO]   Guardado en Neo4j correctamente.
+14:44:42 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_352.txt
+14:44:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:45:07 [INFO]   Nodos extraídos    : 1
+14:45:07 [INFO]   Relaciones extraídas: 0
+14:45:07 [INFO]     [Articulo] Art_352_Ley_19550
+14:45:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:45:10 [INFO]   Guardado en Neo4j correctamente.
+14:45:10 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_63.txt
+14:45:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:45:33 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:45:33 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:45:35 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_214.txt
+14:45:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:45:57 [INFO]   Nodos extraídos    : 1
+14:45:57 [INFO]   Relaciones extraídas: 0
+14:45:57 [INFO]     [Articulo] Art_214_Ley_19550
+14:45:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:45:59 [INFO]   Guardado en Neo4j correctamente.
+14:45:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_287.txt
+14:46:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:46:21 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:46:22 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:46:23 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_138.txt
+14:46:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:46:43 [INFO]   Nodos extraídos    : 1
+14:46:43 [INFO]   Relaciones extraídas: 0
+14:46:43 [INFO]     [Articulo] Art_138_Ley_19550
+14:46:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:46:45 [INFO]   Guardado en Neo4j correctamente.
+14:46:46 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_341.txt
+14:46:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:47:17 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:47:18 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:47:19 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_160.txt
+14:47:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:47:44 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:47:45 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:47:46 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_330.txt
+14:47:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:48:14 [INFO]   Nodos extraídos    : 1
+14:48:14 [INFO]   Relaciones extraídas: 0
+14:48:14 [INFO]     [Articulo] Art_330_Ley_19550
+14:48:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:48:16 [INFO]   Guardado en Neo4j correctamente.
+14:48:16 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_271.txt
+14:48:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:48:47 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:48:48 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:48:49 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_40.txt
+14:48:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:49:18 [INFO]   Nodos extraídos    : 1
+14:49:18 [INFO]   Relaciones extraídas: 0
+14:49:18 [INFO]     [Articulo] Art_40_Ley_19550
+14:49:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:49:20 [INFO]   Guardado en Neo4j correctamente.
+14:49:20 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_205.txt
+14:49:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:49:45 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:49:46 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:49:47 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_110.txt
+14:49:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:50:10 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:50:11 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:50:12 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_44.txt
+14:50:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:50:33 [INFO]   Nodos extraídos    : 1
+14:50:33 [INFO]   Relaciones extraídas: 0
+14:50:33 [INFO]     [Articulo] Art_44_Ley_19550
+14:50:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:50:35 [INFO]   Guardado en Neo4j correctamente.
+14:50:35 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_230.txt
+14:50:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:50:57 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:50:58 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:50:59 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_335.txt
+14:50:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:51:27 [INFO]   Nodos extraídos    : 1
+14:51:28 [INFO]   Relaciones extraídas: 0
+14:51:28 [INFO]     [Articulo] Art_335_Ley_19550
+14:51:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:51:30 [INFO]   Guardado en Neo4j correctamente.
+14:51:30 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_11.txt
+14:51:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:51:55 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:51:56 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:51:57 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_33.txt
+14:51:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:52:26 [INFO]   Nodos extraídos    : 1
+14:52:26 [INFO]   Relaciones extraídas: 0
+14:52:26 [INFO]     [Articulo] Art_33_Ley_19550
+14:52:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:52:29 [INFO]   Guardado en Neo4j correctamente.
+14:52:29 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_220.txt
+14:52:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:52:57 [INFO]   Nodos extraídos    : 1
+14:52:57 [INFO]   Relaciones extraídas: 0
+14:52:57 [INFO]     [Articulo] Art_220_Ley_19550
+14:52:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:53:00 [INFO]   Guardado en Neo4j correctamente.
+14:53:00 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_118.txt
+14:53:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:53:26 [INFO]   Nodos extraídos    : 1
+14:53:26 [INFO]   Relaciones extraídas: 0
+14:53:26 [INFO]     [Articulo] Art_118_Ley_19550
+14:53:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:53:29 [INFO]   Guardado en Neo4j correctamente.
+14:53:29 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_3.txt
+14:53:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:53:51 [INFO]   Nodos extraídos    : 1
+14:53:51 [INFO]   Relaciones extraídas: 0
+14:53:51 [INFO]     [Articulo] Art_3_Ley_19550
+14:53:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:53:54 [INFO]   Guardado en Neo4j correctamente.
+14:53:54 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_233.txt
+14:53:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:54:17 [INFO]   Nodos extraídos    : 1
+14:54:17 [INFO]   Relaciones extraídas: 1
+14:54:17 [INFO]     [Articulo] Art_233_Ley_19550
+14:54:17 [INFO]     Art_233_Ley_19550 -[EXCEPCIONA_A]-> Art_245_Ley_19550
+14:54:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:54:20 [INFO]   Guardado en Neo4j correctamente.
+14:54:21 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_172.txt
+14:54:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:54:47 [INFO]   Nodos extraídos    : 1
+14:54:47 [INFO]   Relaciones extraídas: 0
+14:54:47 [INFO]     [Articulo] Art_172_Ley_19550
+14:54:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:54:50 [INFO]   Guardado en Neo4j correctamente.
+14:54:50 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_189.txt
+14:54:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:55:11 [INFO]   Nodos extraídos    : 1
+14:55:11 [INFO]   Relaciones extraídas: 0
+14:55:11 [INFO]     [Articulo] Art_189_Ley_19550
+14:55:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:55:14 [INFO]   Guardado en Neo4j correctamente.
+14:55:14 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_231.txt
+14:55:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:55:35 [INFO]   Nodos extraídos    : 1
+14:55:35 [INFO]   Relaciones extraídas: 0
+14:55:35 [INFO]     [Articulo] Art_231_Ley_19550
+14:55:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:55:37 [INFO]   Guardado en Neo4j correctamente.
+14:55:37 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_299.txt
+14:55:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:56:10 [INFO]   Nodos extraídos    : 2
+14:56:10 [INFO]   Relaciones extraídas: 1
+14:56:10 [INFO]     [Articulo] Art_299_Ley_19550
+14:56:10 [INFO]     [Organismo] AUTORIDAD_DE_CONTRALOR
+14:56:10 [INFO]     Art_299_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> AUTORIDAD_DE_CONTRALOR
+14:56:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:56:14 [INFO]   Guardado en Neo4j correctamente.
+14:56:14 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_100.txt
+14:56:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:56:42 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:56:42 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:56:44 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_284.txt
+14:56:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:57:19 [INFO]   Nodos extraídos    : 2
+14:57:19 [INFO]   Relaciones extraídas: 1
+14:57:19 [INFO]     [Articulo] Art_284_Ley_19550
+14:57:19 [INFO]     [Organismo] COMISIONNACIONALDEVALORES
+14:57:19 [INFO]     Art_284_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> COMISIONNACIONALDEVALORES
+14:57:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:57:22 [INFO]   Guardado en Neo4j correctamente.
+14:57:22 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_15.txt
+14:57:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:57:45 [INFO]   Nodos extraídos    : 1
+14:57:45 [INFO]   Relaciones extraídas: 0
+14:57:45 [INFO]     [Articulo] Art_15_Ley_19550
+14:57:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:57:48 [INFO]   Guardado en Neo4j correctamente.
+14:57:48 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_114.txt
+14:57:48 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:58:14 [INFO]   Nodos extraídos    : 1
+14:58:14 [INFO]   Relaciones extraídas: 1
+14:58:14 [INFO]     [Articulo] Art_114_Ley_19550
+14:58:14 [INFO]     Art_114_Ley_19550 -[JUEZ]-> REQUIERE_INTERVENCION_DE
+14:58:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:58:17 [INFO]   Guardado en Neo4j correctamente.
+14:58:17 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_39.txt
+14:58:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:58:41 [INFO]   Nodos extraídos    : 1
+14:58:41 [INFO]   Relaciones extraídas: 0
+14:58:41 [INFO]     [Articulo] Art_39_Ley_19550
+14:58:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:58:43 [INFO]   Guardado en Neo4j correctamente.
+14:58:44 [INFO] SALTADO (ya existe): Art_264_Ley_19550
+14:58:44 [INFO] SALTADO (ya existe): Art_272_Ley_19550
+14:58:44 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_161.txt
+14:58:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:59:08 [INFO]   Nodos extraídos    : 1
+14:59:08 [INFO]   Relaciones extraídas: 0
+14:59:08 [INFO]     [Articulo] Art_161_Ley_19550
+14:59:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:59:11 [INFO]   Guardado en Neo4j correctamente.
+14:59:11 [INFO] SALTADO (ya existe): Art_260_Ley_19550
+14:59:12 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_27.txt
+14:59:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:59:34 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+14:59:35 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+14:59:36 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_344.txt
+14:59:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:00:00 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+15:00:01 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+15:00:02 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_296.txt
+15:00:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:00:24 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+15:00:25 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+15:00:26 [INFO] SALTADO (ya existe): Art_244_Ley_19550
+15:00:26 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_226.txt
+15:00:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:00:47 [ERROR]   FALLO extracción LLM: 1 validation error for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+15:00:48 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+15:00:49 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_94.txt
+15:00:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:01:27 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+15:01:28 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+15:01:29 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_16.txt
+15:01:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:01:55 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+15:01:56 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+15:01:57 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_122.txt
+15:01:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:02:22 [INFO]   Nodos extraídos    : 1
+15:02:22 [INFO]   Relaciones extraídas: 0
+15:02:22 [INFO]     [Articulo] Art_122_Ley_19550
+15:02:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:02:24 [INFO]   Guardado en Neo4j correctamente.
+15:02:25 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_249.txt
+15:02:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:02:50 [INFO]   Nodos extraídos    : 1
+15:02:50 [INFO]   Relaciones extraídas: 1
+15:02:50 [INFO]     [Articulo] Art_249_Ley_19550
+15:02:50 [INFO]     Art_249_Ley_19550 -[REQUIERE_INTERVENCION_DE]-> Art_73_Ley_19550
+15:02:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:02:53 [INFO]   Guardado en Neo4j correctamente.
+15:02:53 [INFO] Procesando: ./input/normas/sociedades/Ley/articulos_lsc/Articulo_342.txt
+15:02:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+15:03:22 [ERROR]   FALLO extracción LLM: 2 validation errors for GrafoLegalExtraido
+relaciones.0.fin
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+relaciones.0.tipo
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.13/v/string_type
+15:03:23 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}
+15:03:23 [INFO] 
+Procesamiento completado. OK: 134 | Saltados: 150 | Errores: 75 | Duración: 105.42 min.
+15:03:23 [ERROR] Telegram respondió con error 400: {"ok":false,"error_code":400,"description":"Bad Request: chat not found"}

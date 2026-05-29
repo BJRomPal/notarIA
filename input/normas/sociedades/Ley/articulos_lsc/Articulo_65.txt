@@ -1,0 +1,26 @@
+CAPITULO: CAPITULO I - DISPOSICIONES GENERALES
+SECCION: SECCION IX - De la Documentación y de la Contabilidad
+--------------------------------------------------
+Notas complementarias.
+ARTICULO 65. — Para el caso que la correspondiente información no estuviera contenida en los estados contables de los artículos 63 y 64 o en sus notas, deberán acompañarse notas y cuadros, que se considerarán parte de aquéllos. La siguiente enumeración es enunciativa.
+1) Notas referentes a:
+a) Bienes de disponibilidad restringida explicándose brevemente la restricción existente;
+b) Activos gravados con hipoteca, prenda u otro derecho real, con referencia a las obligaciones que garantizan;
+c) Criterio utilizado en la evaluación de los bienes de cambio, con indicación del método de determinación del costo u otro valor aplicado;
+d) Procedimientos adoptados en el caso de revaluación o devaluación de activos debiéndose indicar además, en caso de existir, el efecto consiguiente sobre los resultados del ejercicio;
+e) Cambios en los procedimientos contables o de confección de los estados contables aplicados con respecto al ejercicio anterior, explicándose la modificación y su efecto sobre los resultados del ejercicio;
+f) Acontecimientos u operaciones ocurridos entre la fecha del cierre del ejercicio de la memoria de los administradores, que pudieran modificar significativamente la situación financiera de la sociedad a la fecha del balance general y los resultados del ejercicio cerrado en esa fecha, con indicación del efecto que han tenido sobre la situación y resultados mencionados;
+g) Resultado de operaciones con sociedades controlantes, controladas o vinculadas, separadamente por sociedad;
+h) Restricciones contractuales para la distribución de ganancias;
+i) Monto de avales y garantías a favor de terceros, documentos descontados y otras contingencias, acompañadas de una breve explicación cuando ello sea necesario;
+j) Contratos celebrados con los directores que requieren aprobación, conforme al artículo 271, y sus montos;
+k) El monto no integrado del capital social, distinguiendo en su caso, los correspondientes a las acciones ordinarias y de otras clases y los supuestos del artículo 220;
+2) Cuadros anexos:
+a) De bienes de uso, detallando para cada cuenta principal los saldos al comienzo, los aumentos y las disminuciones, y los saldos al cierre del ejercicio.
+Igual tratamiento corresponderá a las amortizaciones y depreciaciones, indicándose las diversas alícuotas utilizadas para cada clase de bienes. Se informará por nota al pie del anexo el destino contable de los aumentos y disminuciones de las amortizaciones y depreciaciones registradas;
+b) De bienes inmateriales y sus correspondientes amortizaciones con similar contenido al requerido en el inciso anterior;
+c) De inversiones en títulos valores y participaciones en otras sociedades, detallando: denominación de la sociedad emisora o en la que se participa y características del título valor o participación, sus valores nominales, de costo de libros y de cotización, actividad principal y capital de la sociedad emisora o en la que participa. Cuando el aporte o participación fuere del Cincuenta por Ciento (50 %) o más del capital de la sociedad o de la que se participa, se deberán acompañar los estados contables de ésta que se exigen en este Título. Si el aporte o participación fuere mayor del Cinco por Ciento (5 %) y menor del Cincuenta (50 %) citado, se informará sobre el resultado del ejercicio y el patrimonio neto según el último balance general de la sociedad en que se invierte o participa.
+Si se tratara de otras inversiones, se detallará su contenido y características, indicándose, según corresponda, valores nominales de costo, de libros, de cotización y de valuación fiscal;
+d) De previsiones y reservas, detallándose para cada una de ellas saldo al comienzo, los aumentos y disminuciones y el saldo al cierre del ejercicio. Se informará por nota al pie el destino contable de los aumentos y las disminuciones, y la razón de estas últimas;
+e) El costo de las mercaderías o productos vendidos, detallando las existencias de bienes de cambio al comienzo del ejercicio, analizado por grandes rubros y la existencia de bienes de cambio al cierre. Si se tratara de servicios vendidos, se aportarán datos similares, a los requeridos para la alternativa anterior que permitan informar sobre el costo de prestación de dichos servicios;
+f) El activo y pasivo en moneda extranjera detallando: las cuentas del balance, el monto y la clase de moneda extranjera, el cambio vigente o el contratado a la fecha de cierre, el monto resultante en moneda argentina, el importe contabilizado y la diferencia si existiera, con indicación del respectivo tratamiento contable.

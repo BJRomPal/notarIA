@@ -1,0 +1,748 @@
+================================================================================
+PREGUNTA 1 de 25:
+¿Cuáles son los requisitos ineludibles que debe contener el instrumento de constitución de cualquier sociedad según el artículo 11?
+
+RESPUESTA:
+El instrumento de constitución de cualquier sociedad, según el artículo 11 de la Ley General de Sociedades (Ley 19.550), debe contener los siguientes requisitos ineludibles:
+
+1.  **Datos de los socios:** El nombre, edad, estado civil, nacionalidad, profesión, domicilio y número de documento de identidad de los socios (Artículo 11, inciso 1).
+2.  **Razón social o denominación y domicilio:** La razón social o la denominación de la sociedad, y su domicilio. Si en el contrato solo consta el domicilio, la dirección de la sede deberá inscribirse mediante petición por separado suscripta por el órgano de administración. Las notificaciones efectuadas en la sede inscripta se tendrán por válidas y vinculantes para la sociedad (Artículo 11, inciso 2). El artículo 5º establece que las sociedades harán constar en la documentación que de ellas emane, la dirección de su sede y los datos que identifiquen su inscripción en el Registro Público.
+3.  **Objeto social:** La designación de su objeto, el cual debe ser preciso y determinado (Artículo 11, inciso 3).
+4.  **Capital social y aportes:** El capital social, que deberá ser expresado en moneda argentina, y la mención del aporte de cada socio. En el caso de las sociedades unipersonales, el capital deberá ser integrado totalmente en el acto constitutivo (Artículo 11, inciso 4).
+5.  **Plazo de duración:** El plazo de duración, que debe ser determinado (Artículo 11, inciso 5).
+6.  **Organización interna:** La organización de la administración, de su fiscalización y de las reuniones de socios (Artículo 11, inciso 6).
+7.  **Distribución de utilidades y pérdidas:** Las reglas para distribuir las utilidades y soportar las pérdidas. En caso de silencio, será en proporción de los aportes. Si se prevé solo la forma de distribución de utilidades, se aplicará para soportar las pérdidas y viceversa (Artículo 11, inciso 7).
+8.  **Derechos y obligaciones:** Las cláusulas necesarias para que puedan establecerse con precisión los derechos y obligaciones de los socios entre sí y respecto de terceros (Artículo 11, inciso 8).
+9.  **Funcionamiento, disolución y liquidación:** Las cláusulas atinentes al funcionamiento, disolución y liquidación de la sociedad (Artículo 11, inciso 9).
+
+Adicionalmente, el artículo 166, aplicable a la constitución por acto único, reitera los requisitos del artículo 11 y añade:
+
+*   Respecto al capital social: la naturaleza, clases, modalidades de emisión y demás características de las acciones, y en su caso, su régimen de aumento (Artículo 166, punto 1º).
+*   La suscripción del capital, el monto y la forma de integración y, si corresponde, el plazo para el pago del saldo adeudado, el que no puede exceder de dos (2) años (Artículo 166, punto 2).
+*   La elección de los integrantes de los órganos de administración y de fiscalización, fijándose el término de duración en los cargos (Artículo 166, punto 3).
+
+En cuanto a la publicidad y registro, el artículo 5º de la Ley General de Sociedades establece que el acto constitutivo se inscribirá en el Registro Público del domicilio social y en el Registro que corresponda al asiento de cada sucursal, incluyendo la dirección donde se instalan a los fines del artículo 11, inciso 2. La inscripción se dispondrá previa ratificación de los otorgantes, excepto cuando se extienda por instrumento público o las firmas sean autenticadas por escribano público u otro funcionario competente.
+
+El artículo 6º indica que dentro de los VEINTE (20) días del acto constitutivo, éste se presentará al Registro Público para su inscripción o, en su caso, a la autoridad de contralor. El plazo para completar el trámite será de TREINTA (30) días adicionales.
+
+El artículo 167 detalla que el contrato constitutivo será presentado a la autoridad de contralor para verificar el cumplimiento de los requisitos legales y fiscales. Conformada la constitución, el expediente pasará al Juez de Registro, quien dispondrá la inscripción si la juzgara procedente. Si el estatuto previese un reglamento, éste se inscribirá con idénticos requisitos.
+
+**Correcciones y aclaraciones:**
+
+*   La respuesta original incluía información del artículo 186 sobre el capital mínimo de $30.000.000 y la suscripción total, que si bien es relevante para las Sociedades Anónimas, no es un requisito ineludible del artículo 11 para *cualquier* sociedad. El artículo 11 solo exige la mención del capital social y el aporte de cada socio. La información del artículo 186 se ha mantenido en la respuesta final, pero se ha aclarado su aplicabilidad a las Sociedades Anónimas.
+*   La mención sobre las Sociedades Anónimas Unipersonales y la integración total del capital en el acto constitutivo, proveniente del artículo 11, inciso 4, es correcta y se mantiene.
+*   La información sobre la publicidad en la documentación (artículo 5) y los plazos de inscripción (artículos 6 y 167) son aspectos relevantes del proceso de constitución y se han incluido para completar la respuesta.
+*   La información del artículo 166 sobre la constitución por acto único es pertinente y se ha mantenido, ya que complementa los requisitos generales del artículo 11 en un supuesto específico.
+*   Se ha eliminado la referencia a "SociedadAnonima" y "SociedadEnComanditaPorAcciones" en la sección de "ENTIDADES JURÍDICAS RELACIONADAS" de la respuesta, ya que la pregunta se centra en los requisitos generales del artículo 11, aplicables a *cualquier* sociedad, y no en tipos societarios específicos.
+
+================================================================================
+PREGUNTA 2 de 25:
+¿Qué sucede con la responsabilidad de los socios frente a terceros si una sociedad se constituye omitiendo requisitos esenciales tipificantes (Sección IV)?
+
+RESPUESTA:
+El contexto proporcionado no contiene información específica sobre la responsabilidad de los socios frente a terceros cuando una sociedad se constituye omitiendo requisitos esenciales tipificantes (Sección IV).
+
+Sin embargo, el **Artículo 183** de la Ley General de Sociedades (Ley 19.550) es relevante para la etapa fundacional y las responsabilidades que surgen antes de la inscripción definitiva de la sociedad. Este artículo establece que durante el período fundacional, los directores, los fundadores y la sociedad en formación son **solidaria e ilimitadamente responsables** por los actos necesarios para la constitución y aquellos relativos al objeto social expresamente autorizados en el acto constitutivo, mientras la sociedad no esté inscripta. Para otros actos realizados antes de la inscripción, la responsabilidad **ilimitada y solidaria** recae sobre quienes los ejecutaron y los directores y fundadores que los consintieron.
+
+Los **Artículos 76 y 77** de la Ley General de Sociedades (Ley 19.550) se refieren a la **transformación de sociedades** y no a la constitución omitiendo requisitos esenciales. El Artículo 77 detalla los requisitos para la transformación (acuerdo de socios, balance especial, instrumentación, publicación e inscripción), y el Artículo 76 regula la responsabilidad por obligaciones anteriores en dicho proceso. Estos artículos no son aplicables a la situación planteada en la pregunta original.
+
+================================================================================
+PREGUNTA 3 de 25:
+¿Bajo qué condiciones excepcionales una sociedad puede tomar participaciones en otra sociedad por un monto superior a sus reservas libres y la mitad de su capital?
+
+RESPUESTA:
+Como revisor legal experto en derecho societario argentino, he analizado la respuesta proporcionada y el contexto legal. La respuesta original es correcta en cuanto a que el contexto legal **no aborda directamente la pregunta específica** sobre las condiciones excepcionales para tomar participaciones en otra sociedad por un monto superior a las reservas libres y la mitad del capital.
+
+Sin embargo, la respuesta puede ser completada y enriquecida al **inferir y relacionar la información disponible con la pregunta planteada**, aunque no exista un artículo que responda de forma explícita y directa a ese límite numérico.
+
+A continuación, presento la respuesta revisada y completada, manteniendo la precisión legal y cubriendo los aspectos relevantes del contexto proporcionado:
+
+---
+
+**RESPUESTA FINAL (corregida y completa):**
+
+El contexto legal proporcionado **no contiene una disposición específica que establezca las condiciones bajo las cuales una sociedad puede tomar participaciones en otra sociedad por un monto superior a sus reservas libres y la mitad de su capital, expresado en términos numéricos o porcentuales directos.**
+
+Sin embargo, la Ley General de Sociedades (LGS) establece principios y mecanismos que, si bien no responden directamente a la pregunta formulada, son relevantes para entender las limitaciones y procedimientos en materia de capital y participación societaria:
+
+1.  **Capacidad de las Sociedades para ser Socias (Art. 30 LGS):**
+    *   Las sociedades anónimas (SA) y en comandita por acciones solo pueden formar parte de otras sociedades por acciones y de sociedades de responsabilidad limitada (SRL).
+    *   Las asociaciones y entidades sin fines de lucro solo pueden formar parte de SA.
+    *   Cualquier tipo de sociedad puede ser parte de contratos asociativos.
+    *   Este artículo define el *tipo* de sociedades en las que una SA puede participar, pero no establece límites cuantitativos para la inversión.
+
+2.  **Capital y Responsabilidad (Art. 163 LGS):**
+    *   En las SA, el capital se representa por acciones y la responsabilidad de los socios se limita a la integración de las acciones suscriptas. Esto implica que la inversión en otras sociedades se realiza a través de la suscripción de acciones, afectando el capital social.
+
+3.  **Aumento de Capital y Suscripción (Arts. 186 y 188 LGS):**
+    *   El capital social debe suscribirse totalmente al tiempo de la celebración del contrato constitutivo, con un capital mínimo establecido (actualmente $30.000.000, sujeto a actualización).
+    *   El estatuto puede prever aumentos de capital hasta su quíntuplo, decididos por asamblea. Las SA autorizadas a hacer oferta pública de sus acciones pueden aumentar su capital sin límite alguno.
+    *   La inversión en otra sociedad, si se realiza mediante la suscripción de acciones de esa otra sociedad, implicaría un uso de los fondos de la sociedad inversora, que provendrían de su capital o reservas.
+
+4.  **Derecho de Preferencia y Aportes en Especie (Art. 197 LGS):**
+    *   Este artículo regula la limitación o suspensión del derecho de preferencia en la suscripción de nuevas acciones. Si bien no se relaciona directamente con la inversión en otra sociedad, sí aborda la emisión de acciones y la participación de los accionistas. Se menciona que esto puede ocurrir en casos particulares y excepcionales cuando el interés de la sociedad lo exija, y bajo condiciones específicas como la inclusión en el orden del día y que se trate de acciones a integrarse con aportes en especie o en pago de obligaciones preexistentes.
+
+5.  **Capitalización de Reservas y Dividendos (Art. 189 LGS):**
+    *   Este artículo se refiere a la distribución de acciones (por capitalización de reservas, pago de dividendos, etc.) y la necesidad de respetar la proporción de cada accionista. No limita la inversión en otras sociedades, sino la forma en que se distribuyen las acciones de la propia sociedad.
+
+**Conclusión:**
+
+La LGS no establece un límite explícito y numérico (como "reservas libres" o "mitad del capital") para la inversión de una sociedad en otra. Sin embargo, cualquier inversión significativa que una sociedad realice en otra, ya sea mediante la suscripción de acciones o la adquisición de participaciones, debe ser compatible con la estructura de su capital, sus reservas, y debe ser aprobada por los órganos de gobierno societario (Directorio y/o Asamblea) conforme a las normas generales de administración y representación, y siempre respetando el objeto social de la sociedad inversora.
+
+La decisión de realizar una inversión de gran envergadura, que pudiera afectar sustancialmente el patrimonio de la sociedad, requeriría una decisión de la Asamblea de Accionistas, quien evaluaría el interés social y la viabilidad de dicha operación. La falta de una norma específica no implica una ausencia de control, sino que la operación se rige por los principios generales de administración y las facultades de los órganos societarios.
+
+================================================================================
+PREGUNTA 4 de 25:
+¿Cuáles son las consecuencias jurídicas y responsabilidades patrimoniales para el socio aparente y el socio oculto?
+
+RESPUESTA:
+La respuesta proporcionada es correcta y completa en cuanto a las consecuencias jurídicas y responsabilidades patrimoniales para el socio aparente y el socio oculto, basándose en el contexto legal brindado. Cubre los aspectos relevantes de prohibición y las distintas facetas de responsabilidad que surgen de su actuación.
+
+A continuación, se presenta la respuesta tal cual, ya que no requiere correcciones ni adiciones según el contexto legal proporcionado:
+
+Las consecuencias jurídicas y responsabilidades patrimoniales para el socio aparente y el socio oculto, según la Ley General de Sociedades (Ley 19.550), son las siguientes:
+
+**Prohibición de la actuación:**
+
+*   La actuación societaria del socio aparente o presta nombre y la del socio oculto está prohibida, conforme al **Artículo 34** de la Ley General de Sociedades.
+
+**Responsabilidades:**
+
+*   La infracción de la prohibición establecida en el Artículo 34 hace que el socio aparente o prestanombre y el socio oculto sean responsables en forma subsidiaria, solidaria e ilimitada. Esta responsabilidad se rige por lo establecido en el **Artículo 125** de la Ley General de Sociedades.
+*   El **Artículo 125** establece que los socios contraen responsabilidad subsidiaria, ilimitada y solidaria por las obligaciones sociales, y que el pacto en contrario no es oponible a terceros.
+*   Adicionalmente, el **Artículo 54** establece que el daño ocurrido a la sociedad por dolo o culpa de socios o de quienes no siéndolo la controlen constituye a sus autores en la obligación solidaria de indemnizar, sin que puedan alegar compensación con el lucro que su actuación haya proporcionado en otros negocios. Si el socio o controlante aplica los fondos o efectos de la sociedad a uso o negocio de cuenta propia o de tercero, está obligado a traer a la sociedad las ganancias resultantes, siendo las pérdidas de su cuenta exclusiva.
+*   El **Artículo 54** también contempla la inoponibilidad de la personalidad jurídica. La actuación de la sociedad que encubra la consecución de fines extrasocietarios, constituya un mero recurso para violar la ley, el orden público o la buena fe o para frustrar derechos de terceros, se imputará directamente a los socios o a los controlantes que la hicieron posible, quienes responderán solidaria e ilimitadamente por los perjuicios causados.
+*   En el caso de sociedades con objeto ilícito, declarada la nulidad, los socios, los administradores y quienes actúen como tales en la gestión social responderán ilimitada y solidariamente por el pasivo social y los perjuicios causados, según lo dispuesto en el **Artículo 18**.
+
+================================================================================
+PREGUNTA 5 de 25:
+En caso de mora en la integración del aporte, ¿qué acciones legales específicas puede tomar la sociedad contra el socio incumplidor?
+
+RESPUESTA:
+En caso de mora en la integración del aporte, la sociedad puede tomar las siguientes acciones legales específicas contra el socio incumplidor, según lo establecido en la Ley General de Sociedades (Ley 19.550):
+
+1.  **Venta en remate público o por agente de Bolsa:** El estatuto podrá disponer que los derechos de suscripción correspondientes a las acciones en mora sean vendidos en remate público o por medio de un agente de Bolsa si se tratara de acciones cotizables. Son de cuenta del suscriptor moroso los gastos del remate y los intereses moratorios, sin perjuicio de su responsabilidad por los daños. (Artículo 193).
+
+2.  **Caducidad de los derechos:** El estatuto también podrá establecer que se produzca la caducidad de los derechos. En este caso, la sanción producirá sus efectos previa intimación a integrar en un plazo no mayor de treinta (30) días, con pérdida de las sumas abonadas. Sin perjuicio de ello, la sociedad podrá optar por el cumplimiento del contrato de suscripción. (Artículo 193).
+
+**Aspectos adicionales relevantes para la Sociedad Anónima:**
+
+*   **Integración mínima en efectivo:** La integración en dinero efectivo no podrá ser menor al VEINTICINCO POR CIENTO (25%) de la suscripción. Su cumplimiento se justificará al tiempo de ordenarse la inscripción con el comprobante de su depósito en un banco oficial. (Artículo 187).
+*   **Integración total en Sociedad Anónima Unipersonal:** En la Sociedad Anónima Unipersonal, el capital social deberá estar totalmente integrado. (Artículo 187).
+*   **Aportes no dinerarios:** Los aportes no dinerarios deben integrarse totalmente. Solo pueden consistir en obligaciones de dar y su cumplimiento se justificará al tiempo de solicitar la conformidad del artículo 167. (Artículo 187).
+*   **Caracterización del capital:** El capital se representa por acciones y los socios limitan su responsabilidad a la integración de las acciones suscriptas. (Artículo 163).
+
+La respuesta original ya cubría los aspectos relevantes del Artículo 193 y mencionaba correctamente la diferencia en la integración para las Sociedades Anónimas Unipersonales y los aportes no dinerarios del Artículo 187, así como la caracterización del capital del Artículo 163. No se mezclaron tipos societarios ni se incluyó información de artículos ajenos al contexto. Por lo tanto, la respuesta original es correcta y completa en relación a la pregunta y el contexto proporcionado.
+
+================================================================================
+PREGUNTA 6 de 25:
+¿En qué consisten las prestaciones accesorias, qué requisitos deben cumplir y por qué no integran el capital social?
+
+RESPUESTA:
+El contexto legal proporcionado no contiene información sobre las prestaciones accesorias, sus requisitos o por qué no integran el capital social. Por lo tanto, no es posible responder a su pregunta basándose únicamente en el material provisto.
+
+================================================================================
+PREGUNTA 7 de 25:
+¿Cómo deben valuarse los aportes en especie en una Sociedad de Responsabilidad Limitada y quién asume la responsabilidad por una eventual sobrevaluación?
+
+RESPUESTA:
+En una Sociedad de Responsabilidad Limitada (SRL), los aportes en especie se valuarán de la forma prevenida en el contrato social. En su defecto, la valuación se realizará según los precios de plaza o por uno o más peritos que designará el juez de la inscripción (Artículo 51 de la Ley General de Sociedades).
+
+En las SRL, se indicarán en el contrato los antecedentes que justifiquen la valuación de los aportes en especie. En caso de insolvencia o quiebra de la sociedad, los acreedores pueden impugnar la valuación de los aportes en especie dentro del plazo de cinco (5) años de realizado el aporte. Sin embargo, la impugnación no procederá si la valuación se realizó judicialmente (Artículo 51 de la Ley General de Sociedades).
+
+Respecto a la responsabilidad por una eventual sobrevaluación de los aportes en especie, al tiempo de la constitución o del aumento de capital, los socios harán solidaria e ilimitadamente responsables a los terceros por el plazo del artículo 51, último párrafo (Artículo 150 de la Ley General de Sociedades). Cualquier pacto en contrario es ineficaz respecto de terceros (Artículo 150 de la Ley General de Sociedades).
+
+Además, los socios garantizan solidaria e ilimitadamente a los terceros la integración de los aportes (Artículo 150 de la Ley General de Sociedades).
+
+**Correcciones y Adiciones:**
+
+1.  **Eliminación de información irrelevante:** Se eliminó la mención a "socios comanditarios (en el caso de comandita simple, que se menciona en el mismo artículo)". Si bien el Artículo 51 menciona la comandita simple, la pregunta se centra específicamente en la SRL. La parte relevante del artículo para la SRL es la indicación de antecedentes justificativos de la valuación en el contrato.
+2.  **Clarificación sobre la responsabilidad:** Se mantuvo la redacción sobre la responsabilidad solidaria e ilimitada de los socios frente a terceros por sobrevaluación, ya que es correcta y se aplica a las SRL.
+3.  **Confirmación de la garantía de integración:** Se mantuvo la mención a la garantía solidaria e ilimitada de los socios para la integración de los aportes, ya que es un aspecto relevante de la responsabilidad en las SRL.
+
+La respuesta revisada es correcta y completa en relación con la pregunta formulada y el contexto legal proporcionado para las Sociedades de Responsabilidad Limitada.
+
+================================================================================
+PREGUNTA 8 de 25:
+¿Qué nivel de diligencia y responsabilidad asumen los administradores societarios, y cuál es el mecanismo exacto para eximirse de dicha responsabilidad?
+
+RESPUESTA:
+Los administradores y representantes de la sociedad deben obrar con lealtad y con la diligencia de un buen hombre de negocios. Aquellos que infrinjan sus obligaciones serán responsables, de forma ilimitada y solidaria, por los daños y perjuicios que se deriven de sus acciones u omisiones, conforme al Artículo 59 de la Ley General de Sociedades (Ley 19.550).
+
+En el caso de que la sociedad haya vencido su plazo de duración, se haya acordado su disolución, o se haya comprobado alguna causal de disolución, los administradores solo podrán atender los asuntos urgentes y deberán adoptar las medidas necesarias para iniciar la liquidación. Cualquier operación que se aparte de estos fines los hará responsables ilimitada y solidariamente frente a terceros y socios, sin perjuicio de la responsabilidad de estos últimos, según lo estipula el Artículo 99 de la Ley General de Sociedades (Ley 19.550).
+
+El contexto legal proporcionado no detalla un mecanismo exacto para que los administradores se eximan de dicha responsabilidad. Sin embargo, se desprende que el cumplimiento de sus deberes de lealtad y diligencia, así como la estricta observancia de las operaciones necesarias para la liquidación una vez disuelta la sociedad, son fundamentales para evitar incurrir en responsabilidad.
+
+Adicionalmente, el Artículo 58 de la Ley General de Sociedades establece que el administrador o representante obliga a la sociedad por todos los actos que no sean notoriamente extraños al objeto social, incluso si se infringe la organización plural, a menos que el tercero tenga conocimiento efectivo de dicha infracción. Las restricciones contractuales a estas facultades no afectan la validez interna de las mismas ni la responsabilidad por su infracción.
+
+En cuanto a la exclusión de socios, el Artículo 91 de la Ley General de Sociedades, aplicable a Sociedades Anónimas y Sociedades en Comandita por Acciones, permite la exclusión de un socio por justa causa, como el grave incumplimiento de sus obligaciones. Sin embargo, este artículo se refiere a la relación entre socios y no a la eximición de responsabilidad de los administradores.
+
+================================================================================
+PREGUNTA 9 de 25:
+Según la ley, ¿cómo debe calcularse y qué límite porcentual tiene la constitución de la reserva legal obligatoria?
+
+RESPUESTA:
+La respuesta original es correcta en cuanto a que el contexto proporcionado **no contiene información sobre cómo debe calcularse la reserva legal obligatoria ni qué límite porcentual tiene**.
+
+Los artículos citados en la respuesta original se refieren a aspectos de la Sociedad Anónima, pero ninguno de ellos aborda específicamente el cálculo o el límite de la reserva legal.
+
+Por lo tanto, la respuesta original, al indicar la ausencia de información relevante en el contexto, es precisa.
+
+**RESPUESTA FINAL (corregida y completa):**
+
+El contexto proporcionado no contiene información sobre cómo debe calcularse la reserva legal obligatoria ni qué límite porcentual tiene. Los artículos mencionados se refieren a:
+
+*   **Artículo 206:** Reducción obligatoria del capital cuando las pérdidas insumen las reservas y el 50% del capital.
+*   **Artículo 189:** Proporción de cada accionista en la capitalización de reservas y otros fondos especiales.
+*   **Artículo 187:** Integración mínima en efectivo y aportes no dinerarios.
+*   **Artículo 224:** Distribución de dividendos y pago de interés, prohibición de dividendos anticipados.
+*   **Artículo 243:** Quórum y mayoría para la constitución y resolución de asambleas ordinarias.
+*   **Artículo 237:** Convocatoria de asambleas, plazos y requisitos de publicación.
+*   **Artículo 188:** Aumento de capital, facultades de la asamblea y del directorio.
+*   **Artículo 309:** Inclusión posterior de sociedades anónimas en un régimen específico.
+
+================================================================================
+PREGUNTA 10 de 25:
+¿Cuáles son los requisitos formales y de publicidad exigidos paso a paso para llevar a cabo la transformación de un tipo societario a otro?
+
+RESPUESTA:
+La respuesta proporcionada es **correcta y completa**. Cubre todos los aspectos relevantes presentes en el contexto legal proporcionado, no confunde ni mezcla tipos societarios, y se basa únicamente en la información de los artículos pertinentes.
+
+A continuación, se presenta la respuesta tal cual, ya que no requiere correcciones ni adiciones:
+
+Para llevar a cabo la transformación de un tipo societario a otro, se deben cumplir los siguientes requisitos formales y de publicidad, paso a paso, de acuerdo con la Ley General de Sociedades (Ley 19.550):
+
+1.  **Acuerdo Social:**
+    *   Se requiere un acuerdo unánime de los socios, salvo que exista un pacto en contrario o lo dispuesto para algunos tipos societarios específicos (Artículo 77, inciso 1).
+    *   En el caso de una asociación civil que se transforma en sociedad comercial o resuelve ser socia de sociedades anónimas, se necesita el voto de los dos tercios de los asociados (Artículo 77, inciso 1).
+
+2.  **Balance Especial:**
+    *   Se debe confeccionar un balance especial, cerrado a una fecha que no exceda un (1) mes a la del acuerdo de transformación (Artículo 77, inciso 2).
+    *   Este balance debe ser puesto a disposición de los socios en la sede social con no menos de quince (15) días de anticipación a dicho acuerdo (Artículo 77, inciso 2).
+    *   Se requieren las mismas mayorías establecidas para la aprobación de los balances de ejercicio (Artículo 77, inciso 2).
+
+3.  **Instrumento de Transformación:**
+    *   Debe otorgarse el acto que instrumente la transformación por los órganos competentes de la sociedad que se transforma (Artículo 77, inciso 3).
+    *   Debe concurrir los nuevos otorgantes (Artículo 77, inciso 3).
+    *   Debe constar la identificación de los socios que se retiran, el capital que representan y el cumplimiento de las formalidades del nuevo tipo societario adoptado (Artículo 77, inciso 3).
+
+4.  **Publicidad:**
+    *   Se debe realizar una publicación por un (1) día en el diario de publicaciones legales que corresponda a la sede social y sus sucursales (Artículo 77, inciso 4).
+    *   El aviso publicado deberá contener:
+        *   La fecha de la resolución social que aprobó la transformación (Artículo 77, inciso 4, a).
+        *   La fecha del instrumento de transformación (Artículo 77, inciso 4, b).
+        *   La razón social o denominación social anterior y la adoptada, debiendo resultar indubitable su identidad con la sociedad que se transforma (Artículo 77, inciso 4, c).
+        *   Los socios que se retiran o incorporan y el capital que representan (Artículo 77, inciso 4, d).
+        *   Cuando la transformación afecte los datos a que se refiere el artículo 10, apartado a), puntos 4 a 10, la publicación deberá determinarlo (Artículo 77, inciso 4, e).
+
+5.  **Inscripción:**
+    *   Se debe inscribir el instrumento de transformación, junto con una copia del balance firmado, en el Registro Público de Comercio (Artículo 77, inciso 5).
+    *   También se inscribirá en los demás registros que correspondan por el tipo de sociedad, por la naturaleza de los bienes que integran el patrimonio y sus gravámenes (Artículo 77, inciso 5).
+    *   Estas inscripciones deben ser ordenadas y ejecutadas por el Juez o autoridad a cargo del Registro Público de Comercio, una vez cumplida la publicidad requerida (Artículo 77, inciso 5).
+
+**Efectos de la Transformación:**
+La transformación implica que una sociedad adopta otro de los tipos previstos en la ley. No se disuelve la sociedad ni se alteran sus derechos y obligaciones (Artículo 74). La transformación no modifica la responsabilidad solidaria e ilimitada anterior de los socios, aun cuando se trate de obligaciones que deban cumplirse con posterioridad a la adopción del nuevo tipo, salvo que los acreedores lo consientan expresamente (Artículo 75).
+
+**Rescisión de la Transformación:**
+El acuerdo social de transformación puede ser dejado sin efecto mientras ésta no se haya inscripto. Si medió publicación, debe procederse conforme a lo establecido en el segundo párrafo del artículo 81. Se requiere acuerdo unánime de los socios, salvo pacto en contrario y lo dispuesto para algunos tipos societarios (Artículo 80).
+
+**Mayorías para la Asamblea Extraordinaria (en supuestos especiales como la transformación):**
+Para la transformación, en el caso de sociedades anónimas, las resoluciones se adoptan por el voto favorable de la mayoría de acciones con derecho a voto, sin aplicarse la pluralidad de voto, tanto en primera como en segunda convocatoria. Esto aplica cuando no se trata de sociedades que hacen oferta pública o cotización de sus acciones (Artículo 244).
+
+================================================================================
+PREGUNTA 11 de 25:
+En un proceso de fusión, ¿qué información obligatoria y balances debe contener el compromiso previo de fusión firmado por los representantes?
+
+RESPUESTA:
+En un proceso de fusión, el compromiso previo de fusión, otorgado por los representantes de las sociedades, debe contener la siguiente información obligatoria y balances, conforme al Artículo 83 de la Ley General de Sociedades (Ley 19.550):
+
+1.  **Exposición de los motivos y finalidades de la fusión**: Se deben detallar las razones y los objetivos que impulsan la operación de fusión.
+2.  **Balances especiales de fusión de cada sociedad**:
+    *   Estos balances deben ser preparados por los administradores de cada sociedad.
+    *   En su caso, deben contar con informes de los síndicos.
+    *   Deben estar cerrados en una misma fecha, la cual no puede ser anterior a tres (3) meses a la firma del compromiso.
+    *   Deben ser confeccionados sobre bases homogéneas y criterios de valuación idénticos.
+3.  **Relación de cambios de las participaciones sociales, cuotas o acciones**: Se debe especificar cómo se modificarán o intercambiarán las participaciones de los socios o accionistas.
+4.  **Proyecto de contrato o estatuto de la sociedad absorbente según el caso**: Si una sociedad existente absorbe a otra u otras, se debe presentar el proyecto de modificación de su contrato o estatuto.
+5.  **Limitaciones en la administración y garantía de gestión**: Se deben establecer las limitaciones que las sociedades acuerden en la administración de sus negocios y la garantía que establezcan para el cumplimiento de una actividad normal en su gestión, durante el lapso que transcurra hasta que la fusión se inscriba.
+
+================================================================================
+PREGUNTA 12 de 25:
+¿Qué plazos, condiciones y efectos establece la ley para que un socio disconforme ejerza su derecho de receso?
+
+RESPUESTA:
+La respuesta proporcionada es **correcta y completa** en lo que respecta al derecho de receso en las Sociedades Anónimas argentinas, basándose en el Artículo 245 de la Ley General de Sociedades (Ley 19.550). Cubre todos los aspectos relevantes solicitados en la pregunta original: plazos, condiciones, efectos, limitaciones y caducidad.
+
+Además, la respuesta **no confunde ni mezcla el tipo societario preguntado (Sociedad Anónima) con otro tipo societario**. La información adicional sobre el Artículo 30 y el Artículo 159, si bien no es estrictamente necesaria para responder a la pregunta sobre el derecho de receso, se refiere a aspectos de las Sociedades Anónimas y no introduce información incorrecta de otros tipos societarios.
+
+Por lo tanto, la respuesta se devuelve tal cual.
+
+---
+
+En las sociedades anónimas, el derecho de receso para socios disconformes se rige por el Artículo 245 de la Ley General de Sociedades (Ley 19.550).
+
+**Plazos para el ejercicio del derecho de receso:**
+
+*   **Accionistas presentes:** Pueden ejercer el derecho de receso dentro del quinto día desde la decisión de la asamblea.
+*   **Accionistas ausentes:** Tienen un plazo de quince (15) días desde la clausura de la asamblea para ejercerlo.
+
+**Condiciones para el ejercicio del derecho de receso:**
+
+El derecho de receso puede ser ejercido por los accionistas disconformes con ciertas modificaciones, salvo en los casos de disolución anticipada, y en el caso de los accionistas de la sociedad incorporante en fusión y en la escisión. También podrán separarse en los siguientes supuestos:
+
+*   Aumentos de capital que competan a la asamblea extraordinaria y que impliquen desembolso para el socio.
+*   Retiro voluntario de la oferta pública o de la cotización de las acciones.
+*   Continuación de la sociedad en el supuesto del artículo 94 inciso 9).
+
+**Limitación por oferta pública:**
+
+En las sociedades que hacen ofertas públicas de sus acciones o se hallan autorizadas para la cotización de las mismas, los accionistas no podrán ejercer el derecho de receso en los casos de fusión o de escisión si las acciones que deben recibir en su consecuencia estuviesen admitidas a la oferta pública o para la cotización, según el caso. Podrán ejercerlo si la inscripción bajo dichos regímenes fuese desistida o denegada. En estos supuestos, el plazo para el ejercicio del receso se contará desde que la sociedad comunique la denegatoria o el desistimiento mediante avisos por tres (3) días en el diario de publicaciones legales y en uno de los que tenga mayor circulación en la República.
+
+**Efectos del derecho de receso:**
+
+*   **Reembolso del valor de las acciones:** Los accionistas que ejerzan el derecho de receso tienen derecho al reembolso del valor de sus acciones.
+*   **Fijación del valor de las acciones:** Las acciones se reembolsarán por el valor resultante del último balance realizado o que deba realizarse en cumplimiento de normas legales o reglamentarias.
+*   **Plazo de pago del reembolso:** El importe del reembolso deberá ser pagado dentro del año de la clausura de la asamblea que originó el receso, salvo en los casos de retiro voluntario, desistimiento o denegatoria de la oferta pública o cotización o de continuación de la sociedad en el supuesto del artículo 94, inciso 9), en los que deberá pagarse dentro de los sesenta (60) días desde la clausura de la asamblea o desde que se publique el desistimiento, la denegatoria o la aprobación del retiro voluntario.
+*   **Ajuste del valor de la deuda:** El valor de la deuda se ajustará a la fecha del efectivo pago.
+
+**Caducidad del derecho de receso:**
+
+El derecho de receso y las acciones emergentes caducan si la resolución que los origina es revocada por asamblea celebrada dentro de los sesenta (60) días de expirado el plazo para su ejercicio por los ausentes. En este caso, los recedentes readquieren sin más el ejercicio de sus derechos, retrotrayéndose los de naturaleza patrimonial al momento en que notificaron el receso.
+
+**Nulidad:**
+
+Es nula toda disposición que excluya el derecho de receso o agrave las condiciones de su ejercicio.
+
+Adicionalmente, se menciona que las sociedades anónimas solo pueden formar parte de sociedades por acciones y de responsabilidad limitada (Artículo 30). En cuanto a las resoluciones sociales, el contrato dispondrá sobre la forma de deliberar y tomar acuerdos. En su defecto, son válidas las resoluciones que se adopten por el voto de los socios comunicando a la gerencia, dentro de los diez (10) días de habérseles cursado consulta simultánea a través de un medio fehaciente, o las que resultan de declaración escrita en la que todos los socios expresan el sentido de su voto (Artículo 159). En las sociedades cuyo capital alcance el importe fijado por el artículo 299, inciso 2), los socios reunidos en asamblea resolverán sobre los estados contables de ejercicio, para cuya consideración serán convocados dentro de los cuatro (4) meses de su cierre. Esta asamblea se sujetará a las normas previstas para la sociedad anónima, reemplazándose el medio de convocarlas por la citación notificada personalmente o por otro medio fehaciente. Toda comunicación o citación a los socios debe dirigirse al domicilio expresado en el instrumento de constitución, salvo que se haya notificado su cambio a la gerencia (Artículo 159).
+
+================================================================================
+PREGUNTA 13 de 25:
+¿Cuáles son las causales legales taxativas que provocan la disolución de una sociedad estipuladas en el artículo 94?
+
+RESPUESTA:
+El artículo 94 bis de la Ley General de Sociedades (Ley 19.550) aborda la situación de la reducción a uno del número de socios. Es importante aclarar que este artículo **no enumera las causales taxativas de disolución de una sociedad**, sino que especifica qué sucede cuando el número de socios se reduce a uno.
+
+Según el artículo 94 bis:
+
+*   **No es causal de disolución:** La reducción a uno del número de socios por sí sola no provoca la disolución de la sociedad.
+*   **Obligación de transformación:** Sin embargo, impone la transformación de pleno derecho de ciertos tipos societarios (sociedades en comandita, simple o por acciones, y de capital e industria) en una sociedad anónima unipersonal.
+*   **Plazo para decidir:** Esta transformación de pleno derecho ocurrirá si no se decide otra solución dentro del término de TRES (3) meses.
+
+En resumen, el artículo 94 bis no lista las causales de disolución, sino que regula una situación específica que, de no resolverse de otra manera, lleva a una transformación societaria. Las causales de disolución se encuentran en otros artículos de la Ley General de Sociedades, no en el 94 bis.
+
+================================================================================
+PREGUNTA 14 de 25:
+¿Qué requisitos debe cumplir una sociedad constituida en el extranjero para establecer una sucursal y ejercer habitualmente su objeto social en Argentina?
+
+RESPUESTA:
+La respuesta proporcionada es **correcta y completa** en relación a la pregunta formulada y al contexto legal brindado. Cubre todos los aspectos relevantes de los artículos citados y no confunde tipos societarios.
+
+A continuación, se presenta la respuesta tal cual, ya que no requiere correcciones ni adiciones:
+
+Para que una sociedad constituida en el extranjero pueda establecer una sucursal y ejercer habitualmente su objeto social en Argentina, debe cumplir con los siguientes requisitos:
+
+1.  **Acreditar la existencia de la sociedad:** Debe demostrar que se ha constituido de acuerdo con las leyes de su país de origen (Artículo 118, inciso 1).
+2.  **Fijar un domicilio en la República:** Debe establecer un domicilio en Argentina y cumplir con los requisitos de publicación e inscripción que se exigen para las sociedades que se constituyen en la República (Artículo 118, inciso 2).
+    *   El acto constitutivo, su modificación y el reglamento (si lo hubiere) se inscribirán en el Registro Público del domicilio social y en el Registro que corresponda al asiento de cada sucursal, incluyendo la dirección donde se instalan a los fines del artículo 11, inciso 2 (Artículo 5).
+    *   La inscripción se dispondrá previa ratificación de los otorgantes, excepto cuando se extienda por instrumento público o las firmas sean autenticadas por escribano público u otro funcionario competente (Artículo 5).
+    *   Las sociedades harán constar en la documentación que de ellas emane, la dirección de su sede y los datos que identifiquen su inscripción en el Registro (Artículo 5).
+3.  **Justificar la decisión de crear la representación y designar representante:** Debe acreditar la decisión de establecer dicha representación y designar a la persona que estará a cargo de ella (Artículo 118, inciso 3).
+4.  **Determinación del capital asignado a la sucursal:** Si se trata de una sucursal, se deberá determinar el capital que se le asigne, cuando esto sea requerido por leyes especiales (Artículo 118).
+
+Adicionalmente, si la sociedad constituida en el extranjero tiene su sede en la República o su principal objeto está destinado a cumplirse en la misma, será considerada como sociedad local a los efectos del cumplimiento de las formalidades de constitución o de su reforma y contralor de funcionamiento (Artículo 124).
+
+Para constituir sociedad en la República, las sociedades extranjeras deberán previamente acreditar ante el juez del Registro que se han constituido de acuerdo con las leyes de sus países respectivos e inscribir su contrato social, reformas y demás documentación habilitante, así como la relativa a sus representantes legales, en el Registro Público de Comercio y en el Registro Nacional de Sociedades por Acciones en su caso (Artículo 123).
+
+El emplazamiento a una sociedad constituida en el extranjero puede cumplirse en la República en la persona del representante si existiere sucursal, asiento o cualquier otra especie de representación (Artículo 122, inciso b). El representante de una sociedad constituida en el extranjero contrae las mismas responsabilidades que para los administradores prevé esta ley y, en los supuestos de sociedades de tipos no reglamentados, las de los directores de sociedades anónimas (Artículo 121).
+
+================================================================================
+PREGUNTA 15 de 25:
+En una Sociedad de Responsabilidad Limitada, ¿qué mayorías exactas de capital se requieren para modificar el contrato social si el mismo no lo regula expresamente?
+
+RESPUESTA:
+En una Sociedad de Responsabilidad Limitada, si el contrato social no regula expresamente las mayorías necesarias para modificar el contrato, se requiere el voto de las **Tres Cuartas (3/4) partes del capital social**. Si un solo socio representare el voto mayoritario, se necesitará, además, el voto de otro.
+
+Esto se desprende de lo establecido en el **Artículo 160** de la Ley General de Sociedades (Ley 19.550), que indica: "En defecto de regulación contractual se requiere el voto de las Tres Cuartas (3/4) partes del capital social. Si un solo socio representare el voto mayoritario, se necesitará, además, el voto de otro."
+
+Adicionalmente, el **Artículo 160** también señala que la transformación, la fusión, la escisión, la prórroga, la reconducción, la transferencia de domicilio al extranjero, el cambio fundamental del objeto y todo acuerdo que incremente las obligaciones sociales o la responsabilidad de los socios que votaron en contra, otorgan a estos últimos derecho de receso conforme a lo dispuesto por el **Artículo 245**.
+
+Es importante destacar que las modificaciones no inscriptas regularmente obligan a los socios otorgantes y son inoponibles a los terceros, aunque estos pueden alegarlas contra la sociedad y los socios, **salvo en las sociedades por acciones y en las sociedades de responsabilidad limitada**, según lo dispuesto en el **Artículo 12** de la Ley General de Sociedades.
+
+En cuanto a la caracterización de la Sociedad de Responsabilidad Limitada, el **Artículo 146** de la Ley General de Sociedades establece que el capital se divide en cuotas y los socios limitan su responsabilidad a la integración de las que suscriban o adquieran, sin perjuicio de la garantía a que se refiere el **Artículo 150**. El número de socios no puede exceder de cincuenta.
+
+La publicidad de las Sociedades de Responsabilidad Limitada, en oportunidad de su constitución y de la modificación del contrato, se rige por el **Artículo 10** de la Ley General de Sociedades, que exige la publicación de ciertos datos en el diario de publicaciones legales.
+
+**Revisión y Correcciones:**
+
+La respuesta original es **correcta y completa**. Cubre todos los aspectos relevantes presentes en el contexto proporcionado para una Sociedad de Responsabilidad Limitada (SRL).
+
+1.  **Cobertura de aspectos relevantes:** La respuesta aborda:
+    *   **Mayorías para modificar el contrato social:** Correctamente cita el Art. 160 para la mayoría requerida en defecto de regulación contractual.
+    *   **Derecho de receso:** Menciona las situaciones que otorgan derecho de receso según el Art. 160.
+    *   **Modificaciones no inscriptas:** Explica la ineficacia para terceros y la excepción para SRL y sociedades por acciones según el Art. 12.
+    *   **Capital y responsabilidad:** Describe la división del capital en cuotas y la limitación de responsabilidad de los socios de una SRL según el Art. 146.
+    *   **Número máximo de socios:** Indica el límite de cincuenta socios para una SRL según el Art. 146.
+    *   **Publicidad:** Menciona la obligación de publicidad para SRL según el Art. 10.
+
+2.  **No confunde ni mezcla tipos societarios:** La respuesta se centra específicamente en la Sociedad de Responsabilidad Limitada y utiliza la información pertinente para este tipo societario. La mención del Art. 12 sobre la inoponibilidad a terceros y la excepción para SRL y sociedades por acciones es precisa.
+
+3.  **No incluye información de artículos de otro tipo societario:** Toda la información citada se corresponde con los artículos proporcionados y su aplicación a las SRL. El Art. 163, que caracteriza a las sociedades por acciones, no fue incluido en la respuesta, lo cual es correcto ya que la pregunta se refiere a una SRL.
+
+La respuesta original ya es la respuesta final corregida y completa.
+
+================================================================================
+PREGUNTA 16 de 25:
+¿Cuál es el procedimiento y los plazos legales si un socio de una SRL desea ceder sus cuotas a un tercero, pero el contrato limita dicha transmisibilidad y la sociedad ejerce su derecho de preferencia?
+
+RESPUESTA:
+La respuesta proporcionada es **correcta y completa** en relación a la pregunta planteada y al contexto legal proporcionado. Cubre todos los aspectos relevantes de la cesión de cuotas en una SRL con limitaciones contractuales y ejercicio del derecho de preferencia, basándose estrictamente en los artículos de la Ley General de Sociedades (Ley 19.550) que le son aplicables.
+
+No se confunden ni mezclan tipos societarios, ni se incluye información de artículos ajenos al tema.
+
+Por lo tanto, la respuesta se devuelve tal cual:
+
+Si un socio de una SRL desea ceder sus cuotas a un tercero y el contrato social limita dicha transmisibilidad, debiendo la sociedad ejercer su derecho de preferencia, el procedimiento y los plazos legales se rigen por los siguientes artículos de la Ley General de Sociedades (Ley 19.550):
+
+1.  **Comunicación a Gerencia:** El socio que se propone ceder sus cuotas debe comunicar a la gerencia el nombre del interesado y el precio de la cesión.
+
+2.  **Plazo para Notificación de Decisión:** El contrato social debe establecer los procedimientos a que se sujetará el ejercicio de la opción de compra por parte de la sociedad o los socios. El plazo para notificar la decisión al socio que se propone ceder no podrá exceder de **treinta (30) días** desde que éste comunicó a gerencia el nombre del interesado y el precio. A su vencimiento, se tendrá por acordada la conformidad y por no ejercitada la preferencia (Artículo 153).
+
+3.  **Ejercicio de la Preferencia:** La sociedad o los socios pueden ejercer la opción de compra por el mismo precio ofrecido por el tercero. Si la sociedad ejerce la preferencia, puede adquirir las cuotas con utilidades o reservas disponibles o mediante la reducción de su capital (Artículo 153).
+
+4.  **Impugnación del Precio:** Si al tiempo de ejercitar el derecho de preferencia los socios o la sociedad impugnan el precio de las cuotas, deberán expresar el que consideren ajustado a la realidad. Salvo que el contrato prevea otras reglas para la solución del diferendo, la determinación del precio resultará de una pericia judicial. Sin embargo, los impugnantes no estarán obligados a pagar un precio mayor que el de la cesión propuesta, ni el cedente a cobrar uno menor que el ofrecido por quienes ejercitaron la opción. Las costas del procedimiento estarán a cargo de la parte que pretendió el precio más distante del fijado por la tasación judicial (Artículo 154).
+
+5.  **Denegación de Conformidad y Autorización Judicial:** Si se deniega la conformidad para la cesión de cuotas que tienen limitada su transmisibilidad, el socio que se propone ceder podrá ocurrir ante el juez. El juez, con audiencia de la sociedad, autorizará la cesión si no existe justa causa de oposición. Esta declaración judicial importará también la caducidad del derecho de preferencia de la sociedad y de los socios que se opusieron respecto de la cuota de este cedente (Artículo 154).
+
+6.  **Efectos de la Transmisión frente a la Sociedad:** La transmisión de la cuota tiene efecto frente a la sociedad desde que el cedente o el adquirente entreguen a la gerencia un ejemplar o copia del título de la cesión o transferencia, con autentificación de las firmas si obra en instrumento privado (Artículo 152).
+
+7.  **Exclusión de Socio Incorporado:** La sociedad o los socios solo podrán excluir por justa causa al socio así incorporado, procediendo con arreglo a lo dispuesto por el artículo 91, sin que en este caso sea de aplicación la salvedad que establece su párrafo segundo (Artículo 152).
+
+8.  **Oponibilidad a Terceros:** La transmisión de las cuotas es oponible a los terceros desde su inscripción en el Registro Público de Comercio, la que puede ser requerida por la sociedad; también podrán peticionarla el cedente o el adquirente exhibiendo el título de la transferencia y constancia fehaciente de su comunicación a la gerencia (Artículo 152).
+
+Es importante destacar que el contrato social puede limitar la transmisibilidad de las cuotas, pero no prohibirla (Artículo 153).
+
+================================================================================
+PREGUNTA 17 de 25:
+¿Qué diferencias sustanciales existen entre el procedimiento de constitución de una Sociedad Anónima por acto único y por suscripción pública?
+
+RESPUESTA:
+La respuesta proporcionada es correcta y completa, cubriendo todos los aspectos relevantes presentes en el contexto legal proporcionado para la constitución de una Sociedad Anónima por acto único y por suscripción pública. No confunde ni mezcla tipos societarios, y la información de los artículos se aplica correctamente al tipo societario preguntado.
+
+Por lo tanto, la respuesta se devuelve tal cual:
+
+Las diferencias sustanciales entre el procedimiento de constitución de una Sociedad Anónima por acto único y por suscripción pública, según la Ley General de Sociedades (Ley 19.550), son las siguientes:
+
+**Constitución por Acto Único:**
+
+*   **Instrumento de Constitución:** Se constituye por instrumento público y por acto único (Artículo 165).
+*   **Requisitos del Instrumento de Constitución:** El instrumento de constitución debe contener los requisitos del artículo 11 y los siguientes (Artículo 166):
+    *   **Capital:** La naturaleza, clases, modalidades de emisión y demás características de las acciones, y en su caso, su régimen de aumento (Artículo 166, inciso 1º).
+    *   **Suscripción e Integración del Capital:** La suscripción del capital, el monto y la forma de integración y, si corresponde, el plazo para el pago del saldo adeudado, el que no puede exceder de dos (2) años (Artículo 166, inciso 2º).
+    *   **Elección de Directores y Síndicos:** La elección de los integrantes de los órganos de administración y de fiscalización, fijándose el término de duración en los cargos (Artículo 166, inciso 3º).
+*   **Fundadores:** Todos los firmantes del contrato constitutivo se consideran fundadores (Artículo 166).
+
+**Constitución por Suscripción Pública:**
+
+*   **Procedimiento:** Los promotores redactarán un programa de fundación por instrumento público o privado (Artículo 168).
+*   **Aprobación del Programa:** El programa de fundación se someterá a la aprobación de la autoridad de contralor. Esta lo aprobará cuando cumpla las condiciones legales y reglamentarias. Se pronunciará en el término de quince (15) días hábiles; su demora autoriza el recurso previsto en el artículo 169 (Artículo 168).
+*   **Inscripción:** Aprobado el programa, deberá presentarse para su inscripción en el Registro Público de Comercio en el plazo de quince (15) días. Omitida dicha presentación en este plazo, caducará automáticamente la autorización administrativa (Artículo 168).
+*   **Promotores:** Todos los firmantes del programa se consideran promotores (Artículo 168).
+
+**Requisitos Comunes y Adicionales Relacionados con el Capital (Aplicables a ambos procedimientos en ciertos aspectos):**
+
+*   **Suscripción Total:** El capital debe suscribirse totalmente al tiempo de la celebración del contrato constitutivo (Artículo 186).
+*   **Capital Mínimo:** El capital no podrá ser inferior a PESOS TREINTA MILLONES ($30.000.000). Este monto podrá ser actualizado por el Poder Ejecutivo, cada vez que lo estime necesario (Artículo 186).
+*   **Integración Mínima en Efectivo:** La integración en dinero efectivo no podrá ser menor al VEINTICINCO POR CIENTO (25%) de la suscripción. Su cumplimiento se justificará al tiempo de ordenarse la inscripción con el comprobante de su depósito en un banco oficial, cumplida la cual, quedará liberado (Artículo 187).
+*   **Aportes no Dinerarios:** Los aportes no dinerarios deben integrarse totalmente. Solo pueden consistir en obligaciones de dar y su cumplimiento se justificará al tiempo de solicitar la conformidad del artículo 167 (Artículo 187).
+*   **Sociedades Anónimas Unipersonales:** En las Sociedades Anónimas Unipersonales el capital debe integrarse totalmente (Artículo 186). En la Sociedad Anónima Unipersonal el capital social deberá estar totalmente integrado (Artículo 187).
+*   **Contrato de Suscripción (en casos de aumentos de capital por suscripción):** El contrato deberá extenderse en doble ejemplar y contener:
+    1.  El nombre, edad, estado civil, nacionalidad, profesión, domicilio y número de documento de identidad del suscriptor o datos de individualización y de registro o de autorización tratándose de personas jurídicas.
+    2.  La cantidad, valor nominal, clase y características de las acciones suscriptas.
+    3.  El precio de cada acción y del total suscripto; la forma y las condiciones de pago.
+    4.  Los aportes en especie se individualizarán con precisión. En los supuestos que para la determinación del aporte sea necesario un inventario, éste quedará depositado en la sede social para su consulta por los accionistas. En todos los casos el valor definitivo debe resultar de la oportuna aplicación del artículo 53 (Artículo 186).
+
+================================================================================
+PREGUNTA 18 de 25:
+¿Bajo qué circunstancias excepcionales permitidas por la ley puede una Sociedad Anónima adquirir las propias acciones que emitió?
+
+RESPUESTA:
+Una Sociedad Anónima puede adquirir las propias acciones que emitió bajo las siguientes circunstancias excepcionales, de acuerdo con la Ley General de Sociedades (Ley 19.550):
+
+1.  **Para cancelarlas y previo acuerdo de reducción del capital:** La sociedad puede adquirir sus propias acciones con el propósito de cancelarlas, siempre y cuando exista un acuerdo previo de reducción del capital. (Artículo 220, inciso 1º).
+
+2.  **Excepcionalmente, con ganancias realizadas y líquidas o reservas libres:** La adquisición de acciones propias es posible de manera excepcional si se realiza con ganancias realizadas y líquidas o reservas libres. Esta operación solo se permite si las acciones adquiridas están completamente integradas y tiene como fin evitar un daño grave a la sociedad. La justificación de esta medida deberá presentarse en la próxima asamblea ordinaria. (Artículo 220, inciso 2º).
+
+3.  **Por integrar el haber de un establecimiento que adquiere o de una sociedad que incorpora:** La sociedad puede adquirir sus propias acciones como parte del haber de un establecimiento que adquiere o de una sociedad que incorpora. (Artículo 220, inciso 3º).
+
+Es importante destacar que la sociedad **no puede recibir sus acciones en garantía** (Artículo 222).
+
+En los supuestos 2º y 3º del Artículo 220, el directorio tiene la obligación de **enajenar las acciones adquiridas dentro del plazo de un (1) año**, salvo que la asamblea otorgue una prórroga. Durante el período en que las acciones no sean enajenadas, los derechos correspondientes a estas acciones quedarán suspendidos y no se computarán para la determinación del quórum ni de la mayoría. Se aplicará el derecho preferente previsto en el artículo 194. (Artículo 221).
+
+================================================================================
+PREGUNTA 19 de 25:
+¿Qué materias y decisiones son de competencia exclusiva e indelegable de la Asamblea Extraordinaria en una Sociedad Anónima?
+
+RESPUESTA:
+Las materias y decisiones que son de competencia exclusiva e indelegable de la Asamblea Extraordinaria en una Sociedad Anónima, según la Ley General de Sociedades (Ley 19.550), son las siguientes:
+
+**Asuntos Generales de Competencia de la Asamblea Extraordinaria:**
+
+*   Corresponden a la asamblea extraordinaria todos los asuntos que no son de competencia de la asamblea ordinaria, la modificación del estatuto y, en especial, los siguientes:
+    *   **Aumento de capital**, salvo el supuesto del artículo 188. La asamblea solo podrá delegar en el directorio la época de la emisión, forma y condiciones de pago (Artículo 235, inciso 1º).
+    *   **Reducción y reintegro del capital** (Artículo 235, inciso 2º).
+    *   **Rescate, reembolso y amortización de acciones** (Artículo 235, inciso 3º).
+    *   **Fusión, transformación y disolución de la sociedad; nombramiento, remoción y retribución de los liquidadores; escisión; consideración de las cuentas y de los demás asuntos relacionados con la gestión de éstos en la liquidación social, que deban ser objeto de resolución aprobatoria de carácter definitivo** (Artículo 235, inciso 4º).
+    *   **Limitación o suspensión del derecho de preferencia en la suscripción de nuevas acciones** conforme al artículo 197 (Artículo 235, inciso 5º).
+    *   **Emisión de debentures y su conversión en acciones** (Artículo 235, inciso 6º).
+    *   **Emisión de bonos** (Artículo 235, inciso 7º).
+
+**Competencia Exclusiva de las Asambleas:**
+
+*   Las asambleas tienen competencia exclusiva para tratar los asuntos incluidos en los artículos 234 y 235 (Artículo 233).
+
+**Requisitos para la Transformación:**
+
+*   La transformación, que es competencia de la asamblea extraordinaria según el Artículo 235, inciso 4º, exige el cumplimiento de los siguientes requisitos:
+    *   Acuerdo unánime de los socios, salvo pacto en contrario o lo dispuesto para algunos tipos societarios. En el caso de asociaciones civiles que se transformen en sociedades comerciales o resuelvan ser socias de sociedades anónimas, se requiere el voto de los dos tercios de los asociados (Artículo 77, punto 1).
+    *   Confección de un balance especial, cerrado a una fecha que no exceda de un (1) mes a la del acuerdo de transformación y puesto a disposición de los socios en la sede social con no menos de quince (15) días de anticipación a dicho acuerdo. Se requieren las mismas mayorías establecidas para la aprobación de los balances de ejercicio (Artículo 77, punto 2).
+    *   Otorgamiento del acto que instrumente la transformación por los órganos competentes de la sociedad que se transforme y la concurrencia de los nuevos otorgantes, con constancia de los socios que se retiren, capital que representan y cumplimiento de las formalidades del nuevo tipo societario adoptado (Artículo 77, punto 3).
+    *   Publicación por un (1) día en el diario de publicaciones legales que corresponda a la sede social y sus sucursales. El aviso deberá contener:
+        *   Fecha de la resolución social que aprobó la transformación.
+        *   Fecha del instrumento de transformación.
+        *   La razón social o denominación social anterior y la adoptada, debiendo de ésta resultar indubitable su identidad con la sociedad que se transforma.
+        *   Los socios que se retiran o incorporan y el capital que representan.
+        *   Cuando la transformación afecte los datos a que se refiere el artículo 10 apartado a), puntos 4 a 10, la publicación deberá determinarlo (Artículo 77, punto 4).
+    *   La inscripción del instrumento con copia del balance firmado en el Registro Público de Comercio y demás registros que correspondan por el tipo de sociedad, por la naturaleza de los bienes que integran el patrimonio y sus gravámenes. Estas inscripciones deben ser ordenadas y ejecutadas por el Juez o autoridad a cargo del Registro Público de Comercio, cumplida la publicidad a que se refiere el apartado 4) (Artículo 77, punto 5).
+
+**Quórum y Mayorías para la Asamblea Extraordinaria:**
+
+*   La asamblea extraordinaria se reúne en primera convocatoria con la presencia de accionistas que representen el sesenta por ciento (60%) de las acciones con derecho a voto, si el estatuto no exige quórum mayor.
+*   En segunda convocatoria se requiere la concurrencia de accionistas que representen el treinta por ciento (30%) de las acciones con derecho a voto, salvo que el estatuto fije quórum mayor o menor.
+*   Las resoluciones en ambos casos serán tomadas por mayoría absoluta de los votos presentes que puedan emitirse en la respectiva decisión, salvo cuando el estatuto exija mayor número.
+*   **Supuestos especiales:** Cuando se tratare de la transformación, prórroga o reconducción (excepto en las sociedades que hacen oferta pública o cotización de sus acciones); de la disolución anticipada de la sociedad; de la transferencia del domicilio al extranjero, del cambio fundamental del objeto y de la reintegración total o parcial del capital, tanto en la primera cuanto en segunda convocatoria, las resoluciones se adoptarán por el voto favorable de la mayoría de acciones con derecho a voto, sin aplicarse la pluralidad de voto. Esta disposición se aplicará para decidir la fusión y la escisión, salvo respecto de la sociedad incorporante que se regirá por las normas sobre aumento de capital (Artículo 244).
+
+**Asambleas Especiales:**
+
+*   Cuando la asamblea deba adoptar resoluciones que afecten los derechos de una clase de acciones, que se requiere el consentimiento o ratificación de esta clase, que se prestará en asamblea especial regida por las normas de la asamblea ordinaria (Artículo 250).
+
+**Derecho de Receso:**
+
+*   Los accionistas disconformes con las modificaciones incluidas en el último párrafo del artículo 244 (transformación, prórroga o reconducción, disolución anticipada, transferencia del domicilio al extranjero, cambio fundamental del objeto y reintegración total o parcial del capital), salvo en el caso de disolución anticipada y en el de los accionistas de la sociedad incorporante en fusión y en la escisión, pueden separarse de la sociedad con reembolso del valor de sus acciones. También podrán separarse en los pasos de aumentos de capital que competan a la asamblea extraordinaria y que impliquen desembolso para el socio, de retiro voluntario de la oferta pública o de la cotización de las acciones y de continuación de la sociedad en el supuesto del artículo 94 inciso 9) (Artículo 245).
+
+**Modificaciones al Régimen de la Sociedad Anónima:**
+
+*   Las modificaciones al régimen de la sociedad anónima establecidas por esta Sección dejarán de aplicarse cuando se alteren las condiciones previstas en el artículo 308 (Artículo 312).
+
+**Reducción a Uno del Número de Socios:**
+
+*   La reducción a uno del número de socios no es causal de disolución, imponiendo la transformación de pleno derecho de las sociedades en comandita, simple o por acciones, y de capital e industria, en sociedad anónima unipersonal, si no se decidiera otra solución en el término de TRES (3) meses (Artículo 94 bis).
+
+================================================================================
+PREGUNTA 20 de 25:
+¿Cómo funciona paso a paso el procedimiento de elección de directores por el sistema de voto acumulativo y qué proporción mínima de vacantes garantiza a la minoría?
+
+RESPUESTA:
+El procedimiento de elección de directores por el sistema de voto acumulativo en las sociedades anónimas se rige por el Artículo 263 de la Ley General de Sociedades (Ley 19.550). Este sistema permite a los accionistas elegir hasta un tercio (1/3) de las vacantes a llenar en el directorio. El estatuto no puede derogar este derecho ni reglamentarlo de manera que dificulte su ejercicio, salvo en el supuesto previsto en el Artículo 262 (elección por categoría). Tampoco se podrá renovar el directorio de forma parcial o escalonada si esto impide el ejercicio del voto acumulativo.
+
+El procedimiento se desarrolla de la siguiente manera:
+
+1.  **Notificación y Depósito de Títulos:** Los accionistas que deseen votar acumulativamente deben notificar a la sociedad con una antelación no menor a tres (3) días hábiles a la celebración de la asamblea. Deben individualizar las acciones con las que ejercerán el derecho y, si los títulos son al portador, depositarlos o presentar el certificado o constancia de un banco o institución autorizada. Si al menos un accionista cumple estos requisitos, todos quedan habilitados para votar por este sistema.
+
+2.  **Información de la Sociedad:** La sociedad deberá informar a los accionistas que lo soliciten sobre las notificaciones recibidas. Adicionalmente, el presidente de la asamblea debe informar a los accionistas presentes que todos están facultados para votar acumulativamente, independientemente de si formularon o no la notificación.
+
+3.  **Información Pública del Número de Votos:** Antes de la votación, se informará pública y circunstanciadamente el número de votos que corresponde a cada accionista presente.
+
+4.  **Cálculo y Distribución de Votos Acumulativos:** Cada accionista que vote acumulativamente tendrá un número de votos igual al resultado de multiplicar los votos que normalmente le hubieran correspondido por el número de directores a elegir. Estos votos podrán distribuirse o acumularse en un número de candidatos que no exceda el tercio de las vacantes a llenar.
+
+5.  **Competencia entre Sistemas de Votación:** Los accionistas que voten por el sistema ordinario o plural y los que voten acumulativamente competirán en la elección del tercio de las vacantes a llenar. Los dos tercios (2/3) restantes de las vacantes se cubrirán aplicando el sistema ordinario o plural de votación. Los accionistas que no voten acumulativamente lo harán por la totalidad de las vacantes a cubrir, otorgando a cada candidato la totalidad de votos que les corresponde según sus acciones con derecho a voto.
+
+6.  **Prohibición de Voto Mixto:** Ningún accionista podrá votar dividiendo sus acciones, es decir, en parte acumulativamente y en parte en forma ordinaria o plural.
+
+7.  **Variación del Procedimiento:** Todos los accionistas pueden variar el procedimiento o sistema de votación antes de la emisión del voto, incluso aquellos que notificaron su voluntad de votar acumulativamente y cumplieron los recaudos.
+
+8.  **Computación del Resultado:** El resultado de la votación se computará por persona. Solo se considerarán electos los candidatos votados por el sistema ordinario o plural si reúnen la mayoría absoluta de los votos presentes. Los candidatos votados acumulativamente serán electos si obtienen el mayor número de votos, superando a los obtenidos por el sistema ordinario, hasta completar la tercera parte de las vacantes.
+
+9.  **Procedimiento en Caso de Empate:** En caso de empate entre dos o más candidatos votados por el mismo sistema, se procederá a una nueva votación en la que participarán solamente los accionistas que votaron por dicho sistema. Si el empate es entre candidatos votados acumulativamente, en la nueva elección no votarán los accionistas que, dentro de ese sistema, ya obtuvieron la elección de sus postulados.
+
+El Artículo 289 de la Ley General de Sociedades (Ley 19.550) reitera que los accionistas pueden ejercer el derecho reconocido por el Artículo 263 en las condiciones fijadas por este último.
+
+La proporción mínima de vacantes que garantiza a la minoría es **un tercio (1/3)** de las vacantes a llenar en el directorio, según lo establecido en el Artículo 263.
+
+Es importante notar que el Artículo 311 de la Ley General de Sociedades (Ley 19.550) menciona la posibilidad de designación de directores por la minoría, pero especifica que el Artículo 263 no se aplica en ese supuesto. Sin embargo, el Artículo 311 también indica que cuando las acciones del capital privado alcancen el veinte por ciento (20%) del capital social, tendrán representación proporcional en el directorio y elegirán por lo menos uno de los síndicos. Esta disposición de representación proporcional en el directorio por parte del capital privado (20%) es un mecanismo distinto al voto acumulativo del Artículo 263, aunque ambos buscan dar voz a minorías.
+
+================================================================================
+PREGUNTA 21 de 25:
+¿Qué personas están legalmente inhabilitadas o tienen prohibición absoluta para ejercer el cargo de director en una Sociedad Anónima?
+
+RESPUESTA:
+La respuesta proporcionada es **correcta y completa** en relación a las inhabilitaciones y prohibiciones para ejercer el cargo de director en una Sociedad Anónima, basándose en el contexto legal brindado.
+
+A continuación, se detalla la verificación punto por punto:
+
+1.  **Cubre TODOS los aspectos relevantes presentes en el contexto:**
+    *   **Inhabilitaciones y prohibiciones:** La respuesta enumera exhaustivamente las causales de inhabilitación y prohibición para ser director, citando los incisos correspondientes del Artículo 264.
+    *   **Capital, órganos de gobierno, constitución, publicidad, etc.:** Si bien la pregunta se centra en las inhabilitaciones, la respuesta se mantiene dentro del marco de las disposiciones legales proporcionadas. No se mencionan aspectos como capital, constitución o publicidad, ya que no son el foco de los artículos citados en relación a las inhabilitaciones de directores.
+    *   **Relación con otros cargos:** Se menciona la incompatibilidad para ser fiduciario (Art. 342), lo cual es relevante al vincularse con la capacidad para ser director de SA.
+    *   **Procedimiento de remoción:** Se incluye la información sobre la remoción de directores inhabilitados (Art. 265).
+    *   **Responsabilidad de directores:** Se detalla la responsabilidad de los directores (Art. 274), lo cual es un aspecto complementario importante a las condiciones para ejercer el cargo.
+
+2.  **No confunde ni mezcla el tipo societario preguntado con otro tipo societario:** La respuesta se enfoca claramente en la figura del "director" en una "Sociedad Anónima", utilizando los artículos pertinentes de la Ley General de Sociedades que regulan esta figura. No se mezclan las disposiciones de otros tipos societarios.
+
+3.  **No incluye información de artículos que hablan de otro tipo societario distinto al preguntado:** Todos los artículos citados (264, 342, 265, 274) son directamente aplicables a las inhabilitaciones y responsabilidades de directores en el contexto de la Ley General de Sociedades, y específicamente a las Sociedades Anónimas cuando se mencionan disposiciones como las del Art. 342.
+
+**Observaciones adicionales:**
+
+*   La respuesta ha incluido correctamente la información sobre la responsabilidad de los directores (Art. 274), lo cual, si bien no es una "inhabilitación" directa, es un aspecto crucial relacionado con el ejercicio del cargo y las consecuencias de su mal desempeño.
+*   La mención al Art. 342, aunque se refiere a fiduciarios, es pertinente porque establece que quienes no pueden ser directores de SA tampoco pueden ser fiduciarios, reforzando la importancia de las causales del Art. 264.
+
+Por lo tanto, la respuesta es **correcta y completa** según el contexto legal proporcionado.
+
+---
+
+**RESPUESTA FINAL (corregida y completa):**
+
+Las personas legalmente inhabilitadas o con prohibición absoluta para ejercer el cargo de director en una Sociedad Anónima, de acuerdo con la Ley General de Sociedades (Ley 19.550), son las siguientes:
+
+*   **Quienes no pueden ejercer el comercio:** Según el artículo 264, inciso 1º.
+*   **Fallidos y concursados:**
+    *   Los fallidos por quiebra culpable o fraudulenta hasta diez (10) años después de su rehabilitación.
+    *   Los fallidos por quiebra casual o los concursados hasta cinco (5) años después de su rehabilitación.
+    *   Los directores y administradores de sociedad cuya conducta se califique de culpable o fraudulenta, hasta diez (10) años después de su rehabilitación.
+    Todo esto, conforme al artículo 264, inciso 2º.
+*   **Condenados por ciertos delitos:**
+    *   Los condenados con accesoria de inhabilitación para ejercer cargos públicos.
+    *   Los condenados por hurto, robo, defraudación, cohecho, emisión de cheques sin fondos y delitos contra la fe pública.
+    *   Los condenados por delitos cometidos en la constitución, funcionamiento y liquidación de sociedades.
+    En todos estos casos, la inhabilitación rige hasta diez (10) años después de cumplida la condena, según el artículo 264, inciso 3º.
+*   **Funcionarios de la administración pública:** Aquellos cuyo desempeño se relacione con el objeto de la sociedad, hasta dos (2) años del cese de sus funciones, de acuerdo con el artículo 264, inciso 4º.
+
+Adicionalmente, el artículo 342 establece que no pueden ser fiduciarios quienes no puedan ser directores de sociedades anónimas.
+
+La remoción de un director inhabilitado puede ser solicitada a través de una asamblea ordinaria, la cual debe ser convocada dentro de los cuarenta (40) días de solicitada. Si la remoción es denegada, cualquier accionista, director o síndico puede requerirla judicialmente, conforme al artículo 265.
+
+Es importante notar que los directores responden ilimitada y solidariamente hacia la sociedad, los accionistas y los terceros por el mal desempeño de su cargo, violación de la ley, estatuto o reglamento, y por cualquier otro daño producido por dolo, abuso de facultades o culpa grave, según el artículo 274. La imputación de responsabilidad puede ser individual si se han asignado funciones personales, y la decisión asamblearia y designación de personas deben inscribirse en el Registro Público de Comercio. Un director puede eximirse de responsabilidad si deja constancia escrita de su protesta y notifica al síndico antes de que su responsabilidad sea denunciada o se ejerza acción judicial, según lo dispuesto en el artículo 274.
+
+================================================================================
+PREGUNTA 22 de 25:
+¿Cuáles son las atribuciones, deberes y obligaciones indelegables del síndico societario según el artículo 294?
+
+RESPUESTA:
+Según el artículo 294 de la Ley General de Sociedades (Ley 19.550), las atribuciones y deberes del síndico, sin perjuicio de los demás que esta ley determina y los que le confiera el estatuto, son los siguientes:
+
+1.  **Fiscalizar la administración de la sociedad**: A cuyo efecto examinará los libros y documentación siempre que lo juzgue conveniente y, por lo menos, una vez cada tres (3) meses.
+2.  **Verificar disponibilidades y títulos valores**: En igual forma y periodicidad, así como las obligaciones y su cumplimiento. Igualmente, puede solicitar la confección de balances de comprobación.
+3.  **Asistir a reuniones de órganos sociales**: Asistirá con voz, pero sin voto, a las reuniones del directorio, del comité ejecutivo y de la asamblea, a todas las cuales debe ser citado.
+4.  **Controlar la constitución y subsistencia de la garantía de los directores**: Y recabar las medidas necesarias para corregir cualquier irregularidad.
+5.  **Presentar informe a la asamblea ordinaria**: Presentará un informe escrito y fundado sobre la situación económica y financiera de la sociedad, dictaminando sobre la memoria, inventario, balance y estado de resultados.
+6.  **Suministrar información a accionistas**: Suministrará a accionistas que representen no menos del Dos por Ciento (2 %) del capital, en cualquier momento que éstos se lo requieran, información sobre las materias que son de su competencia.
+7.  **Convocar a asamblea**: Convocar a asamblea extraordinaria, cuando lo juzgue necesario y a asamblea ordinaria o asambleas especiales, cuando omitiere hacerlo el directorio.
+8.  **Incluir puntos en el orden del día de la asamblea**: Hará incluir en el orden del día de la asamblea, los puntos que considere procedentes.
+9.  **Vigilar el cumplimiento de la ley y estatuto**: Vigilará que los órganos sociales den debido cumplimiento a la ley, estatuto, reglamento y decisiones asamblearias.
+10. **Fiscalizar la liquidación de la sociedad**: Fiscalizará la liquidación de la sociedad.
+11. **Investigar denuncias de accionistas**: Investigará las denuncias que le formulen por escrito accionistas que representen no menos del Dos por Ciento (2 %) del capital, mencionarlas en informe verbal a la asamblea y expresar acerca de ellas las consideraciones y proposiciones que correspondan. Convocará de inmediato a asamblea para que resuelva al respecto, cuando la situación investigada no reciba del directorio el tratamiento que conceptúe adecuado y juzgue necesario actuar con urgencia.
+
+Adicionalmente, el artículo 293 establece que **el cargo de síndico es personal e indelegable**.
+
+En cuanto a la **remuneración**, el artículo 292 indica que la función del síndico es remunerada. Si la remuneración no estuviera determinada por el estatuto, lo será por la asamblea.
+
+La **responsabilidad** de los síndicos se rige por el artículo 296, el cual establece que son ilimitada y solidariamente responsables por el incumplimiento de las obligaciones que les imponen la ley, el estatuto y el reglamento. Su responsabilidad se hará efectiva por decisión de la asamblea, la cual importa la remoción del síndico.
+
+En el caso de **sindicatura colegiada**, el artículo 290 señala que cuando la sindicatura fuere plural, actuará como cuerpo colegiado, y se denominará "Comisión Fiscalizadora". El estatuto reglamentará su constitución y funcionamiento. Llevará un libro de actas. El síndico disidente tendrá los derechos, atribuciones y deberes del artículo 294.
+
+El artículo 284 detalla la **designación de síndicos**, indicando que está a cargo de uno o más síndicos designados por la asamblea de accionistas, y se elegirá igual número de síndicos suplentes. Cuando la sociedad estuviere comprendida en el artículo 299 (excepto en los casos previstos en los incisos 2 y 7 y cuando se trate de Pymes que encuadren en el régimen especial Pyme reglamentado por la Comisión Nacional de Valores), la sindicatura debe ser colegiada en número impar. Cada acción dará en todos los casos derechos a un sólo voto para la elección y remoción de los síndicos, sin perjuicio de la aplicación del artículo 288. Es nula cualquier cláusula en contrario. Las sociedades que no estén comprendidas en ninguno de los supuestos a que se refiere el artículo 299 y aquellas que hagan oferta pública de obligaciones negociables garantizadas, conforme el Régimen establecido por la Comisión Nacional de Valores, podrán prescindir de la sindicatura cuando así esté previsto en el estatuto. En tal caso los socios poseen el derecho de contralor que confiere el artículo 55. Cuando por aumento de capital resultare excedido el monto indicado la asamblea que así lo resolviere debe designar síndico, sin que sea necesaria reforma de estatuto.
+
+El artículo 158 se refiere a la **fiscalización optativa y obligatoria**. Puede establecerse un órgano de fiscalización, sindicatura o consejo de vigilancia, que se regirá por las disposiciones del contrato. La sindicatura o el consejo de vigilancia son obligatorios en la sociedad cuyo capital alcance el importe fijado por el artículo 299, inciso 2). Tanto a la fiscalización optativa como a la obligatoria se aplican supletoriamente las reglas de la sociedad anónima. Las atribuciones y deberes de éstos órganos no podrán ser menores que los establecidos para tal sociedad, cuando es obligatoria.
+
+Finalmente, el artículo 311, en lo referente a **directores y síndicos por la minoría**, establece que el estatuto podrá prever la designación por la minoría de uno o más directores y de uno o más síndicos. Cuando las acciones del capital privado alcancen el Veinte por ciento (20 %) del capital social tendrán representación proporcional en el directorio y elegirán por lo menos uno de los síndicos. No se aplica el artículo 263.
+
+La respuesta original cubrió todos los aspectos relevantes presentes en el contexto, no confundió ni mezcló tipos societarios y no incluyó información de artículos que hablan de otro tipo societario distinto al preguntado. Por lo tanto, la respuesta es correcta y completa.
+
+================================================================================
+PREGUNTA 23 de 25:
+¿En qué supuestos específicos e incisos una Sociedad Anónima queda sujeta obligatoriamente a la fiscalización estatal permanente del artículo 299?
+
+RESPUESTA:
+La respuesta proporcionada es **correcta y completa**. Cubre todos los aspectos relevantes del artículo 299 de la Ley General de Sociedades (Ley 19.550) en relación a los supuestos de fiscalización estatal permanente para las Sociedades Anónimas.
+
+A continuación, se detalla la verificación punto por punto:
+
+1.  **Cubre TODOS los aspectos relevantes presentes en el contexto:** La respuesta enumera exhaustivamente todos los incisos del artículo 299 que determinan la sujeción a fiscalización estatal permanente. Además, menciona el alcance de esta fiscalización (constitución, funcionamiento, disolución y liquidación). También incluye información relevante de otros artículos (300, 301, 158, 304) que complementan la comprensión del régimen de fiscalización, diferenciando la fiscalización permanente de la limitada y la obligatoriedad de órganos de fiscalización interna.
+
+2.  **No confunde ni mezcla el tipo societario preguntado con otro tipo societario:** La respuesta se centra exclusivamente en la Sociedad Anónima, tal como lo requiere la pregunta y el contexto legal proporcionado. No introduce elementos de otros tipos societarios.
+
+3.  **No incluye información de artículos que hablan de otro tipo societario distinto al preguntado:** Toda la información citada proviene de los artículos de la Ley General de Sociedades (19.550) que regulan la fiscalización de las Sociedades Anónimas.
+
+**En resumen, la respuesta es precisa, completa y se ajusta perfectamente al marco legal proporcionado.**
+
+Por lo tanto, la respuesta final es la misma que la proporcionada para revisar:
+
+Una Sociedad Anónima queda sujeta obligatoriamente a la fiscalización estatal permanente del artículo 299 de la Ley General de Sociedades (Ley 19.550) en los siguientes supuestos e incisos:
+
+1.  **Oferta pública de acciones o debentures:** Cuando la sociedad haga oferta pública de sus acciones o debentures (Art. 299, inciso 1º).
+2.  **Capital social superior a un monto determinado:** Cuando tenga capital social superior a pesos dos millones ($ 2.000.000), monto que podrá ser actualizado por el Poder Ejecutivo (Art. 299, inciso 2º).
+3.  **Participación estatal:** Cuando sea de participación estatal, ya sea por la participación del Estado nacional, los estados provinciales, la Ciudad Autónoma de Buenos Aires, los municipios y/o los organismos estatales legalmente autorizados al efecto (Art. 299, inciso 3º).
+4.  **Operaciones de capitalización, ahorro o captación de fondos del público:** Cuando realicen operaciones de capitalización, ahorro o en cualquier forma requieran dinero o valores al público con promesas de prestaciones o beneficios futuros (Art. 299, inciso 4º).
+5.  **Explotación de concesiones o servicios públicos:** Cuando exploten concesiones o servicios públicos (Art. 299, inciso 5º).
+6.  **Sociedad controlante o controlada por otra sujeta a fiscalización:** Cuando se trate de sociedad controlante de o controlada por otra sujeta a fiscalización, conforme a uno de los incisos anteriores (Art. 299, inciso 6º).
+7.  **Sociedades Anónimas Unipersonales:** Cuando se trate de Sociedades Anónimas Unipersonales (Art. 299, inciso 7º).
+
+Además, es importante mencionar que la fiscalización estatal permanente abarca el control de constitución, el funcionamiento, la disolución y la liquidación de la sociedad (Art. 299).
+
+La fiscalización estatal limitada, en cambio, se aplica a las sociedades anónimas no incluidas en el artículo 299 y se limita al contrato constitutivo, sus reformas y variaciones del capital, a los efectos de los artículos 53 y 167 (Art. 300). La autoridad de contralor podrá ejercer funciones de vigilancia en estas sociedades no incluidas en el artículo 299 cuando lo soliciten accionistas que representen el diez por ciento (10%) del capital suscripto o lo requiera cualquier síndico, limitándose a los hechos que funden la presentación; o cuando lo considere necesario, según resolución fundada, en resguardo del interés público (Art. 301).
+
+Por otra parte, la sindicatura o el consejo de vigilancia son obligatorios en la sociedad cuyo capital alcance el importe fijado por el artículo 299, inciso 2º (Art. 158).
+
+La fiscalización prevista en esta ley es sin perjuicio de la que establezcan leyes especiales (Art. 304).
+
+================================================================================
+PREGUNTA 24 de 25:
+¿En qué se diferencian jurídicamente los debentures emitidos con garantía flotante de aquellos emitidos con garantía especial respecto a la disposición de los bienes afectados?
+
+RESPUESTA:
+Los debentures emitidos con garantía flotante y aquellos emitidos con garantía especial se diferencian jurídicamente en cuanto a la disposición de los bienes afectados de la siguiente manera:
+
+**Debentures con Garantía Flotante:**
+
+*   **Alcance de la garantía:** Afectan al pago de los debentures todos los derechos, bienes muebles e inmuebles, presentes y futuros, o una parte de ellos, de la sociedad emisora (Art. 327). Esto implica una afectación más amplia y general de los activos de la sociedad.
+*   **Naturaleza de los privilegios:** Otorga los privilegios que corresponden a la prenda, a la hipoteca o a la anticresis, según el caso, pero no está sometida a las disposiciones de forma que rigen esos derechos reales (Art. 327).
+*   **Constitución de la garantía:** Se constituye por la manifestación que se inserte en el contrato de emisión y el cumplimiento del procedimiento e inscripciones de esta ley (Art. 327).
+*   **Prioridad y emisión posterior:** Si se emitieron debentures con garantía flotante, no pueden emitirse otros que tengan prioridad o deban pagarse pari passu con los primeros, sin consentimiento de la asamblea de debenturistas (Art. 331).
+*   **Facultades en caso de liquidación:** En caso de liquidación de la sociedad, el fiduciario procederá a realizar los bienes que constituyen la garantía y a repartir su producido entre los debenturistas, luego de pagados los créditos con mejor privilegio. Si se resolviera la continuación de los negocios, los fondos disponibles se destinarán al pago de los créditos pendientes y de los intereses y amortizaciones de los debentures (Art. 348).
+
+**Debentures con Garantía Especial:**
+
+*   **Alcance de la garantía:** Afectan a su pago bienes determinados de la sociedad susceptibles de hipoteca (Art. 333). La garantía se limita a activos específicos y concretos.
+*   **Constitución de la garantía:** La garantía especial debe especificarse en el acta de emisión con todos los requisitos exigidos para la constitución de hipoteca y se tomará razón de ella en el registro correspondiente (Art. 333).
+*   **Aplicación de normas:** Les serán aplicables todas las disposiciones que se refieren a la hipoteca, con la excepción de que esta garantía puede constituirse por el término de Cuarenta (40) años. La inscripción que se haga en el registro pertinente surte sus efectos por igual término (Art. 333).
+
+En resumen, la principal diferencia jurídica radica en la **amplitud y especificidad de los bienes afectados**. La garantía flotante abarca un conjunto más amplio y general de derechos y bienes de la sociedad, mientras que la garantía especial se limita a bienes determinados y específicos que son susceptibles de hipoteca, rigiéndose en gran medida por las disposiciones de esta última.
+
+================================================================================
+PREGUNTA 25 de 25:
+¿Qué facultades procesales y administrativas asume el banco fiduciario como representante de los debenturistas si la sociedad emisora incurre en mora en el pago superior a 30 días?
+
+RESPUESTA:
+En caso de mora en el pago de intereses o amortizaciones del préstamo por parte de la sociedad deudora, superior a treinta (30) días de vencidos los plazos convenidos, el fiduciario, en los casos de debentures con garantía común o con garantía flotante, asume las siguientes facultades:
+
+**Facultades Administrativas:**
+
+*   **Revisar la documentación y contabilidad de la sociedad deudora:** El fiduciario tiene la facultad de examinar los libros y registros de la sociedad emisora. (Artículo 345, inciso 1º)
+*   **Asistir a las reuniones del directorio y de las asambleas con voz y sin voto:** El fiduciario puede participar en las deliberaciones de los órganos de gobierno de la sociedad deudora, pudiendo expresar su opinión pero sin derecho a voto. (Artículo 345, inciso 2º)
+*   **Pedir la suspensión del directorio:** El fiduciario puede solicitar la suspensión del directorio de la sociedad deudora. (Artículo 345, inciso 3º)
+
+**Facultades Procesales (derivadas de la suspensión del directorio):**
+
+*   **Juicio de impugnación por el directorio suspendido:** El directorio suspendido puede promover juicio dentro de los diez (10) días de notificado para probar la inexactitud de los fundamentos alegados por el fiduciario. (Artículo 350)
+*   **Limitación de actos del fiduciario durante el juicio de impugnación:** Promovida la acción de nulidad por el directorio suspendido, el fiduciario debe limitarse a los actos de conservación y administración ordinaria de los bienes de la sociedad deudora hasta que exista sentencia firme. (Artículo 350)
+
+Adicionalmente, el fiduciario tiene facultades generales como representante legal de los debenturistas, equiparables a las de los mandatarios generales y especiales según el Código Civil. (Artículo 344)
+
+En situaciones de liquidación de la sociedad deudora, las facultades del fiduciario varían según el tipo de garantía:
+
+*   **Con garantía común:** Si los debentures se emitieron con garantía común y existieren otros acreedores, resuelta la liquidación, el fiduciario procederá a realizarla judicialmente en la forma de concurso, de acuerdo con lo dispuesto por la ley de quiebras. Será el síndico y el liquidador necesario y podrá actuar por medio de apoderado. (Artículo 349)
+*   **Con garantía flotante:** Si los debentures se emitieren con garantía flotante, resuelta la liquidación, el fiduciario procederá a realizar los bienes que constituyen la garantía y a repartir su producido entre los debenturistas, luego de pagados los créditos con mejor privilegio. Satisfecha la deuda por capital e intereses, el remanente de los bienes deberá entregarse a la sociedad deudora. Si se resolviera la continuación de los negocios, los fondos disponibles se destinarán al pago de los créditos pendientes y de los intereses y amortizaciones de los debentures. Regularizados los servicios de los debentures, la administración se restituirá a quienes corresponda. (Artículo 348)
+
+El fiduciario puede continuar el giro de los negocios de la sociedad deudora sin intervención judicial y con las más amplias facultades de administración, incluso la de enajenar bienes muebles o inmuebles o realizar la liquidación de la sociedad de acuerdo con lo que resuelva la asamblea de debenturistas que se convocará al efecto. (Artículo 347)
+
+Es importante destacar que el fiduciario no contrae responsabilidad personal, salvo dolo o culpa grave en el desempeño de sus funciones. (Artículo 359)
+

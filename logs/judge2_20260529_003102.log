@@ -1,0 +1,1684 @@
+00:31:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:07 [INFO] Iniciando evaluación de 25 preguntas.
+00:31:07 [INFO] Resultados → /home/mariano/projects/notaria/logs/resultados2_20260529_003102.txt
+00:31:07 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 1/25: ¿Cuáles son los requisitos ineludibles que debe contener el instrumento de constitución de cualquier sociedad según el artículo 11?
+00:31:07 [INFO] AFC is enabled with max remote calls: 10.
+00:31:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:08 [INFO] Sujeto: 'InstrumentoConstitucion'
+00:31:08 [INFO] Conceptos extraídos: ['DenominacionSocial', 'ObjetoSocial', 'DomicilioSocial', 'CapitalSocial', 'PlazoSocial', 'OrganosSociales', 'Administracion', 'Representacion']
+00:31:08 [INFO] Buscando en Grafo Ontológico...
+00:31:10 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:31:10 [INFO]   [Grafo] Art. 31 recuperado.
+00:31:10 [INFO] Buscando en Base Vectorial...
+00:31:10 [INFO]   Buscando 1/8: 'DenominacionSocial'...
+00:31:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:11 [INFO]   Buscando 2/8: 'ObjetoSocial'...
+00:31:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:12 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:12 [INFO]   Buscando 3/8: 'DomicilioSocial'...
+00:31:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:13 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:13 [INFO]   Buscando 4/8: 'CapitalSocial'...
+00:31:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:14 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:14 [INFO]   Buscando 5/8: 'PlazoSocial'...
+00:31:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:15 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:15 [INFO]   Buscando 6/8: 'OrganosSociales'...
+00:31:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:16 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:16 [INFO]   Buscando 7/8: 'Administracion'...
+00:31:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:17 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:17 [INFO]   Buscando 8/8: 'Representacion'...
+00:31:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:18 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:18 [INFO]   [Vector] Art. 126 recuperado.
+00:31:18 [INFO]   [Vector] Art. 317 recuperado.
+00:31:18 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_126_Ley_19550', 'Art_317_Ley_19550']
+00:31:18 [INFO] Entidades relacionadas: 8
+00:31:18 [INFO] AFC is enabled with max remote calls: 10.
+00:31:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:20 [INFO] Respuesta inicial generada (60 chars)
+00:31:20 [INFO] Revisando respuesta...
+00:31:20 [INFO] AFC is enabled with max remote calls: 10.
+00:31:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:20 [INFO] Revisión completada (60 chars)
+00:31:20 [INFO] Pregunta 1 completada y guardada.
+00:31:20 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 2/25: ¿Qué sucede con la responsabilidad de los socios frente a terceros si una sociedad se constituye omitiendo requisitos esenciales tipificantes (Sección IV)?
+00:31:20 [INFO] AFC is enabled with max remote calls: 10.
+00:31:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:21 [INFO] Sujeto: 'SociedadComercial'
+00:31:21 [INFO] Conceptos extraídos: ['ResponsabilidadSocios', 'Terceros', 'NulidadSocietaria', 'RequisitosEsenciales', 'Tipificantes', 'Inoponibilidad', 'SociedadIrregular', 'PersonalidadJuridica']
+00:31:21 [INFO] Buscando en Grafo Ontológico...
+00:31:21 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:31:21 [INFO] Buscando en Base Vectorial...
+00:31:21 [INFO]   Buscando 1/8: 'ResponsabilidadSocios'...
+00:31:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:22 [INFO]   Buscando 2/8: 'Terceros'...
+00:31:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:23 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:23 [INFO]   Buscando 3/8: 'NulidadSocietaria'...
+00:31:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:24 [INFO]   Buscando 4/8: 'RequisitosEsenciales'...
+00:31:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:26 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:26 [INFO]   Buscando 5/8: 'Tipificantes'...
+00:31:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:27 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:27 [INFO]   Buscando 6/8: 'Inoponibilidad'...
+00:31:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:28 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:28 [INFO]   Buscando 7/8: 'SociedadIrregular'...
+00:31:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:29 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:29 [INFO]   Buscando 8/8: 'PersonalidadJuridica'...
+00:31:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:30 [INFO]   [Vector] Art. 35 recuperado.
+00:31:30 [INFO]   [Vector] Art. 125 recuperado.
+00:31:30 [INFO]   [Vector] Art. 18 recuperado.
+00:31:30 [INFO]   [Vector] Art. 200 recuperado.
+00:31:30 [INFO]   [Vector] Art. 2 recuperado.
+00:31:30 [INFO] Artículos recuperados: ['Art_35_Ley_19550', 'Art_125_Ley_19550', 'Art_18_Ley_19550', 'Art_200_Ley_19550', 'Art_2_Ley_19550']
+00:31:30 [INFO] Entidades relacionadas: 1
+00:31:30 [INFO] AFC is enabled with max remote calls: 10.
+00:31:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:31 [INFO] Respuesta inicial generada (195 chars)
+00:31:31 [INFO] Revisando respuesta...
+00:31:31 [INFO] AFC is enabled with max remote calls: 10.
+00:31:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:34 [INFO] Revisión completada (2282 chars)
+00:31:34 [INFO] Pregunta 2 completada y guardada.
+00:31:34 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 3/25: ¿Bajo qué condiciones excepcionales una sociedad puede tomar participaciones en otra sociedad por un monto superior a sus reservas libres y la mitad de su capital?
+00:31:34 [INFO] AFC is enabled with max remote calls: 10.
+00:31:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:34 [INFO] Sujeto: 'SociedadComercial'
+00:31:34 [INFO] Conceptos extraídos: ['ParticipacionesSocietarias', 'ReservasLibres', 'CapitalSocial', 'CondicionExcepcional', 'ControlSocietario', 'Inversiones', 'PatrimonioNeto', 'DisposicionesLegales']
+00:31:34 [INFO] Buscando en Grafo Ontológico...
+00:31:36 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:31:36 [INFO]   [Grafo] Art. 31 recuperado.
+00:31:36 [INFO] Buscando en Base Vectorial...
+00:31:36 [INFO]   Buscando 1/8: 'ParticipacionesSocietarias'...
+00:31:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:38 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:38 [INFO]   Buscando 2/8: 'ReservasLibres'...
+00:31:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:39 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:39 [INFO]   Buscando 3/8: 'CapitalSocial'...
+00:31:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:40 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:40 [INFO]   Buscando 4/8: 'CondicionExcepcional'...
+00:31:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:41 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:41 [INFO]   Buscando 5/8: 'ControlSocietario'...
+00:31:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:42 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:42 [INFO]   Buscando 6/8: 'Inversiones'...
+00:31:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:43 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:43 [INFO]   Buscando 7/8: 'PatrimonioNeto'...
+00:31:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:44 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:44 [INFO]   Buscando 8/8: 'DisposicionesLegales'...
+00:31:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:45 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:45 [INFO] Artículos recuperados: ['Art_31_Ley_19550']
+00:31:45 [INFO] Entidades relacionadas: 8
+00:31:45 [INFO] AFC is enabled with max remote calls: 10.
+00:31:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:47 [INFO] Respuesta inicial generada (588 chars)
+00:31:47 [INFO] Revisando respuesta...
+00:31:47 [INFO] AFC is enabled with max remote calls: 10.
+00:31:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:49 [INFO] Revisión completada (1889 chars)
+00:31:49 [INFO] Pregunta 3 completada y guardada.
+00:31:49 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 4/25: ¿Cuáles son las consecuencias jurídicas y responsabilidades patrimoniales para el socio aparente y el socio oculto?
+00:31:49 [INFO] AFC is enabled with max remote calls: 10.
+00:31:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:31:50 [INFO] Sujeto: 'Socio'
+00:31:50 [INFO] Conceptos extraídos: ['Socio Aparente', 'Socio Oculto', 'Responsabilidad Patrimonial', 'Consecuencias Jurídicas', 'Simulación', 'Fraude', 'Terceros', 'Acción de Reintegro']
+00:31:50 [INFO] Buscando en Grafo Ontológico...
+00:31:51 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:31:51 [INFO]   [Grafo] Art. 77 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 54 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 102 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 107 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 159 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 28 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 91 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 143 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 29 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 18 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 56 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 57 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 104 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 109 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 103 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 157 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 49 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 68 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 321 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 110 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 11 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 33 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 284 recuperado.
+00:31:51 [INFO]   [Grafo] Art. 114 recuperado.
+00:31:51 [INFO] Buscando en Base Vectorial...
+00:31:51 [INFO]   Buscando 1/8: 'Socio Aparente'...
+00:31:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:53 [INFO]   Buscando 2/8: 'Socio Oculto'...
+00:31:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:54 [INFO]   Buscando 3/8: 'Responsabilidad Patrimonial'...
+00:31:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:55 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:55 [INFO]   Buscando 4/8: 'Consecuencias Jurídicas'...
+00:31:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:56 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:56 [INFO]   Buscando 5/8: 'Simulación'...
+00:31:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:57 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:57 [INFO]   Buscando 6/8: 'Fraude'...
+00:31:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:58 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:58 [INFO]   Buscando 7/8: 'Terceros'...
+00:31:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:58 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:58 [INFO]   Buscando 8/8: 'Acción de Reintegro'...
+00:31:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:59 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:31:59 [INFO]   [Vector] Art. 34 recuperado.
+00:31:59 [INFO]   [Vector] Art. 35 recuperado.
+00:31:59 [INFO] Artículos recuperados: ['Art_77_Ley_19550', 'Art_54_Ley_19550', 'Art_102_Ley_19550', 'Art_107_Ley_19550', 'Art_159_Ley_19550', 'Art_28_Ley_19550', 'Art_91_Ley_19550', 'Art_143_Ley_19550', 'Art_29_Ley_19550', 'Art_18_Ley_19550', 'Art_56_Ley_19550', 'Art_57_Ley_19550', 'Art_104_Ley_19550', 'Art_109_Ley_19550', 'Art_103_Ley_19550', 'Art_157_Ley_19550', 'Art_49_Ley_19550', 'Art_68_Ley_19550', 'Art_321_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_284_Ley_19550', 'Art_114_Ley_19550', 'Art_34_Ley_19550', 'Art_35_Ley_19550']
+00:32:00 [INFO] Entidades relacionadas: 47
+00:32:00 [INFO] AFC is enabled with max remote calls: 10.
+00:32:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:01 [INFO] Respuesta inicial generada (330 chars)
+00:32:01 [INFO] Revisando respuesta...
+00:32:01 [INFO] AFC is enabled with max remote calls: 10.
+00:32:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:03 [INFO] Revisión completada (1305 chars)
+00:32:03 [INFO] Pregunta 4 completada y guardada.
+00:32:03 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 5/25: En caso de mora en la integración del aporte, ¿qué acciones legales específicas puede tomar la sociedad contra el socio incumplidor?
+00:32:03 [INFO] AFC is enabled with max remote calls: 10.
+00:32:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:04 [INFO] Sujeto: 'SociedadAnonima'
+00:32:04 [INFO] Conceptos extraídos: ['Mora', 'IntegracionAporte', 'SocioIncumplidor', 'AccionesLegales', 'Ejecucion', 'VentaAcciones', 'ExclusionSocio', 'InteresesMoratorios']
+00:32:04 [INFO] Buscando en Grafo Ontológico...
+00:32:06 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:32:06 [INFO]   [Grafo] Art. 31 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 64 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 263 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 77 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 17 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 206 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 158 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 278 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 325 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 107 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 301 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 223 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 159 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 173 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 197 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 186 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 45 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 61 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 276 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 294 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 300 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 55 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 91 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 281 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 58 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 238 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 275 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 26 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 50 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 273 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 5 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 262 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 310 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 239 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 283 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 98 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 339 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 12 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 270 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 82 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 57 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 178 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 255 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 311 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 32 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 67 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 167 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 20 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 183 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 10 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 103 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 290 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 182 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 212 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 185 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 287 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 271 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 205 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 110 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 11 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 33 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 220 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 172 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 189 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 299 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 100 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 284 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 39 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 161 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 260 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 27 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 244 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 226 recuperado.
+00:32:06 [INFO]   [Grafo] Art. 16 recuperado.
+00:32:06 [INFO] Buscando en Base Vectorial...
+00:32:06 [INFO]   Buscando 1/8: 'Mora'...
+00:32:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:08 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:08 [INFO]   Buscando 2/8: 'IntegracionAporte'...
+00:32:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:09 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:09 [INFO]   Buscando 3/8: 'SocioIncumplidor'...
+00:32:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:10 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:10 [INFO]   Buscando 4/8: 'AccionesLegales'...
+00:32:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:11 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:11 [INFO]   Buscando 5/8: 'Ejecucion'...
+00:32:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:12 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:12 [INFO]   Buscando 6/8: 'VentaAcciones'...
+00:32:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:13 [INFO]   Buscando 7/8: 'ExclusionSocio'...
+00:32:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:13 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:13 [INFO]   Buscando 8/8: 'InteresesMoratorios'...
+00:32:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:14 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:14 [INFO]   [Vector] Art. 221 recuperado.
+00:32:14 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_64_Ley_19550', 'Art_263_Ley_19550', 'Art_77_Ley_19550', 'Art_17_Ley_19550', 'Art_206_Ley_19550', 'Art_158_Ley_19550', 'Art_278_Ley_19550', 'Art_325_Ley_19550', 'Art_107_Ley_19550', 'Art_301_Ley_19550', 'Art_223_Ley_19550', 'Art_159_Ley_19550', 'Art_173_Ley_19550', 'Art_197_Ley_19550', 'Art_186_Ley_19550', 'Art_45_Ley_19550', 'Art_61_Ley_19550', 'Art_276_Ley_19550', 'Art_294_Ley_19550', 'Art_300_Ley_19550', 'Art_55_Ley_19550', 'Art_91_Ley_19550', 'Art_281_Ley_19550', 'Art_58_Ley_19550', 'Art_238_Ley_19550', 'Art_275_Ley_19550', 'Art_26_Ley_19550', 'Art_50_Ley_19550', 'Art_273_Ley_19550', 'Art_5_Ley_19550', 'Art_262_Ley_19550', 'Art_310_Ley_19550', 'Art_239_Ley_19550', 'Art_283_Ley_19550', 'Art_98_Ley_19550', 'Art_339_Ley_19550', 'Art_12_Ley_19550', 'Art_270_Ley_19550', 'Art_82_Ley_19550', 'Art_57_Ley_19550', 'Art_178_Ley_19550', 'Art_255_Ley_19550', 'Art_311_Ley_19550', 'Art_32_Ley_19550', 'Art_67_Ley_19550', 'Art_167_Ley_19550', 'Art_20_Ley_19550', 'Art_183_Ley_19550', 'Art_10_Ley_19550', 'Art_103_Ley_19550', 'Art_290_Ley_19550', 'Art_182_Ley_19550', 'Art_212_Ley_19550', 'Art_185_Ley_19550', 'Art_287_Ley_19550', 'Art_271_Ley_19550', 'Art_205_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_220_Ley_19550', 'Art_172_Ley_19550', 'Art_189_Ley_19550', 'Art_299_Ley_19550', 'Art_100_Ley_19550', 'Art_284_Ley_19550', 'Art_39_Ley_19550', 'Art_161_Ley_19550', 'Art_260_Ley_19550', 'Art_27_Ley_19550', 'Art_244_Ley_19550', 'Art_226_Ley_19550', 'Art_16_Ley_19550', 'Art_221_Ley_19550']
+00:32:15 [INFO] Entidades relacionadas: 122
+00:32:15 [INFO] AFC is enabled with max remote calls: 10.
+00:32:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:17 [INFO] Respuesta inicial generada (179 chars)
+00:32:17 [INFO] Revisando respuesta...
+00:32:17 [INFO] AFC is enabled with max remote calls: 10.
+00:32:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:19 [INFO] Revisión completada (179 chars)
+00:32:19 [INFO] Pregunta 5 completada y guardada.
+00:32:19 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 6/25: ¿En qué consisten las prestaciones accesorias, qué requisitos deben cumplir y por qué no integran el capital social?
+00:32:19 [INFO] AFC is enabled with max remote calls: 10.
+00:32:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:20 [INFO] Sujeto: 'SociedadComercial'
+00:32:20 [INFO] Conceptos extraídos: ['PrestacionesAccesorias', 'Requisitos', 'CapitalSocial', 'IntegracionCapital', 'NaturalezaJuridica', 'DerechosSocios', 'ObligacionesSocios', 'Estatuto']
+00:32:20 [INFO] Buscando en Grafo Ontológico...
+00:32:22 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:32:22 [INFO]   [Grafo] Art. 31 recuperado.
+00:32:22 [INFO] Buscando en Base Vectorial...
+00:32:22 [INFO]   Buscando 1/8: 'PrestacionesAccesorias'...
+00:32:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:23 [INFO]   Buscando 2/8: 'Requisitos'...
+00:32:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:24 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:24 [INFO]   Buscando 3/8: 'CapitalSocial'...
+00:32:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:25 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:25 [INFO]   Buscando 4/8: 'IntegracionCapital'...
+00:32:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:26 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:26 [INFO]   Buscando 5/8: 'NaturalezaJuridica'...
+00:32:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:27 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:27 [INFO]   Buscando 6/8: 'DerechosSocios'...
+00:32:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:28 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:28 [INFO]   Buscando 7/8: 'ObligacionesSocios'...
+00:32:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:29 [INFO]   Buscando 8/8: 'Estatuto'...
+00:32:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:30 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:30 [INFO]   [Vector] Art. 50 recuperado.
+00:32:30 [INFO]   [Vector] Art. 35 recuperado.
+00:32:30 [INFO]   [Vector] Art. 36 recuperado.
+00:32:30 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_50_Ley_19550', 'Art_35_Ley_19550', 'Art_36_Ley_19550']
+00:32:30 [INFO] Entidades relacionadas: 9
+00:32:30 [INFO] AFC is enabled with max remote calls: 10.
+00:32:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:32 [INFO] Respuesta inicial generada (774 chars)
+00:32:32 [INFO] Revisando respuesta...
+00:32:32 [INFO] AFC is enabled with max remote calls: 10.
+00:32:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:34 [INFO] Revisión completada (1786 chars)
+00:32:34 [INFO] Pregunta 6 completada y guardada.
+00:32:34 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 7/25: ¿Cómo deben valuarse los aportes en especie en una Sociedad de Responsabilidad Limitada y quién asume la responsabilidad por una eventual sobrevaluación?
+00:32:34 [INFO] AFC is enabled with max remote calls: 10.
+00:32:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:35 [INFO] Sujeto: 'SociedadDeResponsabilidadLimitada'
+00:32:35 [INFO] Conceptos extraídos: ['AportesEnEspecie', 'Valuacion', 'Responsabilidad', 'Sobrevaluacion', 'Socios', 'Administradores', 'ControladorExterno', 'Publicidad']
+00:32:35 [INFO] Buscando en Grafo Ontológico...
+00:32:36 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:32:36 [INFO]   [Grafo] Art. 31 recuperado.
+00:32:36 [INFO] Buscando en Base Vectorial...
+00:32:36 [INFO]   Buscando 1/8: 'AportesEnEspecie'...
+00:32:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:38 [INFO]   Buscando 2/8: 'Valuacion'...
+00:32:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:39 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:39 [INFO]   Buscando 3/8: 'Responsabilidad'...
+00:32:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:40 [INFO]   Buscando 4/8: 'Sobrevaluacion'...
+00:32:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:41 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:41 [INFO]   Buscando 5/8: 'Socios'...
+00:32:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:42 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:42 [INFO]   Buscando 6/8: 'Administradores'...
+00:32:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:43 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:43 [INFO]   Buscando 7/8: 'ControladorExterno'...
+00:32:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:44 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:44 [INFO]   Buscando 8/8: 'Publicidad'...
+00:32:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:45 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:45 [INFO]   [Vector] Art. 39 recuperado.
+00:32:45 [INFO]   [Vector] Art. 40 recuperado.
+00:32:45 [INFO]   [Vector] Art. 296 recuperado.
+00:32:45 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_39_Ley_19550', 'Art_40_Ley_19550', 'Art_296_Ley_19550']
+00:32:45 [INFO] Entidades relacionadas: 9
+00:32:45 [INFO] AFC is enabled with max remote calls: 10.
+00:32:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:47 [INFO] Respuesta inicial generada (402 chars)
+00:32:47 [INFO] Revisando respuesta...
+00:32:47 [INFO] AFC is enabled with max remote calls: 10.
+00:32:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:48 [INFO] Revisión completada (402 chars)
+00:32:48 [INFO] Pregunta 7 completada y guardada.
+00:32:48 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 8/25: ¿Qué nivel de diligencia y responsabilidad asumen los administradores societarios, y cuál es el mecanismo exacto para eximirse de dicha responsabilidad?
+00:32:48 [INFO] AFC is enabled with max remote calls: 10.
+00:32:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:48 [INFO] Sujeto: 'AdministradoresSocietarios'
+00:32:48 [INFO] Conceptos extraídos: ['DiligenciaDebida', 'ResponsabilidadCivil', 'DeberDeLealtad', 'ActuacionCulposa', 'ExencionResponsabilidad', 'CausalExoneratoria', 'AsambleaSocietaria', 'InformeAnual']
+00:32:48 [INFO] Buscando en Grafo Ontológico...
+00:32:50 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:32:50 [INFO] Buscando en Base Vectorial...
+00:32:50 [INFO]   Buscando 1/8: 'DiligenciaDebida'...
+00:32:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:51 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:51 [INFO]   Buscando 2/8: 'ResponsabilidadCivil'...
+00:32:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:52 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:52 [INFO]   Buscando 3/8: 'DeberDeLealtad'...
+00:32:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:53 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:53 [INFO]   Buscando 4/8: 'ActuacionCulposa'...
+00:32:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:54 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:54 [INFO]   Buscando 5/8: 'ExencionResponsabilidad'...
+00:32:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:54 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:54 [INFO]   Buscando 6/8: 'CausalExoneratoria'...
+00:32:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:55 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:55 [INFO]   Buscando 7/8: 'AsambleaSocietaria'...
+00:32:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:56 [INFO]   Buscando 8/8: 'InformeAnual'...
+00:32:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:57 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:32:57 [INFO]   [Vector] Art. 321 recuperado.
+00:32:57 [INFO]   [Vector] Art. 354 recuperado.
+00:32:57 [INFO] Artículos recuperados: ['Art_321_Ley_19550', 'Art_354_Ley_19550']
+00:32:57 [INFO] Entidades relacionadas: 2
+00:32:57 [INFO] AFC is enabled with max remote calls: 10.
+00:32:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:32:59 [INFO] Respuesta inicial generada (209 chars)
+00:32:59 [INFO] Revisando respuesta...
+00:32:59 [INFO] AFC is enabled with max remote calls: 10.
+00:33:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:01 [INFO] Revisión completada (1892 chars)
+00:33:01 [INFO] Pregunta 8 completada y guardada.
+00:33:01 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 9/25: Según la ley, ¿cómo debe calcularse y qué límite porcentual tiene la constitución de la reserva legal obligatoria?
+00:33:01 [INFO] AFC is enabled with max remote calls: 10.
+00:33:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:02 [INFO] Sujeto: 'ReservaLegal'
+00:33:02 [INFO] Conceptos extraídos: ['Cálculo', 'Límite Porcentual', 'Constitución', 'Ley General Sociedades', 'Utilidades', 'Balance', 'Patrimonio Neto', 'Disponibilidad']
+00:33:02 [INFO] Buscando en Grafo Ontológico...
+00:33:03 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:33:03 [INFO]   [Grafo] Art. 77 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 69 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 224 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 67 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 109 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 65 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 68 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 63 recuperado.
+00:33:03 [INFO]   [Grafo] Art. 31 recuperado.
+00:33:03 [INFO] Buscando en Base Vectorial...
+00:33:03 [INFO]   Buscando 1/8: 'Cálculo'...
+00:33:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:05 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:05 [INFO]   Buscando 2/8: 'Límite Porcentual'...
+00:33:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:06 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:06 [INFO]   Buscando 3/8: 'Constitución'...
+00:33:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:07 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:07 [INFO]   Buscando 4/8: 'Ley General Sociedades'...
+00:33:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:08 [INFO]   Buscando 5/8: 'Utilidades'...
+00:33:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:09 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:09 [INFO]   Buscando 6/8: 'Balance'...
+00:33:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:10 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:10 [INFO]   Buscando 7/8: 'Patrimonio Neto'...
+00:33:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:11 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:11 [INFO]   Buscando 8/8: 'Disponibilidad'...
+00:33:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:12 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:12 [INFO]   [Vector] Art. 3 recuperado.
+00:33:12 [INFO]   [Vector] Art. 21 recuperado.
+00:33:12 [INFO] Artículos recuperados: ['Art_77_Ley_19550', 'Art_69_Ley_19550', 'Art_224_Ley_19550', 'Art_67_Ley_19550', 'Art_109_Ley_19550', 'Art_65_Ley_19550', 'Art_68_Ley_19550', 'Art_63_Ley_19550', 'Art_31_Ley_19550', 'Art_3_Ley_19550', 'Art_21_Ley_19550']
+00:33:12 [INFO] Entidades relacionadas: 27
+00:33:12 [INFO] AFC is enabled with max remote calls: 10.
+00:33:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:13 [INFO] Respuesta inicial generada (142 chars)
+00:33:13 [INFO] Revisando respuesta...
+00:33:13 [INFO] AFC is enabled with max remote calls: 10.
+00:33:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:15 [INFO] Revisión completada (2088 chars)
+00:33:15 [INFO] Pregunta 9 completada y guardada.
+00:33:15 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 10/25: ¿Cuáles son los requisitos formales y de publicidad exigidos paso a paso para llevar a cabo la transformación de un tipo societario a otro?
+00:33:15 [INFO] AFC is enabled with max remote calls: 10.
+00:33:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:16 [INFO] Sujeto: 'TransformacionSocietaria'
+00:33:16 [INFO] Conceptos extraídos: ['Requisitos Formales', 'Publicidad', 'AsambleaSocios', 'ModificacionEstatuto', 'InscripcionIGJ', 'DictamenProfesional', 'BalanceCierre', 'AcuerdoSocios']
+00:33:16 [INFO] Buscando en Grafo Ontológico...
+00:33:17 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:33:17 [INFO] Buscando en Base Vectorial...
+00:33:17 [INFO]   Buscando 1/8: 'Requisitos Formales'...
+00:33:18 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:18 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:18 [INFO]   Buscando 2/8: 'Publicidad'...
+00:33:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:19 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:19 [INFO]   Buscando 3/8: 'AsambleaSocios'...
+00:33:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:20 [INFO]   Buscando 4/8: 'ModificacionEstatuto'...
+00:33:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:21 [INFO]   Buscando 5/8: 'InscripcionIGJ'...
+00:33:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:22 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:22 [INFO]   Buscando 6/8: 'DictamenProfesional'...
+00:33:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:23 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:23 [INFO]   Buscando 7/8: 'BalanceCierre'...
+00:33:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:24 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:24 [INFO]   Buscando 8/8: 'AcuerdoSocios'...
+00:33:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:25 [INFO]   [Vector] Art. 321 recuperado.
+00:33:25 [INFO]   [Vector] Art. 159 recuperado.
+00:33:25 [INFO]   [Vector] Art. 260 recuperado.
+00:33:25 [INFO]   [Vector] Art. 30 recuperado.
+00:33:25 [INFO] Artículos recuperados: ['Art_321_Ley_19550', 'Art_159_Ley_19550', 'Art_260_Ley_19550', 'Art_30_Ley_19550']
+00:33:25 [INFO] Entidades relacionadas: 5
+00:33:25 [INFO] AFC is enabled with max remote calls: 10.
+00:33:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:27 [INFO] Respuesta inicial generada (168 chars)
+00:33:27 [INFO] Revisando respuesta...
+00:33:27 [INFO] AFC is enabled with max remote calls: 10.
+00:33:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:28 [INFO] Revisión completada (168 chars)
+00:33:28 [INFO] Pregunta 10 completada y guardada.
+00:33:28 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 11/25: En un proceso de fusión, ¿qué información obligatoria y balances debe contener el compromiso previo de fusión firmado por los representantes?
+00:33:28 [INFO] AFC is enabled with max remote calls: 10.
+00:33:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:29 [INFO] Sujeto: 'FusiónSocietaria'
+00:33:29 [INFO] Conceptos extraídos: ['CompromisoPrevio', 'InformacionObligatoria', 'Balances', 'Representantes', 'AcuerdoFusión', 'PatrimonioNeto', 'Activos', 'Pasivos']
+00:33:29 [INFO] Buscando en Grafo Ontológico...
+00:33:30 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:33:30 [INFO] Buscando en Base Vectorial...
+00:33:30 [INFO]   Buscando 1/8: 'CompromisoPrevio'...
+00:33:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:31 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:31 [INFO]   Buscando 2/8: 'InformacionObligatoria'...
+00:33:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:32 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:32 [INFO]   Buscando 3/8: 'Balances'...
+00:33:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:33 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:33 [INFO]   Buscando 4/8: 'Representantes'...
+00:33:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:34 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:34 [INFO]   Buscando 5/8: 'AcuerdoFusión'...
+00:33:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:35 [INFO]   Buscando 6/8: 'PatrimonioNeto'...
+00:33:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:36 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:36 [INFO]   Buscando 7/8: 'Activos'...
+00:33:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:37 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:37 [INFO]   Buscando 8/8: 'Pasivos'...
+00:33:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:38 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:38 [INFO]   [Vector] Art. 83 recuperado.
+00:33:38 [INFO]   [Vector] Art. 82 recuperado.
+00:33:38 [INFO] Artículos recuperados: ['Art_83_Ley_19550', 'Art_82_Ley_19550']
+00:33:38 [INFO] Entidades relacionadas: 2
+00:33:38 [INFO] AFC is enabled with max remote calls: 10.
+00:33:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:40 [INFO] Respuesta inicial generada (901 chars)
+00:33:40 [INFO] Revisando respuesta...
+00:33:40 [INFO] AFC is enabled with max remote calls: 10.
+00:33:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:44 [INFO] Revisión completada (1876 chars)
+00:33:44 [INFO] Pregunta 11 completada y guardada.
+00:33:44 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 12/25: ¿Qué plazos, condiciones y efectos establece la ley para que un socio disconforme ejerza su derecho de receso?
+00:33:44 [INFO] AFC is enabled with max remote calls: 10.
+00:33:45 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:45 [INFO] Sujeto: 'SocioDisconforme'
+00:33:45 [INFO] Conceptos extraídos: ['DerechoReceso', 'PlazoLegal', 'CondicionesLegales', 'EfectosLegales', 'AcuerdoSocietario', 'ModificacionEstatutaria', 'ValorCuota', 'Liquidacion']
+00:33:45 [INFO] Buscando en Grafo Ontológico...
+00:33:46 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:33:46 [INFO] Buscando en Base Vectorial...
+00:33:46 [INFO]   Buscando 1/8: 'DerechoReceso'...
+00:33:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:48 [INFO]   Buscando 2/8: 'PlazoLegal'...
+00:33:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:49 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:49 [INFO]   Buscando 3/8: 'CondicionesLegales'...
+00:33:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:50 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:50 [INFO]   Buscando 4/8: 'EfectosLegales'...
+00:33:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:51 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:51 [INFO]   Buscando 5/8: 'AcuerdoSocietario'...
+00:33:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:52 [INFO]   Buscando 6/8: 'ModificacionEstatutaria'...
+00:33:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:53 [INFO]   Buscando 7/8: 'ValorCuota'...
+00:33:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:54 [INFO]   Buscando 8/8: 'Liquidacion'...
+00:33:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:55 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:33:55 [INFO]   [Vector] Art. 85 recuperado.
+00:33:55 [INFO]   [Vector] Art. 30 recuperado.
+00:33:55 [INFO]   [Vector] Art. 260 recuperado.
+00:33:55 [INFO]   [Vector] Art. 148 recuperado.
+00:33:55 [INFO] Artículos recuperados: ['Art_85_Ley_19550', 'Art_30_Ley_19550', 'Art_260_Ley_19550', 'Art_148_Ley_19550']
+00:33:55 [INFO] Entidades relacionadas: 1
+00:33:55 [INFO] AFC is enabled with max remote calls: 10.
+00:33:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:57 [INFO] Respuesta inicial generada (123 chars)
+00:33:57 [INFO] Revisando respuesta...
+00:33:57 [INFO] AFC is enabled with max remote calls: 10.
+00:33:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:58 [INFO] Revisión completada (908 chars)
+00:33:58 [INFO] Pregunta 12 completada y guardada.
+00:33:58 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 13/25: ¿Cuáles son las causales legales taxativas que provocan la disolución de una sociedad estipuladas en el artículo 94?
+00:33:58 [INFO] AFC is enabled with max remote calls: 10.
+00:33:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:33:59 [INFO] Sujeto: 'SociedadComercial'
+00:33:59 [INFO] Conceptos extraídos: ['DisolucionSocietaria', 'CausalesLegales', 'Articulo94', 'Liquidacion', 'VoluntadSocial', 'Quiebra', 'FaltaObjeto', 'VencimientoPlazo']
+00:33:59 [INFO] Buscando en Grafo Ontológico...
+00:34:00 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:34:00 [INFO] Buscando en Base Vectorial...
+00:34:00 [INFO]   Buscando 1/8: 'DisolucionSocietaria'...
+00:34:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:02 [INFO]   Buscando 2/8: 'CausalesLegales'...
+00:34:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:03 [INFO]   Buscando 3/8: 'Articulo94'...
+00:34:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:04 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:04 [INFO]   Buscando 4/8: 'Liquidacion'...
+00:34:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:05 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:05 [INFO]   Buscando 5/8: 'VoluntadSocial'...
+00:34:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:06 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:06 [INFO]   Buscando 6/8: 'Quiebra'...
+00:34:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:07 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:07 [INFO]   Buscando 7/8: 'FaltaObjeto'...
+00:34:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:08 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:08 [INFO]   Buscando 8/8: 'VencimientoPlazo'...
+00:34:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:09 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:09 [INFO]   [Vector] Art. 25 recuperado.
+00:34:09 [INFO]   [Vector] Art. 94 recuperado.
+00:34:09 [INFO]   [Vector] Art. 89 recuperado.
+00:34:09 [INFO] Artículos recuperados: ['Art_25_Ley_19550', 'Art_94_Ley_19550', 'Art_89_Ley_19550']
+00:34:09 [INFO] Entidades relacionadas: 2
+00:34:09 [INFO] AFC is enabled with max remote calls: 10.
+00:34:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:11 [INFO] Respuesta inicial generada (1017 chars)
+00:34:11 [INFO] Revisando respuesta...
+00:34:11 [INFO] AFC is enabled with max remote calls: 10.
+00:34:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:13 [INFO] Revisión completada (1286 chars)
+00:34:13 [INFO] Pregunta 13 completada y guardada.
+00:34:13 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 14/25: ¿Qué requisitos debe cumplir una sociedad constituida en el extranjero para establecer una sucursal y ejercer habitualmente su objeto social en Argentina?
+00:34:13 [INFO] AFC is enabled with max remote calls: 10.
+00:34:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:14 [INFO] Sujeto: 'SucursalExtranjera'
+00:34:14 [INFO] Conceptos extraídos: ['DomicilioLegal', 'AutorizacionAdministrativa', 'RepresentanteLegal', 'PublicidadRegistral', 'CapacidadJuridica', 'ObjetoSocial', 'RequisitosFormales', 'LeyAplicable']
+00:34:14 [INFO] Buscando en Grafo Ontológico...
+00:34:15 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:34:15 [INFO] Buscando en Base Vectorial...
+00:34:15 [INFO]   Buscando 1/8: 'DomicilioLegal'...
+00:34:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:17 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:17 [INFO]   Buscando 2/8: 'AutorizacionAdministrativa'...
+00:34:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:18 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:18 [INFO]   Buscando 3/8: 'RepresentanteLegal'...
+00:34:18 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:19 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:19 [INFO]   Buscando 4/8: 'PublicidadRegistral'...
+00:34:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:20 [INFO]   Buscando 5/8: 'CapacidadJuridica'...
+00:34:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:21 [INFO]   Buscando 6/8: 'ObjetoSocial'...
+00:34:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:22 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:22 [INFO]   Buscando 7/8: 'RequisitosFormales'...
+00:34:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:23 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:23 [INFO]   Buscando 8/8: 'LeyAplicable'...
+00:34:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:24 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:24 [INFO]   [Vector] Art. 5 recuperado.
+00:34:24 [INFO]   [Vector] Art. 2 recuperado.
+00:34:24 [INFO] Artículos recuperados: ['Art_5_Ley_19550', 'Art_2_Ley_19550']
+00:34:24 [INFO] Entidades relacionadas: 3
+00:34:24 [INFO] AFC is enabled with max remote calls: 10.
+00:34:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:25 [INFO] Respuesta inicial generada (430 chars)
+00:34:25 [INFO] Revisando respuesta...
+00:34:25 [INFO] AFC is enabled with max remote calls: 10.
+00:34:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:27 [INFO] Revisión completada (2023 chars)
+00:34:27 [INFO] Pregunta 14 completada y guardada.
+00:34:27 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 15/25: En una Sociedad de Responsabilidad Limitada, ¿qué mayorías exactas de capital se requieren para modificar el contrato social si el mismo no lo regula expresamente?
+00:34:27 [INFO] AFC is enabled with max remote calls: 10.
+00:34:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:28 [INFO] Sujeto: 'SociedadDeResponsabilidadLimitada'
+00:34:28 [INFO] Conceptos extraídos: ['ContratoSocial', 'ModificacionContrato', 'MayoriasCapital', 'CapitalSocial', 'ReunionSocios', 'Quorum', 'Voto', 'DisposicionSupletoria']
+00:34:28 [INFO] Buscando en Grafo Ontológico...
+00:34:29 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:34:29 [INFO]   [Grafo] Art. 31 recuperado.
+00:34:29 [INFO] Buscando en Base Vectorial...
+00:34:29 [INFO]   Buscando 1/8: 'ContratoSocial'...
+00:34:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:31 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:31 [INFO]   Buscando 2/8: 'ModificacionContrato'...
+00:34:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:32 [INFO]   Buscando 3/8: 'MayoriasCapital'...
+00:34:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:32 [INFO]   Buscando 4/8: 'CapitalSocial'...
+00:34:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:33 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:33 [INFO]   Buscando 5/8: 'ReunionSocios'...
+00:34:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:34 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:34 [INFO]   Buscando 6/8: 'Quorum'...
+00:34:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:35 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:35 [INFO]   Buscando 7/8: 'Voto'...
+00:34:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:36 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:36 [INFO]   Buscando 8/8: 'DisposicionSupletoria'...
+00:34:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:37 [INFO]   [Vector] Art. 131 recuperado.
+00:34:37 [INFO]   [Vector] Art. 132 recuperado.
+00:34:37 [INFO]   [Vector] Art. 324 recuperado.
+00:34:37 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_131_Ley_19550', 'Art_132_Ley_19550', 'Art_324_Ley_19550']
+00:34:37 [INFO] Entidades relacionadas: 8
+00:34:37 [INFO] AFC is enabled with max remote calls: 10.
+00:34:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:39 [INFO] Respuesta inicial generada (172 chars)
+00:34:39 [INFO] Revisando respuesta...
+00:34:39 [INFO] AFC is enabled with max remote calls: 10.
+00:34:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:40 [INFO] Revisión completada (326 chars)
+00:34:40 [INFO] Pregunta 15 completada y guardada.
+00:34:40 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 16/25: ¿Cuál es el procedimiento y los plazos legales si un socio de una SRL desea ceder sus cuotas a un tercero, pero el contrato limita dicha transmisibilidad y la sociedad ejerce su derecho de preferencia?
+00:34:40 [INFO] AFC is enabled with max remote calls: 10.
+00:34:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:40 [INFO] Sujeto: 'SociedadDeResponsabilidadLimitada'
+00:34:40 [INFO] Conceptos extraídos: ['CesiónCuotas', 'DerechoPreferencia', 'ContratoSocial', 'Tercero', 'Procedimiento', 'PlazosLegales', 'OposiciónSocial', 'AprobaciónSocial']
+00:34:40 [INFO] Buscando en Grafo Ontológico...
+00:34:42 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:34:42 [INFO]   [Grafo] Art. 31 recuperado.
+00:34:42 [INFO] Buscando en Base Vectorial...
+00:34:42 [INFO]   Buscando 1/8: 'CesiónCuotas'...
+00:34:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:44 [INFO]   Buscando 2/8: 'DerechoPreferencia'...
+00:34:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:44 [INFO]   Buscando 3/8: 'ContratoSocial'...
+00:34:45 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:45 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:45 [INFO]   Buscando 4/8: 'Tercero'...
+00:34:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:46 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:46 [INFO]   Buscando 5/8: 'Procedimiento'...
+00:34:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:47 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:47 [INFO]   Buscando 6/8: 'PlazosLegales'...
+00:34:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:48 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:48 [INFO]   Buscando 7/8: 'OposiciónSocial'...
+00:34:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:49 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:49 [INFO]   Buscando 8/8: 'AprobaciónSocial'...
+00:34:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:50 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:34:50 [INFO]   [Vector] Art. 152 recuperado.
+00:34:50 [INFO]   [Vector] Art. 210 recuperado.
+00:34:50 [INFO]   [Vector] Art. 79 recuperado.
+00:34:50 [INFO]   [Vector] Art. 194 recuperado.
+00:34:50 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_152_Ley_19550', 'Art_210_Ley_19550', 'Art_79_Ley_19550', 'Art_194_Ley_19550']
+00:34:50 [INFO] Entidades relacionadas: 8
+00:34:50 [INFO] AFC is enabled with max remote calls: 10.
+00:34:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:52 [INFO] Respuesta inicial generada (1159 chars)
+00:34:52 [INFO] Revisando respuesta...
+00:34:52 [INFO] AFC is enabled with max remote calls: 10.
+00:34:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:58 [INFO] Revisión completada (4745 chars)
+00:34:58 [INFO] Pregunta 16 completada y guardada.
+00:34:58 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 17/25: ¿Qué diferencias sustanciales existen entre el procedimiento de constitución de una Sociedad Anónima por acto único y por suscripción pública?
+00:34:58 [INFO] AFC is enabled with max remote calls: 10.
+00:34:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:34:58 [INFO] Sujeto: 'SociedadAnonima'
+00:34:58 [INFO] Conceptos extraídos: ['ActoUnico', 'SuscripcionPublica', 'ConstitucionSocietaria', 'CapitalSocial', 'EstatutoSocial', 'Publicidad', 'OrganosSociales', 'Formalidades']
+00:34:58 [INFO] Buscando en Grafo Ontológico...
+00:35:00 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:35:00 [INFO]   [Grafo] Art. 31 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 64 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 263 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 77 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 17 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 206 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 158 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 278 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 325 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 107 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 301 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 223 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 159 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 173 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 197 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 186 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 45 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 61 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 276 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 294 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 300 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 55 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 91 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 281 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 58 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 238 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 275 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 26 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 50 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 273 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 5 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 262 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 310 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 239 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 283 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 98 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 339 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 12 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 270 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 82 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 57 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 178 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 255 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 311 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 32 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 67 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 167 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 20 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 183 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 10 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 103 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 290 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 182 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 212 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 185 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 287 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 271 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 205 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 110 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 11 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 33 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 220 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 172 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 189 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 299 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 100 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 284 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 39 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 161 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 260 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 27 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 244 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 226 recuperado.
+00:35:00 [INFO]   [Grafo] Art. 16 recuperado.
+00:35:00 [INFO] Buscando en Base Vectorial...
+00:35:00 [INFO]   Buscando 1/8: 'ActoUnico'...
+00:35:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:02 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:02 [INFO]   Buscando 2/8: 'SuscripcionPublica'...
+00:35:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:03 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:03 [INFO]   Buscando 3/8: 'ConstitucionSocietaria'...
+00:35:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:04 [INFO]   Buscando 4/8: 'CapitalSocial'...
+00:35:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:04 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:04 [INFO]   Buscando 5/8: 'EstatutoSocial'...
+00:35:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:05 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:05 [INFO]   Buscando 6/8: 'Publicidad'...
+00:35:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:06 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:06 [INFO]   Buscando 7/8: 'OrganosSociales'...
+00:35:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:07 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:07 [INFO]   Buscando 8/8: 'Formalidades'...
+00:35:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:08 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:08 [INFO]   [Vector] Art. 165 recuperado.
+00:35:08 [INFO]   [Vector] Art. 123 recuperado.
+00:35:08 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_64_Ley_19550', 'Art_263_Ley_19550', 'Art_77_Ley_19550', 'Art_17_Ley_19550', 'Art_206_Ley_19550', 'Art_158_Ley_19550', 'Art_278_Ley_19550', 'Art_325_Ley_19550', 'Art_107_Ley_19550', 'Art_301_Ley_19550', 'Art_223_Ley_19550', 'Art_159_Ley_19550', 'Art_173_Ley_19550', 'Art_197_Ley_19550', 'Art_186_Ley_19550', 'Art_45_Ley_19550', 'Art_61_Ley_19550', 'Art_276_Ley_19550', 'Art_294_Ley_19550', 'Art_300_Ley_19550', 'Art_55_Ley_19550', 'Art_91_Ley_19550', 'Art_281_Ley_19550', 'Art_58_Ley_19550', 'Art_238_Ley_19550', 'Art_275_Ley_19550', 'Art_26_Ley_19550', 'Art_50_Ley_19550', 'Art_273_Ley_19550', 'Art_5_Ley_19550', 'Art_262_Ley_19550', 'Art_310_Ley_19550', 'Art_239_Ley_19550', 'Art_283_Ley_19550', 'Art_98_Ley_19550', 'Art_339_Ley_19550', 'Art_12_Ley_19550', 'Art_270_Ley_19550', 'Art_82_Ley_19550', 'Art_57_Ley_19550', 'Art_178_Ley_19550', 'Art_255_Ley_19550', 'Art_311_Ley_19550', 'Art_32_Ley_19550', 'Art_67_Ley_19550', 'Art_167_Ley_19550', 'Art_20_Ley_19550', 'Art_183_Ley_19550', 'Art_10_Ley_19550', 'Art_103_Ley_19550', 'Art_290_Ley_19550', 'Art_182_Ley_19550', 'Art_212_Ley_19550', 'Art_185_Ley_19550', 'Art_287_Ley_19550', 'Art_271_Ley_19550', 'Art_205_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_220_Ley_19550', 'Art_172_Ley_19550', 'Art_189_Ley_19550', 'Art_299_Ley_19550', 'Art_100_Ley_19550', 'Art_284_Ley_19550', 'Art_39_Ley_19550', 'Art_161_Ley_19550', 'Art_260_Ley_19550', 'Art_27_Ley_19550', 'Art_244_Ley_19550', 'Art_226_Ley_19550', 'Art_16_Ley_19550', 'Art_165_Ley_19550', 'Art_123_Ley_19550']
+00:35:08 [INFO] Entidades relacionadas: 122
+00:35:08 [INFO] AFC is enabled with max remote calls: 10.
+00:35:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:13 [INFO] Respuesta inicial generada (1003 chars)
+00:35:13 [INFO] Revisando respuesta...
+00:35:13 [INFO] AFC is enabled with max remote calls: 10.
+00:35:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:17 [INFO] Revisión completada (4710 chars)
+00:35:17 [INFO] Pregunta 17 completada y guardada.
+00:35:17 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 18/25: ¿Bajo qué circunstancias excepcionales permitidas por la ley puede una Sociedad Anónima adquirir las propias acciones que emitió?
+00:35:17 [INFO] AFC is enabled with max remote calls: 10.
+00:35:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:19 [INFO] Sujeto: 'SociedadAnonima'
+00:35:19 [INFO] Conceptos extraídos: ['Adquisicion Propias Acciones', 'Circunstancias Excepcionales', 'Ley General Sociedades', 'Capital Social', 'Accionistas', 'Proteccion Acreedores', 'Requisitos Legales', 'Publicidad']
+00:35:19 [INFO] Buscando en Grafo Ontológico...
+00:35:20 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:35:20 [INFO]   [Grafo] Art. 31 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 64 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 263 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 77 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 17 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 206 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 158 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 278 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 325 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 107 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 301 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 223 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 159 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 173 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 197 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 186 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 45 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 61 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 276 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 294 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 300 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 55 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 91 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 281 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 58 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 238 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 275 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 26 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 50 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 273 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 5 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 262 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 310 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 239 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 283 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 98 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 339 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 12 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 270 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 82 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 57 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 178 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 255 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 311 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 32 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 67 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 167 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 20 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 183 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 10 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 103 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 290 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 182 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 212 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 185 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 287 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 271 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 205 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 110 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 11 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 33 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 220 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 172 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 189 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 299 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 100 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 284 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 39 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 161 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 260 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 27 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 244 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 226 recuperado.
+00:35:20 [INFO]   [Grafo] Art. 16 recuperado.
+00:35:20 [INFO] Buscando en Base Vectorial...
+00:35:20 [INFO]   Buscando 1/8: 'Adquisicion Propias Acciones'...
+00:35:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:22 [INFO]   Buscando 2/8: 'Circunstancias Excepcionales'...
+00:35:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:23 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:23 [INFO]   Buscando 3/8: 'Ley General Sociedades'...
+00:35:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:24 [INFO]   Buscando 4/8: 'Capital Social'...
+00:35:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:25 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:25 [INFO]   Buscando 5/8: 'Accionistas'...
+00:35:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:26 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:26 [INFO]   Buscando 6/8: 'Proteccion Acreedores'...
+00:35:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:27 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:27 [INFO]   Buscando 7/8: 'Requisitos Legales'...
+00:35:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:28 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:28 [INFO]   Buscando 8/8: 'Publicidad'...
+00:35:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:29 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:29 [INFO]   [Vector] Art. 221 recuperado.
+00:35:29 [INFO]   [Vector] Art. 3 recuperado.
+00:35:29 [INFO]   [Vector] Art. 21 recuperado.
+00:35:29 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_64_Ley_19550', 'Art_263_Ley_19550', 'Art_77_Ley_19550', 'Art_17_Ley_19550', 'Art_206_Ley_19550', 'Art_158_Ley_19550', 'Art_278_Ley_19550', 'Art_325_Ley_19550', 'Art_107_Ley_19550', 'Art_301_Ley_19550', 'Art_223_Ley_19550', 'Art_159_Ley_19550', 'Art_173_Ley_19550', 'Art_197_Ley_19550', 'Art_186_Ley_19550', 'Art_45_Ley_19550', 'Art_61_Ley_19550', 'Art_276_Ley_19550', 'Art_294_Ley_19550', 'Art_300_Ley_19550', 'Art_55_Ley_19550', 'Art_91_Ley_19550', 'Art_281_Ley_19550', 'Art_58_Ley_19550', 'Art_238_Ley_19550', 'Art_275_Ley_19550', 'Art_26_Ley_19550', 'Art_50_Ley_19550', 'Art_273_Ley_19550', 'Art_5_Ley_19550', 'Art_262_Ley_19550', 'Art_310_Ley_19550', 'Art_239_Ley_19550', 'Art_283_Ley_19550', 'Art_98_Ley_19550', 'Art_339_Ley_19550', 'Art_12_Ley_19550', 'Art_270_Ley_19550', 'Art_82_Ley_19550', 'Art_57_Ley_19550', 'Art_178_Ley_19550', 'Art_255_Ley_19550', 'Art_311_Ley_19550', 'Art_32_Ley_19550', 'Art_67_Ley_19550', 'Art_167_Ley_19550', 'Art_20_Ley_19550', 'Art_183_Ley_19550', 'Art_10_Ley_19550', 'Art_103_Ley_19550', 'Art_290_Ley_19550', 'Art_182_Ley_19550', 'Art_212_Ley_19550', 'Art_185_Ley_19550', 'Art_287_Ley_19550', 'Art_271_Ley_19550', 'Art_205_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_220_Ley_19550', 'Art_172_Ley_19550', 'Art_189_Ley_19550', 'Art_299_Ley_19550', 'Art_100_Ley_19550', 'Art_284_Ley_19550', 'Art_39_Ley_19550', 'Art_161_Ley_19550', 'Art_260_Ley_19550', 'Art_27_Ley_19550', 'Art_244_Ley_19550', 'Art_226_Ley_19550', 'Art_16_Ley_19550', 'Art_221_Ley_19550', 'Art_3_Ley_19550', 'Art_21_Ley_19550']
+00:35:29 [INFO] Entidades relacionadas: 124
+00:35:29 [INFO] AFC is enabled with max remote calls: 10.
+00:35:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:32 [INFO] Respuesta inicial generada (513 chars)
+00:35:32 [INFO] Revisando respuesta...
+00:35:32 [INFO] AFC is enabled with max remote calls: 10.
+00:35:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:33 [INFO] Revisión completada (1021 chars)
+00:35:33 [INFO] Pregunta 18 completada y guardada.
+00:35:33 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 19/25: ¿Qué materias y decisiones son de competencia exclusiva e indelegable de la Asamblea Extraordinaria en una Sociedad Anónima?
+00:35:33 [INFO] AFC is enabled with max remote calls: 10.
+00:35:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:35 [INFO] Sujeto: 'SociedadAnonima'
+00:35:35 [INFO] Conceptos extraídos: ['AsambleaExtraordinaria', 'CompetenciaExclusiva', 'DecisionesIndelegables', 'ModificacionEstatuto', 'FUSION', 'ESCISION', 'LIQUIDACION', 'CONVERSION']
+00:35:35 [INFO] Buscando en Grafo Ontológico...
+00:35:37 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:35:37 [INFO]   [Grafo] Art. 31 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 64 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 263 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 77 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 17 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 206 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 158 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 278 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 325 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 107 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 301 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 223 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 159 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 173 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 197 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 186 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 45 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 61 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 276 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 294 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 300 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 55 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 91 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 281 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 58 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 238 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 275 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 26 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 50 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 273 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 5 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 262 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 310 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 239 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 283 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 98 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 339 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 12 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 270 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 82 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 57 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 178 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 255 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 311 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 32 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 67 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 167 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 20 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 183 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 10 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 103 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 290 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 182 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 212 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 185 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 287 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 271 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 205 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 110 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 11 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 33 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 220 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 172 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 189 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 299 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 100 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 284 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 39 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 161 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 260 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 27 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 244 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 226 recuperado.
+00:35:37 [INFO]   [Grafo] Art. 16 recuperado.
+00:35:37 [INFO] Buscando en Base Vectorial...
+00:35:37 [INFO]   Buscando 1/8: 'AsambleaExtraordinaria'...
+00:35:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:38 [INFO]   Buscando 2/8: 'CompetenciaExclusiva'...
+00:35:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:39 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:39 [INFO]   Buscando 3/8: 'DecisionesIndelegables'...
+00:35:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:40 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:40 [INFO]   Buscando 4/8: 'ModificacionEstatuto'...
+00:35:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:41 [INFO]   Buscando 5/8: 'FUSION'...
+00:35:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:42 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:42 [INFO]   Buscando 6/8: 'ESCISION'...
+00:35:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:43 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:43 [INFO]   Buscando 7/8: 'LIQUIDACION'...
+00:35:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:44 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:44 [INFO]   Buscando 8/8: 'CONVERSION'...
+00:35:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:45 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:45 [INFO]   [Vector] Art. 235 recuperado.
+00:35:45 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_64_Ley_19550', 'Art_263_Ley_19550', 'Art_77_Ley_19550', 'Art_17_Ley_19550', 'Art_206_Ley_19550', 'Art_158_Ley_19550', 'Art_278_Ley_19550', 'Art_325_Ley_19550', 'Art_107_Ley_19550', 'Art_301_Ley_19550', 'Art_223_Ley_19550', 'Art_159_Ley_19550', 'Art_173_Ley_19550', 'Art_197_Ley_19550', 'Art_186_Ley_19550', 'Art_45_Ley_19550', 'Art_61_Ley_19550', 'Art_276_Ley_19550', 'Art_294_Ley_19550', 'Art_300_Ley_19550', 'Art_55_Ley_19550', 'Art_91_Ley_19550', 'Art_281_Ley_19550', 'Art_58_Ley_19550', 'Art_238_Ley_19550', 'Art_275_Ley_19550', 'Art_26_Ley_19550', 'Art_50_Ley_19550', 'Art_273_Ley_19550', 'Art_5_Ley_19550', 'Art_262_Ley_19550', 'Art_310_Ley_19550', 'Art_239_Ley_19550', 'Art_283_Ley_19550', 'Art_98_Ley_19550', 'Art_339_Ley_19550', 'Art_12_Ley_19550', 'Art_270_Ley_19550', 'Art_82_Ley_19550', 'Art_57_Ley_19550', 'Art_178_Ley_19550', 'Art_255_Ley_19550', 'Art_311_Ley_19550', 'Art_32_Ley_19550', 'Art_67_Ley_19550', 'Art_167_Ley_19550', 'Art_20_Ley_19550', 'Art_183_Ley_19550', 'Art_10_Ley_19550', 'Art_103_Ley_19550', 'Art_290_Ley_19550', 'Art_182_Ley_19550', 'Art_212_Ley_19550', 'Art_185_Ley_19550', 'Art_287_Ley_19550', 'Art_271_Ley_19550', 'Art_205_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_220_Ley_19550', 'Art_172_Ley_19550', 'Art_189_Ley_19550', 'Art_299_Ley_19550', 'Art_100_Ley_19550', 'Art_284_Ley_19550', 'Art_39_Ley_19550', 'Art_161_Ley_19550', 'Art_260_Ley_19550', 'Art_27_Ley_19550', 'Art_244_Ley_19550', 'Art_226_Ley_19550', 'Art_16_Ley_19550', 'Art_235_Ley_19550']
+00:35:45 [INFO] Entidades relacionadas: 122
+00:35:45 [INFO] AFC is enabled with max remote calls: 10.
+00:35:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:48 [INFO] Respuesta inicial generada (891 chars)
+00:35:48 [INFO] Revisando respuesta...
+00:35:48 [INFO] AFC is enabled with max remote calls: 10.
+00:35:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:51 [INFO] Revisión completada (1216 chars)
+00:35:51 [INFO] Pregunta 19 completada y guardada.
+00:35:51 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 20/25: ¿Cómo funciona paso a paso el procedimiento de elección de directores por el sistema de voto acumulativo y qué proporción mínima de vacantes garantiza a la minoría?
+00:35:51 [INFO] AFC is enabled with max remote calls: 10.
+00:35:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:35:52 [INFO] Sujeto: 'SociedadAnonima'
+00:35:52 [INFO] Conceptos extraídos: ['Directorio', 'VotoAcumulativo', 'Minorias', 'Vacantes', 'EleccionDirectores', 'RepresentacionMinoritaria', 'EstatutoSocial', 'Reglamentacion']
+00:35:52 [INFO] Buscando en Grafo Ontológico...
+00:35:53 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:35:53 [INFO]   [Grafo] Art. 31 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 64 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 263 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 77 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 17 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 206 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 158 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 278 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 325 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 107 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 301 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 223 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 159 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 173 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 197 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 186 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 45 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 61 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 276 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 294 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 300 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 55 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 91 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 281 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 58 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 238 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 275 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 26 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 50 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 273 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 5 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 262 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 310 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 239 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 283 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 98 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 339 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 12 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 270 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 82 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 57 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 178 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 255 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 311 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 32 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 67 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 167 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 20 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 183 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 10 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 103 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 290 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 182 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 212 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 185 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 287 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 271 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 205 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 110 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 11 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 33 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 220 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 172 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 189 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 299 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 100 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 284 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 39 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 161 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 260 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 27 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 244 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 226 recuperado.
+00:35:53 [INFO]   [Grafo] Art. 16 recuperado.
+00:35:53 [INFO] Buscando en Base Vectorial...
+00:35:53 [INFO]   Buscando 1/8: 'Directorio'...
+00:35:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:55 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:55 [INFO]   Buscando 2/8: 'VotoAcumulativo'...
+00:35:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:56 [INFO]   Buscando 3/8: 'Minorias'...
+00:35:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:57 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:57 [INFO]   Buscando 4/8: 'Vacantes'...
+00:35:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:58 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:35:58 [INFO]   Buscando 5/8: 'EleccionDirectores'...
+00:35:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:59 [INFO]   Buscando 6/8: 'RepresentacionMinoritaria'...
+00:35:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:00 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:00 [INFO]   Buscando 7/8: 'EstatutoSocial'...
+00:36:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:01 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:01 [INFO]   Buscando 8/8: 'Reglamentacion'...
+00:36:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:02 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:02 [INFO]   [Vector] Art. 289 recuperado.
+00:36:02 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_64_Ley_19550', 'Art_263_Ley_19550', 'Art_77_Ley_19550', 'Art_17_Ley_19550', 'Art_206_Ley_19550', 'Art_158_Ley_19550', 'Art_278_Ley_19550', 'Art_325_Ley_19550', 'Art_107_Ley_19550', 'Art_301_Ley_19550', 'Art_223_Ley_19550', 'Art_159_Ley_19550', 'Art_173_Ley_19550', 'Art_197_Ley_19550', 'Art_186_Ley_19550', 'Art_45_Ley_19550', 'Art_61_Ley_19550', 'Art_276_Ley_19550', 'Art_294_Ley_19550', 'Art_300_Ley_19550', 'Art_55_Ley_19550', 'Art_91_Ley_19550', 'Art_281_Ley_19550', 'Art_58_Ley_19550', 'Art_238_Ley_19550', 'Art_275_Ley_19550', 'Art_26_Ley_19550', 'Art_50_Ley_19550', 'Art_273_Ley_19550', 'Art_5_Ley_19550', 'Art_262_Ley_19550', 'Art_310_Ley_19550', 'Art_239_Ley_19550', 'Art_283_Ley_19550', 'Art_98_Ley_19550', 'Art_339_Ley_19550', 'Art_12_Ley_19550', 'Art_270_Ley_19550', 'Art_82_Ley_19550', 'Art_57_Ley_19550', 'Art_178_Ley_19550', 'Art_255_Ley_19550', 'Art_311_Ley_19550', 'Art_32_Ley_19550', 'Art_67_Ley_19550', 'Art_167_Ley_19550', 'Art_20_Ley_19550', 'Art_183_Ley_19550', 'Art_10_Ley_19550', 'Art_103_Ley_19550', 'Art_290_Ley_19550', 'Art_182_Ley_19550', 'Art_212_Ley_19550', 'Art_185_Ley_19550', 'Art_287_Ley_19550', 'Art_271_Ley_19550', 'Art_205_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_220_Ley_19550', 'Art_172_Ley_19550', 'Art_189_Ley_19550', 'Art_299_Ley_19550', 'Art_100_Ley_19550', 'Art_284_Ley_19550', 'Art_39_Ley_19550', 'Art_161_Ley_19550', 'Art_260_Ley_19550', 'Art_27_Ley_19550', 'Art_244_Ley_19550', 'Art_226_Ley_19550', 'Art_16_Ley_19550', 'Art_289_Ley_19550']
+00:36:02 [INFO] Entidades relacionadas: 122
+00:36:02 [INFO] AFC is enabled with max remote calls: 10.
+00:36:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:07 [INFO] Respuesta inicial generada (3234 chars)
+00:36:07 [INFO] Revisando respuesta...
+00:36:07 [INFO] AFC is enabled with max remote calls: 10.
+00:36:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:10 [INFO] Revisión completada (3439 chars)
+00:36:10 [INFO] Pregunta 20 completada y guardada.
+00:36:10 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 21/25: ¿Qué personas están legalmente inhabilitadas o tienen prohibición absoluta para ejercer el cargo de director en una Sociedad Anónima?
+00:36:10 [INFO] AFC is enabled with max remote calls: 10.
+00:36:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:14 [INFO] Sujeto: 'SociedadAnonima'
+00:36:14 [INFO] Conceptos extraídos: ['Inhabilitacion', 'Prohibicion', 'Director', 'Cargo', 'Personas', 'Requisitos', 'Capacidad', 'Restriccion']
+00:36:14 [INFO] Buscando en Grafo Ontológico...
+00:36:15 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:36:15 [INFO]   [Grafo] Art. 64 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 263 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 31 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 279 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 77 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 17 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 206 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 158 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 278 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 325 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 107 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 301 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 223 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 159 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 173 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 197 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 186 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 45 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 61 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 276 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 294 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 300 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 55 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 91 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 281 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 58 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 238 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 275 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 26 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 50 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 273 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 5 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 262 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 310 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 239 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 283 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 98 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 339 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 12 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 270 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 82 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 57 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 178 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 255 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 311 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 32 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 67 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 167 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 20 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 183 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 10 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 103 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 290 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 182 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 212 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 185 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 287 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 271 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 205 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 110 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 11 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 33 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 220 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 172 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 189 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 299 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 100 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 284 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 39 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 161 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 260 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 27 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 244 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 226 recuperado.
+00:36:15 [INFO]   [Grafo] Art. 16 recuperado.
+00:36:15 [INFO] Buscando en Base Vectorial...
+00:36:15 [INFO]   Buscando 1/8: 'Inhabilitacion'...
+00:36:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:17 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:17 [INFO]   Buscando 2/8: 'Prohibicion'...
+00:36:18 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:18 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:18 [INFO]   Buscando 3/8: 'Director'...
+00:36:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:19 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:19 [INFO]   Buscando 4/8: 'Cargo'...
+00:36:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:20 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:20 [INFO]   Buscando 5/8: 'Personas'...
+00:36:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:21 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:21 [INFO]   Buscando 6/8: 'Requisitos'...
+00:36:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:22 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:22 [INFO]   Buscando 7/8: 'Capacidad'...
+00:36:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:23 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:23 [INFO]   Buscando 8/8: 'Restriccion'...
+00:36:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:24 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:24 [INFO] Artículos recuperados: ['Art_64_Ley_19550', 'Art_263_Ley_19550', 'Art_31_Ley_19550', 'Art_279_Ley_19550', 'Art_77_Ley_19550', 'Art_17_Ley_19550', 'Art_206_Ley_19550', 'Art_158_Ley_19550', 'Art_278_Ley_19550', 'Art_325_Ley_19550', 'Art_107_Ley_19550', 'Art_301_Ley_19550', 'Art_223_Ley_19550', 'Art_159_Ley_19550', 'Art_173_Ley_19550', 'Art_197_Ley_19550', 'Art_186_Ley_19550', 'Art_45_Ley_19550', 'Art_61_Ley_19550', 'Art_276_Ley_19550', 'Art_294_Ley_19550', 'Art_300_Ley_19550', 'Art_55_Ley_19550', 'Art_91_Ley_19550', 'Art_281_Ley_19550', 'Art_58_Ley_19550', 'Art_238_Ley_19550', 'Art_275_Ley_19550', 'Art_26_Ley_19550', 'Art_50_Ley_19550', 'Art_273_Ley_19550', 'Art_5_Ley_19550', 'Art_262_Ley_19550', 'Art_310_Ley_19550', 'Art_239_Ley_19550', 'Art_283_Ley_19550', 'Art_98_Ley_19550', 'Art_339_Ley_19550', 'Art_12_Ley_19550', 'Art_270_Ley_19550', 'Art_82_Ley_19550', 'Art_57_Ley_19550', 'Art_178_Ley_19550', 'Art_255_Ley_19550', 'Art_311_Ley_19550', 'Art_32_Ley_19550', 'Art_67_Ley_19550', 'Art_167_Ley_19550', 'Art_20_Ley_19550', 'Art_183_Ley_19550', 'Art_10_Ley_19550', 'Art_103_Ley_19550', 'Art_290_Ley_19550', 'Art_182_Ley_19550', 'Art_212_Ley_19550', 'Art_185_Ley_19550', 'Art_287_Ley_19550', 'Art_271_Ley_19550', 'Art_205_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_220_Ley_19550', 'Art_172_Ley_19550', 'Art_189_Ley_19550', 'Art_299_Ley_19550', 'Art_100_Ley_19550', 'Art_284_Ley_19550', 'Art_39_Ley_19550', 'Art_161_Ley_19550', 'Art_260_Ley_19550', 'Art_27_Ley_19550', 'Art_244_Ley_19550', 'Art_226_Ley_19550', 'Art_16_Ley_19550']
+00:36:24 [INFO] Entidades relacionadas: 123
+00:36:24 [INFO] AFC is enabled with max remote calls: 10.
+00:36:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:27 [INFO] Respuesta inicial generada (676 chars)
+00:36:27 [INFO] Revisando respuesta...
+00:36:27 [INFO] AFC is enabled with max remote calls: 10.
+00:36:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:29 [INFO] Revisión completada (1164 chars)
+00:36:29 [INFO] Pregunta 21 completada y guardada.
+00:36:29 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 22/25: ¿Cuáles son las atribuciones, deberes y obligaciones indelegables del síndico societario según el artículo 294?
+00:36:29 [INFO] AFC is enabled with max remote calls: 10.
+00:36:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:30 [INFO] Sujeto: 'SindicoSocietario'
+00:36:30 [INFO] Conceptos extraídos: ['Atribuciones', 'Deberes', 'Obligaciones indelegables', 'Control', 'Fiscalización', 'Representación', 'Asamblea', 'Balance']
+00:36:30 [INFO] Buscando en Grafo Ontológico...
+00:36:32 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:36:32 [INFO]   [Grafo] Art. 77 recuperado.
+00:36:32 [INFO]   [Grafo] Art. 69 recuperado.
+00:36:32 [INFO]   [Grafo] Art. 224 recuperado.
+00:36:32 [INFO]   [Grafo] Art. 67 recuperado.
+00:36:32 [INFO]   [Grafo] Art. 109 recuperado.
+00:36:32 [INFO]   [Grafo] Art. 65 recuperado.
+00:36:32 [INFO]   [Grafo] Art. 68 recuperado.
+00:36:32 [INFO]   [Grafo] Art. 63 recuperado.
+00:36:32 [INFO] Buscando en Base Vectorial...
+00:36:32 [INFO]   Buscando 1/8: 'Atribuciones'...
+00:36:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:34 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:34 [INFO]   Buscando 2/8: 'Deberes'...
+00:36:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:35 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:35 [INFO]   Buscando 3/8: 'Obligaciones indelegables'...
+00:36:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:36 [INFO]   Buscando 4/8: 'Control'...
+00:36:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:36 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:36 [INFO]   Buscando 5/8: 'Fiscalización'...
+00:36:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:37 [INFO]   Buscando 6/8: 'Representación'...
+00:36:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:38 [INFO]   Buscando 7/8: 'Asamblea'...
+00:36:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:39 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:39 [INFO]   Buscando 8/8: 'Balance'...
+00:36:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:40 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:40 [INFO]   [Vector] Art. 293 recuperado.
+00:36:40 [INFO]   [Vector] Art. 266 recuperado.
+00:36:40 [INFO]   [Vector] Art. 304 recuperado.
+00:36:40 [INFO]   [Vector] Art. 300 recuperado.
+00:36:40 [INFO]   [Vector] Art. 268 recuperado.
+00:36:40 [INFO] Artículos recuperados: ['Art_77_Ley_19550', 'Art_69_Ley_19550', 'Art_224_Ley_19550', 'Art_67_Ley_19550', 'Art_109_Ley_19550', 'Art_65_Ley_19550', 'Art_68_Ley_19550', 'Art_63_Ley_19550', 'Art_293_Ley_19550', 'Art_266_Ley_19550', 'Art_304_Ley_19550', 'Art_300_Ley_19550', 'Art_268_Ley_19550']
+00:36:40 [INFO] Entidades relacionadas: 18
+00:36:40 [INFO] AFC is enabled with max remote calls: 10.
+00:36:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:42 [INFO] Respuesta inicial generada (183 chars)
+00:36:42 [INFO] Revisando respuesta...
+00:36:42 [INFO] AFC is enabled with max remote calls: 10.
+00:36:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:43 [INFO] Revisión completada (183 chars)
+00:36:43 [INFO] Pregunta 22 completada y guardada.
+00:36:43 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 23/25: ¿En qué supuestos específicos e incisos una Sociedad Anónima queda sujeta obligatoriamente a la fiscalización estatal permanente del artículo 299?
+00:36:43 [INFO] AFC is enabled with max remote calls: 10.
+00:36:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:43 [INFO] Sujeto: 'SociedadAnonima'
+00:36:43 [INFO] Conceptos extraídos: ['Fiscalizacion Estatal', 'Supuestos Especificos', 'Inciso', 'Articulo 299', 'Obligatoriedad', 'Control Estatal', 'Regulacion', 'Normativa']
+00:36:43 [INFO] Buscando en Grafo Ontológico...
+00:36:45 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:36:45 [INFO]   [Grafo] Art. 31 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 64 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 263 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 77 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 17 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 206 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 158 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 278 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 325 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 107 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 301 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 223 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 159 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 173 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 197 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 186 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 45 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 61 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 276 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 294 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 300 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 55 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 91 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 281 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 58 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 238 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 275 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 26 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 50 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 273 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 5 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 262 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 310 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 239 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 283 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 98 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 339 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 12 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 270 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 82 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 57 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 178 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 255 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 311 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 32 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 67 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 167 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 20 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 183 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 10 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 103 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 290 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 182 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 212 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 185 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 287 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 271 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 205 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 110 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 11 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 33 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 220 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 172 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 189 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 299 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 100 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 284 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 39 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 161 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 260 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 27 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 244 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 226 recuperado.
+00:36:45 [INFO]   [Grafo] Art. 16 recuperado.
+00:36:45 [INFO] Buscando en Base Vectorial...
+00:36:45 [INFO]   Buscando 1/8: 'Fiscalizacion Estatal'...
+00:36:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:47 [INFO]   Buscando 2/8: 'Supuestos Especificos'...
+00:36:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:48 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:48 [INFO]   Buscando 3/8: 'Inciso'...
+00:36:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:49 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:49 [INFO]   Buscando 4/8: 'Articulo 299'...
+00:36:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:50 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:50 [INFO]   Buscando 5/8: 'Obligatoriedad'...
+00:36:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:51 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:51 [INFO]   Buscando 6/8: 'Control Estatal'...
+00:36:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:51 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:51 [INFO]   Buscando 7/8: 'Regulacion'...
+00:36:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:52 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:52 [INFO]   Buscando 8/8: 'Normativa'...
+00:36:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:53 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:36:53 [INFO]   [Vector] Art. 304 recuperado.
+00:36:53 [INFO] Artículos recuperados: ['Art_31_Ley_19550', 'Art_64_Ley_19550', 'Art_263_Ley_19550', 'Art_77_Ley_19550', 'Art_17_Ley_19550', 'Art_206_Ley_19550', 'Art_158_Ley_19550', 'Art_278_Ley_19550', 'Art_325_Ley_19550', 'Art_107_Ley_19550', 'Art_301_Ley_19550', 'Art_223_Ley_19550', 'Art_159_Ley_19550', 'Art_173_Ley_19550', 'Art_197_Ley_19550', 'Art_186_Ley_19550', 'Art_45_Ley_19550', 'Art_61_Ley_19550', 'Art_276_Ley_19550', 'Art_294_Ley_19550', 'Art_300_Ley_19550', 'Art_55_Ley_19550', 'Art_91_Ley_19550', 'Art_281_Ley_19550', 'Art_58_Ley_19550', 'Art_238_Ley_19550', 'Art_275_Ley_19550', 'Art_26_Ley_19550', 'Art_50_Ley_19550', 'Art_273_Ley_19550', 'Art_5_Ley_19550', 'Art_262_Ley_19550', 'Art_310_Ley_19550', 'Art_239_Ley_19550', 'Art_283_Ley_19550', 'Art_98_Ley_19550', 'Art_339_Ley_19550', 'Art_12_Ley_19550', 'Art_270_Ley_19550', 'Art_82_Ley_19550', 'Art_57_Ley_19550', 'Art_178_Ley_19550', 'Art_255_Ley_19550', 'Art_311_Ley_19550', 'Art_32_Ley_19550', 'Art_67_Ley_19550', 'Art_167_Ley_19550', 'Art_20_Ley_19550', 'Art_183_Ley_19550', 'Art_10_Ley_19550', 'Art_103_Ley_19550', 'Art_290_Ley_19550', 'Art_182_Ley_19550', 'Art_212_Ley_19550', 'Art_185_Ley_19550', 'Art_287_Ley_19550', 'Art_271_Ley_19550', 'Art_205_Ley_19550', 'Art_110_Ley_19550', 'Art_11_Ley_19550', 'Art_33_Ley_19550', 'Art_220_Ley_19550', 'Art_172_Ley_19550', 'Art_189_Ley_19550', 'Art_299_Ley_19550', 'Art_100_Ley_19550', 'Art_284_Ley_19550', 'Art_39_Ley_19550', 'Art_161_Ley_19550', 'Art_260_Ley_19550', 'Art_27_Ley_19550', 'Art_244_Ley_19550', 'Art_226_Ley_19550', 'Art_16_Ley_19550', 'Art_304_Ley_19550']
+00:36:53 [INFO] Entidades relacionadas: 122
+00:36:53 [INFO] AFC is enabled with max remote calls: 10.
+00:36:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:56 [INFO] Respuesta inicial generada (1043 chars)
+00:36:56 [INFO] Revisando respuesta...
+00:36:56 [INFO] AFC is enabled with max remote calls: 10.
+00:36:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:58 [INFO] Revisión completada (1395 chars)
+00:36:58 [INFO] Pregunta 23 completada y guardada.
+00:36:58 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 24/25: ¿En qué se diferencian jurídicamente los debentures emitidos con garantía flotante de aquellos emitidos con garantía especial respecto a la disposición de los bienes afectados?
+00:36:58 [INFO] AFC is enabled with max remote calls: 10.
+00:36:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:36:59 [INFO] Sujeto: 'Debentures'
+00:36:59 [INFO] Conceptos extraídos: ['GarantiaFlotante', 'GarantiaEspecial', 'DisposicionBienes', 'DerechosAcreedores', 'Prenda', 'Hipoteca', 'CesionDerechos', 'Patrimonio']
+00:36:59 [INFO] Buscando en Grafo Ontológico...
+00:37:00 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:37:00 [INFO] Buscando en Base Vectorial...
+00:37:00 [INFO]   Buscando 1/8: 'GarantiaFlotante'...
+00:37:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:02 [INFO]   Buscando 2/8: 'GarantiaEspecial'...
+00:37:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:03 [INFO]   Buscando 3/8: 'DisposicionBienes'...
+00:37:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:04 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:04 [INFO]   Buscando 4/8: 'DerechosAcreedores'...
+00:37:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:05 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:05 [INFO]   Buscando 5/8: 'Prenda'...
+00:37:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:06 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:06 [INFO]   Buscando 6/8: 'Hipoteca'...
+00:37:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:07 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:07 [INFO]   Buscando 7/8: 'CesionDerechos'...
+00:37:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:08 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:08 [INFO]   Buscando 8/8: 'Patrimonio'...
+00:37:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:09 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:09 [INFO]   [Vector] Art. 327 recuperado.
+00:37:09 [INFO]   [Vector] Art. 333 recuperado.
+00:37:09 [INFO] Artículos recuperados: ['Art_327_Ley_19550', 'Art_333_Ley_19550']
+00:37:09 [INFO] Entidades relacionadas: 0
+00:37:09 [INFO] AFC is enabled with max remote calls: 10.
+00:37:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:37:11 [INFO] Respuesta inicial generada (657 chars)
+00:37:11 [INFO] Revisando respuesta...
+00:37:11 [INFO] AFC is enabled with max remote calls: 10.
+00:37:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:37:13 [INFO] Revisión completada (2147 chars)
+00:37:13 [INFO] Pregunta 24 completada y guardada.
+00:37:13 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 25/25: ¿Qué facultades procesales y administrativas asume el banco fiduciario como representante de los debenturistas si la sociedad emisora incurre en mora en el pago superior a 30 días?
+00:37:13 [INFO] AFC is enabled with max remote calls: 10.
+00:37:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:37:14 [INFO] Sujeto: 'FideicomisoFinanciero'
+00:37:14 [INFO] Conceptos extraídos: ['BancoFiduciario', 'Debenturistas', 'SociedadEmisora', 'Mora', 'FacultadesProcesales', 'FacultadesAdministrativas', 'Representacion', 'Pago']
+00:37:14 [INFO] Buscando en Grafo Ontológico...
+00:37:15 [WARNING] Received notification from DBMS server: <GqlStatusObject gql_status='01N52', status_description='warn: property key does not exist. The property `alias` does not exist in database `9cda5ce6`. Verify that the spelling is correct.', position=<SummaryInputPosition line=7, column=41, offset=294>, raw_classification='UNRECOGNIZED', classification=<NotificationClassification.UNRECOGNIZED: 'UNRECOGNIZED'>, raw_severity='WARNING', severity=<NotificationSeverity.WARNING: 'WARNING'>, diagnostic_record={'_classification': 'UNRECOGNIZED', '_severity': 'WARNING', '_position': {'offset': 294, 'line': 7, 'column': 41}, 'OPERATION': '', 'OPERATION_CODE': '0', 'CURRENT_SCHEMA': '/'}> for query: "\n    UNWIND $terminos AS termino\n    MATCH (entidad)\n    // Buscamos coincidencia flexible por nombre o por los alias que creamos\n    WHERE toLower(entidad.nombre) CONTAINS toLower(termino)\n       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino)\n       OR any(alias IN coalesce(entidad.alias, []) WHERE toLower(alias) CONTAINS toLower(termino))\n\n    // Caminamos el grafo hacia los artículos que regulan o mencionan ese concepto\n    MATCH (art:Articulo)-[r]->(entidad)\n    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE']\n\n    RETURN DISTINCT\n        art.id AS id,\n        art.numero AS numero,\n        art.texto AS texto,\n        count(entidad) AS relevancia\n    ORDER BY relevancia DESC\n    "
+00:37:15 [INFO] Buscando en Base Vectorial...
+00:37:15 [INFO]   Buscando 1/8: 'BancoFiduciario'...
+00:37:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:17 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:17 [INFO]   Buscando 2/8: 'Debenturistas'...
+00:37:18 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:18 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:18 [INFO]   Buscando 3/8: 'SociedadEmisora'...
+00:37:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:19 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:19 [INFO]   Buscando 4/8: 'Mora'...
+00:37:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:20 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:20 [INFO]   Buscando 5/8: 'FacultadesProcesales'...
+00:37:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:21 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:21 [INFO]   Buscando 6/8: 'FacultadesAdministrativas'...
+00:37:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:22 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:22 [INFO]   Buscando 7/8: 'Representacion'...
+00:37:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:23 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:23 [INFO]   Buscando 8/8: 'Pago'...
+00:37:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:24 [WARNING] No relevant docs were retrieved using the relevance score threshold 0.85
+00:37:24 [INFO] Artículos recuperados: []
+00:37:24 [INFO] Entidades relacionadas: 0
+00:37:24 [INFO] AFC is enabled with max remote calls: 10.
+00:37:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:37:26 [INFO] Respuesta inicial generada (909 chars)
+00:37:26 [INFO] Revisando respuesta...
+00:37:26 [INFO] AFC is enabled with max remote calls: 10.
+00:37:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+00:37:30 [INFO] Revisión completada (2977 chars)
+00:37:30 [INFO] Pregunta 25 completada y guardada.
+00:37:30 [INFO] Evaluación finalizada. Resultados en: /home/mariano/projects/notaria/logs/resultados2_20260529_003102.txt
