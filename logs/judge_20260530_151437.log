@@ -1,0 +1,376 @@
+15:14:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:41 [INFO] Iniciando evaluación de 10 preguntas.
+15:14:41 [INFO] Resultados → /home/mariano/projects/notaria/logs/resultados_20260530_151437.txt
+15:14:41 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 1/10: ¿Qué mayorías exactas de capital se requieren en una Sociedad de Responsabilidad Limitada para modificar el contrato social si el mismo no lo regula expresamente?
+15:14:41 [INFO] AFC is enabled with max remote calls: 10.
+15:14:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:14:43 [INFO] 
+Sujeto (Filtro): 'Sociedad de Responsabilidad Limitada'
+15:14:43 [INFO] Frases Vectoriales: ['mayorías capital modificación contrato social SRL ley general sociedades', 'modificación contrato social SRL ausencia regulación expresa mayorías', 'requisitos quorum reforma contrato social SRL art 157 ley 19550']
+15:14:43 [INFO] Nodos Grafo: ['SociedadResponsabilidadLimitada', 'ContratoSocial', 'ModificacionContratoSocial', 'CapitalSocial', 'Mayorias', 'Quorum', 'LeyGeneralSociedades', 'Articulo157']
+15:14:43 [INFO] 
+Buscando en Base Vectorial...
+15:14:43 [INFO]   [1/4] Buscando vector: 'mayorías capital modificación contrato social SRL ley general sociedades'
+15:14:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:44 [INFO]   [2/4] Buscando vector: 'modificación contrato social SRL ausencia regulación expresa mayorías'
+15:14:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:45 [INFO]   [3/4] Buscando vector: 'requisitos quorum reforma contrato social SRL art 157 ley 19550'
+15:14:45 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:46 [INFO]   [4/4] Buscando vector: '¿Qué mayorías exactas de capital se requieren en una Sociedad de Responsabilidad Limitada para modificar el contrato social si el mismo no lo regula expresamente?'
+15:14:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:47 [INFO]   • [Vector] Art. 160 recuperado.
+15:14:47 [INFO]   • [Vector] Art. 159 recuperado.
+15:14:47 [INFO]   • [Vector] Art. 12 recuperado.
+15:14:47 [INFO]   (+ 4 descartados por filtro de sujeto)
+15:14:47 [INFO] 
+Buscando en Grafo Ontológico...
+15:14:49 [INFO] 
+──────────────────────────────────────────────────
+15:14:49 [INFO] Total Artículos únicos recuperados: 4
+15:14:49 [INFO] Entidades relacionadas extraídas: 11
+15:14:49 [INFO] ──────────────────────────────────────────────────
+15:14:49 [INFO] Generando respuesta...
+15:14:49 [INFO] AFC is enabled with max remote calls: 10.
+15:14:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:14:51 [INFO] Revisando...
+15:14:51 [INFO] AFC is enabled with max remote calls: 10.
+15:14:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:14:52 [INFO] Pregunta 1 completada y guardada.
+15:14:52 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 2/10: Si una sociedad en comandita simple sufre la reducción a uno del número de socios, ¿entra automáticamente en causal de disolución o qué sucede legalmente?
+15:14:52 [INFO] AFC is enabled with max remote calls: 10.
+15:14:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:14:53 [INFO] 
+Sujeto (Filtro): 'sociedad en comandita simple'
+15:14:53 [INFO] Frases Vectoriales: ['reducción a uno del número de socios sociedad en comandita simple', 'causal de disolución sociedad en comandita simple por un solo socio', 'consecuencias legales un solo socio sociedad en comandita simple']
+15:14:53 [INFO] Nodos Grafo: ['SociedadEnComanditaSimple', 'NumeroSocios', 'ReduccionSocios', 'CausalDisolucion', 'DisolucionSocietaria', 'ConsecuenciasLegales', 'UnSoloSocio', 'SociosComanditados']
+15:14:53 [INFO] 
+Buscando en Base Vectorial...
+15:14:53 [INFO]   [1/4] Buscando vector: 'reducción a uno del número de socios sociedad en comandita simple'
+15:14:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:55 [INFO]   [2/4] Buscando vector: 'causal de disolución sociedad en comandita simple por un solo socio'
+15:14:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:56 [INFO]   [3/4] Buscando vector: 'consecuencias legales un solo socio sociedad en comandita simple'
+15:14:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:57 [INFO]   [4/4] Buscando vector: 'Si una sociedad en comandita simple sufre la reducción a uno del número de socios, ¿entra automáticamente en causal de disolución o qué sucede legalmente?'
+15:14:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:14:59 [INFO]   • [Vector] Art. 94 bis recuperado.
+15:14:59 [INFO]   • [Vector] Art. 90 recuperado.
+15:14:59 [INFO]   • [Vector] Art. 134 recuperado.
+15:14:59 [INFO]   • [Vector] Art. 140 recuperado.
+15:14:59 [INFO]   (+ 2 descartados por filtro de sujeto)
+15:14:59 [INFO] 
+Buscando en Grafo Ontológico...
+15:14:59 [INFO] 
+──────────────────────────────────────────────────
+15:14:59 [INFO] Total Artículos únicos recuperados: 7
+15:14:59 [INFO] Entidades relacionadas extraídas: 7
+15:14:59 [INFO] ──────────────────────────────────────────────────
+15:14:59 [INFO] Generando respuesta...
+15:14:59 [INFO] AFC is enabled with max remote calls: 10.
+15:15:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:03 [INFO] Revisando...
+15:15:03 [INFO] AFC is enabled with max remote calls: 10.
+15:15:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:06 [INFO] Pregunta 2 completada y guardada.
+15:15:06 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 3/10: Si una sociedad constituida en el extranjero desea establecer una sucursal en Argentina para ejercer habitualmente su objeto, ¿qué requisitos documentales y de domicilio debe cumplir?
+15:15:06 [INFO] AFC is enabled with max remote calls: 10.
+15:15:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:07 [INFO] 
+Sujeto (Filtro): 'sucursal de sociedad extranjera en Argentina'
+15:15:07 [INFO] Frases Vectoriales: ['requisitos documentales sucursal sociedad extranjera Argentina', 'requisitos domicilio sucursal sociedad extranjera Argentina', 'establecimiento habitual sucursal sociedad extranjera ley argentina']
+15:15:07 [INFO] Nodos Grafo: ['SociedadExtranjera', 'SucursalArgentina', 'RequisitosDocumentales', 'DomicilioLegal', 'ObjetoSocial', 'Habitualidad', 'ConstitucionSucursal', 'Autorizacion']
+15:15:07 [INFO] 
+Buscando en Base Vectorial...
+15:15:07 [INFO]   [1/4] Buscando vector: 'requisitos documentales sucursal sociedad extranjera Argentina'
+15:15:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:10 [INFO]   [2/4] Buscando vector: 'requisitos domicilio sucursal sociedad extranjera Argentina'
+15:15:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:11 [INFO]   [3/4] Buscando vector: 'establecimiento habitual sucursal sociedad extranjera ley argentina'
+15:15:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:12 [INFO]   [4/4] Buscando vector: 'Si una sociedad constituida en el extranjero desea establecer una sucursal en Argentina para ejercer habitualmente su objeto, ¿qué requisitos documentales y de domicilio debe cumplir?'
+15:15:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:13 [INFO]   • [Vector] Art. 118 recuperado.
+15:15:13 [INFO]   • [Vector] Art. 5 recuperado.
+15:15:13 [INFO]   • [Vector] Art. 123 recuperado.
+15:15:13 [INFO]   • [Vector] Art. 124 recuperado.
+15:15:13 [INFO]   • [Vector] Art. 122 recuperado.
+15:15:13 [INFO] 
+Buscando en Grafo Ontológico...
+15:15:14 [INFO] 
+──────────────────────────────────────────────────
+15:15:14 [INFO] Total Artículos únicos recuperados: 5
+15:15:14 [INFO] Entidades relacionadas extraídas: 6
+15:15:14 [INFO] ──────────────────────────────────────────────────
+15:15:14 [INFO] Generando respuesta...
+15:15:14 [INFO] AFC is enabled with max remote calls: 10.
+15:15:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:16 [INFO] Revisando...
+15:15:16 [INFO] AFC is enabled with max remote calls: 10.
+15:15:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:21 [INFO] Pregunta 3 completada y guardada.
+15:15:21 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 4/10: ¿Cuáles son las facultades procesales y de administración que asume el banco fiduciario si la sociedad emisora entra en mora por más de 30 días en el pago de debentures con garantía flotante?
+15:15:21 [INFO] AFC is enabled with max remote calls: 10.
+15:15:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:22 [INFO] 
+Sujeto (Filtro): 'sociedad emisora de debentures con garantía flotante'
+15:15:22 [INFO] Frases Vectoriales: ['facultades banco fiduciario mora debentures garantía flotante', 'consecuencias mora sociedad emisora pago debentures art. [si se menciona artículo específico, incluirlo aquí]', 'derechos administrador fiduciario incumplimiento pago debentures']
+15:15:22 [INFO] Nodos Grafo: ['BancoFiduciario', 'SociedadEmisora', 'Debentures', 'GarantiaFlotante', 'Mora', 'FacultadesProcesales', 'FacultadesAdministracion', 'IncumplimientoPago']
+15:15:22 [INFO] 
+Buscando en Base Vectorial...
+15:15:22 [INFO]   [1/4] Buscando vector: 'facultades banco fiduciario mora debentures garantía flotante'
+15:15:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:23 [INFO]   [2/4] Buscando vector: 'consecuencias mora sociedad emisora pago debentures art. [si se menciona artículo específico, incluirlo aquí]'
+15:15:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:24 [INFO]   [3/4] Buscando vector: 'derechos administrador fiduciario incumplimiento pago debentures'
+15:15:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:25 [INFO]   [4/4] Buscando vector: '¿Cuáles son las facultades procesales y de administración que asume el banco fiduciario si la sociedad emisora entra en mora por más de 30 días en el pago de debentures con garantía flotante?'
+15:15:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:26 [INFO]   • [Vector] Art. 345 recuperado.
+15:15:26 [INFO]   • [Vector] Art. 348 recuperado.
+15:15:26 [INFO]   • [Vector] Art. 327 recuperado.
+15:15:26 [INFO]   • [Vector] Art. 352 recuperado.
+15:15:26 [INFO]   • [Vector] Art. 356 recuperado.
+15:15:26 [INFO]   • [Vector] Art. 347 recuperado.
+15:15:26 [INFO] 
+Buscando en Grafo Ontológico...
+15:15:27 [INFO] 
+──────────────────────────────────────────────────
+15:15:27 [INFO] Total Artículos únicos recuperados: 8
+15:15:27 [INFO] Entidades relacionadas extraídas: 8
+15:15:27 [INFO] ──────────────────────────────────────────────────
+15:15:27 [INFO] Generando respuesta...
+15:15:27 [INFO] AFC is enabled with max remote calls: 10.
+15:15:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:32 [INFO] Revisando...
+15:15:32 [INFO] AFC is enabled with max remote calls: 10.
+15:15:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:35 [INFO] Pregunta 4 completada y guardada.
+15:15:35 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 5/10: En una Sociedad Anónima con Participación Estatal Mayoritaria, cuando la minoría ejerce su derecho a elegir directores, ¿quiénes tienen prohibición absoluta de ser directores por el capital privado?
+15:15:35 [INFO] AFC is enabled with max remote calls: 10.
+15:15:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:36 [INFO] 
+Sujeto (Filtro): 'Sociedad Anónima con Participación Estatal Mayoritaria'
+15:15:36 [INFO] Frases Vectoriales: ['prohibición absoluta de ser directores en Sociedades Anónimas con Participación Estatal Mayoritaria por capital privado', 'requisitos para ser director en SA con participación estatal mayoritaria', 'restricciones para directores en sociedades con mayoría estatal']
+15:15:36 [INFO] Nodos Grafo: ['SociedadAnonima', 'ParticipacionEstatalMayoritaria', 'DerechoEleccionDirectores', 'Minoría', 'ProhibicionAbsoluta', 'Director', 'CapitalPrivado', 'RequisitosDirector']
+15:15:36 [INFO] 
+Buscando en Base Vectorial...
+15:15:36 [INFO]   [1/4] Buscando vector: 'prohibición absoluta de ser directores en Sociedades Anónimas con Participación Estatal Mayoritaria por capital privado'
+15:15:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:38 [INFO]   [2/4] Buscando vector: 'requisitos para ser director en SA con participación estatal mayoritaria'
+15:15:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:39 [INFO]   [3/4] Buscando vector: 'restricciones para directores en sociedades con mayoría estatal'
+15:15:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:40 [INFO]   [4/4] Buscando vector: 'En una Sociedad Anónima con Participación Estatal Mayoritaria, cuando la minoría ejerce su derecho a elegir directores, ¿quiénes tienen prohibición absoluta de ser directores por el capital privado?'
+15:15:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:41 [INFO]   • [Vector] Art. 310 recuperado.
+15:15:41 [INFO]   • [Vector] Art. 308 recuperado.
+15:15:41 [INFO]   (+ 8 descartados por filtro de sujeto)
+15:15:41 [INFO] 
+Buscando en Grafo Ontológico...
+15:15:42 [INFO] 
+──────────────────────────────────────────────────
+15:15:42 [INFO] Total Artículos únicos recuperados: 5
+15:15:42 [INFO] Entidades relacionadas extraídas: 11
+15:15:42 [INFO] ──────────────────────────────────────────────────
+15:15:42 [INFO] Generando respuesta...
+15:15:42 [INFO] AFC is enabled with max remote calls: 10.
+15:15:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:44 [INFO] Revisando...
+15:15:44 [INFO] AFC is enabled with max remote calls: 10.
+15:15:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:47 [INFO] Pregunta 5 completada y guardada.
+15:15:47 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 6/10: En una sociedad de capital e industria, si el contrato constitutivo guarda silencio sobre la parte de los beneficios que le corresponde al socio industrial, ¿cómo debe determinarse?
+15:15:47 [INFO] AFC is enabled with max remote calls: 10.
+15:15:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:48 [INFO] 
+Sujeto (Filtro): 'sociedad de capital e industria'
+15:15:48 [INFO] Frases Vectoriales: ['determinación beneficios socio industrial contrato social silencio', 'distribución ganancias sociedad capital industria si contrato omite', 'cuota parte beneficios socio industrial art 150 ley general sociedades']
+15:15:48 [INFO] Nodos Grafo: ['SociedadCapitalIndustria', 'ContratoConstitutivo', 'Beneficios', 'SocioIndustrial', 'Determinacion', 'Silencio', 'DistribucionGanancias', 'LeyGeneralSociedades']
+15:15:48 [INFO] 
+Buscando en Base Vectorial...
+15:15:48 [INFO]   [1/4] Buscando vector: 'determinación beneficios socio industrial contrato social silencio'
+15:15:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:50 [INFO]   [2/4] Buscando vector: 'distribución ganancias sociedad capital industria si contrato omite'
+15:15:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:51 [INFO]   [3/4] Buscando vector: 'cuota parte beneficios socio industrial art 150 ley general sociedades'
+15:15:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:52 [INFO]   [4/4] Buscando vector: 'En una sociedad de capital e industria, si el contrato constitutivo guarda silencio sobre la parte de los beneficios que le corresponde al socio industrial, ¿cómo debe determinarse?'
+15:15:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:53 [INFO]   • [Vector] Art. 144 recuperado.
+15:15:53 [INFO]   • [Vector] Art. 141 recuperado.
+15:15:53 [INFO]   (+ 7 descartados por filtro de sujeto)
+15:15:53 [INFO] 
+Buscando en Grafo Ontológico...
+15:15:54 [INFO] 
+──────────────────────────────────────────────────
+15:15:54 [INFO] Total Artículos únicos recuperados: 2
+15:15:54 [INFO] Entidades relacionadas extraídas: 2
+15:15:54 [INFO] ──────────────────────────────────────────────────
+15:15:54 [INFO] Generando respuesta...
+15:15:54 [INFO] AFC is enabled with max remote calls: 10.
+15:15:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:56 [INFO] Revisando...
+15:15:56 [INFO] AFC is enabled with max remote calls: 10.
+15:15:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:57 [INFO] Pregunta 6 completada y guardada.
+15:15:57 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 7/10: ¿Puede el socio comanditario en una Sociedad en Comandita por Acciones solicitar judicialmente la remoción del administrador? ¿Qué porcentaje de capital mínimo necesita para hacerlo?
+15:15:57 [INFO] AFC is enabled with max remote calls: 10.
+15:15:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:15:57 [INFO] 
+Sujeto (Filtro): 'Sociedad en Comandita por Acciones'
+15:15:57 [INFO] Frases Vectoriales: ['remoción judicial administrador socio comanditario Sociedad en Comandita por Acciones', 'porcentaje capital mínimo para solicitar remoción administrador Sociedad en Comandita por Acciones', 'derechos socio comanditario remoción administrador Sociedad en Comandita por Acciones']
+15:15:57 [INFO] Nodos Grafo: ['SocioComanditario', 'SociedadEnComanditaPorAcciones', 'RemocionAdministrador', 'AccionJudicial', 'CapitalSocial', 'PorcentajeCapital', 'DerechosSocios', 'Administrador']
+15:15:57 [INFO] 
+Buscando en Base Vectorial...
+15:15:57 [INFO]   [1/4] Buscando vector: 'remoción judicial administrador socio comanditario Sociedad en Comandita por Acciones'
+15:15:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:58 [INFO]   [2/4] Buscando vector: 'porcentaje capital mínimo para solicitar remoción administrador Sociedad en Comandita por Acciones'
+15:15:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:15:59 [INFO]   [3/4] Buscando vector: 'derechos socio comanditario remoción administrador Sociedad en Comandita por Acciones'
+15:15:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:00 [INFO]   [4/4] Buscando vector: '¿Puede el socio comanditario en una Sociedad en Comandita por Acciones solicitar judicialmente la remoción del administrador? ¿Qué porcentaje de capital mínimo necesita para hacerlo?'
+15:16:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:01 [INFO]   • [Vector] Art. 319 recuperado.
+15:16:01 [INFO]   • [Vector] Art. 91 recuperado.
+15:16:01 [INFO]   • [Vector] Art. 322 recuperado.
+15:16:01 [INFO]   (+ 6 descartados por filtro de sujeto)
+15:16:01 [INFO] 
+Buscando en Grafo Ontológico...
+15:16:01 [INFO] 
+──────────────────────────────────────────────────
+15:16:01 [INFO] Total Artículos únicos recuperados: 6
+15:16:02 [INFO] Entidades relacionadas extraídas: 13
+15:16:02 [INFO] ──────────────────────────────────────────────────
+15:16:02 [INFO] Generando respuesta...
+15:16:02 [INFO] AFC is enabled with max remote calls: 10.
+15:16:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:04 [INFO] Revisando...
+15:16:04 [INFO] AFC is enabled with max remote calls: 10.
+15:16:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:06 [INFO] Pregunta 7 completada y guardada.
+15:16:06 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 8/10: Si el contrato social no exige justa causa, ¿es posible remover al administrador de una sociedad colectiva en cualquier tiempo? ¿Qué derechos tienen los socios disconformes?
+15:16:06 [INFO] AFC is enabled with max remote calls: 10.
+15:16:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:07 [INFO] 
+Sujeto (Filtro): 'sociedad colectiva'
+15:16:07 [INFO] Frases Vectoriales: ['remoción administrador sociedad colectiva sin justa causa', 'derechos socios disconformes sociedad colectiva', 'causales remoción administrador sociedad colectiva']
+15:16:07 [INFO] Nodos Grafo: ['SociedadColectiva', 'Administrador', 'Remocion', 'ContratoSocial', 'JustaCausa', 'DerechosSocios', 'Disconformidad', 'DisolucionSociedad']
+15:16:07 [INFO] 
+Buscando en Base Vectorial...
+15:16:07 [INFO]   [1/4] Buscando vector: 'remoción administrador sociedad colectiva sin justa causa'
+15:16:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:09 [INFO]   [2/4] Buscando vector: 'derechos socios disconformes sociedad colectiva'
+15:16:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:10 [INFO]   [3/4] Buscando vector: 'causales remoción administrador sociedad colectiva'
+15:16:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:11 [INFO]   [4/4] Buscando vector: 'Si el contrato social no exige justa causa, ¿es posible remover al administrador de una sociedad colectiva en cualquier tiempo? ¿Qué derechos tienen los socios disconformes?'
+15:16:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:12 [INFO]   • [Vector] Art. 129 recuperado.
+15:16:12 [INFO]   • [Vector] Art. 130 recuperado.
+15:16:12 [INFO]   (+ 8 descartados por filtro de sujeto)
+15:16:12 [INFO] 
+Buscando en Grafo Ontológico...
+15:16:13 [INFO] 
+──────────────────────────────────────────────────
+15:16:13 [INFO] Total Artículos únicos recuperados: 4
+15:16:13 [INFO] Entidades relacionadas extraídas: 4
+15:16:13 [INFO] ──────────────────────────────────────────────────
+15:16:13 [INFO] Generando respuesta...
+15:16:13 [INFO] AFC is enabled with max remote calls: 10.
+15:16:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:15 [INFO] Revisando...
+15:16:15 [INFO] AFC is enabled with max remote calls: 10.
+15:16:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:17 [INFO] Pregunta 8 completada y guardada.
+15:16:17 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 9/10: Si una sociedad se constituye omitiendo un requisito tipificante esencial, ¿es nula definitivamente o los socios tienen algún mecanismo legal para subsanar el error?
+15:16:17 [INFO] AFC is enabled with max remote calls: 10.
+15:16:18 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:18 [INFO] 
+Sujeto (Filtro): 'sociedad comercial'
+15:16:18 [INFO] Frases Vectoriales: ['nulidad sociedad omitir requisito tipificante esencial', 'subsana error constitución sociedad', 'consecuencias omisión requisito esencial sociedad']
+15:16:18 [INFO] Nodos Grafo: ['NulidadSociedad', 'RequisitoTipificante', 'ErrorConstitutivo', 'Subsanacion', 'Socios', 'InstrumentoConstitutivo', 'SociedadComercial', 'ConsecuenciasLegales']
+15:16:18 [INFO] 
+Buscando en Base Vectorial...
+15:16:18 [INFO]   [1/4] Buscando vector: 'nulidad sociedad omitir requisito tipificante esencial'
+15:16:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:19 [INFO]   [2/4] Buscando vector: 'subsana error constitución sociedad'
+15:16:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:20 [INFO]   [3/4] Buscando vector: 'consecuencias omisión requisito esencial sociedad'
+15:16:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:21 [INFO]   [4/4] Buscando vector: 'Si una sociedad se constituye omitiendo un requisito tipificante esencial, ¿es nula definitivamente o los socios tienen algún mecanismo legal para subsanar el error?'
+15:16:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:22 [INFO]   • [Vector] Art. 17 recuperado.
+15:16:22 [INFO]   • [Vector] Art. 21 recuperado.
+15:16:22 [INFO]   • [Vector] Art. 18 recuperado.
+15:16:22 [INFO]   • [Vector] Art. 25 recuperado.
+15:16:22 [INFO]   • [Vector] Art. 165 recuperado.
+15:16:22 [INFO] 
+Buscando en Grafo Ontológico...
+15:16:22 [INFO] 
+──────────────────────────────────────────────────
+15:16:22 [INFO] Total Artículos únicos recuperados: 8
+15:16:22 [INFO] Entidades relacionadas extraídas: 13
+15:16:22 [INFO] ──────────────────────────────────────────────────
+15:16:22 [INFO] Generando respuesta...
+15:16:22 [INFO] AFC is enabled with max remote calls: 10.
+15:16:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:25 [INFO] Revisando...
+15:16:25 [INFO] AFC is enabled with max remote calls: 10.
+15:16:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:27 [INFO] Pregunta 9 completada y guardada.
+15:16:27 [INFO] 
+────────────────────────────────────────────────────────────
+PREGUNTA 10/10: ¿Puede un funcionario de la administración pública actual ejercer el cargo de director en una Sociedad Anónima convencional si su área de gobierno se relaciona con el objeto de la empresa?
+15:16:27 [INFO] AFC is enabled with max remote calls: 10.
+15:16:28 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:28 [INFO] 
+Sujeto (Filtro): 'Sociedad Anónima'
+15:16:28 [INFO] Frases Vectoriales: ['incompatibilidad funcionario público director sociedad anónima', 'restricciones ejercicio cargo director administración pública objeto empresa', 'conflicto de intereses funcionario público director SA']
+15:16:28 [INFO] Nodos Grafo: ['FuncionarioPublico', 'Director', 'SociedadAnonima', 'Incompatibilidad', 'AdministracionPublica', 'ObjetoSocial', 'ConflictoIntereses', 'Regulacion']
+15:16:28 [INFO] 
+Buscando en Base Vectorial...
+15:16:28 [INFO]   [1/4] Buscando vector: 'incompatibilidad funcionario público director sociedad anónima'
+15:16:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:29 [INFO]   [2/4] Buscando vector: 'restricciones ejercicio cargo director administración pública objeto empresa'
+15:16:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:30 [INFO]   [3/4] Buscando vector: 'conflicto de intereses funcionario público director SA'
+15:16:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:31 [INFO]   [4/4] Buscando vector: '¿Puede un funcionario de la administración pública actual ejercer el cargo de director en una Sociedad Anónima convencional si su área de gobierno se relaciona con el objeto de la empresa?'
+15:16:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+15:16:32 [INFO]   • [Vector] Art. 310 recuperado.
+15:16:32 [INFO]   • [Vector] Art. 264 recuperado.
+15:16:32 [INFO]   • [Vector] Art. 272 recuperado.
+15:16:32 [INFO]   • [Vector] Art. 273 recuperado.
+15:16:32 [INFO] 
+Buscando en Grafo Ontológico...
+15:16:33 [INFO] 
+──────────────────────────────────────────────────
+15:16:33 [INFO] Total Artículos únicos recuperados: 7
+15:16:33 [INFO] Entidades relacionadas extraídas: 13
+15:16:33 [INFO] ──────────────────────────────────────────────────
+15:16:33 [INFO] Generando respuesta...
+15:16:33 [INFO] AFC is enabled with max remote calls: 10.
+15:16:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:35 [INFO] Revisando...
+15:16:35 [INFO] AFC is enabled with max remote calls: 10.
+15:16:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent "HTTP/1.1 200 OK"
+15:16:36 [INFO] Pregunta 10 completada y guardada.
+15:16:36 [INFO] Evaluación finalizada. Resultados en: /home/mariano/projects/notaria/logs/resultados_20260530_151437.txt
