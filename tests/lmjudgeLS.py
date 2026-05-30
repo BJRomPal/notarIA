@@ -301,41 +301,37 @@ def responder(pregunta: str) -> str:
 
 # --- Ejecución ---
 preguntas_test_graphrag = [
-    # Preguntas sobre Disposiciones Generales y Requisitos (Extracción de listas y condiciones)
-    "¿Cuáles son los requisitos ineludibles que debe contener el instrumento de constitución de cualquier sociedad según el artículo 11?",
-    "¿Qué sucede con la responsabilidad de los socios frente a terceros si una sociedad se constituye omitiendo requisitos esenciales tipificantes (Sección IV)?",
-    "¿Bajo qué condiciones excepcionales una sociedad puede tomar participaciones en otra sociedad por un monto superior a sus reservas libres y la mitad de su capital?",
-    "¿Cuáles son las consecuencias jurídicas y responsabilidades patrimoniales para el socio aparente y el socio oculto?",
-    "En caso de mora en la integración del aporte, ¿qué acciones legales específicas puede tomar la sociedad contra el socio incumplidor?",
-    "¿En qué consisten las prestaciones accesorias, qué requisitos deben cumplir y por qué no integran el capital social?",
-    "¿Cómo deben valuarse los aportes en especie en una Sociedad de Responsabilidad Limitada y quién asume la responsabilidad por una eventual sobrevaluación?",
-    "¿Qué nivel de diligencia y responsabilidad asumen los administradores societarios, y cuál es el mecanismo exacto para eximirse de dicha responsabilidad?",
+    # 1. Prueba de Sociedad de Responsabilidad Limitada (Arts. 146-162)
+    "¿Qué mayorías exactas de capital se requieren en una Sociedad de Responsabilidad Limitada para modificar el contrato social si el mismo no lo regula expresamente?",
     
-    # Preguntas sobre Procesos Complejos (Navegación de múltiples saltos en el grafo)
-    "Según la ley, ¿cómo debe calcularse y qué límite porcentual tiene la constitución de la reserva legal obligatoria?",
-    "¿Cuáles son los requisitos formales y de publicidad exigidos paso a paso para llevar a cabo la transformación de un tipo societario a otro?",
-    "En un proceso de fusión, ¿qué información obligatoria y balances debe contener el compromiso previo de fusión firmado por los representantes?",
-    "¿Qué plazos, condiciones y efectos establece la ley para que un socio disconforme ejerza su derecho de receso?",
-    "¿Cuáles son las causales legales taxativas que provocan la disolución de una sociedad estipuladas en el artículo 94?",
-    "¿Qué requisitos debe cumplir una sociedad constituida en el extranjero para establecer una sucursal y ejercer habitualmente su objeto social en Argentina?",
+    # 2. Prueba del conflictivo Art. 94 bis y transformación de pleno derecho
+    "Si una sociedad en comandita simple sufre la reducción a uno del número de socios, ¿entra automáticamente en causal de disolución o qué sucede legalmente?",
     
-    # Preguntas Específicas de SRL (Filtro por tipo de entidad)
-    "En una Sociedad de Responsabilidad Limitada, ¿qué mayorías exactas de capital se requieren para modificar el contrato social si el mismo no lo regula expresamente?",
-    "¿Cuál es el procedimiento y los plazos legales si un socio de una SRL desea ceder sus cuotas a un tercero, pero el contrato limita dicha transmisibilidad y la sociedad ejerce su derecho de preferencia?",
+    # 3. Prueba del nuevo nodo: Sociedad Constituida en el Extranjero (Arts. 118-124)
+    "Si una sociedad constituida en el extranjero desea establecer una sucursal en Argentina para ejercer habitualmente su objeto, ¿qué requisitos documentales y de domicilio debe cumplir?",
     
-    # Preguntas Específicas de SA (Conceptos jerárquicos y roles detallados)
-    "¿Qué diferencias sustanciales existen entre el procedimiento de constitución de una Sociedad Anónima por acto único y por suscripción pública?",
-    "¿Bajo qué circunstancias excepcionales permitidas por la ley puede una Sociedad Anónima adquirir las propias acciones que emitió?",
-    "¿Qué materias y decisiones son de competencia exclusiva e indelegable de la Asamblea Extraordinaria en una Sociedad Anónima?",
-    "¿Cómo funciona paso a paso el procedimiento de elección de directores por el sistema de voto acumulativo y qué proporción mínima de vacantes garantiza a la minoría?",
-    "¿Qué personas están legalmente inhabilitadas o tienen prohibición absoluta para ejercer el cargo de director en una Sociedad Anónima?",
-    "¿Cuáles son las atribuciones, deberes y obligaciones indelegables del síndico societario según el artículo 294?",
-    "¿En qué supuestos específicos e incisos una Sociedad Anónima queda sujeta obligatoriamente a la fiscalización estatal permanente del artículo 299?",
+    # 4. Prueba del nuevo nodo: Debentures + Sociedad Anónima (Arts. 325-360)
+    "¿Cuáles son las facultades procesales y de administración que asume el banco fiduciario si la sociedad emisora entra en mora por más de 30 días en el pago de debentures con garantía flotante?",
     
-    # Preguntas sobre Financiación (Conceptos muy específicos)
-    "¿En qué se diferencian jurídicamente los debentures emitidos con garantía flotante de aquellos emitidos con garantía especial respecto a la disposición de los bienes afectados?",
-    "¿Qué facultades procesales y administrativas asume el banco fiduciario como representante de los debenturistas si la sociedad emisora incurre en mora en el pago superior a 30 días?"
+    # 5. Prueba del nuevo nodo: SAPEM (Arts. 308-314)
+    "En una Sociedad Anónima con Participación Estatal Mayoritaria, cuando la minoría ejerce su derecho a elegir directores, ¿quiénes tienen prohibición absoluta de ser directores por el capital privado?",
+    
+    # 6. Prueba de Sociedad de Capital e Industria (Arts. 141-145)
+    "En una sociedad de capital e industria, si el contrato constitutivo guarda silencio sobre la parte de los beneficios que le corresponde al socio industrial, ¿cómo debe determinarse?",
+    
+    # 7. Prueba de Sociedad en Comandita por Acciones (Arts. 315-324)
+    "¿Puede el socio comanditario en una Sociedad en Comandita por Acciones solicitar judicialmente la remoción del administrador? ¿Qué porcentaje de capital mínimo necesita para hacerlo?",
+    
+    # 8. Prueba de Sociedad Colectiva (Arts. 125-133)
+    "Si el contrato social no exige justa causa, ¿es posible remover al administrador de una sociedad colectiva en cualquier tiempo? ¿Qué derechos tienen los socios disconformes?",
+    
+    # 9. Prueba de Parte General - Nulidades y Subsanación (Arts. 16-26)
+    "Si una sociedad se constituye omitiendo un requisito tipificante esencial, ¿es nula definitivamente o los socios tienen algún mecanismo legal para subsanar el error?",
+    
+    # 10. Prueba de Sociedad Anónima - Incompatibilidades (Arts. 163-307)
+    "¿Puede un funcionario de la administración pública actual ejercer el cargo de director en una Sociedad Anónima convencional si su área de gobierno se relaciona con el objeto de la empresa?"
 ]
+
 # --- Ejecución batch ---
 _txt_path = os.path.join(_logs_dir, f"resultados_{_ts}.txt")
 _sep = "=" * 80
