@@ -1,7 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION V - De la Sociedad Anónima
-SUBSECCION: 3º. De las Acciones
---------------------------------------------------
-Acciones ordinarias: derecho de voto. Incompatibilidad.
-ARTICULO 216. — Cada acción ordinaria da derecho a un voto. El estatuto puede crear clases que reconozcan hasta cinco votos por acción ordinaria. El privilegio en el voto es incompatible con preferencias patrimoniales.
-No pueden emitirse acciones de voto privilegiado después que la sociedad haya sido autorizada a hacer oferta pública de sus acciones.

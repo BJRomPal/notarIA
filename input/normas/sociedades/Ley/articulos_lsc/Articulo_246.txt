@@ -1,9 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION V - De la Sociedad Anónima
-SUBSECCION: 5º. De las Asambleas de Accionistas
---------------------------------------------------
-Orden del día: Efectos.
-ARTICULO 246. — Es nula toda decisión sobre materias extrañas a las incluidas en el orden del día, salvo:
-1º) Si estuviere presente la totalidad del capital y la decisión se adopte por unanimidad de las acciones con derecho a voto;
-2º) Las excepciones que se autorizan expresamente en este Título;
-3º) La elección de los encargados de suscribir el acta.

@@ -1,7 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION V - De la Sociedad Anónima
-SUBSECCION: 1º. De su naturaleza y constitución
---------------------------------------------------
-Votación. Mayorías.
-ARTICULO 177. — Cada suscriptor tiene derecho a tantos votos como acciones haya suscripto e integrado en la medida fijada.
-Las decisiones se adoptarán por la mayoría de los suscriptores presentes que representen no menos de la tercera parte del capital suscripto con derecho a voto, sin que pueda estipularse diversamente.

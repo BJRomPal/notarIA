@@ -1,5 +1,0 @@
-LEY: Ley 27349
-TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
-CAPITULO: Capítulo III - Capital social acciones
---------------------------------------------------
-Artículo 46.- Acciones. Se podrán emitir acciones nominativas no endosables, ordinarias o preferidas, indicando su valor nominal y los derechos económicos y políticos reconocidos a cada clase. También podrán emitirse acciones escriturales.

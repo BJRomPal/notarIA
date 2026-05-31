@@ -1,9 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION V - De la Sociedad Anónima
-SUBSECCION: 8º. De la Fiscalización Privada.
---------------------------------------------------
-Inhabilidades e incompatibilidades.
-ARTICULO 286. — No pueden ser síndicos:
-1º) Quienes se hallan inhabilitados para ser directores, conforme al artículo 264;
-2º) Los directores, gerentes y empleados de la misma sociedad o de otra controlada o controlante;
-3º) Los cónyuges, los parientes con consanguinidad en línea recta, los colaterales hasta el cuarto grado, inclusive, y los afines dentro del segundo de los directores y gerentes generales.

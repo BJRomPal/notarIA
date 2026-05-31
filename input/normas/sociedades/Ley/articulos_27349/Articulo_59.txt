@@ -1,5 +1,0 @@
-LEY: Ley 27349
-TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
-CAPITULO: Capítulo V - Reformas del instrumento constitutivo.
---------------------------------------------------
-Artículo 59.- Poderes electrónicos. El estatuto de la SAS, sus modificatorios y los poderes y revocaciones que otorguen sus representantes podrán ser otorgados en protocolo notarial electrónico. Aun habiéndose otorgado en soporte papel, su primera copia deberá expedirse en forma digital con firma digital del autorizante. En dichos casos, la inscripción en el Registro Público que corresponda será exclusivamente en forma electrónica.

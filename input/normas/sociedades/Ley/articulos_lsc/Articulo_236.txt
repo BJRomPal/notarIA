@@ -1,8 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION V - De la Sociedad Anónima
-SUBSECCION: 5º. De las Asambleas de Accionistas
---------------------------------------------------
-Convocatoria: Oportunidad. Plazo.
-ARTICULO 236. — Las asambleas ordinarias y extraordinarias serán convocadas por el directorio o el síndico en los casos previstos por la ley, o cuando cualquiera de ellos lo juzgue necesario o cuando sean requeridas por accionistas que representan por lo menos el cinco por ciento (5 %) del capital social, si los estatutos no fijaran una representación menor.
-En este último supuesto la petición indicará los temas a tratar y el directorio o el síndico convocará la asamblea para que se celebre en el plazo máximo de cuarenta (40) días de recibida la solicitud.
-Si el directorio o el síndico omite hacerlo, la convocatoria podrá hacerse por la autoridad de contralor o judicialmente.

@@ -1,9 +1,0 @@
-CAPITULO: CAPITULO I - DISPOSICIONES GENERALES
-SECCION: SECCION IX - De la Documentación y de la Contabilidad
---------------------------------------------------
-Medios mecánicos y otros.
-ARTICULO 61. — Podrá prescindirse del cumplimiento de las formalidades impuestas por los artículos 73, 162, 213, 238 y 290 de la presente ley, como así también de las impuestas por los artículos 320 y subsiguientes del Código Civil y Comercial de la Nación para llevar los libros societarios y contables por Registros Digitales mediante medios digitales de igual manera y forma que los registros digitales de las Sociedades por Acciones Simplificadas instituidos por la ley 27.349.
-El libro diario podrá ser llevado con asientos globales que no comprendan períodos mayores de un (1) mes.
-El sistema de contabilización debe permitir la individualización de las operaciones, las correspondientes cuentas deudoras y acreedoras y su posterior verificación, con arreglo al artículo 321 del Código Civil y Comercial de la Nación.
-La Comisión Nacional de Valores dictará la normativa a ser aplicada a las sociedades sujetas a su contralor.
-Para el caso que se disponga la individualización, a través de medios digitales, de la contabilidad y de los actos societarios correspondientes, los registros públicos deberán implementar un sistema al sólo efecto de comprobar el cumplimiento del tracto registral, en las condiciones que se establezcan reglamentariamente.

@@ -1,8 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION VIII - De los debentures
---------------------------------------------------
-Con garantía flotante: facultades del fiduciario en caso de liquidación
-ARTICULO 348. — Si los debentures se emitieren con garantía flotante, resuelta la liquidación, el fiduciario procederá a realizar los bienes que constituyen la garantía y a repartir su producido entre los debenturistas, luego de pagados los créditos con mejor privilegio.
-Satisfecha la deuda por capital e intereses, el remanente de los bienes deberá entregarse a la sociedad deudora, y a falta de quién tenga personería para recibirlos, el Juez designará a petición del fiduciario la persona que los recibirá.
-Facultades en caso de asumir la administración.
-Si se resolviera la continuación de los negocios, los fondos disponibles se destinarán al pago de los créditos pendientes y de los intereses y amortizaciones de los debentures. Regularizados los servicios de los debentures, la administración se restituirá a quienes corresponda.

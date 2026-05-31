@@ -1,8 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION V - De la Sociedad Anónima
-SUBSECCION: 3º. De las Acciones
---------------------------------------------------
-Acciones nominativas y escriturales. Transmisión.
-ARTICULO 215. — La transmisión de las acciones nominativas o escriturales y de los derechos reales que las graven debe notificarse por escrito a la sociedad emisora o entidad que lleve el registro e inscribirse en el libro o cuenta pertinente. Surte efecto contra la sociedad y los terceros desde su inscripción.
-En el caso de acciones escriturales, la sociedad emisora o entidad que lleve el registro cursará aviso al titular de la cuenta en que se efectúe un débito por transmisión de acciones, dentro de los diez (10) días de haberse inscripto, en el domicilio que se haya constituido; en las sociedades sujetas al régimen de la oferta pública, la autoridad de contralor podrá reglamentar otros medios de información a los socios.
-Las acciones endosables se transmiten por una cadena ininterrumpida de endosos y para el ejercicio de sus derechos el endosatario solicitará el registro.

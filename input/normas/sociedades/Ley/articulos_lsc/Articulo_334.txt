@@ -1,8 +1,0 @@
-CAPITULO: CAPITULO II - DE LAS SOCIEDADES EN PARTICULAR
-SECCION: SECCION VIII - De los debentures
---------------------------------------------------
-Debentures convertibles.
-ARTICULO 334. — Cuando los debentures sean convertibles en acciones:
-1º) Los accionistas, cualquiera sea su clase o categoría, gozarán de preferencia para su suscripción en proporción a las acciones que posean, con derecho de acrecer;
-2º) Si la emisión fuere bajo la par la conversión no podrá ejecutarse en desmedro de la integridad del capital social;
-3º) Pendiente la conversión, está prohibido: amortizar o reducir el capital, aumentarlo por incorporación de reservas o ganancias, distribuir las reservas o modificar el estatuto en cuanto a la distribución de ganancias.

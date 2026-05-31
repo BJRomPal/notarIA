@@ -1,5 +1,0 @@
-LEY: Ley 27349
-TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
-CAPITULO: Capítulo II - Constitución
---------------------------------------------------
-Artículo 34.- Constitución y responsabilidad. La SAS podrá ser constituida por una o varias personas humanas o jurídicas, quienes limitan su responsabilidad a la integración de las acciones que suscriban o adquieran, sin perjuicio de la garantía a que se refiere el artículo 43. La SAS unipersonal no puede constituir ni participar en otra SAS unipersonal.
