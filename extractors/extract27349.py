@@ -3,38 +3,49 @@ en Neo4j. Lee archivos .txt del directorio de entrada, invoca al LLM local (Olla
 con un prompt JSON libre, valida la salida contra la ontología definida, genera embeddings
 con Gemini y persiste en Neo4j. Es idempotente: saltea artículos que ya existen en el grafo."""
 import os, sys, time, glob, logging, json
-from typing import List, Optional
-from pydantic import BaseModel, Field
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 from utils.connectors import get_neo4j_driver, get_gemini_embeddings, get_ollama_llm, enviar_alerta
+from utils.extractor_base import (
+    GrafoLegalExtraido,
+    RELACIONES_PERMITIDAS,
+    embed_con_reintento,
+    articulo_existe_en_neo4j,
+    validar_grafo,
+)
 
-# --- 1. MODELOS PYDANTIC ---
-class PropiedadesNodo(BaseModel):
-    numero: Optional[str] = Field(None)
-    titulo: Optional[str] = Field(None)
-    jurisdiccion: Optional[str] = Field(None)
-    texto: Optional[str] = Field(None)
-    ubicacion: Optional[str] = Field(None)
-    ley_nombre: Optional[str] = Field(None)
-    ley_numero: Optional[str] = Field(None)
+# --- 1. REGLAS ONTOLÓGICAS ---
+entidades_permitidas = [
+    # Instrumentos, Documentos y Registros
+    "EstatutoSocial",
+    "InstrumentoPublico",
+    "InstrumentoPrivado",
+    "RegistroPublico",
 
-class NodoLegal(BaseModel):
-    id: str
-    etiqueta: str
-    propiedades: PropiedadesNodo
+    # Órganos de Gobierno y Administración
+    "Administracion",
+    "ReunionesSocios",
 
-class RelacionLegal(BaseModel):
-    inicio: Optional[str]
-    fin: Optional[str]
-    tipo: Optional[str]
+    # Roles y Sujetos
+    "Socio",
 
-class GrafoLegalExtraido(BaseModel):
-    nodos: List[NodoLegal]
-    relaciones: List[RelacionLegal]
+    # Capital e Instrumentos Financieros
+    "CapitalSocial",
+    "Acciones",
+    "Denominacion",
+]
+
+_CANONICOS: dict[str, str] = {
+    "SOCIEDADES_POR_ACCIONES_SIMPLIFICADAS": "SOCIEDAD_POR_ACCIONES_SIMPLIFICADA",
+    "SAS": "SOCIEDAD_POR_ACCIONES_SIMPLIFICADA",
+    "SOCIOS": "SOCIO",
+}
+
+_ETIQUETAS_VALIDAS = set(entidades_permitidas) | {"Articulo"}
+_RELACIONES_VALIDAS = set(RELACIONES_PERMITIDAS)
 
 # --- 2. CONFIGURACIÓN E INICIALIZACIÓN ---
 os.makedirs(os.path.join(BASE_DIR, "logs"), exist_ok=True)
@@ -62,99 +73,7 @@ except Exception as e:
 
 llm = get_ollama_llm()
 
-# --- 3. REGLAS ONTOLÓGICAS ---
-entidades_permitidas = [
-    # Instrumentos, Documentos y Registros
-    "EstatutoSocial",
-    "InstrumentoPublico",
-    "InstrumentoPrivado",
-    "RegistroPublico",
-
-    # Órganos de Gobierno y Administración
-    "Administracion",
-    "ReunionesSocios",
-
-    # Roles y Sujetos
-    "Socio",
-
-    # Capital e Instrumentos Financieros
-    "CapitalSocial",
-    "Acciones",
-    "Denominacion",
-]
-
-relaciones_permitidas = [
-    "DEFINE",
-    "REGULA",
-    "MENCIONA",
-    "AUTORIZA",
-    "PROHIBE",
-    "ESTABLECE_REQUISITOS_DE",
-    "ES_TIPO_DE",
-    "ES_PARTE_DE",
-    "ESTA_COMPUESTO_POR",
-    "SE_DIVIDE_EN",
-    "ADMINISTRA",
-    "FISCALIZA",
-    "REPRESENTA",
-    "INTEGRA",
-    "EMITE",
-    "SUSCRIBE",
-    "APRUEBA",
-    "CONVOCA",
-    "SE_INSTRUMENTA_EN",
-    "SE_INSCRIBE_EN",
-    "MODIFICA_A",
-    "DEROGA_A",
-    "REEMPLAZA_A",
-    "SE_TRANSFORMA_EN",
-    "ABSORBE_A",
-    "SE_ESCINDE_EN",
-]
-
-# --- 4. NORMALIZACIÓN Y VALIDACIÓN ---
-_CANONICOS: dict[str, str] = {
-    "SOCIEDADES_POR_ACCIONES_SIMPLIFICADAS": "SOCIEDAD_POR_ACCIONES_SIMPLIFICADA",
-    "SAS": "SOCIEDAD_POR_ACCIONES_SIMPLIFICADA",
-    "SOCIOS": "SOCIO",
-}
-
-_ETIQUETAS_VALIDAS = set(entidades_permitidas) | {"Articulo"}
-_RELACIONES_VALIDAS = set(relaciones_permitidas)
-
-
-def canonicalizar_id(nodo_id: str) -> str:
-    limpio = nodo_id.replace("º", "").replace("°", "")
-    return _CANONICOS.get(limpio, limpio)
-
-
-# --- 5. FUNCIONES ---
-def embed_con_reintento(embedder, texto: str, max_reintentos: int = 3) -> list:
-    espera = 60
-    for intento in range(1, max_reintentos + 1):
-        try:
-            return embedder.embed_query(texto)
-        except Exception as e:
-            if intento < max_reintentos:
-                logger.warning(
-                    f"  Error embedding (intento {intento}/{max_reintentos}): {e}. "
-                    f"Reintentando en {espera}s..."
-                )
-                time.sleep(espera)
-                espera *= 2
-            else:
-                logger.error(f"  Error embedding tras {max_reintentos} intentos: {e}")
-                raise
-
-
-def articulo_existe_en_neo4j(db_driver, articulo_id: str) -> bool:
-    with db_driver.session() as session:
-        result = session.run(
-            "MATCH (n:Articulo {id: $id}) RETURN n LIMIT 1",
-            id=articulo_id
-        )
-        return result.single() is not None
-
+# --- 3. FUNCIONES ---
 
 def crear_nodo_madre(db_driver):
     with db_driver.session() as session:
@@ -256,7 +175,7 @@ def guardar_en_neo4j(grafo_extraido: GrafoLegalExtraido, db_driver, embedder):
 
 crear_nodo_madre(driver)
 
-# --- 6. LÓGICA DE PROCESAMIENTO ---
+# --- 4. LÓGICA DE PROCESAMIENTO ---
 carpeta_archivos = os.path.join(BASE_DIR, "input/normas/sociedades/Ley/articulos_27349/*.txt")
 archivos_a_procesar = glob.glob(carpeta_archivos)
 
@@ -326,7 +245,7 @@ REGLAS OBLIGATORIAS:
    ninguna variante (SAS, SociedadSimplificada, etc.). Esa entidad se gestiona fuera del LLM.
 
 2. RELACIONES — USA ÚNICAMENTE estos tipos exactos:
-   {relaciones_permitidas}
+   {RELACIONES_PERMITIDAS}
    Si necesitas expresar algo que NO está en esa lista, NO lo incluyas.
 
 3. SINGULAR OBLIGATORIO:
@@ -348,43 +267,9 @@ TEXTO:
             respuesta = llm.invoke(prompt_extraccion)
             data = json.loads(respuesta.content)
             grafo_resultado = GrafoLegalExtraido.model_validate(data)
-
-            # A. Normalizar y validar nodos
-            nodos_validos = []
-            for nodo in grafo_resultado.nodos:
-                if nodo.etiqueta == "Articulo":
-                    nodo.id = articulo_id
-                    nodos_validos.append(nodo)
-                elif nodo.etiqueta in _ETIQUETAS_VALIDAS:
-                    nodo.id = canonicalizar_id(nodo.id)
-                    nodos_validos.append(nodo)
-                else:
-                    logger.warning(f"  Nodo descartado (etiqueta no permitida): [{nodo.etiqueta}] {nodo.id}")
-            grafo_resultado.nodos = nodos_validos
-
-            # B. Normalizar IDs del artículo en relaciones + canonicalizar entidades
-            for rel in grafo_resultado.relaciones:
-                if rel.inicio:
-                    if rel.inicio.upper() == articulo_id.upper():
-                        rel.inicio = articulo_id
-                    else:
-                        rel.inicio = canonicalizar_id(rel.inicio)
-                if rel.fin:
-                    if rel.fin.upper() == articulo_id.upper():
-                        rel.fin = articulo_id
-                    else:
-                        rel.fin = canonicalizar_id(rel.fin)
-
-            # C. Filtrar relaciones inválidas
-            relaciones_validas = []
-            for r in grafo_resultado.relaciones:
-                if not (r.inicio and r.fin and r.tipo):
-                    logger.warning(f"  Relación descartada (campos nulos): {r}")
-                elif r.tipo not in _RELACIONES_VALIDAS:
-                    logger.warning(f"  Relación descartada (tipo no permitido): {r.inicio} -[{r.tipo}]-> {r.fin}")
-                else:
-                    relaciones_validas.append(r)
-            grafo_resultado.relaciones = relaciones_validas
+            grafo_resultado = validar_grafo(
+                grafo_resultado, articulo_id, _ETIQUETAS_VALIDAS, _RELACIONES_VALIDAS, _CANONICOS, logger
+            )
         except Exception as e:
             archivos_error += 1
             logger.error(f"  FALLO extracción LLM: {e}")
