@@ -1,0 +1,29 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo II - Constitución
+--------------------------------------------------
+Artículo 36.- Contenido del instrumento de constitución. El instrumento constitutivo, sin perjuicio de las cláusulas que los socios resuelvan incluir, deberá contener como mínimo los siguientes requisitos:
+
+1. El nombre, edad, estado civil, nacionalidad, profesión, domicilio, número de documento de identidad, Clave Única de Identificación Tributaria (CUIT) o Clave Única de Identificación Laboral (CUIL) o Clave de Identificación (CDI) de los socios, en su caso. Si se tratare de una o más personas jurídicas, deberá constar su denominación o razón social, domicilio y sede, datos de los integrantes del órgano de administración y Clave Única de Identificación Tributaria (CUIT) o Clave de Identificación (CDI) de las mismas, o dar cumplimiento con la registración que a tal efecto disponga la autoridad fiscal, en su caso, así como los datos de inscripción en el registro que corresponda.
+
+2. La denominación social que deberá contener la expresión “Sociedad por Acciones Simplificada”, su abreviatura o la sigla SAS. La omisión de esta mención hará responsables ilimitada y solidariamente a los administradores o representantes de la sociedad, por los actos que celebren en esas condiciones.
+
+3. El domicilio de la sociedad y su sede. Si en el instrumento constitutivo constare solamente el domicilio, la dirección de su sede podrá constar en el acta de constitución o podrá inscribirse simultáneamente mediante petición por separado suscripta por el órgano de administración. Se tendrán por válidas y vinculantes para la sociedad todas las notificaciones efectuadas en la sede inscripta, hasta tanto la misma haya sido efectivamente cancelada por el registro público donde la sede haya sido registrada por la sociedad.
+
+4. La designación de su objeto, el que podrá ser amplio y plural. Las actividades que lo constituyan podrán guardar o no conexidad o relación entre ellas. 
+
+5. El plazo de duración, que deberá ser determinado.
+
+6. El capital social y el aporte de cada socio, que deberán ser expresados en moneda nacional, haciéndose constar las clases, modalidades de emisión y demás características de las acciones y, en su caso, su régimen de aumento. El instrumento constitutivo, además, contemplará la suscripción del capital, el monto y la forma de integración y, si correspondiere, el plazo para el pago del saldo adeudado, el que no podrá exceder de dos (2) años desde la firma de dicho instrumento.
+
+7. La organización de la administración, de las reuniones de socios y, en su caso, de la fiscalización. El instrumento constitutivo deberá contener la individualización de los integrantes de los órganos de administración y, en su caso, del órgano de fiscalización, fijándose el término de duración en los cargos e individualizándose el domicilio donde serán válidas todas las notificaciones que se les efectúen en tal carácter. En todos los casos, deberá designarse representante legal.
+
+8. Las reglas para distribuir las utilidades y soportar las pérdidas.
+
+9. Las cláusulas necesarias para establecer los derechos y obligaciones de los socios entre sí y respecto de terceros.
+
+10. Las cláusulas atinentes a su funcionamiento, disolución y liquidación.
+
+11. La fecha de cierre del ejercicio.
+
+Los registros públicos aprobarán modelos tipo de instrumentos constitutivos para facilitar la inscripción registral.

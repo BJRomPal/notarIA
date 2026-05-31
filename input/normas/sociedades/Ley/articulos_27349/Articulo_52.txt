@@ -1,0 +1,7 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo IV - Organización de la sociedad
+--------------------------------------------------
+Artículo 52.- Deberes y obligaciones de los administradores y representantes legales. Les son aplicables a los administradores y representantes legales los deberes, obligaciones y responsabilidades que prevé el artículo 157 de la Ley General de Sociedades, 19.550, t. o. 1984. En su caso, le son aplicables al órgano de fiscalización las normas previstas en la mencionada ley, en lo pertinente.
+
+Las personas humanas que sin ser administradoras o representantes legales de una SAS o las personas jurídicas que intervinieren en una actividad positiva de gestión, administración o dirección de la sociedad incurrirán en las mismas responsabilidades aplicables a los administradores y su responsabilidad se extenderá a los actos en que no hubieren intervenido cuando su actuación administrativa fuere habitual.

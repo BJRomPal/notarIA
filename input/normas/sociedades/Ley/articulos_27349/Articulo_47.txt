@@ -1,0 +1,7 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo III - Capital social acciones
+--------------------------------------------------
+Artículo 47.- Derechos. Podrán reconocerse idénticos derechos políticos y económicos a distintas clases de acciones, independientemente de que existan diferencias en el precio de adquisición o venta de las mismas. En el instrumento constitutivo se expresarán los derechos de voto que le correspondan a cada clase de acciones, con indicación expresa sobre la atribución de voto singular o plural, si ello procediere.
+
+En caso que no se emitieren los títulos representativos de las acciones, su titularidad se acreditará a través de las constancias de registración que llevará la SAS en el libro de registro de acciones. Asimismo, la sociedad deberá en estos casos expedir comprobantes de saldos de las cuentas.

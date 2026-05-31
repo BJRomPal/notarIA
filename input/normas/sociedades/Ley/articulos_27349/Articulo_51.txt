@@ -1,0 +1,15 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo IV - Organización de la sociedad
+--------------------------------------------------
+Artículo 51.- Funciones del administrador. Si el órgano de administración fuere plural, el instrumento constitutivo podrá establecer las funciones de cada administrador o disponer que éstas se ejerzan en forma conjunta o colegiada. Asimismo, al menos uno de sus miembros deberá tener domicilio real en la República Argentina. Los miembros extranjeros deberán contar con Clave de Identificación (CDI) y designar representante en la República Argentina. Además, deberán establecer un domicilio en la República Argentina, donde serán válidas todas las notificaciones que se le realicen en tal carácter.
+
+De las reuniones
+
+La citación a reuniones del órgano de administración y la información sobre el temario que se considerará podrá realizarse por medios electrónicos, debiendo asegurarse su recepción.
+
+Las reuniones podrán realizarse en la sede social o fuera de ella, utilizando medios que les permitan a los participantes comunicarse simultáneamente entre ellos. El acta deberá ser suscripta por el administrador o el representante legal, debiéndose guardar las constancias de acuerdo al medio utilizado para comunicarse.
+
+Representación legal. Facultades.
+
+La representación legal de la SAS también podrá estar a cargo de una o más personas humanas, socios o no, designadas en la forma prevista en el instrumento constitutivo. A falta de previsión en el instrumento constitutivo, su designación le corresponderá a la reunión de socios o, en su caso, al socio único. El representante legal podrá celebrar y ejecutar todos los actos y contratos comprendidos en el objeto social o que se relacionen directa o indirectamente con el mismo.

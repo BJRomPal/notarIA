@@ -1,0 +1,25 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo V - Reformas del instrumento constitutivo.
+--------------------------------------------------
+Artículo 58.- Estados contables. La SAS deberá llevar contabilidad y confeccionar sus estados contables que comprenderán su estado de situación patrimonial y un estado de resultados que deberán asentarse en el libro de inventario y balances.
+
+En su caso, la Administración Federal de Ingresos Públicos (AFIP) determinará el contenido y forma de presentación de los estados contables a través de aplicativos o sistemas informáticos o electrónicos de información abreviada.
+
+Registros digitales
+
+1. La SAS deberá llevar los siguientes registros:
+
+a) Libro de actas;
+
+b) Libro de registro de acciones;
+
+c) Libro diario;
+
+d) Libro de inventario y balances.
+
+2. Todos los registros que obligatoriamente deba llevar la SAS, se individualizarán por medios electrónicos ante el registro público.
+
+3. Los registros públicos podrán reglamentar e implementar mecanismos a los efectos de permitir a la SAS suplir la utilización de los registros citados precedentemente mediante medios digitales y/o mediante la creación de una página web en donde se encuentren volcados la totalidad de los datos de dichos registros.
+
+4. Los registros públicos implementarán un sistema de contralor para verificar dichos datos al solo efecto de comprobar el cumplimiento del tracto registral, en las condiciones que se establezcan reglamentariamente.

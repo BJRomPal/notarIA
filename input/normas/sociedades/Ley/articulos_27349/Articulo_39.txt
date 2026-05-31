@@ -1,0 +1,11 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo II - Constitución
+--------------------------------------------------
+Artículo 39.- Limitaciones. Para constituir y mantener su carácter de SAS, la sociedad:
+
+1. No deberá estar comprendida en ninguno de los supuestos previstos en los incisos 3, 4 y 5 del artículo 299 de la Ley General de Sociedades 19.550 (t.o. 1984) y sus modificatorias.
+
+2. No podrá ser controlada por ni participar en más del treinta por ciento (30%) del capital de sociedades comprendidas en los supuestos mencionados en el inciso 1 precedente.
+
+En caso de que la SAS resultara encuadrada en alguno de los supuestos previstos en los incisos 1 o 2 precedentes, deberá transformarse en alguno de los tipos regulares previstos en la Ley General de Sociedades 19.550 (t.o. 1984) y sus modificatorias e inscribir la transformación en el registro público correspondiente, en un plazo no mayor a los seis (6) meses de configurado el supuesto. En caso de que la configuración del supuesto no resulte de un hecho o acto propio de la SAS, el plazo se computará desde que tomó conocimiento del mismo. La transformación no será obligatoria si antes de ese plazo la SAS deja de estar encuadrada en alguno de dichos supuestos. Vencido el plazo indicado sin que se hubiera producido la inscripción de la transformación en el registro público correspondiente, los socios responderán frente a terceros en forma solidaria, ilimitada y subsidiaria.

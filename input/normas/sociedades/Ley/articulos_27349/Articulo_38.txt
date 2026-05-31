@@ -1,0 +1,7 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo II - Constitución
+--------------------------------------------------
+Artículo 38.- Inscripción registral. La documentación correspondiente deberá presentarse ante el registro público, quien previo cumplimiento de los requisitos formales y de las normas reglamentarias de aplicación, procederá a su inscripción. La inscripción será realizada dentro del plazo de veinticuatro (24) horas contado desde el día hábil siguiente al de la presentación de la documentación pertinente, siempre que el solicitante utilice el modelo tipo de instrumento constitutivo aprobado por el registro público.
+
+Los registros públicos deberán dictar e implementar las normas reglamentarias a tales efectos, previéndose el uso de medios digitales con firma digital y establecer un procedimiento de notificación electrónica y resolución de las observaciones que se realicen a la documentación presentada. Igual criterio se aplicará respecto a las reformas del instrumento constitutivo.

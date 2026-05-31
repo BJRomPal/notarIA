@@ -1,0 +1,7 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo II - Constitución
+--------------------------------------------------
+Artículo 35.- Requisitos para su constitución. La SAS podrá ser constituida por instrumento público o privado. En este último caso, la firma de los socios deberá ser certificada en forma judicial, notarial, bancaria o por autoridad competente del registro público respectivo.
+
+La SAS podrá constituirse por medios digitales con firma digital, y de acuerdo a la reglamentación que a tal efecto se dicte. En estos supuestos, el instrumento deberá ser remitido a los fines de su inscripción al Registro Público correspondiente en el formato de archivo digital que oportunamente se establezca.

@@ -1,0 +1,5 @@
+LEY: Ley 27349
+TITULO: Título III - Sociedad por Acciones Simplificada (SAS)
+CAPITULO: Capítulo III - Capital social acciones
+--------------------------------------------------
+Artículo 40.- Capital social. El capital se dividirá en partes denominadas acciones. Al momento de la constitución de la sociedad, el capital no podrá ser inferior al importe equivalente a dos (2) veces el salario mínimo vital y móvil.
