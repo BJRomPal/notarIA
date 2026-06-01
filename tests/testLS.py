@@ -104,18 +104,16 @@ def buscar_articulos_por_conceptos(conceptos: list[str], sujeto: str) -> list[di
     query = """
     UNWIND $terminos AS termino
     MATCH (entidad)
-    // Búsqueda limpia y directa: solo por nombre de nodo o por su etiqueta (Label)
-    WHERE (toLower(entidad.nombre) CONTAINS toLower(termino)
-       OR toLower(labels(entidad)[0]) CONTAINS toLower(termino))
+    WHERE (toLower(labels(entidad)[0]) CONTAINS toLower(termino)
+       OR toLower(entidad.id) CONTAINS toLower(termino))
        AND NOT entidad:Articulo AND NOT entidad:Norma
-    
-    // Caminamos el grafo hacia los artículos
+
     MATCH (art:Articulo)-[r]-(entidad)
-    WHERE type(r) IN ['REGULA', 'MENCIONA', 'AUTORIZA', 'ESTABLECE_REQUISITOS_DE', 'EXIGE_PUBLICACION_A', 'ES_SINONIMO_DE']
-    
-    RETURN DISTINCT 
-        art.id AS id, 
-        art.numero AS numero, 
+    WHERE type(r) IN ['DEFINE', 'REGULA', 'MENCIONA', 'AUTORIZA', 'PROHIBE', 'ESTABLECE_REQUISITOS_DE']
+
+    RETURN DISTINCT
+        art.id AS id,
+        art.numero AS numero,
         art.texto AS texto,
         count(DISTINCT entidad) AS relevancia
     ORDER BY relevancia DESC
@@ -133,7 +131,7 @@ def obtener_entidades_relacionadas(article_ids: list[str]) -> list[dict]:
     WHERE NOT entidad:Norma AND NOT entidad:Articulo
     RETURN DISTINCT
         labels(entidad)[0] AS tipo,
-        coalesce(entidad.nombre, entidad.id, 'Sin Nombre') AS id,
+        entidad.id AS id,
         type(r)           AS relacion,
         art_id            AS articulo
     ORDER BY tipo, id
@@ -272,7 +270,7 @@ def responder(pregunta: str) -> str:
 
 
 # --- Ejecución ---
-pregunta = "¿Como es el regimen de administración y fiscalización en la sociedad anonima unipersonal? Dame sus aspectos mas relevantes."
+pregunta = "En una sociedad de capital e industria, si el contrato constitutivo guarda silencio sobre la parte de los beneficios que le corresponde al socio industrial, ¿cómo debe determinarse?"
 
 print(f"\nPREGUNTA: {pregunta}")
 respuesta = responder(pregunta)
