@@ -18,14 +18,33 @@ llm = get_gemini_llm()
 embeddings = get_gemini_embeddings()
 neo4j_driver = get_neo4j_driver()
 
+# Consulta Cypher personalizada para formatear y enriquecer los resultados del motor vectorial en LangChain.
+# Se ejecuta sobre cada "node" (artículo) recuperado por el índice de similitud.
 retrieval_query = """
+// 1. RELACIÓN ONTOLÓGICA: Busca la ley/norma a la que pertenece el artículo encontrado.
+// Usamos OPTIONAL MATCH para no omitir el resultado si el artículo no tiene un padre asignado en el grafo.
 OPTIONAL MATCH (norma:Norma)-[:CONTIENE]->(node)
+
+// 2. RETORNO DE DATOS: LangChain espera 3 variables específicas: text, score y metadata.
 RETURN
-    "FUENTE: " + coalesce(norma.titulo, 'Ley General de Sociedades') + " (Ley " + coalesce(norma.numero, '19.550') + ")\n" +
-    "ARTICULO: " + coalesce(node.numero, '') + "\n" +
+    // TEXTO PARA EL LLM: Construye un string estructurado con contexto jerárquico.
+    // La función coalesce() actúa como un "fallback" seguro si alguna propiedad es NULL.
+    "FUENTE: " + coalesce(norma.titulo, norma.id, 'Norma no identificada') + "\\n" +
+    "ARTICULO: " + coalesce(node.numero, '') + "\\n" +
     "TEXTO: " + coalesce(node.texto, '') AS text,
+    
+    // PUNTUACIÓN: Pasa directamente la métrica de similitud vectorial generada por la base de datos.
     score,
-    {ley: coalesce(norma.titulo, ''), art: coalesce(node.numero, ''), id: node.id, ubicacion: coalesce(node.ubicacion, '')} AS metadata
+    
+    // METADATOS: Construye un diccionario con propiedades clave para ser consumido por el código Python
+    // (útil para aplicar filtros de seguridad posteriores o para citar las fuentes).
+    {
+        ley: coalesce(norma.titulo, norma.id, ''),
+        norma_id: coalesce(norma.id, ''),
+        art: coalesce(node.numero, ''),
+        id: node.id,
+        ubicacion: coalesce(node.ubicacion, '')
+    } AS metadata
 """
 
 vector_db = Neo4jVector.from_existing_index(
@@ -42,6 +61,10 @@ retriever = vector_db.as_retriever(search_kwargs={"k": 3})
 MAX_CONCEPTOS = 8
 
 def _strip_markdown(content: str) -> str:
+    """
+    Limpia la respuesta del LLM eliminando los bloques de formato Markdown.
+    Crucial para poder parsear correctamente strings a diccionarios JSON.
+    """
     if "```" in content:
         partes = content.split("```")
         content = partes[1] if len(partes) > 1 else content
@@ -51,6 +74,10 @@ def _strip_markdown(content: str) -> str:
 
 
 def normalizar(texto: str) -> str:
+    """
+    Estandariza un texto eliminando tildes, diéresis y convirtiéndolo a minúsculas.
+    Garantiza que las comparaciones de texto no fallen por diferencias ortográficas.
+    """
     return unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode("ascii").lower()
 
 
@@ -270,7 +297,7 @@ def responder(pregunta: str) -> str:
 
 
 # --- Ejecución ---
-pregunta = "En una sociedad de capital e industria, si el contrato constitutivo guarda silencio sobre la parte de los beneficios que le corresponde al socio industrial, ¿cómo debe determinarse?"
+pregunta = "¿Puede una persona humana constituir una SAS unipersonal y luego utilizar esa misma sociedad para constituir y ser socia única de otra nueva SAS unipersonal?"
 
 print(f"\nPREGUNTA: {pregunta}")
 respuesta = responder(pregunta)

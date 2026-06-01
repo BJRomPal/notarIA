@@ -43,6 +43,7 @@ RELACIONES_PERMITIDAS = [
     "AUTORIZA",
     "PROHIBE",
     "ESTABLECE_REQUISITOS_DE",
+    "APLICA_SUPLETORIAMENTE",
     # Jerárquicas y de composición
     "ES_TIPO_DE",
     "ES_PARTE_DE",
@@ -67,6 +68,8 @@ RELACIONES_PERMITIDAS = [
     "SE_TRANSFORMA_EN",
     "ABSORBE_A",
     "SE_ESCINDE_EN",
+    # Remisiones normativas (artículo → artículo o artículo → norma)
+    "REMITE_A",
 ]
 
 
