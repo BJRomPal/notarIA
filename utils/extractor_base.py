@@ -70,6 +70,9 @@ RELACIONES_PERMITIDAS = [
     "SE_ESCINDE_EN",
     # Remisiones normativas (artículo → artículo o artículo → norma)
     "REMITE_A",
+    # Relaciones entre normas (usadas en crear_nodo_madre y por el LLM)
+    "REGLAMENTA",           # Ley 22315 REGLAMENTA la aplicación de Ley 19550/27349
+    "ES_AUTORIDAD_DE",      # IGJ ES_AUTORIDAD_DE los sujetos bajo su control
 ]
 
 
