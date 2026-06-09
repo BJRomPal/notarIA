@@ -299,6 +299,7 @@ INSTRUCCIONES CRÍTICAS:
 2. Si la ley enumera excepciones o condiciones, lístalas TODAS sin omitir ninguna.
 3. Usá ÚNICAMENTE el contexto provisto. No inventes.
 4. Si un artículo trata sobre un tipo societario diferente al preguntado, IGNORALO completamente.
+5. Recuerda siempre citar los articulos y normas de donde obtienes la información. 
 
 CONTEXTO LEGAL RECUPERADO:
 {context}
@@ -431,7 +432,7 @@ def responder(pregunta: str) -> str:
 
 
 # --- Ejecución ---
-pregunta = "¿Qué requisitos establece la LSC para la transformación de una SRL en SA y qué documentación exige la RG IGJ 15/2024 para inscribir esa transformación ante la IGJ?"
+pregunta = "¿Como funciona el proceso de inscripción por trámite urgente de una sociedad de responsabilidad limitada?"
 
 respuesta = responder(pregunta)
 print("\n\n=== RESPUESTA FINAL ===")

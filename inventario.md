@@ -10,3 +10,8 @@
 ### DECRETOS
 
 - 1493/82 - Decreto Reglamentario Ley 22.315
+
+### RESOLUCIONES GENERALES
+- 15/2024 - RG Mas importante por cantidad de temas.
+- 6/2017 - RG de las SAS
+- 1/2018 - Procedimiento urgente SA y SAU Form 185 ARCA.

@@ -6,8 +6,8 @@ Integra todas las mejoras de testRagDinamico.py:
   - Timing por fase y total
   - Log de artículos descartados por filtro de sujeto
 
-Ejecuta 10 preguntas de referencia que cubren las 4 normas cargadas:
-  Ley 19550 (LSC) · Ley 27349 (SAS) · Ley 22315 (IGJ) · Decreto 1493/82
+Ejecuta 20 preguntas de referencia con referencias cruzadas entre normas:
+  Ley 19550 (LSC) · Ley 27349 (SAS) · Ley 22315 (IGJ) · Decreto 1493/82 · RG IGJ 15/2024
 """
 import os, sys, json, time, unicodedata, logging, re
 
@@ -59,6 +59,7 @@ retrieval_query = """
 OPTIONAL MATCH (norma:Norma)-[:CONTIENE]->(node)
 RETURN
     "FUENTE: " + coalesce(norma.titulo, norma.id, 'Norma no identificada') + "\\n" +
+    "UBICACION: " + coalesce(node.ubicacion, '') + "\\n" +
     "ARTICULO: " + coalesce(node.numero, '') + "\\n" +
     "TEXTO: " + coalesce(node.texto, '') AS text,
     score,
@@ -98,6 +99,18 @@ def _strip_markdown(content: str) -> str:
 def normalizar(texto: str) -> str:
     return unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode("ascii").lower()
 
+_RE_ART_ID = re.compile(r'^Art_(\d+(?:_(?:bis|ter))?)_(.+)$')
+
+def _norma_de_art_id(art_id: str) -> str:
+    """'Art_100_RG_15_2024' → 'RG_15_2024';  'Art_163_Ley_19550' → 'Ley_19550'."""
+    m = _RE_ART_ID.match(art_id)
+    return m.group(2) if m else art_id
+
+def _num_de_art_id(art_id: str) -> str:
+    """'Art_354_bis_Ley_19550' → '354_bis';  'Art_100_RG_15_2024' → '100'."""
+    m = _RE_ART_ID.match(art_id)
+    return m.group(1) if m else art_id
+
 # ==========================================
 # 3. EXTRACCIÓN PARA FASE VECTORIAL
 # ==========================================
@@ -118,19 +131,54 @@ Pregunta: {pregunta}"""
 
 _STOPWORDS = {"sociedad", "capital", "social", "socios"}
 
+# Palabras que indican que la pregunta es sobre una entidad comercial (no civil/fundación).
+# Cuando el sujeto contiene alguna de estas palabras, los artículos de la RG que pertenecen
+# a secciones no comerciales se excluyen del contexto antes de enviar al LLM.
+_SUJETOS_SOCIETARIOS = {
+    "anonima", "anonimas", "responsabilidad", "simplificada",
+    "colectiva", "comandita", "acciones",
+}
+# Fragmentos de ubicacion que identifican secciones NO comerciales de la RG 15/2024
+_UBICACIONES_NO_COMERCIALES_RG = {
+    "asociaciones civiles", "fundaciones", "iglesias",
+    "martilleros", "corredores no inmobiliarios",
+}
+
 def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
     if not sujeto:
         return docs
-    words = [w for w in normalizar(sujeto).split() if len(w) > 4 and w not in _STOPWORDS]
+
+    sujeto_norm = normalizar(sujeto)
+    words = [w for w in sujeto_norm.split() if len(w) > 4 and w not in _STOPWORDS]
     if not words:
         return docs
     keyword = max(words, key=len)
+
+    # Paso 1: filtro semántico — el keyword debe aparecer en el texto o en la ubicacion
     filtrados = [
         doc for doc in docs
         if keyword in normalizar(doc.page_content)
         or keyword in normalizar(str(doc.metadata.get("ubicacion", "")))
     ]
-    return filtrados if len(filtrados) >= 2 else docs
+    resultado = filtrados if len(filtrados) >= 2 else docs
+
+    # Paso 2: si la pregunta es sobre entidad comercial, excluir artículos de la RG
+    # que pertenezcan a secciones no comerciales (ASOCIACIONES CIVILES, FUNDACIONES, etc.)
+    if any(kw in sujeto_norm for kw in _SUJETOS_SOCIETARIOS):
+        sin_civiles = [
+            doc for doc in resultado
+            if not (
+                "RG_" in doc.metadata.get("norma_id", "")
+                and any(
+                    ubi in normalizar(doc.metadata.get("ubicacion", ""))
+                    for ubi in _UBICACIONES_NO_COMERCIALES_RG
+                )
+            )
+        ]
+        if len(sin_civiles) >= 2:
+            resultado = sin_civiles
+
+    return resultado
 
 # ==========================================
 # 4. MOTOR CYPHER DINÁMICO
@@ -160,9 +208,13 @@ class MotorCypherDinamico:
 
         self._esquema = f"""
 NODOS Y PROPIEDADES REALES:
-  (:Norma        {{id: "Ley_19550",             numero: "19.550", titulo: "Ley General de Sociedades"}})
-  (:Norma        {{id: "Decreto_1493_82",        numero: "1493/82", titulo: "Reglamentación Ley 22.315"}})
+  (:Norma        {{id: "Ley_19550",             numero: "19.550",  titulo: "Ley General de Sociedades"}})
+  (:Norma        {{id: "Ley_27349",             numero: "27.349",  titulo: "Ley SAS / Capital Emprendedor"}})
+  (:Norma        {{id: "Ley_22315",             numero: "22.315",  titulo: "Ley Orgánica IGJ"}})
+  (:Norma        {{id: "Decreto_1493_82",        numero: "1493/82", titulo: "Decreto Reglamentario Ley 22.315"}})
+  (:Norma        {{id: "RG_15_2024",             numero: "15/2024", titulo: "Resolución General IGJ 15/2024"}})
   (:Articulo     {{id: "Art_163_Ley_19550",     numero: "163", texto: "...", ubicacion: "..."}})
+  (:Articulo     {{id: "Art_100_RG_15_2024",    numero: "100", texto: "...", ubicacion: "..."}})
   (:<Etiqueta>   {{id: "NOMBRE_EN_MAYUSCULAS_CON_GUIONES"}})
     — La propiedad de búsqueda es SIEMPRE "id", nunca "nombre".
     — Etiquetas de entidades ontológicas presentes en la DB:
@@ -173,6 +225,7 @@ RELACIONES ENTRE NORMAS:
   (:Norma)-[:APLICA_SUPLETORIAMENTE]->(:Norma)   // Ley_27349 → Ley_19550
   (:Norma)-[:REGLAMENTA]->(:Norma)               // Ley_22315 → Ley_19550 y Ley_27349
                                                  // Decreto_1493_82 → Ley_22315
+  (:Norma)-[:REGLAMENTA_TRAMITES]->(:Norma)      // RG_15_2024 → Ley_22315, Ley_19550, Ley_27349
   (:Articulo)-[:REMITE_A]->(:Articulo)           // remisiones explícitas entre artículos
 
 RELACIONES ARTÍCULO ↔ ENTIDAD:
@@ -411,14 +464,14 @@ def responder(pregunta: str) -> str:
         if art_id and art_id not in vistos:
             vistos.add(art_id)
             article_ids.append(art_id)
-            origen_num = art["citado_desde"].replace("Art_", "").split("_Ley_")[0]
-            norma_ref  = art_id.split("_Ley_")[-1]
+            origen_num = _num_de_art_id(art["citado_desde"])
+            norma_ref  = _norma_de_art_id(art_id)
             textos_contexto.append(
-                f"FUENTE: Ley {norma_ref} (referenciada por Art. {origen_num})\n"
+                f"FUENTE: {norma_ref} (referenciada por Art. {origen_num})\n"
                 f"ARTICULO: {art.get('numero', '')}\n"
                 f"TEXTO: {art.get('texto', '')}"
             )
-            logger.info(f"    • [Remisión] Art. {art.get('numero', '')} [Ley {norma_ref}] ← Art. {origen_num}")
+            logger.info(f"    • [Remisión] Art. {art.get('numero', '')} [{norma_ref}] ← Art. {origen_num}")
     logger.info(f"  [Fase 3.5 completada en {time.time()-t0:.1f}s]")
 
     logger.info(f"  Total artículos únicos: {len(vistos)}")
@@ -447,54 +500,102 @@ def responder(pregunta: str) -> str:
 # ==========================================
 
 preguntas = [
-    # --- Ley 19550 (LSC) ---
-    # 1. Constitución SA
-    "¿Cuáles son los requisitos mínimos que debe contener el estatuto de una Sociedad Anónima "
-    "al momento de su constitución y qué órganos son obligatorios?",
+    # ── RG 15/2024 + LSC: constitución e inscripción ──────────────────────────
+    # 1. SA — constitución y estatuto
+    "¿Cuáles son los requisitos del estatuto de una Sociedad Anónima según la LSC "
+    "y qué documentación exige la RG IGJ 15/2024 para inscribir su constitución ante la IGJ?",
 
-    # 2. SRL - administración y decisiones
-    "¿Cuál es el régimen de administración de la Sociedad de Responsabilidad Limitada "
-    "y cómo se adoptan las decisiones en la reunión de socios?",
+    # 2. SAU — Sociedad Anónima Unipersonal
+    "¿Qué régimen especial prevé la LSC para la Sociedad Anónima Unipersonal (SAU) "
+    "y en qué difiere el trámite de constitución ante la IGJ del de una SA pluripersonal "
+    "según la RG IGJ 15/2024?",
 
-    # --- Ley 27349 (SAS) ---
-    # 3. SAS - limitaciones y transformación (testea REMITE_A → Art. 299 LSC)
-    "Si una SAS comienza a realizar actividades que la encuadran en los supuestos del "
-    "artículo 299 de la Ley General de Sociedades, ¿qué obligación le impone la Ley 27349 "
-    "y en qué plazo debe cumplirla? ¿Qué responsabilidad asumen los socios si no lo hace?",
+    # 3. Directorio — designación e inscripción
+    "¿Qué requisitos e inhabilidades prevé la LSC para los directores de una SA y "
+    "qué documentación debe presentarse ante la IGJ para inscribir la designación "
+    "de nuevas autoridades según la RG IGJ 15/2024?",
 
-    # 4. SAS - deberes del administrador (testea REMITE_A → Art. 157 LSC)
-    "¿Cuáles son los deberes, obligaciones y responsabilidades de los administradores "
-    "de una SAS? ¿Qué artículo de la LSC se aplica supletoriamente y qué establece?",
+    # 4. Asambleas ordinarias — actas y presentación
+    "¿Qué establece la LSC sobre la celebración y el quórum de asambleas ordinarias "
+    "de una SA y qué obligaciones impone la RG IGJ 15/2024 respecto de la presentación "
+    "del acta de asamblea ante la IGJ?",
 
-    # --- Ley 22315 (IGJ orgánica) ---
-    # 5. IGJ - fiscalización SA
-    "¿Cuáles son las funciones específicas que ejerce la IGJ sobre las sociedades por "
-    "acciones en materia de constitución, capital, disolución y debentures según la Ley 22315?",
+    # 5. Integración del capital social
+    "¿Cuáles son los requisitos de integración del capital social en la constitución "
+    "de una SA según la LSC y cómo debe acreditarse ese aporte ante la IGJ conforme "
+    "la RG IGJ 15/2024?",
 
-    # 6. IGJ - sanciones y recursos (testea cruce 22315 + 19550)
-    "¿Qué sanciones puede aplicar la IGJ a directores de una SA que incumplan sus "
-    "obligaciones, ante qué tribunal se apelan esas resoluciones y en qué plazo?",
+    # 6. Libros societarios y rubricación
+    "¿Qué libros obligatorios deben llevar las SA según la LSC y cuál es el procedimiento "
+    "que establece la RG IGJ 15/2024 para solicitar la rúbrica de esos libros ante la IGJ?",
 
-    # --- Decreto 1493/82 ---
-    # 7. Decreto - comunicaciones obligatorias
-    "¿Qué situaciones deben comunicar obligatoriamente las entidades sujetas a "
-    "fiscalización de la IGJ según el Decreto 1493/82 y en qué plazo?",
+    # 7. Transformación de SRL en SA
+    "¿Qué requisitos establece la LSC para la transformación de una SRL en SA y "
+    "qué documentación exige la RG IGJ 15/2024 para inscribir esa transformación ante la IGJ?",
 
-    # 8. Decreto - documentación de asambleas
-    "¿Con qué anticipación mínima deben las sociedades comunicar a la IGJ la convocatoria "
-    "de sus asambleas y qué documentación deben presentar después de su celebración "
-    "según el Decreto 1493/82?",
+    # 8. Fusión por absorción
+    "¿Cuál es el procedimiento que establece la LSC para la fusión por absorción entre "
+    "dos SA y cuáles son los pasos que la RG IGJ 15/2024 exige para inscribir ese acto ante la IGJ?",
 
-    # --- Preguntas transversales (múltiples normas) ---
-    # 9. LSC + 22315 + Decreto - SA fiscalización permanente
-    "¿Qué sociedades anónimas quedan bajo fiscalización permanente de la IGJ según el "
-    "artículo 299 de la LSC, qué funciones ejerce la IGJ sobre ellas según la Ley 22315 "
-    "y qué recaudos exige el Decreto 1493/82 para sus asambleas?",
+    # 9. Disolución y liquidación
+    "¿Cuáles son las causales de disolución de una SA según la LSC, cómo se designa al "
+    "liquidador y qué trámites establece la RG IGJ 15/2024 para inscribir la disolución "
+    "y la conclusión de la liquidación ante la IGJ?",
 
-    # 10. SAS + 22315 + Decreto - inscripción y control de una SAS en CABA
-    "¿Puede una persona humana constituir una SAS unipersonal en la Ciudad de Buenos Aires? "
-    "¿Qué pasos debe seguir ante la IGJ para inscribirla, qué controla el organismo "
-    "en ese proceso y qué plazos fija el Decreto 1493/82?",
+    # 10. Aumento de capital
+    "¿Qué proceso establece la LSC para el aumento del capital de una SA mediante nuevas "
+    "acciones y qué documentación exige la RG IGJ 15/2024 para inscribir ese aumento ante la IGJ?",
+
+    # ── RG 15/2024 + Ley 22315 (IGJ orgánica) ─────────────────────────────────
+    # 11. Funciones de la IGJ y trámites inscriptorios
+    "¿Cuáles son las funciones de fiscalización de la IGJ sobre las SA según la Ley 22315 "
+    "y qué trámites de inscripción prevé la RG IGJ 15/2024 para ejercer ese control?",
+
+    # 12. Sanciones y recursos
+    "¿Qué sanciones puede aplicar la IGJ a una SA que incumple sus obligaciones de "
+    "inscripción, ante qué tribunal se apelan esas resoluciones según la Ley 22315 "
+    "y en qué plazo debe interponerse el recurso según la RG IGJ 15/2024?",
+
+    # ── RG 15/2024 + Ley 27349 (SAS) ──────────────────────────────────────────
+    # 13. SAS constitución en CABA
+    "¿Puede una persona humana constituir una SAS unipersonal en la Ciudad de Buenos "
+    "Aires? ¿Qué exige la Ley 27349 para su constitución y qué trámite debe seguirse "
+    "ante la IGJ según la RG IGJ 15/2024?",
+
+    # 14. SAS que supera el artículo 299 LSC
+    "Si una SAS alcanza los supuestos del artículo 299 de la LSC, ¿qué obligación "
+    "impone la Ley 27349 y en qué plazo debe cumplirse? ¿Qué trámite de transformación "
+    "debe seguirse ante la IGJ según la RG IGJ 15/2024?",
+
+    # ── RG 15/2024 — remisiones internas ──────────────────────────────────────
+    # 15. Beneficiario final
+    "¿Qué obligación impone la RG IGJ 15/2024 respecto de la declaración del beneficiario "
+    "final en los trámites societarios ante la IGJ, cuándo debe actualizarse esa "
+    "declaración y qué sanción corresponde ante su incumplimiento?",
+
+    # 16. Reconducción social
+    "¿Puede una SA en estado de disolución reconducirse? ¿Qué establece la LSC al "
+    "respecto y qué trámite exige la RG IGJ 15/2024 para inscribir la reconducción ante la IGJ?",
+
+    # ── Transversales multi-norma ──────────────────────────────────────────────
+    # 17. Fiscalización permanente — art. 299 LSC + Ley 22315 + RG
+    "¿Qué SA quedan sujetas a fiscalización permanente de la IGJ según el artículo 299 "
+    "de la LSC, qué funciones ejerce la IGJ sobre ellas conforme la Ley 22315 y qué "
+    "obligaciones de presentación documental establece la RG IGJ 15/2024?",
+
+    # 18. Sindicatura — LSC obligatoriedad + RG inscripción
+    "¿Cuándo es obligatoria la sindicatura en una SA según la LSC, qué requisitos deben "
+    "cumplir los síndicos y qué documentación requiere la RG IGJ 15/2024 para inscribir "
+    "su designación ante la IGJ?",
+
+    # 19. Reducción de capital — LSC arts. 203-206 + RG trámite
+    "¿Cuándo procede la reducción obligatoria y la voluntaria del capital de una SA según "
+    "la LSC y qué recaudos establece la RG IGJ 15/2024 para tramitar esa reducción ante la IGJ?",
+
+    # 20. Escisión — LSC art. 88 + RG trámite inscriptorio
+    "¿En qué consiste la escisión societaria según la LSC, qué requisitos impone para su "
+    "validez y qué documentación debe presentarse ante la IGJ para inscribir la escisión "
+    "según la RG IGJ 15/2024?",
 ]
 
 # ==========================================
