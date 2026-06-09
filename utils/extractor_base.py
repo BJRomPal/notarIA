@@ -71,15 +71,22 @@ RELACIONES_PERMITIDAS = [
     # Remisiones normativas (artículo → artículo o artículo → norma)
     "REMITE_A",
     # Relaciones entre normas (usadas en crear_nodo_madre y por el LLM)
-    "REGLAMENTA",           # Ley 22315 REGLAMENTA la aplicación de Ley 19550/27349
-    "ES_AUTORIDAD_DE",      # IGJ ES_AUTORIDAD_DE los sujetos bajo su control
+    "REGLAMENTA",           # Decreto reglamentario de una ley (ej: Decreto 1493/82 → Ley 22315)
+    "REGLAMENTA_TRAMITES", # Norma de forma que regula los procedimientos de inscripción/registro
+                           # ante un organismo (ej: RG 15/2024 → Ley 22315 / 19550 / 27349)
+    "ES_AUTORIDAD_DE",     # IGJ ES_AUTORIDAD_DE los sujetos bajo su control
 ]
 
 
 # --- Funciones compartidas ---
 
-def embed_con_reintento(embedder, texto: str, max_reintentos: int = 3) -> list:
-    """Llama embed_query con reintentos y backoff exponencial ante ResourceExhausted."""
+def embed_con_reintento(embedder, texto: str, max_reintentos: int = 3) -> list | None:
+    """Llama embed_query con reintentos y backoff exponencial ante ResourceExhausted.
+
+    Devuelve None si todos los intentos fallan (ej: cuota diaria agotada en AI Studio)
+    para que el artículo se guarde sin embedding en lugar de abortarse.
+    El embedding faltante puede completarse más tarde con un script de re-embedding.
+    """
     logger = logging.getLogger(__name__)
     espera = 60
     for intento in range(1, max_reintentos + 1):
@@ -94,8 +101,11 @@ def embed_con_reintento(embedder, texto: str, max_reintentos: int = 3) -> list:
                 time.sleep(espera)
                 espera *= 2
             else:
-                logger.error(f"  Error embedding tras {max_reintentos} intentos: {e}")
-                raise
+                logger.warning(
+                    f"  Embedding omitido tras {max_reintentos} intentos: {e}. "
+                    f"El artículo se guardará sin vector — re-embeddear luego."
+                )
+                return None
 
 
 def articulo_existe_en_neo4j(db_driver, articulo_id: str) -> bool:

@@ -1,0 +1,1517 @@
+23:56:32 [INFO] Conexión a Neo4j establecida correctamente.
+23:56:33 [INFO] Nodo madre RG_15_2024 y vínculos normativos creados/verificados en Neo4j.
+23:56:33 [INFO] Archivo de log: /home/mariano/projects/notaria/logs/rg15_extract_20260602_235630.log
+23:56:33 [INFO] Archivos encontrados: 424
+23:56:33 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_1.txt
+23:56:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:56:58 [INFO]   Nodos extraídos    : 1
+23:56:58 [INFO]   Relaciones extraídas: 0
+23:56:58 [INFO]     [Articulo] Art_1_RG_15_2024
+23:57:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+23:57:00 [INFO]   Guardado en Neo4j correctamente.
+23:57:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_10.txt
+23:57:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:57:21 [INFO]   Nodos extraídos    : 1
+23:57:21 [INFO]   Relaciones extraídas: 0
+23:57:21 [INFO]     [Articulo] Art_10_RG_15_2024
+23:57:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+23:57:23 [INFO]   Guardado en Neo4j correctamente.
+23:57:23 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_100.txt
+23:57:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:57:49 [INFO]   Nodos extraídos    : 1
+23:57:49 [INFO]   Relaciones extraídas: 1
+23:57:49 [INFO]     [Articulo] Art_100_RG_15_2024
+23:57:49 [INFO]     Art_100_RG_15_2024 -[REGULA]-> SociedadAnonima
+23:57:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+23:57:51 [INFO]   Guardado en Neo4j correctamente.
+23:57:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_101.txt
+23:57:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:58:08 [INFO]   Nodos extraídos    : 1
+23:58:08 [INFO]   Relaciones extraídas: 0
+23:58:08 [INFO]     [Articulo] Art_101_RG_15_2024
+23:58:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+23:58:11 [INFO]   Guardado en Neo4j correctamente.
+23:58:11 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_102.txt
+23:58:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:58:37 [INFO]   Nodos extraídos    : 1
+23:58:37 [INFO]   Relaciones extraídas: 1
+23:58:37 [INFO]     [Articulo] Art_102_RG_15_2024
+23:58:37 [INFO]     Art_102_RG_15_2024 -[REGULA]-> SociedadDeResponsabilidadLimitada
+23:58:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+23:58:40 [INFO]   Guardado en Neo4j correctamente.
+23:58:40 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_103.txt
+23:58:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:59:00 [INFO]   Nodos extraídos    : 1
+23:59:00 [INFO]   Relaciones extraídas: 0
+23:59:00 [INFO]     [Articulo] Art_103_RG_15_2024
+23:59:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+23:59:02 [INFO]   Guardado en Neo4j correctamente.
+23:59:03 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_104.txt
+23:59:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:59:29 [INFO]   Nodos extraídos    : 1
+23:59:29 [INFO]   Relaciones extraídas: 0
+23:59:29 [INFO]     [Articulo] Art_104_RG_15_2024
+23:59:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+23:59:32 [INFO]   Guardado en Neo4j correctamente.
+23:59:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_105.txt
+23:59:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+23:59:58 [INFO]   Nodos extraídos    : 1
+23:59:58 [INFO]   Relaciones extraídas: 0
+23:59:58 [INFO]     [Articulo] Art_105_RG_15_2024
+23:59:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:00:00 [INFO]   Guardado en Neo4j correctamente.
+00:00:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_106.txt
+00:00:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:00:23 [INFO]   Nodos extraídos    : 1
+00:00:23 [INFO]   Relaciones extraídas: 0
+00:00:23 [INFO]     [Articulo] Art_106_RG_15_2024
+00:00:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:00:32 [INFO]   Guardado en Neo4j correctamente.
+00:00:33 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_107.txt
+00:00:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:00:56 [INFO]   Nodos extraídos    : 1
+00:00:56 [INFO]   Relaciones extraídas: 0
+00:00:56 [INFO]     [Articulo] Art_107_RG_15_2024
+00:00:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:00:59 [INFO]   Guardado en Neo4j correctamente.
+00:00:59 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_108.txt
+00:01:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:01:29 [INFO]   Nodos extraídos    : 1
+00:01:29 [INFO]   Relaciones extraídas: 2
+00:01:29 [INFO]     [Articulo] Art_108_RG_15_2024
+00:01:29 [INFO]     Art_108_RG_15_2024 -[REGULA]-> SociedadAnonima
+00:01:29 [INFO]     Art_108_RG_15_2024 -[REGULA]-> InspeccionGeneralDeJusticia
+00:01:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:01:32 [INFO]   Guardado en Neo4j correctamente.
+00:01:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_109.txt
+00:01:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:01:52 [INFO]   Nodos extraídos    : 1
+00:01:52 [INFO]   Relaciones extraídas: 1
+00:01:52 [INFO]     [Articulo] Art_109_RG_15_2024
+00:01:52 [INFO]     Art_109_RG_15_2024 -[REGULA]-> SociedadAnonima
+00:01:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:01:55 [INFO]   Guardado en Neo4j correctamente.
+00:01:55 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_11.txt
+00:01:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:02:19 [WARNING]   Relación descartada (campos nulos): inicio='Art_11_RG_15_2024' fin=None tipo=None
+00:02:19 [INFO]   Nodos extraídos    : 1
+00:02:19 [INFO]   Relaciones extraídas: 0
+00:02:19 [INFO]     [Articulo] Art_11_RG_15_2024
+00:02:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:02:22 [INFO]   Guardado en Neo4j correctamente.
+00:02:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_110.txt
+00:02:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:02:48 [INFO]   Nodos extraídos    : 1
+00:02:48 [INFO]   Relaciones extraídas: 0
+00:02:48 [INFO]     [Articulo] Art_110_RG_15_2024
+00:02:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:02:51 [INFO]   Guardado en Neo4j correctamente.
+00:02:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_111.txt
+00:02:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:03:11 [INFO]   Nodos extraídos    : 1
+00:03:11 [INFO]   Relaciones extraídas: 0
+00:03:11 [INFO]     [Articulo] Art_111_RG_15_2024
+00:03:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:03:14 [INFO]   Guardado en Neo4j correctamente.
+00:03:14 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_112.txt
+00:03:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:03:40 [INFO]   Nodos extraídos    : 1
+00:03:40 [INFO]   Relaciones extraídas: 0
+00:03:40 [INFO]     [Articulo] Art_112_RG_15_2024
+00:03:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:03:42 [INFO]   Guardado en Neo4j correctamente.
+00:03:43 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_113.txt
+00:03:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:04:08 [INFO]   Nodos extraídos    : 1
+00:04:08 [INFO]   Relaciones extraídas: 2
+00:04:08 [INFO]     [Articulo] Art_113_RG_15_2024
+00:04:08 [INFO]     Art_113_RG_15_2024 -[MENCIONA]-> SociedadDeResponsabilidadLimitada
+00:04:08 [INFO]     Art_113_RG_15_2024 -[MENCIONA]-> SociedadAnonima
+00:04:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:04:11 [INFO]   Guardado en Neo4j correctamente.
+00:04:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_114.txt
+00:04:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:04:36 [INFO]   Nodos extraídos    : 1
+00:04:36 [INFO]   Relaciones extraídas: 1
+00:04:36 [INFO]     [Articulo] Art_114_RG_15_2024
+00:04:36 [INFO]     Art_114_RG_15_2024 -[ADMINISTRA]-> InspeccionGeneralDeJusticia
+00:04:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:04:39 [INFO]   Guardado en Neo4j correctamente.
+00:04:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_115.txt
+00:04:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:05:03 [INFO]   Nodos extraídos    : 1
+00:05:03 [INFO]   Relaciones extraídas: 0
+00:05:03 [INFO]     [Articulo] Art_115_RG_15_2024
+00:05:04 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:05:05 [INFO]   Guardado en Neo4j correctamente.
+00:05:06 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_116.txt
+00:05:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:05:23 [INFO]   Nodos extraídos    : 1
+00:05:23 [INFO]   Relaciones extraídas: 0
+00:05:23 [INFO]     [Articulo] Art_116_RG_15_2024
+00:05:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:05:26 [INFO]   Guardado en Neo4j correctamente.
+00:05:26 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_117.txt
+00:05:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:05:47 [INFO]   Nodos extraídos    : 1
+00:05:47 [INFO]   Relaciones extraídas: 0
+00:05:47 [INFO]     [Articulo] Art_117_RG_15_2024
+00:05:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:05:50 [INFO]   Guardado en Neo4j correctamente.
+00:05:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_118.txt
+00:05:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:06:15 [INFO]   Nodos extraídos    : 1
+00:06:15 [INFO]   Relaciones extraídas: 3
+00:06:15 [INFO]     [Articulo] Art_118_RG_15_2024
+00:06:15 [INFO]     Art_118_RG_15_2024 -[MENCIONA]-> SociedadColectiva
+00:06:15 [INFO]     Art_118_RG_15_2024 -[MENCIONA]-> SociedadAnonima
+00:06:15 [INFO]     Art_118_RG_15_2024 -[MENCIONA]-> SociedadDeCapitalizacion
+00:06:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:06:18 [INFO]   Guardado en Neo4j correctamente.
+00:06:18 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_119.txt
+00:06:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:06:36 [INFO]   Nodos extraídos    : 1
+00:06:36 [INFO]   Relaciones extraídas: 0
+00:06:36 [INFO]     [Articulo] Art_119_RG_15_2024
+00:06:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:06:39 [INFO]   Guardado en Neo4j correctamente.
+00:06:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_12.txt
+00:06:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:07:00 [INFO]   Nodos extraídos    : 1
+00:07:00 [INFO]   Relaciones extraídas: 0
+00:07:00 [INFO]     [Articulo] Art_12_RG_15_2024
+00:07:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:07:03 [INFO]   Guardado en Neo4j correctamente.
+00:07:03 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_120.txt
+00:07:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:07:26 [INFO]   Nodos extraídos    : 1
+00:07:26 [INFO]   Relaciones extraídas: 2
+00:07:26 [INFO]     [Articulo] Art_120_RG_15_2024
+00:07:26 [INFO]     Art_120_RG_15_2024 -[REGULA]-> SociedadPorAcciones
+00:07:26 [INFO]     Art_120_RG_15_2024 -[REGULA]-> ContratoFideicomiso
+00:07:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:07:29 [INFO]   Guardado en Neo4j correctamente.
+00:07:29 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_121.txt
+00:07:30 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:07:53 [INFO]   Nodos extraídos    : 1
+00:07:53 [INFO]   Relaciones extraídas: 0
+00:07:53 [INFO]     [Articulo] Art_121_RG_15_2024
+00:07:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:07:55 [INFO]   Guardado en Neo4j correctamente.
+00:07:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_122.txt
+00:07:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:08:16 [INFO]   Nodos extraídos    : 1
+00:08:16 [INFO]   Relaciones extraídas: 0
+00:08:16 [INFO]     [Articulo] Art_122_RG_15_2024
+00:08:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:08:19 [INFO]   Guardado en Neo4j correctamente.
+00:08:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_123.txt
+00:08:20 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:08:41 [INFO]   Nodos extraídos    : 1
+00:08:41 [INFO]   Relaciones extraídas: 1
+00:08:41 [INFO]     [Articulo] Art_123_RG_15_2024
+00:08:41 [INFO]     Art_123_RG_15_2024 -[MENCIONA]-> AsociacionCivil
+00:08:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:08:43 [INFO]   Guardado en Neo4j correctamente.
+00:08:43 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_124.txt
+00:08:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:09:05 [INFO]   Nodos extraídos    : 1
+00:09:05 [INFO]   Relaciones extraídas: 0
+00:09:05 [INFO]     [Articulo] Art_124_RG_15_2024
+00:09:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:09:08 [INFO]   Guardado en Neo4j correctamente.
+00:09:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_125.txt
+00:09:08 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:09:21 [INFO]   Nodos extraídos    : 1
+00:09:21 [INFO]   Relaciones extraídas: 0
+00:09:21 [INFO]     [Articulo] Art_125_RG_15_2024
+00:09:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:09:23 [INFO]   Guardado en Neo4j correctamente.
+00:09:23 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_126.txt
+00:09:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:09:47 [INFO]   Nodos extraídos    : 1
+00:09:47 [INFO]   Relaciones extraídas: 1
+00:09:47 [INFO]     [Articulo] Art_126_RG_15_2024
+00:09:47 [INFO]     Art_126_RG_15_2024 -[REPRESENTA]-> InspeccionGeneralDeJusticia
+00:09:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:09:50 [INFO]   Guardado en Neo4j correctamente.
+00:09:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_127.txt
+00:09:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:10:11 [WARNING]   Relación descartada (campos nulos): inicio='Art_127_RG_15_2024' fin=None tipo=None
+00:10:11 [INFO]   Nodos extraídos    : 1
+00:10:11 [INFO]   Relaciones extraídas: 0
+00:10:11 [INFO]     [Articulo] Art_127_RG_15_2024
+00:10:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:10:13 [INFO]   Guardado en Neo4j correctamente.
+00:10:13 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_128.txt
+00:10:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:10:38 [INFO]   Nodos extraídos    : 1
+00:10:38 [INFO]   Relaciones extraídas: 1
+00:10:38 [INFO]     [Articulo] Art_128_RG_15_2024
+00:10:38 [INFO]     Art_128_RG_15_2024 -[REGULA]-> SociedadPorAcciones
+00:10:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:10:41 [INFO]   Guardado en Neo4j correctamente.
+00:10:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_129.txt
+00:10:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:11:09 [INFO]   Nodos extraídos    : 1
+00:11:09 [INFO]   Relaciones extraídas: 0
+00:11:09 [INFO]     [Articulo] Art_129_RG_15_2024
+00:11:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:11:12 [INFO]   Guardado en Neo4j correctamente.
+00:11:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_13.txt
+00:11:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:11:35 [WARNING]   Relación descartada (campos nulos): inicio='Art_13_RG_15_2024' fin=None tipo='REGULA'
+00:11:35 [INFO]   Nodos extraídos    : 1
+00:11:35 [INFO]   Relaciones extraídas: 0
+00:11:35 [INFO]     [Articulo] Art_13_RG_15_2024
+00:11:36 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:11:37 [INFO]   Guardado en Neo4j correctamente.
+00:11:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_130.txt
+00:11:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:12:12 [INFO]   Nodos extraídos    : 1
+00:12:12 [INFO]   Relaciones extraídas: 1
+00:12:12 [INFO]     [Articulo] Art_130_RG_15_2024
+00:12:12 [INFO]     Art_130_RG_15_2024 -[REGULA]-> SociedadAnonima
+00:12:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:12:16 [INFO]   Guardado en Neo4j correctamente.
+00:12:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_131.txt
+00:12:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:12:42 [INFO]   Nodos extraídos    : 1
+00:12:42 [INFO]   Relaciones extraídas: 1
+00:12:42 [INFO]     [Articulo] Art_131_RG_15_2024
+00:12:42 [INFO]     Art_131_RG_15_2024 -[AUTORIZA]-> InspeccionGeneralDeJusticia
+00:12:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:12:45 [INFO]   Guardado en Neo4j correctamente.
+00:12:45 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_132.txt
+00:12:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:13:09 [INFO]   Nodos extraídos    : 1
+00:13:09 [INFO]   Relaciones extraídas: 0
+00:13:09 [INFO]     [Articulo] Art_132_RG_15_2024
+00:13:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:13:12 [INFO]   Guardado en Neo4j correctamente.
+00:13:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_133.txt
+00:13:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:13:36 [INFO]   Nodos extraídos    : 1
+00:13:36 [INFO]   Relaciones extraídas: 0
+00:13:36 [INFO]     [Articulo] Art_133_RG_15_2024
+00:13:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:13:38 [INFO]   Guardado en Neo4j correctamente.
+00:13:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_134.txt
+00:13:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:13:56 [INFO]   Nodos extraídos    : 1
+00:13:56 [INFO]   Relaciones extraídas: 0
+00:13:56 [INFO]     [Articulo] Art_134_RG_15_2024
+00:13:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:13:59 [INFO]   Guardado en Neo4j correctamente.
+00:13:59 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_135.txt
+00:13:59 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:14:19 [INFO]   Nodos extraídos    : 1
+00:14:19 [INFO]   Relaciones extraídas: 1
+00:14:19 [INFO]     [Articulo] Art_135_RG_15_2024
+00:14:19 [INFO]     Art_135_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+00:14:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:14:21 [INFO]   Guardado en Neo4j correctamente.
+00:14:21 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_136.txt
+00:14:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:14:47 [INFO]   Nodos extraídos    : 1
+00:14:47 [INFO]   Relaciones extraídas: 1
+00:14:47 [INFO]     [Articulo] Art_136_RG_15_2024
+00:14:47 [INFO]     Art_136_RG_15_2024 -[ESTA_COMPUESTO_POR]-> InspeccionGeneralDeJusticia
+00:14:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:14:51 [INFO]   Guardado en Neo4j correctamente.
+00:14:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_137.txt
+00:14:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:15:13 [INFO]   Nodos extraídos    : 1
+00:15:13 [INFO]   Relaciones extraídas: 0
+00:15:13 [INFO]     [Articulo] Art_137_RG_15_2024
+00:15:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:15:16 [INFO]   Guardado en Neo4j correctamente.
+00:15:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_138.txt
+00:15:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:15:46 [INFO]   Nodos extraídos    : 1
+00:15:46 [INFO]   Relaciones extraídas: 4
+00:15:46 [INFO]     [Articulo] Art_138_RG_15_2024
+00:15:46 [INFO]     Art_138_RG_15_2024 -[DEFINE]-> InspeccionGeneralDeJusticia
+00:15:46 [INFO]     Art_138_RG_15_2024 -[DEFINE]-> SociedadAnonima
+00:15:46 [INFO]     Art_138_RG_15_2024 -[DEFINE]-> Director
+00:15:46 [INFO]     Art_138_RG_15_2024 -[DEFINE]-> Sindico
+00:15:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:15:50 [INFO]   Guardado en Neo4j correctamente.
+00:15:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_139.txt
+00:15:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:16:20 [INFO]   Nodos extraídos    : 1
+00:16:20 [INFO]   Relaciones extraídas: 1
+00:16:20 [INFO]     [Articulo] Art_139_RG_15_2024
+00:16:20 [INFO]     Art_139_RG_15_2024 -[REPRESENTA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:16:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:16:22 [INFO]   Guardado en Neo4j correctamente.
+00:16:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_14.txt
+00:16:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:16:40 [INFO]   Nodos extraídos    : 1
+00:16:40 [INFO]   Relaciones extraídas: 0
+00:16:40 [INFO]     [Articulo] Art_14_RG_15_2024
+00:16:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:16:43 [INFO]   Guardado en Neo4j correctamente.
+00:16:43 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_140.txt
+00:16:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:17:06 [INFO]   Nodos extraídos    : 1
+00:17:06 [INFO]   Relaciones extraídas: 2
+00:17:06 [INFO]     [Articulo] Art_140_RG_15_2024
+00:17:06 [INFO]     Art_140_RG_15_2024 -[DEFINE]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:17:06 [INFO]     Art_140_RG_15_2024 -[FISCALIZA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:17:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:17:08 [INFO]   Guardado en Neo4j correctamente.
+00:17:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_141.txt
+00:17:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:17:36 [INFO]   Nodos extraídos    : 1
+00:17:36 [INFO]   Relaciones extraídas: 1
+00:17:36 [INFO]     [Articulo] Art_141_RG_15_2024
+00:17:36 [INFO]     Art_141_RG_15_2024 -[REGULA]-> SociedadAnonima
+00:17:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:17:39 [INFO]   Guardado en Neo4j correctamente.
+00:17:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_142.txt
+00:17:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:18:03 [INFO]   Nodos extraídos    : 1
+00:18:03 [INFO]   Relaciones extraídas: 1
+00:18:03 [INFO]     [Articulo] Art_142_RG_15_2024
+00:18:03 [INFO]     Art_142_RG_15_2024 -[MENCIONA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:18:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:18:05 [INFO]   Guardado en Neo4j correctamente.
+00:18:05 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_143.txt
+00:18:06 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:18:37 [WARNING]   Relación descartada (campos nulos): inicio='Art_143_RG_15_2024' fin=None tipo='REGULA'
+00:18:37 [INFO]   Nodos extraídos    : 1
+00:18:37 [INFO]   Relaciones extraídas: 0
+00:18:37 [INFO]     [Articulo] Art_143_RG_15_2024
+00:18:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:18:39 [INFO]   Guardado en Neo4j correctamente.
+00:18:40 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_144.txt
+00:18:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:18:59 [INFO]   Nodos extraídos    : 1
+00:18:59 [INFO]   Relaciones extraídas: 0
+00:18:59 [INFO]     [Articulo] Art_144_RG_15_2024
+00:18:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:19:01 [INFO]   Guardado en Neo4j correctamente.
+00:19:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_145.txt
+00:19:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:19:22 [INFO]   Nodos extraídos    : 1
+00:19:22 [INFO]   Relaciones extraídas: 0
+00:19:22 [INFO]     [Articulo] Art_145_RG_15_2024
+00:19:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:19:24 [INFO]   Guardado en Neo4j correctamente.
+00:19:25 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_146.txt
+00:19:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:19:51 [INFO]   Nodos extraídos    : 1
+00:19:51 [INFO]   Relaciones extraídas: 0
+00:19:51 [INFO]     [Articulo] Art_146_RG_15_2024
+00:19:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:19:57 [INFO]   Guardado en Neo4j correctamente.
+00:19:57 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_147.txt
+00:19:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:20:24 [INFO]   Nodos extraídos    : 1
+00:20:24 [INFO]   Relaciones extraídas: 1
+00:20:24 [INFO]     [Articulo] Art_147_RG_15_2024
+00:20:24 [INFO]     Art_147_RG_15_2024 -[REGULA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:20:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:20:27 [INFO]   Guardado en Neo4j correctamente.
+00:20:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_148.txt
+00:20:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:20:49 [WARNING]   Relación descartada (campos nulos): inicio='Art_148_RG_15_2024' fin=None tipo=None
+00:20:49 [INFO]   Nodos extraídos    : 1
+00:20:49 [INFO]   Relaciones extraídas: 0
+00:20:49 [INFO]     [Articulo] Art_148_RG_15_2024
+00:20:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:20:52 [INFO]   Guardado en Neo4j correctamente.
+00:20:52 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_149.txt
+00:20:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:21:13 [INFO]   Nodos extraídos    : 1
+00:21:13 [INFO]   Relaciones extraídas: 0
+00:21:13 [INFO]     [Articulo] Art_149_RG_15_2024
+00:21:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:21:16 [INFO]   Guardado en Neo4j correctamente.
+00:21:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_15.txt
+00:21:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:21:33 [INFO]   Nodos extraídos    : 1
+00:21:33 [INFO]   Relaciones extraídas: 0
+00:21:33 [INFO]     [Articulo] Art_15_RG_15_2024
+00:21:34 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:21:35 [INFO]   Guardado en Neo4j correctamente.
+00:21:36 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_150.txt
+00:21:36 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:21:57 [INFO]   Nodos extraídos    : 1
+00:21:57 [INFO]   Relaciones extraídas: 0
+00:21:57 [INFO]     [Articulo] Art_150_RG_15_2024
+00:21:57 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:22:04 [INFO]   Guardado en Neo4j correctamente.
+00:22:04 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_151.txt
+00:22:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:22:35 [INFO]   Nodos extraídos    : 1
+00:22:35 [INFO]   Relaciones extraídas: 3
+00:22:35 [INFO]     [Articulo] Art_151_RG_15_2024
+00:22:35 [INFO]     Art_151_RG_15_2024 -[REGULA]-> SociedadAnonima
+00:22:35 [INFO]     Art_151_RG_15_2024 -[REGULA]-> SociedadDeResponsabilidadLimitada
+00:22:35 [INFO]     Art_151_RG_15_2024 -[REGULA]-> SociedadPorAcciones
+00:22:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:22:39 [INFO]   Guardado en Neo4j correctamente.
+00:22:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_152.txt
+00:22:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:22:59 [INFO]   Nodos extraídos    : 1
+00:22:59 [INFO]   Relaciones extraídas: 0
+00:22:59 [INFO]     [Articulo] Art_152_RG_15_2024
+00:22:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:23:01 [INFO]   Guardado en Neo4j correctamente.
+00:23:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_153.txt
+00:23:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:23:30 [INFO]   Nodos extraídos    : 1
+00:23:30 [INFO]   Relaciones extraídas: 1
+00:23:30 [INFO]     [Articulo] Art_153_RG_15_2024
+00:23:30 [INFO]     Art_153_RG_15_2024 -[REGULA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:23:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:23:32 [INFO]   Guardado en Neo4j correctamente.
+00:23:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_154.txt
+00:23:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:23:59 [INFO]   Nodos extraídos    : 1
+00:23:59 [INFO]   Relaciones extraídas: 0
+00:23:59 [INFO]     [Articulo] Art_154_RG_15_2024
+00:24:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:24:02 [INFO]   Guardado en Neo4j correctamente.
+00:24:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_155.txt
+00:24:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:24:22 [INFO]   Nodos extraídos    : 1
+00:24:22 [INFO]   Relaciones extraídas: 0
+00:24:22 [INFO]     [Articulo] Art_155_RG_15_2024
+00:24:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:24:24 [INFO]   Guardado en Neo4j correctamente.
+00:24:25 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_156.txt
+00:24:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:24:46 [INFO]   Nodos extraídos    : 1
+00:24:46 [INFO]   Relaciones extraídas: 0
+00:24:46 [INFO]     [Articulo] Art_156_RG_15_2024
+00:24:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:24:49 [INFO]   Guardado en Neo4j correctamente.
+00:24:49 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_157.txt
+00:24:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:25:08 [WARNING]   Relación descartada (campos nulos): inicio='Art_157_RG_15_2024' fin=None tipo=None
+00:25:08 [INFO]   Nodos extraídos    : 1
+00:25:08 [INFO]   Relaciones extraídas: 0
+00:25:08 [INFO]     [Articulo] Art_157_RG_15_2024
+00:25:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:25:11 [INFO]   Guardado en Neo4j correctamente.
+00:25:11 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_158.txt
+00:25:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:25:30 [INFO]   Nodos extraídos    : 1
+00:25:30 [INFO]   Relaciones extraídas: 0
+00:25:30 [INFO]     [Articulo] Art_158_RG_15_2024
+00:25:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:25:32 [INFO]   Guardado en Neo4j correctamente.
+00:25:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_159.txt
+00:25:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:25:53 [INFO]   Nodos extraídos    : 1
+00:25:53 [INFO]   Relaciones extraídas: 0
+00:25:53 [INFO]     [Articulo] Art_159_RG_15_2024
+00:25:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:25:56 [INFO]   Guardado en Neo4j correctamente.
+00:25:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_16.txt
+00:25:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:26:13 [INFO]   Nodos extraídos    : 1
+00:26:13 [INFO]   Relaciones extraídas: 0
+00:26:13 [INFO]     [Articulo] Art_16_RG_15_2024
+00:26:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:26:16 [INFO]   Guardado en Neo4j correctamente.
+00:26:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_160.txt
+00:26:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:26:36 [INFO]   Nodos extraídos    : 1
+00:26:36 [INFO]   Relaciones extraídas: 0
+00:26:36 [INFO]     [Articulo] Art_160_RG_15_2024
+00:26:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:26:39 [INFO]   Guardado en Neo4j correctamente.
+00:26:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_161.txt
+00:26:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:27:06 [INFO]   Nodos extraídos    : 1
+00:27:06 [INFO]   Relaciones extraídas: 1
+00:27:06 [INFO]     [Articulo] Art_161_RG_15_2024
+00:27:06 [INFO]     Art_161_RG_15_2024 -[MENCIONA]-> SociedadAnonima
+00:27:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:27:09 [INFO]   Guardado en Neo4j correctamente.
+00:27:09 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_162.txt
+00:27:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:27:34 [INFO]   Nodos extraídos    : 1
+00:27:34 [INFO]   Relaciones extraídas: 1
+00:27:34 [INFO]     [Articulo] Art_162_RG_15_2024
+00:27:34 [INFO]     Art_162_RG_15_2024 -[FISCALIZA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:27:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:27:37 [INFO]   Guardado en Neo4j correctamente.
+00:27:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_163.txt
+00:27:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:27:59 [INFO]   Nodos extraídos    : 1
+00:27:59 [INFO]   Relaciones extraídas: 0
+00:27:59 [INFO]     [Articulo] Art_163_RG_15_2024
+00:28:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:28:02 [INFO]   Guardado en Neo4j correctamente.
+00:28:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_164.txt
+00:28:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:28:30 [INFO]   Nodos extraídos    : 1
+00:28:30 [INFO]   Relaciones extraídas: 0
+00:28:30 [INFO]     [Articulo] Art_164_RG_15_2024
+00:28:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:28:33 [INFO]   Guardado en Neo4j correctamente.
+00:28:33 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_165.txt
+00:28:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:28:54 [INFO]   Nodos extraídos    : 1
+00:28:54 [INFO]   Relaciones extraídas: 0
+00:28:54 [INFO]     [Articulo] Art_165_RG_15_2024
+00:28:55 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:28:56 [INFO]   Guardado en Neo4j correctamente.
+00:28:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_166.txt
+00:28:57 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:29:14 [INFO]   Nodos extraídos    : 1
+00:29:14 [INFO]   Relaciones extraídas: 0
+00:29:14 [INFO]     [Articulo] Art_166_RG_15_2024
+00:29:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:29:17 [INFO]   Guardado en Neo4j correctamente.
+00:29:17 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_167.txt
+00:29:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:29:42 [INFO]   Nodos extraídos    : 1
+00:29:42 [INFO]   Relaciones extraídas: 0
+00:29:42 [INFO]     [Articulo] Art_167_RG_15_2024
+00:29:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:29:44 [INFO]   Guardado en Neo4j correctamente.
+00:29:44 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_168.txt
+00:29:45 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:30:10 [INFO]   Nodos extraídos    : 1
+00:30:10 [INFO]   Relaciones extraídas: 1
+00:30:10 [INFO]     [Articulo] Art_168_RG_15_2024
+00:30:10 [INFO]     Art_168_RG_15_2024 -[FISCALIZA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:30:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:30:12 [INFO]   Guardado en Neo4j correctamente.
+00:30:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_169.txt
+00:30:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:30:32 [INFO]   Nodos extraídos    : 1
+00:30:32 [INFO]   Relaciones extraídas: 0
+00:30:32 [INFO]     [Articulo] Art_169_RG_15_2024
+00:30:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:30:35 [INFO]   Guardado en Neo4j correctamente.
+00:30:35 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_17.txt
+00:30:36 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:30:51 [INFO]   Nodos extraídos    : 1
+00:30:51 [INFO]   Relaciones extraídas: 0
+00:30:51 [INFO]     [Articulo] Art_17_RG_15_2024
+00:30:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:30:53 [INFO]   Guardado en Neo4j correctamente.
+00:30:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_170.txt
+00:30:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:31:21 [INFO]   Nodos extraídos    : 1
+00:31:21 [INFO]   Relaciones extraídas: 0
+00:31:21 [INFO]     [Articulo] Art_170_RG_15_2024
+00:31:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:24 [INFO]   Guardado en Neo4j correctamente.
+00:31:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_171.txt
+00:31:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:31:43 [INFO]   Nodos extraídos    : 1
+00:31:43 [INFO]   Relaciones extraídas: 0
+00:31:43 [INFO]     [Articulo] Art_171_RG_15_2024
+00:31:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:31:46 [INFO]   Guardado en Neo4j correctamente.
+00:31:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_172.txt
+00:31:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:32:14 [INFO]   Nodos extraídos    : 1
+00:32:14 [INFO]   Relaciones extraídas: 2
+00:32:14 [INFO]     [Articulo] Art_172_RG_15_2024
+00:32:14 [INFO]     Art_172_RG_15_2024 -[FISCALIZA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:32:14 [INFO]     Art_172_RG_15_2024 -[FISCALIZA]-> RegistroPublicoDeComercio
+00:32:15 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:17 [INFO]   Guardado en Neo4j correctamente.
+00:32:17 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_173.txt
+00:32:17 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:32:43 [INFO]   Nodos extraídos    : 1
+00:32:43 [INFO]   Relaciones extraídas: 0
+00:32:43 [INFO]     [Articulo] Art_173_RG_15_2024
+00:32:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:32:45 [INFO]   Guardado en Neo4j correctamente.
+00:32:45 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_174.txt
+00:32:45 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:33:11 [INFO]   Nodos extraídos    : 1
+00:33:11 [INFO]   Relaciones extraídas: 0
+00:33:11 [INFO]     [Articulo] Art_174_RG_15_2024
+00:33:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:14 [INFO]   Guardado en Neo4j correctamente.
+00:33:14 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_175.txt
+00:33:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:33:36 [INFO]   Nodos extraídos    : 1
+00:33:36 [INFO]   Relaciones extraídas: 0
+00:33:36 [INFO]     [Articulo] Art_175_RG_15_2024
+00:33:38 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:33:39 [INFO]   Guardado en Neo4j correctamente.
+00:33:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_176.txt
+00:33:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:34:09 [INFO]   Nodos extraídos    : 1
+00:34:09 [INFO]   Relaciones extraídas: 1
+00:34:09 [INFO]     [Articulo] Art_176_RG_15_2024
+00:34:09 [INFO]     Art_176_RG_15_2024 -[FISCALIZA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:34:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:12 [INFO]   Guardado en Neo4j correctamente.
+00:34:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_177.txt
+00:34:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:34:39 [INFO]   Nodos extraídos    : 1
+00:34:39 [INFO]   Relaciones extraídas: 0
+00:34:39 [INFO]     [Articulo] Art_177_RG_15_2024
+00:34:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:34:41 [INFO]   Guardado en Neo4j correctamente.
+00:34:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_178.txt
+00:34:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:35:06 [INFO]   Nodos extraídos    : 1
+00:35:06 [INFO]   Relaciones extraídas: 0
+00:35:06 [INFO]     [Articulo] Art_178_RG_15_2024
+00:35:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:09 [INFO]   Guardado en Neo4j correctamente.
+00:35:09 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_179.txt
+00:35:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:35:36 [INFO]   Nodos extraídos    : 1
+00:35:36 [INFO]   Relaciones extraídas: 0
+00:35:36 [INFO]     [Articulo] Art_179_RG_15_2024
+00:35:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:39 [INFO]   Guardado en Neo4j correctamente.
+00:35:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_18.txt
+00:35:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:35:56 [INFO]   Nodos extraídos    : 1
+00:35:56 [INFO]   Relaciones extraídas: 0
+00:35:56 [INFO]     [Articulo] Art_18_RG_15_2024
+00:35:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:35:59 [INFO]   Guardado en Neo4j correctamente.
+00:35:59 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_180.txt
+00:36:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:36:29 [WARNING]   Relación descartada (campos nulos): inicio='Art_180_RG_15_2024' fin=None tipo=None
+00:36:29 [INFO]   Nodos extraídos    : 1
+00:36:29 [INFO]   Relaciones extraídas: 0
+00:36:29 [INFO]     [Articulo] Art_180_RG_15_2024
+00:36:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:31 [INFO]   Guardado en Neo4j correctamente.
+00:36:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_181.txt
+00:36:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:36:57 [INFO]   Nodos extraídos    : 1
+00:36:57 [INFO]   Relaciones extraídas: 0
+00:36:57 [INFO]     [Articulo] Art_181_RG_15_2024
+00:36:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:36:59 [INFO]   Guardado en Neo4j correctamente.
+00:37:00 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_182.txt
+00:37:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:37:23 [INFO]   Nodos extraídos    : 1
+00:37:23 [INFO]   Relaciones extraídas: 1
+00:37:23 [INFO]     [Articulo] Art_182_RG_15_2024
+00:37:23 [INFO]     Art_182_RG_15_2024 -[REPRESENTA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:37:24 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:26 [INFO]   Guardado en Neo4j correctamente.
+00:37:26 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_183.txt
+00:37:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:37:53 [INFO]   Nodos extraídos    : 1
+00:37:53 [INFO]   Relaciones extraídas: 2
+00:37:53 [INFO]     [Articulo] Art_183_RG_15_2024
+00:37:53 [INFO]     Art_183_RG_15_2024 -[ESTABLECE_REQUISITOS_DE]-> BeneficiarioFinal
+00:37:53 [INFO]     Art_183_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+00:37:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:37:56 [INFO]   Guardado en Neo4j correctamente.
+00:37:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_184.txt
+00:37:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:38:19 [INFO]   Nodos extraídos    : 1
+00:38:19 [INFO]   Relaciones extraídas: 0
+00:38:19 [INFO]     [Articulo] Art_184_RG_15_2024
+00:38:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:38:22 [INFO]   Guardado en Neo4j correctamente.
+00:38:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_185.txt
+00:38:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:38:43 [INFO]   Nodos extraídos    : 1
+00:38:43 [INFO]   Relaciones extraídas: 0
+00:38:43 [INFO]     [Articulo] Art_185_RG_15_2024
+00:38:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:38:45 [INFO]   Guardado en Neo4j correctamente.
+00:38:45 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_186.txt
+00:38:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:39:11 [INFO]   Nodos extraídos    : 1
+00:39:11 [INFO]   Relaciones extraídas: 0
+00:39:11 [INFO]     [Articulo] Art_186_RG_15_2024
+00:39:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:39:13 [INFO]   Guardado en Neo4j correctamente.
+00:39:13 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_187.txt
+00:39:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:39:31 [INFO]   Nodos extraídos    : 1
+00:39:31 [INFO]   Relaciones extraídas: 0
+00:39:31 [INFO]     [Articulo] Art_187_RG_15_2024
+00:39:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:39:34 [INFO]   Guardado en Neo4j correctamente.
+00:39:34 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_188.txt
+00:39:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:40:01 [INFO]   Nodos extraídos    : 1
+00:40:01 [INFO]   Relaciones extraídas: 3
+00:40:01 [INFO]     [Articulo] Art_188_RG_15_2024
+00:40:01 [INFO]     Art_188_RG_15_2024 -[DEFINE]-> SociedadConstituidaEnElExtranjero
+00:40:01 [INFO]     Art_188_RG_15_2024 -[MENCIONA]-> Director
+00:40:01 [INFO]     Art_188_RG_15_2024 -[MENCIONA]-> Gerente
+00:40:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:40:05 [INFO]   Guardado en Neo4j correctamente.
+00:40:05 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_189.txt
+00:40:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:40:28 [INFO]   Nodos extraídos    : 1
+00:40:28 [INFO]   Relaciones extraídas: 0
+00:40:28 [INFO]     [Articulo] Art_189_RG_15_2024
+00:40:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:40:31 [INFO]   Guardado en Neo4j correctamente.
+00:40:31 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_19.txt
+00:40:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:40:47 [INFO]   Nodos extraídos    : 1
+00:40:47 [INFO]   Relaciones extraídas: 0
+00:40:47 [INFO]     [Articulo] Art_19_RG_15_2024
+00:40:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:40:50 [INFO]   Guardado en Neo4j correctamente.
+00:40:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_190.txt
+00:40:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:41:20 [INFO]   Nodos extraídos    : 1
+00:41:20 [INFO]   Relaciones extraídas: 3
+00:41:20 [INFO]     [Articulo] Art_190_RG_15_2024
+00:41:20 [INFO]     Art_190_RG_15_2024 -[ESTA_COMPUESTO_POR]-> SociedadConstituidaEnElExtranjero
+00:41:20 [INFO]     Art_190_RG_15_2024 -[MENCIONA]-> RegistroPublicoDeComercio
+00:41:20 [INFO]     Art_190_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+00:41:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:41:24 [INFO]   Guardado en Neo4j correctamente.
+00:41:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_191.txt
+00:41:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:41:45 [INFO]   Nodos extraídos    : 1
+00:41:45 [INFO]   Relaciones extraídas: 1
+00:41:45 [INFO]     [Articulo] Art_191_RG_15_2024
+00:41:45 [INFO]     Art_191_RG_15_2024 -[REGULA]-> SOCIEDAD_CONSTITUIDA_EN_EL_EXTRANJERO
+00:41:46 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:41:48 [INFO]   Guardado en Neo4j correctamente.
+00:41:48 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_192.txt
+00:41:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:42:08 [INFO]   Nodos extraídos    : 1
+00:42:08 [INFO]   Relaciones extraídas: 1
+00:42:08 [INFO]     [Articulo] Art_192_RG_15_2024
+00:42:08 [INFO]     Art_192_RG_15_2024 -[REPRESENTA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:42:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:42:11 [INFO]   Guardado en Neo4j correctamente.
+00:42:11 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_193.txt
+00:42:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:42:41 [INFO]   Nodos extraídos    : 1
+00:42:41 [INFO]   Relaciones extraídas: 1
+00:42:41 [INFO]     [Articulo] Art_193_RG_15_2024
+00:42:41 [INFO]     Art_193_RG_15_2024 -[REGULA]-> SociedadConstituidaEnElExtranjero
+00:42:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:42:43 [INFO]   Guardado en Neo4j correctamente.
+00:42:44 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_194.txt
+00:42:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:43:16 [INFO]   Nodos extraídos    : 1
+00:43:16 [INFO]   Relaciones extraídas: 0
+00:43:16 [INFO]     [Articulo] Art_194_RG_15_2024
+00:43:17 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:43:19 [INFO]   Guardado en Neo4j correctamente.
+00:43:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_195.txt
+00:43:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:43:40 [INFO]   Nodos extraídos    : 1
+00:43:40 [INFO]   Relaciones extraídas: 0
+00:43:40 [INFO]     [Articulo] Art_195_RG_15_2024
+00:43:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:43:42 [INFO]   Guardado en Neo4j correctamente.
+00:43:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_196.txt
+00:43:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:44:09 [INFO]   Nodos extraídos    : 1
+00:44:09 [INFO]   Relaciones extraídas: 0
+00:44:09 [INFO]     [Articulo] Art_196_RG_15_2024
+00:44:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:44:12 [INFO]   Guardado en Neo4j correctamente.
+00:44:12 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_197.txt
+00:44:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:44:34 [INFO]   Nodos extraídos    : 1
+00:44:34 [INFO]   Relaciones extraídas: 0
+00:44:34 [INFO]     [Articulo] Art_197_RG_15_2024
+00:44:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:44:37 [INFO]   Guardado en Neo4j correctamente.
+00:44:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_198.txt
+00:44:38 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:45:00 [INFO]   Nodos extraídos    : 1
+00:45:00 [INFO]   Relaciones extraídas: 0
+00:45:00 [INFO]     [Articulo] Art_198_RG_15_2024
+00:45:01 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:45:03 [INFO]   Guardado en Neo4j correctamente.
+00:45:03 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_199.txt
+00:45:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:45:28 [INFO]   Nodos extraídos    : 1
+00:45:28 [INFO]   Relaciones extraídas: 0
+00:45:28 [INFO]     [Articulo] Art_199_RG_15_2024
+00:45:29 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:45:30 [INFO]   Guardado en Neo4j correctamente.
+00:45:30 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_2.txt
+00:45:31 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:46:13 [INFO]   Nodos extraídos    : 1
+00:46:13 [INFO]   Relaciones extraídas: 0
+00:46:13 [INFO]     [Articulo] Art_2_RG_15_2024
+00:46:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:46:16 [INFO]   Guardado en Neo4j correctamente.
+00:46:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_20.txt
+00:46:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:46:38 [INFO]   Nodos extraídos    : 1
+00:46:38 [INFO]   Relaciones extraídas: 1
+00:46:38 [INFO]     [Articulo] Art_20_RG_15_2024
+00:46:38 [INFO]     Art_20_RG_15_2024 -[REPRESENTA]-> InspeccionGeneralDeJusticia
+00:46:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:46:41 [INFO]   Guardado en Neo4j correctamente.
+00:46:41 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_200.txt
+00:46:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:47:05 [INFO]   Nodos extraídos    : 1
+00:47:05 [INFO]   Relaciones extraídas: 0
+00:47:05 [INFO]     [Articulo] Art_200_RG_15_2024
+00:47:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:47:08 [INFO]   Guardado en Neo4j correctamente.
+00:47:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_201.txt
+00:47:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:47:31 [INFO]   Nodos extraídos    : 1
+00:47:31 [INFO]   Relaciones extraídas: 1
+00:47:31 [INFO]     [Articulo] Art_201_RG_15_2024
+00:47:31 [INFO]     Art_201_RG_15_2024 -[REGLAMENTA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:47:32 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:47:33 [INFO]   Guardado en Neo4j correctamente.
+00:47:34 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_202.txt
+00:47:34 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:47:55 [INFO]   Nodos extraídos    : 1
+00:47:55 [INFO]   Relaciones extraídas: 0
+00:47:55 [INFO]     [Articulo] Art_202_RG_15_2024
+00:47:56 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:47:57 [INFO]   Guardado en Neo4j correctamente.
+00:47:57 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_203.txt
+00:47:58 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:48:24 [INFO]   Nodos extraídos    : 1
+00:48:24 [INFO]   Relaciones extraídas: 0
+00:48:24 [INFO]     [Articulo] Art_203_RG_15_2024
+00:48:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:48:27 [INFO]   Guardado en Neo4j correctamente.
+00:48:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_204.txt
+00:48:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:48:48 [INFO]   Nodos extraídos    : 1
+00:48:48 [INFO]   Relaciones extraídas: 0
+00:48:48 [INFO]     [Articulo] Art_204_RG_15_2024
+00:48:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:48:51 [INFO]   Guardado en Neo4j correctamente.
+00:48:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_205.txt
+00:48:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:49:11 [INFO]   Nodos extraídos    : 1
+00:49:11 [INFO]   Relaciones extraídas: 0
+00:49:11 [INFO]     [Articulo] Art_205_RG_15_2024
+00:49:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:49:14 [INFO]   Guardado en Neo4j correctamente.
+00:49:14 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_206.txt
+00:49:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:49:33 [INFO]   Nodos extraídos    : 1
+00:49:33 [INFO]   Relaciones extraídas: 0
+00:49:33 [INFO]     [Articulo] Art_206_RG_15_2024
+00:49:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:49:35 [INFO]   Guardado en Neo4j correctamente.
+00:49:35 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_207.txt
+00:49:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:49:53 [INFO]   Nodos extraídos    : 1
+00:49:53 [INFO]   Relaciones extraídas: 0
+00:49:53 [INFO]     [Articulo] Art_207_RG_15_2024
+00:49:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:49:56 [INFO]   Guardado en Neo4j correctamente.
+00:49:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_208.txt
+00:49:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:50:22 [INFO]   Nodos extraídos    : 1
+00:50:22 [INFO]   Relaciones extraídas: 1
+00:50:22 [INFO]     [Articulo] Art_208_RG_15_2024
+00:50:22 [INFO]     Art_208_RG_15_2024 -[MENCIONA]-> ComisionNacionalDeValores
+00:50:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:50:24 [INFO]   Guardado en Neo4j correctamente.
+00:50:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_209.txt
+00:50:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:50:49 [INFO]   Nodos extraídos    : 1
+00:50:49 [INFO]   Relaciones extraídas: 1
+00:50:49 [INFO]     [Articulo] Art_209_RG_15_2024
+00:50:49 [INFO]     Art_209_RG_15_2024 -[REGULA]-> ContratoFideicomiso
+00:50:50 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:50:51 [INFO]   Guardado en Neo4j correctamente.
+00:50:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_21.txt
+00:50:52 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:51:08 [INFO]   Nodos extraídos    : 1
+00:51:08 [INFO]   Relaciones extraídas: 0
+00:51:08 [INFO]     [Articulo] Art_21_RG_15_2024
+00:51:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:51:10 [INFO]   Guardado en Neo4j correctamente.
+00:51:10 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_210.txt
+00:51:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:51:29 [INFO]   Nodos extraídos    : 1
+00:51:29 [INFO]   Relaciones extraídas: 0
+00:51:29 [INFO]     [Articulo] Art_210_RG_15_2024
+00:51:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:51:31 [INFO]   Guardado en Neo4j correctamente.
+00:51:31 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_211.txt
+00:51:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:52:01 [INFO]   Nodos extraídos    : 1
+00:52:01 [INFO]   Relaciones extraídas: 1
+00:52:01 [INFO]     [Articulo] Art_211_RG_15_2024
+00:52:01 [INFO]     Art_211_RG_15_2024 -[MENCIONA]-> ComisionNacionalDeValores
+00:52:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:52:04 [INFO]   Guardado en Neo4j correctamente.
+00:52:04 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_212.txt
+00:52:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:52:24 [INFO]   Nodos extraídos    : 1
+00:52:24 [INFO]   Relaciones extraídas: 0
+00:52:24 [INFO]     [Articulo] Art_212_RG_15_2024
+00:52:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:52:27 [INFO]   Guardado en Neo4j correctamente.
+00:52:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_213.txt
+00:52:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:52:50 [INFO]   Nodos extraídos    : 1
+00:52:50 [INFO]   Relaciones extraídas: 1
+00:52:50 [INFO]     [Articulo] Art_213_RG_15_2024
+00:52:50 [INFO]     Art_213_RG_15_2024 -[DEFINE]-> InspeccionGeneralDeJusticia
+00:52:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:52:53 [INFO]   Guardado en Neo4j correctamente.
+00:52:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_214.txt
+00:52:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:53:20 [INFO]   Nodos extraídos    : 1
+00:53:20 [INFO]   Relaciones extraídas: 0
+00:53:20 [INFO]     [Articulo] Art_214_RG_15_2024
+00:53:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:53:22 [INFO]   Guardado en Neo4j correctamente.
+00:53:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_215.txt
+00:53:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:53:43 [INFO]   Nodos extraídos    : 1
+00:53:43 [INFO]   Relaciones extraídas: 0
+00:53:43 [INFO]     [Articulo] Art_215_RG_15_2024
+00:53:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:53:46 [INFO]   Guardado en Neo4j correctamente.
+00:53:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_216.txt
+00:53:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:54:07 [INFO]   Nodos extraídos    : 1
+00:54:07 [INFO]   Relaciones extraídas: 1
+00:54:07 [INFO]     [Articulo] Art_216_RG_15_2024
+00:54:07 [INFO]     Art_216_RG_15_2024 -[FISCALIZA]-> InspeccionGeneralDeJusticia
+00:54:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:54:09 [INFO]   Guardado en Neo4j correctamente.
+00:54:10 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_217.txt
+00:54:10 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:54:38 [INFO]   Nodos extraídos    : 1
+00:54:38 [INFO]   Relaciones extraídas: 3
+00:54:38 [INFO]     [Articulo] Art_217_RG_15_2024
+00:54:38 [INFO]     Art_217_RG_15_2024 -[REPRESENTA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:54:38 [INFO]     Art_217_RG_15_2024 -[FISCALIZA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:54:38 [INFO]     Art_217_RG_15_2024 -[MENCIONA]-> SociedadAnonima
+00:54:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:54:41 [INFO]   Guardado en Neo4j correctamente.
+00:54:42 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_218.txt
+00:54:42 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:55:10 [INFO]   Nodos extraídos    : 1
+00:55:10 [INFO]   Relaciones extraídas: 0
+00:55:10 [INFO]     [Articulo] Art_218_RG_15_2024
+00:55:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:55:13 [INFO]   Guardado en Neo4j correctamente.
+00:55:13 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_219.txt
+00:55:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:55:32 [INFO]   Nodos extraídos    : 1
+00:55:32 [INFO]   Relaciones extraídas: 0
+00:55:32 [INFO]     [Articulo] Art_219_RG_15_2024
+00:55:33 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:55:35 [INFO]   Guardado en Neo4j correctamente.
+00:55:35 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_22.txt
+00:55:35 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:55:59 [INFO]   Nodos extraídos    : 1
+00:55:59 [INFO]   Relaciones extraídas: 1
+00:55:59 [INFO]     [Articulo] Art_22_RG_15_2024
+00:55:59 [INFO]     Art_22_RG_15_2024 -[ESTABLECE_REQUISITOS_DE]-> InspectorGeneral
+00:56:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:56:01 [INFO]   Guardado en Neo4j correctamente.
+00:56:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_220.txt
+00:56:02 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:56:22 [INFO]   Nodos extraídos    : 1
+00:56:22 [INFO]   Relaciones extraídas: 0
+00:56:22 [INFO]     [Articulo] Art_220_RG_15_2024
+00:56:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:56:25 [INFO]   Guardado en Neo4j correctamente.
+00:56:25 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_221.txt
+00:56:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:56:47 [INFO]   Nodos extraídos    : 1
+00:56:47 [INFO]   Relaciones extraídas: 1
+00:56:47 [INFO]     [Articulo] Art_221_RG_15_2024
+00:56:47 [INFO]     Art_221_RG_15_2024 -[REGLAMENTA]-> InspeccionGeneralDeJusticia
+00:56:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:56:50 [INFO]   Guardado en Neo4j correctamente.
+00:56:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_222.txt
+00:56:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:57:20 [INFO]   Nodos extraídos    : 1
+00:57:20 [INFO]   Relaciones extraídas: 2
+00:57:20 [INFO]     [Articulo] Art_222_RG_15_2024
+00:57:20 [INFO]     Art_222_RG_15_2024 -[REGULA]-> SociedadAnonima
+00:57:20 [INFO]     Art_222_RG_15_2024 -[MENCIONA]-> RegistroPublicoDeComercio
+00:57:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:57:22 [INFO]   Guardado en Neo4j correctamente.
+00:57:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_223.txt
+00:57:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:57:46 [INFO]   Nodos extraídos    : 1
+00:57:46 [INFO]   Relaciones extraídas: 1
+00:57:46 [INFO]     [Articulo] Art_223_RG_15_2024
+00:57:46 [INFO]     Art_223_RG_15_2024 -[REGULA]-> INSPECCION_GENERAL_DE_JUSTICIA
+00:57:47 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:57:49 [INFO]   Guardado en Neo4j correctamente.
+00:57:49 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_224.txt
+00:57:50 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:58:11 [INFO]   Nodos extraídos    : 1
+00:58:11 [INFO]   Relaciones extraídas: 0
+00:58:11 [INFO]     [Articulo] Art_224_RG_15_2024
+00:58:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:58:13 [INFO]   Guardado en Neo4j correctamente.
+00:58:14 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_225.txt
+00:58:14 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:58:33 [INFO]   Nodos extraídos    : 1
+00:58:33 [INFO]   Relaciones extraídas: 0
+00:58:33 [INFO]     [Articulo] Art_225_RG_15_2024
+00:58:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:58:36 [INFO]   Guardado en Neo4j correctamente.
+00:58:36 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_226.txt
+00:58:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:59:05 [INFO]   Nodos extraídos    : 1
+00:59:05 [INFO]   Relaciones extraídas: 3
+00:59:05 [INFO]     [Articulo] Art_226_RG_15_2024
+00:59:05 [INFO]     Art_226_RG_15_2024 -[MENCIONA]-> SociedadPorAcciones
+00:59:05 [INFO]     Art_226_RG_15_2024 -[MENCIONA]-> SociedadDeResponsabilidadLimitada
+00:59:05 [INFO]     Art_226_RG_15_2024 -[APLICA_SUPLETORIAMENTE]-> InspeccionGeneralDeJusticia
+00:59:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:59:08 [INFO]   Guardado en Neo4j correctamente.
+00:59:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_227.txt
+00:59:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+00:59:34 [INFO]   Nodos extraídos    : 1
+00:59:34 [INFO]   Relaciones extraídas: 2
+00:59:34 [INFO]     [Articulo] Art_227_RG_15_2024
+00:59:34 [INFO]     Art_227_RG_15_2024 -[REPRESENTA]-> Director
+00:59:34 [INFO]     Art_227_RG_15_2024 -[REPRESENTA]-> Gerente
+00:59:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+00:59:37 [INFO]   Guardado en Neo4j correctamente.
+00:59:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_228.txt
+00:59:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:00:01 [INFO]   Nodos extraídos    : 1
+01:00:01 [INFO]   Relaciones extraídas: 0
+01:00:01 [INFO]     [Articulo] Art_228_RG_15_2024
+01:00:02 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:00:03 [INFO]   Guardado en Neo4j correctamente.
+01:00:04 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_229.txt
+01:00:04 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:00:24 [INFO]   Nodos extraídos    : 1
+01:00:24 [INFO]   Relaciones extraídas: 0
+01:00:24 [INFO]     [Articulo] Art_229_RG_15_2024
+01:00:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:00:27 [INFO]   Guardado en Neo4j correctamente.
+01:00:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_23.txt
+01:00:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:00:50 [INFO]   Nodos extraídos    : 1
+01:00:50 [INFO]   Relaciones extraídas: 0
+01:00:50 [INFO]     [Articulo] Art_23_RG_15_2024
+01:00:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:00:52 [INFO]   Guardado en Neo4j correctamente.
+01:00:52 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_230.txt
+01:00:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:01:22 [INFO]   Nodos extraídos    : 1
+01:01:22 [INFO]   Relaciones extraídas: 2
+01:01:22 [INFO]     [Articulo] Art_230_RG_15_2024
+01:01:22 [INFO]     Art_230_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+01:01:22 [INFO]     Art_230_RG_15_2024 -[MENCIONA]-> SociedadAnonima
+01:01:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:01:25 [INFO]   Guardado en Neo4j correctamente.
+01:01:25 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_231.txt
+01:01:26 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:01:48 [INFO]   Nodos extraídos    : 1
+01:01:48 [INFO]   Relaciones extraídas: 1
+01:01:48 [INFO]     [Articulo] Art_231_RG_15_2024
+01:01:48 [INFO]     Art_231_RG_15_2024 -[FISCALIZA]-> SociedadAnonima
+01:01:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:01:50 [INFO]   Guardado en Neo4j correctamente.
+01:01:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_232.txt
+01:01:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:02:14 [INFO]   Nodos extraídos    : 1
+01:02:14 [INFO]   Relaciones extraídas: 0
+01:02:14 [INFO]     [Articulo] Art_232_RG_15_2024
+01:02:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:02:17 [INFO]   Guardado en Neo4j correctamente.
+01:02:17 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_233.txt
+01:02:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:02:36 [INFO]   Nodos extraídos    : 1
+01:02:36 [INFO]   Relaciones extraídas: 2
+01:02:36 [INFO]     [Articulo] Art_233_RG_15_2024
+01:02:36 [INFO]     Art_233_RG_15_2024 -[MENCIONA]-> SociedadPorAcciones
+01:02:36 [INFO]     Art_233_RG_15_2024 -[MENCIONA]-> SociedadDeResponsabilidadLimitada
+01:02:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:02:39 [INFO]   Guardado en Neo4j correctamente.
+01:02:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_234.txt
+01:02:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:02:58 [INFO]   Nodos extraídos    : 1
+01:02:58 [INFO]   Relaciones extraídas: 0
+01:02:58 [INFO]     [Articulo] Art_234_RG_15_2024
+01:02:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:03:01 [INFO]   Guardado en Neo4j correctamente.
+01:03:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_235.txt
+01:03:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:03:19 [INFO]   Nodos extraídos    : 1
+01:03:19 [INFO]   Relaciones extraídas: 0
+01:03:19 [INFO]     [Articulo] Art_235_RG_15_2024
+01:03:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:03:22 [INFO]   Guardado en Neo4j correctamente.
+01:03:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_236.txt
+01:03:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:03:40 [INFO]   Nodos extraídos    : 1
+01:03:40 [INFO]   Relaciones extraídas: 0
+01:03:40 [INFO]     [Articulo] Art_236_RG_15_2024
+01:03:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:03:42 [INFO]   Guardado en Neo4j correctamente.
+01:03:43 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_237.txt
+01:03:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:04:09 [INFO]   Nodos extraídos    : 1
+01:04:09 [INFO]   Relaciones extraídas: 0
+01:04:09 [INFO]     [Articulo] Art_237_RG_15_2024
+01:04:10 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:04:11 [INFO]   Guardado en Neo4j correctamente.
+01:04:11 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_238.txt
+01:04:12 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:04:36 [INFO]   Nodos extraídos    : 1
+01:04:36 [INFO]   Relaciones extraídas: 2
+01:04:36 [INFO]     [Articulo] Art_238_RG_15_2024
+01:04:36 [INFO]     Art_238_RG_15_2024 -[MENCIONA]-> SociedadDeResponsabilidadLimitada
+01:04:36 [INFO]     Art_238_RG_15_2024 -[MENCIONA]-> SociedadPorAcciones
+01:04:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:04:39 [INFO]   Guardado en Neo4j correctamente.
+01:04:39 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_239.txt
+01:04:40 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:04:59 [INFO]   Nodos extraídos    : 1
+01:04:59 [INFO]   Relaciones extraídas: 0
+01:04:59 [INFO]     [Articulo] Art_239_RG_15_2024
+01:04:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:05:01 [INFO]   Guardado en Neo4j correctamente.
+01:05:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_24.txt
+01:05:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:05:18 [INFO]   Nodos extraídos    : 1
+01:05:18 [INFO]   Relaciones extraídas: 0
+01:05:18 [INFO]     [Articulo] Art_24_RG_15_2024
+01:05:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:05:21 [INFO]   Guardado en Neo4j correctamente.
+01:05:21 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_240.txt
+01:05:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:05:41 [INFO]   Nodos extraídos    : 1
+01:05:41 [INFO]   Relaciones extraídas: 0
+01:05:41 [INFO]     [Articulo] Art_240_RG_15_2024
+01:05:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:05:44 [INFO]   Guardado en Neo4j correctamente.
+01:05:44 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_241.txt
+01:05:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:06:05 [INFO]   Nodos extraídos    : 1
+01:06:05 [INFO]   Relaciones extraídas: 1
+01:06:05 [INFO]     [Articulo] Art_241_RG_15_2024
+01:06:05 [INFO]     Art_241_RG_15_2024 -[MENCIONA]-> ComisionNacionalDeValores
+01:06:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:06:08 [INFO]   Guardado en Neo4j correctamente.
+01:06:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_242.txt
+01:06:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:06:30 [INFO]   Nodos extraídos    : 1
+01:06:30 [INFO]   Relaciones extraídas: 0
+01:06:30 [INFO]     [Articulo] Art_242_RG_15_2024
+01:06:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:06:32 [INFO]   Guardado en Neo4j correctamente.
+01:06:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_243.txt
+01:06:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:06:53 [INFO]   Nodos extraídos    : 1
+01:06:53 [INFO]   Relaciones extraídas: 1
+01:06:53 [INFO]     [Articulo] Art_243_RG_15_2024
+01:06:53 [INFO]     Art_243_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+01:06:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:06:56 [INFO]   Guardado en Neo4j correctamente.
+01:06:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_244.txt
+01:06:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:07:25 [INFO]   Nodos extraídos    : 1
+01:07:25 [INFO]   Relaciones extraídas: 0
+01:07:25 [INFO]     [Articulo] Art_244_RG_15_2024
+01:07:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:07:28 [INFO]   Guardado en Neo4j correctamente.
+01:07:28 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_245.txt
+01:07:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:08:06 [INFO]   Nodos extraídos    : 1
+01:08:06 [INFO]   Relaciones extraídas: 2
+01:08:06 [INFO]     [Articulo] Art_245_RG_15_2024
+01:08:06 [INFO]     Art_245_RG_15_2024 -[MENCIONA]-> ComisionNacionalDeValores
+01:08:06 [INFO]     Art_245_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+01:08:07 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:08:09 [INFO]   Guardado en Neo4j correctamente.
+01:08:09 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_246.txt
+01:08:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:08:25 [INFO]   Nodos extraídos    : 1
+01:08:25 [INFO]   Relaciones extraídas: 0
+01:08:25 [INFO]     [Articulo] Art_246_RG_15_2024
+01:08:26 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:08:28 [INFO]   Guardado en Neo4j correctamente.
+01:08:28 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_247.txt
+01:08:28 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:08:44 [INFO]   Nodos extraídos    : 1
+01:08:44 [INFO]   Relaciones extraídas: 0
+01:08:44 [INFO]     [Articulo] Art_247_RG_15_2024
+01:08:45 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:08:47 [INFO]   Guardado en Neo4j correctamente.
+01:08:47 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_248.txt
+01:08:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:09:08 [INFO]   Nodos extraídos    : 1
+01:09:08 [INFO]   Relaciones extraídas: 1
+01:09:08 [INFO]     [Articulo] Art_248_RG_15_2024
+01:09:08 [INFO]     Art_248_RG_15_2024 -[APLICA_SUPLETORIAMENTE]-> InspeccionGeneralDeJusticia
+01:09:09 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:09:11 [INFO]   Guardado en Neo4j correctamente.
+01:09:11 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_249.txt
+01:09:11 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:09:34 [INFO]   Nodos extraídos    : 1
+01:09:34 [INFO]   Relaciones extraídas: 0
+01:09:34 [INFO]     [Articulo] Art_249_RG_15_2024
+01:09:35 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:09:37 [INFO]   Guardado en Neo4j correctamente.
+01:09:37 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_25.txt
+01:09:37 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:09:53 [INFO]   Nodos extraídos    : 1
+01:09:53 [INFO]   Relaciones extraídas: 0
+01:09:53 [INFO]     [Articulo] Art_25_RG_15_2024
+01:09:54 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:09:56 [INFO]   Guardado en Neo4j correctamente.
+01:09:56 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_250.txt
+01:09:56 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:10:22 [INFO]   Nodos extraídos    : 1
+01:10:22 [INFO]   Relaciones extraídas: 0
+01:10:22 [INFO]     [Articulo] Art_250_RG_15_2024
+01:10:22 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:10:24 [INFO]   Guardado en Neo4j correctamente.
+01:10:24 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_251.txt
+01:10:24 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:10:48 [INFO]   Nodos extraídos    : 1
+01:10:48 [INFO]   Relaciones extraídas: 0
+01:10:48 [INFO]     [Articulo] Art_251_RG_15_2024
+01:10:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:10:50 [INFO]   Guardado en Neo4j correctamente.
+01:10:50 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_252.txt
+01:10:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:11:19 [INFO]   Nodos extraídos    : 1
+01:11:19 [INFO]   Relaciones extraídas: 1
+01:11:19 [INFO]     [Articulo] Art_252_RG_15_2024
+01:11:19 [INFO]     Art_252_RG_15_2024 -[MENCIONA]-> INSPECCION_GENERAL_DE_JUSTICIA
+01:11:20 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:11:22 [INFO]   Guardado en Neo4j correctamente.
+01:11:22 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_253.txt
+01:11:22 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:11:50 [INFO]   Nodos extraídos    : 1
+01:11:50 [INFO]   Relaciones extraídas: 1
+01:11:50 [INFO]     [Articulo] Art_253_RG_15_2024
+01:11:50 [INFO]     Art_253_RG_15_2024 -[REGULA]-> SociedadAnonima
+01:11:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:11:53 [INFO]   Guardado en Neo4j correctamente.
+01:11:54 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_254.txt
+01:11:54 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:12:12 [INFO]   Nodos extraídos    : 1
+01:12:12 [INFO]   Relaciones extraídas: 0
+01:12:12 [INFO]     [Articulo] Art_254_RG_15_2024
+01:12:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:12:15 [INFO]   Guardado en Neo4j correctamente.
+01:12:15 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_255.txt
+01:12:15 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:12:30 [INFO]   Nodos extraídos    : 1
+01:12:30 [INFO]   Relaciones extraídas: 0
+01:12:30 [INFO]     [Articulo] Art_255_RG_15_2024
+01:12:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:12:32 [INFO]   Guardado en Neo4j correctamente.
+01:12:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_256.txt
+01:12:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:12:50 [INFO]   Nodos extraídos    : 1
+01:12:50 [INFO]   Relaciones extraídas: 0
+01:12:50 [INFO]     [Articulo] Art_256_RG_15_2024
+01:12:51 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:12:53 [INFO]   Guardado en Neo4j correctamente.
+01:12:53 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_257.txt
+01:12:53 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:13:12 [INFO]   Nodos extraídos    : 1
+01:13:12 [INFO]   Relaciones extraídas: 0
+01:13:12 [INFO]     [Articulo] Art_257_RG_15_2024
+01:13:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:13:15 [INFO]   Guardado en Neo4j correctamente.
+01:13:15 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_258.txt
+01:13:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:13:35 [INFO]   Nodos extraídos    : 1
+01:13:35 [INFO]   Relaciones extraídas: 0
+01:13:35 [INFO]     [Articulo] Art_258_RG_15_2024
+01:13:37 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:13:38 [INFO]   Guardado en Neo4j correctamente.
+01:13:38 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_259.txt
+01:13:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:13:57 [INFO]   Nodos extraídos    : 1
+01:13:57 [INFO]   Relaciones extraídas: 0
+01:13:57 [INFO]     [Articulo] Art_259_RG_15_2024
+01:13:58 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:13:59 [INFO]   Guardado en Neo4j correctamente.
+01:14:00 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_26.txt
+01:14:00 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:14:20 [INFO]   Nodos extraídos    : 1
+01:14:20 [INFO]   Relaciones extraídas: 0
+01:14:20 [INFO]     [Articulo] Art_26_RG_15_2024
+01:14:21 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:14:22 [INFO]   Guardado en Neo4j correctamente.
+01:14:23 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_260.txt
+01:14:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:14:40 [INFO]   Nodos extraídos    : 1
+01:14:40 [INFO]   Relaciones extraídas: 1
+01:14:40 [INFO]     [Articulo] Art_260_RG_15_2024
+01:14:40 [INFO]     Art_260_RG_15_2024 -[ESTABLECE_REQUISITOS_DE]-> InspectorGeneral
+01:14:41 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:14:43 [INFO]   Guardado en Neo4j correctamente.
+01:14:43 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_261.txt
+01:14:43 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:15:02 [INFO]   Nodos extraídos    : 1
+01:15:02 [INFO]   Relaciones extraídas: 0
+01:15:02 [INFO]     [Articulo] Art_261_RG_15_2024
+01:15:03 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:15:05 [INFO]   Guardado en Neo4j correctamente.
+01:15:05 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_262.txt
+01:15:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:15:29 [INFO]   Nodos extraídos    : 1
+01:15:29 [INFO]   Relaciones extraídas: 1
+01:15:29 [INFO]     [Articulo] Art_262_RG_15_2024
+01:15:29 [INFO]     Art_262_RG_15_2024 -[FISCALIZA]-> InspeccionGeneralDeJusticia
+01:15:30 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:15:32 [INFO]   Guardado en Neo4j correctamente.
+01:15:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_263.txt
+01:15:32 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:15:47 [INFO]   Nodos extraídos    : 1
+01:15:47 [INFO]   Relaciones extraídas: 0
+01:15:47 [INFO]     [Articulo] Art_263_RG_15_2024
+01:15:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:15:55 [INFO]   Guardado en Neo4j correctamente.
+01:15:55 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_264.txt
+01:15:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:16:10 [INFO]   Nodos extraídos    : 1
+01:16:10 [INFO]   Relaciones extraídas: 0
+01:16:10 [INFO]     [Articulo] Art_264_RG_15_2024
+01:16:11 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:16:13 [INFO]   Guardado en Neo4j correctamente.
+01:16:13 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_265.txt
+01:16:13 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:16:43 [INFO]   Nodos extraídos    : 1
+01:16:43 [INFO]   Relaciones extraídas: 5
+01:16:43 [INFO]     [Articulo] Art_265_RG_15_2024
+01:16:43 [INFO]     Art_265_RG_15_2024 -[REGULA]-> AsociacionCivil
+01:16:43 [INFO]     Art_265_RG_15_2024 -[REGULA]-> Fundacion
+01:16:43 [INFO]     Art_265_RG_15_2024 -[MENCIONA]-> AsociacionCivil
+01:16:43 [INFO]     Art_265_RG_15_2024 -[MENCIONA]-> Fundacion
+01:16:43 [INFO]     Art_265_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+01:16:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:16:47 [INFO]   Guardado en Neo4j correctamente.
+01:16:47 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_266.txt
+01:16:48 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:17:16 [INFO]   Nodos extraídos    : 1
+01:17:16 [INFO]   Relaciones extraídas: 3
+01:17:16 [INFO]     [Articulo] Art_266_RG_15_2024
+01:17:16 [INFO]     Art_266_RG_15_2024 -[MENCIONA]-> SociedadAnonima
+01:17:16 [INFO]     Art_266_RG_15_2024 -[MENCIONA]-> AsociacionCivil
+01:17:16 [INFO]     Art_266_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+01:17:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:17:19 [INFO]   Guardado en Neo4j correctamente.
+01:17:19 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_267.txt
+01:17:19 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:17:44 [INFO]   Nodos extraídos    : 1
+01:17:44 [INFO]   Relaciones extraídas: 0
+01:17:44 [INFO]     [Articulo] Art_267_RG_15_2024
+01:17:44 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:17:46 [INFO]   Guardado en Neo4j correctamente.
+01:17:46 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_268.txt
+01:17:46 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:18:13 [INFO]   Nodos extraídos    : 1
+01:18:13 [INFO]   Relaciones extraídas: 1
+01:18:13 [INFO]     [Articulo] Art_268_RG_15_2024
+01:18:13 [INFO]     Art_268_RG_15_2024 -[REGULA]-> AsociacionCivil
+01:18:14 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:18:16 [INFO]   Guardado en Neo4j correctamente.
+01:18:16 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_269.txt
+01:18:16 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:18:44 [INFO]   Nodos extraídos    : 1
+01:18:44 [INFO]   Relaciones extraídas: 2
+01:18:44 [INFO]     [Articulo] Art_269_RG_15_2024
+01:18:44 [INFO]     Art_269_RG_15_2024 -[MENCIONA]-> SociedadAnonima
+01:18:44 [INFO]     Art_269_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+01:18:45 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:18:47 [INFO]   Guardado en Neo4j correctamente.
+01:18:47 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_27.txt
+01:18:47 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:19:15 [INFO]   Nodos extraídos    : 1
+01:19:15 [INFO]   Relaciones extraídas: 3
+01:19:15 [INFO]     [Articulo] Art_27_RG_15_2024
+01:19:15 [INFO]     Art_27_RG_15_2024 -[MENCIONA]-> Director
+01:19:15 [INFO]     Art_27_RG_15_2024 -[MENCIONA]-> Gerente
+01:19:15 [INFO]     Art_27_RG_15_2024 -[MENCIONA]-> Sindico
+01:19:16 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:19:18 [INFO]   Guardado en Neo4j correctamente.
+01:19:18 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_270.txt
+01:19:18 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:19:41 [INFO]   Nodos extraídos    : 1
+01:19:41 [INFO]   Relaciones extraídas: 1
+01:19:41 [INFO]     [Articulo] Art_270_RG_15_2024
+01:19:41 [INFO]     Art_270_RG_15_2024 -[REGULA]-> Fundacion
+01:19:42 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:19:44 [INFO]   Guardado en Neo4j correctamente.
+01:19:44 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_271.txt
+01:19:44 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:20:05 [INFO]   Nodos extraídos    : 1
+01:20:05 [INFO]   Relaciones extraídas: 0
+01:20:05 [INFO]     [Articulo] Art_271_RG_15_2024
+01:20:06 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:20:08 [INFO]   Guardado en Neo4j correctamente.
+01:20:08 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_272.txt
+01:20:09 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:20:30 [INFO]   Nodos extraídos    : 1
+01:20:30 [INFO]   Relaciones extraídas: 0
+01:20:30 [INFO]     [Articulo] Art_272_RG_15_2024
+01:20:31 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:20:32 [INFO]   Guardado en Neo4j correctamente.
+01:20:32 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_273.txt
+01:20:33 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:20:53 [INFO]   Nodos extraídos    : 1
+01:20:53 [INFO]   Relaciones extraídas: 0
+01:20:53 [INFO]     [Articulo] Art_273_RG_15_2024
+01:20:53 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:20:55 [INFO]   Guardado en Neo4j correctamente.
+01:20:55 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_274.txt
+01:20:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:21:22 [INFO]   Nodos extraídos    : 1
+01:21:22 [INFO]   Relaciones extraídas: 1
+01:21:22 [INFO]     [Articulo] Art_274_RG_15_2024
+01:21:22 [INFO]     Art_274_RG_15_2024 -[MENCIONA]-> InspeccionGeneralDeJusticia
+01:21:23 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:21:25 [INFO]   Guardado en Neo4j correctamente.
+01:21:25 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_275.txt
+01:21:25 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:21:42 [INFO]   Nodos extraídos    : 1
+01:21:42 [INFO]   Relaciones extraídas: 0
+01:21:42 [INFO]     [Articulo] Art_275_RG_15_2024
+01:21:43 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:21:45 [INFO]   Guardado en Neo4j correctamente.
+01:21:45 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_276.txt
+01:21:45 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:22:03 [INFO]   Nodos extraídos    : 1
+01:22:03 [INFO]   Relaciones extraídas: 0
+01:22:03 [INFO]     [Articulo] Art_276_RG_15_2024
+01:22:05 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:22:06 [INFO]   Guardado en Neo4j correctamente.
+01:22:06 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_277.txt
+01:22:07 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:22:25 [INFO]   Nodos extraídos    : 1
+01:22:25 [INFO]   Relaciones extraídas: 0
+01:22:25 [INFO]     [Articulo] Art_277_RG_15_2024
+01:22:25 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:22:27 [INFO]   Guardado en Neo4j correctamente.
+01:22:27 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_278.txt
+01:22:27 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:22:51 [INFO]   Nodos extraídos    : 1
+01:22:51 [INFO]   Relaciones extraídas: 3
+01:22:51 [INFO]     [Articulo] Art_278_RG_15_2024
+01:22:51 [INFO]     Art_278_RG_15_2024 -[REGULA]-> AsociacionCivil
+01:22:51 [INFO]     Art_278_RG_15_2024 -[REGULA]-> Fundacion
+01:22:51 [INFO]     Art_278_RG_15_2024 -[APLICA_SUPLETORIAMENTE]-> InspeccionGeneralDeJusticia
+01:22:52 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+01:22:54 [INFO]   Guardado en Neo4j correctamente.
+01:22:54 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/articulos_RG15-2024/Articulo_279.txt
+01:22:55 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+01:23:12 [INFO]   Nodos extraídos    : 1
+01:23:12 [INFO]   Relaciones extraídas: 0
+01:23:12 [INFO]     [Articulo] Art_279_RG_15_2024
+01:23:13 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"

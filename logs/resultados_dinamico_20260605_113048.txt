@@ -1,0 +1,1116 @@
+================================================================================
+PREGUNTA 1 de 20:
+¿Cuáles son los requisitos del estatuto de una Sociedad Anónima según la LSC y qué documentación exige la RG IGJ 15/2024 para inscribir su constitución ante la IGJ?
+
+RESPUESTA:
+Según la Ley General de Sociedades (LGS) y la Resolución General IGJ 15/2024, los requisitos del estatuto de una Sociedad Anónima (SA) y la documentación exigida para su inscripción ante la Inspección General de Justicia (IGJ) son los siguientes:
+
+**Requisitos del Estatuto de una Sociedad Anónima según la LGS:**
+
+El instrumento constitutivo de una Sociedad Anónima debe contener, además de los requisitos generales del artículo 11 de la LGS, los siguientes:
+
+*   **Capital Social:**
+    *   La naturaleza, clases, modalidades de emisión y demás características de las acciones.
+    *   En su caso, el régimen de aumento del capital social (Art. 166, inc. 1º, LGS).
+*   **Suscripción e Integración del Capital:**
+    *   La suscripción del capital.
+    *   El monto y la forma de integración.
+    *   Si corresponde, el plazo para el pago del saldo adeudado, el cual no puede exceder de dos (2) años (Art. 166, inc. 2º, LGS).
+*   **Elección de Directores y Síndicos:**
+    *   La elección de los integrantes de los órganos de administración y de fiscalización.
+    *   La fijación del término de duración en los cargos (Art. 166, inc. 3º, LGS).
+
+Adicionalmente, el estatuto de una Sociedad Anónima debe establecer:
+
+*   **Garantía de los Directores:** La garantía que deberán prestar los directores. El estatuto no puede suprimir ni restringir la revocabilidad en el cargo. La mayoría absoluta de los directores deben tener domicilio real en la República. Todos los directores deberán constituir un domicilio especial en la República (Art. 256, LGS). La Resolución General IGJ 15/2024 (Art. 70) especifica que la garantía podrá consistir en depósito de fondos, bonos, títulos, imposiciones a plazo fijo, avales de terceros, seguros de caución o de responsabilidad civil, o cualquier otra forma dispuesta por el estatuto o contrato social. El costo será soportado por cada director o gerente. Estas estipulaciones no se aplican a los administradores que ejerzan la representación del Estado nacional, provincial o municipal o de cualquiera de sus reparticiones.
+*   **Forma de los Títulos y Acciones Escriturales:** El estatuto social establecerá las formalidades de las acciones y de los certificados provisionales. Son menciones esenciales: la denominación de la sociedad, domicilio, fecha y lugar de constitución, duración e inscripción; el capital social; el número, valor nominal y clase de acciones que representa el título y derechos que comporta; y en los certificados provisionales, la anotación de las integraciones que se efectúen. Las variaciones de estas menciones, excepto las relativas al capital, deberán hacerse constar en los títulos (Art. 211, LGS). El estatuto puede autorizar que todas las acciones o algunas de sus clases no se representen en títulos, en cuyo caso deben inscribirse en cuentas llevadas a nombre de sus titulares por la sociedad emisora en un registro de acciones escriturales o por bancos comerciales o de inversión o cajas de valores autorizados (Art. 208, LGS).
+*   **Elección por Acumulación de Votos:** El estatuto no puede derogar el derecho de los accionistas a elegir hasta un tercio (1/3) de las vacantes a llenar en el directorio por el sistema de voto acumulativo, ni reglamentarlo de manera que dificulte su ejercicio. Se excluye en el supuesto previsto en el artículo 262 de la LGS. El directorio no podrá renovarse en forma parcial o escalonada si de tal manera se impide el ejercicio del voto acumulativo (Art. 263, LGS).
+*   **Elección por Categoría:** Cuando existan diversas clases de acciones, el estatuto puede prever que cada una de ellas elija uno o más directores, a cuyo efecto reglamentará la elección. La remoción se hará por la asamblea de accionistas de la clase, salvo los casos de los artículos 264 y 276 de la LGS (Art. 262, LGS).
+
+**Documentación Exigida por la RG IGJ 15/2024 para Inscribir la Constitución de una Sociedad Anónima ante la IGJ:**
+
+La Resolución General IGJ 15/2024, en su artículo 345 bis, detalla la documentación necesaria para la inscripción de la transformación de una asociación civil en sociedad anónima. Si bien la pregunta se refiere a la constitución, los requisitos generales para la inscripción de una SA ante la IGJ se rigen por la LGS y otras normativas aplicables. Para la inscripción de la constitución de una SA, se deben cumplir los siguientes pasos y presentar la documentación correspondiente:
+
+1.  **Instrumento Constitutivo:** El contrato constitutivo (que en el caso de SA es el estatuto) debe contener los requisitos del artículo 11 de la LGS y los especificados en el artículo 166 de la LGS (detallados anteriormente). Las firmas de los otorgantes deben ser autenticadas por escribano público u otro funcionario competente (Art. 170, LGS, aplicable por analogía a la constitución por acto único).
+2.  **Trámite Administrativo ante la Autoridad de Contralor:** El contrato constitutivo será presentado a la autoridad de contralor (IGJ) para verificar el cumplimiento de los requisitos legales y fiscales (Art. 167, LGS).
+3.  **Inscripción en el Registro Público:** Conformada la constitución, el expediente pasará al Juez de Registro, quien dispondrá la inscripción si la juzgara procedente (Art. 167, LGS).
+4.  **Reglamento (si aplica):** Si el estatuto previese un reglamento, éste se inscribirá con idénticos requisitos (Art. 167, LGS).
+5.  **Autorizados para la Constitución:** Si no hubiere mandatarios especiales designados para realizar los trámites integrantes de la constitución de la sociedad, se entiende que los representantes estatutarios se encuentran autorizados para realizarlos (Art. 167, LGS).
+
+**Documentación Específica para la Transformación de Asociación Civil en Sociedad Anónima (según Art. 345 bis de la RG IGJ 15/2024, que puede dar luces sobre requisitos generales):**
+
+Aunque el artículo 345 bis se refiere a la transformación, algunos de sus requisitos son indicativos de la rigurosidad en la presentación de documentación para SA:
+
+*   **Testimonio de la escritura pública del acuerdo de transformación:** Debe contener:
+    *   Acta de asamblea extraordinaria de asociados aprobando la transformación.
+    *   Estatuto de la SA adoptado, con nexo de continuidad jurídica.
+    *   Datos personales de los asociados devenidos accionistas y nuevos accionistas, cuadro de suscripción de acciones, e integrantes de órganos de administración y fiscalización.
+    *   Constancia de constitución de garantía por los directores (Art. 256, LGS).
+    *   Listado de asociados renunciantes o manifestación de inexistencia.
+*   **Balance especial de transformación:** Con informe de auditoría conteniendo opinión. Debe detallar la cuenta de integración por socio y rubro en el capítulo "Patrimonio Neto" si hay incorporación de socios. Se deben utilizar normas contables aplicables a balances de ejercicio para la medición de bienes.
+*   **Dictamen contable:** Indicando libros rubricados y folios donde se halle transcripto el balance.
+*   **Inventario resumido:** Certificado por contador público e informe sobre origen, contenido, criterio de valuación y justificación de cada rubro principal. No es necesario si el balance especial cumple con normas de exposición de estados contables de ejercicio.
+*   **Constancia de publicación:** Prescripta por el artículo 77, inciso 4), de la LGS.
+*   **Dictamen de precalificación:** Firmado por escribano público, expedido sobre el cumplimiento de lo requerido por el artículo 405, último párrafo, de la RG IGJ 15/2024.
+
+**Capital Social en la Transformación (según Art. 345 bis de la RG IGJ 15/2024):**
+
+El monto del capital social debe ser igual al patrimonio neto resultante del balance especial de transformación, adicionado en su caso con el valor del aporte de los socios que se incorporan. Puede fijarse una cifra inferior si cumple con el capital mínimo requerido para SA, imputándose la diferencia a una reserva especial regida por el tercer párrafo in fine del artículo 202 de la LGS (Art. 202, LGS).
+
+**Publicación (según Art. 77, LGS):**
+
+La publicación prescripta por el artículo 77, inciso 4), de la LGS, debe contener:
+a) Fecha de la resolución social que aprobó la transformación.
+b) Fecha del instrumento de transformación.
+c) Razón social o denominación social anterior y la adoptada, debiendo de ésta resultar indubitable su identidad con la sociedad que se transforma.
+d) Los socios que se retiran o incorporan y el capital que representan.
+e) Cuando la transformación afecte los datos a que se refiere el artículo 10 apartado a), puntos 4 a 10, la publicación deberá determinarlo.
+
+**Transferencia de Libros (según Art. 405, RG IGJ 15/2024):**
+
+En caso de transformación, se requerirá la transferencia de libros rubricados mediante la emisión de nuevas obleas que consignarán dichas variaciones. El escribano interviniente deberá presentar el trámite a través de la plataforma TAD y tener a la vista la documentación original respaldatoria, consignando en el formulario la denominación y/o tipo societario anterior, número correlativo de la entidad, C.U.I.T., datos de rúbrica de los libros a transferir, indicando hasta qué página o foja se encuentran utilizados. La solicitud de obleas de transferencia debe comprender la totalidad de los libros en uso o en blanco y efectuarse en forma conjunta con el trámite de inscripción de la transformación, acreditando su inscripción con carácter previo al otorgamiento de la nueva rúbrica. Si los libros estuvieran utilizados en su totalidad, deberá presentarse conjuntamente la solicitud de rúbrica de los libros siguientes (Art. 405, RG IGJ 15/2024).
+
+================================================================================
+PREGUNTA 2 de 20:
+¿Qué régimen especial prevé la LSC para la Sociedad Anónima Unipersonal (SAU) y en qué difiere el trámite de constitución ante la IGJ del de una SA pluripersonal según la RG IGJ 15/2024?
+
+RESPUESTA:
+El contexto proporcionado no contiene información sobre el régimen especial para la Sociedad Anónima Unipersonal (SAU) ni sobre el trámite de constitución ante la IGJ en comparación con una SA pluripersonal según la RG IGJ 15/2024.
+
+Sin embargo, el contexto sí menciona aspectos relacionados con la Sociedad Anónima Unipersonal en los siguientes artículos:
+
+*   **Artículo 94 bis de la Ley General de Sociedades:** Establece que la reducción a uno del número de socios no es causal de disolución. Impone la transformación de pleno derecho de las sociedades en comandita, simple o por acciones, y de capital e industria, en sociedad anónima unipersonal, si no se decidiera otra solución en el término de TRES (3) meses.
+
+*   **Artículo 164 de la Ley General de Sociedades:** Indica que la denominación social de una sociedad anónima unipersonal debe contener la expresión "sociedad anónima unipersonal", su abreviatura o la sigla S.A.U. La omisión de esta mención hará responsables ilimitada y solidariamente a los representantes de la sociedad juntamente con ésta, por los actos que celebren en esas condiciones.
+
+El resto de los artículos proporcionados se refieren a otros tipos societarios (SAS, sociedades colectivas) o a aspectos generales de las sociedades anónimas que no son específicos de la SAU en el contexto de su constitución o régimen especial.
+
+================================================================================
+PREGUNTA 3 de 20:
+¿Qué requisitos e inhabilidades prevé la LSC para los directores de una SA y qué documentación debe presentarse ante la IGJ para inscribir la designación de nuevas autoridades según la RG IGJ 15/2024?
+
+RESPUESTA:
+A continuación, se detallan los requisitos e inhabilidades para directores de una Sociedad Anónima (SA) según la Ley General de Sociedades (LGS) y la documentación necesaria para inscribir la designación de nuevas autoridades ante la Inspección General de Justicia (IGJ) según la Resolución General IGJ 15/2024.
+
+**Requisitos e Inhabilidades para Directores de una SA según la LGS:**
+
+*   **Calidad de Accionista:** No es obligatoria la calidad de accionista para ser director (Artículo 256, LGS).
+*   **Garantía:** El estatuto establecerá la garantía que deberá prestar el director (Artículo 256, LGS).
+*   **Domicilio Real en la República:** La mayoría absoluta de los directores deben tener domicilio real en la República Argentina (Artículo 256, LGS).
+*   **Domicilio Especial:** Todos los directores deberán constituir un domicilio especial en la República Argentina, donde serán válidas las notificaciones que se les efectúen con motivo del ejercicio de sus funciones, incluyendo las relativas a la acción de responsabilidad (Artículo 256, LGS).
+*   **Reelección y Revocabilidad:** El director es reelegible y su designación es revocable exclusivamente por la asamblea, incluso en el caso del Artículo 281, inciso d) (Artículo 256, LGS). El estatuto no puede suprimir ni restringir la revocabilidad en el cargo (Artículo 256, LGS).
+*   **Prohibiciones e Incompatibilidades para ser Director (Artículo 264, LGS):**
+    *   Quienes no pueden ejercer el comercio.
+    *   Los fallidos por quiebra culpable o fraudulenta hasta diez (10) años después de su rehabilitación, los fallidos por quiebra casual o los concursados hasta cinco (5) años después de su rehabilitación.
+    *   Los directores y administradores de sociedad cuya conducta se califique de culpable o fraudulenta, hasta diez (10) años después de su rehabilitación.
+    *   Los condenados con accesoria de inhabilitación para ejercer cargos públicos.
+    *   Los condenados por hurto, robo, defraudación, cohecho, emisión de cheques sin fondos y delitos contra la fe pública.
+    *   Los condenados por delitos cometidos en la constitución, funcionamiento y liquidación de sociedades. En todos los casos hasta después de diez (10) años de cumplida la condena.
+    *   Los funcionarios de la administración pública cuyo desempeño se relacione con el objeto de la sociedad, hasta dos (2) años del cese de sus funciones.
+*   **Mal Desempeño del Cargo:** Los directores responden ilimitada y solidariamente hacia la sociedad, los accionistas y los terceros, por el mal desempeño de su cargo, así como por la violación de la ley, el estatuto o el reglamento y por cualquier otro daño producido por dolo, abuso de facultades o culpa grave (Artículo 274, LGS).
+*   **Actividades en Competencia:** El director no puede participar por cuenta propia o de terceros, en actividades en competencia con la sociedad, salvo autorización expresa de la asamblea, so pena de incurrir en la responsabilidad del Artículo 59 (Artículo 273, LGS).
+*   **Interés Contrario:** Cuando el director tuviere un interés contrario al de la sociedad, deberá hacerlo saber al directorio y a los síndicos y abstenerse de intervenir en la deliberación, so pena de incurrir en la responsabilidad del Artículo 59 (Artículo 272, LGS).
+*   **Contratación con la Sociedad:** El director puede celebrar con la sociedad los contratos que sean de la actividad en que éste opere y siempre que se conciertan en las condiciones del mercado. Los contratos que no reúnan los requisitos del párrafo anterior sólo podrán celebrarse previa aprobación del directorio o conformidad de la sindicatura si no existiese quórum. De estas operaciones deberá darse cuenta a la asamblea (Artículo 271, LGS).
+
+**Documentación a Presentar ante la IGJ para Inscribir la Designación de Nuevas Autoridades según la RG IGJ 15/2024 (Artículo 342):**
+
+Las asociaciones civiles, en los casos que se modifique la composición del órgano de administración, deberán presentar dentro de los treinta (30) días corridos de producida la modificación la siguiente documentación:
+
+1.  **Formulario de actuación.**
+2.  **Dictamen de precalificación profesional.**
+3.  **Instrumento conforme lo establecido por los incisos 1, 2 y 3 del Artículo 34 de las presentes Normas**, conteniendo la transcripción del acta de asamblea que designa las nuevas autoridades, indicándose los folios y datos de rúbrica del libro de actas pertinente. Adjunto se acompañarán copias de tamaño normal y protocolar.
+4.  **Nómina de los miembros titulares y suplentes de la comisión directiva y del órgano de fiscalización**, indicando su nombre y apellido, documento de identidad, C.U.I.T. o C.U.I.L., domicilio real, cargo y duración del mismo, la que podrá ser suscripta por el profesional dictaminante, si no surgiere del acta de asamblea que designa autoridades o del acta de comisión directiva de aceptación de cargos.
+5.  **Declaración jurada de cada uno de los miembros de la comisión directiva** mediante la cual constituyen domicilio especial y manifiestan que no se encuentran comprendidos en inhabilidades o incompatibilidades legales o reglamentarias para revestir dichas calidades, si no surgiere del acta de asamblea que designa autoridades o del acta de comisión directiva de aceptación de cargos.
+6.  **Declaraciones juradas de Personas Políticamente Expuestas de todos los cargos electos** conforme al aplicativo correspondiente (Artículo 414, RG IGJ 15/2024).
+
+**Trámite Urgente y Sanciones:**
+
+*   La presentación requerida por el Artículo 342 puede ser efectuada mediante trámite urgente, aplicándose el procedimiento regulado en el Artículo 49 de la RG IGJ 15/2024.
+*   El incumplimiento en el plazo establecido habilita la aplicación de sanciones previstas en los Artículos 12 y 14 de la Ley N° 22.315 (Artículo 12, Ley 22.315; Artículo 14, Ley 22.315).
+
+**Excepciones para Asociaciones Civiles de la Categoría I:**
+
+Las asociaciones civiles incluidas en la Categoría I presentarán una copia del acta que pretende inscribirse y de la rúbrica del libro donde aquella se encuentra volcada. Ambas deberán estar certificadas por escribano público, por funcionario público competente o por personal de la IGJ. Asimismo, se deberá presentar una declaración jurada, conforme Anexo XIV, firmada por el representante legal y certificada.
+
+No presentarán el dictamen de precalificación profesional (punto 2 del Artículo 342) siempre y cuando concurran las siguientes condiciones:
+
+1.  La designación de autoridades se produzca dentro de los plazos estatutarios.
+2.  Los administradores con mandato inmediato anterior se encuentren inscriptos, de acuerdo a lo previsto por el Artículo 343 de la RG IGJ 15/2024.
+3.  Se encuentre al día con el cumplimiento del Artículo 322 de la RG IGJ 15/2024.
+
+**Documentación Adicional Relevante:**
+
+*   **Aceptación de Cargos y Domicilios:** La aceptación del nombramiento y los domicilios real y especial del designado deben acreditarse mediante nota de éste con su firma certificada notarialmente (Artículo 105, RG IGJ 15/2024).
+*   **Personas Políticamente Expuestas (PEP):** Se requiere la presentación de declaraciones juradas de PEP conforme al aplicativo correspondiente (Artículo 414, RG IGJ 15/2024).
+*   **Cumplimiento de Inhabilidades e Incompatibilidades:** La declaración jurada debe manifestar que los miembros no se encuentran comprendidos en inhabilidades o incompatibilidades legales o reglamentarias (Artículo 342, RG IGJ 15/2024).
+*   **Integridad de los Asientos Registrales:** Se considerará cumplida la integridad de los asientos registrales cuando los miembros del órgano de administración con mandato inmediato anterior se encuentren inscriptos, o se trate de las mismas autoridades cuya inscripción se solicita, o se solicite conjuntamente la cesación de los miembros anteriores si su designación no estuviera inscripta y difieran de las autoridades cuya registración se solicita (Artículo 343, RG IGJ 15/2024).
+*   **Dictamen de Precalificación:** Debe expedirse sobre la composición actual del directorio y si sus integrantes se encuentran inscriptos, indicando los datos de inscripción (Artículo 343, RG IGJ 15/2024).
+
+================================================================================
+PREGUNTA 4 de 20:
+¿Qué establece la LSC sobre la celebración y el quórum de asambleas ordinarias de una SA y qué obligaciones impone la RG IGJ 15/2024 respecto de la presentación del acta de asamblea ante la IGJ?
+
+RESPUESTA:
+En relación a las asambleas ordinarias de una Sociedad Anónima (SA) en Argentina, la Ley General de Sociedades (LGS) establece lo siguiente:
+
+**Celebración y Quórum de Asambleas Ordinarias (Art. 243 LGS):**
+
+*   **Primera Convocatoria:** Para la constitución de la asamblea ordinaria en primera convocatoria, se requiere la presencia de accionistas que representen la mayoría de las acciones con derecho a voto.
+*   **Segunda Convocatoria:** En la segunda convocatoria, la asamblea se considerará constituida cualquiera sea el número de acciones presentes.
+*   **Mayoría para Resolver:** Las resoluciones, tanto en primera como en segunda convocatoria, serán tomadas por mayoría absoluta de los votos presentes que puedan emitirse en la respectiva decisión, salvo cuando el estatuto exija un número mayor.
+
+**Convocatoria a Asambleas (Art. 236 LGS):**
+
+*   Las asambleas ordinarias y extraordinarias serán convocadas por el directorio o el síndico en los casos previstos por la ley, o cuando cualquiera de ellos lo juzgue necesario, o cuando sean requeridas por accionistas que representen por lo menos el cinco por ciento (5%) del capital social, si los estatutos no fijaran una representación menor.
+*   En el supuesto de requerimiento por accionistas, la petición deberá indicar los temas a tratar y el directorio o el síndico convocará la asamblea para que se celebre en el plazo máximo de cuarenta (40) días de recibida la solicitud.
+*   Si el directorio o el síndico omiten convocar la asamblea, la convocatoria podrá ser realizada por la autoridad de contralor o judicialmente.
+
+**Publicidad de la Convocatoria (Art. 237 LGS):**
+
+*   Las asambleas serán convocadas mediante publicaciones durante cinco (5) días, con una antelación de por lo menos diez (10) días y no más de treinta (30) días, en el diario de publicaciones legales.
+*   Adicionalmente, para las sociedades a que se refiere el artículo 299 de la LGS, la convocatoria deberá realizarse en uno de los diarios de mayor circulación general de la República.
+*   La publicación deberá mencionar el carácter de la asamblea, fecha, hora y lugar de reunión, orden del día, y los recaudos especiales exigidos por el estatuto para la concurrencia de los accionistas.
+*   **Asamblea en Segunda Convocatoria:** La asamblea en segunda convocatoria, por haber fracasado la primera, deberá celebrarse dentro de los treinta (30) días siguientes, y las publicaciones se harán por tres (3) días con ocho (8) días de anticipación como mínimo.
+*   El estatuto puede autorizar ambas convocatorias simultáneamente, excepto para las sociedades que hacen oferta pública de sus acciones, en las que esta facultad queda limitada a la asamblea ordinaria.
+*   En el supuesto de convocatorias simultáneas, si la asamblea fuere citada para celebrarse el mismo día, deberá serlo con un intervalo no inferior a una (1) hora de la fijada para la primera.
+*   **Asamblea Unánime:** La asamblea podrá celebrarse sin publicación de la convocatoria cuando se reúnan accionistas que representen la totalidad del capital social y las decisiones que se adopten sean por unanimidad de las acciones con derecho a voto.
+
+**Respecto a la Resolución General IGJ N° 15/2024:**
+
+El contexto legal proporcionado **no contiene información** sobre la Resolución General IGJ N° 15/2024 ni sobre las obligaciones que impone respecto a la presentación del acta de asamblea ante la IGJ. Por lo tanto, no es posible responder a esa parte de la pregunta basándose únicamente en el material provisto.
+
+================================================================================
+PREGUNTA 5 de 20:
+¿Cuáles son los requisitos de integración del capital social en la constitución de una SA según la LSC y cómo debe acreditarse ese aporte ante la IGJ conforme la RG IGJ 15/2024?
+
+RESPUESTA:
+En la constitución de una Sociedad Anónima (SA) en Argentina, los requisitos de integración del capital social y su acreditación ante la Inspección General de Justicia (IGJ) se rigen por la Ley General de Sociedades (LGS) y la Resolución General IGJ 15/2024.
+
+**Requisitos de Integración del Capital Social según la LGS:**
+
+*   **Integración mínima en efectivo:** La integración en dinero efectivo no podrá ser menor al VEINTICINCO POR CIENTO (25%) de la suscripción. Su cumplimiento se justifica al tiempo de ordenarse la inscripción con el comprobante de su depósito en un banco oficial, y una vez cumplida la inscripción, el capital queda liberado. Esto se establece en el **Artículo 187 de la Ley General de Sociedades**.
+*   **Sociedad Anónima Unipersonal:** En el caso de una Sociedad Anónima Unipersonal, el capital social deberá estar totalmente integrado. Esto también se menciona en el **Artículo 187 de la Ley General de Sociedades**.
+*   **Aportes no dinerarios:** Los aportes no dinerarios deben integrarse totalmente. Solo pueden consistir en obligaciones de dar y su cumplimiento se justifica al tiempo de solicitar la conformidad del **Artículo 167 de la Ley General de Sociedades**.
+*   **Suscripción íntegra:** El capital debe suscribirse íntegramente en el acto de constitución de la sociedad, según el **Artículo 149 de la Ley N° 19.550**.
+*   **Aportes en dinero (complementario al Art. 187):** Los aportes en dinero deben integrarse en un veinticinco por ciento (25%), como mínimo, y completarse en un plazo de dos (2) años. Su cumplimiento se acreditará al tiempo de ordenarse la inscripción en el Registro Público de Comercio, con el comprobante de su depósito en un banco oficial. Esto se detalla en el **Artículo 149 de la Ley N° 19.550**.
+*   **Aportes en especie (complementario al Art. 187):** Los aportes en especie deben integrarse totalmente y su valor se justificará conforme al **Artículo 51 de la Ley N° 19.550**. Si los socios optan por realizar valuación por pericia judicial, cesa la responsabilidad por la valuación que les impone el **Artículo 150 de la Ley N° 19.550**.
+*   **Contenido del instrumento constitutivo:** El capital social deberá ser expresado en moneda argentina, y se debe mencionar el aporte de cada socio. En el caso de las sociedades unipersonales, el capital deberá ser integrado totalmente en el acto constitutivo. Esto se establece en el **Artículo 11, inciso 4) de la Ley N° 19.550**.
+
+**Acreditación del Aporte ante la IGJ conforme la RG IGJ 15/2024:**
+
+La integración en efectivo del capital suscripto, en las sociedades por acciones, deberá acreditarse en la proporción legal mínima o en la que se determine en el acto constitutivo, acompañando constancia de depósito en el Banco de la Nación Argentina. Dicho importe no podrá ser menor al veinticinco por ciento (25%) de la suscripción, salvo en el supuesto de la sociedad anónima unipersonal en que el capital deberá ser integrado en su totalidad (conforme **Artículos 149, párrafo segundo y 187, párrafo primero, de la Ley N° 19.550**). Esto se especifica en el **Artículo 62 de la Resolución General IGJ 15/2024**.
+
+Asimismo, la integración podrá acreditarse de las siguientes formas, según el **Artículo 62 de la Resolución General IGJ 15/2024**:
+
+1.  **Manifestación expresa en la escritura pública:** La manifestación expresa, en la escritura pública de constitución de la sociedad, del escribano público autorizante de que, por ante él, los socios constituyentes obligados a la integración de los aportes, en cumplimiento de dicha obligación hacen entrega de los fondos correspondientes a los administradores nombrados en ese mismo acto y que éstos los reciben de conformidad y a los fines indicados. Se considerará suficiente a estos fines, el depósito o transferencia de las cantidades respectivas en una cuenta bancaria de titularidad del o de los administradores designados, lo que se acreditará exhibiendo ante el notario autorizante la constancia de depósito o transferencia respectiva.
+2.  **Entrega al escribano público autorizante:** La expresión contenida en la escritura constitutiva que dicha entrega se hace al mismo escribano público autorizante, con cargo a él de entregar los fondos a la administración social una vez inscripta la constitución de la sociedad o antes de la inscripción si así se hubiere dispuesto. De igual modo, la entrega se considerará cumplida, si los importes correspondientes son depositados o transferidos a una cuenta bancaria de titularidad del notario autorizante, cuyo reintegro se efectuará de acuerdo a cualquiera de las modalidades antes indicadas.
+3.  **Acta notarial por separado:** Acta notarial por separado en la cual consten los mismos recaudos consignados en el inciso anterior, cuando la sociedad se constituya por instrumento privado en los casos autorizados por la ley.
+
+Adicionalmente, los socios aportantes deberán, en cualquier caso, cumplir con las disposiciones vigentes dictadas por la Unidad de Información Financiera en materia de operaciones concertadas en dinero en efectivo.
+
+================================================================================
+PREGUNTA 6 de 20:
+¿Qué libros obligatorios deben llevar las SA según la LSC y cuál es el procedimiento que establece la RG IGJ 15/2024 para solicitar la rúbrica de esos libros ante la IGJ?
+
+RESPUESTA:
+Según la Ley N° 19.550 (LSC), las Sociedades Anónimas (SA) están sujetas a fiscalización de la autoridad de contralor de su domicilio durante su funcionamiento, disolución y liquidación en los casos previstos en el **Artículo 299 de la Ley N° 19.550**.
+
+El **Artículo 244 de la Resolución General IGJ 15/2024** establece los requisitos para la autorización del empleo de sistemas de registración contable en medios mecánicos, magnéticos u otros, para el llevado de los registros, conforme al **Artículo 329 del Código Civil y Comercial de la Nación**. Para ello, se debe presentar:
+
+1.  **Testimonio de escritura pública o instrumento privado original** con los recaudos del **Artículo 34, incisos 1, 2 y 3**, conteniendo la transcripción de la resolución del órgano de administración de la sociedad solicitando la autorización. Esta resolución debe incluir:
+    *   La denominación exacta de los libros rubricados que se reemplazan y los registros que se solicitan, en caso de sustitución de libros rubricados (**Art. 244, inc. 1, ap. a**).
+    *   El número de autorización que se reemplaza y los registros por los que se efectúa la presentación, en caso de sustitución de autorizaciones previas emitidas por la IGJ según el **Artículo 61 de la Ley N° 19.550** o el **Artículo 329 del Código Civil y Comercial de la Nación**. Si es sustitución parcial, se indicarán los registros que continúan manteniéndose (**Art. 244, inc. 1, ap. b**).
+    *   El sistema de soporte de archivo a utilizar (medios ópticos, mecánicos u otros) (**Art. 244, inc. 1, ap. c**).
+    *   Declaración expresa si el sistema y registros han sido utilizados previo a la intervención del Organismo, indicando fecha de comienzo de utilización (**Art. 244, inc. 1, ap. d**).
+    *   Si se solicita autorización para sistema en compact disc u otros discos ópticos, el compromiso de preservar la posibilidad de lectura de los medios de registración y/o extender en listados de papel los registros durante el período legalmente obligatorio (**Art. 244, inc. 1, ap. e**).
+    *   En caso de tercerización de archivo, la denominación del tercero proveedor, radicación de los archivos/medio de procesamiento, vigencia del contrato y políticas de seguridad (**Art. 244, inc. 1, ap. f**).
+    *   Si el sistema es de propio desarrollo, la descripción del sistema, funciones, interfaces y diagrama de módulos conforme al **Artículo 242 de estas Normas**, para permitir la verificación prevista en el **Artículo 252 de estas Normas** (**Art. 244, inc. 1, ap. g**).
+
+2.  **Piezas firmadas por el representante legal o apoderado y por contador público independiente** (con firma legalizada):
+    *   Exposición amplia y precisa del sistema de registración contable a utilizar, propósitos de la modificación, motivos y diferencias con sistemas anteriores (si aplica), denominación exacta de los registros y libros que se reemplazan (**Art. 244, inc. 2, ap. a**).
+    *   Informe técnico sobre la inalterabilidad de las registraciones, indicando software, hardware, política de contraseñas, conexiones remotas, interfaces, etc. (**Art. 244, inc. 2, ap. b**).
+    *   Metodología de generación de CD, DVD o HASH, y archivo de la documentación respaldatoria. Se requiere archivo ignífugo para los soportes (**Art. 244, inc. 2, ap. c**).
+    *   Informar el sistema y periodicidad de los registros en la numeración (**Art. 244, inc. 2, ap. d**).
+    *   Modelos en blanco por duplicado y uno ejemplificativo con: denominación social, denominación del registro/listado, domicilio legal inscripto, configurados con fecha y número de página sin determinar (**Art. 244, inc. 2, ap. e**).
+    *   Estado de actualización de libros de la sociedad (**Art. 244, inc. 2, ap. f**).
+    *   Detalle de la ubicación exacta del servidor empleado por la sociedad (**Art. 244, inc. 2, ap. g**).
+
+3.  **Dictamen de precalificación de contador público** (Informe de cumplimiento - Resolución Técnica N° 37 de la FACPCE, adoptada por el CPCECABA y sus normas complementarias):
+    *   Verificación de la situación de la sociedad en relación a los supuestos del **Artículo 94 y 299 de la Ley N° 19.550**, y cumplimiento detallado de los **artículos 242, 249, 250 y 252 de estas Normas**, quórum y mayorías del órgano de administración (**Art. 244, inc. 3, ap. a**).
+    *   En caso de sustitución de libros rubricados, informe sobre la previsión de solicitud de libros necesarios para la discontinuación inmediata una vez emitida la autorización, manteniendo la contabilidad actualizada (**Art. 244, inc. 3, ap. b**).
+    *   Radicación del archivo de la documentación respaldatoria y de los soportes (**Art. 244, inc. 3, ap. c**).
+
+**Procedimiento para la solicitud de rúbrica de libros ante la IGJ:**
+
+El procedimiento general para la individualización y rúbrica de libros se inicia ante un escribano público del registro de la Ciudad Autónoma de Buenos Aires, quien instrumentará el requerimiento mediante una foja especial de solicitud de rúbrica de libros (**Art. 9 de la Reglamentación de la Ley N° 22.315** y **Art. 395 de la RG IGJ 15/2024**).
+
+1.  **Presentación ante la IGJ:** El trámite se inicia a través del portal Trámites a Distancia (TAD), consignando los datos de identificación de la solicitud y efectuando el pago correspondiente (**Art. 396 de la RG IGJ 15/2024**).
+
+2.  **Consulta de antecedentes:** Presentada la solicitud, se consultarán las constancias de antecedentes de rúbrica y societarios (**Art. 399 de la RG IGJ 15/2024**).
+
+3.  **Vistas u observaciones:** Las vistas u observaciones se cursarán dentro de un plazo máximo de diez (10) días de promovidas las actuaciones (**Art. 399 de la RG IGJ 15/2024**).
+
+4.  **Subsanación de observaciones:** Si la solicitud es observada, el escribano interviniente tendrá un plazo de veinte (20) días a partir de la fecha de emisión de la observación para subsanarla. Si no se subsana, deberá abonarse un formulario de desarchivo (**Art. 399 de la RG IGJ 15/2024**).
+
+5.  **Archivo del trámite:** Transcurrido el plazo de seis (6) meses sin impulso del escribano, el trámite se considerará desistido. Los trámites de rúbrica se archivarán a los veinte (20) días de vencido el plazo máximo para la contestación de vistas u observaciones (**Art. 399 y 408 de la RG IGJ 15/2024**).
+
+6.  **Emisión de obleas:** De corresponder la emisión de las rúbricas, dentro de los diez (10) días se emitirá la oblea de individualización y rúbrica, que será enviada a la casilla TAD del escribano solicitante. El escribano deberá imprimirla en la foja correspondiente a la oblea de seguridad y adherirla en la página uno del libro autorizado, vinculándola con sello y firma (**Art. 399 de la RG IGJ 15/2024**).
+
+7.  **Libros parcialmente utilizados:** Si el libro está parcialmente utilizado, se indicará en el formulario y oblea la página donde se adherirá, a continuación del último acto transcripto. La utilización no deberá superar el cinco por ciento de la totalidad de páginas o folios (**Art. 399 de la RG IGJ 15/2024**).
+
+8.  **Libro continuador inmediato:** La solicitud de libro continuador inmediato es procedente si el anterior se encuentra utilizado en más del cincuenta por ciento (**Art. 399 de la RG IGJ 15/2024**).
+
+9.  **Libros con partidas similares:** Si se presume que libros anteriores o más libros rubricados han sido utilizados para volcar las mismas partidas o asientos, se requerirá una certificación contable. La correlatividad del libro autorizado se determinará sumando los de aquellos en los que se volcaron las mismas partidas o asientos (**Art. 399 de la RG IGJ 15/2024**).
+
+10. **Libros obligatorios y de regulación del ente:** Deben ser rubricados en un solo acto. No se autorizarán libros de tapa blanda (**Art. 399 de la RG IGJ 15/2024**).
+
+11. **Imposibilidad de presentar libros antecedentes:** Si el requirente no puede presentar los libros antecedentes por sustracción, extravío, destrucción o cualquier otra circunstancia, deberá acreditarlo mediante denuncia ante la autoridad competente efectuada por representante legal o apoderado. La denuncia, ratificación, rectificación y/o ampliación debe especificar el nombre completo del libro, número, fecha y número de rúbrica, y datos de los sujetos obligados. En caso de robo o hurto, la denuncia debe ser ante la autoridad del lugar del hecho. El escribano conservará el original de la denuncia y una copia (**Art. 401 de la RG IGJ 15/2024**).
+
+12. **Confiscación o Depósito Judicial:** En caso de confiscación por AFIP u otro ente administrativo, se adjuntará copia certificada del acta de confiscación. Si los libros están en depósito judicial, se adjuntará certificado del Juzgado o Cámara interviniente (**Art. 401 de la RG IGJ 15/2024**).
+
+13. **Antigüedad de denuncias o certificados:** Las denuncias o certificados no deben tener una antigüedad mayor a noventa (90) días. Su incumplimiento puede acarrear multas (**Art. 401 de la RG IGJ 15/2024**).
+
+**Libros obligatorios para fundaciones:**
+
+El **Artículo 295 de la Resolución General IGJ 15/2024** establece que los libros indicados en los incisos 1, 3 y 4 del **Artículo 294** son también obligatorios para las fundaciones.
+
+**Libros especiales:**
+
+El **Artículo 41 de la Resolución General IGJ 15/2024** menciona diversos libros especiales, entre ellos, los de "Sociedades por Acciones", "Sociedades de Responsabilidad Limitada", "Sociedades Constituidas en el Extranjero", "Asociaciones Civiles", "Fundaciones", entre otros. Estos libros pueden ser reemplazados por sistemas de registración informática con medidas de seguridad que garanticen inalterabilidad, verificabilidad y disponibilidad.
+
+**Situaciones especiales para la rúbrica de libros:**
+
+El **Artículo 398 de la RG IGJ 15/2024** detalla situaciones especiales, como sucursales, sociedades constituidas en el extranjero, fusión, traslado de jurisdicción, contratos asociativos y de fideicomiso, registro de warrants, fondos comunes de inversión y fideicomisos financieros, sociedades de la Sección IV del Capítulo I de la Ley N° 19.550, consorcios de propiedad horizontal, iglesias, confesiones, comunidades o entidades religiosas, y personas humanas no empresarias. Cada una de estas situaciones tiene requisitos específicos para la rúbrica de libros.
+
+**Discontinuidad de registros manuales:**
+
+Los medios de registro autorizados según el **Artículo 244** no pueden ser utilizados hasta que recaiga la autorización. Una vez otorgada, se debe discontinuar el uso de los registros manuales sustituidos dentro de los quince (15) días siguientes, acreditándolo ante la IGJ mediante copia certificada de la nota de discontinuación, un escrito del representante legal y una copia de la autorización emitida (**Art. 248 de la RG IGJ 15/2024**). La infracción a esto puede acarrear multas (**Art. 248 de la RG IGJ 15/2024**).
+
+**Condiciones para sistemas de registro con salida de impresión en soporte papel:**
+
+La impresión debe ser nítida, en papel consistente y tinta indeleble. El encabezamiento debe indicar la denominación social, nombre del registro y período. Las páginas deben ser numeradas correlativamente y encuadernadas al completarse quinientos (500) folios o al cierre del ejercicio contable. Cada volumen encuadernado debe tener una primera página identificando la sociedad, registro, período, cantidad de páginas, y estar fechado y firmado por el representante legal y síndico (**Art. 249 de la RG IGJ 15/2024**).
+
+**Condiciones para sistemas de registro en compact disc, otros discos ópticos y microfilmes:**
+
+Los elementos deben ser numerados correlativamente por registro y ejercicio económico. La información no podrá ser eliminada ni reescrita y debe ser legible sin deterioro. Deben cumplir patrones de calidad e inalterabilidad. No son admisibles sistemas de microfilmes. La información a volcar debe incluir número de acta inicial y final, número de identificación del soporte, cantidad de registros y período (**Art. 250 de la RG IGJ 15/2024**).
+
+**Información anual y certificación:**
+
+Las sociedades que obtengan autorización para sistemas de registro contable deben presentar anualmente a la IGJ un informe de cumplimiento, dictamen de contador público sobre concordancia y obsolescencia del sistema, y datos de los listados o registros empleados (**Art. 252 de la RG IGJ 15/2024**). El incumplimiento puede acarrear multas (**Art. 252 de la RG IGJ 15/2024**).
+
+================================================================================
+PREGUNTA 7 de 20:
+¿Qué requisitos establece la LSC para la transformación de una SRL en SA y qué documentación exige la RG IGJ 15/2024 para inscribir esa transformación ante la IGJ?
+
+RESPUESTA:
+A continuación, se detallan los requisitos para la transformación de una SRL en SA según la Ley General de Sociedades (LGS) y la documentación exigida por la Resolución General IGJ 15/2024 para inscribir esa transformación ante la Inspección General de Justicia (IGJ).
+
+**Requisitos para la Transformación según la Ley General de Sociedades (LGS):**
+
+El **Artículo 77 de la Ley General de Sociedades (LGS)** establece los siguientes requisitos para la transformación:
+
+1.  **Acuerdo de Socios:** Se requiere el acuerdo unánime de los socios de la sociedad comercial que se transforma, salvo que exista un pacto en contrario o que se trate de tipos societarios específicos que dispongan mayorías diferentes.
+2.  **Balance Especial:** Se debe confeccionar un balance especial cerrado a una fecha no mayor a un (1) mes anterior a la del acuerdo de transformación. Este balance debe ser puesto a disposición de los socios en la sede social con una antelación mínima de quince (15) días a dicho acuerdo. Se requieren las mismas mayorías para su aprobación que las establecidas para la aprobación de los balances de ejercicio.
+3.  **Otorgamiento del Instrumento:** El acto que instrumente la transformación debe ser otorgado por los órganos competentes de la sociedad que se transforma y con la concurrencia de los nuevos otorgantes. Debe constar la identificación de los socios que se retiran, el capital que representan y el cumplimiento de las formalidades del nuevo tipo societario adoptado.
+4.  **Publicación:** Se debe realizar una publicación por un (1) día en el diario de publicaciones legales correspondiente a la sede social y sus sucursales. El aviso debe contener:
+    *   Fecha de la resolución social que aprobó la transformación.
+    *   Fecha del instrumento de transformación.
+    *   La razón social o denominación social anterior y la adoptada, debiendo resultar indubitable su identidad con la sociedad que se transforma.
+    *   Los socios que se retiran o incorporan y el capital que representan.
+    *   Cuando la transformación afecte los datos a que se refiere el **Artículo 10, apartado a), puntos 4 a 10 de la LGS**, la publicación deberá determinarlo.
+5.  **Inscripción:** El instrumento, junto con una copia del balance firmado, debe ser inscripto en el Registro Público de Comercio y demás registros que correspondan según el tipo de sociedad, la naturaleza de los bienes del patrimonio y sus gravámenes. Estas inscripciones deben ser ordenadas y ejecutadas por el Juez o autoridad a cargo del Registro Público de Comercio, una vez cumplida la publicidad requerida.
+
+**Documentación Exigida por la RG IGJ 15/2024 para Inscribir la Transformación ante la IGJ:**
+
+El **Artículo 143 de la Resolución General IGJ 15/2024** aplica a la transformación societaria en general, incluyendo la de SRL a SA.
+
+Según el **Artículo 143 de la RG IGJ 15/2024**, para la inscripción de la transformación societaria se debe presentar dentro del plazo estipulado en el **Artículo 81 de la LGS**:
+
+1.  **Testimonio de la escritura pública o instrumento privado original del acuerdo de transformación:** Con una copia de tamaño normal y dos de margen protocolar ("margen ancho"). El documento debe contener:
+    *   La transcripción del acta de asamblea con su registro de asistencia o de la reunión de socios de donde resulte la resolución social aprobatoria de la transformación conforme al **Artículo 77, incisos 1 y 2 de la LGS**.
+    *   El estatuto o contrato del nuevo tipo societario adoptado. Debe constar el nexo de continuidad jurídica entre la razón o denominación social anterior a la transformación y la resultante de ésta, de modo que resulte indubitable que se trata de la misma sociedad.
+    *   Los nombres y demás datos personales previstos en el **Artículo 11, inciso 1° de la LGS**, de los socios que continúen en la sociedad, los que se incorporen y los miembros de los órganos de administración y fiscalización del tipo adoptado.
+    *   La constancia, respecto de los administradores, cuando corresponda por el tipo adoptado, de la vigencia o constitución, según el caso, de la garantía requerida en el **Artículo 70 de la RG IGJ 15/2024**, salvo que ello resulte del dictamen de precalificación.
+    *   La mención expresa de los socios recedentes y capitales que representan o, en su defecto, la manifestación de no haberse ejercido derecho de receso.
+
+2.  **Balance especial de transformación:** En ejemplar original o con firma ológrafa del contador y del representante legal, con copias de tamaño normal y dos copias protocolares ("margen ancho"), con informe de auditoría conteniendo opinión. En dicho balance, en caso de incorporación de socios, debe constar el detalle de la cuenta de integración, por socio y por rubro, en el capítulo "Patrimonio Neto". Para la medición de los bienes incluidos en el balance de transformación, se aplicarán las normas contables aplicables a balances de ejercicio.
+
+3.  **Dictamen contable emitido conforme el Anexo II de la RG IGJ 15/2024:** Este dictamen deberá contener:
+    *   Indicación de los libros rubricados y folios donde se halle transcripto el balance de transformación.
+    *   En caso de existir saldos deudores de socios con incidencia sobre las cuentas de integración, informe sobre la registración de su cancelación, salvo reducción del capital en los importes correspondientes.
+
+4.  **Inventario resumido de los rubros del balance especial de transformación:** Certificado por contador público e informe de dicho profesional sobre origen y contenido de cada rubro principal, criterio de valuación aplicado y justificación de la misma. No será necesario cumplir con este requisito si el balance especial de transformación cumple con las normas de exposición aplicables a los estados contables de ejercicio.
+
+5.  **Constancia de las siguientes publicaciones:**
+    *   La de la convocatoria a asamblea, salvo que ésta haya sido unánime, si la sociedad que se transforma es sociedad por acciones (conforme **Artículo 237 de la LGS**). Si no lo fuere, el dictamen de precalificación debe expedirse sobre la regularidad del cumplimiento de las formalidades de convocatoria, citación o consulta a los socios, salvo que haga constar la presencia de todos ellos.
+    *   La prescripta por el **Artículo 77, inciso 4°, de la LGS**.
+    *   La requerida por el **Artículo 10 de la LGS**, si el tipo social que se adopta es el de sociedad por acciones o de responsabilidad limitada.
+
+6.  **Dictamen profesional:** Debe expedirse sobre el cumplimiento de lo requerido por el **Artículo 405, último párrafo, de la RG IGJ 15/2024**.
+
+**Falta de Legajo:** Si en la IGJ no existiera legajo de la sociedad que se transforma, además de cumplirse los recaudos anteriores, deberá acompañarse copia certificada notarialmente de su acto constitutivo y modificaciones, con constancia de su inscripción en el Registro Público, si la hubiera.
+
+**Plazo de Caducidad:** El acuerdo de transformación caduca si a los tres (3) meses de haberse celebrado no se inscribió el respectivo instrumento en el Registro Público de Comercio, salvo que el plazo resulte excedido por el normal cumplimiento de los trámites ante la autoridad que debe intervenir o disponer la inscripción (**Artículo 81 de la LGS**). En caso de haberse publicado, deberá efectuarse una nueva publicación al solo efecto de anunciar la caducidad de la transformación. Los administradores son responsables solidaria e ilimitadamente por los perjuicios derivados del incumplimiento de la inscripción o de la publicación.
+
+**Capital Social:** El monto del capital social debe ser igual al del patrimonio neto resultante del balance especial de transformación, adicionado en su caso con el valor del aporte del socio o socios que se incorporan. Puede fijarse una cifra inferior, siempre que cumpla con el capital mínimo requerido para el tipo social de sociedad anónima. En tal caso, la diferencia se imputará a una reserva especial que se regirá por el tercer párrafo in fine del **Artículo 202 de la LGS** (**Artículo 345 bis de la RG IGJ 15/2024**).
+
+================================================================================
+PREGUNTA 8 de 20:
+¿Cuál es el procedimiento que establece la LSC para la fusión por absorción entre dos SA y cuáles son los pasos que la RG IGJ 15/2024 exige para inscribir ese acto ante la IGJ?
+
+RESPUESTA:
+El procedimiento para la fusión por absorción entre dos Sociedades Anónimas (SA) se rige por la Ley General de Sociedades (LGS) y la Resolución General (RG) IGJ 15/2024.
+
+**Procedimiento según la Ley General de Sociedades (LGS):**
+
+La fusión, en este caso por absorción, implica que una sociedad existente (la sociedad incorporante) adquiere a otra u otras sociedades (la sociedad absorbida), las cuales se disuelven sin liquidarse. La sociedad incorporante adquiere la titularidad de los derechos y obligaciones de la sociedad absorbida, produciéndose la transferencia total de sus patrimonios al inscribirse el acuerdo definitivo de fusión y el aumento de capital que hubiere tenido que efectuar la incorporante en el Registro Público de Comercio (Art. 82 LGS).
+
+Los requisitos para la fusión son los siguientes:
+
+1.  **Compromiso previo de fusión:** Debe ser otorgado por los representantes de las sociedades y contendrá:
+    *   La exposición de los motivos y finalidades de la fusión.
+    *   Los balances especiales de fusión de cada sociedad, preparados por sus administradores con informes de los síndicos (si los hubiera), cerrados en una misma fecha no anterior a tres meses a la firma del compromiso, y confeccionados sobre bases homogéneas y criterios de valuación idénticos.
+    *   La relación de cambios de las participaciones sociales, cuotas o acciones.
+    *   El proyecto de contrato o estatuto de la sociedad absorbente (en este caso, la SA incorporante).
+    *   Las limitaciones que las sociedades convengan en la respectiva administración de sus negocios y la garantía que establezcan para el cumplimiento de una actividad normal en su gestión, durante el lapso que transcurra hasta que la fusión se inscriba (Art. 83, inc. 1 LGS).
+
+2.  **Resoluciones sociales:** El compromiso previo y los balances especiales deben ser aprobados por las sociedades participantes en la fusión con los requisitos necesarios para la modificación del contrato social o estatuto. Deben quedar copias en las respectivas sedes sociales del compromiso previo y del informe del síndico (si lo hubiera) a disposición de los socios o accionistas con no menos de quince días de anticipación a su consideración (Art. 83, inc. 2 LGS).
+
+3.  **Publicidad:** Se debe publicar por tres días un aviso en el diario de publicaciones legales de la jurisdicción de cada sociedad y en uno de los diarios de mayor circulación general en la República. El aviso deberá contener:
+    *   La razón social o denominación, la sede social y los datos de inscripción en el Registro Público de Comercio de cada una de las sociedades.
+    *   El importe del aumento del capital social de la sociedad incorporante.
+    *   La valuación del activo y el pasivo de las sociedades fusionantes, con indicación de la fecha a que se refiere.
+    *   La razón social o denominación, el tipo y el domicilio acordado para la sociedad a constituirse (en este caso, la sociedad absorbente).
+    *   Las fechas del compromiso previo de fusión y de las resoluciones sociales que lo aprobaron (Art. 83, inc. 3 LGS).
+
+4.  **Acreedores: oposición:** Dentro de los quince días desde la última publicación del aviso, los acreedores de fecha anterior pueden oponerse a la fusión. Las oposiciones no impiden la prosecución de las operaciones de fusión, pero el acuerdo definitivo no podrá otorgarse hasta veinte días después del vencimiento del plazo antes indicado, a fin de que los oponentes que no fueren desinteresados o debidamente garantizados por las fusionantes puedan obtener embargo judicial (Art. 83, inc. 3, último párrafo LGS).
+
+5.  **Acuerdo definitivo de fusión:** Otorgado por los representantes de las sociedades una vez cumplidos los requisitos anteriores, contendrá:
+    *   Las resoluciones sociales aprobatorias de la fusión.
+    *   La nómina de los socios que ejerzan el derecho de receso y capital que representen en cada sociedad.
+    *   La nómina de los acreedores que habiéndose opuesto hubieren sido garantizados y de los que hubieren obtenido embargo judicial; en ambos casos constará la causa o título, el monto del crédito y las medidas cautelares dispuestas, y una lista de los acreedores desinteresados con un informe sucinto de su incidencia en los balances.
+    *   La agregación de los balances especiales y de un balance consolidado de las sociedades que se fusionan (Art. 83, inc. 4 LGS).
+
+6.  **Inscripción registral:** El acuerdo definitivo de fusión debe inscribirse en el Registro Público de Comercio. Cuando las sociedades que se disuelven por la fusión estén inscriptas en distintas jurisdicciones, deberá acreditarse que en ellas se ha dado cumplimiento al artículo 98 LGS (Art. 83, inc. 5 LGS).
+
+**Administración hasta la ejecución:** Desde el acuerdo definitivo, la administración y representación de las sociedades fusionantes disueltas estará a cargo de los administradores de la sociedad incorporante, con suspensión de quienes hasta entonces la ejercían, a salvo el ejercicio de la acción prevista en el artículo 87 LGS (Art. 84 LGS).
+
+**Rescisión:** Cualquiera de las sociedades interesadas puede demandar la rescisión del acuerdo definitivo de fusión por justos motivos hasta el momento de su inscripción registral. La demanda deberá interponerse en la jurisdicción que corresponda al lugar en que se celebró el acuerdo (Art. 87 LGS).
+
+**Pasos exigidos por la RG IGJ 15/2024 para inscribir la fusión ante la IGJ:**
+
+Para la inscripción de la fusión de sociedades y de los actos que son su consecuencia, propios de la clase de fusión de que se trate (en este caso, fusión por incorporación de una SA por otra SA), se debe presentar:
+
+1.  **Testimonio de la escritura pública o instrumento privado original del acuerdo definitivo de fusión:**
+    *   En tantos juegos de ejemplares como sociedades domiciliadas en la Ciudad Autónoma de Buenos Aires intervengan en la fusión.
+    *   El documento debe contener:
+        *   La transcripción del compromiso previo de fusión, si dicha transcripción no resulta de las actas de asambleas o reuniones de socios.
+        *   La transcripción de las actas de asamblea (con sus registros de asistencia) o reuniones de socios, conteniendo las resoluciones sociales aprobatorias del compromiso, de los balances especiales de cada sociedad participante, de la disolución sin liquidación de las sociedades fusionantes o absorbidas y, según corresponda por la clase de fusión, del aumento de capital y reformas al contrato o estatutos de la sociedad incorporante.
+        *   La mención expresa de los socios recedentes y capitales que representan o, en su defecto, manifestación de no haberse ejercido derecho de receso.
+        *   La nómina de los acreedores oponentes con indicación del monto de sus créditos y el tratamiento otorgado conforme al inciso 3°, última parte, del artículo 83 de la Ley N° 19.550; en su defecto, deberá constar la manifestación de que no hubo oposiciones.
+        *   Detalle de los bienes registrables que se transferirán a la sociedad incorporante a la fecha de la inscripción del acuerdo definitivo de fusión en el Registro Público (Art. 146, inc. 1 RG IGJ 15/2024).
+
+2.  **Balance especial de fusión de cada una de las sociedades intervinientes:** Firmado por representante legal y el síndico (si lo hubiera), con informe de auditoría conteniendo opinión (Art. 146, inc. 2 RG IGJ 15/2024).
+
+3.  **Balance consolidado de fusión:** En ejemplar original o con firma ológrafa del contador y del representante legal, con copias de tamaño normal y protocolar, conteniendo o adjuntándose a él cuadro comparativo que indicará las eliminaciones y variaciones que se produzcan como consecuencia de la fusión, con informe de auditoría conteniendo opinión. Debe acompañarse un juego para cada sociedad participante (Art. 146, inc. 3 RG IGJ 15/2024).
+
+4.  **Dictamen contable:** Emitido conforme el Anexo II de estas Normas, que deberá contener:
+    *   Indicación de los libros rubricados y folios donde se hallare transcripto el balance consolidado.
+    *   En caso de existir saldos deudores de socios con incidencia sobre las cuentas de integración, informe sobre la registración de su cancelación, salvo reducción del capital en los importes correspondientes.
+    *   En caso de que por la fusión se transfieran a la sociedad incorporante participaciones de la sociedad o sociedades incorporadas en otras sociedades, la certificación debe acreditar la observancia por parte de todas las sociedades, de los límites del artículo 31, párrafo primero, de la Ley N° 19.550, computados a la fecha de las asambleas o reuniones de socios que aprobaron la fusión, salvo respecto de las sociedades exceptuadas conforme a la citada norma legal (Art. 146, inc. 4 RG IGJ 15/2024).
+
+5.  **Inventario resumido de los rubros del balance consolidado de fusión:** Certificado por contador público e informe de dicho profesional sobre el origen y contenido de cada rubro principal, el criterio de valuación aplicado y la justificación de la misma. La presentación por separado requerida por este inciso no será necesaria si se cumple con las normas de exposición aplicables a los estados contables de ejercicio (Art. 146, inc. 5 RG IGJ 15/2024).
+
+6.  **Justificación de la relación de cambio entre las acciones, cuotas o participaciones sociales:** Contenida en el compromiso previo de fusión, con informe de contador público; dicha justificación no se requiere si la aprobación del compromiso previo de fusión tuvo lugar en asambleas o reuniones de socios de carácter unánime (Art. 146, inc. 6 RG IGJ 15/2024).
+
+7.  **Constancia de las siguientes publicaciones:**
+    *   La prescripta por el artículo 83 inciso 3, de la Ley N° 19.550.
+    *   La de la convocatoria a asamblea, salvo que ésta haya sido unánime, respecto de aquella o aquellas sociedades intervinientes que sean sociedades por acciones (artículo 237, ley citada); respecto de las que no lo fueren, el dictamen de precalificación debe expedirse sobre la regularidad del cumplimiento de las formalidades de citación a los socios, salvo haga constar la presencia de todos ellos.
+    *   En los casos de fusión por incorporación, el aviso previsto por el artículo 10 inciso b), de la ley N° 19.550, si la sociedad incorporante fuere sociedad por acciones o de responsabilidad limitada y reforma su contrato o estatuto (Art. 146, inc. 7 RG IGJ 15/2024).
+
+8.  **Falta de legajo:** Si en la INSPECCIÓN GENERAL DE JUSTICIA no existiere legajo de alguna de las sociedades participantes en el acuerdo definitivo de fusión, se acompañará copia certificada notarialmente de su acto constitutivo y modificaciones, con constancia de su inscripción en el Registro Público correspondiente, si la hubiera (Art. 146, último párrafo RG IGJ 15/2024).
+
+9.  **Formularios de actuación; dictámenes de precalificación:** Se deben presentar formularios de actuación y dictámenes de precalificación con respecto a cada sociedad participante de la fusión y a la que en su caso se constituya (Art. 146, penúltimo párrafo RG IGJ 15/2024).
+
+10. **Tasa retributiva:** El pago de la tasa retributiva de servicios debe acreditarse con respecto a cada una de las sociedades intervinientes (Art. 146, antepenúltimo párrafo RG IGJ 15/2024).
+
+11. **Cancelación registral:** Conjuntamente con la inscripción de la fusión y la correspondiente a la disolución sin liquidación de la sociedad incorporada, corresponderá proceder a la cancelación registral de su inscripción original (Art. 146, penúltimo párrafo RG IGJ 15/2024).
+
+**Inscripciones registrales en caso de domicilios diferentes:**
+
+Si la sociedad incorporante tiene domicilio en la Ciudad Autónoma de Buenos Aires y la sociedad incorporada en jurisdicción provincial, la IGJ inscribirá simultáneamente la fusión, los demás actos correspondientes a la incorporante (aumento del capital social, modificación del contrato o los estatutos sociales) y, si la hubiere, la disolución sin liquidación de la incorporada domiciliada en la Ciudad Autónoma de Buenos Aires. Corresponderá inscribir después la disolución sin liquidación de las sociedades de extraña jurisdicción en los registros de sus respectivos domicilios (Art. 147, punto II, inciso 1 RG IGJ 15/2024).
+
+Si la sociedad incorporante tiene domicilio en jurisdicción provincial y la sociedad incorporada en la Ciudad Autónoma de Buenos Aires, la IGJ inscribirá la disolución sin liquidación de la sociedad incorporada que tenga dicho domicilio, una vez acreditada la registración de la fusión y demás actos relativos a la incorporante en el registro del domicilio de ésta (Art. 147, punto II, inciso 2 RG IGJ 15/2024).
+
+================================================================================
+PREGUNTA 9 de 20:
+¿Cuáles son las causales de disolución de una SA según la LSC, cómo se designa al liquidador y qué trámites establece la RG IGJ 15/2024 para inscribir la disolución y la conclusión de la liquidación ante la IGJ?
+
+RESPUESTA:
+Las causales de disolución de una sociedad anónima (SA) según la Ley General de Sociedades (LGS) son las siguientes:
+
+*   **Decisión de los socios:** La sociedad se disuelve por decisión de los socios (Artículo 94, inciso 1, LGS).
+*   **Expiración del término:** Por expiración del término por el cual se constituyó (Artículo 94, inciso 2, LGS).
+*   **Cumplimiento de condición:** Por cumplimiento de la condición a la que se subordinó su existencia (Artículo 94, inciso 3, LGS).
+*   **Consecución o imposibilidad del objeto:** Por consecución del objeto por el cual se formó, o por la imposibilidad sobreviniente de lograrlo (Artículo 94, inciso 4, LGS).
+*   **Pérdida del capital social:** Por la pérdida del capital social (Artículo 94, inciso 5, LGS).
+*   **Declaración en quiebra:** Por declaración en quiebra, la disolución quedará sin efecto si se celebrare avenimiento o se dispone la conversión (Artículo 94, inciso 6, LGS).
+*   **Fusión:** Por su fusión, en los términos del artículo 82 (Artículo 94, inciso 7, LGS).
+*   **Sanción de cancelación de oferta pública o cotización:** Por sanción firme de cancelación de oferta pública o de la cotización de sus acciones; la disolución podrá quedar sin efecto por resolución de asamblea extraordinaria reunida dentro de los sesenta (60) días, de acuerdo al artículo 244, cuarto párrafo (Artículo 94, inciso 8, LGS).
+*   **Retiro de autorización para funcionar:** Por resolución firme de retiro de la autorización para funcionar si leyes especiales la impusieran en razón del objeto (Artículo 94, inciso 9, LGS).
+
+**Designación del Liquidador:**
+
+La liquidación de la sociedad está a cargo del órgano de administración, salvo casos especiales o estipulación en contrario (Artículo 102, LGS). En su defecto, el liquidador o liquidadores serán nombrados por mayoría de votos dentro de los treinta (30) días de haber entrado la sociedad en estado de liquidación. Si no se designan los liquidadores o si estos no desempeñan el cargo, cualquier socio puede solicitar al juez el nombramiento omitido o nueva elección (Artículo 102, LGS).
+
+**Trámites para inscribir la disolución y la conclusión de la liquidación ante la IGJ según la RG IGJ 15/2024:**
+
+**Inscripción de la disolución y nombramiento del liquidador:**
+
+Para la inscripción de la disolución de la sociedad y nombramiento de su liquidador, se requiere la presentación de:
+
+1.  **Testimonio de la escritura pública o instrumento privado original:** Conteniendo la transcripción de la asamblea y su registro de asistencia o de la reunión de socios que declaró o resolvió la disolución de la sociedad y nombró en su caso al liquidador (Artículo 160, RG IGJ 15/2024).
+2.  **Constancia de las siguientes publicaciones:**
+    *   La de la convocatoria a asamblea, salvo que ésta haya sido unánime, si la sociedad es por acciones (Artículo 237, LGS). Si no lo fuere, el dictamen de precalificación debe expedirse sobre la regularidad del cumplimiento de las formalidades de convocatoria, citación o consulta a los socios, salvo que haga constar la presencia de todos ellos (Artículo 160, RG IGJ 15/2024).
+    *   La prescripta por los artículos 10 y 98 de la LGS si se trata de sociedad por acciones o de responsabilidad limitada, conteniendo la fecha de la resolución social, la individualización del liquidador y el domicilio especial constituido (Artículo 160, RG IGJ 15/2024).
+
+Otros requisitos: La aceptación del cargo y, si correspondiere, la observancia de los requisitos de domicilio, se rigen en lo pertinente por lo dispuesto en el artículo 105 de estas Normas (Artículo 160, RG IGJ 15/2024).
+
+**Conclusión de la liquidación (Cancelación registral):**
+
+La cancelación registral requiere el cumplimiento de las siguientes condiciones y requisitos:
+
+**I - Condiciones negativas:**
+
+1.  Que luego de su inscripción las sociedades no hayan iniciado ningún otro trámite registral ni, en su caso, presentado estados contables (Artículo 162, RG IGJ 15/2024).
+2.  Que no hayan cumplido inscripción y/o presentación de ninguna especie a los fines de ningún régimen tributario o de contribuciones a la seguridad social que pudiera serles aplicable ni, en general, hayan invocado y/o hecho valer las estipulaciones del contrato social a ningún efecto o efectuado presentaciones de ningún tipo a las que puedan atribuirse tales alcances (Artículo 162, RG IGJ 15/2024).
+3.  Que no sea titular de bienes registrales (Artículo 162, RG IGJ 15/2024).
+
+**II - Requisitos:**
+
+1.  **Testimonio de la escritura pública o instrumento privado original de constitución de la sociedad:** Con la constancia de su inscripción en el Registro Público, con copia de tamaño normal (Artículo 162, RG IGJ 15/2024).
+2.  **Testimonio de escritura pública o instrumento privado original, según la forma de constitución de la sociedad:** Otorgado por todos los socios, administradores e integrantes del órgano de fiscalización, si lo hubiere. Dicha escritura o instrumento deberá contener:
+    *   La denominación y datos de inscripción de la sociedad (Artículo 162, RG IGJ 15/2024).
+    *   La declaración jurada de los otorgantes de que, desde la fecha de inscripción de su constitución en el Registro Público, la sociedad se mantuvo ininterrumpidamente encuadrada en las condiciones negativas indicadas en el apartado I, que no realizó operación alguna, que los aportes efectuados fueron efectivamente restituidos, y que no pesa contra ella ni contra sus socios, por su condición de tales, ninguna acción judicial (Artículo 162, RG IGJ 15/2024).
+    *   La asunción expresa por los otorgantes de responsabilidad ilimitada y solidaria —con renuncia, respecto de los socios, a invocar el régimen de responsabilidad y en su caso el beneficio de excusión correspondientes al tipo social adoptado— por las eventuales obligaciones que pudieran haber sido contraídas por cualquiera de aquellos, aun en violación al régimen de administración y representación establecidos legal y/o contractualmente (Artículo 162, RG IGJ 15/2024).
+    *   La designación de la persona especialmente autorizada a retirar de la INSPECCIÓN GENERAL DE JUSTICIA copia certificada del instrumento contemplado en el presente inciso y el original del de constitución de la sociedad anotado marginalmente con la cancelación de su inscripción originaria; y la de la persona a cuyo cargo estará la conservación de tales instrumentos por el término del artículo 328 del Código Civil y Comercial de la Nación, contado desde la cancelación, salvo que se acuerde la entrega de copias a todos los otorgantes (Artículo 162, RG IGJ 15/2024).
+    El documento debe presentarse con copias de tamaño normal y protocolar ('margen ancho'), con las firmas de sus otorgantes certificadas notarialmente si fuere bajo forma privada (Artículo 162, RG IGJ 15/2024).
+3.  **Si se rubricaron libros:** Debe acompañarse acta de constatación notarial de la cual resulten su detalle y datos y que no consta en ninguno de ellos asiento ni transcripción de acto alguno y que todos ellos han sido cerrados, mediante nota firmada por el representante legal y el síndico, si lo hubiere (Artículo 162, RG IGJ 15/2024).
+4.  **Nota del responsable de la conservación de la documentación social:** Indicada en el subinciso d del inciso 2 y, en su caso, los libros sociales referidos en el inciso 3, con su firma certificada notarialmente, manifestando hallarse en posesión de los mismos e indicando sus datos personales y domicilio especial que constituya en ámbito de la Ciudad Autónoma de Buenos Aires a los fines de cualquier cuestión relativa a los elementos recibidos (Artículo 162, RG IGJ 15/2024).
+5.  **Certificado vigente:** Expedido dentro de los treinta (30) días hábiles a la presentación, que acredite que no pesan contra la sociedad pedidos de declaración de quiebra, extendido por el Archivo General del Poder Judicial o dependencia que lo sustituya (Artículo 162, RG IGJ 15/2024).
+6.  **La publicación efectuada por un (1) día en el Boletín Oficial y en un diario de circulación generalizada en el territorio nacional, conteniendo:**
+    *   La denominación, domicilio, sede social y datos de inscripción de la sociedad en el Registro Público (Artículo 162, RG IGJ 15/2024).
+    *   El nombre, apellido, número de documento de identidad y domicilio de los otorgantes del instrumento referido en el inciso 2 (Artículo 162, RG IGJ 15/2024).
+    *   La fecha de dicho instrumento, indicando también, en su caso, fecha y número de la escritura pública y registro notarial por ante el cual se pasó (Artículo 162, RG IGJ 15/2024).
+    *   Un extracto preciso y suficiente de la declaración jurada y asunción de responsabilidad indicado en el subinciso c del inciso 2 (Artículo 162, RG IGJ 15/2024).
+7.  **Comprobantes de cancelación de deudas por tasas anuales:** En el caso de sociedades por acciones. Por cada período que corresponda deberá abonarse el monto menor previsto en el régimen aplicable, con más los intereses pertinentes (Artículo 162, RG IGJ 15/2024).
+
+Como principio general, mientras la sociedad no cancele su inscripción registral ante este organismo, continuará sujeta a la competencia de la INSPECCIÓN GENERAL DE JUSTICIA a los fines de la presentación de sus estados contables y el pago de las tasas que correspondan (Artículo 162, RG IGJ 15/2024).
+
+**Remoción de causales de disolución:**
+
+Las causales de disolución podrán ser removidas mediando decisión del órgano de gobierno y eliminación de la causa que le dio origen, si existe viabilidad económica y social de la subsistencia de la actividad de la sociedad. La resolución deberá adoptarse antes de cancelarse la inscripción, sin perjuicio de terceros y de las responsabilidades asumidas (Artículo 100, LGS). En caso de duda sobre la existencia de una causal de disolución, se estará a favor de la subsistencia de la sociedad (Artículo 100, LGS).
+
+================================================================================
+PREGUNTA 10 de 20:
+¿Qué proceso establece la LSC para el aumento del capital de una SA mediante nuevas acciones y qué documentación exige la RG IGJ 15/2024 para inscribir ese aumento ante la IGJ?
+
+RESPUESTA:
+El proceso para el aumento de capital de una Sociedad Anónima (SA) mediante la emisión de nuevas acciones, según la Ley General de Sociedades (LGS), se rige por los siguientes artículos:
+
+**Proceso de Aumento de Capital según la LGS:**
+
+*   **Delegación en el Directorio:** El estatuto puede prever el aumento del capital social hasta su quíntuplo. La decisión de aumento se tomará por asamblea sin requerirse nueva conformidad administrativa. La asamblea puede delegar en el directorio la época de la emisión, la forma y las condiciones de pago, sin perjuicio de lo establecido en el artículo 202 de la LGS (Art. 188, LGS).
+*   **Aumento sin límite para Sociedades con Oferta Pública:** En las sociedades anónimas autorizadas a hacer oferta pública de sus acciones, la asamblea puede aumentar el capital sin límite alguno ni necesidad de modificar el estatuto. El directorio podrá efectuar la emisión por delegación de la asamblea, en una o más veces, dentro de los dos (2) años a contar desde la fecha de su celebración (Art. 188, LGS).
+*   **Publicación e Inscripción:** La resolución de la asamblea sobre el aumento de capital se publicará e inscribirá (Art. 188, LGS).
+*   **Oferta Pública de Acciones:** El aumento del capital podrá realizarse por oferta pública de acciones (Art. 198, LGS).
+*   **Competencia de la Asamblea Extraordinaria:** El aumento de capital corresponde a la asamblea extraordinaria, salvo el supuesto del artículo 188 de la LGS. La asamblea sólo podrá delegar en el directorio la época de la emisión, forma y condiciones de pago (Art. 235, Inciso 1º, LGS).
+*   **Suscripción Previa de Emisiones Anteriores:** Las nuevas acciones solo pueden emitirse cuando las anteriores hayan sido suscriptas (Art. 190, LGS).
+*   **Derecho de Suscripción Preferente:** Las acciones ordinarias otorgan a su titular el derecho preferente a la suscripción de nuevas acciones de la misma clase en proporción a las que posea. La sociedad hará el ofrecimiento a los accionistas mediante avisos por tres (3) días en el diario de publicaciones legales y, además, en uno de los diarios de mayor circulación general en toda la República cuando se tratare de sociedades comprendidas en el artículo 299 de la LGS. Los accionistas podrán ejercer su derecho de opción dentro de los treinta (30) días siguientes al de la última publicación, si los estatutos no establecieran un plazo mayor. Tratándose de sociedades que hagan oferta pública, la asamblea extraordinaria podrá reducir este plazo hasta un mínimo de diez días. Los accionistas tendrán también derecho preferente a la suscripción de debentures convertibles en acciones. Estos derechos no pueden ser suprimidos o condicionados, salvo lo dispuesto en el artículo 197 de la LGS, y pueden ser extendidos por el estatuto o resolución de la asamblea que disponga la emisión a las acciones preferidas (Art. 194, LGS).
+*   **Limitación o Suspensión del Derecho de Preferencia:** La asamblea extraordinaria, con las mayorías del último párrafo del artículo 244 de la LGS, puede resolver en casos particulares y excepcionales, cuando el interés de la sociedad lo exija, la limitación o suspensión del derecho de preferencia en la suscripción de nuevas acciones, bajo las condiciones de que su consideración se incluya en el orden del día y que se trate de acciones a integrarse con aportes en especie o que se den en pago de obligaciones preexistentes (Art. 197, LGS).
+*   **Emisión con Prima:** Se podrá emitir con prima, que fijará la asamblea extraordinaria, conservando la igualdad en cada emisión. En las sociedades autorizadas para hacer oferta pública de sus acciones, la decisión será adoptada por asamblea ordinaria, la que podrá delegar en el directorio la facultad de fijar la prima, dentro de los límites que deberá establecer. El saldo que arroje el importe de la prima, descontados los gastos de emisión, integra una reserva especial. Es distribuible con los requisitos de los artículos 203 y 204 de la LGS (Art. 202, LGS).
+
+**Documentación Exigida por la RG IGJ 15/2024 para la Inscripción de la Transformación de Asociación Civil en Sociedad Anónima (que puede implicar un aumento de capital):**
+
+La RG IGJ 15/2024, en su Artículo 345 bis, detalla la documentación para la inscripción de la transformación de una asociación civil en sociedad anónima, lo cual puede implicar la emisión de nuevas acciones y, por ende, un aumento de capital. Los requisitos son los siguientes:
+
+1.  **Testimonio de la escritura pública del acuerdo de transformación:**
+    *   Una copia de tamaño normal y dos de margen protocolar (“margen ancho”).
+    *   Debe contener:
+        *   La transcripción del acta de asamblea extraordinaria de asociados con la resolución aprobatoria de la transformación en sociedad anónima por una mayoría no menor a dos tercios (2/3) de los asociados que participen en dicha asamblea.
+        *   El estatuto de la sociedad anónima adoptado, que deberá constar el nexo de continuidad jurídica entre la denominación social anterior y la resultante, respetando el principio de identidad.
+        *   Los nombres y demás datos personales previstos en el artículo 11, inciso 1) de la Ley N° 19.550, de los asociados devenidos accionistas que continúen en la sociedad y de los nuevos accionistas que se incorporen.
+        *   Cuadro de suscripción detallando la cantidad de acciones a emitirse, con indicación de sus características.
+        *   Los integrantes de los órganos de administración y fiscalización.
+        *   Tanto la nómina de accionistas como el cuadro de suscripción podrá constar en un anexo suscripto por el escribano autorizante.
+        *   La constancia, respecto de los directores, de la constitución de la garantía requerida en el artículo 256 de la Ley N° 19.550 y lo dispuesto en el artículo 70 de las presentes Normas, salvo que ello resulte del dictamen de precalificación emitido conforme el artículo 71 de las mismas.
+        *   Listado de los asociados que hubieran renunciado expresamente a su condición de tales con motivo de la transformación, o la manifestación sobre la inexistencia de asociados renunciantes.
+
+2.  **Balance especial de transformación:**
+    *   En ejemplar original o con firma ológrafa del contador y del representante legal, con copias de tamaño normal y dos copias protocolares (“margen ancho”).
+    *   Debe contar con informe de auditoría conteniendo opinión.
+    *   En caso de incorporación de socios, debe constar el detalle de la cuenta de integración, por socio y por rubro, en el capítulo “Patrimonio Neto”.
+    *   Para la medición de los bienes incluidos se deberán utilizar las normas contables aplicables a balances de ejercicio.
+
+3.  **Dictamen contable:**
+    *   Emitido conforme al Anexo II de estas Normas, indicando los libros rubricados y folios donde se hallare transcripto el balance de transformación.
+
+4.  **Inventario resumido:**
+    *   De los rubros del balance especial de transformación certificado por contador público e informe de dicho profesional sobre el origen y contenido de cada rubro principal, el criterio de valuación aplicado y la justificación de la misma. No será necesario si el balance especial de transformación cumple con las normas de exposición aplicables a los estados contables de ejercicio.
+
+5.  **Constancia de la publicación:**
+    *   Prescripta por el artículo 77, inciso 4), de la Ley N° 19.550.
+
+6.  **Dictamen de precalificación:**
+    *   Firmado por escribano público, que se expedirá sobre el cumplimiento de lo requerido por el artículo 405, último párrafo, de estas Normas.
+
+**Determinación del Capital Social en la Transformación:**
+
+El monto del capital social debe ser igual al del patrimonio neto resultante del balance especial de transformación, adicionado en su caso con el valor del aporte del socio o socios que se incorporan. Puede fijarse una cifra inferior, siempre que cumpla con el capital mínimo requerido para el tipo social de sociedad anónima. En tal caso, la diferencia se imputará a una reserva especial que se regirá por el tercer párrafo in fine del artículo 202 de la Ley N° 19.550 (Art. 345 bis, RG IGJ 15/2024).
+
+================================================================================
+PREGUNTA 11 de 20:
+¿Cuáles son las funciones de fiscalización de la IGJ sobre las SA según la Ley 22315 y qué trámites de inscripción prevé la RG IGJ 15/2024 para ejercer ese control?
+
+RESPUESTA:
+La Inspección General de Justicia (IGJ) ejerce funciones de fiscalización sobre las Sociedades por Acciones (SA), excepto aquellas que están sometidas a la fiscalización de la Comisión Nacional de Valores. Estas funciones, según la Ley Orgánica de la Inspección General de Justicia (Ley 22315), incluyen:
+
+*   **Conformar el contrato constitutivo y sus reformas** (Artículo 7, inciso a, Ley Orgánica de la IGJ).
+*   **Controlar las variaciones del capital, la disolución y liquidación de las sociedades** (Artículo 7, inciso b, Ley Orgánica de la IGJ).
+*   **Controlar y, en su caso, aprobar la emisión de debentures** (Artículo 7, inciso c, Ley Orgánica de la IGJ).
+*   **Fiscalizar permanentemente el funcionamiento, disolución y liquidación** en los supuestos de los artículos 299 y 301 de la Ley de Sociedades Comerciales (Artículo 7, inciso d, Ley Orgánica de la IGJ).
+*   **Conformar y registrar los reglamentos** previstos en el artículo 5 de la ley citada (Artículo 7, inciso e, Ley Orgánica de la IGJ).
+*   **Solicitar al juez competente en materia comercial del domicilio de la sociedad, las medidas previstas en el artículo 303 de la ley de sociedades comerciales** (Artículo 7, inciso f, Ley Orgánica de la IGJ).
+
+Para el ejercicio de su función fiscalizadora, la IGJ posee facultades generales, además de las específicas para cada sujeto:
+
+*   **Requerir información y todo documento que estime necesario** (Artículo 6, inciso a, Ley Orgánica de la IGJ).
+*   **Realizar investigaciones e inspecciones**, pudiendo examinar libros y documentos, pedir informes a autoridades, responsables, personal y terceros (Artículo 6, inciso b, Ley Orgánica de la IGJ).
+*   **Recibir y sustanciar denuncias de los interesados** (Artículo 6, inciso c, Ley Orgánica de la IGJ).
+*   **Formular denuncias ante autoridades judiciales, administrativas y policiales**, y solicitar a agentes fiscales el ejercicio de acciones judiciales en casos de violación del orden público (Artículo 6, inciso d, Ley Orgánica de la IGJ).
+*   **Hacer cumplir sus decisiones**, pudiendo requerir al juez civil o comercial competente el auxilio de la fuerza pública, allanamiento de domicilios, clausura de locales y secuestro de libros y documentación (Artículo 6, inciso e, Ley Orgánica de la IGJ).
+*   **Declarar irregulares e ineficaces a los efectos administrativos los actos sometidos a su fiscalización**, cuando sean contrarios a la ley, al estatuto o a los reglamentos (Artículo 6, inciso f, Ley Orgánica de la IGJ).
+
+La IGJ tiene a su cargo las funciones atribuidas al Registro Público de Comercio y la fiscalización de las sociedades por acciones, excepto las sometidas a la Comisión Nacional de Valores, las constituidas en el extranjero que ejerzan habitualmente actos en el país, las que realicen operaciones de capitalización y ahorro, las asociaciones civiles y las fundaciones (Artículo 3, Ley Orgánica de la IGJ).
+
+En cuanto a los trámites de inscripción previstos en la RG IGJ 15/2024 para ejercer el control, se destacan los siguientes:
+
+**Autorización del empleo de sistemas de registración contable en medios mecánicos, magnéticos u otros (Artículo 244, RG IGJ 15/2024):**
+Para la autorización de estos sistemas, se debe presentar:
+1.  **Testimonio de escritura pública o instrumento privado original** con los recaudos del artículo 34, incisos 1, 2 y 3, conteniendo la transcripción de la resolución del órgano de administración de la sociedad. Dicha resolución debe especificar:
+    *   Denominación exacta de los libros rubricados que se reemplazan y los registros solicitados (en caso de sustitución de libros).
+    *   Número de autorización que se reemplaza y los registros por los que se efectúa la presentación (en caso de sustitución de autorizaciones previas emitidas por la IGJ conforme al artículo 61 de la Ley N° 19.550 o artículo 329 del Código Civil y Comercial de la Nación).
+    *   El sistema de soporte de archivo a utilizar (medios ópticos, mecánicos u otros).
+    *   Declaración expresa si el sistema y registros han sido utilizados previamente, indicando la fecha de comienzo de utilización.
+    *   Compromiso de preservar la posibilidad de lectura de los medios de registración y/o extender en listados de papel los registros durante el período legalmente obligatorio (si se solicita autorización para compact disc u otros discos ópticos).
+    *   Denominación del tercero proveedor del servicio, radicación de los archivos/procesamiento, vigencia del contrato y políticas de seguridad de la información (en caso de tercerización de archivo).
+    *   Descripción clara del sistema, sus funciones, interfaces y diagrama de módulos (si el sistema es de propio desarrollo).
+2.  **Piezas firmadas por el representante legal o apoderado y por contador público independiente** (con firma legalizada), conteniendo:
+    *   Exposición amplia y precisa del sistema de registración contable a utilizar, propósitos de la modificación, motivos y diferencias con sistemas anteriores (si aplica).
+    *   Informe técnico sobre la inalterabilidad de las registraciones, indicando software, hardware, política de contraseñas, conexiones remotas, interfaces, etc.
+    *   Metodología de generación de CD, DVD o HASH, y archivo de la documentación respaldatoria. Se requiere archivo ignífugo para los soportes.
+    *   Sistema y periodicidad de los registros en la numeración.
+    *   Modelos en blanco por duplicado y uno ejemplificativo con datos sociales, denominación del registro/listado, domicilio legal, fecha y número de página sin determinar.
+    *   Estado de actualización de libros de la sociedad.
+    *   Detalle de la ubicación exacta del servidor empleado por la sociedad.
+3.  **Dictamen de precalificación de contador público** (conforme RT 37 de la FACPCE adoptada por el CPCECABA y sus normas complementarias) que verificará:
+    *   La situación de la sociedad respecto a los artículos 94 y 299 de la Ley N° 19.550, y el cumplimiento de los artículos 242, 249, 250 y 252 de la RG IGJ 15/2024, quórum y mayorías de la reunión del órgano de administración.
+    *   Si se ha previsto la solicitud de libros necesarios para la discontinuación inmediata de libros rubricados una vez emitida la autorización, manteniendo la contabilidad actualizada.
+    *   Radicación del archivo de la documentación respaldatoria y de los soportes.
+
+**Situaciones especiales a considerar (Artículo 245, RG IGJ 15/2024):**
+*   Si el sistema de registración contable centraliza sus operaciones en el libro Diario, se deberá expresar tal situación en la resolución del órgano de administración (Artículo 245, punto 1).
+*   En caso de solicitar registros o listados de IVA COMPRAS o IVA VENTAS a fines fiscales, se deberá expresar tal situación en la resolución del órgano de administración (Artículo 245, punto 2).
+*   Las sociedades que requieran incluir en un solo registro la totalidad de sus sucursales, puntos de venta o ramos, deberán consignar los datos identificatorios (incluyendo domicilios) a continuación del encabezado principal del soporte o listado (Artículo 245, punto 3).
+*   Las sociedades que ingresen bajo el ámbito de fiscalización de la IGJ y posean autorizaciones previas para el empleo de ordenadores, medios mecánicos, magnéticos u otros (artículo 61 de la Ley N° 19.550) emitidas por anteriores autoridades de control, deberán adecuar su autorización ante la IGJ. Para ello, la resolución del órgano de administración deberá incluir el detalle de las autorizaciones y registros aprobados por el organismo emisor, junto con los restantes requisitos de las Normas (Artículo 245, punto 5).
+*   Las sociedades que inscriban cambio de denominación o sede social, sin modificar el sistema y modelos previamente aprobados por la IGJ, deberán ingresar:
+    *   Testimonio de escritura pública o instrumento privado original con los recaudos del artículo 34, incisos 2 y 3, conteniendo la resolución del órgano de administración solicitando la adecuación, dejando constancia de que el sistema no ha sido modificado.
+    *   Copia certificada por el dictaminante o escribano público del libro Inventario y Balances donde se ha transcripto la descripción completa del sistema autorizado, la autorización, plan de cuentas y modelos aprobados.
+    *   Estados de Libros actualizado.
+    *   Modelos en blanco por duplicado y ejemplificativo, firmados por el profesional dictaminante y representante legal, con la nueva denominación y/o sede social.
+    *   Dictamen profesional con los recaudos dispuestos en el inciso 3 del artículo 244 (Artículo 245, punto 6).
+*   Las actualizaciones o implementación de aplicativos al sistema oportunamente aprobado por la IGJ no darán lugar a la solicitud de nueva autorización, salvo que modifiquen el flujograma administrativo contable y las políticas de seguridad de la información descritas al momento de solicitar la autorización (Artículo 245, punto 7).
+*   En las solicitudes de baja de autorizaciones emitidas por la IGJ en los términos del artículo 61 de la Ley N° 19.550, se acompañará:
+    *   Testimonio de escritura pública o instrumento privado original con los recaudos del artículo 34, incisos 2 y 3, conteniendo la resolución del órgano de administración solicitando la baja.
+    *   Copia certificada por el dictaminante o escribano público de la autorización oportunamente emitida por la IGJ.
+    *   Estados de Libros actualizado.
+    *   Dictamen profesional con los recaudos dispuestos en el inciso 3 del artículo 244 (Artículo 245, punto 8).
+
+**Inscripción de la transformación de asociación civil en sociedades anónimas (Artículo 345 bis, RG IGJ 15/2024):**
+Para la inscripción de la transformación de asociación civil en sociedades anónimas no comprendidas en el artículo 3 de la Ley N° 19.550, se deberá presentar dentro del plazo estipulado en el artículo 81 de la Ley N° 19.550:
+1.  **Testimonio de la escritura pública del acuerdo de transformación**, con una copia de tamaño normal y dos de margen protocolar. El documento debe contener:
+    *   Transcripción del acta de asamblea extraordinaria de asociados aprobatoria de la transformación por mayoría de dos tercios (2/3) de los asociados participantes.
+    *   Estatuto de la sociedad anónima adoptado, con constancia de continuidad jurídica entre la denominación anterior y la resultante.
+    *   Nombres y datos personales de los asociados devenidos accionistas y de los nuevos accionistas (si los hubiere); cuadro de suscripción detallando acciones, sus características, e integrantes de los órganos de administración y fiscalización. La nómina de accionistas y cuadro de suscripción pueden constar en un anexo.
+    *   Constancia de constitución de la garantía requerida en el artículo 256 de la Ley N° 19.550 para los directores, y lo dispuesto en el artículo 70 de las presentes Normas, salvo que resulte del dictamen de precalificación.
+    *   Listado de los asociados que renunciaron expresamente a su condición o manifestación sobre la inexistencia de renunciantes.
+2.  **Balance especial de transformación**, en ejemplar original o con firma del contador y representante legal (con copias de tamaño normal y dos protocolares), con informe de auditoría conteniendo opinión. En caso de incorporación de socios, debe constar el detalle de la cuenta de integración por socio y rubro en el capítulo "Patrimonio Neto". Se deben utilizar normas contables aplicables a balances de ejercicio para la medición de bienes.
+3.  **Dictamen contable** emitido conforme al Anexo II de las Normas, indicando los libros rubricados y folios donde se halla transcripto el balance de transformación.
+4.  **Inventario resumido de los rubros del balance especial de transformación** certificado por contador público e informe de dicho profesional sobre origen, contenido, criterio de valuación y justificación. No será necesario si el balance especial cumple con las normas de exposición de estados contables de ejercicio.
+5.  **Constancia de la publicación** prescripta por el artículo 77, inciso 4), de la Ley N° 19.550.
+6.  **Dictamen de precalificación firmado por escribano público** sobre el cumplimiento de lo requerido por el artículo 405, último párrafo, de las Normas.
+
+El monto del capital social debe ser igual al patrimonio neto resultante del balance especial de transformación, adicionado en su caso con el valor del aporte de los socios que se incorporan. Puede fijarse una cifra inferior si cumple con el capital mínimo requerido para SA, imputándose la diferencia a una reserva especial según el tercer párrafo in fine del artículo 202 de la Ley N° 19.550 (Artículo 345 bis, RG IGJ 15/2024).
+
+**Presentación de estados contables anuales (Artículo 226, RG IGJ 15/2024):**
+Las sociedades por acciones y de responsabilidad limitada cuyo capital alcance el importe fijado por el artículo 299, inciso 2°, de la Ley N° 19.550, presentarán ante la IGJ sus estados contables anuales o por períodos intermedios, expresados en pesos. Los estados contables se confeccionarán de acuerdo con las normas técnicas profesionales vigentes y sus modificaciones, en las condiciones de su adopción por el Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires y sus normas complementarias.
+*   Los estados contables anuales de sociedades sobre las que se ejerce control, control conjunto o influencia significativa, utilizados para aplicar el método del valor patrimonial proporcional, así como los estados contables consolidados, deberán contar con un informe de auditoría de contador público independiente.
+*   Cuando dichos estados contables correspondan a períodos intermedios y deban presentarse para la inscripción de trámites específicos (fusiones, escisiones, reducciones de capital), también deberán contar con informes de auditoría de contador público independiente (Artículo 226, punto 1).
+*   No se admitirán certificaciones literales de contador público independiente sobre estados contables, salvo circunstancias excepcionales (Artículo 226, punto 2).
+
+**Requisitos para la transformación de sociedades comerciales (Artículo 77, Ley N° 19.550):**
+La transformación exige el cumplimiento de:
+1.  Acuerdo unánime de los socios, salvo pacto en contrario o para ciertos tipos societarios. En el caso de asociación civil que se transforme en sociedad comercial o resuelva ser socia de SA, se requiere voto de dos tercios (2/3) de los asociados (Artículo 77, punto 1).
+2.  Confección de un balance especial, cerrado a una fecha no mayor a un (1) mes a la del acuerdo de transformación y puesto a disposición de los socios con no menos de quince (15) días de anticipación. Se requieren las mismas mayorías para la aprobación de balances de ejercicio (Artículo 77, punto 2).
+3.  Otorgamiento del acto que instrumente la transformación por los órganos competentes y concurrencia de los nuevos otorgantes, con constancia de socios que se retiran, capital que representan y cumplimiento de las formalidades del nuevo tipo societario (Artículo 77, punto 3).
+4.  Publicación por un (1) día en el diario de publicaciones legales, conteniendo: fecha de la resolución social, fecha del instrumento de transformación, razón social anterior y la adoptada (debiendo resultar indubitable su identidad), socios que se retiran o incorporan y capital que representan, y afectaciones a datos del artículo 10, apartados a), puntos 4 a 10 (Artículo 77, punto 4).
+5.  Inscripción del instrumento con copia del balance firmado en el Registro Público de Comercio y demás registros correspondientes, ordenada por el Juez o autoridad a cargo del Registro Público de Comercio, cumplida la publicidad (Artículo 77, punto 5).
+
+**Contenido del instrumento constitutivo (Artículo 11, Ley N° 19.550):**
+El instrumento de constitución debe contener:
+1.  Nombre, edad, estado civil, nacionalidad, profesión, domicilio y número de documento de identidad de los socios.
+2.  Razón social o denominación, y domicilio de la sociedad.
+3.  Objeto social, que debe ser preciso y determinado.
+4.  Capital social, expresado en moneda argentina, y mención del aporte de cada socio. En sociedades unipersonales, el capital debe ser integrado totalmente.
+5.  Plazo de duración, que debe ser determinado.
+6.  Organización de la administración, fiscalización y reuniones de socios.
+7.  Reglas para distribuir utilidades y soportar pérdidas.
+8.  Cláusulas necesarias para precisar derechos y obligaciones de los socios.
+9.  Cláusulas atinentes al funcionamiento, disolución y liquidación de la sociedad (Artículo 11, Ley N° 19.550).
+
+**Garantía de directores (Artículo 256, Ley N° 19.550 y Artículo 70, RG IGJ 15/2024):**
+El estatuto establecerá la garantía que deberán prestar los directores de sociedades anónimas. Solo estarán obligados quienes fueren titulares. La garantía puede consistir en depósito de fondos, bonos, títulos, imposiciones a plazo fijo, avales de terceros, seguros de caución o responsabilidad civil, o cualquier otra forma que disponga el estatuto. El costo será soportado por cada director. No se aplica a administradores que representen al Estado nacional, provincial o municipal (Artículo 256, Ley N° 19.550 y Artículo 70, RG IGJ 15/2024).
+
+**Emisión con prima (Artículo 202, Ley N° 19.550):**
+Se podrá emitir con prima, que fijará la asamblea extraordinaria. El saldo que arroje el importe de la prima, descontados los gastos de emisión, integra una reserva especial (Artículo 202, Ley N° 19.550).
+
+**Reducción voluntaria del capital (Artículos 203 y 204, Ley N° 19.550):**
+La reducción voluntaria del capital deberá ser resuelta por asamblea extraordinaria con informe fundado del síndico. La resolución da a los acreedores el derecho regulado en el artículo 83, inciso 2, y deberá inscribirse previa publicación. No regirá cuando se opere por amortización de acciones integradas y se realice con ganancias o reservas libres (Artículos 203 y 204, Ley N° 19.550).
+
+**Sociedades sujetas a fiscalización (Artículo 299, Ley N° 19.550):**
+Las sociedades anónimas quedan sujetas a la fiscalización de la autoridad de contralor de su domicilio durante su funcionamiento, disolución y liquidación, en cualquiera de los siguientes casos:
+1.  Hagan oferta pública de sus acciones o debentures.
+2.  Tengan capital social superior a PESOS DOS MIL MILLONES ($ 2.000.000.000), monto que podrá ser actualizado por el Poder Ejecutivo.
+3.  Sean de participación estatal.
+4.  Realicen operaciones de capitalización, ahorro o requieran dinero o valores al público con promesas de prestaciones o beneficios futuros.
+5.  Exploten concesiones o servicios públicos.
+6.  Sean sociedad controlante de o controlada por otra sujeta a fiscalización.
+7.  Se trate de Sociedades Anónimas Unipersonales (Artículo 299, Ley N° 19.550).
+
+**Medios mecánicos y otros (Artículo 61, Ley N° 19.550):**
+Se podrá prescindir de ciertas formalidades para llevar libros societarios y contables por Registros Digitales mediante medios digitales. El libro diario podrá ser llevado con asientos globales que no comprendan períodos mayores de un (1) mes. El sistema de contabilización debe permitir la individualización de las operaciones, las correspondientes cuentas deudoras y acreedoras y su posterior verificación (Artículo 61, Ley N° 19.550).
+
+**Documentación auténtica para inscripción (Artículo 34, RG IGJ 15/2024):**
+El Registro Público inscribe actos contenidos en documentación auténtica, que podrá ser: testimonio de escritura pública, instrumento privado original con firmas certificadas, certificación notarial de actos o acuerdos obrantes en libros sociales, oficio o testimonio judicial, resolución administrativa, o documentación proveniente del extranjero con las formalidades correspondientes (Artículo 34, RG IGJ 15/2024).
+
+================================================================================
+PREGUNTA 12 de 20:
+¿Qué sanciones puede aplicar la IGJ a una SA que incumple sus obligaciones de inscripción, ante qué tribunal se apelan esas resoluciones según la Ley 22315 y en qué plazo debe interponerse el recurso según la RG IGJ 15/2024?
+
+RESPUESTA:
+La Inspección General de Justicia (IGJ) puede aplicar sanciones a las Sociedades Anónimas (SA) que incumplan sus obligaciones de inscripción, así como a sus directores, síndicos o administradores, y a toda persona o entidad que no cumpla con su obligación de proveer información, suministre datos falsos o infrinja obligaciones legales, estatutarias o reglamentarias, o dificulte el desempeño de sus funciones. Las sanciones aplicables a las sociedades por acciones son las establecidas en el **Artículo 302 de la Ley N° 19.550**, que incluyen:
+
+1.  **Apercibimiento**: **Artículo 302, inciso 1º, Ley N° 19.550**.
+2.  **Apercibimiento con publicación**: **Artículo 302, inciso 2º, Ley N° 19.550**.
+3.  **Multas a la sociedad, sus directores y síndicos**: Estas multas no podrán ser superiores a PESOS OCHO MILLONES ($ 8.000.000.-) en conjunto y por infracción, y se graduarán según la gravedad de la infracción y el capital de la sociedad. Cuando se apliquen a directores y síndicos, la sociedad no podrá hacerse cargo de ellas. El Poder Ejecutivo está facultado para actualizar semestralmente estos montos. **Artículo 302, inciso 3º, Ley N° 19.550**.
+
+Adicionalmente, la IGJ puede aplicar sanciones a las sociedades por acciones de acuerdo con la **Ley N° 22.315**. Específicamente, el **Artículo 13 de la Ley N° 22.315** establece que las sanciones para las sociedades por acciones son las contempladas en el **Artículo 302 de la Ley N° 19.550**.
+
+La IGJ también puede aplicar sanciones por falta de presentación en término de la documentación que acredite la celebración de las asambleas anuales ordinarias, sin que medie requerimiento o intimación. Estas sanciones están previstas en las **Leyes Nros. 19.550 y 22.315**. A criterio de la IGJ, estas sanciones podrán extenderse a los integrantes de los órganos de administración y fiscalización en forma personal. **Artículo 18, Reglamentación de la Ley N° 22.315**.
+
+En caso de incumplimiento a las normas contenidas en el Título I de la Resolución General IGJ 15/2024 (referente a la información anual y certificación), la sociedad, sus directores y síndico serán pasibles de hasta el monto máximo de la multa prevista en las **Leyes N° 19.550 y N° 22.315**. **Artículo 252, punto I, Resolución General IGJ 15/2024**.
+
+La falta de presentación de ciertas constancias requeridas por la IGJ, previa intimación por diez (10) días hábiles, será causal de imposición de las sanciones previstas en los **artículos 12 y 13 de la Ley N° 22.315 y 302 de la Ley N° 19.550**. **Artículo 135, Resolución General IGJ 15/2024**.
+
+Las resoluciones de la Inspección General de Justicia son apelables ante la Cámara Nacional de Apelaciones en lo Comercial de la Capital Federal, cuando se refieran a comerciantes o sociedades comerciales. **Artículo 16, Ley Orgánica de la Inspección General de Justicia**.
+
+Según la **RG IGJ 15/2024**, las resoluciones del Inspector General de Justicia serán únicamente apelables ante la Cámara Nacional de Apelaciones en lo Civil o Comercial según el caso, en los términos previstos por los **artículos 16 y siguientes de la Ley N° 22.315**. **Artículo 30, Resolución General IGJ 15/2024**.
+
+El recurso de apelación deberá presentarse ante la INSPECCIÓN GENERAL DE JUSTICIA, con patrocinio letrado y dentro del plazo de **treinta (30) días** previsto en el **artículo 25 bis de la Ley N° 19.549**, contado desde la notificación de la resolución impugnada. **Artículo 30, Resolución General IGJ 15/2024**.
+
+Es importante notar que el **Artículo 12 de la Ley Orgánica de la Inspección General de Justicia** establece las causales generales por las cuales la IGJ aplicará sanciones, y el **Artículo 22 de la Resolución General IGJ 15/2024** indica que el Inspector General de Justicia establecerá las sanciones correspondientes de conformidad con los **artículos 12, 13 y 14 de la Ley N° 22.315, y artículo 302 de la Ley N° 19.550**. Para determinar una sanción, se ponderarán, entre otros, la gravedad del hecho, su reiteración y el capital y el patrimonio de la entidad sancionada.
+
+================================================================================
+PREGUNTA 13 de 20:
+¿Puede una persona humana constituir una SAS unipersonal en la Ciudad de Buenos Aires? ¿Qué exige la Ley 27349 para su constitución y qué trámite debe seguirse ante la IGJ según la RG IGJ 15/2024?
+
+RESPUESTA:
+Sí, una persona humana puede constituir una SAS unipersonal en la Ciudad de Buenos Aires.
+
+**Requisitos para la constitución de una SAS según la Ley 27349:**
+
+*   **Constitución por una o varias personas:** La SAS podrá ser constituida por una o varias personas humanas o jurídicas, quienes limitan su responsabilidad a la integración de las acciones que suscriban o adquieran, sin perjuicio de la garantía a que se refiere el artículo 43. (Artículo 34 de la Ley de Apoyo al Capital Emprendedor).
+*   **Limitación de responsabilidad:** La responsabilidad de los socios se limita a la integración de las acciones que suscriban o adquieran. (Artículo 34 de la Ley de Apoyo al Capital Emprendedor).
+*   **Restricción para SAS unipersonales:** La SAS unipersonal no puede constituir ni participar en otra SAS unipersonal. (Artículo 34 de la Ley de Apoyo al Capital Emprendedor).
+*   **Instrumento constitutivo:** La SAS podrá ser constituida por instrumento público o privado. En este último caso, la firma de los socios deberá ser certificada en forma judicial, notarial, bancaria o por autoridad competente del registro público respectivo. (Artículo 35 de la Ley de Apoyo al Capital Emprendedor).
+*   **Constitución por medios digitales:** La SAS podrá constituirse por medios digitales con firma digital, y de acuerdo a la reglamentación que a tal efecto se dicte. En estos supuestos, el instrumento deberá ser remitido a los fines de su inscripción al Registro Público correspondiente en el formato de archivo digital que oportunamente se establezca. (Artículo 35 de la Ley de Apoyo al Capital Emprendedor).
+*   **Contenido del instrumento constitutivo:** El instrumento constitutivo, sin perjuicio de las cláusulas que los socios resuelvan incluir, deberá contener como mínimo los siguientes requisitos:
+    *   El nombre, edad, estado civil, nacionalidad, profesión, domicilio, número de documento de identidad, Clave Única de Identificación Tributaria (CUIT) o Clave Única de Identificación Laboral (CUIL) o Clave de Identificación (CDI) de los socios, en su caso. Si se tratare de una o más personas jurídicas, deberá constar su denominación o razón social, domicilio y sede, datos de los integrantes del órgano de administración y Clave Única de Identificación Tributaria (CUIT) o Clave de Identificación (CDI) de las mismas, o dar cumplimiento con la registración que a tal efecto disponga la autoridad fiscal, en su caso, así como los datos de inscripción en el registro que corresponda. (Artículo 36, inciso 1 de la Ley de Apoyo al Capital Emprendedor).
+    *   La denominación social que deberá contener la expresión “Sociedad por Acciones Simplificada”, su abreviatura o la sigla SAS. La omisión de esta mención hará responsables ilimitada y solidariamente a los administradores o representantes de la sociedad, por los actos que celebren en esas condiciones. (Artículo 36, inciso 2 de la Ley de Apoyo al Capital Emprendedor).
+    *   El domicilio de la sociedad y su sede. Si en el instrumento constitutivo constare solamente el domicilio, la dirección de su sede podrá constar en el acta de constitución o podrá inscribirse simultáneamente mediante petición por separado suscripta por el órgano de administración. Se tendrán por válidas y vinculantes para la sociedad todas las notificaciones efectuadas en la sede inscripta, hasta tanto la misma haya sido efectivamente cancelada por el registro público donde la sede haya sido registrada por la sociedad. (Artículo 36, inciso 3 de la Ley de Apoyo al Capital Emprendedor).
+    *   La designación de su objeto, el que podrá ser amplio y plural. Las actividades que lo constituyan podrán guardar o no conexidad o relación entre ellas. (Artículo 36, inciso 4 de la Ley de Apoyo al Capital Emprendedor).
+    *   El plazo de duración, que deberá ser determinado. (Artículo 36, inciso 5 de la Ley de Apoyo al Capital Emprendedor).
+    *   El capital social y el aporte de cada socio, que deberán ser expresados en moneda nacional, haciéndose constar las clases, modalidades de emisión y demás características de las acciones y, en su caso, su régimen de aumento. El instrumento constitutivo, además, contemplará la suscripción del capital, el monto y la forma de integración y, si correspondiere, el plazo para el pago del saldo adeudado, el que no podrá exceder de dos (2) años desde la firma de dicho instrumento. (Artículo 36, inciso 6 de la Ley de Apoyo al Capital Emprendedor).
+    *   La organización de la administración, de las reuniones de socios y, en su caso, de la fiscalización. El instrumento constitutivo deberá contener la individualización de los integrantes de los órganos de administración y, en su caso, del órgano de fiscalización, fijándose el término de duración en los cargos e individualizándose el domicilio donde serán válidas todas las notificaciones que se les efectúen en tal carácter. En todos los casos, deberá designarse representante legal. (Artículo 36, inciso 7 de la Ley de Apoyo al Capital Emprendedor).
+    *   Las reglas para distribuir las utilidades y soportar las pérdidas. (Artículo 36, inciso 8 de la Ley de Apoyo al Capital Emprendedor).
+    *   Las cláusulas necesarias para establecer los derechos y obligaciones de los socios entre sí y respecto de terceros. (Artículo 36, inciso 9 de la Ley de Apoyo al Capital Emprendedor).
+    *   Las cláusulas atinentes a su funcionamiento, disolución y liquidación. (Artículo 36, inciso 10 de la Ley de Apoyo al Capital Emprendedor).
+    *   La fecha de cierre del ejercicio. (Artículo 36, inciso 11 de la Ley de Apoyo al Capital Emprendedor).
+*   **Suscripción e integración de acciones:** La suscripción e integración de las acciones deberá hacerse en las condiciones, proporciones y plazos previstos en el instrumento constitutivo. Los aportes en dinero deben integrarse en un veinticinco por ciento (25 %) como mínimo al momento de la suscripción. La integración del saldo no podrá superar el plazo máximo de dos (2) años. Los aportes en especie deben integrarse en un cien por ciento (100 %) al momento de la suscripción. (Artículo 41 de la Ley de Apoyo al Capital Emprendedor).
+*   **Emisión de acciones:** Se podrán emitir acciones nominativas no endosables, ordinarias o preferidas, indicando su valor nominal y los derechos económicos y políticos reconocidos a cada clase. También podrán emitirse acciones escriturales. (Artículo 46 de la Ley de Apoyo al Capital Emprendedor).
+*   **Limitaciones para mantener el carácter de SAS:** Para constituir y mantener su carácter de SAS, la sociedad no deberá estar comprendida en ninguno de los supuestos previstos en los incisos 3, 4 y 5 del artículo 299 de la Ley General de Sociedades 19.550 (t.o. 1984) y sus modificatorias. Tampoco podrá ser controlada por ni participar en más del treinta por ciento (30%) del capital de sociedades comprendidas en los supuestos mencionados en el inciso 1 del artículo 299 de la Ley General de Sociedades 19.550. (Artículo 39 de la Ley de Apoyo al Capital Emprendedor).
+    *   **Supuestos del Artículo 299 de la Ley General de Sociedades 19.550:**
+        *   Hagan oferta pública de sus acciones o debentures.
+        *   Tengan capital social superior a PESOS DOS MIL MILLONES ($ 2.000.000.000), monto que podrá ser actualizado por el Poder Ejecutivo.
+        *   Sean de participación estatal.
+        *   Realicen operaciones de capitalización, ahorro o en cualquier forma requieran dinero o valores al público con promesas de prestaciones o beneficios futuros.
+        *   Exploten concesiones o servicios públicos.
+        *   Se trate de sociedad controlante de o controlada por otra sujeta a fiscalización, conforme a uno de los incisos anteriores.
+        *   Se trate de Sociedades Anónimas Unipersonales.
+*   **Transformación obligatoria:** En caso de que la SAS resultara encuadrada en alguno de los supuestos previstos en los incisos 1 o 2 del artículo 39, deberá transformarse en alguno de los tipos regulares previstos en la Ley General de Sociedades 19.550 (t.o. 1984) y sus modificatorias e inscribir la transformación en el registro público correspondiente, en un plazo no mayor a los seis (6) meses de configurado el supuesto. En caso de que la configuración del supuesto no resulte de un hecho o acto propio de la SAS, el plazo se computará desde que tomó conocimiento del mismo. La transformación no será obligatoria si antes de ese plazo la SAS deja de estar encuadrada en alguno de dichos supuestos. Vencido el plazo indicado sin que se hubiera producido la inscripción de la transformación en el registro público correspondiente, los socios responderán frente a terceros en forma solidaria, ilimitada y subsidiaria. (Artículo 39 de la Ley de Apoyo al Capital Emprendedor).
+
+**Trámite ante la IGJ según la RG IGJ 15/2024:**
+
+La RG IGJ 15/2024 se refiere principalmente a la constitución de asociaciones civiles y fundaciones, y no establece un procedimiento específico para la constitución de SAS. Sin embargo, la Ley de Apoyo al Capital Emprendedor (Ley 27349) establece que supletoriamente, serán de aplicación las disposiciones de la Ley General de Sociedades, 19.550, en cuanto se concilien con las de esta ley. (Artículo 33 de la Ley de Apoyo al Capital Emprendedor).
+
+Por lo tanto, el trámite de constitución de una SAS, incluyendo una SAS unipersonal, se rige por las disposiciones de la Ley 27349 y, en lo que sea aplicable y no se oponga, por la Ley General de Sociedades 19.550, y se tramita ante el Registro Público correspondiente. La RG IGJ 15/2024 no es la norma aplicable para la constitución de SAS.
+
+================================================================================
+PREGUNTA 14 de 20:
+Si una SAS alcanza los supuestos del artículo 299 de la LSC, ¿qué obligación impone la Ley 27349 y en qué plazo debe cumplirse? ¿Qué trámite de transformación debe seguirse ante la IGJ según la RG IGJ 15/2024?
+
+RESPUESTA:
+Si una Sociedad por Acciones Simplificada (SAS) se encuadra en alguno de los supuestos previstos en los incisos 3, 4 y 5 del artículo 299 de la Ley General de Sociedades 19.550 (t.o. 1984), o si es controlada por o participa en más del treinta por ciento (30%) del capital de sociedades comprendidas en dichos supuestos, tiene la obligación de transformarse en alguno de los tipos regulares previstos en la Ley General de Sociedades 19.550 (t.o. 1984) y sus modificatorias.
+
+Esta transformación debe inscribirse en el registro público correspondiente en un plazo no mayor a los seis (6) meses de configurado el supuesto. Si la configuración del supuesto no resulta de un hecho o acto propio de la SAS, el plazo se computará desde que tomó conocimiento del mismo. La transformación no será obligatoria si antes de dicho plazo la SAS deja de estar encuadrada en alguno de los supuestos mencionados.
+
+En caso de que vencido el plazo indicado no se hubiera producido la inscripción de la transformación en el registro público correspondiente, los socios responderán frente a terceros en forma solidaria, ilimitada y subsidiaria.
+
+El trámite de transformación ante la Inspección General de Justicia (IGJ) según la Resolución General IGJ 15/2024, para el caso de transformación de una sociedad comercial en otro tipo societario, requiere la presentación de la siguiente documentación dentro del plazo estipulado en el artículo 81 de la Ley N° 19.550:
+
+1.  **Testimonio de la escritura pública o instrumento privado original del acuerdo de transformación**, con una copia de tamaño normal y dos de margen protocolar ("margen ancho"). El documento debe contener:
+    *   La transcripción del acta de asamblea con su registro de asistencia o de la reunión de socios de donde resulte la resolución social aprobatoria de la transformación conforme al artículo 77, incisos 1 y 2 de la Ley N° 19.550.
+    *   El estatuto o contrato del nuevo tipo societario adoptado; debe constar el nexo de continuidad jurídica entre la razón o denominación social anterior a la transformación y la resultante de ésta, de modo que resulte indubitable que se trata de la misma sociedad.
+    *   Los nombres y demás datos personales previstos en el artículo 11, inciso 1° de la Ley N° 19.550, de los socios que continúen en la sociedad, los que se incorporen y los miembros de los órganos de administración y fiscalización del tipo adoptado.
+    *   La constancia, respecto de los administradores, cuando corresponda por el tipo adoptado, de la vigencia o constitución, según el caso, de la garantía requerida en el artículo 70 de las presentes Normas, salvo que, con esos mismos alcances, ello resulte del dictamen de precalificación.
+    *   La mención expresa de los socios recedentes y capitales que representan o en su defecto la manifestación de no haberse ejercido derecho de receso.
+
+2.  **Balance especial de transformación**, en ejemplar original o en su defecto con firma ológrafa del contador y del representante legal, con copias de tamaño normal y dos copias protocolares ("margen ancho"), con informe de auditoría conteniendo opinión. En dicho balance, en caso de incorporación de socios, debe constar el detalle de la cuenta de integración, por socio y por rubro, en el capítulo "Patrimonio Neto". Para la medición de los bienes incluidos en el balance de transformación, se aplicarán las normas contables aplicables a balances de ejercicio.
+
+3.  El **dictamen contable emitido conforme el Anexo II de estas Normas** deberá contener:
+    *   Indicación de los libros rubricados y folios donde se hallare transcripto el balance de transformación.
+    *   En caso de existir saldos deudores de socios con incidencia sobre las cuentas de integración, informe sobre la registración de su cancelación, salvo reducción del capital en los importes correspondientes.
+
+4.  **Inventario resumido de los rubros del balance especial de transformación certificado por contador público e informe de dicho profesional** sobre el origen y contenido de cada rubro principal, el criterio de valuación aplicado y la justificación de la misma. No es necesario cumplir con lo requerido en este inciso si el balance especial de transformación cumple con las normas de exposición aplicables a los estados contables de ejercicio.
+
+5.  **Constancia de las siguientes publicaciones**:
+    *   La de la convocatoria a asamblea, salvo que ésta haya sido unánime, si la sociedad que se transforma es sociedad por acciones (artículo 237, Ley N° 19.550); si no lo fuere el dictamen de precalificación debe expedirse sobre la regularidad del cumplimiento de las formalidades de convocatoria, citación o consulta a los socios, salvo haga constar la presencia de todos ellos.
+    *   La prescripta por el artículo 77, inciso 4°, de la Ley N° 19.550.
+    *   La requerida por el artículo 10 de dicha ley, si el tipo social que se adopta es el de sociedad por acciones o de responsabilidad limitada.
+
+6.  El **dictamen profesional debe expedirse sobre el cumplimiento de lo requerido por el artículo 405, último párrafo, de estas Normas**.
+
+En caso de que en la Inspección General de Justicia no existiere legajo de la sociedad que se transforma, además de cumplirse los recaudos de los incisos anteriores, deberá acompañarse copia certificada notarialmente de su acto constitutivo y modificaciones, con constancia de su inscripción en el Registro Público, si la hubiera.
+
+El monto del capital social debe ser igual al del patrimonio neto resultante del balance especial de transformación requerido por el inciso 2), adicionado en su caso con el valor del aporte del socio o socios que se incorporan. Puede no obstante decidirse fijar una cifra inferior, siempre que la misma cumpla con la exigencia del capital mínimo requerido para el tipo social de sociedad anónima. En tal caso, la diferencia entre la sumatoria de capital y el monto del patrimonio neto se imputará a una reserva especial que se regirá por el tercer párrafo in fine del artículo 202 de la Ley N° 19.550.
+
+Adicionalmente, se deberá cumplir con lo dispuesto en el artículo 405 de la RG IGJ 15/2024 respecto a la transferencia de libros rubricados.
+
+================================================================================
+PREGUNTA 15 de 20:
+¿Qué obligación impone la RG IGJ 15/2024 respecto de la declaración del beneficiario final en los trámites societarios ante la IGJ, cuándo debe actualizarse esa declaración y qué sanción corresponde ante su incumplimiento?
+
+RESPUESTA:
+La Resolución General IGJ 15/2024 impone la obligación de presentar una declaración jurada de beneficiario final en los trámites registrales de sociedades nacionales, binacionales, sociedades constituidas en el extranjero, y en la registración o modificación de contratos asociativos o contratos de fideicomiso.
+
+**Obligación de Declaración del Beneficiario Final:**
+
+*   **Artículo 421 de la RG IGJ 15/2024:** Establece la obligación de presentar una declaración jurada de beneficiario final en los trámites registrales mencionados.
+*   **Definición de Beneficiario Final:** Se entenderá como beneficiario final a la/s persona/s humana/s que reúnan las características establecidas en el artículo 2° de la Resolución N° 112/2021 de la Unidad de Información Financiera o por la que en un futuro la modifique o sustituya.
+*   **Contratos de Fideicomiso y Estructuras Similares:** Se deberá individualizar a los beneficiarios finales de cada una de las partes del contrato, de conformidad a lo prescripto por el artículo 2 de la Resolución N° 112/2021 de la Unidad de Información Financiera.
+*   **Contratos Asociativos:** Se deberá individualizar al/los beneficiario/s final/es de las entidades que integran el contrato.
+*   **Cadena de Titularidad:** En caso de tratarse de una cadena de titularidad, se deberá describir la misma hasta llegar a la persona/s humana/s que ejerza/n el control final conforme lo dispuesto en el artículo 2° de la Resolución N° 112/2021 de la Unidad de Información Financiera.
+*   **Documentación Respaldatoria:** Deberá acompañarse, en cada caso, la respectiva documentación respaldatoria, estatutos societarios, registros de acciones o participaciones societarias, contratos, transferencia de participaciones y/o cualquier otro documento que acredite la cadena de titularidad y/o control.
+*   **Excepción:** Cuando la participación mayoritaria del Sujeto Obligado persona jurídica corresponda a una sociedad que realice oferta pública de sus valores negociables, listados en un mercado local o internacional autorizado y la misma esté sujeta a requisitos sobre transparencia y/o revelación de información, deberá indicar tal circunstancia a los efectos de poder ser exceptuado de este requisito de identificación. Dicha excepción sólo tendrá lugar en la medida que se garantice el acceso oportuno a la información respectiva y que la misma guarde estricta correspondencia con la exigida por la Unidad de Información Financiera para la identificación de el/la Beneficiario/a Final.
+
+**Procedimiento de Presentación de la Declaración Jurada:**
+
+1.  **Aplicativo Digital:** Previa presentación, se deberá completar el aplicativo correspondiente, disponible en la página web del organismo (http://www.argentina.gob.ar/justicia/igj o la que en el futuro la reemplace) y remitirlo digitalmente.
+2.  **Soporte Papel o Digital:** Con posterioridad, y en oportunidad de presentación de los trámites referidos en el primer párrafo del Artículo 421, deberá realizarse la presentación en soporte papel, o soporte digital, dependiendo del formato del trámite registral a presentar, acompañando el comprobante de transacción del aplicativo.
+    *   **Opción a:** Bastará la firma ológrafa del representante legal —inscripto u objeto de registración en dicho trámite— de la entidad presentante en la misma, con firma y sello del profesional dictaminante o certificada notarialmente en los trámites que no requieran dictamen de precalificación.
+    *   **Opción b:** Bastará la firma ológrafa del propio beneficiario final declarante, con firma y sello del profesional dictaminante o certificada notarialmente en los trámites que no requieran dictamen de precalificación. En caso de que la declaración jurada sea firmada fuera de la República Argentina, deberá certificarse la firma del emisor mediante escribano público o funcionario similar con facultades suficientes de acuerdo a la ley del lugar de firma y emisión. Serán de aplicación en este caso las formalidades exigidas por el **Artículo 203 de la RG IGJ 15/2024**.
+
+**Actualización de la Declaración Jurada:**
+
+*   **Periodicidad Anual:** La declaración jurada original regulada por el **Artículo 421 de la RG IGJ 15/2024** deberá presentarse una vez por año calendario.
+*   **Primera Oportunidad del Año:** Deberá ser presentada en la primera oportunidad en que se solicite la inscripción de alguno de los trámites registrales referidos en el primer párrafo del **Artículo 421**.
+*   **Trámites Posteriores en el Mismo Año:** Siendo suficiente en los trámites posteriores que se efectúen dentro del mismo año calendario acreditar su cumplimiento anterior mediante copia simple de la misma con firma y sello del profesional dictaminante, ello hasta tanto comience un nuevo año calendario.
+*   **Año Calendario sin Presentaciones:** En caso de no efectuarse ninguna presentación de las referidas en el primer párrafo del **Artículo 421** durante todo un año calendario, deberá cumplirse con las declaraciones juradas adeudadas en la primera oportunidad en que se solicite la inscripción de alguno de los trámites registrales referidos en el primer párrafo del **Artículo 421**.
+*   **Definición de Año Calendario:** Se considerará año calendario a estos efectos, el período comprendido entre el 1 de enero y el 31 de diciembre de cada año.
+*   **Presentación de Estados Contables:** Los estados contables de las sucursales, asientos o representaciones permanentes deben ser presentados juntamente con la Declaración Jurada de Beneficiario Final conforme el **Artículo 421 de la RG IGJ 15/2024**, dentro de los ciento veinte (120) días corridos posteriores a la fecha de cierre del ejercicio. Asimismo, deberá presentarse nota suscripta por el representante legal informando las modificaciones de los Beneficiarios Finales que hubieran existido desde la presentación anterior, o en su caso la declaración de que no se produjeron modificaciones (**Artículo 175 de la RG IGJ 15/2024**).
+
+**Sanción ante el Incumplimiento:**
+
+*   **No Inscripción ni Conclusión de Trámites:** La Inspección General de Justicia (IGJ) no inscribirá ni concluirá ningún trámite presentado por las entidades o representantes de contratos asociativos o fiduciarios de contratos de fideicomiso que no hayan presentado ante este Organismo la declaración jurada que corresponda, hasta la efectiva presentación de la misma (**Artículo 422 de la RG IGJ 15/2024**).
+*   **Sanciones Previstas por Ley:** Lo dispuesto en el párrafo anterior se aplicará sin perjuicio de las sanciones previstas por la Ley N° 22.315 que podrían corresponder ante el incumplimiento de la presentación de las declaraciones juradas prescriptas en el Libro XI de la RG IGJ 15/2024 u otros incumplimientos a la normativa vigente (**Artículo 422 de la RG IGJ 15/2024**).
+*   **Falta de Presentación en Término:** La falta de presentación en término de la documentación que acredite la celebración de las asambleas anuales ordinarias es causal suficiente para aplicar, sin que medie requerimiento o intimación, las sanciones previstas en las leyes Nros. 19.550 y 22.315. Dichas sanciones podrán extenderse, a criterio de la Inspección General de Justicia, a los integrantes de los órganos de administración y fiscalización en forma personal (**Artículo 18 de la Reglamentación de la Ley N° 22.315**).
+
+================================================================================
+PREGUNTA 16 de 20:
+¿Puede una SA en estado de disolución reconducirse? ¿Qué establece la LSC al respecto y qué trámite exige la RG IGJ 15/2024 para inscribir la reconducción ante la IGJ?
+
+RESPUESTA:
+Sí, una Sociedad Anónima (SA) en estado de disolución puede reconducirse.
+
+**Disposiciones de la Ley General de Sociedades (LGS) respecto a la reconducción:**
+
+*   **Artículo 95 de la LGS:** Establece que la reconducción de la sociedad puede acordarse mientras no se haya inscripto el nombramiento del liquidador. Para ello, se requiere el cumplimiento de los requisitos del primer párrafo del mismo artículo, que indica que la prórroga (y por extensión, la reconducción) requiere acuerdo unánime de los socios, salvo pacto en contrario y lo dispuesto para las sociedades por acciones y las sociedades de responsabilidad limitada. La reconducción debe resolverse y la inscripción solicitarse antes del vencimiento del plazo de duración de la sociedad. Todo ulterior acuerdo de reconducción debe adoptarse por unanimidad, sin distinción de tipos.
+*   **Artículo 100 de la LGS:** Permite la remoción de las causales de disolución mediante decisión del órgano de gobierno y la eliminación de la causa que le dio origen, siempre que exista viabilidad económica y social para la subsistencia de la actividad de la sociedad. La resolución deberá adoptarse antes de cancelarse la inscripción, sin perjuicio de terceros y de las responsabilidades asumidas. En caso de duda sobre la existencia de una causal de disolución, se estará a favor de la subsistencia de la sociedad.
+*   **Artículo 94 de la LGS:** Enumera las causas de disolución de la sociedad, entre las cuales se encuentran la expiración del término, el cumplimiento de condición, la consecución o imposibilidad de lograr el objeto, la pérdida del capital social, la declaración en quiebra, la fusión, la sanción firme de cancelación de oferta pública o cotización de acciones, y la resolución firme de retiro de la autorización para funcionar.
+*   **Artículo 99 de la LGS:** Señala que los administradores, con posterioridad al vencimiento del plazo de duración de la sociedad o al acuerdo de disolución o a la declaración de haberse comprobado alguna de las causales de disolución, solo pueden atender los asuntos urgentes y deben adoptar las medidas necesarias para iniciar la liquidación. Cualquier operación ajena a estos fines los hace responsables ilimitada y solidariamente respecto a terceros y socios.
+
+**Trámite exigido por la RG IGJ 15/2024 para inscribir la reconducción ante la IGJ:**
+
+La **Resolución General IGJ 15/2024** establece los requisitos para la inscripción de la prórroga o reconducción de sociedades. Específicamente, el **Artículo 159** indica que la inscripción de la reconducción requiere el cumplimiento de las disposiciones sobre reformas contractuales o estatutarias y los siguientes requisitos especiales:
+
+1.  **Derecho de Receso:** Si las normas legales o contractuales admiten el derecho de receso, el instrumento a inscribir debe contener la individualización de los socios que lo ejercieron y del capital que representan, o la manifestación de que tal derecho no fue ejercido.
+2.  **Publicidad y Nexo de Continuidad:** La estipulación contractual o estatutaria objeto de reforma y, en su caso, la publicidad prescripta por el **Artículo 10, inciso b), de la Ley N° 19.550**, deben hacer referencia expresa a la reconducción y establecer el nexo de continuidad social.
+3.  **Casos de Improcedencia de la Reconducción:** La inscripción de la reconducción no procederá cuando la causal disolutoria que se pretenda revertir tenga carácter sancionatorio, de acuerdo con los **artículos 18, 19 y 20 de la Ley N° 19.550**, y el **inciso 9 del Artículo 94 de la Ley N° 19.550**.
+
+Adicionalmente, se deben considerar los siguientes artículos que, si bien no son exclusivos de la reconducción, son relevantes para el proceso de inscripción y control por parte de la IGJ:
+
+*   **Artículo 33 de la RG IGJ 15/2024:** Enumera los actos que el Registro Público inscribe, incluyendo la "prórroga, reactivación, liquidación y cancelación de la sociedad" y la "disolución, designación de liquidador, prórroga, reactivación, liquidación y cancelación de la sociedad".
+*   **Artículo 369 de la RG IGJ 15/2024:** Establece que embargos y otras medidas judiciales restrictivas obstarán a la inscripción de ciertos actos, incluyendo la "Prórroga y reconducción o reactivación de las sociedades con partes de interés hasta que no se cumpla con lo dispuesto por el artículo 57 de la Ley N° 19.550".
+*   **Artículo 374 de la RG IGJ 15/2024:** Indica que, previo a la inscripción de la prórroga y reconducción, se verificará que no existan medidas judiciales inscriptas que afecten a la sociedad.
+*   **Artículo 371 de la RG IGJ 15/2024:** Detalla el procedimiento a seguir si se advierten medidas judiciales, devolviendo las actuaciones al funcionario que ordenó la inscripción para que se expida sobre si la medida impide la inscripción.
+*   **Artículo 15 de la Reglamentación de la Ley N° 22.315:** La Inspección General de Justicia puede exigir la ratificación por todos los otorgantes o por una nueva asamblea o reunión de socios de los actos sujetos a control de legalidad si la iniciación del trámite ante el Organismo excede los seis meses desde la fecha de otorgamiento o celebración.
+*   **Artículo 244 de la LGS:** Si bien se refiere a asambleas extraordinarias, menciona que para la prórroga o reconducción, las resoluciones se adoptarán por el voto favorable de la mayoría de acciones con derecho a voto, salvo que el estatuto exija mayor número.
+
+En resumen, la reconducción de una SA en estado de disolución es posible bajo ciertas condiciones, requiriendo un acuerdo unánime (salvo pacto en contrario o disposiciones específicas para ciertos tipos societarios) y el cumplimiento de los requisitos formales y de publicidad establecidos por la LGS y la RG IGJ 15/2024, prestando especial atención a la inexistencia de causales sancionatorias y a la posible existencia de medidas judiciales.
+
+================================================================================
+PREGUNTA 17 de 20:
+¿Qué SA quedan sujetas a fiscalización permanente de la IGJ según el artículo 299 de la LSC, qué funciones ejerce la IGJ sobre ellas conforme la Ley 22315 y qué obligaciones de presentación documental establece la RG IGJ 15/2024?
+
+RESPUESTA:
+Según el artículo 299 de la Ley General de Sociedades (LGS), las Sociedades Anónimas (SA) que quedan sujetas a fiscalización de la autoridad de contralor de su domicilio durante su funcionamiento, disolución y liquidación son aquellas que cumplan con alguno de los siguientes supuestos:
+
+1.  **Oferta pública de sus acciones o debentures:** Las SA que realicen oferta pública de sus acciones o debentures.
+2.  **Capital social superior a $2.000.000.000:** Aquellas que tengan un capital social superior a PESOS DOS MIL MILLONES ($ 2.000.000.000). Este monto puede ser actualizado por el Poder Ejecutivo.
+3.  **Participación estatal:** Las que sean de participación estatal, ya sea por la participación del Estado nacional, los estados provinciales, la Ciudad Autónoma de Buenos Aires, los municipios y/o los organismos estatales legalmente autorizados al efecto.
+4.  **Operaciones de capitalización, ahorro o requieran dinero al público:** Las que realicen operaciones de capitalización, ahorro o en cualquier forma requieran dinero o valores al público con promesas de prestaciones o beneficios futuros.
+5.  **Explotación de concesiones o servicios públicos:** Las que exploten concesiones o servicios públicos.
+6.  **Sociedad controlante o controlada:** Aquellas que sean sociedad controlante de o controlada por otra sujeta a fiscalización, conforme a uno de los incisos anteriores.
+7.  **Sociedades Anónimas Unipersonales:** Las Sociedades Anónimas Unipersonales.
+
+La Inspección General de Justicia (IGJ) ejerce funciones sobre estas Sociedades Anónimas conforme a la Ley Orgánica de la Inspección General de Justicia (Ley 22.315) y su reglamentación. Específicamente, el artículo 7 de la Ley Orgánica de la IGJ establece que la IGJ ejerce las siguientes funciones con respecto a las sociedades por acciones, excepto las sometidas a la Comisión Nacional de Valores:
+
+*   **Conformar el contrato constitutivo y sus reformas** (Art. 7, inc. a, Ley Orgánica de la IGJ).
+*   **Controlar las variaciones del capital, la disolución y liquidación de las sociedades** (Art. 7, inc. b, Ley Orgánica de la IGJ).
+*   **Controlar y, en su caso, aprobar la emisión de debentures** (Art. 7, inc. c, Ley Orgánica de la IGJ).
+*   **Fiscalizar permanentemente el funcionamiento, disolución y liquidación en los supuestos de los artículos 299 y 301 de la Ley de Sociedades Comerciales** (Art. 7, inc. d, Ley Orgánica de la IGJ).
+*   **Conformar y registrar los reglamentos previstos en el artículo 5 de la ley citada** (Art. 7, inc. e, Ley Orgánica de la IGJ).
+*   **Solicitar al juez competente en materia comercial del domicilio de la sociedad, las medidas previstas en el artículo 303 de la ley de sociedades comerciales** (Art. 7, inc. f, Ley Orgánica de la IGJ).
+
+Además, el artículo 9 de la Ley Orgánica de la IGJ detalla las atribuciones de la IGJ respecto a las sociedades que realizan operaciones de capitalización y ahorro, que también pueden ser Sociedades Anónimas y estar sujetas a fiscalización:
+
+*   Otorgar y cancelar la autorización para sus operaciones (Art. 9, inc. a, Ley Orgánica de la IGJ).
+*   Controlar permanentemente su funcionamiento, fiscalizar su actividad, su disolución y su liquidación (Art. 9, inc. b, Ley Orgánica de la IGJ).
+*   Aprobar planes y bases técnicas, autorizar y supervisar la colocación de los fondos de ahorro (Art. 9, inc. c, Ley Orgánica de la IGJ).
+*   Conformar y reglamentar la publicidad inherente (Art. 9, inc. d, Ley Orgánica de la IGJ).
+*   Exigir la presentación de informes o estados contables especiales o suplementarios (Art. 9, inc. e, Ley Orgánica de la IGJ).
+*   Reglamentar el funcionamiento de la actividad (Art. 9, inc. f, Ley Orgánica de la IGJ).
+*   Aplicar las sanciones que fije la legislación (Art. 9, inc. g, Ley Orgánica de la IGJ).
+*   Conformar y registrar los reglamentos que no sean de simple organización interna (Art. 9, inc. h, Ley Orgánica de la IGJ).
+*   La IGJ está facultada para impedir el funcionamiento de sociedades y organizaciones que realicen estas operaciones sin autorización o sin cumplir los requisitos legales (Art. 9, último párrafo, Ley Orgánica de la IGJ).
+
+En cuanto a las obligaciones de presentación documental establecidas por la Resolución General IGJ 15/2024 (Normas de la Inspección General de Justicia), las Sociedades Anónimas sujetas a fiscalización permanente tienen las siguientes:
+
+*   **Presentación de estados contables anuales o por períodos intermedios:** Las sociedades por acciones y las de responsabilidad limitada cuyo capital alcance el importe fijado por el artículo 299, inciso 2°, de la Ley N° 19.550, presentarán ante la IGJ sus estados contables anuales o, cuando corresponda, por períodos intermedios, expresados en pesos (Art. 226, RG IGJ 15/2024).
+    *   Los estados contables se confeccionarán de acuerdo con las normas técnicas profesionales vigentes y sus modificaciones, en las condiciones de su adopción por el Consejo Profesional de Ciencias Económicas de la Ciudad Autónoma de Buenos Aires y sus normas complementarias (Art. 226, segundo párrafo, RG IGJ 15/2024).
+    *   Los estados contables anuales de las sociedades sobre las que se ejerce control, control conjunto o influencia significativa, utilizados para aplicar el método del valor patrimonial proporcional, así como los estados contables consolidados, deberán contar con un informe de auditoría de contador público independiente (Art. 226, punto 1, RG IGJ 15/2024).
+    *   Cuando los estados contables correspondan a períodos intermedios y deban presentarse para la inscripción de trámites específicos (fusiones, escisiones o reducciones del capital social de acuerdo con los artículos 203 y 204 de la Ley N° 19.550), también deberán contar con informes de auditoría de contador público independiente (Art. 226, punto 1, segundo párrafo, RG IGJ 15/2024).
+    *   En ningún caso se admitirán certificaciones literales de contador público independiente sobre estados contables que se presenten a este organismo, salvo circunstancias excepcionales (Art. 226, punto 2, RG IGJ 15/2024).
+
+*   **Comunicación y presentación de documentación de asambleas:** Las sociedades por acciones sujetas a fiscalización permanente por la IGJ comunicarán la convocatoria de sus asambleas con al menos quince días de antelación, remitiendo la documentación que establezcan las resoluciones de la IGJ. Todas las sociedades por acciones presentarán, dentro de los quince días de celebradas sus asambleas, la documentación que establezcan las resoluciones de la IGJ (Art. 16, Reglamentación de la Ley N° 22.315).
+
+*   **Presentación de estados contables de entidades constituidas en el extranjero con representación en Argentina:** Las entidades constituidas en el extranjero que hagan ejercicio habitual en el país, establezcan sucursales, asientos o representaciones, deben presentar anualmente a la IGJ una copia de los estados contables del ejercicio (Art. 28, Reglamentación de la Ley N° 22.315). Para la apertura de representación o establecimiento permanente, se requiere la presentación de diversa documentación, incluyendo el contrato o acto constitutivo, resolución del órgano social competente, designación del representante, y un escrito del representante aceptando el cargo y denunciando sus datos personales, fijando sede social y constituyendo domicilio especial (Art. 289, RG IGJ 15/2024).
+
+*   **Presentación de información sobre participaciones y derechos de usufructo:** Las asociaciones civiles y las fundaciones locales, así como las representaciones de similares entidades constituidas en el extranjero inscriptas ante la IGJ que sean titulares de acciones, deberán presentar junto con sus estados contables:
+    *   Detalle de las características y cuantía de sus participaciones y el porcentaje que representan en el capital de la sociedad participada, tanto por participación directa como indirecta (Art. 354, punto 1, RG IGJ 15/2024).
+    *   Información sobre los derechos de usufructo que hayan constituido a favor de terceros, acompañando copia del instrumento de constitución (Art. 354, punto 2, RG IGJ 15/2024).
+    La IGJ podrá solicitar información adicional sobre la participación de estas entidades en sociedades, el ejercicio de derechos como socias y la actuación de sus directores o fiscalizadores en las sociedades participadas (Art. 354, último párrafo, RG IGJ 15/2024).
+
+================================================================================
+PREGUNTA 18 de 20:
+¿Cuándo es obligatoria la sindicatura en una SA según la LSC, qué requisitos deben cumplir los síndicos y qué documentación requiere la RG IGJ 15/2024 para inscribir su designación ante la IGJ?
+
+RESPUESTA:
+Según el contexto proporcionado, la sindicatura es obligatoria en las Sociedades Anónimas (SA) cuando estas prescinden de ella, según lo establece el **artículo 258, segundo párrafo, de la Ley N° 19.550**.
+
+En cuanto a los requisitos que deben cumplir los síndicos y la documentación requerida por la RG IGJ 15/2024 para inscribir su designación ante la IGJ, se detallan los siguientes puntos:
+
+**Requisitos y Documentación para la Inscripción de la Designación de Síndicos:**
+
+La Inspección General de Justicia (IGJ) requiere la presentación de diversa documentación para la inscripción del nombramiento de administradores sociales, lo cual incluye a los síndicos. Los artículos relevantes son el **104 y 105 de la RG IGJ 15/2024**, y se aplican en el contexto del nombramiento por la sindicatura según el **artículo 106 de la RG IGJ 15/2024**.
+
+**1. Instrumento que contiene las resoluciones de nombramiento:**
+*   Se requiere un testimonio de escritura pública o instrumento privado original.
+*   Este instrumento debe contener la transcripción del acta de la asamblea o reunión de socios que resolvió los nombramientos.
+*   Debe incluir el registro de asistencia (en el caso de sociedades por acciones) y el acta de la reunión del órgano de administración en la que se dispuso la distribución de cargos, si esta no se efectuó en la asamblea o reunión de socios.
+*   Si en la asamblea o reunión de socios cesaron directores, el acta debe individualizarlos.
+*   **Artículo 104, inciso 1, de la RG IGJ 15/2024.**
+
+**2. Publicación:**
+*   Se requiere la publicación prescripta por el **artículo 60 de la Ley N° 19.550**.
+*   Esta publicación debe individualizar de forma precisa a los administradores nombrados y sus cargos, y en su caso, a los cesantes.
+*   Los nombres deben coincidir exactamente con los resultantes de la asamblea o reunión de socios.
+*   Debe constar el domicilio especial constituido en cumplimiento del **artículo 256, último párrafo, de la Ley N° 19.550**.
+*   **Artículo 104, inciso 2, de la RG IGJ 15/2024.**
+
+**3. Constancia de los avisos de convocatoria:**
+*   Se requieren los avisos de convocatoria a la asamblea que efectuó los nombramientos, salvo que la misma haya sido unánime.
+*   Para las sociedades no accionarias, el dictamen de precalificación debe expedirse sobre el cumplimiento de las formalidades de convocatoria, citación o consulta a los socios, salvo que haga constar la presencia de todos ellos.
+*   **Artículo 104, inciso 3, de la RG IGJ 15/2024.**
+
+**4. Declaración jurada de Persona Expuesta Políticamente (PEP):**
+*   Cada administrador designado (incluidos los síndicos) debe presentar una declaración jurada sobre su condición de Persona Expuesta Políticamente, conforme lo establecido en el **artículo 414 de la RG IGJ 15/2024**.
+*   **Artículo 104, inciso 4, de la RG IGJ 15/2024.**
+
+**5. Aceptación del nombramiento, domicilios y garantía:**
+*   De las actas de la asamblea o reunión de socios que efectúe el nombramiento, o de la reunión del órgano de administración en la que se distribuyan los cargos, debe resultar la aceptación expresa o tácita del nombramiento por los administradores individualizados con precisión.
+    *   La presencia de los designados en cualquiera de los actos mencionados valdrá como aceptación tácita.
+    *   No se considerarán suficientes las referencias genéricas, la constancia de firmas sin aclaración ni la manifestación, aun con constancia de recepción, de haberse notificado la designación.
+    *   En caso de duda sobre la aceptación, deberá presentarse nota de aceptación expresa con la firma del administrador designado certificada notarialmente u otra constancia fehaciente, salvo que el profesional dictaminante manifieste que ha verificado la identidad del designado y su aceptación del cargo.
+    *   **Artículo 105, inciso 1, de la RG IGJ 15/2024.**
+*   Debe acreditarse el domicilio real en la República de la mayoría de los directores y el especial que todos ellos hayan constituido a los fines del **artículo 256, último párrafo, de la Ley N° 19.550**, el cual será vinculante frente a la IGJ.
+    *   En su defecto, tales domicilios deberán ser informados mediante nota con la firma de cada director certificada notarialmente.
+    *   **Artículo 105, inciso 2, de la RG IGJ 15/2024.**
+*   La constitución de la garantía requerida por el **artículo 256, segundo párrafo, de la Ley N° 19.550**, se acreditará de conformidad con lo establecido en el **artículo 71 de la RG IGJ 15/2024**.
+    *   Los dictámenes de precalificación deben expedirse sobre el efectivo cumplimiento de la constitución de la garantía, individualizando los documentos, su otorgante, fecha, monto y modalidad.
+    *   No será necesario si el cumplimiento resulta del instrumento cuya inscripción se pide.
+    *   **Artículo 105, inciso 3, de la RG IGJ 15/2024 y Artículo 71 de la RG IGJ 15/2024.**
+*   La aceptación del nombramiento y los domicilios real y especial del designado, deben acreditarse mediante nota de éste con su firma certificada notarialmente, y el cumplimiento de la constitución de la garantía, en la forma dispuesta en los **artículos 71 y 105 de estas Normas**.
+    *   **Artículo 106, inciso III, de la RG IGJ 15/2024.**
+
+**6. Publicación prescripta por el artículo 60 de la Ley N° 19.550:**
+*   Debe acompañarse la publicación prescripta por el **artículo 60 de la Ley N° 19.550**.
+*   **Artículo 106, inciso III, de la RG IGJ 15/2024.**
+
+**7. Dictámenes de precalificación:**
+*   En los casos de nombramiento por la sindicatura colegiada, el dictamen de precalificación debe expedirse sobre la observancia de las formalidades de convocatoria o citación a la reunión respectiva y de las normas de quórum y mayorías, conforme a la reglamentación del funcionamiento del órgano (artículos **280, párrafo segundo, 281, primer párrafo y 290, Ley N° 19.550**).
+*   **Artículo 106, inciso III, de la RG IGJ 15/2024.**
+
+**Nombramiento por la Sindicatura (según el segundo párrafo del artículo 258 de la Ley N° 19.550):**
+
+*   **En caso de sindicatura colegiada:**
+    *   Instrumento requerido por el inciso 1 del **artículo 104 de la RG IGJ 15/2024** conteniendo transcripción del acta de la reunión de la misma extraída del libro prescripto por el **artículo 290 de la Ley N° 19.550**.
+    *   Documentos originales de las comunicaciones del nombramiento cursadas al órgano de administración y al administrador designado, efectuadas por medio fehaciente y con constancia de recepción. Se puede optar por su protocolización si se presenta escritura pública.
+    *   **Artículo 106, inciso II, punto 1, de la RG IGJ 15/2024.**
+
+*   **En caso de sindicatura unipersonal:**
+    *   Testimonio de escritura pública conteniendo la declaración del nombramiento efectuado y la protocolización de las comunicaciones indicadas en el inciso anterior.
+    *   **Artículo 106, inciso II, punto 2, de la RG IGJ 15/2024.**
+
+**Sanciones:**
+La autoridad de control, en caso de violación de la ley, del estatuto o del reglamento, puede aplicar sanciones de apercibimiento, apercibimiento con publicación, y multas a la sociedad, sus directores y síndicos, las cuales no podrán ser superiores a PESOS OCHO MILLONES ($ 8.000.000.-) en conjunto y por infracción, graduándose según la gravedad de la infracción y el capital de la sociedad. Cuando se apliquen a directores y síndicos, la sociedad no podrá hacerse cargo de ellas. El Poder Ejecutivo está facultado para actualizar semestralmente los montos de las multas.
+*   **Artículo 302 de la Ley N° 19.550.**
+
+================================================================================
+PREGUNTA 19 de 20:
+¿Cuándo procede la reducción obligatoria y la voluntaria del capital de una SA según la LSC y qué recaudos establece la RG IGJ 15/2024 para tramitar esa reducción ante la IGJ?
+
+RESPUESTA:
+Según la Ley General de Sociedades (LGS), la reducción del capital de una Sociedad Anónima (SA) procede en los siguientes casos:
+
+**Reducción Obligatoria:**
+
+La reducción del capital es obligatoria cuando las pérdidas insumen las reservas y el 50% del capital. (Art. 206 LGS).
+
+**Reducción Voluntaria:**
+
+La reducción voluntaria del capital deberá ser resuelta por asamblea extraordinaria con informe fundado del síndico, en su caso. (Art. 203 LGS).
+
+El contexto proporcionado no contiene información sobre los recaudos que establece la RG IGJ 15/2024 para tramitar esa reducción ante la IGJ.
+
+================================================================================
+PREGUNTA 20 de 20:
+¿En qué consiste la escisión societaria según la LSC, qué requisitos impone para su validez y qué documentación debe presentarse ante la IGJ para inscribir la escisión según la RG IGJ 15/2024?
+
+RESPUESTA:
+Según la Ley General de Sociedades (LGS), la escisión societaria consiste en:
+
+*   **Artículo 88, inciso I:** Una sociedad que, sin disolverse, destina parte de su patrimonio para fusionarse con sociedades existentes o para participar con ellas en la creación de una nueva sociedad.
+*   **Artículo 88, inciso II:** Una sociedad que, sin disolverse, destina parte de su patrimonio para constituir una o varias sociedades nuevas.
+*   **Artículo 88, inciso III:** Una sociedad que se disuelve sin liquidarse para constituir con la totalidad de su patrimonio nuevas sociedades.
+
+Los requisitos para la validez de la escisión, según la LGS, son:
+
+*   **Artículo 88, punto 1:** Resolución social aprobatoria de la escisión, del contrato o estatuto de la escisionaria, de la reforma del contrato o estatuto de la escindente en su caso, y el balance especial al efecto, con los requisitos necesarios para la modificación del contrato social o del estatuto en el caso de fusión. El receso y las preferencias se rigen por lo dispuesto en los artículos 78 y 79 de la LGS.
+*   **Artículo 88, punto 2:** El balance especial de escisión no será anterior a tres (3) meses de la resolución social respectiva, y será confeccionado como un estado de situación patrimonial.
+*   **Artículo 88, punto 3:** La resolución social aprobatoria incluirá la atribución de las partes sociales o acciones de la sociedad escisionaria a los socios o accionistas de la sociedad escindente, en proporción a sus participaciones en ésta, las que se cancelarán en caso de reducción de capital.
+*   **Artículo 88, punto 4:** La publicación de un aviso por tres (3) días en el diario de publicaciones legales que corresponda a la sede social de la sociedad escindente y en uno de los diarios de mayor circulación general en la República, que deberá contener:
+    *   **a)** La razón social o denominación, la sede social y los datos de la inscripción en el Registro Público de Comercio de la sociedad que se escinde.
+    *   **b)** La valuación del activo y del pasivo de la sociedad, con indicación de la fecha a que se refiere.
+    *   **c)** La valuación del activo y pasivo que componen el patrimonio destinado a la nueva sociedad.
+    *   **d)** La razón social o denominación, tipo y domicilio que tendrá la sociedad escisionaria.
+*   **Artículo 88, punto 5:** Los acreedores tendrán derecho de oposición de acuerdo al régimen de fusión.
+*   **Artículo 88, punto 6:** Vencidos los plazos correspondientes al derecho de receso y de oposición y embargo de acreedores, se otorgarán los instrumentos de constitución de la sociedad escisionaria y de modificación de la sociedad escindente, practicándose las inscripciones según el artículo 84 de la LGS. Cuando se trate de escisión-fusión se aplicarán las disposiciones de los artículos 83 a 87 de la LGS.
+
+La documentación que debe presentarse ante la Inspección General de Justicia (IGJ) para inscribir la escisión, según la Resolución General IGJ 15/2024, es la siguiente:
+
+**1. Testimonio de la escritura pública o instrumento privado original de la escisión:**
+    *   En un juego de ejemplares para la sociedad escindente y tantos juegos como sociedades escisionarias se domicilien en la Ciudad Autónoma de Buenos Aires.
+    *   Debe contener:
+        *   **a.** La transcripción del acta de asamblea -con su registro de asistencia- o reunión de socios de donde resulte la aprobación de la escisión, del contrato o estatutos de la sociedad o sociedades escisionarias, de la disolución sin liquidación o reforma del estatuto o contrato de la sociedad escindente y reducción del capital en su caso, del balance especial de escisión y de la atribución, con mención de su valor nominal y demás características en su caso, de las acciones, cuotas o participaciones sociales de la sociedad o sociedades escisionarias a los accionistas o socios de la escindente que pasen a serlo de aquella o aquellas; mediando decisión en asamblea o reunión unánime la atribución de las participaciones podrá no comprender a todos los socios de determinada o determinadas escisionarias y/o no ser proporcional. En caso de constituirse una nueva sociedad la misma deberá instrumentarse con las formalidades del tipo societario adoptado según los recaudos previstos en la Ley General de Sociedades (LGS).
+        *   **b.** Los nombres y demás datos personales de los socios de la sociedad o sociedades escisionarias conforme al **artículo 11 inciso 1° de la Ley N° 19.550** y nombre y datos personales de los miembros de sus órganos de administración y fiscalización. Se debe consignar la cantidad de acciones, cuotas o participaciones sociales que corresponda a cada socio. Respecto de los administradores deberá también constar, cuando corresponda por el tipo adoptado, el cumplimiento de la constitución de la garantía requerida en el **artículo 70** de la RG IGJ 15/2024, salvo que ello resulte del dictamen de precalificación.
+        *   **c.** La mención expresa de los socios recedentes y capitales que representan o, en su defecto, manifestación de no haberse ejercido derecho de receso.
+        *   **d.** La nómina de los acreedores oponentes con indicación del monto de sus créditos y el tratamiento otorgado conforme al **inciso 3°, última parte, del artículo 83 de la Ley N° 19.550**; en su defecto, deberá constar la manifestación de que no hubo oposiciones.
+        *   **e.** Detalle de los bienes registrables que como consecuencia de la escisión se transferirán a la sociedad o sociedades escisionarias.
+
+**2. Balance especial de escisión:**
+    *   Firmado por el representante legal de la sociedad escindente y el síndico si lo hubiere, con informe de auditoría conteniendo opinión.
+
+**3. Balance de la sociedad escindente:**
+    *   Cerrado a la misma fecha, en ejemplar original, o en su defecto con firmas ológrafas del representante legal, síndico, si hubiere, y del auditor, con el informe previstos para el balance especial de escisión, con copias de tamaño normal y protocolar ('margen ancho').
+    *   Debe acompañarse un juego de ejemplares para la sociedad escindente y juegos en cantidad igual a la de sociedades que se constituyan.
+
+**4. Detalle en el balance:**
+    *   Deberán constar separadamente los activos y pasivos que permanecerán en el patrimonio de la sociedad escindente y los que pasarán a la sociedad o sociedades escisionarias, exponiéndose columnas comparativas de rubros anteriores y posteriores a la escisión discriminados por sociedades escindente y escisionarias.
+
+**5. Dictamen contable emitido conforme el Anexo II de la RG IGJ 15/2024:**
+    *   Deberá contener:
+        *   **a.** Indicación de los libros rubricados y folios donde se hallare transcripto el balance de escisión.
+        *   **b.** En caso de existir saldos deudores de socios con incidencia sobre las cuentas de integración, informe sobre la registración de su cancelación, salvo reducción del capital en los importes correspondientes.
+        *   **c.** En caso de que por escisión se transfieran a la sociedad o sociedades escisionarias, participaciones de la sociedad escindente en otras sociedades, la certificación deberá acreditar la observancia por parte de todas las sociedades, de los límites del **artículo 31, párrafo primero, de la Ley N° 19.550**, los que respecto de la sociedad escindente se computarán a la fecha de la asamblea o reunión de socios que aprobó la escisión. No se requerirá el cumplimiento de lo dispuesto en este inciso en relación con aquellas sociedades exceptuadas conforme a la citada norma legal.
+
+**6. Inventario resumido de los rubros del balance de escisión:**
+    *   Certificado por contador público e informe de dicho profesional sobre el origen y contenido de cada rubro principal, el criterio de valuación aplicado y la justificación de la misma. La presentación por separado requerida por este inciso no será necesaria si se cumple con las normas de exposición aplicables a los estados contables de ejercicio.
+
+**7. Informe fundado del síndico o del Consejo de Vigilancia o de auditor:**
+    *   Conteniendo opinión respecto a la razonabilidad de la reducción desde el punto de vista de la situación económico financiera de la sociedad y respecto a si dicha reducción afecta derechos de terceros o la igualdad entre socios.
+    *   Este informe se requiere si la escindente es sociedad por acciones o de responsabilidad limitada cuyo capital previo a la escisión alcanza el importe fijado por el **artículo 299, inciso 2°, de la Ley N° 19.550**, y debe ser objeto de expresa consideración en la asamblea o reunión de socios que apruebe la escisión.
+
+**8. Informe del representante legal de la sociedad escindente:**
+    *   Sobre la forma en que se materializará la reducción de capital mencionada en el inciso anterior (rescate, canje de acciones, procedimiento a seguir con fracciones), salvo que surja de la resolución social que aprobó la escisión; se exceptuará asimismo si dicha aprobación fue unánime.
+
+**9. Certificados que acrediten la titularidad y condiciones de dominio de los bienes registrables:**
+    *   Que se transfieran a la sociedad o sociedades escisionarias. En caso de instrumentarse mediante escritura pública, el escribano otorgante podrá agregar allí los datos de los certificados expedidos por los registros correspondientes, los cuales se agregarán al protocolo.
+    *   No se requiere el cumplimiento de la inscripción prevista por el **artículo 38, párrafo tercero, de la Ley N° 19.550**.
+    *   La presentación de la documentación que acredite la titularidad y condiciones de dominio de los bienes registrables que se transferirán a la nueva sociedad o a la incorporante, podrá ser cumplida en la oportunidad en que se solicite el libramiento de oficios para la toma de razón respectiva, conforme al **artículo 149** de la RG IGJ 15/2024.
+
+**10. Constancia de las siguientes publicaciones:**
+    *   **a.** La prescripta por el **artículo 88, segunda parte, inciso 4°, de la Ley N° 19.550**.
+    *   **b.** La de la convocatoria a la asamblea de la sociedad escindente, salvo que la misma haya sido unánime (**artículo 237, ley citada**); si la escindente no es sociedad por acciones, el dictamen de precalificación debe expedirse sobre la regularidad del cumplimiento de las formalidades de citación a los socios, salvo haga constar la presencia de todos ellos.
+    *   **c.** La requerida por el **artículo 10 de la Ley N° 19.550**, respecto de la reforma de estatutos o contrato social de la sociedad escindente y de la constitución de la sociedad o sociedades escisionarias respectivamente, si correspondiere por tratarse de sociedades por acciones o de responsabilidad limitada.
+
+**Documentación adicional:**
+
+*   **Falta de legajo:** Si en la IGJ no existiere legajo de la sociedad que se escinde, debe acompañarse copia certificada notarialmente de su acto constitutivo y modificaciones, con constancia de su inscripción en el Registro Público, si la hubiere.
+*   **Formularios de actuación y dictámenes de precalificación:** Se deben presentar formularios de actuación y dictámenes de precalificación con respecto a la sociedad escindente y a cada una de las escisionarias.
+*   **Tasa retributiva y tasa de constitución:** El pago de la tasa retributiva de servicios debe acreditarse con respecto a cada una de las sociedades que sean de personas o de responsabilidad limitada; si la escisión implica la constitución de una o más sociedades por acciones, se acompañará por cada una constancia de pago de la tasa de constitución correspondiente.
+
+En el caso de **escisión-fusión**, se debe presentar la documentación detallada en el **artículo 152** de la RG IGJ 15/2024, que incluye el testimonio de la escritura pública o instrumento privado original del acuerdo definitivo de escisión-fusión, transcripción de compromisos previos y actas de asamblea, recaudos de los subincisos c, d y e del inciso 1 del **artículo 146** y detalle de bienes registrables, así como los restantes elementos que correspondan según los incisos 2 a 7 del **artículo 146** de la RG IGJ 15/2024.
+
+Respecto a las pautas temporales para la inscripción de actos registrales cuando se constituyen, modifican o disuelven sociedades con diferentes domicilios, se aplicará lo dispuesto en el **artículo 153** de la RG IGJ 15/2024.
+

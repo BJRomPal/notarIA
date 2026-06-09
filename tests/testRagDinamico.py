@@ -340,7 +340,7 @@ def responder(pregunta: str) -> str:
     t0 = time.time()
     print(f"\nProcesando: {pregunta}")
 
-    sujeto, frases_vectoriales = extraer_parametros_vectoriales(pregunta)
+    sujeto, frases_vectoriales, = extraer_parametros_vectoriales(pregunta)
     print(f"\n[Fase 1] Sujeto extraído: '{sujeto}' ({time.time()-t0:.1f}s)")
 
     vistos = set()
@@ -431,7 +431,7 @@ def responder(pregunta: str) -> str:
 
 
 # --- Ejecución ---
-pregunta = "¿Cuáles son los requisitos mínimos que debe contener el estatuto de una Sociedad Anónima al momento de su constitución y qué órganos son obligatorios?"
+pregunta = "¿Qué requisitos establece la LSC para la transformación de una SRL en SA y qué documentación exige la RG IGJ 15/2024 para inscribir esa transformación ante la IGJ?"
 
 respuesta = responder(pregunta)
 print("\n\n=== RESPUESTA FINAL ===")
