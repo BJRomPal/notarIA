@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Paleta NotarIA: azul notarial profundo + acento dorado */
+  --color-brand-50: #f3f6fa;
+  --color-brand-100: #e2eaf3;
+  --color-brand-200: #c3d3e6;
+  --color-brand-300: #94b0d0;
+  --color-brand-400: #5f87b5;
+  --color-brand-500: #3d699c;
+  --color-brand-600: #2e5382;
+  --color-brand-700: #27446a;
+  --color-brand-800: #243a59;
+  --color-brand-900: #16263d;
+  --color-brand-950: #0d1828;
+
+  --color-accent-300: #e8c87a;
+  --color-accent-400: #d4af5f;
+  --color-accent-500: #c79a3d;
+  --color-accent-600: #a87f2c;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", Times, serif;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+::selection {
+  background: rgb(199 154 61 / 0.3);
+}
+
+/* Scrollbar discreta para los paneles */
+.scroll-slim {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(148 163 184 / 0.5) transparent;
+}
+
+/* Texto con brillo que recorre — estado "pensando" estilo ChatGPT */
+@keyframes shimmer {
+  0% {
+    background-position: 200% 50%;
+  }
+  100% {
+    background-position: -200% 50%;
+  }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #94a3b8 0%,
+    #94a3b8 35%,
+    #16263d 50%,
+    #94a3b8 65%,
+    #94a3b8 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 2.2s linear infinite;
+}
+
+/* Aparición suave de la tarjeta de respuesta */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-up {
+  animation: fade-up 0.35s ease-out;
+}

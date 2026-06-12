@@ -1,28 +1,11 @@
 """
-Pipeline RAG Híbrido con Text-to-Cypher dinámico (V3).
-
-V3 sobre V2: refactor sin cambio de comportamiento — se elimina la cadena de
-revisión muerta, se factoriza la duplicación de remisiones/formato/dedup en
-helpers, se endurece el filtro de escritura del Cypher y se documenta el flujo.
-
-FLUJO de responder() — el orden REAL de ejecución es:
-  1. Fase 1   — extracción de parámetros (sujeto + frases) con el LLM lite.
-  2. Fase 2   — búsqueda vectorial semántica, filtrada por sujeto.
-  3. Fase 3.5 — remisiones explícitas (REMITE_A) desde lo recuperado en Fase 2.
-  4. Gate     — evaluación de suficiencia: ¿alcanza el contexto vectorial?
-  5. Fase 3   — SOLO si el gate dio "insuficiente": Cypher dinámico. Es la
-                operación más cara (genera Cypher con LLM y lo ejecuta), por eso
-                va detrás del gate; si lo vectorial ya alcanza, se evita.
-  6. Fase 3.5 — segunda pasada de remisiones, ahora desde los artículos nuevos
-                que trajo la Fase 3.
-  7. Fase 4   — vecindario ontológico (entidades relacionadas) + respuesta final.
-
-Nota sobre las etiquetas de log: "Fase 3.5" se imprime ANTES que "Fase 3" en la
-primera pasada. Se conservan los rótulos de V2 para no romper logs/comparaciones;
-el orden de arriba es la guía de lectura.
+Pipeline RAG Híbrido con Text-to-Cypher dinámico.
+Fase 1 — vectorial semántica (filtrada por sujeto).
+Fase 2 — Cypher generado por LLM con esquema real leído de Neo4j.
+La fase 2 permite traversals transversales (supletoriedad, jerarquías) sin
+rutas hardcodeadas en el script.
 """
 import os
-import re
 import sys
 import json
 import time
@@ -42,13 +25,9 @@ from langchain_core.output_parsers import StrOutputParser
 
 llm_lite   = get_gemini_llm()                          # flash-lite: tareas simples (extracción, evaluación)
 llm        = get_gemini_llm("gemini-2.5-flash")        # flash: respuesta final y Cypher
+llm_cypher = llm
 embeddings = get_gemini_embeddings()
 neo4j_driver = get_neo4j_driver()
-
-# --- Parámetros de recuperación (heurísticas explicadas donde se usan) ---
-K_VECTORIAL          = 3   # vecinos a recuperar por cada frase de búsqueda
-LONGITUD_MIN_KEYWORD = 4   # palabras del sujeto más cortas se ignoran (poco discriminantes)
-MIN_DOCS_TRAS_FILTRO = 2   # si el filtro por sujeto deja menos, se descarta el filtro (prioriza recall)
 
 # ==========================================
 # 1. MOTOR VECTORIAL
@@ -78,14 +57,13 @@ vector_db = Neo4jVector.from_existing_index(
     index_name="index_articulos",
     retrieval_query=retrieval_query
 )
-retriever = vector_db.as_retriever(search_kwargs={"k": K_VECTORIAL})
+retriever = vector_db.as_retriever(search_kwargs={"k": 3})
 
 # ==========================================
 # 2. UTILIDADES
 # ==========================================
 
 def _strip_markdown(content: str) -> str:
-    """Quita el cercado ```...``` (con prefijo json/cypher) que el LLM suele añadir."""
     if "```" in content:
         partes = content.split("```")
         content = partes[1] if len(partes) > 1 else content
@@ -96,42 +74,7 @@ def _strip_markdown(content: str) -> str:
     return content.strip()
 
 def normalizar(texto: str) -> str:
-    """Minúsculas sin tildes ni diacríticos, para comparaciones tolerantes a acentos."""
     return unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode("ascii").lower()
-
-def _formato_articulo(fuente: str, numero: str, texto: str) -> str:
-    """Formato canónico de un artículo para el contexto del LLM.
-    Replica el mismo layout que arma `retrieval_query` en Cypher."""
-    return f"FUENTE: {fuente}\nARTICULO: {numero}\nTEXTO: {texto}"
-
-
-class ContextoAcumulado:
-    """Acumula artículos únicos (dedup por id) con su texto ya formateado.
-
-    Centraliza los tres estados que en V2 se mantenían a mano y en paralelo dentro
-    de responder() (el set de vistos, la lista de ids y la lista de textos), que
-    había que mantener sincronizados en cada fase.
-    """
-    def __init__(self):
-        self._vistos: set[str] = set()
-        self.ids: list[str] = []
-        self.textos: list[str] = []
-
-    def agregar(self, art_id, texto: str) -> bool:
-        """Registra el artículo si no fue visto antes. Devuelve True si era nuevo."""
-        art_id = str(art_id)
-        if not art_id or art_id in self._vistos:
-            return False
-        self._vistos.add(art_id)
-        self.ids.append(art_id)
-        self.textos.append(texto)
-        return True
-
-    def __contains__(self, art_id) -> bool:
-        return str(art_id) in self._vistos
-
-    def __len__(self) -> int:
-        return len(self._vistos)
 
 # ==========================================
 # 3. EXTRACCIÓN PARA FASE VECTORIAL
@@ -154,25 +97,15 @@ Pregunta: {pregunta}"""
 _STOPWORDS = {"sociedad", "capital", "social", "socios"}
 
 def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
-    """Filtra los docs vectoriales para quedarse con los del sujeto preguntado.
-
-    Heurística (privilegia recall sobre precisión):
-    - Solo se usan como keywords las palabras del sujeto con más de
-      LONGITUD_MIN_KEYWORD letras y que no sean stopwords del dominio: las cortas
-      o genéricas ("social", "socios") matchean demasiado y no discriminan.
-    - Un doc pasa si menciona la keyword (en texto o en ubicación) O si fue
-      devuelto por >= 2 frases de búsqueda distintas: aparecer en varias
-      iteraciones es señal de relevancia genuina aunque no nombre la keyword.
-    - Si el filtro dejaría menos de MIN_DOCS_TRAS_FILTRO docs, se descarta el
-      filtro y se devuelven todos (mejor contexto de más que vacío).
-    """
     if not sujeto:
         return docs
-    words = [w for w in normalizar(sujeto).split() if len(w) > LONGITUD_MIN_KEYWORD and w not in _STOPWORDS]
+    words = [w for w in normalizar(sujeto).split() if len(w) > 4 and w not in _STOPWORDS]
     if not words:
         return docs
 
     # Frecuencia: cuántas frases de búsqueda distintas devolvieron cada doc.
+    # Un doc que aparece en varias iteraciones es genuinamente relevante aunque
+    # no mencione explícitamente la keyword del sujeto.
     frecuencia: dict[str, int] = {}
     for doc in docs:
         doc_id = str(doc.metadata.get("id", ""))
@@ -184,7 +117,7 @@ def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
         if any(w in normalizar(doc.page_content) or w in normalizar(str(doc.metadata.get("ubicacion", ""))) for w in words)
         or frecuencia.get(str(doc.metadata.get("id", "")), 0) >= 2
     ]
-    return filtrados if len(filtrados) >= MIN_DOCS_TRAS_FILTRO else docs
+    return filtrados if len(filtrados) >= 2 else docs
 
 # ==========================================
 # 4. MOTOR CYPHER DINÁMICO
@@ -207,10 +140,6 @@ class MotorCypherDinamico:
     # execute_read() protege a nivel de routing pero no garantiza read-only en
     # servidores únicos; este filtro es la barrera real.
     _CLAUSULAS_ESCRITURA = {"DELETE", "DETACH", "REMOVE", "SET", "MERGE", "CREATE", "DROP", "CALL"}
-    # Regex con límites de palabra: detecta la cláusula aunque venga pegada a un
-    # paréntesis o llave (ej. "CREATE(n)", "CALL{") — el split por espacios de V2
-    # no la veía. \b ancla en la frontera palabra/no-palabra.
-    _PATRON_ESCRITURA = re.compile(r"\b(" + "|".join(_CLAUSULAS_ESCRITURA) + r")\b", re.IGNORECASE)
 
     def __init__(self, driver, llm_model, etiquetas_entidades: list[str]):
         self.driver = driver
@@ -281,6 +210,7 @@ Cypher:"""
     @staticmethod
     def _postprocesar(cypher: str) -> str:
         """Corrige patrones Cypher inválidos que el LLM genera por su training data."""
+        import re
         # El LLM frecuentemente genera `UNWIND x AS y \n WHERE` que es inválido en Neo4j.
         # La forma correcta es `UNWIND x AS y \n WITH y WHERE`.
         cypher = re.sub(
@@ -298,8 +228,9 @@ Cypher:"""
             cypher = _strip_markdown(str(respuesta_llm.content))
             cypher = self._postprocesar(cypher)
 
-            bloqueadas = {m.upper() for m in self._PATRON_ESCRITURA.findall(cypher)}
-            if bloqueadas:
+            palabras = set(cypher.upper().split())
+            if palabras & self._CLAUSULAS_ESCRITURA:
+                bloqueadas = palabras & self._CLAUSULAS_ESCRITURA
                 print(f"  [Grafo] Cypher rechazado: cláusulas no permitidas detectadas: {bloqueadas}")
                 return []
 
@@ -317,7 +248,7 @@ Cypher:"""
 # Inicialización única al cargar el módulo: carga las etiquetas reales desde Neo4j.
 _etiquetas_entidades = _cargar_etiquetas_entidades(neo4j_driver)
 print(f"[Init] Etiquetas ontológicas cargadas: {_etiquetas_entidades}")
-motor_cypher = MotorCypherDinamico(neo4j_driver, llm, _etiquetas_entidades)
+motor_cypher = MotorCypherDinamico(neo4j_driver, llm_cypher, _etiquetas_entidades)
 
 # ==========================================
 # 5. VECINDARIO ONTOLÓGICO
@@ -340,21 +271,6 @@ def seguir_remite_a(article_ids: list[str]) -> list[dict]:
     """
     with neo4j_driver.session() as session:
         return [dict(row) for row in session.run(query, ids=article_ids)]
-
-
-def _agregar_remisiones(ids_origen: list[str], ctx: ContextoAcumulado) -> None:
-    """Sigue REMITE_A desde `ids_origen` y agrega al contexto los artículos
-    referenciados que sean nuevos. Unifica las dos pasadas idénticas de V2."""
-    for art in seguir_remite_a(ids_origen):
-        origen_num = art["citado_desde"].replace("Art_", "").split("_Ley_")[0]
-        norma_ref  = str(art.get("id", "")).split("_Ley_")[-1]
-        texto = _formato_articulo(
-            f"Ley {norma_ref} (referenciada por Art. {origen_num})",
-            art.get("numero", ""),
-            art.get("texto", ""),
-        )
-        if ctx.agregar(art.get("id", ""), texto):
-            print(f"  • [Remisión] Art. {art.get('numero', '')} [Ley {norma_ref}] recuperado (citado por Art. {origen_num}).")
 
 
 def _obtener_normas(article_ids: list[str]) -> dict[str, str]:
@@ -417,7 +333,32 @@ PREGUNTA:
 
 RESPUESTA:"""
 
+template_revision = """Eres un revisor legal experto en derecho argentino.
+Tu tarea es corregir la respuesta si es necesario y devolverla como texto final.
+
+Verificá que la respuesta:
+1. Responda EXCLUSIVAMENTE la pregunta formulada, sin agregar información sobre sujetos o situaciones que no fueron preguntados, aunque estén en el contexto.
+2. Cubra todos los aspectos de la pregunta que el contexto permite responder, sin omisiones.
+3. Si la pregunta involucra normativa subsidiaria o supletoria, explique la conexión solo si el contexto lo avala expresamente.
+
+Si la respuesta es correcta, devolvela exactamente igual.
+Si contiene información que excede lo preguntado, eliminala. Si le falta información que el contexto sí provee, completala.
+
+CRÍTICO: Devolvé ÚNICAMENTE el texto de la respuesta legal. Sin análisis, sin evaluaciones, sin comentarios sobre la calidad de la respuesta.
+
+CONTEXTO LEGAL:
+{context}
+
+PREGUNTA ORIGINAL:
+{question}
+
+RESPUESTA A REVISAR:
+{answer}
+
+RESPUESTA FINAL (solo el texto de la respuesta, sin meta-comentarios):"""
+
 answer_chain = ChatPromptTemplate.from_template(template_respuesta) | llm | StrOutputParser()
+review_chain = ChatPromptTemplate.from_template(template_revision) | llm | StrOutputParser()
 
 
 def _evaluar_suficiencia(pregunta: str, contexto: list[str]) -> tuple[bool, str]:
@@ -450,14 +391,14 @@ def responder(pregunta: str) -> str:
     t0 = time.time()
     print(f"\nProcesando: {pregunta}")
 
-    # Fase 1: parámetros de búsqueda (sujeto + frases) extraídos con el LLM lite.
-    sujeto, frases_vectoriales = extraer_parametros_vectoriales(pregunta)
+    sujeto, frases_vectoriales, = extraer_parametros_vectoriales(pregunta)
     print(f"\n[Fase 1] Sujeto extraído: '{sujeto}' ({time.time()-t0:.1f}s)")
 
-    ctx = ContextoAcumulado()
+    vistos = set()
+    textos_contexto = []
+    article_ids = []
 
-    # Fase 2: búsqueda vectorial. Se consulta cada frase (y la pregunta cruda) y
-    # luego se filtra por sujeto; los duplicados alimentan la señal de frecuencia.
+    # Fase 2: búsqueda vectorial
     print("\n[Fase 2] Buscando en Base Vectorial...")
     docs_raw = []
     for frase in frases_vectoriales + [pregunta]:
@@ -466,7 +407,6 @@ def responder(pregunta: str) -> str:
 
     docs_filtrados = filtrar_por_sujeto(docs_raw, sujeto)
 
-    # Docs que el filtro de sujeto dejó afuera, para reportarlos (solo logging).
     ids_aceptados = {str(d.metadata.get("id", "")) for d in docs_filtrados}
     descartados_por_id: dict = {}
     for d in docs_raw:
@@ -475,7 +415,11 @@ def responder(pregunta: str) -> str:
             descartados_por_id[doc_id] = d
 
     for doc in docs_filtrados:
-        if ctx.agregar(doc.metadata.get("id", ""), doc.page_content):
+        doc_id = str(doc.metadata.get("id", ""))
+        if doc_id and doc_id not in vistos:
+            vistos.add(doc_id)
+            article_ids.append(doc_id)
+            textos_contexto.append(doc.page_content)
             norma_display = doc.metadata.get('ley') or doc.metadata.get('norma_id', '?')
             print(f"  • [Vector] Art. {doc.metadata.get('art', '')} [{norma_display}] recuperado.")
     if descartados_por_id:
@@ -485,49 +429,76 @@ def responder(pregunta: str) -> str:
             print(f"    ✗ Art. {doc.metadata.get('art', '?')} [{norma}]")
     print(f"  [Fase 2 completada en {time.time()-t0:.1f}s]")
 
-    # Fase 3.5 (primera pasada): remisiones explícitas desde lo recuperado en Fase 2.
+    # Fase 3.5: remisiones explícitas desde resultados de Fase 2
     print("\n[Fase 3.5] Siguiendo remisiones explícitas (REMITE_A)...")
-    _agregar_remisiones(ctx.ids, ctx)
+    for art in seguir_remite_a(article_ids):
+        art_id = str(art.get("id", ""))
+        if art_id and art_id not in vistos:
+            vistos.add(art_id)
+            article_ids.append(art_id)
+            origen_num = art["citado_desde"].replace("Art_", "").split("_Ley_")[0]
+            norma_ref  = art_id.split("_Ley_")[-1]
+            textos_contexto.append(
+                f"FUENTE: Ley {norma_ref} (referenciada por Art. {origen_num})\n"
+                f"ARTICULO: {art.get('numero', '')}\n"
+                f"TEXTO: {art.get('texto', '')}"
+            )
+            print(f"  • [Remisión] Art. {art.get('numero', '')} [Ley {norma_ref}] recuperado (citado por Art. {origen_num}).")
     print(f"  [Fase 3.5 completada en {time.time()-t0:.1f}s]")
 
-    # Gate: ¿el contexto vectorial + remisiones ya alcanza? Si sí, se omite el
-    # Cypher dinámico (la operación más cara del pipeline).
-    suficiente, razon = _evaluar_suficiencia(pregunta, ctx.textos)
+    # Evaluación de suficiencia post-Fase 2+3.5
+    suficiente, razon = _evaluar_suficiencia(pregunta, textos_contexto)
     icono = "✓" if suficiente else "✗"
     print(f"\n[Evaluación post-Fase 2] {icono} {'Suficiente' if suficiente else 'Insuficiente'} — {razon} ({time.time()-t0:.1f}s)")
 
-    # Fase 3: Cypher dinámico (solo si el gate dio insuficiente).
+    # Fase 3: Cypher dinámico (solo si Fase 2+3.5 fue insuficiente)
     if not suficiente:
         print("\n[Fase 3] Buscando en Grafo Dinámico (Text-to-Cypher)...")
-        ids_antes_fase3 = list(ctx.ids)
+        ids_antes_fase3 = list(article_ids)
         arts_grafo = motor_cypher.consultar(pregunta)
-        arts_grafo_nuevos = [a for a in arts_grafo if str(a.get("id", "")) and a.get("id") not in ctx]
+        arts_grafo_nuevos = [a for a in arts_grafo if str(a.get("id", "")) and str(a.get("id", "")) not in vistos]
         normas_grafo = _obtener_normas([str(a["id"]) for a in arts_grafo_nuevos])
         for art in arts_grafo_nuevos:
             art_id = str(art["id"])
-            texto = _formato_articulo("Grafo Ontológico", art.get("numero", ""), art.get("texto", ""))
-            if ctx.agregar(art_id, texto):
-                print(f"  • [Grafo] Art. {art.get('numero', '')} [{normas_grafo.get(art_id, '?')}] recuperado transversalmente.")
+            vistos.add(art_id)
+            article_ids.append(art_id)
+            textos_contexto.append(
+                f"FUENTE: Grafo Ontológico\nARTICULO: {art.get('numero', '')}\nTEXTO: {art.get('texto', '')}"
+            )
+            norma_display = normas_grafo.get(art_id, '?')
+            print(f"  • [Grafo] Art. {art.get('numero', '')} [{norma_display}] recuperado transversalmente.")
         print(f"  [Fase 3 completada en {time.time()-t0:.1f}s]")
 
-        # Fase 3.5 (segunda pasada): remisiones desde los artículos nuevos del grafo.
-        ids_nuevos_fase3 = [i for i in ctx.ids if i not in ids_antes_fase3]
+        # Fase 3.5 (segunda pasada): remisiones desde artículos nuevos traídos por Fase 3
+        ids_nuevos_fase3 = [i for i in article_ids if i not in ids_antes_fase3]
         if ids_nuevos_fase3:
             print("\n[Fase 3.5] Siguiendo remisiones de artículos del grafo...")
-            _agregar_remisiones(ids_nuevos_fase3, ctx)
+            for art in seguir_remite_a(ids_nuevos_fase3):
+                art_id = str(art.get("id", ""))
+                if art_id and art_id not in vistos:
+                    vistos.add(art_id)
+                    article_ids.append(art_id)
+                    origen_num = art["citado_desde"].replace("Art_", "").split("_Ley_")[0]
+                    norma_ref  = art_id.split("_Ley_")[-1]
+                    textos_contexto.append(
+                        f"FUENTE: Ley {norma_ref} (referenciada por Art. {origen_num})\n"
+                        f"ARTICULO: {art.get('numero', '')}\n"
+                        f"TEXTO: {art.get('texto', '')}"
+                    )
+                    print(f"  • [Remisión] Art. {art.get('numero', '')} [Ley {norma_ref}] recuperado (citado por Art. {origen_num}).")
             print(f"  [Fase 3.5 completada en {time.time()-t0:.1f}s]")
     else:
         print("\n[Fase 3] Omitida (contexto suficiente tras Fase 2 + remisiones).")
 
     print(f"\n{'─'*50}")
-    print(f"Total artículos únicos: {len(ctx)}")
+    print(f"Total artículos únicos: {len(vistos)}")
 
-    # Fase 4: vecindario ontológico (entidades) + generación de la respuesta final.
-    entidades = obtener_entidades_relacionadas(ctx.ids)
+    # Fase 4: vecindario ontológico
+    entidades = obtener_entidades_relacionadas(article_ids)
     print(f"Entidades relacionadas: {len(entidades)}")
     print(f"{'─'*50}")
 
-    context = "\n\n---\n\n".join(ctx.textos) + format_entidades(entidades)
+    context = "\n\n---\n\n".join(textos_contexto) + format_entidades(entidades)
     print("Generando respuesta...")
     resultado = answer_chain.invoke({"context": context, "question": pregunta})
     print(f"\n{'─'*50}")
@@ -537,14 +508,13 @@ def responder(pregunta: str) -> str:
 
 
 # --- Ejecución ---
-if __name__ == "__main__":
-    pregunta = "¿Qué requisitos establece la LSC para la transformación de una SRL en SA y qué documentación exige la RG IGJ 15/2024 para inscribir esa transformación ante la IGJ?"
+pregunta = "¿Qué requisitos establece la LSC para la transformación de una SRL en SA y qué documentación exige la RG IGJ 15/2024 para inscribir esa transformación ante la IGJ?"
 
-    respuesta = responder(pregunta)
-    print("\n\n=== RESPUESTA FINAL ===")
-    print(respuesta)
-    print(f"\n{'═'*50}")
-    print(f"Tiempo total de ejecución (incluyendo carga): {time.time() - _t_inicio_script:.1f}s")
-    print(f"{'═'*50}")
+respuesta = responder(pregunta)
+print("\n\n=== RESPUESTA FINAL ===")
+print(respuesta)
+print(f"\n{'═'*50}")
+print(f"Tiempo total de ejecución (incluyendo carga): {time.time() - _t_inicio_script:.1f}s")
+print(f"{'═'*50}")
 
-    neo4j_driver.close()
+neo4j_driver.close()

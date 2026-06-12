@@ -263,6 +263,19 @@ def seguir_remite_a(article_ids: list[str]) -> list[dict]:
         return [dict(row) for row in session.run(query, ids=article_ids)]
 
 
+def _obtener_normas(article_ids: list[str]) -> dict[str, str]:
+    """Devuelve {article_id: norma_titulo} para los artículos dados."""
+    if not article_ids:
+        return {}
+    query = """
+    UNWIND $ids AS art_id
+    MATCH (norma:Norma)-[:CONTIENE]->(art:Articulo {id: art_id})
+    RETURN art_id, coalesce(norma.titulo, norma.id, '?') AS norma_titulo
+    """
+    with neo4j_driver.session() as session:
+        return {row["art_id"]: row["norma_titulo"] for row in session.run(query, ids=article_ids)}
+
+
 def obtener_entidades_relacionadas(article_ids: list[str]) -> list[dict]:
     if not article_ids:
         return []
@@ -299,6 +312,7 @@ INSTRUCCIONES CRÍTICAS:
 2. Si la ley enumera excepciones o condiciones, lístalas TODAS sin omitir ninguna.
 3. Usá ÚNICAMENTE el contexto provisto. No inventes.
 4. Si un artículo trata sobre un tipo societario diferente al preguntado, IGNORALO completamente.
+5. Recuerda siempre citar los números de los artículos y las normas que sirven de contexto
 
 CONTEXTO LEGAL RECUPERADO:
 {context}
@@ -336,6 +350,32 @@ answer_chain = ChatPromptTemplate.from_template(template_respuesta) | llm | StrO
 review_chain = ChatPromptTemplate.from_template(template_revision) | llm | StrOutputParser()
 
 
+def _evaluar_suficiencia(pregunta: str, contexto: list[str]) -> tuple[bool, str]:
+    """Evalúa si el contexto vectorial es suficiente para responder sin recurrir al grafo."""
+    contexto_txt = "\n\n---\n\n".join(contexto) if contexto else "(ningún artículo recuperado)"
+    prompt = f"""Eres un experto en derecho societario argentino. Evaluá si el contexto legal recuperado \
+es SUFICIENTE para responder la pregunta del usuario de forma útil y precisa.
+
+CRITERIO: Respondé "suficiente: true" si los artículos recuperados permiten dar una respuesta \
+sustancialmente completa. Respondé "suficiente: false" SOLO si hay aspectos CENTRALES de la pregunta \
+que los artículos no abordan en absoluto y cuya ausencia cambiaría materialmente la respuesta.
+
+PREGUNTA:
+{pregunta}
+
+CONTEXTO RECUPERADO:
+{contexto_txt}
+
+Devolvé SOLO un JSON con este formato exacto:
+{{"suficiente": true, "razon": "explicación breve de una línea"}}"""
+    try:
+        respuesta = llm.invoke(prompt)
+        data = json.loads(_strip_markdown(str(respuesta.content)))
+        return bool(data.get("suficiente", False)), str(data.get("razon", ""))
+    except Exception as e:
+        return False, f"Error al evaluar: {e}"
+
+
 def responder(pregunta: str) -> str:
     t0 = time.time()
     print(f"\nProcesando: {pregunta}")
@@ -369,7 +409,8 @@ def responder(pregunta: str) -> str:
             vistos.add(doc_id)
             article_ids.append(doc_id)
             textos_contexto.append(doc.page_content)
-            print(f"  • [Vector] Art. {doc.metadata.get('art', '')} recuperado.")
+            norma_display = doc.metadata.get('ley') or doc.metadata.get('norma_id', '?')
+            print(f"  • [Vector] Art. {doc.metadata.get('art', '')} [{norma_display}] recuperado.")
     if descartados_por_id:
         print(f"  (+ {len(descartados_por_id)} descartados por filtro de sujeto):")
         for doc in descartados_por_id.values():
@@ -377,20 +418,7 @@ def responder(pregunta: str) -> str:
             print(f"    ✗ Art. {doc.metadata.get('art', '?')} [{norma}]")
     print(f"  [Fase 2 completada en {time.time()-t0:.1f}s]")
 
-    # Fase 3: Cypher dinámico
-    print("\n[Fase 3] Buscando en Grafo Dinámico (Text-to-Cypher)...")
-    for art in motor_cypher.consultar(pregunta):
-        art_id = str(art.get("id", ""))
-        if art_id and art_id not in vistos:
-            vistos.add(art_id)
-            article_ids.append(art_id)
-            textos_contexto.append(
-                f"FUENTE: Grafo Ontológico\nARTICULO: {art.get('numero', '')}\nTEXTO: {art.get('texto', '')}"
-            )
-            print(f"  • [Grafo] Art. {art.get('numero', '')} recuperado transversalmente.")
-    print(f"  [Fase 3 completada en {time.time()-t0:.1f}s]")
-
-    # Fase 3.5: traversal de remisiones explícitas (REMITE_A artículo → artículo)
+    # Fase 3.5: remisiones explícitas desde resultados de Fase 2
     print("\n[Fase 3.5] Siguiendo remisiones explícitas (REMITE_A)...")
     for art in seguir_remite_a(article_ids):
         art_id = str(art.get("id", ""))
@@ -406,6 +434,50 @@ def responder(pregunta: str) -> str:
             )
             print(f"  • [Remisión] Art. {art.get('numero', '')} [Ley {norma_ref}] recuperado (citado por Art. {origen_num}).")
     print(f"  [Fase 3.5 completada en {time.time()-t0:.1f}s]")
+
+    # Evaluación de suficiencia post-Fase 2+3.5
+    suficiente, razon = _evaluar_suficiencia(pregunta, textos_contexto)
+    icono = "✓" if suficiente else "✗"
+    print(f"\n[Evaluación post-Fase 2] {icono} {'Suficiente' if suficiente else 'Insuficiente'} — {razon} ({time.time()-t0:.1f}s)")
+
+    # Fase 3: Cypher dinámico (solo si Fase 2+3.5 fue insuficiente)
+    if not suficiente:
+        print("\n[Fase 3] Buscando en Grafo Dinámico (Text-to-Cypher)...")
+        ids_antes_fase3 = list(article_ids)
+        arts_grafo = motor_cypher.consultar(pregunta)
+        arts_grafo_nuevos = [a for a in arts_grafo if str(a.get("id", "")) and str(a.get("id", "")) not in vistos]
+        normas_grafo = _obtener_normas([str(a["id"]) for a in arts_grafo_nuevos])
+        for art in arts_grafo_nuevos:
+            art_id = str(art["id"])
+            vistos.add(art_id)
+            article_ids.append(art_id)
+            textos_contexto.append(
+                f"FUENTE: Grafo Ontológico\nARTICULO: {art.get('numero', '')}\nTEXTO: {art.get('texto', '')}"
+            )
+            norma_display = normas_grafo.get(art_id, '?')
+            print(f"  • [Grafo] Art. {art.get('numero', '')} [{norma_display}] recuperado transversalmente.")
+        print(f"  [Fase 3 completada en {time.time()-t0:.1f}s]")
+
+        # Fase 3.5 (segunda pasada): remisiones desde artículos nuevos traídos por Fase 3
+        ids_nuevos_fase3 = [i for i in article_ids if i not in ids_antes_fase3]
+        if ids_nuevos_fase3:
+            print("\n[Fase 3.5] Siguiendo remisiones de artículos del grafo...")
+            for art in seguir_remite_a(ids_nuevos_fase3):
+                art_id = str(art.get("id", ""))
+                if art_id and art_id not in vistos:
+                    vistos.add(art_id)
+                    article_ids.append(art_id)
+                    origen_num = art["citado_desde"].replace("Art_", "").split("_Ley_")[0]
+                    norma_ref  = art_id.split("_Ley_")[-1]
+                    textos_contexto.append(
+                        f"FUENTE: Ley {norma_ref} (referenciada por Art. {origen_num})\n"
+                        f"ARTICULO: {art.get('numero', '')}\n"
+                        f"TEXTO: {art.get('texto', '')}"
+                    )
+                    print(f"  • [Remisión] Art. {art.get('numero', '')} [Ley {norma_ref}] recuperado (citado por Art. {origen_num}).")
+            print(f"  [Fase 3.5 completada en {time.time()-t0:.1f}s]")
+    else:
+        print("\n[Fase 3] Omitida (contexto suficiente tras Fase 2 + remisiones).")
 
     print(f"\n{'─'*50}")
     print(f"Total artículos únicos: {len(vistos)}")
