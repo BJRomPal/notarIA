@@ -1,0 +1,22 @@
+11:20:18 [INFO] Conexión a Neo4j establecida correctamente.
+11:20:18 [INFO] Nodo madre RG_47_2020 y vínculo normativo creados/verificados en Neo4j.
+11:20:18 [INFO] Archivo de log: /home/mariano/projects/notaria/logs/rg47_2020_extract_20260610_112016.log
+11:20:18 [INFO] Archivos encontrados: 2
+11:20:18 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2020/articulos_RG47-2020/Articulo_1.txt
+11:20:23 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+11:20:47 [INFO]   Nodos extraídos    : 1
+11:20:47 [INFO]   Relaciones extraídas: 1
+11:20:47 [INFO]     [Articulo] Art_1_RG_47_2020
+11:20:47 [INFO]     Art_1_RG_47_2020 -[REGULA]-> AsociacionCivil
+11:20:48 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+11:20:49 [INFO]   Guardado en Neo4j correctamente.
+11:20:49 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2020/articulos_RG47-2020/Articulo_2.txt
+11:20:49 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+11:21:07 [INFO]   Nodos extraídos    : 1
+11:21:07 [INFO]   Relaciones extraídas: 1
+11:21:07 [INFO]     [Articulo] Art_2_RG_47_2020
+11:21:07 [INFO]     Art_2_RG_47_2020 -[ESTABLECE_REQUISITOS_DE]-> AsociacionCivil
+11:21:08 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+11:21:10 [INFO]   Guardado en Neo4j correctamente.
+11:21:10 [INFO] 
+Procesamiento completado. OK: 2 | Saltados: 0 | Errores: 0 | Duración: 0.86 min.

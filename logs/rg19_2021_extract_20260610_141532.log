@@ -1,0 +1,53 @@
+14:15:34 [INFO] Conexión a Neo4j establecida correctamente.
+14:15:34 [INFO] Nodo madre RG_19_2021 y vínculo normativo creados/verificados en Neo4j.
+14:15:34 [INFO] Archivo de log: /home/mariano/projects/notaria/logs/rg19_2021_extract_20260610_141532.log
+14:15:34 [INFO] Archivos encontrados: 6
+14:15:34 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2021/articulos_RG19-2021/Articulo_1.txt
+14:15:39 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:15:58 [INFO]   Nodos extraídos    : 1
+14:15:58 [INFO]   Relaciones extraídas: 1
+14:15:58 [INFO]     [Articulo] Art_1_RG_19_2021
+14:15:58 [INFO]     Art_1_RG_19_2021 -[ADMINISTRA]-> REGISTRO_PUBLICO
+14:15:59 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:16:00 [INFO]   Guardado en Neo4j correctamente.
+14:16:01 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2021/articulos_RG19-2021/Articulo_2.txt
+14:16:01 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:16:18 [INFO]   Nodos extraídos    : 1
+14:16:18 [INFO]   Relaciones extraídas: 1
+14:16:18 [INFO]     [Articulo] Art_2_RG_19_2021
+14:16:18 [INFO]     Art_2_RG_19_2021 -[DEFINE]-> REGISTRO_PUBLICO
+14:16:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:16:21 [INFO]   Guardado en Neo4j correctamente.
+14:16:21 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2021/articulos_RG19-2021/Articulo_3.txt
+14:16:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:16:39 [INFO]   Nodos extraídos    : 1
+14:16:39 [INFO]   Relaciones extraídas: 0
+14:16:39 [INFO]     [Articulo] Art_3_RG_19_2021
+14:16:39 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:16:41 [INFO]   Guardado en Neo4j correctamente.
+14:16:41 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2021/articulos_RG19-2021/Articulo_4.txt
+14:16:41 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:17:00 [INFO]   Nodos extraídos    : 1
+14:17:00 [INFO]   Relaciones extraídas: 1
+14:17:00 [INFO]     [Articulo] Art_4_RG_19_2021
+14:17:00 [INFO]     Art_4_RG_19_2021 -[SE_INSCRIBE_EN]-> RegistroPublico
+14:17:00 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:17:02 [INFO]   Guardado en Neo4j correctamente.
+14:17:02 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2021/articulos_RG19-2021/Articulo_5.txt
+14:17:03 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:17:19 [WARNING]   Relación descartada (campos nulos): inicio='Art_5_RG_19_2021' fin=None tipo='MENCIONA'
+14:17:19 [INFO]   Nodos extraídos    : 1
+14:17:19 [INFO]   Relaciones extraídas: 0
+14:17:19 [INFO]     [Articulo] Art_5_RG_19_2021
+14:17:19 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:17:21 [INFO]   Guardado en Neo4j correctamente.
+14:17:21 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2021/articulos_RG19-2021/Articulo_6.txt
+14:17:21 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:17:39 [INFO]   Nodos extraídos    : 1
+14:17:39 [INFO]   Relaciones extraídas: 1
+14:17:39 [INFO]     [Articulo] Art_6_RG_19_2021
+14:17:39 [INFO]     Art_6_RG_19_2021 -[MENCIONA]-> REGISTRO_PUBLICO
+14:17:40 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:17:42 [INFO]   Guardado en Neo4j correctamente.
+14:17:42 [INFO] 
+Procesamiento completado. OK: 6 | Saltados: 0 | Errores: 0 | Duración: 2.12 min.

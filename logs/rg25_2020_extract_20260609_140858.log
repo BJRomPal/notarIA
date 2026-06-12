@@ -1,0 +1,30 @@
+14:09:00 [INFO] Conexión a Neo4j establecida correctamente.
+14:09:00 [INFO] Nodo madre RG_25_2020 y vínculo normativo creados/verificados en Neo4j.
+14:09:00 [INFO] Archivo de log: /home/mariano/projects/notaria/logs/rg25_2020_extract_20260609_140858.log
+14:09:00 [INFO] Archivos encontrados: 3
+14:09:00 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2020/articulos_RG25-2020/Articulo_1.txt
+14:09:05 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:09:26 [WARNING]   Relación descartada (campos nulos): inicio='Art_1_RG_25_2020' fin=None tipo='REGULA'
+14:09:26 [INFO]   Nodos extraídos    : 1
+14:09:26 [INFO]   Relaciones extraídas: 0
+14:09:26 [INFO]     [Articulo] Art_1_RG_25_2020
+14:09:27 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:09:28 [INFO]   Guardado en Neo4j correctamente.
+14:09:28 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2020/articulos_RG25-2020/Articulo_2.txt
+14:09:29 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:09:48 [INFO]   Nodos extraídos    : 1
+14:09:48 [INFO]   Relaciones extraídas: 1
+14:09:48 [INFO]     [Articulo] Art_2_RG_25_2020
+14:09:48 [INFO]     Art_2_RG_25_2020 -[ESTABLECE_REQUISITOS_DE]-> AsociacionCivil
+14:09:49 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:09:51 [INFO]   Guardado en Neo4j correctamente.
+14:09:51 [INFO] Procesando: /home/mariano/projects/notaria/input/normas/sociedades/RG/2020/articulos_RG25-2020/Articulo_3.txt
+14:09:51 [INFO] HTTP Request: POST http://127.0.0.1:11434/api/chat "HTTP/1.1 200 OK"
+14:10:11 [INFO]   Nodos extraídos    : 1
+14:10:11 [INFO]   Relaciones extraídas: 1
+14:10:11 [INFO]     [Articulo] Art_3_RG_25_2020
+14:10:11 [INFO]     Art_3_RG_25_2020 -[REMITE_A]-> Art_81_RG_15_2024
+14:10:12 [INFO] HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:batchEmbedContents "HTTP/1.1 200 OK"
+14:10:14 [INFO]   Guardado en Neo4j correctamente.
+14:10:14 [INFO] 
+Procesamiento completado. OK: 3 | Saltados: 0 | Errores: 0 | Duración: 1.22 min.
