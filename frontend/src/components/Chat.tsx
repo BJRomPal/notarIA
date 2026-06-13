@@ -76,7 +76,7 @@ function Welcome({ onSend }: { onSend: (texto: string) => void }) {
           Asistente legal notarial
         </p>
         <p className="mt-5 max-w-md text-center text-[15px] leading-relaxed text-slate-500">
-          Consultá sobre derecho societario argentino. Cada respuesta se construye sobre la
+          Consultá sobre derecho argentino. Cada respuesta se construye sobre la
           legislación vigente y cita los artículos en los que se funda.
         </p>
 
