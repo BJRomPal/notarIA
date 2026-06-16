@@ -2,3 +2,5 @@
 .venv
 CLAUDE.md
 /input/
+/extractors/
+/logs/
