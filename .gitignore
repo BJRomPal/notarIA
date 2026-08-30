@@ -4,3 +4,9 @@ CLAUDE.md
 /input/
 /extractors/
 /logs/
+# Backups de Neo4j: binarios grandes y regenerables, fuera del control de versiones
+/DBbackups/
+
+# Bytecode de Python
+__pycache__/
+*.pyc

@@ -8,26 +8,6 @@ Registro de tareas que quedaron diferidas y pueden o no hacerse más adelante.
 
 ---
 
-## Grafo — Remisiones pendientes
-
-### Remisiones del CCyCN a secciones aún no ingresadas
-A medida que se ingresan artículos, algunos referencian partes del código que todavía
-no están en el grafo. Revisarlas una vez ingresadas las secciones correspondientes:
-
-- Art_52_CCyCN, Art_587_CCyCN → Libro Tercero, Título V, Cap. 1 (daños — no ingresado)
-- Art_689_CCyCN → Art_1549_CCyCN (donaciones sin cargo — Libro III, no ingresado)
-- Art_627_CCyCN, Art_629_CCyCN → Libro Quinto (indignidad/derechos sucesorios — no ingresado)
-- Art_355_CCyCN → Art_2559_CCyCN (prescripción de la acción por cumplimiento de cargo — no ingresado)
-- Art_744_CCyCN → Arts. 2144, 2157, 2178_CCyCN (usufructo/uso/habitación/servidumbres — Libro IV, no ingresado)
-- Art_747_CCyCN → saneamiento (Cap. 9, Tít. II, Libro III — no ingresado)
-- Arts. 822, 839_CCyCN → Libro Sexto (prescripción — no ingresado)
-- Art_876_CCyCN → acción revocatoria (Título II, Libro III — no ingresado)
-- Art_878_CCyCN → compraventa de cosa ajena (Título II, Libro III — no ingresado)
-- Art_893_CCyCN → indignidad para suceder (Libro V — no ingresado)
-- Art_390_CCyCN → Libro Cuarto, Título II, Cap. 3 (restituciones según buena/mala fe — no ingresado)
-
----
-
 ## Grafo — Ontología (continuación)
 
 ### Entidades Bien/Cosa para Arts. 225-241 CCyCN
@@ -37,7 +17,22 @@ ontológicas para ellas. Evaluar si conviene crear nodos como `BienInmueble`, `B
 `BienFungible`, etc. que apunten a esos artículos, especialmente si normas registrales o
 notariales del grafo los referencian.
 
----
+## Resúmenes de entidades
+
+### Incorporar resumen de entidad padre (ES_TIPO_DE) en Hipoteca, Anticresis y Prenda
+`generar_resumenes_entidades.py` arma el contexto con `directos` + remisiones (`REMITE_A`), pero no
+hace traversal de `ES_TIPO_DE` hacia la entidad padre. Hipoteca, Anticresis y Prenda son
+`ES_TIPO_DE` `DerechoRealDeGarantia` (Arts. 2184-2204 CCyCN, disposiciones comunes a las tres).
+Cuando se cargue el resumen maestro de entidades, agregar lógica para que el prompt de estas 3
+entidades incluya también el resumen ya generado de `DerechoRealDeGarantia` como contexto adicional,
+y regenerar los resúmenes de Hipoteca, Anticresis y Prenda con ese agregado.
+
+### Incorporar resumen de entidad relacionada vía remisión (REMITE_A)
+Recordatorio, mismo criterio que el punto anterior pero para entidades vinculadas a través de
+artículos con relación `REMITE_A` (no solo `ES_TIPO_DE`). Cuando el contexto de una entidad
+incluye artículos "adicionales" traídos por remisión y esos artículos pertenecen a otra entidad
+de ontología, evaluar si conviene incorporar también el resumen ya generado de esa otra entidad,
+además del texto de los artículos. Resolver junto con la carga del resumen maestro.
 
 ## Ingesta — Normas pendientes
 
