@@ -9,8 +9,10 @@ la ingesta. Su propósito es doble:
    de generarlo, el texto quedó incompleto y hay que **regenerarlo con `qwen3.8:latest`**
    (ver la sección final).
 
-Auditoría reproducible: `python exploration/auditar_cobertura_entidades.py [cobertura_min]`
-(solo lectura, default 0.8).
+La auditoría que produjo estos hallazgos se corrió con `auditar_cobertura_entidades.py`, que
+se eliminó en la limpieza de `exploration/`. Es recuperable con
+`git checkout 439fcc2 -- exploration/auditar_cobertura_entidades.py`, y su consulta central
+está transcripta en la sección 2.
 
 ---
 
@@ -45,6 +47,29 @@ por la entidad recuperaba los Arts. 34 y 35 y no el 36 ni el 37.
 
 La heurística: dentro de un mismo `(:Norma, ubicacion)` con ≥ 2 artículos, si una entidad
 cubre a la mayoría de los artículos pero no a todos, los no cubiertos son candidatos.
+
+```cypher
+MATCH (n:Norma)-[:CONTIENE]->(a:Articulo)
+WHERE a.vigente = true AND a.ubicacion IS NOT NULL
+WITH n, a.ubicacion AS ubi, collect(a) AS arts
+WHERE size(arts) >= 2
+UNWIND arts AS art
+OPTIONAL MATCH (art)-[]-(e)
+WHERE NOT e:Norma AND NOT e:Articulo AND NOT e:VersionHistorica
+WITH n, ubi, arts, e, collect(DISTINCT art.id) AS con_entidad
+WHERE e IS NOT NULL AND size(con_entidad) < size(arts)
+WITH n.id AS norma, ubi, labels(e)[0] AS entidad,
+     size(con_entidad) AS con, size(arts) AS total,
+     toFloat(size(con_entidad)) / size(arts) AS cobertura,
+     [x IN [a IN arts | a.id] WHERE NOT x IN con_entidad] AS faltantes
+WHERE cobertura >= 0.8
+RETURN norma, ubi, entidad, con, total, cobertura, faltantes
+ORDER BY cobertura DESC, total DESC
+```
+
+El corte que separa señal de ruido es si el artículo candidato tiene **alguna** entidad o
+**ninguna**: los huérfanos casi siempre son huecos reales, los que ya tienen otra entidad
+casi siempre están bien clasificados.
 
 **La precisión es baja y hay que leerla con cuidado.** Sobre 7 candidatos verificados a mano,
 solo 2 eran huecos reales. El grueso del ruido son artículos que tienen otra entidad *más
@@ -198,24 +223,29 @@ concentración por norma señala dónde la extracción rindió menos:
 | Ley 25.246 | 10 |
 | RG 9/2026 | 10 |
 
-Listado completo con muestras de ids: `python exploration/auditar_cobertura_entidades.py`.
+Para el listado completo, la misma consulta de la sección 2 sin la condición de cobertura:
+artículos vigentes sin ninguna entidad de ontología, agrupados por norma.
 
 ---
 
 ## 6. Resúmenes de entidades a regenerar con `qwen3.8:latest`
 
 Cada vez que se agregue o corrija una vinculación artículo → entidad, el `resumen` y el
-`embedding` de esa entidad quedan desactualizados. El patrón establecido es el de
-`exploration/regenerar_resumenes_sesion.py`: una lista fija de entidades que reutiliza la
-lógica de `exploration/generar_resumenes_entidades.py` (mismo prompt, `num_ctx` dinámico,
-checkpoint) y escribe a archivos nuevos para revisión antes de integrar.
+`embedding` de esa entidad quedan desactualizados. Se ponen al día con:
+
+```
+python exploration/regenerar_resumen_entidad.py <Entidad> [<Entidad> ...]
+```
+
+Reutiliza la lógica de `generar_resumenes_entidades.py` (prompt, `num_ctx` dinámico, citas)
+y escribe directamente en Neo4j. Después, para dejar los archivos master al día:
+`python exploration/exportar_resumenes_y_contexto.py`.
 
 **Modelo obligatorio: `qwen3.8:latest`.** No usar otro salvo indicación expresa.
 
 ### Lotes A, B y C — HECHOS el 2026-08-31
 
-Regenerados con `exploration/regenerar_resumenes_inconsistencias.py` (qwen3.8:latest, 7m51s)
-y cargados a Neo4j con resumen + embedding nuevos:
+Regenerados con qwen3.8:latest (7m51s) y cargados a Neo4j con resumen + embedding nuevos:
 
 | Entidad | Lote | Motivo | Antes → Después |
 |---|---|---|---|
