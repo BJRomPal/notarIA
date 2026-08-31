@@ -43,24 +43,54 @@ K_VECTORIAL          = 3   # vecinos a recuperar por cada frase de búsqueda
 LONGITUD_MIN_KEYWORD = 4   # palabras del sujeto más cortas se ignoran (poco discriminantes)
 MIN_DOCS_TRAS_FILTRO = 2   # si el filtro por sujeto deja menos, se descarta el filtro (prioriza recall)
 
+# --- Nombre con el que se identifica una norma en las citas ---
+# `titulo` no sirve para citar: 100 normas (DTR e IT) no lo tienen, y entre las que sí, unas
+# traen el prefijo identificatorio ("Resolución General IGJ 15/2024 - ...") y otras solo el
+# tema ("Personas Expuestas Políticamente Extranjeras", que es la RG 35/2023 y no se puede
+# saber). El nombre canónico se arma con tipo + numero.
+#
+# Las DTR e IT toman el año del `id` y no de `numero`: 109 normas guardan el año con dos
+# dígitos ("6/19") y solo el id tiene los cuatro ("DTR_6_2019").
+#
+# Misma convención que citar() en exploration/generar_resumenes_entidades.py; si se toca una,
+# tocar la otra.
+NOMBRE_NORMA = """coalesce(
+    CASE norma.id
+        WHEN 'CCyCN'     THEN 'CCyCN'
+        WHEN 'Ley_11179' THEN 'Código Penal'
+        WHEN 'Ley_6926'  THEN 'Código Fiscal CABA'
+        ELSE CASE norma.tipo
+            WHEN 'Ley'                         THEN 'Ley ' + norma.numero
+            WHEN 'Decreto'                     THEN 'Decreto ' + norma.numero
+            WHEN 'ResolucionGeneral'           THEN 'RG ' + norma.numero
+            WHEN 'Resolución'                  THEN 'RG ' + norma.numero
+            WHEN 'DisposicionTecnicoRegistral' THEN 'DTR ' + split(norma.id, '_')[1] + '/' + split(norma.id, '_')[2]
+            WHEN 'InstruccionDeTrabajo'        THEN 'IT ' + split(norma.id, '_')[1] + '/' + split(norma.id, '_')[2]
+        END
+    END,
+    norma.titulo,
+    norma.id,
+    'Norma no identificada'
+)"""
+
 # ==========================================
 # 1. MOTOR VECTORIAL
 # ==========================================
 
-retrieval_query = """
+retrieval_query = f"""
 OPTIONAL MATCH (norma:Norma)-[:CONTIENE]->(node)
 RETURN
-    "FUENTE: " + coalesce(norma.titulo, norma.id, 'Norma no identificada') + "\\n" +
+    "FUENTE: " + {NOMBRE_NORMA} + "\\n" +
     "ARTICULO: " + coalesce(node.numero, '') + "\\n" +
     "TEXTO: " + coalesce(node.texto, '') AS text,
     score,
-    {
-        ley: coalesce(norma.titulo, norma.id, ''),
+    {{
+        ley: {NOMBRE_NORMA},
         norma_id: coalesce(norma.id, ''),
         art: coalesce(node.numero, ''),
         id: node.id,
         ubicacion: coalesce(node.ubicacion, '')
-    } AS metadata
+    }} AS metadata
 """
 
 vector_db = Neo4jVector.from_existing_index(
@@ -333,16 +363,16 @@ def seguir_remite_a(article_ids: list[str]) -> list[dict]:
     """Dado un conjunto de artículos, devuelve los artículos referenciados vía REMITE_A."""
     if not article_ids:
         return []
-    query = """
+    query = f"""
     UNWIND $ids AS art_id
-    MATCH (origen:Articulo {id: art_id})-[:REMITE_A]->(referenciado:Articulo)
+    MATCH (origen:Articulo {{id: art_id}})-[:REMITE_A]->(referenciado:Articulo)
     WHERE referenciado.texto IS NOT NULL
     OPTIONAL MATCH (norma:Norma)-[:CONTIENE]->(referenciado)
     RETURN DISTINCT
         referenciado.id     AS id,
         referenciado.numero AS numero,
         referenciado.texto  AS texto,
-        coalesce(norma.titulo, norma.id, 'Norma no identificada') AS norma,
+        {NOMBRE_NORMA}      AS norma,
         origen.numero       AS origen_numero
     """
     with neo4j_driver.session() as session:
@@ -372,12 +402,12 @@ def _obtener_datos_articulos(article_ids: list[str]) -> dict[str, dict]:
     """
     if not article_ids:
         return {}
-    query = """
+    query = f"""
     UNWIND $ids AS art_id
-    MATCH (norma:Norma)-[:CONTIENE]->(art:Articulo {id: art_id})
+    MATCH (norma:Norma)-[:CONTIENE]->(art:Articulo {{id: art_id}})
     RETURN art_id,
            art.numero AS numero,
-           coalesce(norma.titulo, norma.id, '?') AS norma
+           {NOMBRE_NORMA} AS norma
     """
     with neo4j_driver.session() as session:
         return {
