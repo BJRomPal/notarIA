@@ -25,7 +25,7 @@ const EJEMPLOS: { icono: React.ReactNode; texto: string }[] = [
         />
       </svg>
     ),
-    texto: "¿Qué requisitos debe cumplir el instrumento constitutivo de una SAS?",
+    texto: "¿Quienes no pueden ser testigos en un Testamento por Escritura Pública?",
   },
   {
     icono: (
@@ -37,7 +37,7 @@ const EJEMPLOS: { icono: React.ReactNode; texto: string }[] = [
         />
       </svg>
     ),
-    texto: "¿Puede una SAS emitir debentures?",
+    texto: "¿Cuáles son las obligaciones del vendedor en una compraventa?",
   },
   {
     icono: (
@@ -49,7 +49,7 @@ const EJEMPLOS: { icono: React.ReactNode; texto: string }[] = [
         />
       </svg>
     ),
-    texto: "¿Qué facultades de fiscalización tiene la IGJ sobre las sociedades por acciones?",
+    texto: "¿Qué sociedades deben publicar edictos en oportunidad de su constitución?",
   },
 ];
 

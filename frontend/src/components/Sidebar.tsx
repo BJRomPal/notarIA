@@ -93,7 +93,7 @@ export function Sidebar({ conversations, activeId, apiOk, onSelect, onNew, onDel
           />
           {apiOk === null ? "Verificando conexión…" : apiOk ? "En línea" : "Sin conexión"}
         </div>
-        <p className="mt-1.5 text-slate-600">Derecho societario argentino</p>
+        <p className="mt-1.5 text-slate-600">Derecho argentino</p>
       </footer>
     </aside>
   );
