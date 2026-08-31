@@ -337,13 +337,14 @@ code{
 .mx .rw{background:var(--surface-2);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:1cqw;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
 .mx .best{color:var(--petrol);font-weight:600}
 .mx .worst{color:var(--clay)}
+.mx.tri{grid-template-columns:22cqw 1fr 9cqw}
 </style>
 
 <div class="wrap">
 
   <header class="masthead">
     <h1>Articulación del agente notarial</h1>
-    <p>Tres formas de preguntar, tres especialistas y tres maneras de conectarlos. Once láminas para decidir cómo enruta NotarIA cada consulta y qué hay que construir antes de que cualquiera de las tres funcione.</p>
+    <p>Tres formas de preguntar, tres especialistas y tres maneras de conectarlos. Once láminas para decidir cómo enruta NotarIA cada consulta, y cinco más con las opciones que se cuelgan de esa decisión.</p>
     <div class="hint">Cada panel es 16:9 &mdash; capturar e insertar directamente en PowerPoint</div>
   </header>
 
@@ -903,6 +904,212 @@ code{
         </div>
       </div>
       <p class="note">El registro de herramientas de B se adopta desde el día uno, sea cual sea la variante: es lo que hace barato sumar la próxima calculadora.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>12</b><span>Profundidad</span></div>
+      <h2>El bucle ya está escrito, con una sola iteración</h2>
+      <p class="lede">Un Agentic RAG no es un componente nuevo: es el gate de suficiencia que ya existe, iterando y con más de una estrategia para elegir.</p>
+      <div class="body">
+        <svg class="viz" viewBox="0 0 900 310" role="img" aria-label="El gate de suficiencia actual comparado con el bucle generalizado">
+          <defs>
+            <marker id="a12" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--line-2)"/></marker>
+            <marker id="a12p" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--petrol)"/></marker>
+            <marker id="a12o" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--ocre)"/></marker>
+          </defs>
+
+          <text x="6" y="56" font-size="11" font-weight="600" fill="var(--ink-3)" letter-spacing="1.4">HOY</text>
+
+          <rect x="58" y="24" width="116" height="52" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="116" y="55" text-anchor="middle" font-size="11.5" fill="var(--ink)">recuperar</text>
+          <line x1="174" y1="50" x2="194" y2="50" stroke="var(--line-2)" stroke-width="1.5" marker-end="url(#a12)"/>
+
+          <rect x="202" y="24" width="124" height="52" rx="2" fill="var(--petrol-wash)" stroke="var(--petrol)"/>
+          <text x="264" y="55" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--petrol)">evaluar</text>
+          <line x1="326" y1="50" x2="346" y2="50" stroke="var(--line-2)" stroke-width="1.5" marker-end="url(#a12)"/>
+
+          <rect x="354" y="24" width="124" height="52" rx="2" fill="var(--surface-2)" stroke="var(--line)" stroke-dasharray="4 3"/>
+          <text x="416" y="55" text-anchor="middle" font-size="11.5" fill="var(--ink)">Cypher</text>
+          <line x1="478" y1="50" x2="498" y2="50" stroke="var(--line-2)" stroke-width="1.5" marker-end="url(#a12)"/>
+
+          <rect x="506" y="24" width="124" height="52" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="568" y="55" text-anchor="middle" font-size="11.5" fill="var(--ink)">responder</text>
+
+          <text x="652" y="44" font-size="11" fill="var(--ink-3)">Una iteración.</text>
+          <text x="652" y="62" font-size="11" fill="var(--ink-3)">Una sola estrategia de reintento.</text>
+
+          <line x1="6" y1="110" x2="894" y2="110" stroke="var(--line-2)" stroke-width="1" stroke-dasharray="4 4"/>
+
+          <text x="6" y="228" font-size="11" font-weight="600" fill="var(--petrol)" letter-spacing="1.4">CON BUCLE</text>
+
+          <rect x="100" y="200" width="116" height="52" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="158" y="231" text-anchor="middle" font-size="11.5" fill="var(--ink)">recuperar</text>
+          <line x1="216" y1="226" x2="236" y2="226" stroke="var(--petrol)" stroke-width="1.5" marker-end="url(#a12p)"/>
+
+          <rect x="244" y="200" width="124" height="52" rx="2" fill="var(--petrol-wash)" stroke="var(--petrol)" stroke-width="2"/>
+          <text x="306" y="231" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--petrol)">evaluar</text>
+
+          <path d="M368,214 C394,214 396,186 420,186" fill="none" stroke="var(--petrol)" stroke-width="1.5" marker-end="url(#a12p)"/>
+          <path d="M420,252 C396,252 394,244 372,240" fill="none" stroke="var(--petrol)" stroke-width="1.5" marker-end="url(#a12p)"/>
+
+          <rect x="424" y="146" width="214" height="142" rx="3" fill="none" stroke="var(--petrol)" stroke-width="1.5"/>
+          <text x="531" y="170" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--petrol)">elegir estrategia</text>
+          <text x="440" y="198" font-size="10.5" fill="var(--ink-2)">seguir la cadena de vigencia</text>
+          <text x="440" y="220" font-size="10.5" fill="var(--ink-2)">descomponer la pregunta</text>
+          <text x="440" y="242" font-size="10.5" fill="var(--ink-2)">reformular el vocabulario</text>
+          <text x="440" y="264" font-size="10.5" fill="var(--ink-2)">buscar jurisprudencia</text>
+
+          <line x1="638" y1="226" x2="664" y2="226" stroke="var(--petrol)" stroke-width="1.5" marker-end="url(#a12p)"/>
+          <rect x="672" y="200" width="124" height="52" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="734" y="231" text-anchor="middle" font-size="11.5" fill="var(--ink)">responder</text>
+
+          <rect x="100" y="262" width="116" height="34" rx="2" fill="none" stroke="var(--ocre)" stroke-width="1.4"/>
+          <text x="158" y="284" text-anchor="middle" font-size="10" fill="var(--ocre)">tope: 3 vueltas</text>
+          <path d="M216,279 C238,279 242,262 250,256" fill="none" stroke="var(--ocre)" stroke-width="1.3" stroke-dasharray="3 3" marker-end="url(#a12o)"/>
+
+          <text x="248" y="304" font-size="10.5" fill="var(--ink-3)">El presupuesto es lo que separa un bucle acotado de un agente suelto.</text>
+        </svg>
+      </div>
+      <div class="legend">
+        <span class="lg"><span class="sw" style="background:var(--petrol)"></span>Paga en: cadena de vigencia &middot; remisiones encadenadas &middot; contradicción entre normas de distinto rango</span>
+        <span class="lg"><span class="sw" style="background:var(--clay)"></span>No paga en: la ruta determinista, ni en las consultas que el gate ya da por suficientes</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>13</b><span>Bucles</span></div>
+      <h2>Casi todo el valor está en bucles chicos</h2>
+      <p class="lede">El agente investigador suelto es la parte vistosa y la que menos rinde. Los que pagan son los bucles con tope y con un solo objetivo.</p>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>Hacia afuera &mdash; responder</h3>
+            <ol class="steps">
+              <li><i>1</i><span>Verificar vigencia antes de redactar: Cypher puro, sin LLM. Ataja la cita de un artículo derogado.</span></li>
+              <li><i>2</i><span>Devolverle al modelo el error del Cypher y reintentar. Hoy la excepción se imprime y se descarta.</span></li>
+              <li><i>3</i><span>Descomponer: tu propia pregunta de prueba son dos preguntas pegadas en una.</span></li>
+              <li><i>4</i><span>Reformular con vocabulario alternativo cuando el filtro por sujeto deja el contexto vacío.</span></li>
+            </ol>
+          </div>
+          <div class="col">
+            <h3>Hacia adentro &mdash; mantener</h3>
+            <ol class="steps">
+              <li><i>1</i><span>Auditar el grafo: artículos que dicen «derógase» y no tienen arista <code>DEROGA_A</code>.</span></li>
+              <li><i>2</i><span>Detectar lagunas: si el bucle agotó el presupuesto sin responder, la norma no está cargada.</span></li>
+              <li><i>3</i><span>Proponer las remisiones que el parser no resolvió, para aprobarlas a mano.</span></li>
+            </ol>
+          </div>
+        </div>
+      </div>
+      <p class="note">Los dos primeros de cada columna no son «investigación profunda»: son bucles de una o dos vueltas con un objetivo único. Ahí está la mejor relación valor/costo.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>14</b><span>Recuperación</span></div>
+      <h2>Mejoras que rinden con cualquiera de las tres</h2>
+      <p class="lede">Tres cambios en cómo se busca, independientes de cómo se articule el agente.</p>
+      <div class="body">
+        <div class="cols tres">
+          <div class="col">
+            <h3>Búsqueda híbrida</h3>
+            <p class="tx">Hoy todo es semántico. Pero «debentures», «art. 299» o «receso» son términos exactos, donde el léxico le gana al vector.</p>
+            <p class="tx">Neo4j tiene índices full-text: sumar BM25 al lado del vectorial y fusionar los dos rankings.</p>
+          </div>
+          <div class="col">
+            <h3>Fusión por rango</h3>
+            <p class="tx">El fan-out de tres o cuatro frases se resuelve hoy con un booleano: aparecer en dos búsquedas distintas.</p>
+            <p class="tx">La fusión recíproca de rangos usa la posición en cada lista, no un umbral. Sin dependencias nuevas.</p>
+          </div>
+          <div class="col">
+            <h3>Aristas para los fallos</h3>
+            <p class="tx">Los 292 fallos no tienen una sola arista al resto del grafo: se llega a ellos solo por similitud.</p>
+            <p class="tx">Vincularlos al articulado que interpretan abre la pregunta «qué fallos aplican el art. 299».</p>
+          </div>
+        </div>
+      </div>
+      <p class="note">Ninguna de las tres depende de la variante que se elija: son mejoras a la recuperación, no a la articulación. Se pueden hacer antes, después o en paralelo.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>15</b><span>Garantías</span></div>
+      <h2>El error que hoy el sistema no puede ver</h2>
+      <p class="lede">El pipeline no chequea vigencia ni verifica que lo que se cita venga de lo que se recuperó. En derecho, esos dos son la diferencia entre una respuesta y un problema.</p>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>Vigencia</h3>
+            <ul class="steps">
+              <li class="x"><i>1</i><span><code>vigente</code> no aparece ni una vez en <code>api/pipeline.py</code>: nada impide citar un artículo derogado como si rigiera.</span></li>
+              <li class="x"><i>2</i><span><code>TIENE_HISTORICO</code> y <code>vigencia_desde</code> tienen cero apariciones en <code>api/</code> y <code>tests/</code>: las 103 versiones históricas son inalcanzables.</span></li>
+              <li class="x"><i>3</i><span><code>nota_vigencia</code> está especificado al detalle en <code>CLAUDE.md</code> y sigue sin construirse.</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Citas</h3>
+            <ul class="steps">
+              <li class="x"><i>1</i><span>El prompt pide citar artículo y norma, pero nada comprueba que la cita salga del contexto recuperado.</span></li>
+              <li class="x"><i>2</i><span>Extraer las citas de la respuesta y contrastarlas contra <code>ctx.ids</code> es determinista, barato y no necesita modelo.</span></li>
+              <li class="x"><i>3</i><span>Una cita inventada y una cita derogada se leen igual de bien. Ninguna de las dos se detecta hoy.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="note">Con un router aparece además una métrica nueva: la precisión del ruteo. <code>lmjudge_dinamico.py</code> mide de punta a punta; si el especialista elegido fue el equivocado, el resultado no dice dónde se rompió.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>16</b><span>Prioridades</span></div>
+      <h2>Qué rinde primero</h2>
+      <div class="body">
+        <div class="mx tri">
+          <div class="hd">Mejora</div>
+          <div class="hd">Qué ataja</div>
+          <div class="hd">Costo</div>
+
+          <div class="rw">Verificar vigencia</div>
+          <div>Citar como vigente un artículo derogado</div>
+          <div class="best">bajo</div>
+
+          <div class="rw">Reintentar el Cypher</div>
+          <div>Consultas al grafo que se pierden en silencio</div>
+          <div class="best">bajo</div>
+
+          <div class="rw">Índice de entidades</div>
+          <div>El especialista general no tiene puerta de entrada</div>
+          <div class="best">bajo</div>
+
+          <div class="rw">Retriever de fallos</div>
+          <div>292 fallos cargados que ninguna consulta toca</div>
+          <div class="best">bajo</div>
+
+          <div class="rw">Verificar las citas</div>
+          <div>Citas que no salen de lo recuperado</div>
+          <div class="best">bajo</div>
+
+          <div class="rw">Descomponer la pregunta</div>
+          <div>Las consultas que en realidad son dos</div>
+          <div>medio</div>
+
+          <div class="rw">Híbrida y fusión por rango</div>
+          <div>Términos exactos que el vector no separa</div>
+          <div>medio</div>
+
+          <div class="rw">Bucle de investigación</div>
+          <div>Cadena de vigencia y remisiones encadenadas</div>
+          <div class="worst">alto</div>
+        </div>
+      </div>
+      <p class="note">El orden es por relación entre lo que cuesta y lo que atajan, no por dificultad: lo barato que evita errores caros va primero.</p>
     </div>
   </section>
 
