@@ -128,7 +128,10 @@ class ContextoAcumulado:
 def extraer_parametros_vectoriales(pregunta: str) -> tuple[str, list[str]]:
     prompt = f"""Analizá la pregunta jurídica y extraé parámetros para búsqueda semántica.
 Devolvé un JSON con:
-- "sujeto": El tipo societario en lenguaje natural (ej: "sociedad anonima", "SAS").
+- "sujeto": El sujeto o instituto jurídico central de la pregunta, en lenguaje natural
+  (ej: "sociedad anonima", "SAS", "hipoteca", "escritura publica", "usufructo",
+  "reporte de operacion sospechosa", "tracto abreviado"). Si la pregunta no gira sobre
+  un instituto identificable, devolvé "".
 - "frases_vectoriales": Lista de 2 o 3 frases en lenguaje natural. Incluí el número de artículo si se menciona.
 Devuelve SOLO el JSON.
 Pregunta: {pregunta}"""
@@ -139,7 +142,15 @@ Pregunta: {pregunta}"""
     except Exception:
         return "", [pregunta]
 
-_STOPWORDS = {"sociedad", "capital", "social", "socios"}
+# Palabras demasiado genéricas para discriminar: aparecen en casi cualquier norma del
+# corpus (societario, civil, registral, notarial, penal, tributario). Las de <= 4 letras
+# ya las descarta LONGITUD_MIN_KEYWORD.
+_STOPWORDS = {
+    "sociedad", "capital", "social", "socios",
+    "derecho", "derechos", "juridico", "juridica",
+    "articulo", "articulos", "norma", "normas",
+    "publico", "publica", "general", "nacional", "legal", "legales",
+}
 
 def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
     """Filtra los docs vectoriales para quedarse con los del sujeto preguntado.
@@ -169,11 +180,15 @@ def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
 # ==========================================
 
 def _cargar_etiquetas_entidades(driver) -> list[str]:
-    """Lee los labels reales de entidades ontológicas desde Neo4j (una sola vez al cargar el módulo)."""
+    """Lee los labels reales de entidades ontológicas desde Neo4j (una sola vez al cargar el módulo).
+
+    Se excluyen los labels estructurales (Norma, Articulo, VersionHistorica) y Jurisprudencia:
+    no son entidades de ontología y en el prompt de Cypher se leen como etiquetas consultables.
+    """
     with driver.session() as session:
         result = session.run("""
             MATCH (n)
-            WHERE NOT n:Articulo AND NOT n:Norma
+            WHERE NOT n:Articulo AND NOT n:Norma AND NOT n:VersionHistorica AND NOT n:Jurisprudencia
             RETURN DISTINCT labels(n)[0] AS label
             ORDER BY label
         """)
@@ -196,8 +211,22 @@ class MotorCypherDinamico:
 
         self._esquema = f"""
 NODOS Y PROPIEDADES REALES:
-  (:Norma        {{id: "Ley_19550",          numero: "19.550", titulo: "Ley General de Sociedades"}})
-  (:Articulo     {{id: "Art_163_Ley_19550",  numero: "163",    texto: "...", ubicacion: "..."}})
+  (:Norma {{id, numero, titulo, tipo, rama, jurisdiccion, vigente}})
+    — tipo: "Ley" | "Codigo" | "Decreto" | "ResolucionGeneral" | "Resolución" |
+            "DisposicionTecnicoRegistral" | "InstruccionDeTrabajo"
+    — rama: LISTA de strings, filtrá con IN (ej: 'registral' IN norma.rama). Valores:
+            registral | societario | civil | penal | financiero | notarial | tributario |
+            inversiones | comercial | datos_personales | asociaciones_civiles
+    — jurisdiccion: "Nacional" | "Ciudad Autónoma de Buenos Aires"
+    — titulo puede ser NULL: usá coalesce(norma.titulo, norma.id).
+    — Ejemplos de id: "Ley_19550" | "CCyCN" | "Decreto_2080_1980" | "RG_15_2024" | "DTR_5_2019"
+
+  (:Articulo {{id, numero, texto, ubicacion, vigente, modificado}})
+    — El id NO tiene un formato único: "Art_163_Ley_19550", "Art_1_CCyCN",
+      "Art_105_Decreto_2080_1980", "Art_1_DTR_5_2019", "Art_3_RG_2139_2006".
+      NUNCA lo parsees ni lo construyas: llegá al artículo por (:Norma)-[:CONTIENE]->(:Articulo).
+    — vigente = false ⇒ artículo derogado: no debe usarse como derecho vigente.
+
   (:<Etiqueta>   {{id: "NOMBRE_EN_MAYUSCULAS_CON_GUIONES"}})
     — La propiedad de búsqueda es SIEMPRE "id", nunca "nombre".
     — Etiquetas de entidades ontológicas presentes en la DB:
@@ -218,10 +247,12 @@ Cypher:
 OPTIONAL MATCH (art_directo:Articulo)-[r]-(sas:SociedadPorAccionesSimplificada)
 WHERE type(r) IN ['REGULA', 'AUTORIZA', 'PROHIBE', 'DEFINE']
   AND toLower(art_directo.texto) CONTAINS 'debenture'
+  AND art_directo.vigente = true
 
 MATCH (norma_origen:Norma)-[:CONTIENE]->(art_directo)
 MATCH (norma_origen)-[:APLICA_SUPLETORIAMENTE]->(norma_sup:Norma)-[:CONTIENE]->(art_sup:Articulo)
 WHERE toLower(art_sup.texto) CONTAINS 'debenture'
+  AND art_sup.vigente = true
 
 WITH collect(DISTINCT art_directo) + collect(DISTINCT art_sup) AS todos
 UNWIND todos AS art
@@ -245,6 +276,10 @@ REGLAS ESTRICTAS:
 4. Para supletoriedad traversá a nivel de NORMA: (norma)-[:APLICA_SUPLETORIAMENTE]->(norma_sup)-[:CONTIENE]->(art).
 5. Retorná exactamente estas columnas: id, numero, texto.
 6. LIMIT 5.
+7. Devolvé SOLO artículos vigentes: agregá `AND art.vigente = true` a cada match de artículo.
+8. Si la pregunta acota una rama o una jurisdicción, filtrá por la Norma que lo contiene:
+   MATCH (n:Norma)-[:CONTIENE]->(art)
+   WHERE 'registral' IN n.rama AND n.jurisdiccion = 'Ciudad Autónoma de Buenos Aires'
 
 PREGUNTA:
 {pregunta}
@@ -300,13 +335,15 @@ def seguir_remite_a(article_ids: list[str]) -> list[dict]:
         return []
     query = """
     UNWIND $ids AS art_id
-    MATCH (art:Articulo {id: art_id})-[:REMITE_A]->(referenciado:Articulo)
+    MATCH (origen:Articulo {id: art_id})-[:REMITE_A]->(referenciado:Articulo)
     WHERE referenciado.texto IS NOT NULL
+    OPTIONAL MATCH (norma:Norma)-[:CONTIENE]->(referenciado)
     RETURN DISTINCT
         referenciado.id     AS id,
         referenciado.numero AS numero,
         referenciado.texto  AS texto,
-        art_id              AS citado_desde
+        coalesce(norma.titulo, norma.id, 'Norma no identificada') AS norma,
+        origen.numero       AS origen_numero
     """
     with neo4j_driver.session() as session:
         return [dict(row) for row in session.run(query, ids=article_ids)]
@@ -316,28 +353,37 @@ def _agregar_remisiones(ids_origen: list[str], ctx: ContextoAcumulado) -> Iterat
     """Sigue REMITE_A desde `ids_origen`, agrega al contexto los artículos nuevos
     y emite un evento por cada uno."""
     for art in seguir_remite_a(ids_origen):
-        origen_num = art["citado_desde"].replace("Art_", "").split("_Ley_")[0]
-        norma_ref  = str(art.get("id", "")).split("_Ley_")[-1]
+        origen_num = art.get("origen_numero", "")
+        norma_ref  = art.get("norma", "")
         texto = _formato_articulo(
-            f"Ley {norma_ref} (referenciada por Art. {origen_num})",
+            f"{norma_ref} (referenciada por Art. {origen_num})",
             art.get("numero", ""),
             art.get("texto", ""),
         )
         if ctx.agregar(art.get("id", ""), texto):
-            yield {"type": "item", "texto": f"Art. {art.get('numero', '')} (Ley {norma_ref}) — citado por el Art. {origen_num}"}
+            yield {"type": "item", "texto": f"Art. {art.get('numero', '')} ({norma_ref}) — citado por el Art. {origen_num}"}
 
 
-def _obtener_normas(article_ids: list[str]) -> dict[str, str]:
-    """Devuelve {article_id: norma_titulo} para los artículos dados."""
+def _obtener_datos_articulos(article_ids: list[str]) -> dict[str, dict]:
+    """Devuelve {article_id: {"numero", "norma"}} para los artículos dados.
+
+    El número y la norma se leen del grafo y nunca se derivan del id: los ids no
+    tienen un formato único (Art_163_Ley_19550, Art_1_CCyCN, Art_1_DTR_5_2019).
+    """
     if not article_ids:
         return {}
     query = """
     UNWIND $ids AS art_id
     MATCH (norma:Norma)-[:CONTIENE]->(art:Articulo {id: art_id})
-    RETURN art_id, coalesce(norma.titulo, norma.id, '?') AS norma_titulo
+    RETURN art_id,
+           art.numero AS numero,
+           coalesce(norma.titulo, norma.id, '?') AS norma
     """
     with neo4j_driver.session() as session:
-        return {row["art_id"]: row["norma_titulo"] for row in session.run(query, ids=article_ids)}
+        return {
+            row["art_id"]: {"numero": row["numero"], "norma": row["norma"]}
+            for row in session.run(query, ids=article_ids)
+        }
 
 
 def obtener_entidades_relacionadas(article_ids: list[str]) -> list[dict]:
@@ -346,7 +392,7 @@ def obtener_entidades_relacionadas(article_ids: list[str]) -> list[dict]:
     query = """
     UNWIND $ids AS art_id
     MATCH (art:Articulo {id: art_id})-[r]-(entidad)
-    WHERE NOT entidad:Norma AND NOT entidad:Articulo
+    WHERE NOT entidad:Norma AND NOT entidad:Articulo AND NOT entidad:VersionHistorica
     RETURN DISTINCT
         labels(entidad)[0] AS tipo,
         entidad.id         AS id,
@@ -393,7 +439,8 @@ answer_chain = ChatPromptTemplate.from_template(template_respuesta) | llm | StrO
 def _evaluar_suficiencia(pregunta: str, contexto: list[str]) -> tuple[bool, str]:
     """Evalúa si el contexto vectorial es suficiente para responder sin recurrir al grafo."""
     contexto_txt = "\n\n---\n\n".join(contexto) if contexto else "(ningún artículo recuperado)"
-    prompt = f"""Eres un experto en derecho societario argentino. Evaluá si el contexto legal recuperado \
+    prompt = f"""Eres un experto en derecho argentino (societario, civil, registral, notarial, penal \
+y tributario). Evaluá si el contexto legal recuperado \
 es SUFICIENTE para responder la pregunta del usuario de forma útil y precisa.
 
 CRITERIO: Respondé "suficiente: true" si los artículos recuperados permiten dar una respuesta \
@@ -460,12 +507,15 @@ def responder_stream(pregunta: str) -> Iterator[dict]:
         ids_antes_fase3 = list(ctx.ids)
         arts_grafo = motor_cypher.consultar(pregunta)
         arts_grafo_nuevos = [a for a in arts_grafo if str(a.get("id", "")) and a.get("id") not in ctx]
-        normas_grafo = _obtener_normas([str(a["id"]) for a in arts_grafo_nuevos])
+        datos_grafo = _obtener_datos_articulos([str(a["id"]) for a in arts_grafo_nuevos])
         for art in arts_grafo_nuevos:
             art_id = str(art["id"])
-            texto = _formato_articulo("Grafo Ontológico", art.get("numero", ""), art.get("texto", ""))
+            # La FUENTE es la norma real, no "Grafo Ontológico": el prompt de respuesta
+            # exige citar la norma de cada afirmación y solo puede leerla de acá.
+            norma = datos_grafo.get(art_id, {}).get("norma", "Norma no identificada")
+            texto = _formato_articulo(norma, art.get("numero", ""), art.get("texto", ""))
             if ctx.agregar(art_id, texto):
-                yield {"type": "item", "texto": f"Art. {art.get('numero', '')} ({normas_grafo.get(art_id, '?')})"}
+                yield {"type": "item", "texto": f"Art. {art.get('numero', '')} ({norma})"}
 
         # Fase 3.5 (segunda pasada): remisiones desde los artículos nuevos del grafo.
         ids_nuevos_fase3 = [i for i in ctx.ids if i not in ids_antes_fase3]
@@ -476,15 +526,17 @@ def responder_stream(pregunta: str) -> Iterator[dict]:
     entidades = obtener_entidades_relacionadas(ctx.ids)
 
     # Fuentes del contexto final, para que el frontend las muestre como citas.
-    normas_ctx = _obtener_normas(ctx.ids)
-    fuentes = []
-    for art_id in ctx.ids:
-        partes = art_id.replace("Art_", "").split("_Ley_")
-        fuentes.append({
+    # El fallback cubre el caso en que un id del contexto no sea un :Articulo (el motor
+    # Cypher puede devolver un :Jurisprudencia, que también tiene id y texto).
+    datos_ctx = _obtener_datos_articulos(ctx.ids)
+    fuentes = [
+        {
             "id": art_id,
-            "numero": partes[0] if partes else "",
-            "norma": normas_ctx.get(art_id, f"Ley {partes[-1]}" if len(partes) > 1 else "?"),
-        })
+            "numero": datos_ctx.get(art_id, {}).get("numero") or art_id,
+            "norma": datos_ctx.get(art_id, {}).get("norma") or "?",
+        }
+        for art_id in ctx.ids
+    ]
     yield {"type": "fuentes", "articulos": fuentes}
 
     yield {"type": "fase", "fase": "redaccion", "label": "Redactando la respuesta"}

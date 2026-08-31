@@ -117,8 +117,11 @@ def reunir_contexto(etiqueta: str):
         entidad_id = nodo["id"]
 
         directos = s.run(f"""
-            MATCH (a:Articulo)-[rel]->(n:{etiqueta} {{id: $eid}})
-            RETURN DISTINCT a.id AS art, a.texto AS texto
+            MATCH (norma:Norma)-[:CONTIENE]->(a:Articulo)-[rel]->(n:{etiqueta} {{id: $eid}})
+            RETURN DISTINCT a.id AS art, a.texto AS texto,
+                   a.numero AS numero, norma.tipo AS tipo,
+                   norma.numero AS norma_numero, norma.titulo AS norma_titulo,
+                   norma.id AS norma_id
         """, eid=entidad_id).data()
 
         ids_directos = {d["art"] for d in directos}
@@ -126,12 +129,56 @@ def reunir_contexto(etiqueta: str):
         remisiones = s.run(f"""
             MATCH (a:Articulo)-[rel]->(n:{etiqueta} {{id: $eid}})
             MATCH (a)-[:REMITE_A]->(destino:Articulo)
-            RETURN DISTINCT destino.id AS art, destino.texto AS texto
+            MATCH (norma:Norma)-[:CONTIENE]->(destino)
+            RETURN DISTINCT destino.id AS art, destino.texto AS texto,
+                   destino.numero AS numero, norma.tipo AS tipo,
+                   norma.numero AS norma_numero, norma.titulo AS norma_titulo,
+                   norma.id AS norma_id
         """, eid=entidad_id).data()
 
         adicionales = [r for r in remisiones if r["art"] not in ids_directos]
 
     return entidad_id, directos, adicionales
+
+
+# Códigos: se citan por su nombre corto de uso forense. El título completo ("Código Civil y
+# Comercial de la Nación") repetido en cada cita hace el texto pesado de leer, y el lector
+# entiende la forma abreviada sin ambigüedad.
+_NOMBRE_CORTO = {
+    "CCyCN": "CCyCN",
+    "Ley_11179": "Código Penal",
+    "Ley_6926": "Código Fiscal CABA",
+}
+
+# Cómo nombrar cada tipo de norma en una cita. El id (Ley_404, DTR_7_2024) es interno y
+# nunca debe llegar al texto del resumen.
+_ETIQUETA_NORMA = {
+    "Ley": "Ley {numero}",
+    "Decreto": "Decreto {numero}",
+    "ResolucionGeneral": "RG {numero}",
+    "Resolución": "RG {numero}",
+    "DisposicionTecnicoRegistral": "DTR {numero}",
+    "InstruccionDeTrabajo": "IT {numero}",
+}
+
+
+def citar(art: dict) -> str:
+    """Cita legible de un artículo: 'art. 82, Ley 404'. Nunca el id interno.
+
+    Los Códigos se citan por su nombre corto de uso forense ('art. 2128, CCyCN'), que es como
+    se los nombra y evita repetir el título completo en cada cita; el resto por tipo + número.
+    Van por id y no por tipo='Codigo' porque el Código Penal y el Código Fiscal de CABA están
+    cargados con tipo='Ley'. Si la norma no encaja en ninguno de los dos casos se cae al
+    título y, en última instancia, al id.
+    """
+    tipo, numero = art.get("tipo"), art.get("norma_numero")
+    if art.get("norma_id") in _NOMBRE_CORTO:
+        norma = _NOMBRE_CORTO[art["norma_id"]]
+    elif tipo in _ETIQUETA_NORMA and numero:
+        norma = _ETIQUETA_NORMA[tipo].format(numero=numero)
+    else:
+        norma = art.get("norma_titulo") or art.get("norma_id")
+    return f"art. {art.get('numero') or '?'}, {norma}"
 
 
 def calcular_extension_objetivo(directos, adicionales) -> str:
@@ -154,9 +201,9 @@ def armar_prompt(etiqueta: str, entidad_id: str, directos, adicionales) -> str:
     extension_objetivo = calcular_extension_objetivo(directos, adicionales)
     bloques = []
     for d in directos:
-        bloques.append(f"[{d['art']}]\n{d['texto']}")
+        bloques.append(f"[{citar(d)}]\n{d['texto']}")
     for a in adicionales:
-        bloques.append(f"[{a['art']} — remisión]\n{a['texto']}")
+        bloques.append(f"[{citar(a)} — remisión]\n{a['texto']}")
     contexto = "\n\n".join(bloques)
 
     return f"""Sos un jurista argentino experto en derecho notarial, civil, societario, registral y tributario.
@@ -172,7 +219,7 @@ Reglas estrictas:
 1. NO te limites a repetir o parafrasear un solo artículo. Sintetizá la información de TODOS los artículos provistos en un texto coherente, propio y bien explicativo.
 2. Organizá el contenido en secciones temáticas bien diferenciadas, con un título claro para cada una (por ejemplo: Concepto, Naturaleza jurídica, Forma y requisitos, Quiénes intervienen, Efectos, Sanciones o consecuencias del incumplimiento, Remisiones a otras normas — adaptá o agregá secciones según lo que realmente esté respaldado por los artículos). No organices artículo por artículo.
 3. Si distintos artículos aportan matices o requisitos complementarios sobre el mismo aspecto, integralos en una sola explicación dentro de la sección correspondiente.
-4. Cuando corresponda, mencioná de qué norma y artículo sale cada afirmación relevante (cita breve entre paréntesis y sin usar guiones), pero el texto debe leerse como una explicación jurídica propia, no como una lista de citas.
+4. Cuando corresponda, mencioná de qué norma y artículo sale cada afirmación relevante (cita breve entre paréntesis y sin usar guiones), pero el texto debe leerse como una explicación jurídica propia, no como una lista de citas. Cada artículo viene encabezado por su cita exacta entre corchetes (por ejemplo "[art. 82, Ley 404]"): usá ESA cita, tal cual, sin el corchete. NUNCA escribas el identificador interno del artículo (los de la forma Art_82_Ley_404 o Art_2128_CCyCN): no es una cita legal y no debe aparecer en el texto.
 5. No inventes contenido que no esté respaldado por los artículos provistos.
 6. Evita mencionar temas que no estén directamente relacionados con la "{etiqueta}", aunque aparezcan en los artículos.
 7. Podés usar Markdown para estructurar el texto: títulos de sección con "##", y listas con viñetas o numeradas cuando ayuden a la claridad. No abuses del formato: usalo solo donde aporte claridad, el cuerpo de cada sección debe seguir siendo prosa explicativa.
@@ -206,9 +253,9 @@ def guardar_contexto(etiqueta: str, entidad_id: str, directos, adicionales):
         f.write(f"ENTIDAD: {etiqueta} (id: {entidad_id}) — {len(directos)} directos + {len(adicionales)} por remisión\n")
         f.write("=" * 70 + "\n\n")
         for d in directos:
-            f.write(f"[{d['art']}]\n{d['texto']}\n\n")
+            f.write(f"[{citar(d)}]  ({d['art']})\n{d['texto']}\n\n")
         for a in adicionales:
-            f.write(f"[{a['art']} — remisión]\n{a['texto']}\n\n")
+            f.write(f"[{citar(a)} — remisión]  ({a['art']})\n{a['texto']}\n\n")
         f.write("-" * 70 + "\n\n")
 
 
