@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Arquitectura NotarIA</title>
+<title>Tests automáticos de NotarIA</title>
 <style>
 /* Fuentes embebidas (Archivo, IBM Plex Mono, Source Serif 4 — subconjunto latin/latin-ext)
    para que el documento funcione sin conexión. */
@@ -322,151 +322,145 @@ code{
   font-size:1.2cqw; color:var(--ink-3); line-height:1.45;
   border-left:2px solid var(--line-2); padding-left:1.1cqw;
 }
+
+/* Agregados de este documento, sobre el mismo vocabulario de tokens. */
+.cols.tres{grid-template-columns:repeat(3,1fr);gap:2.1cqw}
+.chip.ok{background:var(--petrol-wash);color:var(--petrol);border:1px solid var(--petrol)}
+.q{
+  background:var(--surface-2); border-left:2px solid var(--petrol); border-radius:0 2px 2px 0;
+  padding:.85cqw 1.05cqw; font-size:1.22cqw; line-height:1.4; color:var(--ink);
+}
+.tx{margin:0;font-size:1.3cqw;line-height:1.45;color:var(--ink-2)}
+.mx{display:grid;grid-template-columns:13cqw repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);width:100%}
+.mx>div{background:var(--surface);padding:.9cqw 1cqw;font-size:1.18cqw;line-height:1.35;color:var(--ink-2);display:flex;align-items:center}
+.mx .hd{background:var(--surface-2);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:1.08cqw;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-3)}
+.mx .rw{background:var(--surface-2);font-family:"IBM Plex Mono",ui-monospace,monospace;font-size:1cqw;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-2)}
+.mx .best{color:var(--petrol);font-weight:600}
+.mx .worst{color:var(--clay)}
+.mx.tri{grid-template-columns:22cqw 1fr 9cqw}
+
+/* Agregados de este documento, sobre el mismo vocabulario de tokens. */
+.mx.cuatro{grid-template-columns:13cqw repeat(4,1fr)}
+.mx.cuatro>div{font-size:1.05cqw;padding:.75cqw .8cqw}
+.mx.dos{grid-template-columns:16cqw 1fr 1fr}
+.mx.par{grid-template-columns:1fr 7cqw}
+.chip.neu{background:var(--surface-2);color:var(--ink-3);border:1px solid var(--line-2)}
+.col.ancho{width:100%;gap:2cqw}
 </style>
 
 <div class="wrap">
 
   <header class="masthead">
-    <h1>Arquitectura del grafo NotarIA</h1>
-    <p>Base de conocimiento jurídico en Neo4j para consultas notariales argentinas: legislación, jurisprudencia y una ontología cerrada de institutos. Seis láminas listas para llevar a diapositiva.</p>
+    <h1>Tests automáticos de NotarIA</h1>
+    <p>Hoy no hay ninguno. Dieciséis láminas para decidir cómo se mide lo que el chat recupera y lo que el chat contesta, con Ragas y LangSmith puestos a prueba en el lugar que a cada uno le toca.</p>
     <div class="hint">Cada panel es 16:9 &mdash; capturar e insertar directamente en PowerPoint</div>
   </header>
 
   <section class="slide">
     <div class="slide-in">
-      <div class="eyebrow"><b>01</b><span>Dimensión</span></div>
-      <h2>Qué hay dentro del grafo</h2>
+      <div class="eyebrow"><b>01</b><span>Diagnóstico</span></div>
+      <h2>Hay treinta preguntas, ningún juez y un archivo de texto que nadie compara</h2>
+      <p class="lede">El nombre <code>lmjudge</code> promete un juez que no existe &mdash;el <code>LS</code> es «Ley de Sociedades»&mdash;. Los dos scripts corren preguntas fijas contra una copia del pipeline y vuelcan la respuesta a un <code>.txt</code> para leerla a ojo.</p>
       <div class="body">
         <div class="stats">
-          <div class="tile"><div class="k">Nodos</div><div class="n">6.685</div><div class="d">Normas, artículos, versiones históricas, fallos y entidades</div></div>
-          <div class="tile"><div class="k">Relaciones</div><div class="n">16.418</div><div class="d">Estructurales, ontológicas y temporales</div></div>
-          <div class="tile"><div class="k">Entidades</div><div class="n">566</div><div class="d">Institutos jurídicos, todos con resumen y embedding</div></div>
-          <div class="tile"><div class="k">Normas</div><div class="n">197</div><div class="d">Leyes, decretos, resoluciones y disposiciones registrales</div></div>
-          <div class="tile"><div class="k">Artículos</div><div class="n">5.527</div><div class="d">5.423 con embedding; los derogados quedan fuera del índice</div></div>
-          <div class="tile"><div class="k">Jurisprudencia</div><div class="n">292</div><div class="d">Fallos con texto literal y doctrina resumida</div></div>
+          <div class="tile">
+            <div class="k">Tests automáticos</div>
+            <div class="n">0</div>
+            <div class="d">Ni <code>pytest</code>, ni <code>conftest.py</code>, ni un solo <code>assert</code> en todo el repositorio</div>
+          </div>
+          <div class="tile">
+            <div class="k">Preguntas de referencia</div>
+            <div class="n">30</div>
+            <div class="d">Cableadas en dos scripts, sin respuesta esperada ni artículos esperados</div>
+          </div>
+          <div class="tile">
+            <div class="k">Última corrida</div>
+            <div class="n">5 jun</div>
+            <div class="d">Antes de que entraran el CCyCN, el Código Penal, el Fiscal CABA, las DTR y las IT</div>
+          </div>
         </div>
       </div>
+      <p class="note">Las respuestas guardadas describen un corpus que ya no existe, y no hay forma de darse cuenta salvo leyéndolas una por una. <strong>Sin corridas versionadas esto no es un accidente: es lo que va a volver a pasar en la próxima ampliación del grafo.</strong></p>
     </div>
   </section>
 
   <section class="slide">
     <div class="slide-in">
-      <div class="eyebrow"><b>02</b><span>Modelo de datos</span></div>
-      <h2>Cuatro tipos de nodo, tres familias de relación</h2>
+      <div class="eyebrow"><b>02</b><span>Superficie</span></div>
+      <h2>Un recorrido de siete fases se rompe en dos lugares distintos</h2>
       <div class="body">
-        <svg class="viz" viewBox="0 0 900 420" role="img" aria-label="Diagrama del modelo de nodos y relaciones del grafo">
+        <svg class="viz" viewBox="0 0 900 420" role="img" aria-label="El pipeline dividido en la banda de recuperación, fases 1 a 6, y la banda de generación, fase 7, cada una con lo que se mide">
           <defs>
-            <marker id="ah" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--line-2)"/></marker>
-            <marker id="ahp" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--petrol)"/></marker>
-            <marker id="aho" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--ocre)"/></marker>
-            <marker id="ahc" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--clay)"/></marker>
+            <marker id="b2" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--line-2)"/></marker>
+            <marker id="b2p" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--petrol)"/></marker>
           </defs>
 
-          <rect x="24" y="150" width="150" height="58" rx="3" fill="var(--petrol)"/>
-          <text x="99" y="175" text-anchor="middle" font-size="15" font-weight="600" fill="#F2F4F3">:Norma</text>
-          <text x="99" y="194" text-anchor="middle" font-size="11.5" fill="#CFE3E4">197</text>
+          <text x="6" y="14" font-size="11.5" font-weight="600" fill="var(--petrol)">RECUPERACIÓN &mdash; fases 1 a 6</text>
 
-          <rect x="330" y="150" width="176" height="58" rx="3" fill="var(--petrol)"/>
-          <text x="418" y="175" text-anchor="middle" font-size="15" font-weight="600" fill="#F2F4F3">:Articulo</text>
-          <text x="418" y="194" text-anchor="middle" font-size="11.5" fill="#CFE3E4">5.527 · embedding</text>
+          <rect x="6" y="26" width="133" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="72" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">análisis</text>
+          <text x="72" y="63" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">flash-lite</text>
 
-          <rect x="690" y="46" width="186" height="58" rx="3" fill="var(--petrol-2)"/>
-          <text x="783" y="71" text-anchor="middle" font-size="15" font-weight="600" fill="#0B2A2C">:EntidadOntología</text>
-          <text x="783" y="90" text-anchor="middle" font-size="11.5" fill="#0B2A2C">566 · resumen + embedding</text>
+          <rect x="157" y="26" width="133" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="223" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">vectorial</text>
+          <text x="223" y="63" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">index_articulos · k=3</text>
 
-          <rect x="690" y="252" width="186" height="58" rx="3" fill="none" stroke="var(--ocre)" stroke-width="1.5"/>
-          <text x="783" y="277" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ocre)">:VersionHistorica</text>
-          <text x="783" y="295" text-anchor="middle" font-size="11.5" fill="var(--ink-3)">103 · sin embedding</text>
+          <rect x="308" y="26" width="133" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="374" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">remisiones</text>
+          <text x="374" y="63" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">REMITE_A</text>
 
-          <rect x="24" y="330" width="222" height="58" rx="3" fill="var(--petrol)" opacity=".85"/>
-          <text x="135" y="355" text-anchor="middle" font-size="15" font-weight="600" fill="#F2F4F3">:Jurisprudencia</text>
-          <text x="135" y="374" text-anchor="middle" font-size="11.5" fill="#CFE3E4">292 · índice propio</text>
+          <rect x="459" y="26" width="133" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="525" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">suficiencia</text>
+          <text x="525" y="63" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">gate</text>
 
-          <line x1="174" y1="179" x2="322" y2="179" stroke="var(--petrol)" stroke-width="1.6" marker-end="url(#ahp)"/>
-          <text x="248" y="171" text-anchor="middle" font-size="11.5" fill="var(--petrol)" font-weight="500">CONTIENE</text>
-          <text x="248" y="194" text-anchor="middle" font-size="10.5" fill="var(--ink-3)">5.527</text>
+          <rect x="610" y="26" width="133" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)" stroke-dasharray="4 3"/>
+          <text x="676" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">grafo</text>
+          <text x="676" y="63" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">Cypher · condicional</text>
 
-          <path d="M506,166 C580,150 610,105 682,80" fill="none" stroke="var(--petrol-2)" stroke-width="1.6" marker-end="url(#ah)"/>
-          <text x="548" y="100" text-anchor="middle" font-size="11.5" fill="var(--ink-2)" font-weight="500">REGULA · DEFINE</text>
-          <text x="548" y="114" text-anchor="middle" font-size="11.5" fill="var(--ink-2)" font-weight="500">MENCIONA</text>
-          <text x="548" y="128" text-anchor="middle" font-size="10.5" fill="var(--ink-3)">7.944</text>
+          <rect x="761" y="26" width="133" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="827" y="47" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">remisiones</text>
+          <text x="827" y="63" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">2ª pasada</text>
 
-          <path d="M506,192 C580,210 610,258 682,278" fill="none" stroke="var(--ocre)" stroke-width="1.6" marker-end="url(#aho)"/>
-          <text x="600" y="282" text-anchor="middle" font-size="11.5" fill="var(--ocre)" font-weight="500">TIENE_HISTORICO</text>
-          <text x="600" y="298" text-anchor="middle" font-size="10.5" fill="var(--ink-3)">103</text>
+          <line x1="141" y1="51" x2="153" y2="51" stroke="var(--line-2)" stroke-width="1.4" marker-end="url(#b2)"/>
+          <line x1="292" y1="51" x2="304" y2="51" stroke="var(--line-2)" stroke-width="1.4" marker-end="url(#b2)"/>
+          <line x1="443" y1="51" x2="455" y2="51" stroke="var(--line-2)" stroke-width="1.4" marker-end="url(#b2)"/>
+          <line x1="594" y1="51" x2="606" y2="51" stroke="var(--line-2)" stroke-width="1.4" marker-end="url(#b2)"/>
+          <line x1="745" y1="51" x2="757" y2="51" stroke="var(--line-2)" stroke-width="1.4" marker-end="url(#b2)"/>
 
-          <path d="M356,150 C346,96 490,96 480,150" fill="none" stroke="var(--line-2)" stroke-width="1.6" marker-end="url(#ah)"/>
-          <text x="418" y="100" text-anchor="middle" font-size="11.5" fill="var(--ink-2)" font-weight="500">REMITE_A</text>
-          <text x="418" y="86" text-anchor="middle" font-size="10.5" fill="var(--ink-3)">1.566</text>
+          <line x1="450" y1="76" x2="450" y2="96" stroke="var(--petrol)" stroke-width="1.6" marker-end="url(#b2p)"/>
 
-          <path d="M356,208 C346,268 490,268 480,208" fill="none" stroke="var(--clay)" stroke-width="1.6" marker-end="url(#ahc)"/>
-          <text x="418" y="266" text-anchor="middle" font-size="11.5" fill="var(--clay)" font-weight="500">MODIFICA_A · DEROGA_A</text>
-          <text x="418" y="282" text-anchor="middle" font-size="10.5" fill="var(--ink-3)">206</text>
+          <rect x="6" y="102" width="888" height="42" rx="3" fill="var(--petrol-wash)" stroke="var(--petrol)"/>
+          <text x="20" y="128" font-size="12" font-weight="600" fill="var(--petrol)">ctx.ids  ·  ctx.textos</text>
+          <text x="880" y="128" text-anchor="end" font-size="10.5" fill="var(--ink-2)">los artículos únicos que se le van a pasar al modelo, con su texto ya formateado</text>
 
-          <line x1="246" y1="359" x2="330" y2="359" stroke="var(--line-2)" stroke-width="1.4" stroke-dasharray="4 4"/>
-          <text x="340" y="355" font-size="11.5" fill="var(--ink-3)">Sin aristas a la ontología:</text>
-          <text x="340" y="371" font-size="11.5" fill="var(--ink-3)">se consulta por su propio índice vectorial</text>
-        </svg>
-      </div>
-      <div class="legend">
-        <span class="lg"><span class="sw" style="background:var(--petrol)"></span>Estructural &mdash; creado por código</span>
-        <span class="lg"><span class="sw" style="background:var(--petrol-2)"></span>Ontología &mdash; lista cerrada</span>
-        <span class="lg"><span class="sw" style="background:var(--ocre)"></span>Versionado temporal</span>
-        <span class="lg"><span class="sw" style="background:var(--clay)"></span>Vigencia &mdash; modifica y deroga</span>
-      </div>
-    </div>
-  </section>
+          <text x="6" y="170" font-size="11.5" font-weight="600" fill="var(--ink)">SE MIDE: ¿está entre esos IDs el artículo que la pregunta necesitaba?</text>
+          <text x="6" y="188" font-size="11" fill="var(--ink-3)">Contra una lista de IDs esperados. Operación de conjuntos: sin modelo, sin coste, en segundos.</text>
 
-  <section class="slide">
-    <div class="slide-in">
-      <div class="eyebrow"><b>03</b><span>Ingesta</span></div>
-      <h2>La ontología es cerrada: el LLM no inventa nodos</h2>
-      <p class="lede">Todo lo que no figura en las listas explícitas del extractor se descarta por validación dura. El prompt informa; la barrera real está en el código.</p>
-      <div class="body">
-        <svg class="viz" viewBox="0 0 900 300" role="img" aria-label="Pipeline de ingesta con validación de ontología cerrada">
-          <defs>
-            <marker id="ah2" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--line-2)"/></marker>
-            <marker id="ah2r" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0,0 L9,4.5 L0,9 z" fill="var(--clay)"/></marker>
-          </defs>
+          <line x1="6" y1="212" x2="894" y2="212" stroke="var(--line-2)" stroke-width="1" stroke-dasharray="4 3"/>
 
-          <rect x="10" y="96" width="132" height="64" rx="3" fill="var(--surface-2)" stroke="var(--line)"/>
-          <text x="76" y="122" text-anchor="middle" font-size="13" font-weight="600" fill="var(--ink)">Texto fuente</text>
-          <text x="76" y="140" text-anchor="middle" font-size="11" fill="var(--ink-3)">norma .txt</text>
-          <line x1="142" y1="128" x2="176" y2="128" stroke="var(--line-2)" stroke-width="1.6" marker-end="url(#ah2)"/>
+          <text x="6" y="242" font-size="11.5" font-weight="600" fill="var(--petrol-2)">GENERACIÓN &mdash; fase 7</text>
 
-          <rect x="184" y="96" width="132" height="64" rx="3" fill="var(--surface-2)" stroke="var(--line)"/>
-          <text x="250" y="122" text-anchor="middle" font-size="13" font-weight="600" fill="var(--ink)">Parser</text>
-          <text x="250" y="140" text-anchor="middle" font-size="11" fill="var(--ink-3)">nodo por artículo</text>
-          <line x1="316" y1="128" x2="350" y2="128" stroke="var(--line-2)" stroke-width="1.6" marker-end="url(#ah2)"/>
+          <rect x="6" y="254" width="250" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="131" y="275" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">contexto</text>
+          <text x="131" y="291" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">lo que trajeron las seis fases</text>
 
-          <rect x="358" y="60" width="146" height="60" rx="3" fill="var(--petrol-wash)" stroke="var(--petrol)"/>
-          <text x="431" y="84" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--petrol)">LLM extracción</text>
-          <text x="431" y="101" text-anchor="middle" font-size="11" fill="var(--ink-2)">Ollama · gemma4:e4b</text>
+          <line x1="260" y1="279" x2="284" y2="279" stroke="var(--line-2)" stroke-width="1.4" marker-end="url(#b2)"/>
 
-          <rect x="358" y="136" width="146" height="60" rx="3" fill="var(--surface-2)" stroke="var(--line)"/>
-          <text x="431" y="160" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--ink)">Mapeo declarativo</text>
-          <text x="431" y="177" text-anchor="middle" font-size="11" fill="var(--ink-3)">estructura nítida</text>
+          <rect x="290" y="254" width="250" height="50" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
+          <text x="415" y="275" text-anchor="middle" font-size="11" font-weight="600" fill="var(--ink)">answer_chain</text>
+          <text x="415" y="291" text-anchor="middle" font-size="9.5" fill="var(--ink-3)">gemini-2.5-flash</text>
 
-          <path d="M504,90 C528,90 528,128 546,128" fill="none" stroke="var(--line-2)" stroke-width="1.6" marker-end="url(#ah2)"/>
-          <path d="M504,166 C528,166 528,128 546,128" fill="none" stroke="var(--line-2)" stroke-width="1.6" marker-end="url(#ah2)"/>
+          <line x1="544" y1="279" x2="568" y2="279" stroke="var(--line-2)" stroke-width="1.4" marker-end="url(#b2)"/>
 
-          <rect x="554" y="88" width="150" height="80" rx="3" fill="none" stroke="var(--petrol)" stroke-width="2"/>
-          <text x="629" y="114" text-anchor="middle" font-size="13" font-weight="600" fill="var(--petrol)">Validación dura</text>
-          <text x="629" y="132" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">entidades_permitidas</text>
-          <text x="629" y="147" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">relaciones_permitidas</text>
-          <text x="629" y="161" text-anchor="middle" font-size="10.5" fill="var(--ink-2)">_CANONICOS</text>
+          <rect x="574" y="254" width="320" height="50" rx="2" fill="var(--petrol-2)"/>
+          <text x="734" y="275" text-anchor="middle" font-size="11" font-weight="600" fill="#0B2A2C">respuesta</text>
+          <text x="734" y="291" text-anchor="middle" font-size="9.5" fill="#0B2A2C">markdown, con citas de artículos</text>
 
-          <path d="M629,168 L629,214" fill="none" stroke="var(--clay)" stroke-width="1.6" marker-end="url(#ah2r)"/>
-          <text x="639" y="202" font-size="11" fill="var(--clay)">descartado + warning</text>
+          <text x="6" y="330" font-size="11.5" font-weight="600" fill="var(--ink)">SE MIDE: ¿dice solo lo que dicen esos artículos, y los cita como corresponde?</text>
+          <text x="6" y="348" font-size="11" fill="var(--ink-3)">Las citas y la vigencia se comprueban sin modelo. La fidelidad y la corrección, no: ahí hace falta un juez.</text>
 
-          <line x1="704" y1="128" x2="738" y2="128" stroke="var(--line-2)" stroke-width="1.6" marker-end="url(#ah2)"/>
-          <rect x="746" y="88" width="144" height="80" rx="3" fill="var(--petrol)"/>
-          <text x="818" y="114" text-anchor="middle" font-size="13" font-weight="600" fill="#F2F4F3">Neo4j</text>
-          <text x="818" y="133" text-anchor="middle" font-size="10.5" fill="#CFE3E4">+ embedding Gemini</text>
-          <text x="818" y="148" text-anchor="middle" font-size="10.5" fill="#CFE3E4">3.072 dimensiones</text>
-
-          <text x="10" y="250" font-size="11.5" fill="var(--ink-3)">El id del artículo se deriva del nombre del archivo, nunca de la salida del LLM.</text>
-          <text x="10" y="270" font-size="11.5" fill="var(--ink-3)">El texto se inyecta desde el original: el modelo clasifica, no redacta.</text>
+          <text x="6" y="392" font-size="11.5" fill="var(--ink-3)">Son dos fallas distintas, y la primera envenena a la segunda: si el artículo nunca entró al contexto, ningún juez de</text>
+          <text x="6" y="410" font-size="11.5" fill="var(--ink-3)">generación lo va a decir. Va a decir que la respuesta es fiel al contexto que recibió &mdash;y va a tener razón.</text>
         </svg>
       </div>
     </div>
@@ -474,96 +468,496 @@ code{
 
   <section class="slide">
     <div class="slide-in">
-      <div class="eyebrow"><b>04</b><span>Recuperación</span></div>
-      <h2>Dos índices vectoriales que no se contaminan</h2>
-      <p class="lede">Norma y jurisprudencia viven en índices separados. Una consulta puede golpear ambos en un solo <em>round-trip</em> sin que los fallos ensucien la búsqueda de articulado.</p>
+      <div class="eyebrow"><b>03</b><span>Bloqueo</span></div>
+      <h2>El contexto recuperado nunca sale del pipeline</h2>
+      <p class="lede">Hay un problema anterior a comparar herramientas: ninguna función pública devuelve lo que el pipeline recuperó.</p>
       <div class="body">
         <div class="cols">
           <div class="col">
-            <h3>index_articulos</h3>
-            <div class="bars">
-              <div class="bar"><span class="lbl">con embedding</span><span class="track"><span class="fill" style="width:98.1%"></span></span><span class="val">5.423</span></div>
-              <div class="bar"><span class="lbl">derogados</span><span class="track"><span class="fill alt" style="width:1.9%"></span></span><span class="val">104</span></div>
-            </div>
-            <p class="note">Los artículos derogados pierden el embedding: siguen consultables por traversal, pero fuera de la búsqueda semántica. Los modificados lo <em>regeneran</em> sobre el texto nuevo.</p>
+            <h3>Lo que sí sale <span class="chip ok">evento fuentes</span></h3>
+            <p class="tx">Por cada artículo del contexto final, un objeto con <code>id</code>, <code>numero</code> y <code>norma</code>. Es lo que el frontend usa para listar las fuentes al pie de la respuesta.</p>
+            <p class="tx">Alcanza para medir la recuperación: <code>Art_77_Ley_19550</code> está o no está en la lista.</p>
+            <p class="note">Es el único dato de recuperación que hoy cruza el borde de <code>responder_stream()</code>.</p>
           </div>
           <div class="col">
-            <h3>index_jurisprudencia</h3>
-            <div class="bars">
-              <div class="bar"><span class="lbl">fallos</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">292</span></div>
-            </div>
-            <p class="note">El embedding se calcula sobre el <em>resumen de doctrina</em>, no sobre el texto completo: un fallo de 164.000 caracteres se indexa por sus 100 palabras de derecho de fondo.</p>
+            <h3>Lo que no sale <span class="chip der">ctx.textos</span></h3>
+            <p class="tx"><code>ContextoAcumulado</code> guarda los IDs y el texto formateado de cada artículo, pero el objeto es local al generador y nunca se emite.</p>
+            <p class="tx">Sin el texto no hay fidelidad ni precisión del contexto: toda métrica de generación necesita los <code>retrieved_contexts</code> completos.</p>
+            <p class="note">Es la puerta cerrada que bloquea la mitad cara del plan.</p>
           </div>
         </div>
       </div>
-      <div class="legend">
-        <span class="lg"><span class="sw" style="background:var(--petrol)"></span>566 entidades con resumen y embedding propios &mdash; tercera vía de entrada al grafo</span>
+      <p class="note"><code>tests/testRagDinamicoV3.py</code> sí tiene un <code>responder()</code>, pero devuelve solo el string final y <strong>ya divergió de producción</strong> &mdash;citas canónicas, stopwords ampliadas, esquema Cypher multi&#8209;rama&mdash;: evaluar contra V3 mide algo que no es lo que se sirve.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>04</b><span>Costura</span></div>
+      <h2>Una función que devuelva lo que se recuperó, no solo lo que se contestó</h2>
+      <p class="lede">Es el paso cero y no depende de qué herramienta se elija después: las tres se enchufan acá.</p>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>recuperar_contexto() <span class="chip ok">fases 1 a 6</span></h3>
+            <ul class="steps">
+              <li><i>1</i><span>Concentra las seis fases y devuelve el <code>ContextoAcumulado</code> entero: IDs, textos y de qué fase vino cada uno.</span></li>
+              <li><i>2</i><span><code>responder_stream()</code> pasa a consumirla: producción y evaluación miden <strong>el mismo código</strong>.</span></li>
+              <li><i>3</i><span>El harness puede correr solo recuperación, sin redactar: la capa determinista no gasta un token.</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>responder() <span class="chip ok">sin streaming</span></h3>
+            <ul class="steps">
+              <li><i>1</i><span>Envoltorio que corre el recorrido completo y devuelve la respuesta, los IDs, los textos y los tiempos por fase.</span></li>
+              <li><i>2</i><span>Es la firma única que consumen <code>pytest</code>, Ragas y LangSmith por igual. Ninguna necesita conocer el interior.</span></li>
+              <li><i>3</i><span>Se toca un solo archivo: <code>api/pipeline.py</code>. <code>RagDinamicoOriginal.py</code> y V3 quedan intactos.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="note">La verificación es dura: <code>responder()</code> tiene que devolver exactamente los mismos IDs que hoy emite el evento <code>fuentes</code>. Si difieren, la refactorización cambió el comportamiento. <strong>Es la única parte del plan que toca código de producción, y por eso va primera y sola.</strong></p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>05</b><span>Golden set</span></div>
+      <h2>El activo no es la herramienta: es el set de referencia</h2>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>evals/golden/*.jsonl <span class="chip ok">en el repo</span></h3>
+            <ul class="steps">
+              <li><i>+</i><span><code>pregunta</code> &mdash; la consulta tal como la escribiría un escribano.</span></li>
+              <li><i>+</i><span><code>articulos_esperados</code> &mdash; IDs canónicos del grafo. Ground truth objetivo y estable.</span></li>
+              <li><i>+</i><span><code>respuesta_referencia</code> &mdash; la respuesta modelo. El campo caro, y el que habilita medir corrección.</span></li>
+              <li><i>+</i><span><code>rama</code> y <code>tipo</code> &mdash; para cortar por dominio y por forma de pregunta.</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Cobertura hoy <span class="chip der">4 ramas en cero</span></h3>
+            <div class="mx par">
+              <div class="hd">Rama del corpus</div>
+              <div class="hd">Hoy</div>
+
+              <div class="rw">Societario e IGJ</div>
+              <div class="best">30</div>
+
+              <div class="rw">Civil &mdash; CCyCN</div>
+              <div class="worst">0</div>
+
+              <div class="rw">Registral y notarial</div>
+              <div class="worst">0</div>
+
+              <div class="rw">Penal</div>
+              <div class="worst">0</div>
+
+              <div class="rw">Fiscal CABA</div>
+              <div class="worst">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="note">Las 30 existentes sirven de semilla, pero hay que completarles los dos campos de referencia. <strong>Son 100% societario: el corpus creció a cinco ramas y la evaluación se quedó en una.</strong> Ragas y LangSmith se reemplazan en una tarde; este archivo, no.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>06</b><span>Capa 1</span></div>
+      <h2>La recuperación se mide sin un solo modelo de lenguaje</h2>
+      <p class="lede">En derecho la unidad de verdad es el ID del artículo, no el fragmento de texto. La métrica pasa a ser una operación de conjuntos: exacta y reproducible.</p>
+      <div class="body">
+        <div class="mx">
+          <div class="hd">Métrica</div>
+          <div class="hd">Qué contesta</div>
+          <div class="hd">Cómo se calcula</div>
+          <div class="hd">Qué regresión ataja</div>
+
+          <div class="rw">Recall</div>
+          <div>¿Entró el artículo que hacía falta?</div>
+          <div>Esperados hallados sobre esperados</div>
+          <div class="best">Reingesta que cambió los IDs</div>
+
+          <div class="rw">Precisión</div>
+          <div>¿Cuánto de lo traído sobraba?</div>
+          <div>Esperados hallados sobre recuperados</div>
+          <div class="best">Ruido que tapa la señal</div>
+
+          <div class="rw">Rango</div>
+          <div>¿En qué puesto está el primer acierto?</div>
+          <div>Índice del primer ID correcto</div>
+          <div class="best">Embedding degradado</div>
+
+          <div class="rw">Atribución</div>
+          <div>¿Vector, remisión o Cypher?</div>
+          <div>Etiqueta de fase en el contexto</div>
+          <div class="best">Fase que dejó de aportar</div>
+
+          <div class="rw">Gate</div>
+          <div>¿Cuándo hace falta ir al grafo?</div>
+          <div>Contador sobre la suficiencia</div>
+          <div class="best">Prompt que apagó el Cypher</div>
+        </div>
+      </div>
+      <p class="note">Las cinco corren en milisegundos y dan el mismo número todas las veces. <strong>Ninguna herramienta del mercado da la atribución por fase</strong>: todas asumen un recuperador de un solo paso. Acá el contexto lo arman seis fases, y saber cuál dejó de aportar es la mitad del diagnóstico.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>07</b><span>Capa 2</span></div>
+      <h2>Buena parte de la generación también se verifica sin juez</h2>
+      <p class="lede">Antes de pagar un modelo que puntúe, conviene agotar lo que se comprueba con una expresión regular y una consulta al grafo.</p>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>Tres chequeos, coste cero</h3>
+            <ul class="steps">
+              <li><i>1</i><span><strong>Cita fantasma</strong> &mdash; todo artículo citado tiene que estar entre los IDs recuperados. Se extrae la cita del texto y se compara contra <code>ctx.ids</code>.</span></li>
+              <li><i>2</i><span><strong>Nombre canónico</strong> &mdash; la norma se cita como la arma <code>NOMBRE_NORMA</code>: «Ley 19.550», «CCyCN», «DTR 6/2019». Nunca por <code>titulo</code>.</span></li>
+              <li><i>3</i><span><strong>Vigencia transcripta</strong> &mdash; si el artículo tiene <code>modificado=True</code>, la respuesta trae la <code>nota_vigencia</code> tal cual, no una inferida del texto.</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Por qué son los que más importan</h3>
+            <div class="q">«El art. 299 de la Ley 19.550, texto según Ley 27.444, exige…»</div>
+            <p class="tx">Si <code>Art_299_Ley_19550</code> no está entre los IDs recuperados, la cita la escribió el modelo y no el grafo. Es el error de mayor consecuencia: suena correcto y parece verificable, hasta que alguien va a buscar el artículo.</p>
+            <p class="tx">Y el commit <code>89d3508</code> ya arregló una vez la cita por el nombre canónico. Sin un test que lo fije, vuelve en el próximo cambio de prompt.</p>
+          </div>
+        </div>
+      </div>
+      <p class="note"><strong>Es el mejor retorno de todo el plan:</strong> atajan el error jurídicamente más caro sin depender de que un modelo tenga un buen día.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>08</b><span>Capa 3</span></div>
+      <h2>Lo que sí exige un juez, y por qué es la parte ruidosa</h2>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>Lo que solo un modelo puede juzgar <span class="chip ok">tres métricas</span></h3>
+            <ul class="steps">
+              <li><i>1</i><span><strong>Fidelidad</strong> &mdash; ¿cada afirmación de la respuesta se apoya en el contexto, o el modelo completó con lo que traía de fábrica?</span></li>
+              <li><i>2</i><span><strong>Corrección</strong> &mdash; ¿coincide en sustancia con la respuesta de referencia que escribió el escribano?</span></li>
+              <li><i>3</i><span><strong>Relevancia</strong> &mdash; ¿contesta la pregunta que se hizo, o una parecida y más cómoda?</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Lo que la vuelve incómoda <span class="chip der">tres reparos</span></h3>
+            <ul class="steps">
+              <li class="x"><i>&minus;</i><span><strong>Cuesta</strong>: la fidelidad descompone la respuesta en afirmaciones y verifica cada una contra el contexto. Son varias llamadas por pregunta y por métrica.</span></li>
+              <li class="x"><i>&minus;</i><span><strong>Oscila</strong>: el mismo par pregunta&#8209;respuesta puede dar 0,78 en una corrida y 0,91 en la siguiente, sin que haya cambiado nada.</span></li>
+              <li class="x"><i>&minus;</i><span><strong>Y el pipeline tampoco es determinista</strong>: el gate de suficiencia decide si se va al grafo, así que dos corridas de la misma pregunta pueden recuperar distinto.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="note">De ahí una regla que conviene fijar antes de elegir herramienta: <strong>las capas 1 y 2 pueden frenar un commit; la 3 no.</strong> El juez sirve para leer la tendencia entre corridas, no para poner un umbral duro sobre una sola.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>09</b><span>Ragas</span></div>
+      <h2>Ragas pone el juicio, y solo el juicio</h2>
+      <p class="lede">No corre nada ni guarda nada: recibe pregunta, contexto, respuesta y referencia, y devuelve números.</p>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>A favor <span class="chip ok">cuatro razones</span></h3>
+            <ul class="steps">
+              <li><i>+</i><span>Ya trae escritos los prompts de juez: fidelidad, precisión del contexto, relevancia, corrección factual.</span></li>
+              <li><i>+</i><span>Tiene variantes con y sin referencia; el golden set completo habilita también las primeras.</span></li>
+              <li><i>+</i><span>Habla Gemini de fábrica &mdash;proveedor <code>google</code>, adaptador LiteLLM&mdash; y la <code>GOOGLE_API_KEY</code> ya está en el <code>.env</code>.</span></li>
+              <li><i>+</i><span>Genera preguntas desde el corpus: útil para poblar las cuatro ramas en cero.</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>En contra <span class="chip der">cuatro reparos</span></h3>
+            <ul class="steps">
+              <li class="x"><i>&minus;</i><span>La v0.4 rompió la API de la v0.3, y casi todo lo que se encuentra buscando sigue siendo v0.3. Es la lámina que sigue.</span></li>
+              <li class="x"><i>&minus;</i><span>Arrastra <code>pandas</code> y <code>datasets</code>, y apunta al LangChain clásico mientras el proyecto corre 1.3.1.</span></li>
+              <li class="x"><i>&minus;</i><span>Sus métricas son genéricas: no saben de cita canónica, de <code>nota_vigencia</code> ni de artículo derogado. Eso hay que escribirlo igual.</span></li>
+              <li class="x"><i>&minus;</i><span>Y para medir recuperación le pide a un modelo que juzgue relevancia, cuando el ID en la lista lo contesta gratis.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="note"><strong>Ragas está bien para la capa 3 y sobra para la capa 1:</strong> sirve para juzgar la respuesta, no para medir si el artículo entró.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>10</b><span>Ragas</span></div>
+      <h2>La v0.4 rompió casi todo lo que la v0.3 documentaba</h2>
+      <div class="body">
+        <div class="mx dos">
+          <div class="hd">Qué</div>
+          <div class="hd">v0.3 &mdash; lo que se encuentra</div>
+          <div class="hd">v0.4 &mdash; lo que hay que usar</div>
+
+          <div class="rw">Evaluación</div>
+          <div class="worst"><code>evaluate(dataset, metrics, llm)</code></div>
+          <div class="best"><span>decorador <code>@experiment</code></span></div>
+
+          <div class="rw">Importación</div>
+          <div class="worst"><code>from ragas.metrics import …</code></div>
+          <div class="best"><code>from ragas.metrics.collections import …</code></div>
+
+          <div class="rw">Puntaje</div>
+          <div class="worst"><span><code>single_turn_ascore(sample)</code> &rarr; float</span></div>
+          <div class="best"><span><code>ascore(**kwargs)</code> &rarr; <code>MetricResult</code></span></div>
+
+          <div class="rw">Modelo juez</div>
+          <div class="worst"><code>LangchainLLMWrapper(...)</code></div>
+          <div class="best"><code>llm_factory(...)</code></div>
+
+          <div class="rw">Referencia</div>
+          <div class="worst"><span><code>ground_truths</code>, una lista</span></div>
+          <div class="best"><span><code>reference</code>, un string</span></div>
+
+          <div class="rw">Métrica propia</div>
+          <div class="worst"><span>heredar <code>MetricWithLLM</code></span></div>
+          <div class="best"><span>heredar <code>BaseMetric</code> o <code>@discrete_metric</code></span></div>
+        </div>
+      </div>
+      <p class="note">Dos consecuencias: <strong>pinear la versión exacta y leer los docs de esa versión, no el primer resultado de búsqueda</strong>; y declararla aparte, porque el entorno que sirve la API no tiene por qué cargar con pandas.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>11</b><span>LangSmith</span></div>
+      <h2>LangSmith pone la memoria, y no pone ningún número</h2>
+      <div class="body">
+        <div class="cols">
+          <div class="col">
+            <h3>A favor <span class="chip ok">cinco razones</span></h3>
+            <ul class="steps">
+              <li><i>+</i><span><strong>Ya instalado</strong>: <code>langsmith 0.8.5</code> llegó con <code>langchain-core</code>, sin declarar y sin usar.</span></li>
+              <li><i>+</i><span>El pipeline es LCEL entero: dos variables de entorno dan trazas con entradas, salidas, latencia y tokens.</span></li>
+              <li><i>+</i><span>Datasets y experimentos versionados: lo que faltó cuando cambió el corpus y los resultados quedaron huérfanos.</span></li>
+              <li><i>+</i><span>Se monta sobre <code>pytest</code> y cachea las llamadas HTTP: repetir una corrida sale casi gratis.</span></li>
+              <li><i>+</i><span>Colas de anotación: el escribano pone el ground truth sobre consultas reales.</span></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>En contra <span class="chip der">cuatro reparos</span></h3>
+            <ul class="steps">
+              <li class="x"><i>&minus;</i><span>Es un servicio ajeno: las preguntas de los clientes salen a los servidores de LangChain.</span></li>
+              <li class="x"><i>&minus;</i><span>Autohospedarlo es un agregado Enterprise &mdash;licencia, Kubernetes, 16 vCPU y 64 GB&mdash;: <strong>no es opción en la GX10</strong>.</span></li>
+              <li class="x"><i>&minus;</i><span>No trae ni una métrica. Es el arnés y el archivo; el puntaje lo ponés vos o lo pone Ragas.</span></li>
+              <li class="x"><i>&minus;</i><span>El set de referencia no puede vivir solo ahí: el archivo del repo manda, LangSmith espeja.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="note">El último reproche se cancela solo: <strong>los puntajes de Ragas se cargan como feedback de LangSmith.</strong> Uno pone el número, el otro lo guarda y lo compara con la corrida anterior.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>12</b><span>LangSmith</span></div>
+      <h2>Con producción traceada, la capa gratuita dura días</h2>
+      <div class="body">
+        <div class="col ancho">
+          <div class="stats">
+            <div class="tile">
+              <div class="k">Capa gratuita</div>
+              <div class="n">5.000</div>
+              <div class="d">Por mes, un asiento, 14 días de retención</div>
+            </div>
+            <div class="tile">
+              <div class="k">Plan Plus</div>
+              <div class="n">US$ 39</div>
+              <div class="d">Por asiento y mes, 10.000 trazas incluidas</div>
+            </div>
+            <div class="tile">
+              <div class="k">Excedente</div>
+              <div class="n">US$ 0,50</div>
+              <div class="d">Cada mil trazas sobre el tope del plan</div>
+            </div>
+          </div>
+          <ul class="steps">
+            <li><i>1</i><span>Una consulta no es una traza: es la raíz más una por cada llamada al modelo. Entre cuatro y siete.</span></li>
+            <li><i>2</i><span>Una corrida del golden set son 65 preguntas: unas cuatrocientas trazas. Trece corridas y se agotó el mes.</span></li>
+            <li class="x"><i>&minus;</i><span>Y eso <strong>sin contar producción</strong>, que es lo que de verdad consume: ahí el volumen no lo decide el equipo, lo deciden los usuarios.</span></li>
+          </ul>
+        </div>
+      </div>
+      <p class="note"><strong>Arrancar con la capa gratuita para la evaluación sola y encender producción cuando el harness ya esté probado</strong>, para que el gasto empiece cuando haya algo que mirar. Si la residencia de los datos se vuelve requisito, la salida es Langfuse.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>13</b><span>Composición</span></div>
+      <h2>No compiten: cada una ocupa una capa distinta del mismo arnés</h2>
+      <div class="body">
+        <svg class="viz" viewBox="0 0 900 420" role="img" aria-label="Tres capas de evaluación a la izquierda y LangSmith a la derecha como registro que las abarca a las tres">
+          <defs>
+            <marker id="c3p" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="var(--petrol)"/></marker>
+          </defs>
+
+          <rect x="6" y="18" width="620" height="104" rx="3" fill="var(--petrol-wash)" stroke="var(--petrol)"/>
+          <text x="22" y="46" font-size="12.5" font-weight="600" fill="var(--petrol)">CAPA 1 &mdash; pytest · recuperación por ID</text>
+          <text x="22" y="70" font-size="11" fill="var(--ink-2)">recall · precisión · rango · atribución por fase · disparo del gate</text>
+          <text x="22" y="94" font-size="11" fill="var(--ink-3)">Sin modelo. Segundos. Puede frenar un commit.</text>
+          <text x="610" y="46" text-anchor="end" font-size="11" font-weight="600" fill="var(--petrol)">determinista</text>
+
+          <rect x="6" y="136" width="620" height="104" rx="3" fill="var(--petrol-wash)" stroke="var(--petrol)"/>
+          <text x="22" y="164" font-size="12.5" font-weight="600" fill="var(--petrol)">CAPA 2 &mdash; pytest · citas y vigencia</text>
+          <text x="22" y="188" font-size="11" fill="var(--ink-2)">cita fantasma · nombre canónico de la norma · nota_vigencia transcripta</text>
+          <text x="22" y="212" font-size="11" fill="var(--ink-3)">Sin modelo. Milisegundos. Puede frenar un commit.</text>
+          <text x="610" y="164" text-anchor="end" font-size="11" font-weight="600" fill="var(--petrol)">determinista</text>
+
+          <rect x="6" y="254" width="620" height="104" rx="3" fill="var(--surface-2)" stroke="var(--petrol-2)" stroke-width="1.5" stroke-dasharray="5 3"/>
+          <text x="22" y="282" font-size="12.5" font-weight="600" fill="var(--petrol-2)">CAPA 3 &mdash; Ragas · juez sobre la respuesta</text>
+          <text x="22" y="306" font-size="11" fill="var(--ink-2)">fidelidad · corrección contra la referencia · relevancia</text>
+          <text x="22" y="330" font-size="11" fill="var(--ink-3)">Gemini. Minutos y pesos. No frena un commit: marca tendencia.</text>
+          <text x="610" y="282" text-anchor="end" font-size="11" font-weight="600" fill="var(--petrol-2)">ruidosa</text>
+
+          <line x1="630" y1="70" x2="654" y2="70" stroke="var(--petrol)" stroke-width="1.6" marker-end="url(#c3p)"/>
+          <line x1="630" y1="188" x2="654" y2="188" stroke="var(--petrol)" stroke-width="1.6" marker-end="url(#c3p)"/>
+          <line x1="630" y1="306" x2="654" y2="306" stroke="var(--petrol)" stroke-width="1.6" marker-end="url(#c3p)"/>
+
+          <rect x="660" y="18" width="234" height="340" rx="3" fill="var(--petrol)"/>
+          <text x="777" y="60" text-anchor="middle" font-size="16" font-weight="600" fill="#F2F4F3">LangSmith</text>
+          <text x="777" y="82" text-anchor="middle" font-size="10.5" fill="#CFE3E4">registro y comparación</text>
+          <text x="682" y="140" font-size="11" fill="#CFE3E4">— traza las siete fases</text>
+          <text x="682" y="168" font-size="11" fill="#CFE3E4">— versiona el golden set</text>
+          <text x="682" y="196" font-size="11" fill="#CFE3E4">— compara experimentos</text>
+          <text x="682" y="224" font-size="11" fill="#CFE3E4">— recibe los puntajes de</text>
+          <text x="694" y="242" font-size="11" fill="#CFE3E4">Ragas como feedback</text>
+          <text x="682" y="270" font-size="11" fill="#CFE3E4">— anota el tráfico real</text>
+          <text x="777" y="330" text-anchor="middle" font-size="10.5" fill="#CFE3E4">no puntúa nada por sí solo</text>
+
+          <text x="6" y="392" font-size="11.5" fill="var(--ink-3)">Las dos primeras capas no dependen de ninguna herramienta externa. La tercera se cambia de proveedor en una tarde.</text>
+          <text x="6" y="410" font-size="11.5" fill="var(--ink-3)">El golden set, no: es lo único de todo el esquema que no se puede reemplazar comprando otra cosa.</text>
+        </svg>
       </div>
     </div>
   </section>
 
   <section class="slide">
     <div class="slide-in">
-      <div class="eyebrow"><b>05</b><span>Línea de tiempo</span></div>
-      <h2>Modificación y derogación se tratan distinto</h2>
+      <div class="eyebrow"><b>14</b><span>Comparación</span></div>
+      <h2>Las cuatro, dimensión por dimensión</h2>
       <div class="body">
-        <div class="cols">
-          <div class="col">
-            <h3>Sustitución <span class="chip mod">87 artículos</span></h3>
-            <ol class="steps">
-              <li><i>1</i><span>El texto saliente se copia a <code>:VersionHistorica</code> con su ventana <code>desde</code>&ndash;<code>hasta</code>.</span></li>
-              <li><i>2</i><span>El <code>:Articulo</code> base recibe el texto consolidado nuevo.</span></li>
-              <li><i>3</i><span>El embedding <strong>se regenera</strong>: el artículo debe seguir siendo buscable bajo su identidad correcta.</span></li>
-              <li><i>4</i><span><code>modificado=true</code>, <code>vigencia_desde</code> y <code>MODIFICA_A</code> desde el artículo modificatorio.</span></li>
-            </ol>
-          </div>
-          <div class="col">
-            <h3>Derogación <span class="chip der">103 artículos</span></h3>
-            <ol class="steps">
-              <li class="x"><i>1</i><span><strong>No</strong> se crea <code>:VersionHistorica</code>: sin texto de reemplazo, el propio artículo marcado ya es el registro histórico.</span></li>
-              <li class="x"><i>2</i><span><code>vigente=false</code> y <code>REMOVE embedding</code>.</span></li>
-              <li class="x"><i>3</i><span><code>DEROGA_A</code> desde el artículo derogatorio, obligatoria: dice qué norma lo derogó y desde cuándo.</span></li>
-            </ol>
-            <p class="note">La cita pertenece al artículo que el texto regula, no a la norma que lo modificó: el art. 299 LSC sigue siendo el art. 299, «texto según Ley 27.444».</p>
-          </div>
+        <div class="mx cuatro">
+          <div class="hd"></div>
+          <div class="hd">pytest a mano</div>
+          <div class="hd">Ragas</div>
+          <div class="hd">LangSmith</div>
+          <div class="hd">Langfuse</div>
+
+          <div class="rw">Mide la recuperación</div>
+          <div class="best">exacta, por ID de artículo</div>
+          <div>con modelo, sobre el texto</div>
+          <div class="worst">no: solo registra</div>
+          <div class="worst">no: solo registra</div>
+
+          <div class="rw">Mide la generación</div>
+          <div>solo lo verificable sin modelo</div>
+          <div class="best">métricas ya escritas</div>
+          <div class="worst">no</div>
+          <div>evaluadores básicos</div>
+
+          <div class="rw">Guarda y compara</div>
+          <div class="worst">un archivo de texto</div>
+          <div class="worst">no guarda nada</div>
+          <div class="best">experimentos versionados</div>
+          <div class="best">experimentos versionados</div>
+
+          <div class="rw">Coste por corrida</div>
+          <div class="best">cero</div>
+          <div>llamadas a Gemini</div>
+          <div>trazas del plan</div>
+          <div class="best">cero si es propio</div>
+
+          <div class="rw">Datos fuera de casa</div>
+          <div class="best">no salen</div>
+          <div class="best">no salen</div>
+          <div class="worst">sí: servicio ajeno</div>
+          <div class="best">no, si se autohospeda</div>
+
+          <div class="rw">Trabajo para arrancar</div>
+          <div>escribir las métricas</div>
+          <div>pinear versión y entorno aparte</div>
+          <div class="best">dos variables de entorno</div>
+          <div class="worst">levantar el servicio</div>
         </div>
       </div>
+      <p class="note">Ninguna gana en todo, y no hace falta que gane: <strong>la primera columna cubre lo barato y lo determinista, Ragas cubre el juicio y LangSmith cubre la memoria.</strong> Langfuse queda como reemplazo de la tercera si la residencia de los datos cambia de estado.</p>
     </div>
   </section>
 
   <section class="slide">
     <div class="slide-in">
-      <div class="eyebrow"><b>06</b><span>Corpus</span></div>
-      <h2>Composición del acervo</h2>
+      <div class="eyebrow"><b>15</b><span>Descartadas</span></div>
+      <h2>Lo que se miró y quedó afuera, y por qué</h2>
       <div class="body">
-        <div class="cols">
+        <div class="cols tres">
           <div class="col">
-            <h3>Por tipo de norma</h3>
-            <div class="bars">
-              <div class="bar"><span class="lbl">Disp. Téc. Reg.</span><span class="track"><span class="fill" style="width:100%"></span></span><span class="val">106</span></div>
-              <div class="bar"><span class="lbl">Instr. Trabajo</span><span class="track"><span class="fill" style="width:24.5%"></span></span><span class="val">26</span></div>
-              <div class="bar"><span class="lbl">Leyes</span><span class="track"><span class="fill" style="width:22.6%"></span></span><span class="val">24</span></div>
-              <div class="bar"><span class="lbl">Resol. Grales.</span><span class="track"><span class="fill" style="width:18.9%"></span></span><span class="val">20</span></div>
-              <div class="bar"><span class="lbl">Resoluciones</span><span class="track"><span class="fill" style="width:10.4%"></span></span><span class="val">11</span></div>
-              <div class="bar"><span class="lbl">Decretos</span><span class="track"><span class="fill" style="width:8.5%"></span></span><span class="val">9</span></div>
-              <div class="bar"><span class="lbl">Códigos</span><span class="track"><span class="fill" style="width:0.9%"></span></span><span class="val">1</span></div>
-            </div>
+            <h3>Langfuse <span class="chip neu">en reserva</span></h3>
+            <p class="tx">Observabilidad y evaluación con núcleo abierto y autohospedable. En registro hace casi lo mismo que LangSmith, con menos integración nativa con LangChain.</p>
+            <p class="note">No se descarta: se reserva. Es la salida si algún día las consultas de los clientes no pueden salir de la máquina.</p>
           </div>
           <div class="col">
-            <h3>Jurisprudencia por rama</h3>
-            <div class="bars">
-              <div class="bar"><span class="lbl">civil</span><span class="track"><span class="fill alt" style="width:100%"></span></span><span class="val">146</span></div>
-              <div class="bar"><span class="lbl">registral</span><span class="track"><span class="fill alt" style="width:48.6%"></span></span><span class="val">71</span></div>
-              <div class="bar"><span class="lbl">comercial</span><span class="track"><span class="fill alt" style="width:34.2%"></span></span><span class="val">50</span></div>
-              <div class="bar"><span class="lbl">penal</span><span class="track"><span class="fill alt" style="width:7.5%"></span></span><span class="val">11</span></div>
-              <div class="bar"><span class="lbl">notarial</span><span class="track"><span class="fill alt" style="width:5.5%"></span></span><span class="val">8</span></div>
-              <div class="bar"><span class="lbl">tributaria</span><span class="track"><span class="fill alt" style="width:2.1%"></span></span><span class="val">3</span></div>
-              <div class="bar"><span class="lbl">laboral</span><span class="track"><span class="fill alt" style="width:2.1%"></span></span><span class="val">3</span></div>
-            </div>
-            <p class="note">El peso registral del corpus normativo &mdash;137 de 197 normas&mdash; refleja el trabajo diario del escribano, donde la disposición técnica pesa más que la ley.</p>
+            <h3>DeepEval <span class="chip der">duplica</span></h3>
+            <p class="tx">Marco de evaluación más amplio que RAG &mdash;agentes, seguridad, criterios propios&mdash; con buena ergonomía de integración continua.</p>
+            <p class="note">Cubre lo mismo que <code>pytest</code> más Ragas juntos y agrega un vocabulario propio. Un tercer marco no compra nada que las capas ya elegidas no den.</p>
+          </div>
+          <div class="col">
+            <h3>promptfoo <span class="chip der">otro problema</span></h3>
+            <p class="tx">Comparación de prompts y modelos por matriz de casos, declarada en YAML. Excelente para elegir entre dos redacciones de un prompt.</p>
+            <p class="note">La unidad que evalúa es la llamada al modelo, no el recorrido de seis fases. Resuelve un problema que acá no es el problema.</p>
           </div>
         </div>
       </div>
+      <p class="note">Y la cuarta opción, que es no hacer nada: seguir con <code>lmjudge_dinamico.py</code>. <strong>No es una base: no tiene juez, no tiene métricas, duplica el pipeline y esa copia ya divergió de producción.</strong> Lo único aprovechable son las 30 preguntas.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div class="slide-in">
+      <div class="eyebrow"><b>16</b><span>Plan</span></div>
+      <h2>Cuatro fases, ordenadas por lo que atajan sobre lo que cuestan</h2>
+      <div class="body">
+        <div class="mx">
+          <div class="hd">Fase</div>
+          <div class="hd">Qué deja andando</div>
+          <div class="hd">Cómo se verifica</div>
+          <div class="hd">Qué suma al entorno</div>
+
+          <div class="rw">0 · La costura</div>
+          <div><span>Las dos funciones nuevas en <code>api/pipeline.py</code>, más el golden set con las 30 semillas</span></div>
+          <div><span>Devuelven los mismos IDs que el evento <code>fuentes</code></span></div>
+          <div class="best">nada</div>
+
+          <div class="rw">1 · Determinista</div>
+          <div>Recuperación por ID y los tres chequeos de cita y vigencia; frenan el commit</div>
+          <div>Corre en menos de un minuto y sin gastar un token</div>
+          <div class="best">pytest</div>
+
+          <div class="rw">2 · Registro</div>
+          <div>Trazas encendidas, dataset espejado desde el repo, corridas como experimentos</div>
+          <div>Dos corridas seguidas quedan comparables sobre el mismo dataset</div>
+          <div class="best">ya instalado</div>
+
+          <div class="rw">3 · Juez</div>
+          <div>Cuatro métricas de Ragas con Gemini</div>
+          <div>Tres corridas iguales caen en una banda conocida; si no, el umbral es ruido</div>
+          <div class="worst">entorno aparte</div>
+        </div>
+      </div>
+      <p class="note">El orden es por lo que cuesta contra el error que ataja, no por dificultad. <strong>Las fases 0 y 1 no dependen de ninguna herramienta y cubren las dos fallas más caras: el artículo que nunca entró al contexto y la cita que el modelo inventó.</strong></p>
     </div>
   </section>
 

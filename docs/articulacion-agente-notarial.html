@@ -260,7 +260,7 @@ body{
 .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5cqw;width:100%}
 .tile{
   background:var(--surface-2); border:1px solid var(--line); border-radius:2px;
-  padding:2cqw 2.1cqw; display:flex; flex-direction:column; gap:.5cqw; justify-content:center;
+  padding:2cqw 2.1cqw; display:flex; flex-direction:column; gap:.5cqw; justify-content:flex-start;
 }
 .tile .n{
   font-family:Archivo,system-ui,sans-serif; font-weight:700; font-size:4.4cqw;
@@ -312,7 +312,7 @@ code{
   color:var(--ink-2); text-align:right; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
 .bar .track{height:1.5cqw;background:var(--surface-2);border-radius:1px;overflow:hidden}
-.bar .fill{height:100%;background:var(--petrol);border-radius:1px}
+.bar .fill{display:block;height:100%;background:var(--petrol);border-radius:1px}
 .bar .fill.alt{background:var(--petrol-2)}
 .bar .val{
   font-family:"IBM Plex Mono",ui-monospace,monospace; font-size:1.15cqw;
@@ -522,7 +522,7 @@ code{
           <text x="709" y="243" text-anchor="middle" font-size="10" fill="#CFE3E4">no dos muestras</text>
         </svg>
       </div>
-      <p class="note">Los 566 resúmenes ya existen: los escribió <code>qwen3.8</code> a partir de los artículos que apuntan a cada entidad y de los que estos alcanzan por <code>REMITE_A</code>, y ya citan norma y artículo. El paso 3 agrega el traversal <code>(:Articulo)-[:REGULA|DEFINE]-&gt;(e)</code> para que el contraste se apoye en articulado vigente y no solo en la síntesis.</p>
+      <p class="note">Los 566 resúmenes ya existen: los escribieron en su mayoría  <code>qwen3.6</code> y algunos <code>qwen3.8</code> a partir de los artículos que apuntan a cada entidad y de los que estos alcanzan por <code>REMITE_A</code>, y ya citan norma y artículo. El paso 3 agrega el traversal <code>(:Articulo)-[:REGULA|DEFINE]-&gt;(e)</code> para que el contraste se apoye en articulado vigente y no solo en la síntesis.</p>
     </div>
   </section>
 
@@ -633,7 +633,7 @@ code{
           <rect x="694" y="92" width="126" height="56" rx="2" fill="var(--surface-2)" stroke="var(--line)"/>
           <text x="757" y="125" text-anchor="middle" font-size="12" fill="var(--ink)">Respuesta</text>
 
-          <text x="6" y="222" font-size="10.5" fill="var(--ink-3)">Un prefiltro por expresión regular resuelve los deterministas inequívocos antes del clasificador: cero llamadas al modelo.</text>
+          <text x="6" y="236" font-size="10.5" fill="var(--ink-3)">Un prefiltro por expresión regular resuelve los deterministas inequívocos antes del clasificador: cero llamadas al modelo.</text>
         </svg>
       </div>
       <div class="cols">
@@ -742,8 +742,8 @@ code{
           <rect x="128" y="88" width="122" height="54" rx="2" fill="var(--petrol-wash)" stroke="var(--petrol)" stroke-width="2"/>
           <text x="189" y="120" text-anchor="middle" font-size="11.5" font-weight="600" fill="var(--petrol)">clasificar</text>
 
-          <text x="262" y="74" font-size="9.5" fill="var(--ink-3)">devuelve list[str]</text>
-          <text x="262" y="87" font-size="9.5" fill="var(--ink-3)">→ fan-out paralelo</text>
+          <text x="140" y="70" font-size="9.5" fill="var(--ink-3)">devuelve list[str]</text>
+          <text x="140" y="82" font-size="9.5" fill="var(--ink-3)">→ fan-out paralelo</text>
 
           <path d="M250,101 C276,101 276,36 302,36" fill="none" stroke="var(--line-2)" stroke-width="1.5" marker-end="url(#a8)"/>
           <line x1="250" y1="115" x2="302" y2="115" stroke="var(--line-2)" stroke-width="1.5" marker-end="url(#a8)"/>
