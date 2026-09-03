@@ -10,3 +10,10 @@ CLAUDE.md
 # Bytecode de Python
 __pycache__/
 *.pyc
+
+# Script local para levantar los servidores
+/start.sh
+
+# Documentación interna de desarrollo (no versionada)
+/docs/pipeline-explicado.md
+/docs/factorizar_pipeline.md
