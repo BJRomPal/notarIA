@@ -29,6 +29,7 @@ if BASE_DIR not in sys.path:
 
 from utils.connectors import get_neo4j_driver, get_gemini_embeddings, get_gemini_llm
 from utils.extractor_base import RELACIONES_PERMITIDAS
+from utils.citas import NOMBRE_NORMA
 from langchain_neo4j import Neo4jVector
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -42,36 +43,6 @@ neo4j_driver = get_neo4j_driver()
 K_VECTORIAL          = 5   # vecinos a recuperar por cada frase de búsqueda
 LONGITUD_MIN_KEYWORD = 4   # palabras del sujeto más cortas se ignoran (poco discriminantes)
 MIN_DOCS_TRAS_FILTRO = 2   # si el filtro por sujeto deja menos, se descarta el filtro (prioriza recall)
-
-# --- Nombre con el que se identifica una norma en las citas ---
-# `titulo` no sirve para citar: 100 normas (DTR e IT) no lo tienen, y entre las que sí, unas
-# traen el prefijo identificatorio ("Resolución General IGJ 15/2024 - ...") y otras solo el
-# tema ("Personas Expuestas Políticamente Extranjeras", que es la RG 35/2023 y no se puede
-# saber). El nombre canónico se arma con tipo + numero.
-#
-# Las DTR e IT toman el año del `id` y no de `numero`: 109 normas guardan el año con dos
-# dígitos ("6/19") y solo el id tiene los cuatro ("DTR_6_2019").
-#
-# Misma convención que citar() en exploration/generar_resumenes_entidades.py; si se toca una,
-# tocar la otra.
-NOMBRE_NORMA = """coalesce(
-    CASE norma.id
-        WHEN 'CCyCN'     THEN 'CCyCN'
-        WHEN 'Ley_11179' THEN 'Código Penal'
-        WHEN 'Ley_6926'  THEN 'Código Fiscal CABA'
-        ELSE CASE norma.tipo
-            WHEN 'Ley'                         THEN 'Ley ' + norma.numero
-            WHEN 'Decreto'                     THEN 'Decreto ' + norma.numero
-            WHEN 'ResolucionGeneral'           THEN 'RG ' + norma.numero
-            WHEN 'Resolución'                  THEN 'RG ' + norma.numero
-            WHEN 'DisposicionTecnicoRegistral' THEN 'DTR ' + split(norma.id, '_')[1] + '/' + split(norma.id, '_')[2]
-            WHEN 'InstruccionDeTrabajo'        THEN 'IT ' + split(norma.id, '_')[1] + '/' + split(norma.id, '_')[2]
-        END
-    END,
-    norma.titulo,
-    norma.id,
-    'Norma no identificada'
-)"""
 
 # ==========================================
 # 1. MOTOR VECTORIAL
