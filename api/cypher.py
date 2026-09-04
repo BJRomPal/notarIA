@@ -5,7 +5,7 @@ más remisiones no alcanza para responder (ver el gate de suficiencia en api/rec
 import re
 
 from utils.extractor_base import RELACIONES_PERMITIDAS
-from utils.llm_io import strip_markdown
+from utils.rag.llm_io import strip_markdown
 
 
 class MotorCypherDinamico:

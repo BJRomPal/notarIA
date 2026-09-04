@@ -27,7 +27,7 @@ from exploration import generar_resumenes_entidades as g
 from langchain_ollama import ChatOllama
 from utils.connectors import get_neo4j_driver, get_gemini_embeddings
 from utils.extractor_base import embed_con_reintento
-from utils.grafo import etiquetas_ontologia
+from utils.rag.grafo import etiquetas_ontologia
 
 driver = get_neo4j_driver()
 

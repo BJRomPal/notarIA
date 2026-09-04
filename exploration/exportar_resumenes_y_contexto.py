@@ -26,7 +26,7 @@ if BASE_DIR not in sys.path:
 
 from exploration import generar_resumenes_entidades as g
 from utils.connectors import get_neo4j_driver
-from utils.grafo import EXCLUSION_DEFAULT
+from utils.rag.grafo import EXCLUSION_DEFAULT
 
 SEPARADOR = "=" * 70
 CIERRE = "-" * 70
