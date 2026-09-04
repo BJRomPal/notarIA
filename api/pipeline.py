@@ -22,7 +22,7 @@ Eventos emitidos (dicts serializables a JSON):
 import time
 from typing import Iterator
 
-from utils.grafo import datos_articulos, entidades_relacionadas, format_entidades
+from utils.rag.grafo import datos_articulos, entidades_relacionadas, format_entidades
 from api.recuperacion import recuperar_contexto, llm, neo4j_driver
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser

@@ -2,7 +2,7 @@
 pipeline RAG y los scripts de `exploration/`. El driver se recibe siempre por parámetro
 (nunca un global de módulo) para que el mismo helper sirva a ambos sin duplicar drivers.
 """
-from utils.citas import NOMBRE_NORMA
+from utils.rag.citas import NOMBRE_NORMA
 
 # Labels que no son entidades de ontología: los estructurales del grafo y Jurisprudencia
 # (fallos, con su propio índice vectorial, sin relaciones con artículos).

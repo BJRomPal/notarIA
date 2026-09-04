@@ -6,10 +6,10 @@ import os
 from typing import Iterator
 
 from utils.connectors import get_neo4j_driver, get_gemini_embeddings, get_gemini_llm
-from utils.citas import NOMBRE_NORMA
-from utils.texto import normalizar, formato_articulo
-from utils.llm_io import json_del_llm
-from utils.grafo import etiquetas_ontologia, seguir_remite_a, datos_articulos, entidades_relacionadas
+from utils.rag.citas import NOMBRE_NORMA
+from utils.rag.texto import normalizar, formato_articulo
+from utils.rag.llm_io import json_del_llm
+from utils.rag.grafo import etiquetas_ontologia, seguir_remite_a, datos_articulos, entidades_relacionadas
 from api.cypher import MotorCypherDinamico
 from langchain_neo4j import Neo4jVector
 

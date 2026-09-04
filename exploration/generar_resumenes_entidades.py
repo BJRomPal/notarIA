@@ -24,8 +24,8 @@ if BASE_DIR not in sys.path:
 
 from langchain_ollama import ChatOllama
 from utils.connectors import get_neo4j_driver, enviar_alerta
-from utils.citas import citar
-from utils.grafo import etiquetas_ontologia
+from utils.rag.citas import citar
+from utils.rag.grafo import etiquetas_ontologia
 
 MODELO = "qwen3.8:latest"
 

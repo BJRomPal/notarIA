@@ -31,8 +31,8 @@ from exploration import generar_resumenes_entidades as g
 from langchain_ollama import ChatOllama
 from utils.connectors import get_neo4j_driver, enviar_alerta
 from utils.extractor_base import RELACIONES_PERMITIDAS
-from utils.grafo import etiquetas_ontologia
-from utils.llm_io import json_del_llm
+from utils.rag.grafo import etiquetas_ontologia
+from utils.rag.llm_io import json_del_llm
 
 SUFIJO = time.strftime("%Y%m%d")
 RUTA_SALIDA = os.path.join(g.DIR_SALIDA, f"articulos_sin_entidad_{SUFIJO}.txt")
