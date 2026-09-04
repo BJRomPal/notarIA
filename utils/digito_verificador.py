@@ -104,7 +104,7 @@ def partida_completa(partida: str | int) -> str:
 
 
 if __name__ == "__main__":
-    ejemplos = ["1180431", 1180431, "45312", "0000000", "12345678", "11a0431", "", "12.345"]
+    ejemplos = ["1675980"]
     for ejemplo in ejemplos:
         ok, resultado = obtener_dv(ejemplo)
         estado = "OK    " if ok else "RECHAZO"
