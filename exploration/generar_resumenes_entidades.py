@@ -25,6 +25,7 @@ if BASE_DIR not in sys.path:
 from langchain_ollama import ChatOllama
 from utils.connectors import get_neo4j_driver, enviar_alerta
 from utils.citas import citar
+from utils.grafo import etiquetas_ontologia
 
 MODELO = "qwen3.8:latest"
 
@@ -93,10 +94,7 @@ def guardar_checkpoint(hechas: set):
 def listar_entidades():
     if MODO_CALIBRACION:
         return ENTIDADES_CALIBRACION
-    with driver.session() as s:
-        labels = [l["label"] for l in s.run("CALL db.labels() YIELD label RETURN label ORDER BY label").data()]
-    excluir = {"Articulo", "Norma", "VersionHistorica"}
-    return [l for l in labels if l not in excluir]
+    return etiquetas_ontologia(driver, excluir={"Articulo", "Norma", "VersionHistorica"})
 
 
 def reunir_contexto_con_reintento(etiqueta: str, intentos: int = 5, espera: int = 30):

@@ -22,24 +22,14 @@ import time
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
-sys.path.insert(0, os.path.join(BASE_DIR, "exploration"))
 
-import generar_resumenes_entidades as g
+from exploration import generar_resumenes_entidades as g
 from langchain_ollama import ChatOllama
 from utils.connectors import get_neo4j_driver, get_gemini_embeddings
 from utils.extractor_base import embed_con_reintento
+from utils.grafo import etiquetas_ontologia
 
 driver = get_neo4j_driver()
-
-
-def etiquetas_validas() -> set:
-    """Labels de entidades de ontología (excluye estructurales y Jurisprudencia)."""
-    with driver.session() as s:
-        return {r["label"] for r in s.run("""
-            MATCH (n) WHERE NOT n:Articulo AND NOT n:Norma
-                        AND NOT n:VersionHistorica AND NOT n:Jurisprudencia
-            RETURN DISTINCT labels(n)[0] AS label
-        """)}
 
 
 def regenerar(etiqueta: str, embedder) -> bool:
@@ -90,7 +80,7 @@ def main():
         sys.exit(1)
 
     pedidas = sys.argv[1:]
-    validas = etiquetas_validas()
+    validas = set(etiquetas_ontologia(driver))
     if desconocidas := [e for e in pedidas if e not in validas]:
         for e in desconocidas:
             parecidas = sorted(v for v in validas if e.lower()[:6] in v.lower())

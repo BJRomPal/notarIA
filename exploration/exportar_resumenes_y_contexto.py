@@ -23,17 +23,18 @@ import time
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
-sys.path.insert(0, os.path.join(BASE_DIR, "exploration"))
 
-import generar_resumenes_entidades as g
+from exploration import generar_resumenes_entidades as g
 from utils.connectors import get_neo4j_driver
+from utils.grafo import EXCLUSION_DEFAULT
 
 SEPARADOR = "=" * 70
 CIERRE = "-" * 70
 
 # Jurisprudencia no es una entidad de ontología: son fallos, con su propio índice vectorial
 # y sin relaciones con artículos. Los estructurales tampoco llevan resumen de este tipo.
-EXCLUIDOS = "NOT n:Articulo AND NOT n:Norma AND NOT n:VersionHistorica AND NOT n:Jurisprudencia"
+# Mismo conjunto que utils.grafo.etiquetas_ontologia() usa por defecto.
+EXCLUIDOS = " AND ".join(f"NOT n:{label}" for label in sorted(EXCLUSION_DEFAULT))
 
 
 def listar_entidades(driver) -> list[dict]:
