@@ -1,7 +1,7 @@
 """
 Pipeline RAG Híbrido con Text-to-Cypher dinámico — versión streaming para la API.
 
-Adaptación de tests/testRagDinamicoV3.py (misma lógica y mismo orden de fases) en la
+Adaptación de tests/RagDinamicoOriginal.py (misma lógica y mismo orden de fases) en la
 que responder() se convierte en el generador responder_stream(): en lugar de imprimir
 el progreso por consola, emite eventos que el servidor FastAPI reenvía por SSE y el
 frontend muestra como indicadores de avance. La respuesta final se streamea token a
