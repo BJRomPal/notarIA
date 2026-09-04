@@ -19,7 +19,6 @@ Uso:
 """
 import json
 import os
-import re
 import sys
 import time
 import logging
@@ -27,12 +26,13 @@ import logging
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
-sys.path.insert(0, os.path.join(BASE_DIR, "exploration"))
 
-import generar_resumenes_entidades as g
+from exploration import generar_resumenes_entidades as g
 from langchain_ollama import ChatOllama
 from utils.connectors import get_neo4j_driver, enviar_alerta
 from utils.extractor_base import RELACIONES_PERMITIDAS
+from utils.grafo import etiquetas_ontologia
+from utils.llm_io import json_del_llm
 
 SUFIJO = time.strftime("%Y%m%d")
 RUTA_SALIDA = os.path.join(g.DIR_SALIDA, f"articulos_sin_entidad_{SUFIJO}.txt")
@@ -59,12 +59,6 @@ RETURN a.id AS art, a.numero AS numero, a.texto AS texto, a.ubicacion AS ubicaci
        norma.tipo AS tipo, norma.numero AS norma_numero,
        norma.titulo AS norma_titulo, norma.id AS norma_id
 ORDER BY norma.id, toInteger(a.numero)
-"""
-
-ETIQUETAS = """
-MATCH (n) WHERE NOT n:Articulo AND NOT n:Norma
-            AND NOT n:VersionHistorica AND NOT n:Jurisprudencia
-RETURN DISTINCT labels(n)[0] AS label ORDER BY label
 """
 
 
@@ -110,20 +104,6 @@ Devolvé SOLO un JSON con este formato exacto, sin texto adicional:
 {{"entidad": "NombreDeLaEntidad o NINGUNA", "relacion": "TIPO_DE_RELACION o null", "entidad_secundaria": "NombreDeLaEntidad o null", "confianza": "alta|media|baja", "motivo": "una línea explicando por qué"}}"""
 
 
-def parsear(contenido: str) -> dict | None:
-    texto = contenido.strip()
-    if "```" in texto:
-        partes = texto.split("```")
-        texto = partes[1] if len(partes) > 1 else texto
-        texto = re.sub(r"^json\s*", "", texto.strip())
-    if (m := re.search(r"\{.*\}", texto, re.DOTALL)):
-        texto = m.group(0)
-    try:
-        return json.loads(texto)
-    except json.JSONDecodeError:
-        return None
-
-
 def validar(data: dict, etiquetas: set) -> tuple[str, str | None, str | None, str]:
     """Aplica la ontología cerrada: lo que no esté en las listas se descarta."""
     entidad = str(data.get("entidad") or "NINGUNA").strip()
@@ -151,7 +131,7 @@ def main():
 
     with driver.session() as s:
         articulos = [dict(r) for r in s.run(HUERFANOS)]
-        etiquetas = [r["label"] for r in s.run(ETIQUETAS)]
+    etiquetas = etiquetas_ontologia(driver)
     validas = set(etiquetas)
 
     hechos = cargar_checkpoint()
@@ -176,7 +156,7 @@ def main():
             num_ctx = g.calcular_num_ctx(prompt)
             respuesta = ChatOllama(model=g.MODELO, temperature=0.1, num_ctx=num_ctx,
                                    reasoning=False).invoke(prompt).content
-            data = parsear(str(respuesta))
+            data = json_del_llm(str(respuesta))
             if data is None:
                 raise ValueError("el modelo no devolvió un JSON parseable")
 

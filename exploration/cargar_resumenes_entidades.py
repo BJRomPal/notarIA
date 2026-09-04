@@ -25,12 +25,11 @@ if BASE_DIR not in sys.path:
     sys.path.insert(0, BASE_DIR)
 
 from utils.connectors import get_neo4j_driver, get_gemini_embeddings
+from utils.extractor_base import embed_con_reintento
 
 RUTA_ARCHIVO = os.path.join(BASE_DIR, "input", "entidades", "resumenes_entidades_completo.txt")
 RUTA_CHECKPOINT = os.path.join(BASE_DIR, "input", "entidades", "_checkpoint_carga_resumenes.json")
 CHECKPOINT_CADA = 50
-REINTENTOS_EMBEDDING = 4
-BACKOFF_SEGUNDOS = [5, 15, 45, 90]
 
 # Correcciones puntuales: el id escrito en el archivo no coincide con el id
 # real en el grafo (typo, o entidad renombrada/dividida después de generado
@@ -104,18 +103,6 @@ def guardar_checkpoint(hechas: set):
         json.dump(sorted(hechas), f, ensure_ascii=False, indent=2)
 
 
-def embed_con_reintento(embeddings, texto, etiqueta):
-    for intento in range(1, REINTENTOS_EMBEDDING + 1):
-        try:
-            return embeddings.embed_query(texto)
-        except Exception as e:
-            if intento == REINTENTOS_EMBEDDING:
-                raise
-            espera = BACKOFF_SEGUNDOS[intento - 1]
-            logger.warning(f"  Embedding falló para {etiqueta} (intento {intento}/{REINTENTOS_EMBEDDING}): {e}. Reintentando en {espera}s...")
-            time.sleep(espera)
-
-
 def main():
     bloques = parsear_archivo()
     logger.info(f"Bloques ENTIDAD encontrados en el archivo: {len(bloques)}")
@@ -155,7 +142,9 @@ def main():
         for i, b in enumerate(pendientes, 1):
             t0 = time.time()
             try:
-                vector = embed_con_reintento(embeddings, b["texto"], b["etiqueta"])
+                vector = embed_con_reintento(embeddings, b["texto"])
+                if vector is None:
+                    raise RuntimeError(f"embedding no calculado tras agotar reintentos para {b['etiqueta']}")
                 session.run(
                     "MATCH (e {id: $id}) SET e.resumen = $texto, e.embedding = $vector",
                     id=b["id"], texto=b["texto"], vector=vector,
