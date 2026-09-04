@@ -39,7 +39,7 @@ embeddings = get_gemini_embeddings()
 neo4j_driver = get_neo4j_driver()
 
 # --- Parámetros de recuperación (heurísticas explicadas donde se usan) ---
-K_VECTORIAL          = 3   # vecinos a recuperar por cada frase de búsqueda
+K_VECTORIAL          = 5   # vecinos a recuperar por cada frase de búsqueda
 LONGITUD_MIN_KEYWORD = 4   # palabras del sujeto más cortas se ignoran (poco discriminantes)
 MIN_DOCS_TRAS_FILTRO = 2   # si el filtro por sujeto deja menos, se descarta el filtro (prioriza recall)
 
