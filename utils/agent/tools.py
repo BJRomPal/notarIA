@@ -1,8 +1,8 @@
 from langchain_core.tools import tool
 
-from utils.cuil import obtener_cuil
-from utils.digito_verificador import obtener_dv
-from utils.plazos_registrales import (
+from utils.agent.cuil import obtener_cuil
+from utils.agent.dv_partida import obtener_dv
+from utils.agent.plazos_registrales import (
     obtener_vencimiento_certificado,
     obtener_vencimiento_ingreso_rpi,
     obtener_vencimiento_prorroga_inscripcion,
