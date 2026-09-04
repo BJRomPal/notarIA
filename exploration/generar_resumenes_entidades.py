@@ -24,6 +24,7 @@ if BASE_DIR not in sys.path:
 
 from langchain_ollama import ChatOllama
 from utils.connectors import get_neo4j_driver, enviar_alerta
+from utils.citas import citar
 
 MODELO = "qwen3.8:latest"
 
@@ -139,46 +140,6 @@ def reunir_contexto(etiqueta: str):
         adicionales = [r for r in remisiones if r["art"] not in ids_directos]
 
     return entidad_id, directos, adicionales
-
-
-# Códigos: se citan por su nombre corto de uso forense. El título completo ("Código Civil y
-# Comercial de la Nación") repetido en cada cita hace el texto pesado de leer, y el lector
-# entiende la forma abreviada sin ambigüedad.
-_NOMBRE_CORTO = {
-    "CCyCN": "CCyCN",
-    "Ley_11179": "Código Penal",
-    "Ley_6926": "Código Fiscal CABA",
-}
-
-# Cómo nombrar cada tipo de norma en una cita. El id (Ley_404, DTR_7_2024) es interno y
-# nunca debe llegar al texto del resumen.
-_ETIQUETA_NORMA = {
-    "Ley": "Ley {numero}",
-    "Decreto": "Decreto {numero}",
-    "ResolucionGeneral": "RG {numero}",
-    "Resolución": "RG {numero}",
-    "DisposicionTecnicoRegistral": "DTR {numero}",
-    "InstruccionDeTrabajo": "IT {numero}",
-}
-
-
-def citar(art: dict) -> str:
-    """Cita legible de un artículo: 'art. 82, Ley 404'. Nunca el id interno.
-
-    Los Códigos se citan por su nombre corto de uso forense ('art. 2128, CCyCN'), que es como
-    se los nombra y evita repetir el título completo en cada cita; el resto por tipo + número.
-    Van por id y no por tipo='Codigo' porque el Código Penal y el Código Fiscal de CABA están
-    cargados con tipo='Ley'. Si la norma no encaja en ninguno de los dos casos se cae al
-    título y, en última instancia, al id.
-    """
-    tipo, numero = art.get("tipo"), art.get("norma_numero")
-    if art.get("norma_id") in _NOMBRE_CORTO:
-        norma = _NOMBRE_CORTO[art["norma_id"]]
-    elif tipo in _ETIQUETA_NORMA and numero:
-        norma = _ETIQUETA_NORMA[tipo].format(numero=numero)
-    else:
-        norma = art.get("norma_titulo") or art.get("norma_id")
-    return f"art. {art.get('numero') or '?'}, {norma}"
 
 
 def calcular_extension_objetivo(directos, adicionales) -> str:
