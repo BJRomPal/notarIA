@@ -1041,15 +1041,16 @@ code{
     <div class="slide-in">
       <div class="eyebrow"><b>15</b><span>Garantías</span></div>
       <h2>El error que hoy el sistema no puede ver</h2>
-      <p class="lede">El pipeline no chequea vigencia ni verifica que lo que se cita venga de lo que se recuperó. En derecho, esos dos son la diferencia entre una respuesta y un problema.</p>
+      <p class="lede">La vigencia se cuida en dos de las tres vías. Las citas, en ninguna.</p>
       <div class="body">
         <div class="cols">
           <div class="col">
             <h3>Vigencia</h3>
             <ul class="steps">
-              <li class="x"><i>1</i><span><code>vigente</code> no aparece ni una vez en <code>api/pipeline.py</code>: nada impide citar un artículo derogado como si rigiera.</span></li>
-              <li class="x"><i>2</i><span><code>TIENE_HISTORICO</code> y <code>vigencia_desde</code> tienen cero apariciones en <code>api/</code> y <code>tests/</code>: las 103 versiones históricas son inalcanzables.</span></li>
-              <li class="x"><i>3</i><span><code>nota_vigencia</code> está especificado al detalle en <code>CLAUDE.md</code> y sigue sin construirse.</span></li>
+              <li><i>1</i><span>Por la vía vectorial no entran: los derogados pierden el embedding y quedan fuera del índice. Es una garantía estructural.</span></li>
+              <li class="x"><i>2</i><span>Por el Cypher es instrucción, no barrera: la regla 7 del prompt lo pide y el modelo puede olvidarlo.</span></li>
+              <li class="x"><i>3</i><span>Por las remisiones sí entran: <code>seguir_remite_a</code> filtra solo <code>texto IS NOT NULL</code>, y un derogado conserva su texto.</span></li>
+              <li class="x"><i>4</i><span><code>TIENE_HISTORICO</code>, <code>vigencia_desde</code> y <code>nota_vigencia</code>: cero apariciones. Las 103 versiones históricas son inalcanzables.</span></li>
             </ul>
           </div>
           <div class="col">
@@ -1062,7 +1063,7 @@ code{
           </div>
         </div>
       </div>
-      <p class="note">Con un router aparece además una métrica nueva: la precisión del ruteo. <code>lmjudge_dinamico.py</code> mide de punta a punta; si el especialista elegido fue el equivocado, el resultado no dice dónde se rompió.</p>
+      <p class="note">Con un router aparece además una métrica nueva: la precisión del ruteo. <code>lmjudge_dinamico.py</code> mide de punta a punta y no dice cuál especialista falló.</p>
     </div>
   </section>
 
