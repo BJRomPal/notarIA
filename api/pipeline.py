@@ -18,9 +18,7 @@ Eventos emitidos (dicts serializables a JSON):
 import os
 import re
 import sys
-import json
 import time
-import unicodedata
 from typing import Iterator
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -30,6 +28,8 @@ if BASE_DIR not in sys.path:
 from utils.connectors import get_neo4j_driver, get_gemini_embeddings, get_gemini_llm
 from utils.extractor_base import RELACIONES_PERMITIDAS
 from utils.citas import NOMBRE_NORMA
+from utils.texto import normalizar, formato_articulo
+from utils.llm_io import strip_markdown, json_del_llm
 from langchain_neo4j import Neo4jVector
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -75,29 +75,8 @@ vector_db = Neo4jVector.from_existing_index(
 retriever = vector_db.as_retriever(search_kwargs={"k": K_VECTORIAL})
 
 # ==========================================
-# 2. UTILIDADES
+# 2. CONTEXTO ACUMULADO
 # ==========================================
-
-def _strip_markdown(content: str) -> str:
-    """Quita el cercado ```...``` (con prefijo json/cypher) que el LLM suele añadir."""
-    if "```" in content:
-        partes = content.split("```")
-        content = partes[1] if len(partes) > 1 else content
-        if content.startswith("json"):
-            content = content[4:]
-        elif content.startswith("cypher"):
-            content = content[6:]
-    return content.strip()
-
-def normalizar(texto: str) -> str:
-    """Minúsculas sin tildes ni diacríticos, para comparaciones tolerantes a acentos."""
-    return unicodedata.normalize("NFKD", texto).encode("ascii", "ignore").decode("ascii").lower()
-
-def _formato_articulo(fuente: str, numero: str, texto: str) -> str:
-    """Formato canónico de un artículo para el contexto del LLM.
-    Replica el mismo layout que arma `retrieval_query` en Cypher."""
-    return f"FUENTE: {fuente}\nARTICULO: {numero}\nTEXTO: {texto}"
-
 
 class ContextoAcumulado:
     """Acumula artículos únicos (dedup por id) con su texto ya formateado."""
@@ -138,7 +117,7 @@ Devuelve SOLO el JSON.
 Pregunta: {pregunta}"""
     try:
         respuesta = llm_lite.invoke(prompt)
-        data = json.loads(_strip_markdown(str(respuesta.content)))
+        data = json_del_llm(str(respuesta.content))
         return str(data.get("sujeto", "")), data.get("frases_vectoriales", [pregunta])
     except Exception:
         return "", [pregunta]
@@ -302,7 +281,7 @@ Cypher:"""
         print("  [Grafo] Generando Cypher dinámicamente...")
         try:
             respuesta_llm = self.llm.invoke(self._generar_prompt(pregunta))
-            cypher = _strip_markdown(str(respuesta_llm.content))
+            cypher = strip_markdown(str(respuesta_llm.content))
             cypher = self._postprocesar(cypher)
 
             bloqueadas = {m.upper() for m in self._PATRON_ESCRITURA.findall(cypher)}
@@ -356,7 +335,7 @@ def _agregar_remisiones(ids_origen: list[str], ctx: ContextoAcumulado) -> Iterat
     for art in seguir_remite_a(ids_origen):
         origen_num = art.get("origen_numero", "")
         norma_ref  = art.get("norma", "")
-        texto = _formato_articulo(
+        texto = formato_articulo(
             f"{norma_ref} (referenciada por Art. {origen_num})",
             art.get("numero", ""),
             art.get("texto", ""),
@@ -458,7 +437,7 @@ Devolvé SOLO un JSON con este formato exacto:
 {{"suficiente": true, "razon": "explicación breve de una línea"}}"""
     try:
         respuesta = llm_lite.invoke(prompt)
-        data = json.loads(_strip_markdown(str(respuesta.content)))
+        data = json_del_llm(str(respuesta.content))
         return bool(data.get("suficiente", False)), str(data.get("razon", ""))
     except Exception as e:
         return False, f"Error al evaluar: {e}"
@@ -514,7 +493,7 @@ def responder_stream(pregunta: str) -> Iterator[dict]:
             # La FUENTE es la norma real, no "Grafo Ontológico": el prompt de respuesta
             # exige citar la norma de cada afirmación y solo puede leerla de acá.
             norma = datos_grafo.get(art_id, {}).get("norma", "Norma no identificada")
-            texto = _formato_articulo(norma, art.get("numero", ""), art.get("texto", ""))
+            texto = formato_articulo(norma, art.get("numero", ""), art.get("texto", ""))
             if ctx.agregar(art_id, texto):
                 yield {"type": "item", "texto": f"Art. {art.get('numero', '')} ({norma})"}
 
