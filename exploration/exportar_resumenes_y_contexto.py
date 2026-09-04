@@ -33,7 +33,7 @@ CIERRE = "-" * 70
 
 # Jurisprudencia no es una entidad de ontología: son fallos, con su propio índice vectorial
 # y sin relaciones con artículos. Los estructurales tampoco llevan resumen de este tipo.
-# Mismo conjunto que utils.grafo.etiquetas_ontologia() usa por defecto.
+# Mismo conjunto que utils.rag.grafo.etiquetas_ontologia() usa por defecto.
 EXCLUIDOS = " AND ".join(f"NOT n:{label}" for label in sorted(EXCLUSION_DEFAULT))
 
 
