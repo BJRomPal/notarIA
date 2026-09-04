@@ -30,6 +30,7 @@ from utils.extractor_base import RELACIONES_PERMITIDAS
 from utils.citas import NOMBRE_NORMA
 from utils.texto import normalizar, formato_articulo
 from utils.llm_io import strip_markdown, json_del_llm
+from utils.grafo import etiquetas_ontologia, seguir_remite_a, datos_articulos, entidades_relacionadas, format_entidades
 from langchain_neo4j import Neo4jVector
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -159,22 +160,6 @@ def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
 # 4. MOTOR CYPHER DINÁMICO
 # ==========================================
 
-def _cargar_etiquetas_entidades(driver) -> list[str]:
-    """Lee los labels reales de entidades ontológicas desde Neo4j (una sola vez al cargar el módulo).
-
-    Se excluyen los labels estructurales (Norma, Articulo, VersionHistorica) y Jurisprudencia:
-    no son entidades de ontología y en el prompt de Cypher se leen como etiquetas consultables.
-    """
-    with driver.session() as session:
-        result = session.run("""
-            MATCH (n)
-            WHERE NOT n:Articulo AND NOT n:Norma AND NOT n:VersionHistorica AND NOT n:Jurisprudencia
-            RETURN DISTINCT labels(n)[0] AS label
-            ORDER BY label
-        """)
-        return [row["label"] for row in result if row["label"]]
-
-
 class MotorCypherDinamico:
     # Cláusulas que no deben aparecer en una query de solo lectura.
     # execute_read() protege a nivel de routing pero no garantiza read-only en
@@ -301,7 +286,7 @@ Cypher:"""
 
 
 # Inicialización única al cargar el módulo: carga las etiquetas reales desde Neo4j.
-_etiquetas_entidades = _cargar_etiquetas_entidades(neo4j_driver)
+_etiquetas_entidades = etiquetas_ontologia(neo4j_driver)
 print(f"[Init] Etiquetas ontológicas cargadas: {_etiquetas_entidades}")
 motor_cypher = MotorCypherDinamico(neo4j_driver, llm, _etiquetas_entidades)
 
@@ -309,30 +294,10 @@ motor_cypher = MotorCypherDinamico(neo4j_driver, llm, _etiquetas_entidades)
 # 5. VECINDARIO ONTOLÓGICO
 # ==========================================
 
-def seguir_remite_a(article_ids: list[str]) -> list[dict]:
-    """Dado un conjunto de artículos, devuelve los artículos referenciados vía REMITE_A."""
-    if not article_ids:
-        return []
-    query = f"""
-    UNWIND $ids AS art_id
-    MATCH (origen:Articulo {{id: art_id}})-[:REMITE_A]->(referenciado:Articulo)
-    WHERE referenciado.texto IS NOT NULL
-    OPTIONAL MATCH (norma:Norma)-[:CONTIENE]->(referenciado)
-    RETURN DISTINCT
-        referenciado.id     AS id,
-        referenciado.numero AS numero,
-        referenciado.texto  AS texto,
-        {NOMBRE_NORMA}      AS norma,
-        origen.numero       AS origen_numero
-    """
-    with neo4j_driver.session() as session:
-        return [dict(row) for row in session.run(query, ids=article_ids)]
-
-
 def _agregar_remisiones(ids_origen: list[str], ctx: ContextoAcumulado) -> Iterator[dict]:
     """Sigue REMITE_A desde `ids_origen`, agrega al contexto los artículos nuevos
     y emite un evento por cada uno."""
-    for art in seguir_remite_a(ids_origen):
+    for art in seguir_remite_a(neo4j_driver, ids_origen):
         origen_num = art.get("origen_numero", "")
         norma_ref  = art.get("norma", "")
         texto = formato_articulo(
@@ -342,54 +307,6 @@ def _agregar_remisiones(ids_origen: list[str], ctx: ContextoAcumulado) -> Iterat
         )
         if ctx.agregar(art.get("id", ""), texto):
             yield {"type": "item", "texto": f"Art. {art.get('numero', '')} ({norma_ref}) — citado por el Art. {origen_num}"}
-
-
-def _obtener_datos_articulos(article_ids: list[str]) -> dict[str, dict]:
-    """Devuelve {article_id: {"numero", "norma"}} para los artículos dados.
-
-    El número y la norma se leen del grafo y nunca se derivan del id: los ids no
-    tienen un formato único (Art_163_Ley_19550, Art_1_CCyCN, Art_1_DTR_5_2019).
-    """
-    if not article_ids:
-        return {}
-    query = f"""
-    UNWIND $ids AS art_id
-    MATCH (norma:Norma)-[:CONTIENE]->(art:Articulo {{id: art_id}})
-    RETURN art_id,
-           art.numero AS numero,
-           {NOMBRE_NORMA} AS norma
-    """
-    with neo4j_driver.session() as session:
-        return {
-            row["art_id"]: {"numero": row["numero"], "norma": row["norma"]}
-            for row in session.run(query, ids=article_ids)
-        }
-
-
-def obtener_entidades_relacionadas(article_ids: list[str]) -> list[dict]:
-    if not article_ids:
-        return []
-    query = """
-    UNWIND $ids AS art_id
-    MATCH (art:Articulo {id: art_id})-[r]-(entidad)
-    WHERE NOT entidad:Norma AND NOT entidad:Articulo AND NOT entidad:VersionHistorica
-    RETURN DISTINCT
-        labels(entidad)[0] AS tipo,
-        entidad.id         AS id,
-        type(r)            AS relacion,
-        art_id             AS articulo
-    ORDER BY tipo, id
-    """
-    with neo4j_driver.session() as session:
-        return [dict(row) for row in session.run(query, ids=article_ids)]
-
-def format_entidades(entidades: list[dict]) -> str:
-    if not entidades:
-        return ""
-    lines = ["\n\nENTIDADES JURÍDICAS RELACIONADAS:"]
-    for e in entidades:
-        lines.append(f"  [{e['tipo']}] {e['id']}  —  {e['relacion']}  →  Art. {e['articulo']}")
-    return "\n".join(lines)
 
 # ==========================================
 # 6. GENERACIÓN DE RESPUESTA
@@ -487,7 +404,7 @@ def responder_stream(pregunta: str) -> Iterator[dict]:
         ids_antes_fase3 = list(ctx.ids)
         arts_grafo = motor_cypher.consultar(pregunta)
         arts_grafo_nuevos = [a for a in arts_grafo if str(a.get("id", "")) and a.get("id") not in ctx]
-        datos_grafo = _obtener_datos_articulos([str(a["id"]) for a in arts_grafo_nuevos])
+        datos_grafo = datos_articulos(neo4j_driver, [str(a["id"]) for a in arts_grafo_nuevos])
         for art in arts_grafo_nuevos:
             art_id = str(art["id"])
             # La FUENTE es la norma real, no "Grafo Ontológico": el prompt de respuesta
@@ -503,12 +420,12 @@ def responder_stream(pregunta: str) -> Iterator[dict]:
             yield from _agregar_remisiones(ids_nuevos_fase3, ctx)
 
     # Fase 4: vecindario ontológico (entidades) + generación de la respuesta final.
-    entidades = obtener_entidades_relacionadas(ctx.ids)
+    entidades = entidades_relacionadas(neo4j_driver, ctx.ids)
 
     # Fuentes del contexto final, para que el frontend las muestre como citas.
     # El fallback cubre el caso en que un id del contexto no sea un :Articulo (el motor
     # Cypher puede devolver un :Jurisprudencia, que también tiene id y texto).
-    datos_ctx = _obtener_datos_articulos(ctx.ids)
+    datos_ctx = datos_articulos(neo4j_driver, ctx.ids)
     fuentes = [
         {
             "id": art_id,
