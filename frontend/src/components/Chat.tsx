@@ -77,7 +77,7 @@ function Welcome({ onSend }: { onSend: (texto: string) => void }) {
         </p>
         <p className="mt-5 max-w-md text-center text-[15px] leading-relaxed text-slate-500">
           Consultá sobre derecho argentino. Cada respuesta se construye sobre la
-          legislación vigente y cita los artículos en los que se funda.
+          legislación vigente y cita los artículos y fuentes en los que se funda.
         </p>
 
         <div className="mt-10 grid w-full max-w-2xl grid-cols-1 gap-2.5 sm:grid-cols-2">

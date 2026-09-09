@@ -1,3 +1,17 @@
+"""Herramientas deterministas expuestas al agente notarial como @tool de LangChain.
+
+Cada función de acá envuelve un helper de `utils/agent/` con un contrato único: **nunca
+levanta excepción**, siempre devuelve un string. El helper devuelve `(ok, resultado)` y
+acá se traduce a texto plano, porque un modelo con `bind_tools` no sabe manejar un
+traceback pero sí sabe leer "No se pudo calcular: ...".
+
+El cálculo lo hace SIEMPRE el código, nunca el modelo: el LLM solo elige qué herramienta
+usar y extrae los parámetros de la pregunta. Ese reparto es el mismo principio que el
+proyecto aplica en la ingesta (el modelo extrae, el código valida y calcula).
+
+Consumidor: `api/especialistas/determinista.py`, a través de la lista HERRAMIENTAS
+del final del archivo.
+"""
 from langchain_core.tools import tool
 
 from utils.agent.cuil import obtener_cuil
@@ -77,3 +91,25 @@ def vencimiento_prorroga_inscripcion(fecha_ingreso: str) -> str:
     """
     ok, resultado = obtener_vencimiento_prorroga_inscripcion(fecha_ingreso)
     return resultado if ok else f"No se pudo calcular: {resultado}"
+
+
+# ==========================================================================================
+# EL REGISTRO
+# ==========================================================================================
+# El especialista determinista importa esta lista, nunca las funciones una por una. Sumar
+# una herramienta nueva es definirla arriba y agregarla acá: el consumidor no se toca.
+#
+# El orden importa poco para el modelo, pero se mantiene agrupado por familia (cálculos de
+# dígito verificador primero, plazos registrales después) para que se lea fácil.
+HERRAMIENTAS = [
+    calcular_dv_partida,
+    calcular_cuil,
+    vencimiento_certificado,
+    vencimiento_ingreso_rpi,
+    vencimiento_prorroga_inscripcion,
+]
+
+# Índice por nombre, para el camino rápido del especialista determinista: cuando el regex
+# ya identificó la herramienta y extrajo el parámetro, se la invoca directo por nombre sin
+# pasar por el modelo. `.name` lo pone el decorador @tool a partir del nombre de la función.
+POR_NOMBRE = {h.name: h for h in HERRAMIENTAS}

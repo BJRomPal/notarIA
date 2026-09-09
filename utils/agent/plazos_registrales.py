@@ -141,10 +141,3 @@ def obtener_vencimiento_prorroga_inscripcion(fecha_ingreso: str | date) -> tuple
         return True, vencimiento_prorroga_inscripcion(fecha_ingreso).strftime(FORMATO_FECHA)
     except FechaInvalida as error:
         return False, str(error)
-
-
-if __name__ == "__main__":
-    print(obtener_vencimiento_certificado("04/09/2026", "CABA"))
-    print(obtener_vencimiento_certificado("04/09/2026", "PBA"))
-    print(obtener_vencimiento_ingreso_rpi("04/09/2026"))
-    print(obtener_vencimiento_prorroga_inscripcion("04/09/2026"))

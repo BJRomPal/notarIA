@@ -101,11 +101,3 @@ def obtener_dv(partida: str | int) -> tuple[bool, str]:
 def partida_completa(partida: str | int) -> str:
     """Devuelve la partida de 7 dígitos concatenada con su DV (9 caracteres)."""
     return normalizar_partida(partida) + calcular_dv(partida)
-
-
-if __name__ == "__main__":
-    ejemplos = ["1675980"]
-    for ejemplo in ejemplos:
-        ok, resultado = obtener_dv(ejemplo)
-        estado = "OK    " if ok else "RECHAZO"
-        print(f"{estado} {ejemplo!r:>12} -> {resultado}")

@@ -83,7 +83,7 @@ export default function Home() {
 
       setActiveId(convId);
       streamConvIdRef.current = convId;
-      void send(texto);
+      void send(texto, convId);
     },
     [activeId, conversations, send, streaming],
   );
