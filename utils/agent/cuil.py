@@ -133,10 +133,3 @@ def obtener_cuil(dni: str | int, genero: str) -> tuple[bool, str]:
     except CuilInvalido as error:
         return False, str(error)
 
-
-if __name__ == "__main__":
-    ejemplos = [("12345678", "femenino"), ("01000000", "masculino")]
-    for dni, genero in ejemplos:
-        ok, resultado = obtener_cuil(dni, genero)
-        estado = "OK    " if ok else "RECHAZO"
-        print(f"{estado} {dni!r:>12} ({genero}) -> {resultado}")

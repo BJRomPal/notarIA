@@ -1,10 +1,19 @@
-// Chips con los artículos que fundamentan la respuesta, en formato legible
+// Chips con las fuentes que fundamentan la respuesta, en formato legible
 // ("Art. 10 — Ley 19550"), nunca el id crudo de la base (Art_10_Ley_19550).
+//
+// Hay tres clases de fuente porque el agente tiene tres especialistas, y cada uno cita algo
+// distinto. Antes del agente solo existían artículos, así que el "Art." iba escrito fijo; con
+// eso, un fallo se mostraba como "Art. Fallo_comercial_Fusion_1994 — ?".
 import type { Fuente } from "@/lib/types";
 
 /** Convierte cualquier resto de id de base de datos a texto presentable. */
 function presentarNorma(norma: string): string {
   return norma.replace(/_/g, " ").trim();
+}
+
+/** Lo que va en negrita a la izquierda del chip. Solo los artículos llevan el prefijo. */
+function principal(f: Fuente): string {
+  return f.tipo === "articulo" || f.tipo === undefined ? `Art. ${f.numero}` : f.numero;
 }
 
 export function Sources({ fuentes }: { fuentes: Fuente[] }) {
@@ -23,9 +32,14 @@ export function Sources({ fuentes }: { fuentes: Fuente[] }) {
             key={f.id}
             className="inline-flex items-baseline gap-1.5 rounded-lg border border-accent-500/25 bg-gradient-to-b from-amber-50/80 to-amber-100/40 px-2.5 py-1 text-xs text-brand-900"
           >
-            <span className="font-serif font-bold text-accent-600">Art. {f.numero}</span>
-            <span className="text-slate-400">—</span>
-            <span className="text-slate-600">{presentarNorma(f.norma)}</span>
+            <span className="font-serif font-bold text-accent-600">{principal(f)}</span>
+            {/* Un instituto jurídico no tiene norma que citar al lado: se muestra solo. */}
+            {f.norma && (
+              <>
+                <span className="text-slate-400">—</span>
+                <span className="text-slate-600">{presentarNorma(f.norma)}</span>
+              </>
+            )}
           </span>
         ))}
       </div>

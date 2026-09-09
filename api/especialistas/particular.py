@@ -1,6 +1,29 @@
-"""Recuperación de contexto legal para el pipeline RAG: fases 1 a 6 (análisis, búsqueda
-vectorial, remisiones, evaluación de suficiencia y, si hace falta, el grafo). No gasta
-ningún token de redacción — eso es responsabilidad de api/pipeline.py.
+"""ESPECIALISTA PARTICULAR — consultas sobre articulado concreto.
+
+Uno de los tres especialistas del agente notarial. Atiende las preguntas que apuntan a una
+norma o a un supuesto puntual («¿qué requisitos exige el art. 77 LSC para la fusión?»):
+busca artículos, sigue las remisiones entre ellos, consulta jurisprudencia y, si hace falta,
+baja al grafo con Text-to-Cypher.
+
+Es `api/recuperacion.py` movido acá y renombrado. El nombre viejo describía un paso del
+pipeline; el nuevo describe qué clase de consulta resuelve, que es lo que importa ahora que
+hay tres caminos posibles.
+
+CONTRATO CON EL AGENTE (el mismo para los tres especialistas):
+    particular(pregunta) -> Generator[dict, None, ContextoAcumulado]
+
+Es un generador que emite dicts del contrato SSE y cuyo `return` es el contexto acumulado.
+**No importa LangGraph y no sabe que existe.** Esa ignorancia es deliberada: es lo que hace
+reversible la decisión de usar LangGraph, y lo que permite consumir este módulo desde un
+script suelto igual que desde un nodo del grafo. El puente vive en `api/agente/nodos.py`.
+
+FASES QUE EMITE, en orden:
+    analisis        extrae sujeto y frases de búsqueda (1 llamada a flash-lite)
+    vectorial       busca en index_articulos y filtra por sujeto
+    remisiones      sigue REMITE_A desde lo encontrado
+    jurisprudencia  busca en index_jurisprudencia (fallos)
+    evaluacion      decide si el contexto alcanza (1 llamada a flash-lite)
+    grafo           SOLO si la evaluación dio insuficiente: Text-to-Cypher (la más cara)
 """
 import os
 from typing import Iterator
@@ -9,7 +32,7 @@ from utils.connectors import get_neo4j_driver, get_gemini_embeddings, get_gemini
 from utils.rag.citas import NOMBRE_NORMA
 from utils.rag.texto import normalizar, formato_articulo
 from utils.rag.llm_io import json_del_llm
-from utils.rag.grafo import etiquetas_ontologia, seguir_remite_a, datos_articulos, entidades_relacionadas
+from utils.rag.grafo import seguir_remite_a, datos_articulos, entidades_relacionadas
 from api.cypher import MotorCypherDinamico
 from langchain_neo4j import Neo4jVector
 
@@ -22,6 +45,7 @@ neo4j_driver = get_neo4j_driver()
 K_VECTORIAL          = 5   # vecinos a recuperar por cada frase de búsqueda
 LONGITUD_MIN_KEYWORD = 4   # palabras del sujeto más cortas se ignoran (poco discriminantes)
 MIN_DOCS_TRAS_FILTRO = 2   # si el filtro por sujeto deja menos, se descarta el filtro (prioriza recall)
+K_JURISPRUDENCIA     = 3   # fallos a recuperar: son doctrina de apoyo, no la fuente principal
 
 # ==========================================
 # 1. MOTOR VECTORIAL
@@ -52,6 +76,45 @@ vector_db = Neo4jVector.from_existing_index(
     retrieval_query=retrieval_query
 )
 retriever = vector_db.as_retriever(search_kwargs={"k": K_VECTORIAL})
+
+# ------------------------------------------------------------------------------------------
+# Motor vectorial de JURISPRUDENCIA (segundo índice, separado del de artículos)
+# ------------------------------------------------------------------------------------------
+# Son 292 fallos que hasta ahora no consultaba nadie. Van por un índice propio y no por el de
+# artículos porque son otra cosa: doctrina de apoyo, no norma vigente.
+#
+# Se devuelve el RESUMEN, no el texto del fallo, por dos razones que se refuerzan:
+#   1. El embedding se calculó sobre el resumen (extract_jurisprudencia.py), así que lo que
+#      matchea es lo que se devuelve. Buscar por resumen y devolver el texto completo sería
+#      devolver algo que nunca participó de la búsqueda.
+#   2. El texto promedia 19.500 caracteres y llega a 286.000. Tres fallos completos harían
+#      estallar el prompt; tres resúmenes son ~1.800 caracteres.
+retrieval_query_jurisprudencia = """
+RETURN
+    "FALLO: " + coalesce(node.tribunal, '') + "\\n" +
+    "FECHA: " + coalesce(node.fecha, '') + "\\n" +
+    "DOCTRINA: " + coalesce(node.resumen, '') AS text,
+    score,
+    {
+        id: node.id,
+        tribunal: coalesce(node.tribunal, ''),
+        fecha: coalesce(node.fecha, ''),
+        tipo: coalesce(node.tipo, ''),
+        rama: coalesce(node.rama, '')
+    } AS metadata
+"""
+
+vector_db_jurisprudencia = Neo4jVector.from_existing_index(
+    embeddings,
+    url=os.getenv("NEO4J_URI"),
+    username=os.getenv("NEO4J_USERNAME"),
+    password=os.getenv("NEO4J_PASSWORD"),
+    index_name="index_jurisprudencia",
+    retrieval_query=retrieval_query_jurisprudencia,
+)
+retriever_jurisprudencia = vector_db_jurisprudencia.as_retriever(
+    search_kwargs={"k": K_JURISPRUDENCIA}
+)
 
 # ==========================================
 # 2. CONTEXTO ACUMULADO
@@ -142,18 +205,22 @@ def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
 # 4. MOTOR CYPHER DINÁMICO (init perezoso)
 # ==========================================
 
-# Carga las etiquetas reales desde Neo4j y arma el motor recién en el primer uso, con
-# caché en módulo: así `import api.recuperacion` (y por lo tanto api.pipeline) funciona
-# con Neo4j apagado y pytest puede coleccionar. El costo se paga en la primera consulta
-# al grafo, no en el arranque de uvicorn.
+# Carga las etiquetas reales desde Neo4j y arma el motor recién en el primer uso, con caché en
+# módulo. La intención es que importar este módulo no toque la base — pero OJO: hoy eso no se
+# cumple, porque `Neo4jVector.from_existing_index()` de más arriba SÍ contacta Neo4j al
+# importar. Es un problema preexistente, anterior al agente, y arreglarlo es otra tarea. Lo
+# que sí logra este init perezoso es que el costo del Cypher dinámico se pague en la primera
+# consulta al grafo y no en el arranque de uvicorn.
 _motor_cypher: MotorCypherDinamico | None = None
 
 def _obtener_motor_cypher() -> MotorCypherDinamico:
     global _motor_cypher
     if _motor_cypher is None:
-        etiquetas = etiquetas_ontologia(neo4j_driver)
-        print(f"[Init] Etiquetas ontológicas cargadas: {etiquetas}")
-        _motor_cypher = MotorCypherDinamico(neo4j_driver, llm, etiquetas)
+        # Recibe `embeddings` y no la lista de etiquetas: el motor recorta el esquema por
+        # pregunta, trayendo solo las 20 etiquetas más cercanas en vez de las 566. Con eso
+        # desapareció también la carga de `etiquetas_ontologia()` en el arranque —y su print
+        # de 566 nombres, que ensuciaba la salida de cada corrida.
+        _motor_cypher = MotorCypherDinamico(neo4j_driver, llm, embeddings)
     return _motor_cypher
 
 # ==========================================
@@ -205,13 +272,17 @@ Devolvé SOLO un JSON con este formato exacto:
         return False, f"Error al evaluar: {e}"
 
 
-def recuperar_contexto(pregunta: str):
-    """Fases 1-6: analiza la pregunta, busca vectorialmente, sigue remisiones, evalúa si
-    alcanza y si no consulta el grafo. No gasta un token de redacción.
+def particular(pregunta: str):
+    """Resuelve una consulta particular: analiza, busca artículos, sigue remisiones, mira
+    jurisprudencia, evalúa si alcanza y —solo si no alcanza— consulta el grafo.
 
-    Generador: yields eventos de progreso ("fase"/"item") y su `return` es el
-    ContextoAcumulado final (ids, textos, fase de origen de cada artículo). Se consume
-    con `yield from` para preservar el orden exacto de los eventos.
+    NO redacta ni gasta un token de redacción: eso lo hace el nodo `sintetizar`, que es
+    común a los tres especialistas.
+
+    Generador: emite eventos de progreso ("fase"/"item") y su `return` es el
+    ContextoAcumulado final (ids, textos, y la fase que trajo cada cosa). Se consume con
+    `yield from` desde un script, o con `_drenar()` desde un nodo del grafo; las dos formas
+    preservan el orden exacto de los eventos.
     """
     yield {"type": "fase", "fase": "analisis", "label": "Analizando la consulta"}
     sujeto, frases_vectoriales = extraer_parametros_vectoriales(pregunta)
@@ -238,6 +309,15 @@ def recuperar_contexto(pregunta: str):
     # Fase 3.5 (primera pasada): remisiones explícitas desde lo recuperado en Fase 2.
     yield {"type": "fase", "fase": "remisiones", "label": "Siguiendo remisiones normativas"}
     yield from _agregar_remisiones(ctx.ids, ctx)
+
+    # Fase 3.6: jurisprudencia. Va ANTES del gate de suficiencia a propósito: si un fallo
+    # resuelve el punto, el gate lo ve y puede ahorrarse el Cypher dinámico.
+    yield {"type": "fase", "fase": "jurisprudencia", "label": "Buscando jurisprudencia"}
+    for doc in retriever_jurisprudencia.invoke(pregunta):
+        tribunal = doc.metadata.get("tribunal", "") or "Tribunal no identificado"
+        fecha = doc.metadata.get("fecha", "")
+        if ctx.agregar(doc.metadata.get("id", ""), doc.page_content, fase="jurisprudencia"):
+            yield {"type": "item", "texto": f"{tribunal}{' — ' + fecha if fecha else ''}"}
 
     # Gate: ¿el contexto vectorial + remisiones ya alcanza? Si sí, se omite el
     # Cypher dinámico (la operación más cara del pipeline).
@@ -267,3 +347,56 @@ def recuperar_contexto(pregunta: str):
             yield from _agregar_remisiones(ids_nuevos_fase3, ctx)
 
     return ctx
+
+
+# ==========================================
+# 7. FUENTES QUE VE EL USUARIO
+# ==========================================
+
+def fuentes_particular(ctx: ContextoAcumulado) -> list[dict]:
+    """Traduce el contexto acumulado a la lista de citas que se le muestra al usuario.
+
+    Vive acá y no en el nodo del grafo porque **es el especialista el que sabe qué recuperó**:
+    sus ids son de dos clases distintas y solo él conoce la diferencia. El nodo se limita a
+    llamar a esta función y poner el resultado en el estado.
+
+    Cada fuente lleva un `tipo`, que es lo que le permite al frontend no escribir "Art." delante
+    de un fallo:
+        articulo -> {"numero": "77",                     "norma": "Ley 19.550"}
+        fallo    -> {"numero": "CNCiv. Sala A",          "norma": "12/03/2015"}
+
+    El `or art_id` del final es la red: si un id no aparece en el grafo (no debería pasar, pero
+    pasaría con datos inconsistentes) se muestra el id crudo en vez de romper la respuesta.
+    """
+    ids_fallos = [i for i in ctx.ids if ctx.fases.get(i) == "jurisprudencia"]
+    ids_articulos = [i for i in ctx.ids if i not in ids_fallos]
+
+    datos_art = datos_articulos(neo4j_driver, ids_articulos)
+    datos_fallo = _datos_fallos(ids_fallos)
+
+    fuentes = []
+    for nodo_id in ctx.ids:
+        if nodo_id in datos_fallo:
+            d = datos_fallo[nodo_id]
+            fuentes.append({"id": nodo_id, "tipo": "fallo",
+                            "numero": d["tribunal"] or nodo_id, "norma": d["fecha"] or "Jurisprudencia"})
+        else:
+            d = datos_art.get(nodo_id, {})
+            fuentes.append({"id": nodo_id, "tipo": "articulo",
+                            "numero": d.get("numero") or nodo_id, "norma": d.get("norma") or "?"})
+    return fuentes
+
+
+def _datos_fallos(ids: list[str]) -> dict[str, dict]:
+    """{id: {"tribunal", "fecha"}} para los fallos dados. Usa el índice `jurisprudencia_id`,
+    que es el único índice sobre `.id` que existe en el grafo."""
+    if not ids:
+        return {}
+    query = """
+    UNWIND $ids AS fallo_id
+    MATCH (j:Jurisprudencia {id: fallo_id})
+    RETURN fallo_id, coalesce(j.tribunal, '') AS tribunal, coalesce(j.fecha, '') AS fecha
+    """
+    with neo4j_driver.session() as session:
+        return {r["fallo_id"]: {"tribunal": r["tribunal"], "fecha": r["fecha"]}
+                for r in session.run(query, ids=ids)}

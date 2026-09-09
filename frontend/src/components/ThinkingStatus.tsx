@@ -6,10 +6,20 @@
 
 import type { Fase } from "@/lib/types";
 
+// El id de la fase es nuestro; el cartel es del usuario. Varios ids comparten texto a
+// propósito: que el sistema esté mirando fallos en vez de articulado es una distinción
+// interna —sirve para la telemetría— pero para el usuario sigue siendo buscar información.
+//
+// "Calculando" es el único cartel con texto propio entre los nuevos: la ruta determinista no
+// está buscando nada, está haciendo una cuenta, y decir "Buscando información" sería falso.
 const LABELS: Record<string, string> = {
+  clasificar: "Analizando la pregunta",
   analisis: "Pensando",
   vectorial: "Buscando información",
   remisiones: "Buscando información",
+  jurisprudencia: "Buscando información",
+  entidades: "Buscando información",
+  herramientas: "Calculando",
   evaluacion: "Analizando lo encontrado",
   grafo: "Profundizando en las fuentes",
   redaccion: "Redactando la respuesta",
