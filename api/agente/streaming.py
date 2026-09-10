@@ -17,17 +17,46 @@ EL CONTRATO SSE, que no cambió ni una coma:
     {"type": "fin",     "articulos": int, "segundos": float}
     {"type": "error",   "mensaje": str}
 """
+import threading
 import time
 import uuid
 from typing import Iterator
+from weakref import WeakValueDictionary
 
 from langchain_core.messages import HumanMessage
 
 from api.agente.grafo import APP
-from api.consumo import RegistroDeConsumo, asegurar_conversacion, guardar_turno
+from api.consumo import RegistroDeConsumo, alias_de, asegurar_conversacion, guardar_turno
 
 
-def responder_stream(pregunta: str, thread_id: str | None = None) -> Iterator[dict]:
+# UN LOCK POR CONVERSACIÓN, para que dos preguntas del mismo hilo no se pisen (ver el detalle
+# en `responder_stream`). Alcanza con uno sincrónico: FastAPI ya corre el endpoint —que es
+# `def`, no `async def`— en un hilo del pool, así que bloquear acá no congela el event loop;
+# frena a ese hilo, que es exactamente lo que se busca.
+#
+# WeakValueDictionary y no un dict común para que el registro se limpie solo: mientras un
+# pedido tiene el lock en la mano lo mantiene vivo, y cuando la última referencia se va, la
+# entrada desaparece. Con un dict común quedaría una entrada por conversación para siempre.
+_locks_por_hilo: "WeakValueDictionary[str, threading.Lock]" = WeakValueDictionary()
+_guardia_locks = threading.Lock()
+
+
+def _lock_del_hilo(hilo: str) -> threading.Lock:
+    """El lock de esa conversación, creándolo la primera vez.
+
+    El `_guardia_locks` protege el hueco entre consultar y crear: sin él, dos pedidos
+    simultáneos del mismo hilo podrían fabricar dos locks distintos y no excluirse entre sí,
+    que es justo lo que se quiere evitar.
+    """
+    with _guardia_locks:
+        lock = _locks_por_hilo.get(hilo)
+        if lock is None:
+            lock = threading.Lock()
+            _locks_por_hilo[hilo] = lock
+        return lock
+
+
+def responder_stream(pregunta: str, thread_id: str | None = None, identidad=None) -> Iterator[dict]:
     """Corre el agente y va emitiendo los eventos SSE a medida que ocurren.
 
     `thread_id` identifica la conversación en las tres capas a la vez: el checkpointer de
@@ -72,46 +101,71 @@ def responder_stream(pregunta: str, thread_id: str | None = None) -> Iterator[di
     t0 = time.time()
     hilo = thread_id or str(uuid.uuid4())
 
-    # LA CONTABILIDAD VIVE ACÁ Y NO EN LOS NODOS. Esta es la capa que ya habla con el mundo de
-    # afuera; los nodos y los especialistas siguen sin saber que existe una base de costos.
-    # Si no hay POSTGRES_URL, las tres funciones de consumo son no-ops y esto no cambia nada.
-    hay_base = asegurar_conversacion(hilo, pregunta)
-    registro = RegistroDeConsumo(hilo)
+    # SERIALIZADO POR CONVERSACIÓN. Sin esto, dos preguntas seguidas sobre el mismo `thread_id`
+    # se pisan: el evento `fin` puede llegarle al usuario ANTES de que el estado del turno quede
+    # persistido, porque LangGraph vacía el writer en tiempo real mientras el nodo sigue
+    # corriendo (`sintetizar` todavía tiene que compactar la conversación, que a veces llama al
+    # modelo, y recién después devuelve y se escribe el checkpoint). Si en esa ventana entra una
+    # pregunta nueva, el clasificador del turno siguiente lee `mensajes` sin la respuesta que el
+    # usuario acaba de leer, y una referencia como «¿y eso qué significa?» no se resuelve.
+    #
+    # Se toma DESPUÉS del cronómetro a propósito: si el turno tuvo que esperar su lugar en la
+    # fila, esa espera es parte de lo que el usuario esperó y tiene que verse en `segundos`.
+    #
+    # LÍMITE CONOCIDO: esto serializa dentro de UN proceso. En Cloud Run con varias instancias,
+    # dos pedidos del mismo hilo pueden caer en instancias distintas y el lock no los ve. Para
+    # ese escenario hace falta afinidad de sesión o un lock en la base; queda anotado y no se
+    # resuelve acá porque hoy corre en un proceso.
+    with _lock_del_hilo(hilo):
 
-    # El callback se instala SOLO si la conversación quedó registrada. Sin esa fila, cada
-    # llamada al modelo intentaría insertar contra una clave foránea que no existe: seis
-    # viajes fallidos a Postgres por turno, seis warnings, y ninguna fila escrita igual.
-    # Es lo que pasa, por ejemplo, si el thread_id no es un UUID válido — `conversaciones.id`
-    # es uuid, y el frontend siempre manda un crypto.randomUUID(), pero el body lo puede
-    # mandar cualquiera.
-    config = {"configurable": {"thread_id": hilo}}
-    if hay_base:
-        config["callbacks"] = [registro]
-    entrada = {
-        "pregunta": pregunta,
-        "mensajes": [HumanMessage(content=pregunta)],
-    }
+        # LA CONTABILIDAD VIVE ACÁ Y NO EN LOS NODOS. Esta es la capa que ya habla con el mundo de
+        # afuera; los nodos y los especialistas siguen sin saber que existe una base de costos.
+        # Si no hay POSTGRES_URL, las tres funciones de consumo son no-ops y esto no cambia nada.
+        # `identidad` viene de api/auth.py y la pone server.py: es None mientras la
+        # autenticación esté apagada, y entonces todo se atribuye al usuario de desarrollo.
+        hay_base = asegurar_conversacion(hilo, pregunta, identidad)
+        registro = RegistroDeConsumo(hilo)
 
-    # Se acumulan los tokens y las fuentes al pasar, para poder guardar el turno al cerrar sin
-    # volver a pedirle nada al grafo. Es leer lo que ya está saliendo, no trabajo extra.
-    respuesta, fuentes = [], []
-    for evento in APP.stream(entrada, config, stream_mode="custom"):
-        if evento.get("type") == "token":
-            respuesta.append(evento["texto"])
-        elif evento.get("type") == "fuentes":
-            fuentes = evento["articulos"]
-        elif evento.get("type") == "fin":
-            # `sintetizar` emite el evento con lo que sabe —cuántas fuentes— y el tiempo se
-            # completa acá, que es donde está el reloj del turno. Se copia el dict en vez de
-            # mutarlo: el objeto viene del stream de LangGraph y no es nuestro.
-            evento = {**evento, "segundos": round(time.time() - t0, 1)}
-        yield evento
+        # El alias va DESPUÉS de asegurar la conversación, que es la que crea la fila del
+        # usuario: así `alias_de` es un SELECT y no tiene que volver a resolver la identidad.
+        # Sin base devuelve None y el prompt de redacción queda igual al de siempre.
+        alias = alias_de(identidad) or ""
 
-    if hay_base:
-        # Las rutas no viajan por el stream —son un detalle interno— así que se leen del estado
-        # ya persistido por el checkpointer, que es su lugar natural.
-        try:
-            rutas = APP.get_state(config).values.get("rutas", [])
-        except Exception:
-            rutas = []
-        guardar_turno(hilo, pregunta, "".join(respuesta), rutas, fuentes, registro)
+        # El callback se instala SOLO si la conversación quedó registrada. Sin esa fila, cada
+        # llamada al modelo intentaría insertar contra una clave foránea que no existe: seis
+        # viajes fallidos a Postgres por turno, seis warnings, y ninguna fila escrita igual.
+        # Es lo que pasa, por ejemplo, si el thread_id no es un UUID válido — `conversaciones.id`
+        # es uuid, y el frontend siempre manda un crypto.randomUUID(), pero el body lo puede
+        # mandar cualquiera.
+        config = {"configurable": {"thread_id": hilo}}
+        if hay_base:
+            config["callbacks"] = [registro]
+        entrada = {
+            "pregunta": pregunta,
+            "mensajes": [HumanMessage(content=pregunta)],
+            "alias": alias,
+        }
+
+        # Se acumulan los tokens y las fuentes al pasar, para poder guardar el turno al cerrar sin
+        # volver a pedirle nada al grafo. Es leer lo que ya está saliendo, no trabajo extra.
+        respuesta, fuentes = [], []
+        for evento in APP.stream(entrada, config, stream_mode="custom"):
+            if evento.get("type") == "token":
+                respuesta.append(evento["texto"])
+            elif evento.get("type") == "fuentes":
+                fuentes = evento["articulos"]
+            elif evento.get("type") == "fin":
+                # `sintetizar` emite el evento con lo que sabe —cuántas fuentes— y el tiempo se
+                # completa acá, que es donde está el reloj del turno. Se copia el dict en vez de
+                # mutarlo: el objeto viene del stream de LangGraph y no es nuestro.
+                evento = {**evento, "segundos": round(time.time() - t0, 1)}
+            yield evento
+
+        if hay_base:
+            # Las rutas no viajan por el stream —son un detalle interno— así que se leen del estado
+            # ya persistido por el checkpointer, que es su lugar natural.
+            try:
+                rutas = APP.get_state(config).values.get("rutas", [])
+            except Exception:
+                rutas = []
+            guardar_turno(hilo, pregunta, "".join(respuesta), rutas, fuentes, registro)

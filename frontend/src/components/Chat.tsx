@@ -120,7 +120,14 @@ export function Chat({ conversation, streaming, onSend, onStop }: ChatProps) {
         <Logo size="text-xl" tone="light" />
       </header>
 
-      {messages.length === 0 ? (
+      {/* Una conversación abierta pero sin cargar no es una conversación vacía: sus mensajes
+          están viajando desde Postgres. Mostrar la bienvenida mientras llegan haría parpadear la
+          pantalla de inicio encima de una charla que existe. */}
+      {conversation && !conversation.cargada ? (
+        <div className="flex flex-1 items-center justify-center">
+          <p className="shimmer-text text-sm font-medium">Abriendo la consulta…</p>
+        </div>
+      ) : messages.length === 0 ? (
         <Welcome onSend={onSend} />
       ) : (
         <div

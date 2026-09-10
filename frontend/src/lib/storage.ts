@@ -11,7 +11,11 @@ export function loadConversations(): Conversation[] {
     const raw = window.localStorage.getItem(KEY);
     if (!raw) return [];
     const data = JSON.parse(raw);
-    return Array.isArray(data) ? data : [];
+    if (!Array.isArray(data)) return [];
+    // `cargada: true` por defecto: una conversación guardada en el navegador YA tiene sus
+    // mensajes acá, no hay nada que ir a buscar. Lo que se guardó antes de que ese campo
+    // existiera llegaría como undefined, y el chat la mostraría cargando para siempre.
+    return data.map((c) => ({ ...c, cargada: c.cargada ?? true }));
   } catch {
     return [];
   }

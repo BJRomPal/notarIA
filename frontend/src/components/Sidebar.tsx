@@ -1,18 +1,34 @@
 "use client";
 
-import type { Conversation } from "@/lib/types";
+import type { Conversation, Usuario } from "@/lib/types";
 import { Logo, LogoMark } from "./Logo";
+import { UserMenu } from "./UserMenu";
 
 interface SidebarProps {
   conversations: Conversation[];
   activeId: string | null;
   apiOk: boolean | null;
+  base: boolean | null;
+  usuario: Usuario | null;
   onSelect: (id: string) => void;
   onNew: () => void;
   onDelete: (id: string) => void;
+  onEditarAlias: () => void;
+  onVerConsumos: () => void;
 }
 
-export function Sidebar({ conversations, activeId, apiOk, onSelect, onNew, onDelete }: SidebarProps) {
+export function Sidebar({
+  conversations,
+  activeId,
+  apiOk,
+  base,
+  usuario,
+  onSelect,
+  onNew,
+  onDelete,
+  onEditarAlias,
+  onVerConsumos,
+}: SidebarProps) {
   return (
     <aside className="flex h-full w-72 shrink-0 flex-col bg-gradient-to-b from-brand-950 via-brand-950 to-[#0a1220] text-slate-200 max-md:hidden">
       <div className="flex items-center gap-2.5 px-5 pt-5 pb-4">
@@ -80,21 +96,14 @@ export function Sidebar({ conversations, activeId, apiOk, onSelect, onNew, onDel
         ))}
       </nav>
 
-      <footer className="border-t border-brand-800/60 px-5 py-3.5 text-xs text-slate-500">
-        <div className="flex items-center gap-2">
-          <span
-            className={`inline-block h-2 w-2 rounded-full ${
-              apiOk === null
-                ? "bg-slate-500"
-                : apiOk
-                  ? "bg-emerald-400 shadow-[0_0_6px_rgba(52,211,153,0.7)]"
-                  : "bg-red-400"
-            }`}
-          />
-          {apiOk === null ? "Verificando conexión…" : apiOk ? "En línea" : "Sin conexión"}
-        </div>
-        <p className="mt-1.5 text-slate-600">Derecho argentino</p>
-      </footer>
+      <UserMenu
+        alias={usuario?.alias ?? null}
+        email={usuario?.email ?? ""}
+        apiOk={apiOk}
+        base={base}
+        onEditarAlias={onEditarAlias}
+        onVerConsumos={onVerConsumos}
+      />
     </aside>
   );
 }

@@ -56,8 +56,13 @@ _precios: dict[str, tuple[float, float]] | None = None
 USUARIO_DESARROLLO = uuid.UUID("00000000-0000-0000-0000-000000000001")
 
 
-def _obtener_pool():
-    """El pool de conexiones, o None si no hay base configurada o si ya falló antes."""
+def obtener_pool():
+    """El pool de conexiones, o None si no hay base configurada o si ya falló antes.
+
+    Es público —y no `_obtener_pool`— porque lo comparte `api/rutas/cuenta.py`, que lee lo que
+    este módulo escribe. Un pool por proceso, no uno por consumidor: son cuatro conexiones en
+    total, no cuatro por módulo.
+    """
     global _pool, _pool_roto
     if _pool is not None or _pool_roto:
         return _pool
@@ -85,7 +90,7 @@ def _precios_de(modelo: str) -> tuple[float, float]:
     global _precios
     if _precios is None:
         _precios = {}
-        pool = _obtener_pool()
+        pool = obtener_pool()
         if pool:
             try:
                 with pool.connection() as conn:
@@ -118,30 +123,64 @@ def calcular_costo(modelo: str, tokens_entrada: int, tokens_salida: int) -> floa
 # ALTA DE LA CONVERSACIÓN
 # ==========================================================================================
 
-def asegurar_conversacion(thread_id: str, titulo: str) -> bool:
-    """Crea el usuario de desarrollo y la conversación si no existen. Devuelve si hay base.
+def id_usuario(conn, identidad) -> uuid.UUID:
+    """El uuid interno del usuario, creándolo la primera vez que aparece.
+
+    `identidad` es un `api.auth.Identidad` (o None en desarrollo, sin autenticación).
+
+    También es el punto por donde `api/rutas/cuenta.py` resuelve de quién son las conversaciones
+    que pide: esa resolución tiene que ser ESTA y no una copia, porque es la que decide qué fila
+    de `usuarios` se le atribuye a un token.
+
+    LA CLAVE ES `id_externo`, NO EL EMAIL. El `sub` del token es estable aunque la persona
+    cambie de dirección de correo; el email no. Por eso el ON CONFLICT va sobre `id_externo` y
+    el email se actualiza a lo que diga el token — así un cambio de mail no crea un usuario
+    nuevo ni deja el viejo desactualizado.
+    """
+    if identidad is None:
+        conn.execute(
+            "INSERT INTO notaria.usuarios (id, nombre) VALUES (%s, %s) "
+            "ON CONFLICT (id) DO NOTHING",
+            (USUARIO_DESARROLLO, "Usuario de desarrollo"),
+        )
+        return USUARIO_DESARROLLO
+
+    fila = conn.execute(
+        "INSERT INTO notaria.usuarios (id_externo, email) VALUES (%s, %s) "
+        "ON CONFLICT (id_externo) DO UPDATE SET email = EXCLUDED.email "
+        "RETURNING id",
+        (identidad.id_externo, identidad.email or None),
+    ).fetchone()
+    # `fila[0]` y no `fila["id"]`: el pool se abre sin `row_factory`, así que psycopg3 devuelve
+    # tuplas. Acceder por nombre levanta TypeError, y como esta rama solo corre con la
+    # autenticación ENCENDIDA, el fallo quedaba escondido: `asegurar_conversacion` lo atrapa,
+    # devuelve False, y la contabilidad entera se apaga con un warning. Tocar esto es apagarla.
+    return fila[0]
+
+
+def asegurar_conversacion(thread_id: str, titulo: str, identidad=None) -> bool:
+    """Crea el usuario y la conversación si no existen. Devuelve si hay base.
 
     Se llama una vez por turno, antes de la primera llamada al modelo. Tiene que ir primero
     porque `llamadas_llm.conversacion_id` es NOT NULL y apunta acá: sin esta fila, ninguna
     fila de consumo se puede insertar.
 
-    Es idempotente (ON CONFLICT DO NOTHING), así que llamarla en cada turno de una conversación
-    de veinte turnos cuesta veinte consultas triviales y no ensucia nada.
+    `identidad` viene de `api/auth.py` y es None cuando la autenticación está apagada, que es
+    el modo de desarrollo: ahí todo se atribuye al usuario de desarrollo, como hasta ahora.
+
+    Es idempotente (ON CONFLICT), así que llamarla en cada turno de una conversación de veinte
+    turnos cuesta veinte consultas triviales y no ensucia nada.
     """
-    pool = _obtener_pool()
+    pool = obtener_pool()
     if not pool:
         return False
     try:
         with pool.connection() as conn:
-            conn.execute(
-                "INSERT INTO notaria.usuarios (id, nombre) VALUES (%s, %s) "
-                "ON CONFLICT (id) DO NOTHING",
-                (USUARIO_DESARROLLO, "Usuario de desarrollo"),
-            )
+            usuario_id = id_usuario(conn, identidad)
             conn.execute(
                 "INSERT INTO notaria.conversaciones (id, usuario_id, titulo) VALUES (%s, %s, %s) "
                 "ON CONFLICT (id) DO UPDATE SET actualizada_en = now()",
-                (thread_id, USUARIO_DESARROLLO, titulo[:200]),
+                (thread_id, usuario_id, titulo[:200]),
             )
         return True
     except Exception as e:
@@ -152,6 +191,33 @@ def asegurar_conversacion(thread_id: str, titulo: str) -> bool:
 # ==========================================================================================
 # EL CALLBACK
 # ==========================================================================================
+
+def alias_de(identidad) -> str | None:
+    """Cómo quiere el usuario que el agente lo llame, o None si no lo eligió.
+
+    Se lee DESPUÉS de `asegurar_conversacion`, que es la que crea la fila: acá alcanza un SELECT
+    y no hace falta repetir el upsert de `id_usuario`.
+
+    Falla en silencio como todo este módulo, y acá es exactamente lo que se quiere: si no se
+    puede leer el alias, el agente responde igual, sin tratar al usuario por su nombre. Perder
+    el trato no vale frenar una consulta.
+    """
+    pool = obtener_pool()
+    if not pool:
+        return None
+    try:
+        with pool.connection() as conn:
+            if identidad is None:
+                fila = conn.execute("SELECT alias FROM notaria.usuarios WHERE id = %s",
+                                    (USUARIO_DESARROLLO,)).fetchone()
+            else:
+                fila = conn.execute("SELECT alias FROM notaria.usuarios WHERE id_externo = %s",
+                                    (identidad.id_externo,)).fetchone()
+        return (fila[0] or None) if fila else None
+    except Exception as e:
+        _log.warning(f"No se pudo leer el alias: {e}")
+        return None
+
 
 class RegistroDeConsumo(BaseCallbackHandler):
     """Escribe una fila en `notaria.llamadas_llm` por cada llamada al modelo de un turno.
@@ -249,7 +315,7 @@ class RegistroDeConsumo(BaseCallbackHandler):
 
     def _escribir(self, *, nodo, modelo, tokens_entrada, tokens_salida,
                   tokens_pensamiento, latencia_ms, error):
-        pool = _obtener_pool()
+        pool = obtener_pool()
         if not pool:
             return
         costo = calcular_costo(modelo, tokens_entrada, tokens_salida)
@@ -289,7 +355,7 @@ def guardar_turno(conversacion_id: str, pregunta: str, respuesta: str,
     distintas: esto es el registro que el usuario relee, aquello es la memoria de trabajo del
     modelo.
     """
-    pool = _obtener_pool()
+    pool = obtener_pool()
     if not pool:
         return
     try:
