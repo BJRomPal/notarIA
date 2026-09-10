@@ -15,6 +15,8 @@ interface SidebarProps {
   onDelete: (id: string) => void;
   onEditarAlias: () => void;
   onVerConsumos: () => void;
+  onVerInventario: () => void;
+  onVerGuia: () => void;
 }
 
 export function Sidebar({
@@ -28,6 +30,8 @@ export function Sidebar({
   onDelete,
   onEditarAlias,
   onVerConsumos,
+  onVerInventario,
+  onVerGuia,
 }: SidebarProps) {
   return (
     <aside className="flex h-full w-72 shrink-0 flex-col bg-gradient-to-b from-brand-950 via-brand-950 to-[#0a1220] text-slate-200 max-md:hidden">
@@ -103,6 +107,8 @@ export function Sidebar({
         base={base}
         onEditarAlias={onEditarAlias}
         onVerConsumos={onVerConsumos}
+        onVerInventario={onVerInventario}
+        onVerGuia={onVerGuia}
       />
     </aside>
   );

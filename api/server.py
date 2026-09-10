@@ -30,13 +30,15 @@ from pydantic import BaseModel
 from api.agente.streaming import responder_stream
 from api.auth import IdentidadInvalida, autenticacion_activa, identidad
 from api.consumo import obtener_pool
-from api.rutas import cuenta
+from api.rutas import catalogo, cuenta
 
 app = FastAPI(title="NotarIA API")
 
-# Las rutas de la cuenta del usuario viven en su propio módulo: son lecturas de Postgres y no
-# tienen nada que ver con el agente, que es de lo único que habla este archivo.
+# El resto de los endpoints vive en api/rutas/, uno por origen de datos: `cuenta` lee Postgres
+# (alias, conversaciones, consumo) y `catalogo` lee Neo4j (el inventario y el contenido de una
+# fuente citada). Ninguno tiene que ver con el agente, que es de lo único que habla este archivo.
 app.include_router(cuenta.router)
+app.include_router(catalogo.router)
 
 # El frontend corre en otro puerto (Next.js en 3000); en desarrollo se permite todo
 # origen porque la API no maneja credenciales.

@@ -8,6 +8,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { AliasDialog } from "@/components/AliasDialog";
 import { Chat } from "@/components/Chat";
 import { ConsumoPanel } from "@/components/ConsumoPanel";
+import { GuiaPrompts } from "@/components/GuiaPrompts";
+import { Inventario } from "@/components/Inventario";
 import { Sidebar } from "@/components/Sidebar";
 import { verSalud, verUsuario } from "@/lib/api";
 import type { AssistantMessage, Conversation, Usuario } from "@/lib/types";
@@ -20,6 +22,8 @@ export default function Home() {
   const [usuario, setUsuario] = useState<Usuario | null>(null);
   const [panelAlias, setPanelAlias] = useState(false);
   const [panelConsumos, setPanelConsumos] = useState(false);
+  const [panelInventario, setPanelInventario] = useState(false);
+  const [panelGuia, setPanelGuia] = useState(false);
 
   // Id de la conversación que está recibiendo el stream en este momento.
   const streamConvIdRef = useRef<string | null>(null);
@@ -144,8 +148,16 @@ export default function Home() {
         onDelete={borrar}
         onEditarAlias={() => setPanelAlias(true)}
         onVerConsumos={() => setPanelConsumos(true)}
+        onVerInventario={() => setPanelInventario(true)}
+        onVerGuia={() => setPanelGuia(true)}
       />
-      <Chat conversation={active} streaming={streaming} onSend={handleSend} onStop={stop} />
+      <Chat
+        conversation={active}
+        streaming={streaming}
+        onSend={handleSend}
+        onStop={stop}
+        onVerGuia={() => setPanelGuia(true)}
+      />
 
       <AliasDialog
         abierto={panelAlias}
@@ -155,6 +167,12 @@ export default function Home() {
         onGuardado={(alias) => setUsuario((u) => (u ? { ...u, alias, necesita_alias: false } : u))}
       />
       <ConsumoPanel abierto={panelConsumos} onCerrar={() => setPanelConsumos(false)} />
+      <Inventario abierto={panelInventario} onCerrar={() => setPanelInventario(false)} />
+      <GuiaPrompts
+        abierto={panelGuia}
+        onCerrar={() => setPanelGuia(false)}
+        onVerInventario={() => setPanelInventario(true)}
+      />
     </div>
   );
 }

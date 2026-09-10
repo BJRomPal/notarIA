@@ -58,9 +58,16 @@ interface ChatProps {
   streaming: boolean;
   onSend: (texto: string) => void;
   onStop: () => void;
+  onVerGuia: () => void;
 }
 
-function Welcome({ onSend }: { onSend: (texto: string) => void }) {
+function Welcome({
+  onSend,
+  onVerGuia,
+}: {
+  onSend: (texto: string) => void;
+  onVerGuia: () => void;
+}) {
   return (
     <div className="relative flex h-full flex-col items-center justify-center overflow-hidden px-4">
       {/* Halos decorativos */}
@@ -92,12 +99,21 @@ function Welcome({ onSend }: { onSend: (texto: string) => void }) {
             </button>
           ))}
         </div>
+
+        {/* El segundo lugar desde donde se llega a la guía, además del menú. Va acá porque es
+            donde está el usuario que todavía no preguntó nada, que es justo a quien más le sirve. */}
+        <button
+          onClick={onVerGuia}
+          className="mt-6 text-xs text-slate-400 underline underline-offset-4 transition hover:text-accent-600"
+        >
+          Cómo preguntarle a NotarIA
+        </button>
       </div>
     </div>
   );
 }
 
-export function Chat({ conversation, streaming, onSend, onStop }: ChatProps) {
+export function Chat({ conversation, streaming, onSend, onStop, onVerGuia }: ChatProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickRef = useRef(true);
 
@@ -128,7 +144,7 @@ export function Chat({ conversation, streaming, onSend, onStop }: ChatProps) {
           <p className="shimmer-text text-sm font-medium">Abriendo la consulta…</p>
         </div>
       ) : messages.length === 0 ? (
-        <Welcome onSend={onSend} />
+        <Welcome onSend={onSend} onVerGuia={onVerGuia} />
       ) : (
         <div
           ref={scrollRef}

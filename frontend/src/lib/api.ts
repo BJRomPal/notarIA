@@ -10,7 +10,16 @@
 // login. Si igual apareciera un 401, cae en el error genérico y se ve el mensaje del servidor,
 // que es lo correcto para algo que no debería pasar.
 
-import type { Conversation, MensajeGuardado, ResumenConsumo, Usuario } from "./types";
+import type {
+  ArticuloCatalogo,
+  Conversation,
+  DetalleFuente,
+  FalloCatalogo,
+  MensajeGuardado,
+  NormaCatalogo,
+  ResumenConsumo,
+  Usuario,
+} from "./types";
 
 /** Error con el mensaje que mandó el servidor, no con "Failed to fetch". */
 export class ErrorApi extends Error {
@@ -81,6 +90,30 @@ export function borrarConversacion(id: string) {
 
 export function verConsumo() {
   return pedir<ResumenConsumo>("/consumo");
+}
+
+/** Las 197 normas con su conteo de artículos. Se piden una vez y se filtran en el navegador. */
+export function listarNormas() {
+  return pedir<NormaCatalogo[]>("/catalogo/normas");
+}
+
+/** Los artículos de una norma. Se piden al desplegarla: el CCyCN solo tiene 2.674. */
+export function listarArticulos(normaId: string) {
+  return pedir<ArticuloCatalogo[]>(`/catalogo/normas/${encodeURIComponent(normaId)}/articulos`);
+}
+
+export function listarFallos() {
+  return pedir<FalloCatalogo[]>("/catalogo/fallos");
+}
+
+/** El contenido de una fuente citada. Un solo endpoint para los tres tipos. */
+export function verFuente(tipo: string, id: string) {
+  return pedir<DetalleFuente>(`/fuente/${tipo}/${encodeURIComponent(id)}`);
+}
+
+/** El texto literal de un fallo, que se pide solo si el usuario lo pide. */
+export function verTextoFallo(id: string) {
+  return pedir<{ texto: string }>(`/fuente/fallo/${encodeURIComponent(id)}/texto`);
 }
 
 /** Convierte los mensajes del servidor a los del chat.

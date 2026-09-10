@@ -20,6 +20,8 @@ interface UserMenuProps {
   base: boolean | null;
   onEditarAlias: () => void;
   onVerConsumos: () => void;
+  onVerInventario: () => void;
+  onVerGuia: () => void;
 }
 
 function Opcion({
@@ -49,6 +51,8 @@ export function UserMenu({
   base,
   onEditarAlias,
   onVerConsumos,
+  onVerInventario,
+  onVerGuia,
 }: UserMenuProps) {
   const [abierto, setAbierto] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
@@ -104,6 +108,40 @@ export function UserMenu({
               Mis consumos
             </Opcion>
           )}
+
+          {/* El inventario y la guía NO dependen de Postgres: el catálogo sale de Neo4j y la guía
+              es texto fijo. Por eso quedan fuera del `base &&`. */}
+          <Opcion
+            onClick={() => {
+              setAbierto(false);
+              onVerInventario();
+            }}
+            icono={
+              <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+                <path d="M10.75 16.82A7.462 7.462 0 0 1 15 15.5c.71 0 1.396.098 2.046.282A.75.75 0 0 0 18 15.06v-11a.75.75 0 0 0-.546-.721A9.006 9.006 0 0 0 15 3a8.963 8.963 0 0 0-4.25 1.065V16.82ZM9.25 4.065A8.963 8.963 0 0 0 5 3c-.85 0-1.673.118-2.454.339A.75.75 0 0 0 2 4.06v11a.75.75 0 0 0 .954.721A7.506 7.506 0 0 1 5 15.5c1.579 0 3.042.487 4.25 1.32V4.065Z" />
+              </svg>
+            }
+          >
+            Qué hay en la base
+          </Opcion>
+
+          <Opcion
+            onClick={() => {
+              setAbierto(false);
+              onVerGuia();
+            }}
+            icono={
+              <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4">
+                <path
+                  fillRule="evenodd"
+                  d="M18 10a8 8 0 1 1-16 0 8 8 0 0 1 16 0ZM8.94 6.94a.75.75 0 1 1-1.061-1.061 3 3 0 1 1 2.871 5.026v.345a.75.75 0 0 1-1.5 0v-.5c0-.72.57-1.172 1.081-1.287A1.5 1.5 0 1 0 8.94 6.94ZM10 15a1 1 0 1 0 0-2 1 1 0 0 0 0 2Z"
+                  clipRule="evenodd"
+                />
+              </svg>
+            }
+          >
+            Cómo preguntar
+          </Opcion>
         </div>
       )}
 
