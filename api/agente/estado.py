@@ -115,6 +115,12 @@ class EstadoAgente(TypedDict):
     respuesta  El texto final. Lo escribe `sintetizar`. Hoy lo consume el propio nodo para
                guardarlo en `mensajes`; queda en el estado porque es lo que se persistirá en
                `notaria.mensajes` cuando exista esa tabla.
+
+    alias      Cómo quiere el usuario que el agente lo llame, o "" si no lo eligió. Lo pone el
+               adaptador de streaming —que es el único que habla con Postgres— y lo lee
+               `sintetizar`. Es del usuario y no del turno, pero viaja acá igual: el estado es
+               la única vía por la que un nodo recibe algo, y el redactor no tiene por qué
+               saber que existe una tabla de usuarios.
     """
     pregunta: str
     consulta: str
@@ -124,6 +130,7 @@ class EstadoAgente(TypedDict):
     contexto: Annotated[list[str], acumular]
     fuentes: Annotated[list[dict], acumular]
     respuesta: str
+    alias: str
 
 
 # Las tres rutas posibles. Se define acá y no en el clasificador porque la usan los dos: el

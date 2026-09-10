@@ -67,15 +67,27 @@ RETURN
     }} AS metadata
 """
 
-vector_db = Neo4jVector.from_existing_index(
-    embeddings,
-    url=os.getenv("NEO4J_URI"),
-    username=os.getenv("NEO4J_USERNAME"),
-    password=os.getenv("NEO4J_PASSWORD"),
-    index_name="index_articulos",
-    retrieval_query=retrieval_query
-)
-retriever = vector_db.as_retriever(search_kwargs={"k": K_VECTORIAL})
+# INIT PEREZOSO, mismo patrón que `_obtener_motor_cypher()` más abajo. `from_existing_index()`
+# NO es un constructor barato: consulta a Neo4j los metadatos del índice, así que llamarlo a
+# nivel de módulo hacía que `import api.agente.grafo` contactara la base dos veces —una por
+# índice— antes de ejecutar una sola línea. Eso obligaba a tener Aura viva para importar el
+# agente, que es lo que vuelve lento y frágil cualquier test.
+_retriever = None
+
+def _obtener_retriever():
+    """El retriever de artículos, construido en el primer uso y cacheado en módulo."""
+    global _retriever
+    if _retriever is None:
+        vector_db = Neo4jVector.from_existing_index(
+            embeddings,
+            url=os.getenv("NEO4J_URI"),
+            username=os.getenv("NEO4J_USERNAME"),
+            password=os.getenv("NEO4J_PASSWORD"),
+            index_name="index_articulos",
+            retrieval_query=retrieval_query,
+        )
+        _retriever = vector_db.as_retriever(search_kwargs={"k": K_VECTORIAL})
+    return _retriever
 
 # ------------------------------------------------------------------------------------------
 # Motor vectorial de JURISPRUDENCIA (segundo índice, separado del de artículos)
@@ -104,17 +116,24 @@ RETURN
     } AS metadata
 """
 
-vector_db_jurisprudencia = Neo4jVector.from_existing_index(
-    embeddings,
-    url=os.getenv("NEO4J_URI"),
-    username=os.getenv("NEO4J_USERNAME"),
-    password=os.getenv("NEO4J_PASSWORD"),
-    index_name="index_jurisprudencia",
-    retrieval_query=retrieval_query_jurisprudencia,
-)
-retriever_jurisprudencia = vector_db_jurisprudencia.as_retriever(
-    search_kwargs={"k": K_JURISPRUDENCIA}
-)
+_retriever_jurisprudencia = None
+
+def _obtener_retriever_jurisprudencia():
+    """El retriever de fallos, construido en el primer uso y cacheado en módulo."""
+    global _retriever_jurisprudencia
+    if _retriever_jurisprudencia is None:
+        vector_db = Neo4jVector.from_existing_index(
+            embeddings,
+            url=os.getenv("NEO4J_URI"),
+            username=os.getenv("NEO4J_USERNAME"),
+            password=os.getenv("NEO4J_PASSWORD"),
+            index_name="index_jurisprudencia",
+            retrieval_query=retrieval_query_jurisprudencia,
+        )
+        _retriever_jurisprudencia = vector_db.as_retriever(
+            search_kwargs={"k": K_JURISPRUDENCIA}
+        )
+    return _retriever_jurisprudencia
 
 # ==========================================
 # 2. CONTEXTO ACUMULADO
@@ -205,12 +224,9 @@ def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
 # 4. MOTOR CYPHER DINÁMICO (init perezoso)
 # ==========================================
 
-# Carga las etiquetas reales desde Neo4j y arma el motor recién en el primer uso, con caché en
-# módulo. La intención es que importar este módulo no toque la base — pero OJO: hoy eso no se
-# cumple, porque `Neo4jVector.from_existing_index()` de más arriba SÍ contacta Neo4j al
-# importar. Es un problema preexistente, anterior al agente, y arreglarlo es otra tarea. Lo
-# que sí logra este init perezoso es que el costo del Cypher dinámico se pague en la primera
-# consulta al grafo y no en el arranque de uvicorn.
+# Arma el motor recién en el primer uso, con caché en módulo. Desde que los dos retrievers de
+# arriba también son perezosos, **importar este módulo ya no toca la base**: el costo se paga
+# en la primera consulta que lo necesite y no en el arranque de uvicorn ni al importar.
 _motor_cypher: MotorCypherDinamico | None = None
 
 def _obtener_motor_cypher() -> MotorCypherDinamico:
@@ -296,7 +312,7 @@ def particular(pregunta: str):
     yield {"type": "fase", "fase": "vectorial", "label": "Buscando artículos relevantes"}
     docs_raw = []
     for frase in frases_vectoriales + [pregunta]:
-        for doc in retriever.invoke(frase):
+        for doc in _obtener_retriever().invoke(frase):
             docs_raw.append(doc)
 
     docs_filtrados = filtrar_por_sujeto(docs_raw, sujeto)
@@ -313,7 +329,7 @@ def particular(pregunta: str):
     # Fase 3.6: jurisprudencia. Va ANTES del gate de suficiencia a propósito: si un fallo
     # resuelve el punto, el gate lo ve y puede ahorrarse el Cypher dinámico.
     yield {"type": "fase", "fase": "jurisprudencia", "label": "Buscando jurisprudencia"}
-    for doc in retriever_jurisprudencia.invoke(pregunta):
+    for doc in _obtener_retriever_jurisprudencia().invoke(pregunta):
         tribunal = doc.metadata.get("tribunal", "") or "Tribunal no identificado"
         fecha = doc.metadata.get("fecha", "")
         if ctx.agregar(doc.metadata.get("id", ""), doc.page_content, fase="jurisprudencia"):
