@@ -61,8 +61,19 @@ src/lib/useNotariaChat.ts    — Hook: fetch + parsing del stream SSE
 src/lib/storage.ts           — Respaldo en localStorage, solo cuando no hay base
 src/lib/types.ts             — Tipos de eventos, mensajes, conversaciones, usuario y consumo
 src/components/              — Sidebar, Chat, MessageBubble, ThinkingStatus, Sources, ChatInput,
-                               Logo, Modal, UserMenu, AliasDialog, ConsumoPanel
+                               Logo, Modal, UserMenu, AliasDialog, ConsumoPanel, Inventario,
+                               FuenteModal, GuiaPrompts
 ```
+
+Los chips de "Fuentes consultadas" son botones: cada uno abre `FuenteModal` con el texto del
+artículo (y su estado de vigencia), el resumen del instituto o la doctrina del fallo. Es la única
+superficie navegable de una respuesta, y alcanza: esa lista la arma el retrieval y no el modelo,
+así que cubre el 100% de lo que el sistema consultó. Las citas escritas DENTRO del párrafo quedan
+como texto — no hay ninguna marca que las ate a un objeto `Fuente`.
+
+`Inventario.tsx` contesta «¿está cargada tal norma?», que es una consulta puntual y no una
+navegación: por eso el buscador va arriba y enfocado, y normaliza puntos y acentos («19550» y
+«19.550» tienen que dar lo mismo, porque `Norma.numero` guarda las dos formas según la norma).
 
 `Modal.tsx` es la primitiva de ventana de todo el proyecto: `<dialog>` nativo con `showModal()`,
 que da Escape, foco atrapado, backdrop y capa superior sin escribirlos. Esa última parte importa

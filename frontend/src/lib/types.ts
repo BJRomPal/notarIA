@@ -99,6 +99,74 @@ export interface ResumenConsumo {
   por_conversacion: ConsumoConversacion[];
 }
 
+/** Una norma del inventario (GET /api/catalogo/normas).
+ *
+ * `nombre` es el canónico de cita («Ley 19.550», «DTR 6/2019»), NO el título: 100 de las 197
+ * normas no tienen título, así que una lista basada en él vendría medio vacía. `titulo` está
+ * igual, como texto secundario y para que el buscador lo encuentre.
+ *
+ * `rama` es una LISTA en las normas y un string en los fallos, y encima con otro vocabulario
+ * («tributario» vs «tributaria»). Por eso son dos pestañas con su propio filtro.
+ */
+export interface NormaCatalogo {
+  id: string;
+  nombre: string;
+  tipo: string;
+  numero: string | null;
+  titulo: string | null;
+  rama: string[];
+  jurisdiccion: string | null;
+  articulos: number;
+}
+
+/** Un artículo en el listado de una norma. Sin texto: el texto lo trae /api/fuente. */
+export interface ArticuloCatalogo {
+  id: string;
+  numero: string;
+  ubicacion: string | null;
+  vigente: boolean;
+  modificado: boolean;
+}
+
+/** Un fallo del inventario (GET /api/catalogo/fallos). */
+export interface FalloCatalogo {
+  id: string;
+  tribunal: string;
+  caratula: string;
+  fecha: string;
+  rama: string;
+}
+
+/** El contenido de una fuente citada (GET /api/fuente/{tipo}/{id}).
+ *
+ * Unión discriminada por `tipo`: son tres cosas distintas y se muestran distinto. El fallo llega
+ * sin `texto` a propósito —promedia 19.571 caracteres y el más largo tiene 286.611—; `largo_texto`
+ * dice cuánto pesa para poder avisarlo antes de descargarlo.
+ */
+export type DetalleFuente =
+  | {
+      tipo: "articulo";
+      numero: string;
+      norma: string;
+      norma_id: string;
+      ubicacion: string;
+      vigente: boolean;
+      modificado: boolean;
+      nota_vigencia: string;
+      texto: string;
+    }
+  | { tipo: "entidad"; nombre: string; resumen: string }
+  | {
+      tipo: "fallo";
+      tribunal: string;
+      caratula: string;
+      fecha: string;
+      expediente: string;
+      rama: string;
+      resumen: string;
+      largo_texto: number;
+    };
+
 /** Un mensaje tal como lo devuelve el servidor (GET /api/conversaciones/{id}).
  *
  * `fuentes` viene del jsonb de `notaria.mensajes`: son las MISMAS citas que se le mostraron al
