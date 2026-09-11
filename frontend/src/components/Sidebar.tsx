@@ -10,6 +10,8 @@ interface SidebarProps {
   apiOk: boolean | null;
   base: boolean | null;
   usuario: Usuario | null;
+  /** Por qué no se pudo leer el historial, o null si salió bien. */
+  error: string | null;
   onSelect: (id: string) => void;
   onNew: () => void;
   onDelete: (id: string) => void;
@@ -25,6 +27,7 @@ export function Sidebar({
   apiOk,
   base,
   usuario,
+  error,
   onSelect,
   onNew,
   onDelete,
@@ -59,12 +62,31 @@ export function Sidebar({
       )}
 
       <nav className="scroll-slim flex-1 space-y-0.5 overflow-y-auto px-3 pb-4">
-        {conversations.length === 0 && (
-          <p className="px-3 pt-4 text-xs leading-relaxed text-slate-500">
-            Sin consultas todavía.
-            <br />
-            Empezá una nueva.
-          </p>
+        {/* EL ERROR VA ANTES QUE LA LISTA VACÍA, Y NUNCA LOS DOS. Si la lectura del
+            historial falla, «Sin consultas todavía» sería mentira: la peor forma de fallar con
+            las conversaciones de alguien es hacerle creer que no tiene ninguna. El backend ya
+            distingue los dos casos —503 si no hay base, 200 con lista vacía si no hay nada— y
+            este cartel es el otro extremo de esa decisión (ver api/rutas/cuenta.py). */}
+        {error ? (
+          <div className="mt-2 rounded-lg border border-red-500/30 bg-red-500/10 px-3 py-2.5">
+            <p className="text-xs font-semibold text-red-300">
+              No se pudieron cargar tus consultas.
+            </p>
+            {/* El motivo que dio el servidor, no uno inventado acá: sin base dice una cosa y
+                con la base caída dice otra, y esa diferencia es la que permite arreglarlo. */}
+            <p className="mt-1 text-[11px] leading-relaxed text-red-300/70">{error}</p>
+            <p className="mt-1.5 text-[11px] leading-relaxed text-slate-400">
+              Probá recargar la página. Podés seguir consultando mientras tanto.
+            </p>
+          </div>
+        ) : (
+          conversations.length === 0 && (
+            <p className="px-3 pt-4 text-xs leading-relaxed text-slate-500">
+              Sin consultas todavía.
+              <br />
+              Empezá una nueva.
+            </p>
+          )
         )}
         {conversations.map((c) => (
           <div

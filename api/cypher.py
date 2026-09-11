@@ -1,6 +1,7 @@
 """Motor Text-to-Cypher dinámico: traduce una pregunta en lenguaje natural a una query
 Cypher de solo lectura contra el esquema del grafo. Se usa cuando el contexto vectorial
-más remisiones no alcanza para responder (ver el gate de suficiencia en api/recuperacion.py).
+más remisiones no alcanza para responder (ver el gate de suficiencia en
+api/especialistas/particular.py).
 """
 import re
 

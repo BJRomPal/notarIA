@@ -64,16 +64,25 @@ export default function Home() {
       .catch(() => setUsuario(null));
   }, [base]);
 
-  const { conversations, setConversations, activeId, active, seleccionar, borrar, nueva, setActiveId } =
-    useConversations({
-      base,
-      // Si se borra la conversación que está respondiendo, primero se corta el stream: sin esto
-      // los tokens seguirían llegando y `updateAssistant` los escribiría en una conversación que
-      // ya no está en la lista.
-      onBorrarActiva: (id) => {
-        if (streamConvIdRef.current === id) stopRef.current();
-      },
-    });
+  const {
+    conversations,
+    setConversations,
+    activeId,
+    active,
+    error: errorConversaciones,
+    seleccionar,
+    borrar,
+    nueva,
+    setActiveId,
+  } = useConversations({
+    base,
+    // Si se borra la conversación que está respondiendo, primero se corta el stream: sin esto
+    // los tokens seguirían llegando y `updateAssistant` los escribiría en una conversación que
+    // ya no está en la lista.
+    onBorrarActiva: (id) => {
+      if (streamConvIdRef.current === id) stopRef.current();
+    },
+  });
 
   const updateAssistant = useCallback(
     (update: (msg: AssistantMessage) => AssistantMessage) => {
@@ -143,6 +152,7 @@ export default function Home() {
         apiOk={apiOk}
         base={base}
         usuario={usuario}
+        error={errorConversaciones}
         onSelect={seleccionar}
         onNew={nueva}
         onDelete={borrar}

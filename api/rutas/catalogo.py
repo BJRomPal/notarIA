@@ -18,15 +18,11 @@ consultas de PRESENTACIÓN —traen `texto`, `ubicacion`, carátulas— y no hel
 mezclarlas ahí ampliaría una superficie que conviene chica. Lo que sí se reusa es `NOMBRE_NORMA`,
 porque el nombre con el que se cita una norma tiene que ser uno solo en todo el proyecto.
 """
-import logging
-
 from fastapi import APIRouter, HTTPException, Request
 
 from api.auth import IdentidadInvalida, identidad
 from utils.connectors import get_neo4j_driver
 from utils.rag.citas import NOMBRE_NORMA
-
-_log = logging.getLogger("catalogo")
 
 router = APIRouter(prefix="/api")
 

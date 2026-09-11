@@ -16,3 +16,14 @@ uvicorn[standard]==0.49.0
 langgraph-checkpoint-postgres==3.1.2
 psycopg[binary]==3.3.5
 psycopg-pool==3.3.1
+
+# Las dos venían llegando por dependencia transitiva —google-auth dentro de google-genai,
+# requests dentro de langchain-community— y por eso no estaban declaradas. Se declaran igual
+# porque hay código propio que las importa directo, y de una de ellas depende que el servidor
+# arranque:
+#   google-auth   api/auth.py verifica con ella la firma del JWT de IAP. El import es de
+#                 módulo y server.py importa auth, así que el día que deje de venir arrastrada
+#                 no falla la autenticación: no levanta la API.
+#   requests      utils/connectors.py, para las alertas de Telegram de la ingesta.
+google-auth==2.53.0
+requests==2.34.2
