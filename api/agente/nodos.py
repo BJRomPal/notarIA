@@ -66,15 +66,24 @@ def _drenar(generador, writer):
 # y que acá sale gratis del estado.
 _PROMPT_CLASIFICADOR = """Clasificá la consulta de un escribano argentino en una o más rutas.
 
-RUTAS:
-- "particular": pregunta por una norma, un artículo o un supuesto concreto del derecho.
-  Ejemplos: "¿qué requisitos exige el art. 77 LSC?", "¿qué dice la ley sobre la fusión?",
-  "¿Quienes no pueden ser testigos en un testamento?"
-- "general": pregunta por un instituto jurídico en abstracto, su definición, sus
-  características o su comparación con otro. Ejemplos: "diferencias entre la SA y la SRL",
-  "¿qué es el usufructo?", "¿qué es la sucesión intestada?"
+LO QUE DECIDE ES QUÉ SE PREGUNTA, NO QUÉ SE NOMBRA.
+
+- "particular": qué EXIGE, PERMITE o PROHÍBE la norma en un supuesto. Todo lo que se contesta
+  leyendo el articulado: requisitos, plazos, quiénes pueden y quiénes no, cuándo corresponde,
+  qué hay que presentar, qué efectos tiene.
+  Ejemplos: "¿qué requisitos exige el art. 77 LSC?", "¿qué libros debe llevar una SRL?",
+  "¿cuándo vence la reserva de prioridad?", "¿quién puede pedir la inscripción?"
+- "general": qué ES un instituto jurídico, cómo se define, qué caracteres tiene, o en qué se
+  diferencia de otro. Se contesta explicando el instituto, sin necesidad de citar un artículo.
+  Ejemplos: "¿qué es el usufructo?", "diferencias entre la SA y la SRL",
+  "explicame en qué consiste la prehorizontalidad"
 - "determinista": pide un cálculo con resultado exacto: dígito verificador, CUIL, o el
   vencimiento de un certificado, de un ingreso al RPI o de una prórroga de inscripción.
+
+PARA DESEMPATAR ENTRE "particular" Y "general": que la consulta nombre un instituto NO la hace
+"general". Sobre un mismo instituto, "¿qué es la hipoteca?" es general, pero "¿cuándo se puede
+cancelar una hipoteca?" es particular, porque la respuesta está en el articulado y no en la
+definición. Ante la duda, "particular".
 
 Se puede elegir más de una si la consulta tiene partes de distinto tipo.
 
