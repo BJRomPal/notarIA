@@ -9,6 +9,8 @@
 // va arriba y destacado: leer un artículo derogado creyéndolo vigente es el peor error posible.
 
 import { useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { verFuente, verTextoFallo } from "@/lib/api";
 import type { DetalleFuente, Fuente } from "@/lib/types";
 import { Modal } from "./Modal";
@@ -149,12 +151,21 @@ export function FuenteModal({ fuente, onCerrar }: { fuente: RefFuente | null; on
 
       {detalle?.tipo === "articulo" && <ArticuloContenido d={detalle} />}
       {detalle?.tipo === "entidad" && (
-        // El resumen viene en markdown (lo escribió Qwen, con encabezados ##). No se renderiza
-        // como markdown a propósito: sería traer react-markdown a un modal por tres títulos. Lo
-        // único que se limpia son los ## de encabezado, que sí molestan al leer.
-        <p className="text-sm leading-relaxed whitespace-pre-wrap text-slate-700">
-          {detalle.resumen.replace(/^#{1,6}\s*/gm, "")}
-        </p>
+        // El resumen de una entidad viene en MARKDOWN: lo escribió Qwen con encabezados, negritas
+        // y listas. Medido sobre las 566: todas traen `#`, 428 traen `**`. Mostrarlo como texto
+        // plano dejaba los asteriscos a la vista.
+        //
+        // Se usa el mismo react-markdown que el chat —ya es dependencia— y las mismas clases de
+        // `prose`, salvo las del recuadro: el marco ya lo pone el modal. Así un resumen se lee
+        // igual acá que dentro de una respuesta, que es lo correcto: es el mismo texto.
+        //
+        // El artículo y el fallo NO pasan por acá a propósito. El texto de un artículo es texto
+        // legal literal cuyos saltos de línea son parte del documento, y los resúmenes de fallos
+        // son prosa sin marcas (verificado): pasarlos por un parser de markdown solo agregaría la
+        // chance de que un asterisco suelto del original cambie el formato.
+        <div className="prose prose-slate prose-sm max-w-none prose-headings:font-serif prose-headings:text-brand-900 prose-p:leading-relaxed prose-strong:text-brand-900 prose-a:text-brand-600">
+          <ReactMarkdown remarkPlugins={[remarkGfm]}>{detalle.resumen}</ReactMarkdown>
+        </div>
       )}
       {detalle?.tipo === "fallo" && fuente && <FalloContenido d={detalle} id={fuente.id} />}
     </Modal>
