@@ -32,7 +32,7 @@ from utils.connectors import get_neo4j_driver, get_gemini_embeddings, get_gemini
 from utils.rag.citas import NOMBRE_NORMA
 from utils.rag.texto import normalizar, formato_articulo
 from utils.rag.llm_io import json_del_llm
-from utils.rag.grafo import seguir_remite_a, datos_articulos, entidades_relacionadas
+from utils.rag.grafo import seguir_remite_a, datos_articulos
 from api.cypher import MotorCypherDinamico
 from langchain_neo4j import Neo4jVector
 
@@ -199,7 +199,8 @@ _STOPWORDS = {
 
 def filtrar_por_sujeto(docs: list, sujeto: str) -> list:
     """Filtra los docs vectoriales para quedarse con los del sujeto preguntado.
-    Misma heurística que V3 (privilegia recall sobre precisión)."""
+    Privilegia recall sobre precisión: si el filtro deja menos de MIN_DOCS_TRAS_FILTRO
+    documentos, se descarta y se devuelven todos."""
     if not sujeto:
         return docs
     words = [w for w in normalizar(sujeto).split() if len(w) > LONGITUD_MIN_KEYWORD and w not in _STOPWORDS]

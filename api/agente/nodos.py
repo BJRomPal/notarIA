@@ -315,7 +315,7 @@ def sintetizar(estado: EstadoAgente) -> dict:
     Es común a las tres rutas, y esa es la razón por la que la redacción se sacó del
     especialista particular: no hay tres respuestas distintas, hay una sola.
 
-    Hace cuatro cosas, en este orden:
+    Hace cinco cosas, en este orden:
 
     1. DEDUPLICA las fuentes. Cada especialista deduplica lo suyo, pero en una consulta mixta
        el particular y el general pueden traer el mismo id y `operator.add` los concatena sin

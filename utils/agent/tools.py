@@ -109,7 +109,7 @@ HERRAMIENTAS = [
     vencimiento_prorroga_inscripcion,
 ]
 
-# Índice por nombre, para el camino rápido del especialista determinista: cuando el regex
-# ya identificó la herramienta y extrajo el parámetro, se la invoca directo por nombre sin
-# pasar por el modelo. `.name` lo pone el decorador @tool a partir del nombre de la función.
+# Índice por nombre, para que el especialista determinista resuelva a qué función corresponde
+# cada `tool_call` que devuelve el modelo. `.name` lo pone el decorador @tool a partir del
+# nombre de la función, así que es la misma cadena con la que bind_tools la nombra.
 POR_NOMBRE = {h.name: h for h in HERRAMIENTAS}
