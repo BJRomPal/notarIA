@@ -71,22 +71,6 @@ def _leer(cypher: str, **params) -> list[dict]:
         return sesion.execute_read(lambda tx: [r.data() for r in tx.run(cypher, **params)])
 
 
-def _clave_numero(numero: str) -> tuple[int, str]:
-    """Orden natural de un número de artículo: 2 antes que 10, y «1204 bis» después de «1204».
-
-    Ordenar por `a.numero` en Cypher da 1, 10, 100, 11… porque es un string. Y no se puede
-    convertir a entero en la consulta: hay números como «1204 bis» o «77 ter». Se ordena en
-    Python, que además es gratis — el peor caso es el CCyCN con 2.674 artículos.
-    """
-    digitos = ""
-    for c in numero or "":
-        if c.isdigit():
-            digitos += c
-        elif digitos:
-            break
-    return (int(digitos) if digitos else 10**9, numero or "")
-
-
 def _clave_fecha(fecha: str) -> tuple[int, int, int]:
     """Ordena una fecha guardada como «31/01/2007». Las que no se entienden van al final."""
     partes = (fecha or "").split("/")
@@ -101,25 +85,26 @@ def _clave_fecha(fecha: str) -> tuple[int, int, int]:
 
 _NORMAS = f"""
 MATCH (norma:Norma)
-OPTIONAL MATCH (norma)-[:CONTIENE]->(art:Articulo)
 RETURN norma.id            AS id,
        {NOMBRE_NORMA}      AS nombre,
        norma.tipo          AS tipo,
        norma.numero        AS numero,
        norma.titulo        AS titulo,
        coalesce(norma.rama, [])     AS rama,
-       norma.jurisdiccion  AS jurisdiccion,
-       count(art)          AS articulos
+       norma.jurisdiccion  AS jurisdiccion
 """
 
 
 @router.get("/catalogo/normas")
 def listar_normas(request: Request):
-    """Las 197 normas con su cantidad de artículos.
+    """Las 197 normas: qué son, de qué tratan y de dónde salen.
 
-    Se traen TODAS de una: son 197 filas y una sola consulta, y tenerlas en el navegador es lo que
-    hace que el buscador filtre sin ida y vuelta por tecla. Los ARTÍCULOS no vienen acá —son
-    5.527, y solo el CCyCN aporta 2.674—: se piden al desplegar una norma.
+    Es un LISTADO, no un explorador: contesta «¿está cargada tal norma?» y nada más. No trae el
+    articulado ni cuenta artículos —eso era peso sin uso: nadie va a leer el CCyCN de a un
+    artículo por acá, y para eso están las citas de cada respuesta—.
+
+    Se traen las 197 de una: es una sola consulta y tenerlas en el navegador es lo que hace que el
+    buscador filtre sin ida y vuelta por tecla.
 
     El nombre sale de `NOMBRE_NORMA` y no de `titulo`: medido, **100 de las 197 normas no tienen
     título**, y ese helper ya sabe armar «DTR 6/2019» desde el id.
@@ -127,30 +112,6 @@ def listar_normas(request: Request):
     _exigir_identidad(request)
     filas = _leer(_NORMAS)
     filas.sort(key=lambda f: (f["nombre"] or "").lower())
-    return filas
-
-
-@router.get("/catalogo/normas/{norma_id}/articulos")
-def listar_articulos(norma_id: str, request: Request):
-    """Los artículos de una norma, sin su texto.
-
-    Sin `texto` a propósito: el listado es para elegir, y traer los 2.674 artículos del CCyCN con
-    su contenido serían más de 1,5 MB para mostrar una lista de números. El texto lo trae
-    `/api/fuente/articulo/{id}` cuando el usuario abre uno.
-    """
-    _exigir_identidad(request)
-    filas = _leer(
-        """
-        MATCH (:Norma {id: $id})-[:CONTIENE]->(art:Articulo)
-        RETURN art.id AS id, art.numero AS numero, art.ubicacion AS ubicacion,
-               coalesce(art.vigente, true) AS vigente,
-               coalesce(art.modificado, false) AS modificado
-        """,
-        id=norma_id,
-    )
-    if not filas:
-        raise HTTPException(status_code=404, detail="No hay artículos para esa norma.")
-    filas.sort(key=lambda f: _clave_numero(f["numero"]))
     return filas
 
 

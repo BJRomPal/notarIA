@@ -107,6 +107,9 @@ export interface ResumenConsumo {
  *
  * `rama` es una LISTA en las normas y un string en los fallos, y encima con otro vocabulario
  * («tributario» vs «tributaria»). Por eso son dos pestañas con su propio filtro.
+ *
+ * No trae el articulado ni cuántos artículos tiene: el inventario es un listado para contestar
+ * «¿está cargada?», no un explorador del corpus.
  */
 export interface NormaCatalogo {
   id: string;
@@ -116,16 +119,6 @@ export interface NormaCatalogo {
   titulo: string | null;
   rama: string[];
   jurisdiccion: string | null;
-  articulos: number;
-}
-
-/** Un artículo en el listado de una norma. Sin texto: el texto lo trae /api/fuente. */
-export interface ArticuloCatalogo {
-  id: string;
-  numero: string;
-  ubicacion: string | null;
-  vigente: boolean;
-  modificado: boolean;
 }
 
 /** Un fallo del inventario (GET /api/catalogo/fallos). */

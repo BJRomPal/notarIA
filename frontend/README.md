@@ -74,6 +74,9 @@ como texto — no hay ninguna marca que las ate a un objeto `Fuente`.
 `Inventario.tsx` contesta «¿está cargada tal norma?», que es una consulta puntual y no una
 navegación: por eso el buscador va arriba y enfocado, y normaliza puntos y acentos («19550» y
 «19.550» tienen que dar lo mismo, porque `Norma.numero` guarda las dos formas según la norma).
+Es un LISTADO con la forma de `inventario.md` —agrupado por tipo de norma, con su descripción y
+su jurisdicción—, no un explorador: no muestra cuántos artículos tiene cada norma ni deja abrirlos
+uno por uno. Los artículos se leen donde importan, en las citas de cada respuesta.
 
 `Modal.tsx` es la primitiva de ventana de todo el proyecto: `<dialog>` nativo con `showModal()`,
 que da Escape, foco atrapado, backdrop y capa superior sin escribirlos. Esa última parte importa

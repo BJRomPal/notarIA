@@ -11,7 +11,6 @@
 // que es lo correcto para algo que no debería pasar.
 
 import type {
-  ArticuloCatalogo,
   Conversation,
   DetalleFuente,
   FalloCatalogo,
@@ -92,14 +91,9 @@ export function verConsumo() {
   return pedir<ResumenConsumo>("/consumo");
 }
 
-/** Las 197 normas con su conteo de artículos. Se piden una vez y se filtran en el navegador. */
+/** Las 197 normas. Se piden una vez y se filtran en el navegador, sin ida y vuelta por tecla. */
 export function listarNormas() {
   return pedir<NormaCatalogo[]>("/catalogo/normas");
-}
-
-/** Los artículos de una norma. Se piden al desplegarla: el CCyCN solo tiene 2.674. */
-export function listarArticulos(normaId: string) {
-  return pedir<ArticuloCatalogo[]>(`/catalogo/normas/${encodeURIComponent(normaId)}/articulos`);
 }
 
 export function listarFallos() {
