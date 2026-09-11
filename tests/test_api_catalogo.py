@@ -1,7 +1,7 @@
 """¿El catálogo devuelve lo que hay en el grafo, y el detalle de una cita trae contenido real?
 
 Es un test de INTEGRACIÓN contra Neo4j: no hay mocks, corre contra la base viva. Por eso los
-números están escritos: 197 normas, 5.527 artículos, 292 fallos. Si alguno cambia, o entró una
+números están escritos: 197 normas y 292 fallos. Si alguno cambia, o entró una
 norma nueva —y hay que actualizar el número y `inventario.md`— o algo se rompió. Las dos cosas
 conviene enterarlas.
 
@@ -9,8 +9,8 @@ Lo que se prueba y por qué:
 
 - **Que ninguna norma quede sin nombre.** 100 de las 197 no tienen `titulo`, así que un catálogo
   que mostrara el título tendría media lista en blanco. El nombre sale de `NOMBRE_NORMA`.
-- **El orden de los artículos.** Ordenar por `numero` en Cypher da 1, 10, 100, 11… porque es un
-  string; se ordena en Python y esto lo verifica.
+- **Que el listado sea liviano.** El inventario contesta «¿está cargada tal norma?» y nada más:
+  no devuelve el articulado ni cuenta artículos. Esto lo verifica, porque es justo lo que se sacó.
 - **Que el fallo NO traiga su texto** en el detalle. Promedia 19.571 caracteres y el más largo
   tiene 286.611: mandarlo con el resto sería descargar un cuarto de megabyte para abrir un modal.
 
@@ -51,15 +51,18 @@ def main() -> int:
     verificar(all(n["nombre"] for n in normas),
               "ninguna norma queda sin nombre (NOMBRE_NORMA cubre las 100 sin titulo)",
               str([n["id"] for n in normas if not n["nombre"]][:5]))
-    verificar(sum(n["articulos"] for n in normas) == 5527,
-              "los artículos suman 5.527",
-              f"suman {sum(n['articulos'] for n in normas)}")
+    verificar(all("articulos" not in n for n in normas),
+              "el listado NO trae la cantidad de artículos (es un índice, no un explorador)")
+    verificar(all(set(n) == {"id", "nombre", "tipo", "numero", "titulo", "rama", "jurisdiccion"}
+                  for n in normas),
+              "y solo trae los campos del listado",
+              str(sorted(set(normas[0]))))
     verificar(all(isinstance(n["rama"], list) for n in normas),
               "`rama` viene siempre como lista, incluso vacía")
 
     ccycn = next((n for n in normas if n["id"] == "CCyCN"), None)
-    verificar(ccycn is not None and ccycn["articulos"] == 2674,
-              "el CCyCN trae sus 2.674 artículos",
+    verificar(ccycn is not None and ccycn["nombre"] == "CCyCN",
+              "el CCyCN se cita por su nombre corto y no por su título completo",
               str(ccycn))
 
     dtr = [n for n in normas if n["tipo"] == "DisposicionTecnicoRegistral"]
@@ -67,21 +70,6 @@ def main() -> int:
     verificar(all(n["nombre"].startswith("DTR ") for n in dtr),
               "las DTR se nombran «DTR n/año», que es como se citan",
               str([n["nombre"] for n in dtr[:3]]))
-
-    print("\nARTÍCULOS DE UNA NORMA")
-    r = cliente.get("/api/catalogo/normas/Ley_19550/articulos")
-    verificar(r.status_code == 200, "GET de los artículos responde 200", r.text[:200])
-    arts = r.json()
-    verificar(len(arts) == 359, "la Ley 19.550 tiene 359 artículos", f"vinieron {len(arts)}")
-    verificar([a["numero"] for a in arts[:11]] ==
-              ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11"],
-              "el orden es natural y no alfabético (2 antes que 10)",
-              str([a["numero"] for a in arts[:11]]))
-    verificar(all("texto" not in a for a in arts),
-              "el listado NO trae el texto de los artículos")
-
-    r = cliente.get("/api/catalogo/normas/Ley_00000/articulos")
-    verificar(r.status_code == 404, "una norma inexistente da 404", f"dio {r.status_code}")
 
     print("\nINVENTARIO DE FALLOS")
     r = cliente.get("/api/catalogo/fallos")

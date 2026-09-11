@@ -14,8 +14,8 @@
 // normalizar el grafo, que no se toca desde acá.
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { listarArticulos, listarFallos, listarNormas } from "@/lib/api";
-import type { ArticuloCatalogo, FalloCatalogo, NormaCatalogo } from "@/lib/types";
+import { listarFallos, listarNormas } from "@/lib/api";
+import type { FalloCatalogo, NormaCatalogo } from "@/lib/types";
 import { FuenteModal, type RefFuente } from "./FuenteModal";
 import { Modal } from "./Modal";
 
@@ -59,85 +59,56 @@ function Chip({
 // NORMAS
 // ==============================================================================================
 
-function FilaNorma({
-  norma,
-  onAbrirArticulo,
-}: {
-  norma: NormaCatalogo;
-  onAbrirArticulo: (ref: RefFuente) => void;
-}) {
-  const [abierta, setAbierta] = useState(false);
-  const [articulos, setArticulos] = useState<ArticuloCatalogo[] | null>(null);
-  const [error, setError] = useState<string | null>(null);
+// El orden y los nombres de las secciones siguen a `inventario.md`, que es el documento que el
+// escribano ya conoce: primero los códigos y las leyes, al final las disposiciones registrales.
+const ORDEN_TIPOS = [
+  "Codigo",
+  "Ley",
+  "Decreto",
+  "ResolucionGeneral",
+  "Resolución",
+  "DisposicionTecnicoRegistral",
+  "InstruccionDeTrabajo",
+];
 
-  // Los artículos se piden al desplegar y NUNCA antes: son 5.527 en total y el CCyCN solo aporta
-  // 2.674. Traerlos con la lista sería descargar el corpus entero para mirar un índice.
-  useEffect(() => {
-    if (!abierta || articulos !== null) return;
-    listarArticulos(norma.id)
-      .then(setArticulos)
-      .catch((e) => setError(e.message));
-  }, [abierta, articulos, norma.id]);
+const TITULO_TIPO: Record<string, string> = {
+  Codigo: "Códigos",
+  Ley: "Leyes",
+  Decreto: "Decretos",
+  ResolucionGeneral: "Resoluciones generales",
+  "Resolución": "Resoluciones",
+  DisposicionTecnicoRegistral: "Disposiciones Técnico Registrales",
+  InstruccionDeTrabajo: "Instrucciones de trabajo",
+};
 
+/** «Ciudad Autónoma de Buenos Aires» es demasiado largo para una columna; y viene con dos grafías. */
+function origen(jurisdiccion: string | null): string {
+  const j = (jurisdiccion || "").toLowerCase();
+  if (j.includes("buenos aires")) return "CABA";
+  if (j.includes("nacional")) return "Nacional";
+  return jurisdiccion || "";
+}
+
+/** Una norma del listado: qué es, de qué trata y de dónde sale. Nada más.
+ *
+ * NO se despliega ni lleva a ningún lado. Antes mostraba la cantidad de artículos y dejaba abrir
+ * cada uno: era peso sin uso —nadie lee el CCyCN de a un artículo desde un índice— y convertía un
+ * listado de consulta rápida en un explorador. Los artículos se leen donde importan: en las citas
+ * de cada respuesta, que sí se abren.
+ */
+function FilaNorma({ norma }: { norma: NormaCatalogo }) {
   return (
-    <div className="border-b border-slate-100 last:border-0">
-      <button
-        onClick={() => setAbierta((v) => !v)}
-        className="flex w-full items-center gap-3 py-2.5 text-left transition hover:bg-slate-50"
-      >
-        <svg
-          viewBox="0 0 20 20"
-          fill="currentColor"
-          className={`h-3.5 w-3.5 shrink-0 text-slate-400 transition ${abierta ? "rotate-90" : ""}`}
-        >
-          <path
-            fillRule="evenodd"
-            d="M7.21 14.77a.75.75 0 0 1 .02-1.06L11.168 10 7.23 6.29a.75.75 0 1 1 1.04-1.08l4.5 4.25a.75.75 0 0 1 0 1.08l-4.5 4.25a.75.75 0 0 1-1.06-.02Z"
-            clipRule="evenodd"
-          />
-        </svg>
-        <span className="min-w-0 flex-1">
-          <span className="font-serif text-sm font-bold text-brand-900">{norma.nombre}</span>
-          {norma.titulo && (
-            <span className="ml-2 text-xs text-slate-500">{norma.titulo}</span>
-          )}
-        </span>
-        <span className="shrink-0 text-[11px] text-slate-400">
-          {norma.articulos} {norma.articulos === 1 ? "artículo" : "artículos"}
-        </span>
-      </button>
-
-      {abierta && (
-        <div className="pb-3 pl-6.5">
-          {error && <p className="text-xs text-red-600">{error}</p>}
-          {!articulos && !error && (
-            <p className="shimmer-text text-xs font-medium">Trayendo los artículos…</p>
-          )}
-          {articulos && (
-            <div className="flex flex-wrap gap-1">
-              {articulos.map((a) => (
-                <button
-                  key={a.id}
-                  onClick={() => onAbrirArticulo({ id: a.id, tipo: "articulo" })}
-                  title={a.ubicacion || undefined}
-                  className={`rounded border px-1.5 py-0.5 text-[11px] transition hover:border-accent-500/60 hover:bg-amber-50 ${
-                    a.vigente
-                      ? "border-slate-200 text-slate-600"
-                      : "border-red-200 text-red-500 line-through"
-                  }`}
-                >
-                  {a.numero}
-                </button>
-              ))}
-            </div>
-          )}
-        </div>
-      )}
+    <div className="flex items-baseline gap-3 border-b border-slate-100 py-2 last:border-0">
+      <span className="shrink-0 font-serif text-sm font-bold text-brand-900">{norma.nombre}</span>
+      <span className="min-w-0 flex-1 text-xs leading-relaxed text-slate-600">
+        {norma.titulo || <span className="text-slate-400">Sin descripción cargada</span>}
+      </span>
+      <span className="shrink-0 text-[11px] text-slate-400">{origen(norma.jurisdiccion)}</span>
     </div>
   );
 }
 
-function PanelNormas({ onAbrir }: { onAbrir: (ref: RefFuente) => void }) {
+function PanelNormas() {
   const [normas, setNormas] = useState<NormaCatalogo[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busca, setBusca] = useState("");
@@ -172,6 +143,20 @@ function PanelNormas({ onAbrir }: { onAbrir: (ref: RefFuente) => void }) {
     });
   }, [normas, busca, rama]);
 
+  // Agrupadas por tipo, que es como las secciones de `inventario.md`. Se agrupa DESPUÉS de
+  // filtrar, así una sección vacía simplemente no aparece.
+  const porTipo = useMemo(() => {
+    const grupos = new Map<string, NormaCatalogo[]>();
+    for (const n of filtradas) {
+      const t = n.tipo || "Otras";
+      if (!grupos.has(t)) grupos.set(t, []);
+      grupos.get(t)!.push(n);
+    }
+    return [...grupos.entries()].sort(
+      (a, b) => ORDEN_TIPOS.indexOf(a[0]) - ORDEN_TIPOS.indexOf(b[0]),
+    );
+  }, [filtradas]);
+
   return (
     <>
       <input
@@ -202,16 +187,24 @@ function PanelNormas({ onAbrir }: { onAbrir: (ref: RefFuente) => void }) {
           <p className="mt-4 text-[11px] tracking-wider text-slate-400 uppercase">
             {filtradas.length} de {normas.length} normas
           </p>
-          <div className="mt-1">
-            {filtradas.map((n) => (
-              <FilaNorma key={n.id} norma={n} onAbrirArticulo={onAbrir} />
-            ))}
-            {filtradas.length === 0 && (
-              <p className="py-6 text-center text-sm text-slate-500">
-                No hay ninguna norma que coincida. Si esperabas encontrarla, no está cargada.
-              </p>
-            )}
-          </div>
+
+          {porTipo.map(([tipo, lista]) => (
+            <section key={tipo} className="mt-4">
+              <h3 className="mb-1 font-serif text-xs font-bold tracking-wide text-accent-600 uppercase">
+                {TITULO_TIPO[tipo] ?? tipo}
+                <span className="ml-1.5 font-sans font-normal text-slate-400">({lista.length})</span>
+              </h3>
+              {lista.map((n) => (
+                <FilaNorma key={n.id} norma={n} />
+              ))}
+            </section>
+          ))}
+
+          {filtradas.length === 0 && (
+            <p className="py-6 text-center text-sm text-slate-500">
+              No hay ninguna norma que coincida. Si esperabas encontrarla, no está cargada.
+            </p>
+          )}
         </>
       )}
     </>
@@ -341,7 +334,7 @@ export function Inventario({ abierto, onCerrar }: { abierto: boolean; onCerrar: 
         {/* Cada panel se monta al elegir su pestaña, así el inventario de fallos no se descarga si
             nadie lo mira. La contra es que cambiar de pestaña y volver rearma el estado; es un
             fetch de 292 filas, y no vale un caché para eso. */}
-        {pestania === "normas" ? <PanelNormas onAbrir={setFuente} /> : <PanelFallos onAbrir={setFuente} />}
+        {pestania === "normas" ? <PanelNormas /> : <PanelFallos onAbrir={setFuente} />}
       </Modal>
 
       {/* Fuera del <Modal> del inventario: son dos <dialog> hermanos y el navegador los apila en su
