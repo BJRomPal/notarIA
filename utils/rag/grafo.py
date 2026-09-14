@@ -28,20 +28,29 @@ def etiquetas_ontologia(driver, excluir: set[str] | None = None) -> list[str]:
 
 
 def seguir_remite_a(driver, article_ids: list[str]) -> list[dict]:
-    """Dado un conjunto de artículos, devuelve los artículos referenciados vía REMITE_A."""
+    """Dado un conjunto de artículos, devuelve los artículos conectados por REMITE_A en
+    cualquier sentido: los que `article_ids` referencia y los que referencian a `article_ids`.
+
+    Restringido a Articulo-Articulo a propósito: REMITE_A también conecta con :Norma y con
+    entidades de ontología (ver grafo real), pero esos casos no tienen `numero`/`texto` de
+    artículo y los consume otro camino. `saliente` distingue el sentido: True si el artículo
+    de `article_ids` es el que remite (comportamiento previo de esta función), False si es el
+    que fue referenciado por `referenciado`.
+    """
     if not article_ids:
         return []
     query = f"""
     UNWIND $ids AS art_id
-    MATCH (origen:Articulo {{id: art_id}})-[:REMITE_A]->(referenciado:Articulo)
+    MATCH (origen:Articulo {{id: art_id}})-[r:REMITE_A]-(referenciado:Articulo)
     WHERE referenciado.texto IS NOT NULL
     OPTIONAL MATCH (norma:Norma)-[:CONTIENE]->(referenciado)
     RETURN DISTINCT
-        referenciado.id     AS id,
-        referenciado.numero AS numero,
-        referenciado.texto  AS texto,
-        {NOMBRE_NORMA}      AS norma,
-        origen.numero       AS origen_numero
+        referenciado.id       AS id,
+        referenciado.numero   AS numero,
+        referenciado.texto    AS texto,
+        {NOMBRE_NORMA}        AS norma,
+        origen.numero         AS origen_numero,
+        startNode(r) = origen AS saliente
     """
     with driver.session() as session:
         return [dict(row) for row in session.run(query, ids=article_ids)]
