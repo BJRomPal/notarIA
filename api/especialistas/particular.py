@@ -20,7 +20,7 @@ script suelto igual que desde un nodo del grafo. El puente vive en `api/agente/n
 FASES QUE EMITE, en orden:
     analisis        extrae sujeto y frases de búsqueda (1 llamada a flash-lite)
     vectorial       busca en index_articulos y filtra por sujeto
-    remisiones      sigue REMITE_A desde lo encontrado
+    remisiones      sigue REMITE_A desde y hacia lo encontrado
     jurisprudencia  busca en index_jurisprudencia (fallos)
     evaluacion      decide si el contexto alcanza (1 llamada a flash-lite)
     grafo           SOLO si la evaluación dio insuficiente: Text-to-Cypher (la más cara)
@@ -245,18 +245,21 @@ def _obtener_motor_cypher() -> MotorCypherDinamico:
 # ==========================================
 
 def _agregar_remisiones(ids_origen: list[str], ctx: ContextoAcumulado) -> Iterator[dict]:
-    """Sigue REMITE_A desde `ids_origen`, agrega al contexto los artículos nuevos
+    """Sigue REMITE_A desde y hacia `ids_origen`, agrega al contexto los artículos nuevos
     y emite un evento por cada uno."""
     for art in seguir_remite_a(neo4j_driver, ids_origen):
         origen_num = art.get("origen_numero", "")
         norma_ref  = art.get("norma", "")
+        saliente = art.get("saliente", True)
+        relacion = f"referenciada por Art. {origen_num}" if saliente else f"que remite al Art. {origen_num}"
+        etiqueta = f"citado por el Art. {origen_num}" if saliente else f"que remite al Art. {origen_num}"
         texto = formato_articulo(
-            f"{norma_ref} (referenciada por Art. {origen_num})",
+            f"{norma_ref} ({relacion})",
             art.get("numero", ""),
             art.get("texto", ""),
         )
         if ctx.agregar(art.get("id", ""), texto, fase="remision"):
-            yield {"type": "item", "texto": f"Art. {art.get('numero', '')} ({norma_ref}) — citado por el Art. {origen_num}"}
+            yield {"type": "item", "texto": f"Art. {art.get('numero', '')} ({norma_ref}) — {etiqueta}"}
 
 # ==========================================
 # 6. EVALUACIÓN DE SUFICIENCIA
