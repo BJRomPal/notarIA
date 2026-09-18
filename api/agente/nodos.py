@@ -154,20 +154,39 @@ def _clasificar_y_resolver(pregunta: str, historial: str) -> tuple[list[str], st
 
 def _historial_corto(mensajes: list, resumen: str) -> str:
     """El contexto conversacional que recibe el clasificador: el resumen de lo viejo más los
-    turnos recientes textuales.
+    turnos recientes, completos.
 
-    Es la mitad de lectura del mecanismo que describe MENSAJES_VERBATIM. El clasificador solo
-    necesita saber de qué se venía hablando para resolver «¿y para la SRL?»; no necesita la
-    transcripción. Cada turno se corta en 300 caracteres por lo mismo: mandar la respuesta
-    completa multiplicaría el costo del nodo más barato del grafo sin cambiar la etiqueta que
-    devuelve.
+    LA FRONTERA ES `resumen`, NO UNA VENTANA FIJA — y es la misma frontera que usa
+    `_compactar` para decidir qué resumir. Mientras no exista resumen (`_compactar` todavía no
+    actuó, o falló y no lo dejó), se muestran TODOS los mensajes; en cuanto existe, se muestran
+    el resumen más los últimos MENSAJES_VERBATIM. La versión anterior cortaba siempre a los
+    últimos 4 mensajes, hubiera o no resumen: entre que un turno salía de esa ventana y que
+    `_compactar` lo alcanzaba (recién pasados 8 mensajes) quedaba un tramo que no estaba ni
+    textual ni resumido — desaparecía. Medido sobre una consulta real de porciones hereditarias
+    de 5 turnos: para el turno 3, el clasificador ya no veía los números del turno 1 (ni
+    recortados, directamente ausentes), y la respuesta perdió el hilo del caso.
+
+    TAMPOCO SE TRUNCA A 300 CARACTERES POR MENSAJE. El corte caía justo donde suelen vivir las
+    conclusiones de una respuesta larga —la fracción al final de una lista, el monto al final
+    de un párrafo—, que es lo que un turno siguiente necesita para no repetir el cálculo desde
+    cero. El tamaño del prompt se mantiene acotado igual: por cantidad de turnos (a lo sumo 8
+    mensajes sin resumen, o 4 con resumen), no por caracteres.
+
+    Chequear `resumen` en vez de recontar `len(mensajes)` importa en el caso en que la llamada
+    de resumen de `_compactar` falla: `resumen` sigue vacío, así que acá se sigue mostrando
+    todo en vez de "resumen vacío + últimos cuatro", que perdería en silencio lo que quedó en
+    el medio.
     """
     partes = []
     if resumen:
         partes.append(f"Resumen de lo hablado antes: {resumen}")
-    for mensaje in mensajes[-MENSAJES_VERBATIM:]:
+        recientes = mensajes[-MENSAJES_VERBATIM:]
+    else:
+        recientes = mensajes
+
+    for mensaje in recientes:
         rol = "Usuario" if mensaje.type == "human" else "Asistente"
-        partes.append(f"{rol}: {str(mensaje.content)[:300]}".replace("\n", " "))
+        partes.append(f"{rol}: {str(mensaje.content)}".replace("\n", " "))
     return "\n".join(partes) if partes else "(no hay turnos previos)"
 
 
