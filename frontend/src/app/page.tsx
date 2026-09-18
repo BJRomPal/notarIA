@@ -15,6 +15,7 @@ import { verSalud, verUsuario } from "@/lib/api";
 import type { AssistantMessage, Conversation, Usuario } from "@/lib/types";
 import { useConversations } from "@/lib/useConversations";
 import { emptyAssistantMessage, useNotariaChat } from "@/lib/useNotariaChat";
+import { randomUUID } from "@/lib/uuid";
 
 export default function Home() {
   const [apiOk, setApiOk] = useState<boolean | null>(null);
@@ -115,7 +116,7 @@ export default function Home() {
       // El id se decide acá afuera: los updaters de setState corren diferidos
       // y mutarlo adentro dejaría a setActiveId/streamConvIdRef con el valor viejo.
       const existe = activeId !== null && conversations.some((c) => c.id === activeId);
-      const convId = existe ? (activeId as string) : crypto.randomUUID();
+      const convId = existe ? (activeId as string) : randomUUID();
 
       setConversations((prev) => {
         let lista = prev;
