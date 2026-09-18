@@ -74,21 +74,31 @@ export function GuiaPrompts({
           <Bien>¿Cuáles son las diferencias entre la SA y la SRL?</Bien>
         </Punto>
 
-        <Punto n={3} titulo="Para los cálculos, dictá los números tal como los tenés">
+        <Punto n={3} titulo="Para los cálculos, dictá los datos tal como los tenés">
           <p>
-            Hay cinco calculadoras exactas: dígito verificador de partida, CUIL, vencimiento de
-            certificado, plazo de ingreso al RPI y prórroga de inscripción.{" "}
+            Hay siete calculadoras exactas: dígito verificador de partida, CUIL, vencimiento de
+            certificado, plazo de ingreso al RPI, prórroga de inscripción, porciones hereditarias
+            de una sucesión intestada e Impuesto a la Transmisión Gratuita de Bienes (ITGB) de la
+            Provincia de Buenos Aires.{" "}
             <strong className="font-semibold text-brand-900">
               La cuenta la hace el código, no el modelo.
             </strong>
           </p>
           <p>
-            Transcribí el número como está en tu documento: si la partida tiene seis dígitos, poné
-            seis; si la tenés con el cero adelante, ponelo. No lo «arregles» antes de escribirlo.
+            Transcribí los números como están en tu documento: si la partida tiene seis dígitos,
+            poné seis; si la tenés con el cero adelante, ponelo. No los «arregles» antes de
+            escribirlos.
           </p>
           <Bien>¿Cuál es el dígito verificador de la partida 164360?</Bien>
           <Bien>Certificado de dominio en CABA solicitado el 24/07/2026, ¿cuándo vence?</Bien>
-          <p className="text-slate-500">Podés pedir varios cálculos en una misma consulta.</p>
+          <Bien>3 hijos y cónyuge, inmueble ganancial: ¿qué fracción le corresponde a cada uno?</Bien>
+          <Bien>¿Cuánto ITGB paga un hijo por una donación con valuación fiscal de $5.000.000?</Bien>
+          <p className="text-slate-500">
+            Podés pedir varios cálculos en una misma consulta. Para el ITGB, el parentesco tiene
+            que ser uno reconocido (hijo, cónyuge, nieto, hermano, tío, sobrino, primo, sin
+            parentesco, persona jurídica…); ante un vínculo distinto —hijastro, conviviente,
+            yerno— el sistema te lo va a decir en vez de arriesgar una categoría.
+          </p>
         </Punto>
 
         <Punto n={4} titulo="Repreguntá sin repetir el contexto">
