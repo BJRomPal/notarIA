@@ -77,8 +77,10 @@ LO QUE DECIDE ES QUÉ SE PREGUNTA, NO QUÉ SE NOMBRA.
   diferencia de otro. Se contesta explicando el instituto, sin necesidad de citar un artículo.
   Ejemplos: "¿qué es el usufructo?", "diferencias entre la SA y la SRL",
   "explicame en qué consiste la prehorizontalidad"
-- "determinista": pide un cálculo con resultado exacto: dígito verificador, CUIL, o el
-  vencimiento de un certificado, de un ingreso al RPI o de una prórroga de inscripción.
+- "determinista": pide un cálculo con resultado exacto: dígito verificador, CUIL, el
+  vencimiento de un certificado, de un ingreso al RPI o de una prórroga de inscripción, la
+  fracción que le corresponde a cada heredero en una sucesión intestada, o el Impuesto a la
+  Transmisión Gratuita de Bienes (ITGB) sobre una donación o herencia.
 
 PARA DESEMPATAR ENTRE "particular" Y "general": que la consulta nombre un instituto NO la hace
 "general". Sobre un mismo instituto, "¿qué es la hipoteca?" es general, pero "¿cuándo se puede

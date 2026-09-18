@@ -80,6 +80,12 @@ CASOS: list[tuple[str, set[str], str]] = [
      {"determinista"}, "cálculo exacto"),
     ("Un certificado de dominio en CABA solicitado el 24/07/2026, ¿cuándo vence?",
      {"determinista"}, "cálculo de plazo registral"),
+    ("El causante falleció con 3 hijos y sin cónyuge, ¿qué fracción del inmueble le "
+     "corresponde a cada heredero?",
+     {"determinista"}, "cálculo de porciones hereditarias"),
+    ("La valuación fiscal de una donación de un campo a un sobrino es de $80.000.000, "
+     "¿cuánto hay que pagar de ITGB?",
+     {"determinista"}, "cálculo de impuesto por escala progresiva"),
 
     # --- Mixta: dos partes de distinto tipo en una sola consulta ---
     ("¿Qué exige la IGJ para inscribir una transformación y cuál es el DV de la partida 1180431?",

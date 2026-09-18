@@ -16,6 +16,8 @@ from langchain_core.tools import tool
 
 from utils.agent.cuil import obtener_cuil
 from utils.agent.dv_partida import obtener_dv
+from utils.agent.herencia import obtener_porciones_herencia
+from utils.agent.itgb import obtener_itgb
 from utils.agent.plazos_registrales import (
     obtener_vencimiento_certificado,
     obtener_vencimiento_ingreso_rpi,
@@ -93,6 +95,87 @@ def vencimiento_prorroga_inscripcion(fecha_ingreso: str) -> str:
     return resultado if ok else f"No se pudo calcular: {resultado}"
 
 
+@tool
+def calcular_porciones_herencia(
+    hijos_vivos: int = 0,
+    nietos_por_representacion: list[int] | None = None,
+    hay_conyuge: bool = False,
+    tipo_bien: str = "propio",
+    ascendientes: int = 0,
+    hermanos_bilaterales: int = 0,
+    hermanos_unilaterales: int = 0,
+    fraccion_causante: str = "1",
+) -> str:
+    """Calcula la fracción de un bien que le corresponde a cada heredero en una sucesión
+    intestada (arts. 2424 a 2440 CCyCN).
+
+    Los herederos se agrupan en cuatro órdenes que se excluyen entre sí (indicar solo los
+    datos del orden que corresponde, arts. 2424/2438): descendientes (hijos_vivos y, si un
+    hijo premurió, nietos_por_representacion con la cantidad de nietos de esa estirpe), o
+    ascendientes, o hermanos (bilaterales/unilaterales). El cónyuge (hay_conyuge) concurre
+    con cualquiera de esos órdenes, o hereda solo si no hay ninguno.
+
+    tipo_bien ("ganancial" o "propio") solo importa si hay cónyuge Y descendientes: si el
+    bien es ganancial, la muerte extingue la comunidad y el cónyuge ya es dueño de su mitad
+    por partición, no por herencia (arts. 475, 498) — esa mitad no entra en el cálculo y
+    solo se reparte entre los descendientes la mitad del causante; si es propio, el cónyuge
+    hereda como un hijo más (art. 2433).
+
+    fraccion_causante es la parte indivisa del bien que tenía el causante, si no era dueño
+    de la totalidad (un condominio previo, ajeno a la sociedad conyugal). Transcribila como
+    fracción ("1/6", "1/3"), igual que una fecha o una partida: nunca hagas vos la cuenta de
+    a cuánto equivale "la sexta parte". "1" (el valor por defecto) es titular pleno.
+
+    Ejemplos:
+        calcular_porciones_herencia(hijos_vivos=3)
+            -> "hijo: 1/3 cada uno (x3)"
+        calcular_porciones_herencia(hijos_vivos=3, hay_conyuge=True, tipo_bien="ganancial")
+            -> "hijo: 1/6 cada uno (x3); cónyuge: 1/2 [...]"
+        calcular_porciones_herencia(hijos_vivos=3, hay_conyuge=True, tipo_bien="propio")
+            -> "hijo: 1/4 cada uno (x3); cónyuge: 1/4 [...]"
+        calcular_porciones_herencia(hijos_vivos=4, fraccion_causante="1/10")
+            -> "[el causante era titular de 1/10 del bien...] hijo: 1/40 cada uno (x4)"
+    """
+    ok, resultado = obtener_porciones_herencia(
+        hijos_vivos=hijos_vivos,
+        nietos_por_representacion=nietos_por_representacion,
+        hay_conyuge=hay_conyuge,
+        tipo_bien=tipo_bien,
+        ascendientes=ascendientes,
+        hermanos_bilaterales=hermanos_bilaterales,
+        hermanos_unilaterales=hermanos_unilaterales,
+        fraccion_causante=fraccion_causante,
+    )
+    return resultado if ok else f"No se pudo calcular: {resultado}"
+
+
+@tool
+def calcular_itgb(valuacion_fiscal: str, parentesco: str) -> str:
+    """Calcula el Impuesto a la Transmisión Gratuita de Bienes (ITGB) de la Provincia de
+    Buenos Aires sobre una donación o herencia, aplicando la escala progresiva por tramos que
+    corresponde según el parentesco entre transmisor y receptor.
+
+    valuacion_fiscal es la Valuación Fiscal al Acto ya determinada por el escribano —
+    transcribila tal cual la dio la consulta, sin agregar ni sacar separadores. parentesco es
+    el vínculo entre quien transmite y quien recibe, en una palabra ("hijo", "cónyuge",
+    "nieto", "hermano", "tío", "primo", "sin parentesco", "persona jurídica", etc.): el
+    sistema decide a qué categoría de la escala corresponde, nunca lo decidas vos. Si el
+    vínculo es uno que no aparece en esos ejemplos (hijastro, conviviente, yerno, adoptivo,
+    etc.), llamá igual a la herramienta con la palabra tal cual la dijo el usuario: el propio
+    cálculo la va a rechazar si no está en la lista reconocida, en vez de asumir una categoría.
+
+    No hay mínimo no imponible que restar: la valuación indicada ya es la base imponible neta.
+
+    Ejemplos:
+        calcular_itgb("5000000", "hijo")
+            -> "$80.150 (categoría A: progenitores, hijos/as y cónyuge; ...)"
+        calcular_itgb("20000000", "hermano")
+            -> "$643.789 (categoría C: colaterales de 2° grado; ...)"
+    """
+    ok, resultado = obtener_itgb(valuacion_fiscal, parentesco)
+    return resultado if ok else f"No se pudo calcular: {resultado}"
+
+
 # ==========================================================================================
 # EL REGISTRO
 # ==========================================================================================
@@ -107,6 +190,8 @@ HERRAMIENTAS = [
     vencimiento_certificado,
     vencimiento_ingreso_rpi,
     vencimiento_prorroga_inscripcion,
+    calcular_porciones_herencia,
+    calcular_itgb,
 ]
 
 # Índice por nombre, para que el especialista determinista resuelva a qué función corresponde
