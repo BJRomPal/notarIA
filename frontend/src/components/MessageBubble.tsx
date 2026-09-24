@@ -36,7 +36,13 @@ export function MessageBubble({ message }: { message: ChatMessage }) {
                 clipRule="evenodd"
               />
             </svg>
-            {nFuentes} artículo{nFuentes === 1 ? "" : "s"} recuperado{nFuentes === 1 ? "" : "s"}
+            {/* "fuente" y no "artículo": el contador cuenta lo que aportaron los tres
+                especialistas, y solo el particular trae artículos. El general devuelve
+                entidades de ontología y el particular suma fallos, así que "n artículos"
+                era falso en cuanto la consulta no era sobre articulado. Tampoco
+                "documentos": una entidad de ontología es un instituto jurídico, no un
+                documento. Y "fuente" es la palabra que ya usa el panel de abajo. */}
+            {nFuentes} fuente{nFuentes === 1 ? "" : "s"} recuperada{nFuentes === 1 ? "" : "s"}
             {message.segundos !== undefined && (
               <span className="text-slate-400">· {message.segundos}s</span>
             )}

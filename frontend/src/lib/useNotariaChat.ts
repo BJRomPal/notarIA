@@ -52,7 +52,7 @@ export function useNotariaChat({ onAssistantUpdate }: UseNotariaChatOptions) {
   }, []);
 
   const send = useCallback(
-    async (pregunta: string) => {
+    async (pregunta: string, threadId: string) => {
       const controller = new AbortController();
       abortRef.current = controller;
       setStreaming(true);
@@ -61,7 +61,10 @@ export function useNotariaChat({ onAssistantUpdate }: UseNotariaChatOptions) {
         const res = await fetch("/api/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ pregunta }),
+          // thread_id identifica la conversación en el backend: es lo que hace que
+          // el agente entienda "¿y para la SRL?". Es el mismo id de la conversación
+          // que ya guardábamos en localStorage, no uno nuevo.
+          body: JSON.stringify({ pregunta, thread_id: threadId }),
           signal: controller.signal,
         });
 

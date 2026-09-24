@@ -58,9 +58,16 @@ interface ChatProps {
   streaming: boolean;
   onSend: (texto: string) => void;
   onStop: () => void;
+  onVerGuia: () => void;
 }
 
-function Welcome({ onSend }: { onSend: (texto: string) => void }) {
+function Welcome({
+  onSend,
+  onVerGuia,
+}: {
+  onSend: (texto: string) => void;
+  onVerGuia: () => void;
+}) {
   return (
     <div className="relative flex h-full flex-col items-center justify-center overflow-hidden px-4">
       {/* Halos decorativos */}
@@ -77,7 +84,7 @@ function Welcome({ onSend }: { onSend: (texto: string) => void }) {
         </p>
         <p className="mt-5 max-w-md text-center text-[15px] leading-relaxed text-slate-500">
           Consultá sobre derecho argentino. Cada respuesta se construye sobre la
-          legislación vigente y cita los artículos en los que se funda.
+          legislación vigente y cita los artículos y fuentes en los que se funda.
         </p>
 
         <div className="mt-10 grid w-full max-w-2xl grid-cols-1 gap-2.5 sm:grid-cols-2">
@@ -92,12 +99,21 @@ function Welcome({ onSend }: { onSend: (texto: string) => void }) {
             </button>
           ))}
         </div>
+
+        {/* El segundo lugar desde donde se llega a la guía, además del menú. Va acá porque es
+            donde está el usuario que todavía no preguntó nada, que es justo a quien más le sirve. */}
+        <button
+          onClick={onVerGuia}
+          className="mt-6 text-xs text-slate-400 underline underline-offset-4 transition hover:text-accent-600"
+        >
+          Cómo preguntarle a NotarIA
+        </button>
       </div>
     </div>
   );
 }
 
-export function Chat({ conversation, streaming, onSend, onStop }: ChatProps) {
+export function Chat({ conversation, streaming, onSend, onStop, onVerGuia }: ChatProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickRef = useRef(true);
 
@@ -120,8 +136,15 @@ export function Chat({ conversation, streaming, onSend, onStop }: ChatProps) {
         <Logo size="text-xl" tone="light" />
       </header>
 
-      {messages.length === 0 ? (
-        <Welcome onSend={onSend} />
+      {/* Una conversación abierta pero sin cargar no es una conversación vacía: sus mensajes
+          están viajando desde Postgres. Mostrar la bienvenida mientras llegan haría parpadear la
+          pantalla de inicio encima de una charla que existe. */}
+      {conversation && !conversation.cargada ? (
+        <div className="flex flex-1 items-center justify-center">
+          <p className="shimmer-text text-sm font-medium">Abriendo la consulta…</p>
+        </div>
+      ) : messages.length === 0 ? (
+        <Welcome onSend={onSend} onVerGuia={onVerGuia} />
       ) : (
         <div
           ref={scrollRef}
