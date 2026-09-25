@@ -2,12 +2,19 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import type { ChatMessage } from "@/lib/types";
+import type { ChatMessage, EstadoEncuesta } from "@/lib/types";
+import { Encuesta } from "./Encuesta";
 import { LogoMark } from "./Logo";
 import { Sources } from "./Sources";
 import { ThinkingStatus } from "./ThinkingStatus";
 
-export function MessageBubble({ message }: { message: ChatMessage }) {
+export function MessageBubble({
+  message,
+  onEncuesta,
+}: {
+  message: ChatMessage;
+  onEncuesta: (turnoId: string, estado: EstadoEncuesta) => void;
+}) {
   if (message.role === "user") {
     return (
       <div className="flex justify-end">
@@ -65,6 +72,14 @@ export function MessageBubble({ message }: { message: ChatMessage }) {
           <div className="mt-2 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
             {message.error}
           </div>
+        )}
+
+        {message.encuesta && message.turnoId && (
+          <Encuesta
+            turnoId={message.turnoId}
+            estado={message.encuesta}
+            onCambio={(estado) => onEncuesta(message.turnoId as string, estado)}
+          />
         )}
       </div>
     </div>

@@ -110,6 +110,22 @@ export function verTextoFallo(id: string) {
   return pedir<{ texto: string }>(`/fuente/fallo/${encodeURIComponent(id)}/texto`);
 }
 
+/** La encuesta de la beta sobre una respuesta: que apareció, su respuesta o que se descartó. */
+export function guardarEvaluacion(
+  turnoId: string,
+  cuerpo: {
+    estado: "mostrada" | "respondida" | "descartada";
+    rubrica: string;
+    exactitud?: number;
+    pertinencia?: number;
+    completitud?: number;
+    fundamentacion?: number;
+    comentario?: string;
+  },
+) {
+  return pedir<{ estado: string }>(`/turnos/${turnoId}/evaluacion`, json("PUT", cuerpo));
+}
+
 /** Convierte los mensajes del servidor a los del chat.
  *
  * Los rehidratados llegan con `fases: []` y `done: true`: el detalle de las fases no se

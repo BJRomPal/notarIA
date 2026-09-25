@@ -26,7 +26,8 @@ from weakref import WeakValueDictionary
 from langchain_core.messages import HumanMessage
 
 from api.agente.grafo import APP
-from api.consumo import RegistroDeConsumo, alias_de, asegurar_conversacion, guardar_turno
+from api.consumo import (RegistroDeConsumo, abrir_turno, alias_de, asegurar_conversacion,
+                         cerrar_turno, guardar_turno)
 
 
 # UN LOCK POR CONVERSACIÓN, para que dos preguntas del mismo hilo no se pisen (ver el detalle
@@ -56,12 +57,16 @@ def _lock_del_hilo(hilo: str) -> threading.Lock:
         return lock
 
 
-def responder_stream(pregunta: str, thread_id: str | None = None, identidad=None) -> Iterator[dict]:
+def responder_stream(pregunta: str, thread_id: str | None = None, identidad=None,
+                     turno_id: str | None = None) -> Iterator[dict]:
     """Corre el agente y va emitiendo los eventos SSE a medida que ocurren.
 
     `thread_id` identifica la conversación en las tres capas a la vez: el checkpointer de
     LangGraph, la tabla `notaria.conversaciones` y el `conversation.id` del frontend. Una sola
     clave, sin traducciones.
+
+    `turno_id` identifica ESTE turno en `notaria.turnos`. Lo genera el navegador para que la
+    encuesta de la beta pueda referirse a la respuesta que evalúa; si no llega, se genera acá.
 
     Dos llamadas con el mismo id comparten historial,
     y es lo que hace que «¿y para la SRL?» se entienda. Viene del frontend, donde ya existe
@@ -100,6 +105,7 @@ def responder_stream(pregunta: str, thread_id: str | None = None, identidad=None
     # adentro del nodo, el usuario leía 10,2 s — subestimando casi tres veces.
     t0 = time.time()
     hilo = thread_id or str(uuid.uuid4())
+    turno = turno_id or str(uuid.uuid4())
 
     # SERIALIZADO POR CONVERSACIÓN. Sin esto, dos preguntas seguidas sobre el mismo `thread_id`
     # se pisan: el evento `fin` puede llegarle al usuario ANTES de que el estado del turno quede
@@ -124,7 +130,8 @@ def responder_stream(pregunta: str, thread_id: str | None = None, identidad=None
         # `identidad` viene de api/auth.py y la pone server.py: es None mientras la
         # autenticación esté apagada, y entonces todo se atribuye al usuario de desarrollo.
         hay_base = asegurar_conversacion(hilo, pregunta, identidad)
-        registro = RegistroDeConsumo(hilo)
+        hay_turno = hay_base and abrir_turno(turno, hilo, pregunta, identidad)
+        registro = RegistroDeConsumo(hilo, turno if hay_turno else None)
 
         # El alias va DESPUÉS de asegurar la conversación, que es la que crea la fila del
         # usuario: así `alias_de` es un SELECT y no tiene que volver a resolver la identidad.
@@ -148,24 +155,62 @@ def responder_stream(pregunta: str, thread_id: str | None = None, identidad=None
 
         # Se acumulan los tokens y las fuentes al pasar, para poder guardar el turno al cerrar sin
         # volver a pedirle nada al grafo. Es leer lo que ya está saliendo, no trabajo extra.
-        respuesta, fuentes = [], []
-        for evento in APP.stream(entrada, config, stream_mode="custom"):
-            if evento.get("type") == "token":
-                respuesta.append(evento["texto"])
-            elif evento.get("type") == "fuentes":
-                fuentes = evento["articulos"]
-            elif evento.get("type") == "fin":
-                # `sintetizar` emite el evento con lo que sabe —cuántas fuentes— y el tiempo se
-                # completa acá, que es donde está el reloj del turno. Se copia el dict en vez de
-                # mutarlo: el objeto viene del stream de LangGraph y no es nuestro.
-                evento = {**evento, "segundos": round(time.time() - t0, 1)}
-            yield evento
-
-        if hay_base:
-            # Las rutas no viajan por el stream —son un detalle interno— así que se leen del estado
-            # ya persistido por el checkpointer, que es su lugar natural.
-            try:
-                rutas = APP.get_state(config).values.get("rutas", [])
-            except Exception:
-                rutas = []
-            guardar_turno(hilo, pregunta, "".join(respuesta), rutas, fuentes, registro)
+        # La `traza` es lo mismo que ve el usuario —fases, items, fuentes, fin— con el momento en
+        # que ocurrió cada cosa; los tokens quedan afuera porque ya están en `respuesta`.
+        respuesta, fuentes, traza = [], [], []
+        ms_primer_token = None
+        estado, error = "cortado", None
+        try:
+            for evento in APP.stream(entrada, config, stream_mode="custom"):
+                t_ms = round((time.time() - t0) * 1000)
+                if evento.get("type") == "token":
+                    if ms_primer_token is None:
+                        ms_primer_token = t_ms
+                    respuesta.append(evento["texto"])
+                elif evento.get("type") == "fuentes":
+                    fuentes = evento["articulos"]
+                elif evento.get("type") == "fin":
+                    # `sintetizar` emite el evento con lo que sabe —cuántas fuentes— y el tiempo se
+                    # completa acá, que es donde está el reloj del turno. Se copia el dict en vez de
+                    # mutarlo: el objeto viene del stream de LangGraph y no es nuestro.
+                    evento = {**evento, "segundos": round(time.time() - t0, 1)}
+                if evento.get("type") != "token":
+                    traza.append({"t_ms": t_ms, **evento})
+                yield evento
+            estado = "completo"
+        except GeneratorExit:
+            # El cliente se fue a mitad del turno (el botón de Stop, o cerró la pestaña): el
+            # servidor cierra el generador y la excepción aparece en el `yield`.
+            estado = "cortado"
+            raise
+        except Exception as e:
+            estado, error = "error", str(e)
+            traza.append({"t_ms": round((time.time() - t0) * 1000), "type": "error", "mensaje": error})
+            raise
+        finally:
+            if hay_base:
+                # Las rutas no viajan por el stream —son un detalle interno— así que se leen del
+                # estado ya persistido por el checkpointer, que es su lugar natural. Lo mismo la
+                # consulta reescrita y el contexto que leyó el redactor.
+                #
+                # SOLO SI EL TURNO TERMINÓ. Si se cortó antes de que `clasificar` escribiera su
+                # checkpoint, el estado todavía tiene la consulta y el contexto del turno ANTERIOR,
+                # y guardarlos acá los atribuiría a una pregunta que no los generó. De un turno
+                # cortado queda la traza (hasta dónde llegó) y sus filas de `llamadas_llm`.
+                valores, mensaje_id = {}, None
+                if estado == "completo":
+                    try:
+                        valores = APP.get_state(config).values
+                    except Exception:
+                        pass
+                rutas = valores.get("rutas", [])
+                if estado == "completo":
+                    mensaje_id = guardar_turno(hilo, pregunta, "".join(respuesta), rutas, fuentes, registro)
+                if hay_turno:
+                    cerrar_turno(
+                        turno, estado=estado, respuesta="".join(respuesta), fuentes=fuentes,
+                        traza=traza, contexto=valores.get("contexto", []),
+                        consulta=valores.get("consulta"), rutas=rutas, error=error,
+                        segundos=round(time.time() - t0, 1), ms_primer_token=ms_primer_token,
+                        mensaje_id=mensaje_id,
+                    )

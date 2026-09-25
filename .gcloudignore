@@ -1,0 +1,18 @@
+# Lo que `gcloud builds submit` sube a Cloud Build. LISTA BLANCA, igual que .dockerignore: el
+# repo convive en disco con los backups del grafo, los textos fuente y los extractores, y nada de
+# eso puede salir de esta máquina en un build.
+*
+!requirements.txt
+!Dockerfile.api
+!.dockerignore
+!cloudbuild.yaml
+!api/
+!api/**
+!utils/
+!utils/**
+!frontend/
+!frontend/**
+frontend/node_modules/
+frontend/.next/
+frontend/.env*
+**/__pycache__/

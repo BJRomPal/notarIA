@@ -39,6 +39,10 @@ export interface UserMessage {
   content: string;
 }
 
+/** Dónde está la encuesta de la beta de una respuesta (ver lib/encuesta.ts). Sin valor, a
+ * esa respuesta no le tocó. */
+export type EstadoEncuesta = "pendiente" | "respondida" | "descartada";
+
 export interface AssistantMessage {
   role: "assistant";
   content: string;
@@ -47,6 +51,10 @@ export interface AssistantMessage {
   error?: string;
   segundos?: number;
   done: boolean;
+  /** Id del turno en `notaria.turnos`. Lo genera el navegador al preguntar; los mensajes
+   * rehidratados del historial no lo tienen. */
+  turnoId?: string;
+  encuesta?: EstadoEncuesta;
 }
 
 export type ChatMessage = UserMessage | AssistantMessage;

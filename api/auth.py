@@ -21,12 +21,14 @@ El JWT no se puede falsificar sin la clave privada de Google.
 REQUISITO DE DESPLIEGUE QUE ESTE CÓDIGO NO PUEDE GARANTIZAR
 ------------------------------------------------------------
 Verificar la firma prueba que el token lo emitió Google para ESTE servicio; no prueba que el
-request haya pasado por IAP. Falta cerrar la puerta de atrás: el servicio de Cloud Run tiene que
-quedar inalcanzable salvo a través del balanceador con IAP
-(`--ingress=internal-and-cloud-load-balancing`). Sin eso, un atacante que llegue directo
-simplemente no manda el JWT — y ahí lo que salva es que `IAP_AUDIENCE` esté configurado, porque
-entonces un request sin token se rechaza. De ahí que la ausencia de token sea 401 y no un
-"seguí como anónimo".
+request haya pasado por IAP. Falta cerrar la puerta de atrás, y en el despliegue de la beta
+(`deploy/servicio.yaml`) la cierran tres cosas: IAP está activado DIRECTO sobre el servicio de
+Cloud Run —que lo aplica antes de que el pedido llegue a un contenedor, venga de donde venga—, el
+servicio solo acepta tráfico del balanceador de chatnotarial.ar, y esta API es un sidecar que
+solo escucha al frontend por localhost. Si igual alguien llegara directo, simplemente no
+manda el JWT — y ahí lo que salva es que `IAP_AUDIENCE` esté configurado, porque entonces un
+request sin token se rechaza. De ahí que la ausencia de token sea 401 y no un "seguí como
+anónimo".
 
 MODO DESARROLLO
 ---------------
@@ -35,7 +37,10 @@ None: el sistema sigue funcionando como hasta ahora, con el usuario de desarroll
 permite trabajar en local sin levantar un proxy, y es también el interruptor que hay que
 acordarse de encender: **sin esa variable no hay autenticación de ningún tipo.**
 
-    IAP_AUDIENCE=/projects/<NUMERO_DE_PROYECTO>/global/backendServices/<ID_DEL_BACKEND>
+    IAP_AUDIENCE=/projects/<NUMERO_DE_PROYECTO>/locations/<REGION>/services/<SERVICIO>
+
+Ese es el formato con IAP directo sobre Cloud Run. Detrás de un balanceador sería
+`/projects/<NUMERO>/global/backendServices/<ID>`.
 """
 import os
 from dataclasses import dataclass

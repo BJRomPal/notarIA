@@ -1,0 +1,9 @@
+# Contexto de la imagen de la API (Dockerfile.api). LISTA BLANCA a propósito: se excluye todo y
+# se suma solo lo que la API necesita. El grafo es el activo a proteger, y con una lista negra
+# bastaría una carpeta nueva con backups, textos fuente o extractores para que terminara adentro
+# de una imagen.
+*
+!requirements.txt
+!api
+!utils
+**/__pycache__

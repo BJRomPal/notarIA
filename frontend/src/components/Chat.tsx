@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { Conversation } from "@/lib/types";
+import type { Conversation, EstadoEncuesta } from "@/lib/types";
 import { ChatInput } from "./ChatInput";
 import { Logo, LogoMark } from "./Logo";
 import { MessageBubble } from "./MessageBubble";
@@ -59,6 +59,7 @@ interface ChatProps {
   onSend: (texto: string) => void;
   onStop: () => void;
   onVerGuia: () => void;
+  onEncuesta: (turnoId: string, estado: EstadoEncuesta) => void;
 }
 
 function Welcome({
@@ -113,13 +114,16 @@ function Welcome({
   );
 }
 
-export function Chat({ conversation, streaming, onSend, onStop, onVerGuia }: ChatProps) {
+export function Chat({ conversation, streaming, onSend, onStop, onVerGuia, onEncuesta }: ChatProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const stickRef = useRef(true);
 
   const messages = conversation?.messages ?? [];
   const lastAssistant = messages.length > 0 ? messages[messages.length - 1] : null;
   const contentLen = lastAssistant?.role === "assistant" ? lastAssistant.content.length : 0;
+  // La encuesta aparece DESPUÉS de que termina el stream, debajo de la respuesta. Sin esto en
+  // las dependencias quedaría fuera de la pantalla y nadie la vería.
+  const encuestaAbierta = lastAssistant?.role === "assistant" && lastAssistant.encuesta === "pendiente";
 
   // Auto-scroll mientras llegan tokens, solo si el usuario está apoyado al fondo.
   useEffect(() => {
@@ -127,7 +131,7 @@ export function Chat({ conversation, streaming, onSend, onStop, onVerGuia }: Cha
     if (el && stickRef.current) {
       el.scrollTop = el.scrollHeight;
     }
-  }, [messages.length, contentLen, streaming]);
+  }, [messages.length, contentLen, streaming, encuestaAbierta]);
 
   return (
     <main className="flex h-full min-w-0 flex-1 flex-col bg-gradient-to-b from-slate-50 to-slate-100/80">
@@ -156,7 +160,7 @@ export function Chat({ conversation, streaming, onSend, onStop, onVerGuia }: Cha
         >
           <div className="mx-auto w-full max-w-3xl space-y-7 px-4 py-8">
             {messages.map((m, i) => (
-              <MessageBubble key={i} message={m} />
+              <MessageBubble key={i} message={m} onEncuesta={onEncuesta} />
             ))}
           </div>
         </div>

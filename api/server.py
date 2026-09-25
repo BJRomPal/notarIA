@@ -3,7 +3,7 @@ Servidor FastAPI de NotarIA: expone el agente notarial como un stream SSE.
 
 Endpoints de este archivo:
   GET  /api/health — chequeo de vida (lo usa el frontend para mostrar estado).
-  POST /api/chat   — body {"pregunta": "...", "thread_id": "..."}; responde
+  POST /api/chat   — body {"pregunta": "...", "thread_id": "...", "turno_id": "..."}; responde
                      text/event-stream con los eventos JSON que emite responder_stream()
                      (una línea "data: {...}" por evento). El frontend Next.js consume
                      este stream vía fetch.
@@ -21,7 +21,9 @@ Ejecución (desde la raíz del proyecto, con el venv activo):
   uvicorn api.server:app --host 0.0.0.0 --port 8000
 """
 import json
+import uuid
 
+import anyio
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
@@ -30,15 +32,17 @@ from pydantic import BaseModel
 from api.agente.streaming import responder_stream
 from api.auth import IdentidadInvalida, autenticacion_activa, identidad
 from api.consumo import obtener_pool
-from api.rutas import catalogo, cuenta
+from api.rutas import catalogo, cuenta, evaluacion
 
 app = FastAPI(title="NotarIA API")
 
 # El resto de los endpoints vive en api/rutas/, uno por origen de datos: `cuenta` lee Postgres
-# (alias, conversaciones, consumo) y `catalogo` lee Neo4j (el inventario y el contenido de una
-# fuente citada). Ninguno tiene que ver con el agente, que es de lo único que habla este archivo.
+# (alias, conversaciones, consumo), `catalogo` lee Neo4j (el inventario y el contenido de una
+# fuente citada) y `evaluacion` guarda la encuesta de la beta. Ninguno tiene que ver con el
+# agente, que es de lo único que habla este archivo.
 app.include_router(cuenta.router)
 app.include_router(catalogo.router)
+app.include_router(evaluacion.router)
 
 # El frontend corre en otro puerto (Next.js en 3000); en desarrollo se permite todo
 # origen porque la API no maneja credenciales.
@@ -48,6 +52,22 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+class _StreamCerrable(StreamingResponse):
+    """Un StreamingResponse que cierra su iterador al terminar, pase lo que pase.
+
+    Starlette no lo hace: si el cliente corta mientras se está enviando un fragmento, el
+    iterador queda suspendido en su `yield` y nunca corre su `finally` (ver `sse()` en `chat`).
+    `aclose()` sobre un iterador que ya terminó no hace nada.
+    """
+
+    async def stream_response(self, send):
+        try:
+            await super().stream_response(send)
+        finally:
+            with anyio.CancelScope(shield=True):
+                await self.body_iterator.aclose()
 
 
 class ChatRequest(BaseModel):
@@ -63,6 +83,10 @@ class ChatRequest(BaseModel):
     """
     pregunta: str
     thread_id: str | None = None
+    # Identifica el turno en `notaria.turnos` para que la encuesta de la beta pueda referirse a
+    # esta respuesta. Lo genera el navegador; uuid.UUID hace que un id malformado sea un 422 y no
+    # un turno que no se puede registrar.
+    turno_id: uuid.UUID | None = None
 
 
 @app.get("/api/health")
@@ -98,17 +122,31 @@ def chat(req: ChatRequest, request: Request):
     except IdentidadInvalida as e:
         raise HTTPException(status_code=401, detail=str(e))
 
-    def sse():
+    async def sse():
         if not pregunta:
             yield f"data: {json.dumps({'type': 'error', 'mensaje': 'La consulta está vacía.'}, ensure_ascii=False)}\n\n"
             return
+        turno_id = str(req.turno_id) if req.turno_id else None
+        eventos = responder_stream(pregunta, req.thread_id, quien, turno_id)
         try:
-            for evento in responder_stream(pregunta, req.thread_id, quien):
+            # Cada paso del agente corre en un hilo, como antes: son llamadas bloqueantes a
+            # Gemini y a Neo4j. `next(..., None)` porque un StopIteration no cruza el hilo.
+            while (evento := await anyio.to_thread.run_sync(next, eventos, None)) is not None:
                 yield f"data: {json.dumps(evento, ensure_ascii=False)}\n\n"
         except Exception as e:
             yield f"data: {json.dumps({'type': 'error', 'mensaje': str(e)}, ensure_ascii=False)}\n\n"
+        finally:
+            # EL CIERRE TIENE QUE SER EXPLÍCITO. Si el cliente corta (el botón de Stop), Starlette
+            # cancela el stream pero NO cierra el generador: queda suspendido en un `yield`
+            # hasta que pase el recolector de basura. Mientras tanto retiene el lock de la
+            # conversación —la pregunta siguiente del mismo hilo se colgaba, medido— y el turno
+            # queda `en_curso`. `close()` levanta GeneratorExit adentro de `responder_stream`,
+            # que libera el lock y registra el turno como cortado. Blindado porque acá la tarea
+            # ya está cancelada, y en un hilo porque ese registro escribe en Postgres.
+            with anyio.CancelScope(shield=True):
+                await anyio.to_thread.run_sync(eventos.close)
 
-    return StreamingResponse(
+    return _StreamCerrable(
         sse(),
         media_type="text/event-stream",
         headers={

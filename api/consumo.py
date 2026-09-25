@@ -30,9 +30,18 @@ y se usan al terminar (ver `_anotar_inicio`).
                                 'ls_model_name': 'gemini-2.5-flash', ...}
     on_llm_end   -> usage_metadata = {'input_tokens': 315, 'output_tokens': 421,
                                       'output_token_details': {'reasoning': 400}}
+
+LA BETA: EL TURNO COMPLETO
+--------------------------
+Además del consumo, cada turno deja una fila en `notaria.turnos` (ver `db/004_beta.sql`) con
+todo lo que hace falta para analizarlo después, y cada llamada al modelo guarda lo que se le
+mandó y lo que devolvió. La regla 1 sigue valiendo —nada de esto tumba una respuesta—, pero en
+la beta perder un dato tiene que AVISAR: ver `_perdida()`.
 """
+import json
 import logging
 import os
+import threading
 import time
 import uuid
 
@@ -55,6 +64,32 @@ _precios: dict[str, tuple[float, float]] | None = None
 # como uno más y `usuarios.id_externo` se puebla con el "sub" que mande el proxy.
 USUARIO_DESARROLLO = uuid.UUID("00000000-0000-0000-0000-000000000001")
 
+# La versión del código que atendió el turno. La pone el build de la imagen (el SHA del commit);
+# si se corrige un bug a mitad de la beta, es lo que permite separar las notas de antes y de
+# después.
+VERSION_APP = os.getenv("VERSION_APP", "dev")
+
+# Tope de alertas: si Postgres se cae, cada turno fallaría varias escrituras y Telegram recibiría
+# decenas de mensajes por minuto. Con una cada diez minutos alcanza para enterarse.
+_SEGUNDOS_ENTRE_ALERTAS = 600
+_ultima_alerta = 0.0
+
+
+def _perdida(mensaje: str) -> None:
+    """Se perdió un dato de la beta: se loguea y se avisa por Telegram.
+
+    El aviso va en un hilo aparte porque `enviar_alerta` espera hasta 10 s a Telegram, y esto
+    corre en el camino de la respuesta.
+    """
+    global _ultima_alerta
+    _log.warning(mensaje)
+    ahora = time.time()
+    if ahora - _ultima_alerta < _SEGUNDOS_ENTRE_ALERTAS:
+        return
+    _ultima_alerta = ahora
+    from utils.connectors import enviar_alerta
+    threading.Thread(target=enviar_alerta, args=(f"⚠️ NotarIA: {mensaje}"[:1000],), daemon=True).start()
+
 
 def obtener_pool():
     """El pool de conexiones, o None si no hay base configurada o si ya falló antes.
@@ -75,7 +110,7 @@ def obtener_pool():
         _pool = ConnectionPool(url, min_size=1, max_size=4, open=True)
         return _pool
     except Exception as e:
-        _log.warning(f"No se pudo abrir el pool de Postgres, la contabilidad queda apagada: {e}")
+        _perdida(f"No se pudo abrir el pool de Postgres, la contabilidad queda apagada: {e}")
         _pool_roto = True
         return None
 
@@ -184,8 +219,58 @@ def asegurar_conversacion(thread_id: str, titulo: str, identidad=None) -> bool:
             )
         return True
     except Exception as e:
-        _log.warning(f"No se pudo registrar la conversación {thread_id}: {e}")
+        _perdida(f"No se pudo registrar la conversación {thread_id}: {e}")
         return False
+
+
+def abrir_turno(turno_id: str, conversacion_id: str, pregunta: str, identidad=None) -> bool:
+    """Crea la fila del turno en estado `en_curso`. Devuelve si quedó registrada.
+
+    Va DESPUÉS de `asegurar_conversacion`, que crea la conversación a la que apunta, y ANTES de
+    la primera llamada al modelo, porque `llamadas_llm.turno_id` apunta acá.
+
+    Si el id ya existe —un reintento del navegador o alguien que manda el id de otro— el INSERT
+    falla y el turno corre sin registrarse. Colgar las llamadas de un turno ajeno sería peor.
+    """
+    pool = obtener_pool()
+    if not pool:
+        return False
+    try:
+        with pool.connection() as conn:
+            usuario_id = id_usuario(conn, identidad)
+            conn.execute(
+                "INSERT INTO notaria.turnos (id, conversacion_id, usuario_id, pregunta, version) "
+                "VALUES (%s, %s, %s, %s, %s)",
+                (turno_id, conversacion_id, usuario_id, pregunta, VERSION_APP),
+            )
+        return True
+    except Exception as e:
+        _perdida(f"No se pudo abrir el turno {turno_id}: {e}")
+        return False
+
+
+def cerrar_turno(turno_id: str, *, estado: str, respuesta: str, fuentes: list[dict],
+                 traza: list[dict], contexto: list[str], consulta: str | None,
+                 rutas: list[str], error: str | None, segundos: float,
+                 ms_primer_token: int | None, mensaje_id: int | None) -> None:
+    """Completa la fila del turno con todo lo que pasó en él, haya terminado bien o no."""
+    pool = obtener_pool()
+    if not pool:
+        return
+    try:
+        with pool.connection() as conn:
+            conn.execute(
+                "UPDATE notaria.turnos SET estado = %s, respuesta = %s, fuentes = %s, traza = %s, "
+                "       contexto = %s, consulta = %s, rutas = %s, error = %s, segundos = %s, "
+                "       ms_primer_token = %s, mensaje_id = %s, cerrado_en = now() "
+                "WHERE id = %s",
+                (estado, respuesta, json.dumps(fuentes or [], default=str),
+                 json.dumps(traza, ensure_ascii=False, default=str),
+                 json.dumps(contexto or [], ensure_ascii=False, default=str),
+                 consulta, rutas or None, error, segundos, ms_primer_token, mensaje_id, turno_id),
+            )
+    except Exception as e:
+        _perdida(f"No se pudo cerrar el turno {turno_id} ({estado}): {e}")
 
 
 # ==========================================================================================
@@ -231,22 +316,25 @@ class RegistroDeConsumo(BaseCallbackHandler):
     vengan, sin que ningún especialista tenga que colaborar.
     """
 
-    def __init__(self, conversacion_id: str):
+    def __init__(self, conversacion_id: str, turno_id: str | None = None):
         self.conversacion_id = conversacion_id
-        # run_id -> (timestamp de inicio, nodo, modelo). Ver _anotar_inicio() para por qué las
-        # tres cosas se guardan juntas en el arranque y no se leen al final.
+        # None si el turno no quedó registrado (ver `abrir_turno`): las filas se escriben igual,
+        # sin colgarse de ningún turno.
+        self.turno_id = turno_id
+        # run_id -> (timestamp de inicio, nodo, modelo, entrada). Ver _anotar_inicio() para por
+        # qué se guardan juntas en el arranque y no se leen al final.
         self._en_vuelo: dict = {}
         self.ids_escritos: list[int] = []   # para completar mensaje_id al cerrar el turno
 
     def on_llm_start(self, serialized, prompts, *, run_id, **kwargs):
-        self._anotar_inicio(run_id, kwargs)
+        self._anotar_inicio(run_id, kwargs, [{"rol": "prompt", "contenido": p} for p in prompts])
 
     def on_chat_model_start(self, serialized, messages, *, run_id, **kwargs):
         """Los modelos de chat disparan este, no on_llm_start. Se implementan los dos porque
         cuál de los dos llega depende de la integración, y perder uno es perder la fila."""
-        self._anotar_inicio(run_id, kwargs)
+        self._anotar_inicio(run_id, kwargs, [_mensaje_a_dict(m) for m in (messages[0] if messages else [])])
 
-    def _anotar_inicio(self, run_id, kwargs) -> None:
+    def _anotar_inicio(self, run_id, kwargs, entrada: list[dict]) -> None:
         """Guarda el reloj, el nodo y el modelo al ARRANCAR la llamada.
 
         POR QUÉ ACÁ Y NO AL TERMINAR, que es donde parecería natural: **la metadata solo llega
@@ -263,14 +351,20 @@ class RegistroDeConsumo(BaseCallbackHandler):
             time.time(),
             metadata.get("langgraph_node") or "desconocido",
             metadata.get("ls_model_name") or "",
+            entrada,
         )
 
     def on_llm_end(self, response, *, run_id, **kwargs):
-        latencia, nodo, modelo = self._cerrar(run_id)
+        latencia, nodo, modelo, entrada = self._cerrar(run_id)
         try:
             generacion = response.generations[0][0]
             mensaje = getattr(generacion, "message", None)
             uso = getattr(mensaje, "usage_metadata", None) or {}
+            if mensaje is not None:
+                salida = {"contenido": mensaje.content,
+                          "tool_calls": getattr(mensaje, "tool_calls", None) or []}
+            else:
+                salida = {"contenido": getattr(generacion, "text", "")}
             self._escribir(
                 nodo=nodo,
                 modelo=modelo or self._modelo_de_respuesta(mensaje),
@@ -279,9 +373,11 @@ class RegistroDeConsumo(BaseCallbackHandler):
                 tokens_pensamiento=(uso.get("output_token_details") or {}).get("reasoning", 0),
                 latencia_ms=latencia,
                 error=None,
+                entrada=entrada,
+                salida=salida,
             )
         except Exception as e:
-            _log.warning(f"No se pudo registrar el consumo de una llamada: {e}")
+            _perdida(f"No se pudo registrar el consumo de una llamada: {e}")
 
     def on_llm_error(self, error, *, run_id, **kwargs):
         """Una llamada que falla TAMBIÉN se registra, con costo 0 y el error.
@@ -291,20 +387,21 @@ class RegistroDeConsumo(BaseCallbackHandler):
         único que se ve es que el producto anda mal sin saber dónde.
         """
         try:
-            latencia, nodo, modelo = self._cerrar(run_id)
+            latencia, nodo, modelo, entrada = self._cerrar(run_id)
             self._escribir(nodo=nodo, modelo=modelo or "desconocido",
                            tokens_entrada=0, tokens_salida=0, tokens_pensamiento=0,
-                           latencia_ms=latencia, error=str(error)[:500])
-        except Exception:
-            pass
+                           latencia_ms=latencia, error=str(error)[:500],
+                           entrada=entrada, salida=None)
+        except Exception as e:
+            _perdida(f"No se pudo registrar una llamada fallida: {e}")
 
     # --- internos ---
 
-    def _cerrar(self, run_id) -> tuple[int | None, str, str]:
-        """Saca la llamada de las que están en vuelo y devuelve (latencia_ms, nodo, modelo)."""
-        inicio, nodo, modelo = self._en_vuelo.pop(run_id, (None, "desconocido", ""))
+    def _cerrar(self, run_id) -> tuple[int | None, str, str, list[dict]]:
+        """Saca la llamada de las que están en vuelo y devuelve (latencia_ms, nodo, modelo, entrada)."""
+        inicio, nodo, modelo, entrada = self._en_vuelo.pop(run_id, (None, "desconocido", "", []))
         latencia = round((time.time() - inicio) * 1000) if inicio else None
-        return latencia, nodo, modelo
+        return latencia, nodo, modelo, entrada
 
     @staticmethod
     def _modelo_de_respuesta(mensaje) -> str:
@@ -314,7 +411,7 @@ class RegistroDeConsumo(BaseCallbackHandler):
         return (getattr(mensaje, "response_metadata", None) or {}).get("model_name") or "desconocido"
 
     def _escribir(self, *, nodo, modelo, tokens_entrada, tokens_salida,
-                  tokens_pensamiento, latencia_ms, error):
+                  tokens_pensamiento, latencia_ms, error, entrada, salida):
         pool = obtener_pool()
         if not pool:
             return
@@ -322,14 +419,25 @@ class RegistroDeConsumo(BaseCallbackHandler):
         with pool.connection() as conn:
             fila = conn.execute(
                 "INSERT INTO notaria.llamadas_llm "
-                "(conversacion_id, nodo, modelo, tokens_entrada, tokens_salida, "
-                " tokens_pensamiento, costo_usd, latencia_ms, error) "
-                "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id",
-                (self.conversacion_id, nodo, modelo, tokens_entrada, tokens_salida,
-                 tokens_pensamiento, costo, latencia_ms, error),
+                "(conversacion_id, turno_id, nodo, modelo, tokens_entrada, tokens_salida, "
+                " tokens_pensamiento, costo_usd, latencia_ms, error, entrada, salida) "
+                "VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s) RETURNING id",
+                (self.conversacion_id, self.turno_id, nodo, modelo, tokens_entrada, tokens_salida,
+                 tokens_pensamiento, costo, latencia_ms, error,
+                 json.dumps(entrada, ensure_ascii=False, default=str),
+                 json.dumps(salida, ensure_ascii=False, default=str) if salida is not None else None),
             ).fetchone()
         if fila:
             self.ids_escritos.append(fila[0])
+
+
+def _mensaje_a_dict(m) -> dict:
+    """Un mensaje de LangChain como lo guarda `llamadas_llm.entrada`: rol, contenido y, si las
+    trae, las tool_calls (el historial del determinista las tiene)."""
+    d = {"rol": getattr(m, "type", "?"), "contenido": getattr(m, "content", str(m))}
+    if getattr(m, "tool_calls", None):
+        d["tool_calls"] = m.tool_calls
+    return d
 
 
 # ==========================================================================================
@@ -337,8 +445,11 @@ class RegistroDeConsumo(BaseCallbackHandler):
 # ==========================================================================================
 
 def guardar_turno(conversacion_id: str, pregunta: str, respuesta: str,
-                  rutas: list[str], fuentes: list[dict], registro: RegistroDeConsumo) -> None:
+                  rutas: list[str], fuentes: list[dict], registro: RegistroDeConsumo) -> int | None:
     """Escribe los dos mensajes del turno y les cuelga las filas de consumo.
+
+    Devuelve el id del mensaje de la respuesta (o None si no se pudo escribir), que es lo que
+    `notaria.turnos.mensaje_id` necesita para atar el turno a lo que el usuario relee.
 
     POR QUÉ AL FINAL Y NO AL EMPEZAR. El gasto ocurre antes de que exista la respuesta:
     `clasificar` ya llamó a Gemini cuando todavía no hay una palabra que guardar. Por eso
@@ -357,9 +468,8 @@ def guardar_turno(conversacion_id: str, pregunta: str, respuesta: str,
     """
     pool = obtener_pool()
     if not pool:
-        return
+        return None
     try:
-        import json
         with pool.connection() as conn:
             conn.execute(
                 "INSERT INTO notaria.mensajes (conversacion_id, rol, contenido) VALUES (%s,'usuario',%s)",
@@ -379,5 +489,7 @@ def guardar_turno(conversacion_id: str, pregunta: str, respuesta: str,
                 "UPDATE notaria.conversaciones SET actualizada_en = now() WHERE id = %s",
                 (conversacion_id,),
             )
+        return fila[0] if fila else None
     except Exception as e:
-        _log.warning(f"No se pudo guardar el turno de {conversacion_id}: {e}")
+        _perdida(f"No se pudo guardar el turno de {conversacion_id}: {e}")
+        return None

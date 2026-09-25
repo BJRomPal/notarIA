@@ -1,0 +1,94 @@
+# El servicio de Cloud Run de la beta: UN servicio con dos contenedores, publicado en
+# https://chatnotarial.ar a través de un balanceador (ver deploy/README.md).
+#
+#   web  Next (puerto 3000). Recibe el tráfico, que ya pasó por IAP, y le reenvía todo /api a
+#        la API por localhost con el JWT de IAP (frontend/src/app/api/[...ruta]/route.ts).
+#   api  FastAPI con el agente (puerto 8000). Sidecar: no tiene puerto publicado, así que desde
+#        afuera no se la puede alcanzar. Es la misma topología que start.sh en local.
+#
+# Tiene placeholders ${...}: se completa con envsubst y se aplica con
+#   envsubst < deploy/servicio.yaml > /tmp/servicio.yaml
+#   gcloud run services replace /tmp/servicio.yaml --region us-central1
+# Ver deploy/README.md.
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: notaria
+  annotations:
+    # IAP directo sobre el servicio. Tiene que estar ACÁ y no solo en un `gcloud run services
+    # update --iap`: `services replace` aplica el YAML entero, y un redeploy sin esta línea
+    # apagaría IAP.
+    run.googleapis.com/iap-enabled: "true"
+    # Solo entra tráfico por el balanceador de chatnotarial.ar: la URL *.run.app deja de
+    # responder. IAP sigue aplicándose en el servicio, también a lo que llega por el balanceador.
+    run.googleapis.com/ingress: internal-and-cloud-load-balancing
+spec:
+  template:
+    metadata:
+      annotations:
+        # UNA instancia, ni más ni menos. Máximo 1 porque el lock por conversación de
+        # api/agente/streaming.py vale dentro de un proceso: con dos instancias, dos preguntas
+        # del mismo hilo podrían correr a la vez. Mínimo 1 para que el primer escribano del día
+        # no espere el arranque en frío del agente.
+        autoscaling.knative.dev/minScale: "1"
+        autoscaling.knative.dev/maxScale: "1"
+        # La web arranca después de que la API responde en su puerto.
+        run.googleapis.com/container-dependencies: '{"web":["api"]}'
+        run.googleapis.com/startup-cpu-boost: "true"
+    spec:
+      serviceAccountName: notaria-run@${PROYECTO}.iam.gserviceaccount.com
+      # Un turno de particular con Text-to-Cypher pasa los 30 s; 600 deja margen de sobra.
+      timeoutSeconds: 600
+      containerConcurrency: 40
+      containers:
+        - name: web
+          image: us-central1-docker.pkg.dev/${PROYECTO}/notaria/web:${VERSION}
+          ports:
+            - containerPort: 3000
+          env:
+            - name: NOTARIA_API_URL
+              value: http://localhost:8000
+          resources:
+            limits:
+              cpu: "1"
+              memory: 512Mi
+        - name: api
+          image: us-central1-docker.pkg.dev/${PROYECTO}/notaria/api:${VERSION}
+          env:
+            # Sin esta variable la autenticación está APAGADA (api/auth.py).
+            - name: IAP_AUDIENCE
+              value: /projects/${NUMERO_PROYECTO}/locations/us-central1/services/notaria
+            - name: NEO4J_DATABASE
+              value: neo4j
+            - name: NEO4J_URI
+              valueFrom: {secretKeyRef: {name: NEO4J_URI, key: latest}}
+            - name: NEO4J_USERNAME
+              valueFrom: {secretKeyRef: {name: NEO4J_USERNAME, key: latest}}
+            - name: NEO4J_PASSWORD
+              valueFrom: {secretKeyRef: {name: NEO4J_PASSWORD, key: latest}}
+            - name: GOOGLE_API_KEY
+              valueFrom: {secretKeyRef: {name: GOOGLE_API_KEY, key: latest}}
+            - name: POSTGRES_URL
+              valueFrom: {secretKeyRef: {name: POSTGRES_URL, key: latest}}
+            - name: TELEGRAM_TOKEN
+              valueFrom: {secretKeyRef: {name: TELEGRAM_TOKEN, key: latest}}
+            - name: TELEGRAM_CHAT_ID
+              valueFrom: {secretKeyRef: {name: TELEGRAM_CHAT_ID, key: latest}}
+          volumeMounts:
+            - name: cloudsql
+              mountPath: /cloudsql
+          startupProbe:
+            tcpSocket:
+              port: 8000
+            periodSeconds: 2
+            failureThreshold: 60
+          resources:
+            limits:
+              cpu: "1"
+              memory: 2Gi
+      volumes:
+        # El socket de Cloud SQL. POSTGRES_URL lo usa con host=/cloudsql/<conexión>.
+        - name: cloudsql
+          cloudSqlInstance:
+            instances:
+              - ${PROYECTO}:us-central1:notaria-pg

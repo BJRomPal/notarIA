@@ -1,0 +1,29 @@
+# Construye las dos imágenes de NotarIA y las sube a Artifact Registry.
+#
+# En Cloud Build y no en la máquina de desarrollo porque la GX10 es arm64 y Cloud Run corre amd64.
+# Se corre desde la raíz, con el árbol LIMPIO: `_VERSION` es el SHA del commit y queda en cada
+# turno de la beta, así que tiene que describir exactamente el código que se subió.
+#
+#   gcloud builds submit --config cloudbuild.yaml --substitutions=_VERSION=$(git rev-parse --short HEAD)
+#
+# Qué se sube lo decide .gcloudignore (lista blanca).
+steps:
+  - id: api
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-f", "Dockerfile.api", "--build-arg", "VERSION_APP=${_VERSION}",
+           "-t", "${_REGION}-docker.pkg.dev/${PROJECT_ID}/notaria/api:${_VERSION}", "."]
+  - id: web
+    name: gcr.io/cloud-builders/docker
+    args: ["build", "-t", "${_REGION}-docker.pkg.dev/${PROJECT_ID}/notaria/web:${_VERSION}", "frontend"]
+    waitFor: ["-"]
+
+images:
+  - ${_REGION}-docker.pkg.dev/${PROJECT_ID}/notaria/api:${_VERSION}
+  - ${_REGION}-docker.pkg.dev/${PROJECT_ID}/notaria/web:${_VERSION}
+
+# `_VERSION` no tiene valor por defecto a propósito: sin él, Cloud Build rechaza el build.
+substitutions:
+  _REGION: us-central1
+
+options:
+  logging: CLOUD_LOGGING_ONLY

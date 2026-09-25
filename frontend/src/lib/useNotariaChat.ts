@@ -15,8 +15,8 @@ interface UseNotariaChatOptions {
   ) => void;
 }
 
-export function emptyAssistantMessage(): AssistantMessage {
-  return { role: "assistant", content: "", fases: [], fuentes: [], done: false };
+export function emptyAssistantMessage(turnoId?: string): AssistantMessage {
+  return { role: "assistant", content: "", fases: [], fuentes: [], done: false, turnoId };
 }
 
 function applyEvent(msg: AssistantMessage, ev: SSEEvent): AssistantMessage {
@@ -51,11 +51,16 @@ export function useNotariaChat({ onAssistantUpdate }: UseNotariaChatOptions) {
     abortRef.current?.abort();
   }, []);
 
+  /** Devuelve true si el turno terminó bien: llegó `fin`, sin error y sin que lo cortaran.
+   * Recién ahí el turno está guardado en el servidor (el stream se cierra después de guardar),
+   * que es lo que necesita la encuesta para poder referirse a él. */
   const send = useCallback(
-    async (pregunta: string, threadId: string) => {
+    async (pregunta: string, threadId: string, turnoId: string): Promise<boolean> => {
       const controller = new AbortController();
       abortRef.current = controller;
       setStreaming(true);
+      let llegoFin = false;
+      let huboError = false;
 
       try {
         const res = await fetch("/api/chat", {
@@ -63,8 +68,9 @@ export function useNotariaChat({ onAssistantUpdate }: UseNotariaChatOptions) {
           headers: { "Content-Type": "application/json" },
           // thread_id identifica la conversación en el backend: es lo que hace que
           // el agente entienda "¿y para la SRL?". Es el mismo id de la conversación
-          // que ya guardábamos en localStorage, no uno nuevo.
-          body: JSON.stringify({ pregunta, thread_id: threadId }),
+          // que ya guardábamos en localStorage, no uno nuevo. turno_id identifica esta
+          // respuesta, para que la encuesta pueda referirse a ella.
+          body: JSON.stringify({ pregunta, thread_id: threadId, turno_id: turnoId }),
           signal: controller.signal,
         });
 
@@ -89,6 +95,8 @@ export function useNotariaChat({ onAssistantUpdate }: UseNotariaChatOptions) {
             if (!linea.startsWith("data:")) continue;
             try {
               const ev = JSON.parse(linea.slice(5).trim()) as SSEEvent;
+              if (ev.type === "fin") llegoFin = true;
+              if (ev.type === "error") huboError = true;
               onAssistantUpdate((msg) => applyEvent(msg, ev));
             } catch {
               // Evento malformado: se ignora y se sigue leyendo el stream.
@@ -98,6 +106,7 @@ export function useNotariaChat({ onAssistantUpdate }: UseNotariaChatOptions) {
 
         // Si el stream terminó sin evento "fin" (corte del servidor), cerrar el mensaje.
         onAssistantUpdate((msg) => (msg.done ? msg : { ...msg, done: true }));
+        return llegoFin && !huboError;
       } catch (e) {
         const aborted = e instanceof DOMException && e.name === "AbortError";
         onAssistantUpdate((msg) => ({
@@ -109,6 +118,7 @@ export function useNotariaChat({ onAssistantUpdate }: UseNotariaChatOptions) {
               ? e.message
               : "Error de conexión con la API.",
         }));
+        return false;
       } finally {
         setStreaming(false);
         abortRef.current = null;

@@ -24,6 +24,13 @@ Cada conversación viaja con un `thread_id` (el `conversation.id`), lo que le pe
 mantener contexto entre turnos ("¿y para la SRL?"). Ese mismo id es la clave en las tres capas:
 el checkpointer de LangGraph, `notaria.conversaciones` y la lista del panel lateral.
 
+**La encuesta de la beta.** Cada pregunta viaja también con un `turno_id` que genera el navegador:
+es el id de esa respuesta en `notaria.turnos`, y lo que le permite a la encuesta referirse a ella
+sin tocar el contrato SSE. Cuando un turno termina bien y hay base, `lib/encuesta.ts` sortea si le
+toca encuesta (1 de cada 4 en promedio, nunca dos seguidas) y `Encuesta.tsx` la muestra como una
+tarjeta debajo de la respuesta. Qué pasó con ella vive en el mensaje (`message.encuesta`), no en el
+componente, para que no reaparezca al volver a una conversación.
+
 **De dónde sale el historial.** `/api/health` devuelve `base: bool`. Con Postgres, la lista y los
 mensajes vienen del servidor y siguen al usuario entre dispositivos; sin Postgres, queda el
 `localStorage` de siempre. Es una sola rama, en `useConversations`, y existe porque el proyecto
@@ -60,9 +67,10 @@ src/lib/useConversations.ts  — La lista: carga diferida, borrado y el modo sin
 src/lib/useNotariaChat.ts    — Hook: fetch + parsing del stream SSE
 src/lib/storage.ts           — Respaldo en localStorage, solo cuando no hay base
 src/lib/types.ts             — Tipos de eventos, mensajes, conversaciones, usuario y consumo
+src/lib/encuesta.ts          — La encuesta de la beta: el sorteo y la rúbrica versionada
 src/components/              — Sidebar, Chat, MessageBubble, ThinkingStatus, Sources, ChatInput,
                                Logo, Modal, UserMenu, AliasDialog, ConsumoPanel, Inventario,
-                               FuenteModal, GuiaPrompts
+                               FuenteModal, GuiaPrompts, Encuesta
 ```
 
 Los chips de "Fuentes consultadas" son botones: cada uno abre `FuenteModal` con el texto del

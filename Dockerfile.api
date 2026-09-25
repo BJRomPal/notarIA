@@ -1,0 +1,29 @@
+# La API de NotarIA: FastAPI con el agente. En Cloud Run corre como sidecar del frontend, en el
+# mismo servicio, y solo la alcanza el proxy de Next por localhost (ver deploy/servicio.yaml).
+#
+# Se construye en Cloud Build (cloudbuild.yaml) y no en la máquina de desarrollo, que es arm64:
+# Cloud Run corre amd64.
+FROM python:3.12-slim
+
+ENV PYTHONUNBUFFERED=1 \
+    PYTHONDONTWRITEBYTECODE=1 \
+    PIP_NO_CACHE_DIR=1
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+
+COPY api/ api/
+COPY utils/ utils/
+
+# El SHA del commit. Queda en cada fila de `notaria.turnos`: si se corrige algo a mitad de la
+# beta, es lo que permite separar las respuestas de antes y de después.
+ARG VERSION_APP=dev
+ENV VERSION_APP=$VERSION_APP
+
+EXPOSE 8000
+
+# UN solo proceso, sin --workers: el lock por conversación de api/agente/streaming.py vale
+# dentro de un proceso.
+CMD ["uvicorn", "api.server:app", "--host", "0.0.0.0", "--port", "8000"]

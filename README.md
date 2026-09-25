@@ -48,7 +48,7 @@ Un archivo `.env` en la raíz (no se versiona):
 | `GOOGLE_API_KEY` | Sí | La lee `langchain-google-genai` |
 | `POSTGRES_URL` | No | Sin ella no hay historial en servidor ni contabilidad de consumo, y la conversación no sobrevive al reinicio |
 | `IAP_AUDIENCE` | No | Sin ella la autenticación está **apagada** y todo se atribuye al usuario de desarrollo. Solo para desarrollo |
-| `TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID` | No | Alertas de la ingesta |
+| `TELEGRAM_TOKEN`, `TELEGRAM_CHAT_ID` | No | Alertas de la ingesta y de datos de la beta que no se pudieron guardar |
 
 ## Ejecución
 
@@ -70,6 +70,13 @@ npm run dev
 
 El detalle del frontend está en [frontend/README.md](frontend/README.md).
 
+## Despliegue
+
+La beta con escribanos se publica en https://chatnotarial.ar: un balanceador con certificado de
+Google delante de un servicio de Cloud Run con los dos contenedores detrás de IAP, Cloud SQL y una
+copia congelada del grafo en Aura Professional. El runbook, dominio incluido, está en
+[deploy/README.md](deploy/README.md).
+
 ## Tests
 
 Son scripts sueltos, sin pytest, y cada uno sale con código 1 si falla alguno:
@@ -84,6 +91,7 @@ Son scripts sueltos, sin pytest, y cada uno sale con código 1 si falla alguno:
 | `tests/test_clasificador.py` | Gemini. Correrlo siempre que se toque el prompt del clasificador |
 | `tests/test_api_catalogo.py` | Neo4j |
 | `tests/test_api_cuenta.py` | Postgres |
+| `tests/test_api_evaluacion.py` | Postgres. La encuesta de la beta: que valide y que aísle por usuario |
 | `tests/test_jurisprudencia.py` | Neo4j y Gemini (`--recuperacion` corre solo la recuperación) |
 
 ## Estructura
@@ -92,12 +100,13 @@ Son scripts sueltos, sin pytest, y cada uno sale con código 1 si falla alguno:
 api/            El agente y su API (FastAPI). Solo api/agente/ conoce LangGraph.
   agente/       Grafo del agente, nodos y streaming SSE
   especialistas/  Los tres especialistas, como generadores planos sin LangGraph
-  rutas/        Cuenta del usuario y catálogo
+  rutas/        Cuenta del usuario, catálogo y la encuesta de la beta
 utils/          Conectores compartidos, helpers del RAG y herramientas deterministas
 db/             Migraciones de Postgres, numeradas y cargadas en orden
 frontend/       Chat en Next.js
+deploy/         Servicio de Cloud Run y runbook del despliegue
 tests/          Verificaciones sueltas
-exploration/    Mantenimiento de los resúmenes de entidades del grafo
+exploration/    Mantenimiento de los resúmenes de entidades del grafo y exportación de la beta
 docs/           Documentación de arquitectura
 ```
 

@@ -46,6 +46,9 @@ docker exec -i "$NOMBRE" psql -U postgres -v ON_ERROR_STOP=1 -q < db/002_precios
 echo "==> Cargando db/003_alias_usuario.sql"
 docker exec -i "$NOMBRE" psql -U postgres -v ON_ERROR_STOP=1 -q < db/003_alias_usuario.sql
 
+echo "==> Cargando db/004_beta.sql"
+docker exec -i "$NOMBRE" psql -U postgres -v ON_ERROR_STOP=1 -q < db/004_beta.sql
+
 echo
 echo "==> Tablas del esquema notaria:"
 docker exec "$NOMBRE" psql -U postgres -c "\dt notaria.*"
