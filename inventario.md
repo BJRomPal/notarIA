@@ -15,9 +15,12 @@
 - 749/24 - Decreto Reglamentario Ley 27.742 (1 solo artículo)
 
 ### RESOLUCIONES GENERALES
+
+21 RG de la Inspección General de Justicia. Jurisdicción CABA.
+
 - 15/2024 - RG Mas importante por cantidad de temas.
 - 6/2017 - RG de las SAS
-- 3/2020 - Edictos Detalle de participaciones
+- 3/2020 - Edictos Detalle de participaciones. DEROGADA en su totalidad por la RG 11/2026 (vigente=false).
 - 25/2020 - Clubes de Campo Adecuación.
 - 30/2020 - Procedimiento urgente SA, SAU y SRL Form 185 ARCA.
 - 45/2020 - Asunción Suplentes en SA y SRL.
@@ -35,6 +38,7 @@
 - 7/2026 (30/06/2026) - Crea el Sistema Online de Documentación Abierta de IGJ (SODA). Sustituye Arts. 5 y 6 del Anexo A de RG 15/2024 (canal digital, autenticación con Clave Fiscal, expediente electrónico). REMITE_A → Art. 21 Ley 22.315. Pendiente: Ley 25.506 art. 5 (no cargada).
 - 9/2026 (01/07/2026) - Reordena el régimen de presentación de estados contables. Sustituye 8 artículos de RG 15/2024 (129, 130, 226, 230, 232, 300, 322, 347). Deroga 16 (128, 227-229, 231, 233-234, 241, 302-306, 323, 348-349). REMITE_A → Art. 299 Ley 19.550 y Art. 270 RG 15/2024.
 - 10/2026 (07/07/2026) - Domicilio electrónico y régimen de notificaciones. Sustituye Arts. 12-16 del Anexo A de RG 15/2024. Deroga Arts. 17 y 18. Pendientes: Decreto 1759/72 (arts. 19, 39, 40, 41, 43) y CPCCN art. 158, ninguno cargado. NOTA: el archivo fuente traía el encabezado erróneo "9/2026"; corregido.
+- 11/2026 (18/09/2026, vigente desde 23/09/2026) - Reforma de trámites societarios: reserva de denominación, sede social, aportes, cláusula arbitral y dictamen de precalificación. Sustituye 10 artículos de RG 15/2024 (47, 52, 53, 59-63, 69 y 74) y el Art. 7 de RG 6/2017 (documentos registrables de SAS). Deroga 11 artículos de RG 15/2024 (54-58, 64-68 y 73) y 22 de RG 6/2017 (13-20, 22-31, 41, 42, 46 y 47). Deroga la RG 3/2020 en su totalidad (DEROGA_A a nivel norma) y la RG 11/2024 (no cargada).
 
 ## CÓDIGO CIVIL Y COMERCIAL
 

@@ -1,13 +1,13 @@
 """¿El catálogo devuelve lo que hay en el grafo, y el detalle de una cita trae contenido real?
 
 Es un test de INTEGRACIÓN contra Neo4j: no hay mocks, corre contra la base viva. Por eso los
-números están escritos: 197 normas y 292 fallos. Si alguno cambia, o entró una
+números están escritos: 198 normas y 292 fallos. Si alguno cambia, o entró una
 norma nueva —y hay que actualizar el número y `inventario.md`— o algo se rompió. Las dos cosas
 conviene enterarlas.
 
 Lo que se prueba y por qué:
 
-- **Que ninguna norma quede sin nombre.** 100 de las 197 no tienen `titulo`, así que un catálogo
+- **Que ninguna norma quede sin nombre.** 100 de las 198 no tienen `titulo`, así que un catálogo
   que mostrara el título tendría media lista en blanco. El nombre sale de `NOMBRE_NORMA`.
 - **Que el listado sea liviano.** El inventario contesta «¿está cargada tal norma?» y nada más:
   no devuelve el articulado ni cuenta artículos. Esto lo verifica, porque es justo lo que se sacó.
@@ -47,7 +47,7 @@ def main() -> int:
     r = cliente.get("/api/catalogo/normas")
     verificar(r.status_code == 200, "GET /api/catalogo/normas responde 200", r.text[:200])
     normas = r.json()
-    verificar(len(normas) == 197, "son 197 normas", f"vinieron {len(normas)}")
+    verificar(len(normas) == 198, "son 198 normas", f"vinieron {len(normas)}")
     verificar(all(n["nombre"] for n in normas),
               "ninguna norma queda sin nombre (NOMBRE_NORMA cubre las 100 sin titulo)",
               str([n["id"] for n in normas if not n["nombre"]][:5]))
