@@ -1,8 +1,10 @@
 """LA ENCUESTA DE LA BETA — la nota que un escribano le pone a una respuesta.
 
-La encuesta aparece en 1 de cada 4 respuestas (el sorteo lo hace el frontend, ver
-`frontend/src/lib/encuesta.ts`) y pasa por tres estados, todos sobre la misma fila de
-`notaria.evaluaciones`:
+La encuesta aparece sorteada en 1 de cada 3 respuestas (el sorteo lo hace el frontend, ver
+`frontend/src/lib/encuesta.ts`), y además cada respuesta tiene un botón «Evaluar». Las dos vías
+se guardan con su `origen` —`muestreo` o `voluntaria`— porque lo voluntario viene sesgado y el
+análisis tiene que poder separarlo. La encuesta pasa por tres estados, todos sobre la misma fila
+de `notaria.evaluaciones`:
 
     mostrada    apareció en pantalla. Se registra aunque nadie la conteste: sin esto no se
                 puede medir cuántos no respondieron, y quien no responde no es una muestra al azar.
@@ -37,6 +39,7 @@ class Evaluacion(BaseModel):
     fundamentacion: int | None = Nota
     comentario: str | None = Field(default=None, max_length=4000)
     rubrica: str = Field(min_length=1, max_length=20)
+    origen: Literal["muestreo", "voluntaria"] = "muestreo"
 
     @model_validator(mode="after")
     def notas_segun_estado(self):
@@ -57,6 +60,9 @@ def guardar_evaluacion(turno_id: str, cuerpo: Evaluacion, request: Request):
     Las transiciones válidas son mostrada → respondida | descartada, y descartada → respondida.
     Una `mostrada` repetida (el componente se volvió a montar) no pisa nada y responde 200.
     Pisar una evaluación ya respondida da 409: la nota que se dio es la que vale.
+
+    El `origen` se fija al crear la fila y no cambia después: una respuesta que salió en el sorteo
+    sigue siendo `muestreo` aunque el escribano la haya descartado y la evalúe con el botón.
     """
     usuario_id, _ = _usuario(request)
     try:
@@ -76,8 +82,8 @@ def guardar_evaluacion(turno_id: str, cuerpo: Evaluacion, request: Request):
         fila = conn.execute(
             "INSERT INTO notaria.evaluaciones "
             "  (turno_id, usuario_id, estado, exactitud, pertinencia, completitud, "
-            "   fundamentacion, comentario, rubrica, respondida_en) "
-            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, "
+            "   fundamentacion, comentario, rubrica, origen, respondida_en) "
+            "VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, "
             "        CASE WHEN %s = 'respondida' THEN now() END) "
             "ON CONFLICT (turno_id) DO UPDATE SET "
             "  estado = EXCLUDED.estado, exactitud = EXCLUDED.exactitud, "
@@ -88,7 +94,7 @@ def guardar_evaluacion(turno_id: str, cuerpo: Evaluacion, request: Request):
             "RETURNING estado",
             (turno_id, usuario_id, cuerpo.estado, cuerpo.exactitud, cuerpo.pertinencia,
              cuerpo.completitud, cuerpo.fundamentacion, comentario, cuerpo.rubrica,
-             cuerpo.estado),
+             cuerpo.origen, cuerpo.estado),
         ).fetchone()
 
     if fila is None and cuerpo.estado != "mostrada":

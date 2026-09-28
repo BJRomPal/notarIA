@@ -2,7 +2,7 @@
 
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import type { ChatMessage, EstadoEncuesta } from "@/lib/types";
+import type { CambioEncuesta, ChatMessage } from "@/lib/types";
 import { Encuesta } from "./Encuesta";
 import { LogoMark } from "./Logo";
 import { Sources } from "./Sources";
@@ -13,7 +13,7 @@ export function MessageBubble({
   onEncuesta,
 }: {
   message: ChatMessage;
-  onEncuesta: (turnoId: string, estado: EstadoEncuesta) => void;
+  onEncuesta: (turnoId: string, cambios: CambioEncuesta) => void;
 }) {
   if (message.role === "user") {
     return (
@@ -74,12 +74,30 @@ export function MessageBubble({
           </div>
         )}
 
-        {message.encuesta && message.turnoId && (
+        {message.turnoId && (message.encuesta === "pendiente" || message.encuesta === "respondida") && (
           <Encuesta
             turnoId={message.turnoId}
             estado={message.encuesta}
-            onCambio={(estado) => onEncuesta(message.turnoId as string, estado)}
+            origen={message.encuestaOrigen ?? "muestreo"}
+            onCambio={(estado) => onEncuesta(message.turnoId as string, { encuesta: estado })}
           />
+        )}
+
+        {/* «Evaluar» en cada respuesta terminada que todavía no tiene nota: abre la misma
+            encuesta, marcada como voluntaria. Bien visible a propósito: en la beta evaluar es
+            parte del trabajo del tester, y un link gris pasaba desapercibido. */}
+        {message.turnoId && message.evaluable && (!message.encuesta || message.encuesta === "descartada") && (
+          <button
+            onClick={() =>
+              onEncuesta(message.turnoId as string, { encuesta: "pendiente", encuestaOrigen: "voluntaria" })
+            }
+            className="fade-up mt-3 inline-flex items-center gap-2 rounded-full border border-accent-500/60 bg-amber-50 px-4 py-2 text-sm font-semibold text-brand-800 shadow-sm shadow-accent-600/10 transition hover:border-accent-500 hover:bg-amber-100 hover:shadow-md"
+          >
+            <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-accent-500">
+              <path d="M10 2.5l2.3 4.7 5.2.8-3.75 3.65.9 5.15L10 14.35 5.35 16.8l.9-5.15L2.5 8l5.2-.8L10 2.5z" />
+            </svg>
+            Evaluar esta respuesta
+          </button>
         )}
       </div>
     </div>

@@ -43,6 +43,10 @@ export interface UserMessage {
  * esa respuesta no le tocó. */
 export type EstadoEncuesta = "pendiente" | "respondida" | "descartada";
 
+/** Por qué apareció la encuesta: la sorteó el sistema o la pidió el escribano con «Evaluar».
+ * Se guarda con la nota porque lo voluntario viene sesgado y el análisis lo separa. */
+export type OrigenEncuesta = "muestreo" | "voluntaria";
+
 export interface AssistantMessage {
   role: "assistant";
   content: string;
@@ -54,8 +58,15 @@ export interface AssistantMessage {
   /** Id del turno en `notaria.turnos`. Lo genera el navegador al preguntar; los mensajes
    * rehidratados del historial no lo tienen. */
   turnoId?: string;
+  /** El turno terminó bien y quedó guardado, así que se lo puede evaluar. Los rehidratados lo
+   * traen del servidor: solo las respuestas de la beta tienen turno. */
+  evaluable?: boolean;
   encuesta?: EstadoEncuesta;
+  encuestaOrigen?: OrigenEncuesta;
 }
+
+/** Lo que cambia de una respuesta cuando termina el turno o se mueve su encuesta. */
+export type CambioEncuesta = Partial<Pick<AssistantMessage, "evaluable" | "encuesta" | "encuestaOrigen">>;
 
 export type ChatMessage = UserMessage | AssistantMessage;
 
@@ -178,4 +189,6 @@ export interface MensajeGuardado {
   contenido: string;
   fuentes: Fuente[];
   creado_en: string;
+  turno_id: string | null;
+  encuesta: "mostrada" | "respondida" | "descartada" | null;
 }

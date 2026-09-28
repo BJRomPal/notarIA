@@ -89,15 +89,18 @@ def main() -> int:
     por_estado: dict[str, int] = {}
     for t in resumen:
         por_estado[t["estado"]] = por_estado.get(t["estado"], 0) + 1
-    encuestas = [t for t in resumen if t["encuesta"]]
-    respondidas = [t for t in encuestas if t["encuesta"] == "respondida"]
     print(f"{len(resumen)} turnos {por_estado}")
-    print(f"{len(encuestas)} encuestas mostradas, {len(respondidas)} respondidas"
-          + (f" ({100 * len(respondidas) / len(encuestas):.0f} %)" if encuestas else ""))
-    for d in DIMENSIONES:
-        notas = [t[d] for t in respondidas]
-        if notas:
-            print(f"  {d:15} media {sum(notas) / len(notas):.2f}  (n={len(notas)})")
+    # El sorteo y el botón «Evaluar» por separado: lo voluntario viene sesgado hacia los extremos,
+    # y mezclarlo cambiaría tanto la tasa de respuesta como las medias.
+    for origen in ("muestreo", "voluntaria"):
+        encuestas = [t for t in resumen if t["encuesta"] and t["origen_encuesta"] == origen]
+        respondidas = [t for t in encuestas if t["encuesta"] == "respondida"]
+        print(f"{origen}: {len(encuestas)} encuestas abiertas, {len(respondidas)} respondidas"
+              + (f" ({100 * len(respondidas) / len(encuestas):.0f} %)" if encuestas else ""))
+        for d in DIMENSIONES:
+            notas = [t[d] for t in respondidas]
+            if notas:
+                print(f"  {d:15} media {sum(notas) / len(notas):.2f}  (n={len(notas)})")
     print(f"\n{ruta_csv}\n{ruta_jsonl}")
     return 0
 

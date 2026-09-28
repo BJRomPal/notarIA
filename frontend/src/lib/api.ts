@@ -121,6 +121,7 @@ export function guardarEvaluacion(
     completitud?: number;
     fundamentacion?: number;
     comentario?: string;
+    origen: "muestreo" | "voluntaria";
   },
 ) {
   return pedir<{ estado: string }>(`/turnos/${turnoId}/evaluacion`, json("PUT", cuerpo));
@@ -143,6 +144,11 @@ export function aMensajesDeChat(guardados: MensajeGuardado[]): Conversation["mes
           fases: [],
           fuentes: m.fuentes ?? [],
           done: true,
+          // Una encuesta que apareció y quedó sin tocar vuelve como «sin encuesta»: el botón
+          // «Evaluar» la ofrece de nuevo.
+          turnoId: m.turno_id ?? undefined,
+          evaluable: Boolean(m.turno_id),
+          encuesta: m.encuesta === "respondida" || m.encuesta === "descartada" ? m.encuesta : undefined,
         },
   );
 }

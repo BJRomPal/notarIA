@@ -13,7 +13,7 @@ import { Inventario } from "@/components/Inventario";
 import { Sidebar } from "@/components/Sidebar";
 import { verSalud, verUsuario } from "@/lib/api";
 import { sortearEncuesta } from "@/lib/encuesta";
-import type { AssistantMessage, Conversation, EstadoEncuesta, Usuario } from "@/lib/types";
+import type { AssistantMessage, CambioEncuesta, Conversation, Usuario } from "@/lib/types";
 import { useConversations } from "@/lib/useConversations";
 import { emptyAssistantMessage, useNotariaChat } from "@/lib/useNotariaChat";
 import { randomUUID } from "@/lib/uuid";
@@ -110,16 +110,17 @@ export default function Home() {
     stopRef.current = stop;
   }, [stop]);
 
-  // Cambia la encuesta de una respuesta, buscándola por su turno. Las conversaciones que no la
-  // contienen se devuelven tal cual, para no re-renderizar la lista entera.
+  // Cambia una respuesta —si se puede evaluar, su encuesta y de dónde salió—, buscándola por su
+  // turno. Las conversaciones que no la contienen se devuelven tal cual, para no re-renderizar la
+  // lista entera.
   const marcarEncuesta = useCallback(
-    (turnoId: string, estado: EstadoEncuesta) => {
+    (turnoId: string, cambios: CambioEncuesta) => {
       setConversations((prev) =>
         prev.map((c) => {
           const i = c.messages.findIndex((m) => m.role === "assistant" && m.turnoId === turnoId);
           if (i < 0) return c;
           const msgs = c.messages.slice();
-          msgs[i] = { ...(msgs[i] as AssistantMessage), encuesta: estado };
+          msgs[i] = { ...(msgs[i] as AssistantMessage), ...cambios };
           return { ...c, messages: msgs };
         }),
       );
@@ -159,11 +160,18 @@ export default function Home() {
 
       setActiveId(convId);
       streamConvIdRef.current = convId;
-      // La encuesta se sortea recién cuando el turno terminó bien —ahí ya está guardado en el
-      // servidor— y solo si hay base: sin Postgres no hay dónde guardar la nota. El sorteo va
-      // acá afuera y no adentro de un setState, porque tiene que correr una sola vez por respuesta.
+      // La respuesta se vuelve evaluable —y se sortea la encuesta— recién cuando el turno terminó
+      // bien, porque ahí ya está guardado en el servidor, y solo si hay base: sin Postgres no hay
+      // dónde guardar la nota. El sorteo va acá afuera y no adentro de un setState, porque tiene
+      // que correr una sola vez por respuesta.
       void send(texto, convId, turnoId).then((completo) => {
-        if (completo && base && sortearEncuesta()) marcarEncuesta(turnoId, "pendiente");
+        if (!completo || !base) return;
+        marcarEncuesta(
+          turnoId,
+          sortearEncuesta()
+            ? { evaluable: true, encuesta: "pendiente", encuestaOrigen: "muestreo" }
+            : { evaluable: true },
+        );
       });
     },
     [activeId, base, conversations, marcarEncuesta, send, setActiveId, setConversations, streaming],

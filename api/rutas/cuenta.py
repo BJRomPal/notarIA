@@ -171,9 +171,15 @@ def ver_conversacion(conversacion_id: str, request: Request):
         if cabecera is None:
             raise HTTPException(status_code=404, detail="No existe esa conversación.")
 
+        # El turno y su encuesta viajan con cada respuesta para que el botón «Evaluar» de la beta
+        # funcione también en una conversación reabierta, y no se ofrezca en una ya evaluada. Una
+        # respuesta anterior a la beta no tiene turno y vuelve con los dos en null.
         filas = conn.execute(
-            "SELECT rol, contenido, fuentes, creado_en FROM notaria.mensajes "
-            "WHERE conversacion_id = %s ORDER BY creado_en, id",
+            "SELECT m.rol, m.contenido, m.fuentes, m.creado_en, t.id, e.estado "
+            "FROM notaria.mensajes m "
+            "LEFT JOIN notaria.turnos t ON t.mensaje_id = m.id "
+            "LEFT JOIN notaria.evaluaciones e ON e.turno_id = t.id "
+            "WHERE m.conversacion_id = %s ORDER BY m.creado_en, m.id",
             (conversacion_id,),
         ).fetchall()
 
@@ -181,7 +187,8 @@ def ver_conversacion(conversacion_id: str, request: Request):
         "id": conversacion_id,
         "titulo": cabecera[0] or "Consulta sin título",
         "mensajes": [
-            {"rol": f[0], "contenido": f[1], "fuentes": f[2] or [], "creado_en": f[3].isoformat()}
+            {"rol": f[0], "contenido": f[1], "fuentes": f[2] or [], "creado_en": f[3].isoformat(),
+             "turno_id": str(f[4]) if f[4] else None, "encuesta": f[5]}
             for f in filas
         ],
     }

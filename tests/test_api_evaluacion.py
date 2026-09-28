@@ -8,6 +8,9 @@ Tres cosas se prueban:
    son 422, y una evaluación ya respondida no se pisa (409).
 3. **Que aísle**: el `turno_id` lo genera el navegador y viaja en la URL. Un turno de OTRO usuario
    da 404 y no se escribe nada.
+4. **Que separe el origen**: el botón «Evaluar» guarda `voluntaria`, y una respuesta que salió en el
+   sorteo sigue siendo `muestreo` aunque después se evalúe con el botón. El historial devuelve el
+   turno y el estado de su encuesta, que es lo que usa el botón en una conversación reabierta.
 
 Igual que `tests/test_api_cuenta.py`: sin token de IAP la identidad es None y todo cae en el
 usuario de desarrollo, que es el «usuario 1»; el «usuario 2» se inserta a mano en Postgres. Los
@@ -48,7 +51,7 @@ def verificar(condicion: bool, descripcion: str, detalle: str = ""):
 
 AJENO_EXTERNO = "test-api-evaluacion-usuario-ajeno"
 conv_propia, conv_ajena = str(uuid.uuid4()), str(uuid.uuid4())
-turno_propio, turno_propio_2, turno_ajeno = (str(uuid.uuid4()) for _ in range(3))
+turno_propio, turno_propio_2, turno_ajeno, turno_voluntario = (str(uuid.uuid4()) for _ in range(4))
 
 CUATRO_NOTAS = {"exactitud": 4, "pertinencia": 5, "completitud": 3, "fundamentacion": 4}
 
@@ -71,6 +74,7 @@ def preparar(conn):
         )
     for turno, conv, usuario in ((turno_propio, conv_propia, USUARIO_DESARROLLO),
                                  (turno_propio_2, conv_propia, USUARIO_DESARROLLO),
+                                 (turno_voluntario, conv_propia, USUARIO_DESARROLLO),
                                  (turno_ajeno, conv_ajena, ajeno)):
         conn.execute(
             "INSERT INTO notaria.turnos (id, conversacion_id, usuario_id, pregunta, estado) "
@@ -83,7 +87,7 @@ def preparar(conn):
 def limpiar(conn, ajeno):
     """Borra lo que creó el test. Las evaluaciones se van en cascada con sus turnos."""
     conn.execute("DELETE FROM notaria.turnos WHERE id = ANY(%s)",
-                 ([turno_propio, turno_propio_2, turno_ajeno],))
+                 ([turno_propio, turno_propio_2, turno_ajeno, turno_voluntario],))
     conn.execute("DELETE FROM notaria.conversaciones WHERE id = ANY(%s)", ([conv_propia, conv_ajena],))
     conn.execute("DELETE FROM notaria.usuarios WHERE id = %s", (ajeno,))
 
@@ -98,6 +102,11 @@ def fila(conn, turno: str):
         "       respondida_en IS NOT NULL FROM notaria.evaluaciones WHERE turno_id = %s",
         (turno,),
     ).fetchone()
+
+
+def origen(conn, turno: str):
+    f = conn.execute("SELECT origen FROM notaria.evaluaciones WHERE turno_id = %s", (turno,)).fetchone()
+    return f[0] if f else None
 
 
 def main() -> int:
@@ -152,6 +161,31 @@ def main() -> int:
         verificar(r.status_code == 422, "descartada con una nota da 422", f"vino {r.status_code}")
         r = cliente.post("/api/chat", json={"pregunta": "hola", "turno_id": "no-es-un-uuid"})
         verificar(r.status_code == 422, "un turno_id malformado en /api/chat da 422", f"vino {r.status_code}")
+
+        print("\nORIGEN")
+        with pool.connection() as conn:
+            verificar(origen(conn, turno_propio) == "muestreo", "sin origen en el pedido, queda muestreo")
+        r = evaluar(turno_voluntario, estado="mostrada", origen="voluntaria")
+        r = evaluar(turno_voluntario, estado="respondida", origen="voluntaria", **CUATRO_NOTAS)
+        verificar(r.status_code == 200, "una evaluación con el botón responde 200", r.text)
+        with pool.connection() as conn:
+            verificar(origen(conn, turno_voluntario) == "voluntaria", "y queda como voluntaria")
+            verificar(origen(conn, turno_propio_2) == "muestreo",
+                      "la sorteada, descartada y después respondida, sigue siendo muestreo")
+        r = evaluar(str(uuid.uuid4()), estado="mostrada", origen="otro")
+        verificar(r.status_code == 422, "un origen desconocido da 422", f"vino {r.status_code}")
+
+        print("\nHISTORIAL")
+        with pool.connection() as conn:
+            mensaje = conn.execute(
+                "INSERT INTO notaria.mensajes (conversacion_id, rol, contenido) "
+                "VALUES (%s, 'asistente', 'respuesta de prueba') RETURNING id", (conv_propia,)
+            ).fetchone()[0]
+            conn.execute("UPDATE notaria.turnos SET mensaje_id = %s WHERE id = %s", (mensaje, turno_propio))
+        r = cliente.get(f"/api/conversaciones/{conv_propia}")
+        m = next((m for m in r.json().get("mensajes", []) if m["rol"] == "asistente"), {})
+        verificar(m.get("turno_id") == turno_propio and m.get("encuesta") == "respondida",
+                  "la respuesta rehidratada trae su turno y su encuesta", str(m))
 
         print("\nAISLAMIENTO")
         r = evaluar(turno_ajeno, estado="respondida", **CUATRO_NOTAS)

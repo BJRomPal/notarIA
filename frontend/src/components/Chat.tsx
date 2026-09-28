@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import type { Conversation, EstadoEncuesta } from "@/lib/types";
+import type { CambioEncuesta, Conversation } from "@/lib/types";
 import { ChatInput } from "./ChatInput";
 import { Logo, LogoMark } from "./Logo";
 import { MessageBubble } from "./MessageBubble";
@@ -59,7 +59,7 @@ interface ChatProps {
   onSend: (texto: string) => void;
   onStop: () => void;
   onVerGuia: () => void;
-  onEncuesta: (turnoId: string, estado: EstadoEncuesta) => void;
+  onEncuesta: (turnoId: string, cambios: CambioEncuesta) => void;
 }
 
 function Welcome({

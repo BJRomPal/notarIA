@@ -10,15 +10,16 @@
 import { useEffect, useRef, useState } from "react";
 import { guardarEvaluacion } from "@/lib/api";
 import { DIMENSIONES, RUBRICA, type Dimension } from "@/lib/encuesta";
-import type { EstadoEncuesta } from "@/lib/types";
+import type { EstadoEncuesta, OrigenEncuesta } from "@/lib/types";
 
 interface EncuestaProps {
   turnoId: string;
   estado: EstadoEncuesta;
+  origen: OrigenEncuesta;
   onCambio: (estado: EstadoEncuesta) => void;
 }
 
-export function Encuesta({ turnoId, estado, onCambio }: EncuestaProps) {
+export function Encuesta({ turnoId, estado, origen, onCambio }: EncuestaProps) {
   const [notas, setNotas] = useState<Partial<Record<Dimension, number>>>({});
   const [comentario, setComentario] = useState("");
   const [enviando, setEnviando] = useState(false);
@@ -31,10 +32,10 @@ export function Encuesta({ turnoId, estado, onCambio }: EncuestaProps) {
   useEffect(() => {
     if (estado !== "pendiente" || avisada.current) return;
     avisada.current = true;
-    guardarEvaluacion(turnoId, { estado: "mostrada", rubrica: RUBRICA }).catch(() => {
+    guardarEvaluacion(turnoId, { estado: "mostrada", rubrica: RUBRICA, origen }).catch(() => {
       // Si no se pudo registrar que apareció, la encuesta se muestra igual: la nota importa más.
     });
-  }, [estado, turnoId]);
+  }, [estado, turnoId, origen]);
 
   if (estado === "descartada") return null;
   if (estado === "respondida") {
@@ -50,6 +51,7 @@ export function Encuesta({ turnoId, estado, onCambio }: EncuestaProps) {
       await guardarEvaluacion(turnoId, {
         estado: "respondida",
         rubrica: RUBRICA,
+        origen,
         ...notas,
         comentario: comentario.trim() || undefined,
       });
@@ -64,7 +66,7 @@ export function Encuesta({ turnoId, estado, onCambio }: EncuestaProps) {
   const descartar = () => {
     // Se cierra aunque el registro falle: insistir con una encuesta que el escribano ya
     // descartó es peor que perder el dato de que la descartó.
-    guardarEvaluacion(turnoId, { estado: "descartada", rubrica: RUBRICA }).catch(() => {});
+    guardarEvaluacion(turnoId, { estado: "descartada", rubrica: RUBRICA, origen }).catch(() => {});
     onCambio("descartada");
   };
 

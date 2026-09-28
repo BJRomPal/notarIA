@@ -27,9 +27,11 @@ el checkpointer de LangGraph, `notaria.conversaciones` y la lista del panel late
 **La encuesta de la beta.** Cada pregunta viaja también con un `turno_id` que genera el navegador:
 es el id de esa respuesta en `notaria.turnos`, y lo que le permite a la encuesta referirse a ella
 sin tocar el contrato SSE. Cuando un turno termina bien y hay base, `lib/encuesta.ts` sortea si le
-toca encuesta (1 de cada 4 en promedio, nunca dos seguidas) y `Encuesta.tsx` la muestra como una
-tarjeta debajo de la respuesta. Qué pasó con ella vive en el mensaje (`message.encuesta`), no en el
-componente, para que no reaparezca al volver a una conversación.
+toca encuesta (1 de cada 3 en promedio, nunca dos seguidas) y `Encuesta.tsx` la muestra como una
+tarjeta debajo de la respuesta. Las que no salieron sorteadas tienen un botón «Evaluar esta
+respuesta» que abre la misma tarjeta; esas notas se guardan con origen `voluntaria`. Qué pasó con
+la encuesta vive en el mensaje (`encuesta`, `encuestaOrigen`), no en el componente, para que no
+reaparezca al volver a una conversación; los mensajes rehidratados lo traen del servidor.
 
 **De dónde sale el historial.** `/api/health` devuelve `base: bool`. Con Postgres, la lista y los
 mensajes vienen del servidor y siguen al usuario entre dispositivos; sin Postgres, queda el
