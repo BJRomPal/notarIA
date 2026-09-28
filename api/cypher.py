@@ -86,6 +86,8 @@ NODOS Y PROPIEDADES REALES:
     — Ejemplos de id: "Ley_19550" | "CCyCN" | "Decreto_2080_1980" | "RG_15_2024" | "DTR_5_2019"
 
   (:Articulo {{id, numero, texto, ubicacion, vigente, modificado}})
+    — numero es TEXTO, no número: comparalo entre comillas (a.numero IN ['36', '37'],
+      a.numero = '94 bis'). Con [36, 37] no encuentra nada.
     — El id NO tiene un formato único: "Art_163_Ley_19550", "Art_1_CCyCN",
       "Art_105_Decreto_2080_1980", "Art_1_DTR_5_2019", "Art_3_RG_2139_2006".
       NUNCA lo parsees ni lo construyas: llegá al artículo por (:Norma)-[:CONTIENE]->(:Articulo).
