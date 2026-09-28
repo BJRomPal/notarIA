@@ -19,6 +19,8 @@ script suelto igual que desde un nodo del grafo. El puente vive en `api/agente/n
 
 FASES QUE EMITE, en orden:
     analisis        extrae sujeto y frases de búsqueda (1 llamada a flash-lite)
+    citas           SOLO si la consulta cita artículos («art. 36 de la Ley 27.349»): los trae
+                    exactos, sin modelo (utils/rag/referencias.py)
     vectorial       busca en index_articulos y filtra por sujeto
     remisiones      sigue REMITE_A desde y hacia lo encontrado
     jurisprudencia  busca en index_jurisprudencia (fallos)
@@ -33,6 +35,7 @@ from utils.rag.citas import NOMBRE_NORMA
 from utils.rag.texto import normalizar, formato_articulo
 from utils.rag.llm_io import json_del_llm
 from utils.rag.grafo import seguir_remite_a, datos_articulos
+from utils.rag.referencias import buscar_referencias, catalogo_normas, resolver_referencias
 from api.cypher import MotorCypherDinamico
 from langchain_neo4j import Neo4jVector
 
@@ -160,6 +163,11 @@ class ContextoAcumulado:
         self.fases[art_id] = fase
         return True
 
+    def agregar_nota(self, texto: str) -> None:
+        """Un texto para el redactor que NO es una fuente: no lleva id y no aparece en las citas
+        que ve el usuario. Lo usa la fase de citas para avisar que un artículo pedido no está."""
+        self.textos.append(texto)
+
     def __contains__(self, art_id) -> bool:
         return str(art_id) in self._vistos
 
@@ -240,6 +248,47 @@ def _obtener_motor_cypher() -> MotorCypherDinamico:
         _motor_cypher = MotorCypherDinamico(neo4j_driver, llm, embeddings)
     return _motor_cypher
 
+# Catálogo de normas para resolver las citas expresas. Perezoso por la misma razón que los
+# retrievers: importar este módulo no puede tocar la base. Se arma una vez por proceso, y una
+# norma que entra después se ve recién con el próximo reinicio.
+_catalogo = None
+
+def _obtener_catalogo():
+    global _catalogo
+    if _catalogo is None:
+        _catalogo = catalogo_normas(neo4j_driver)
+    return _catalogo
+
+
+def _agregar_citas(pregunta: str, ctx: ContextoAcumulado) -> Iterator[dict]:
+    """Trae exactos los artículos que la consulta cita expresamente y avisa los que no están.
+
+    Van al contexto ANTES que la búsqueda vectorial: son lo que el escribano pidió. Un artículo
+    derogado entra igual, marcado, porque si lo pidió por número la respuesta es que está derogado.
+    Uno que no está cargado entra como nota —no como fuente—, para que el redactor diga que no está
+    en la base en vez de reconstruirlo de memoria.
+    """
+    referencias = buscar_referencias(pregunta, _obtener_catalogo())
+    if not referencias:
+        return
+    yield {"type": "fase", "fase": "citas", "label": "Buscando los artículos citados"}
+    encontrados, faltantes = resolver_referencias(neo4j_driver, referencias)
+    for art in encontrados:
+        texto = art["texto"] or ""
+        if not art["vigente"]:
+            texto = f"[ARTÍCULO DEROGADO: no está vigente. Texto histórico:] {texto}"
+        if ctx.agregar(art["id"], formato_articulo(art["norma"], art["numero"], texto), fase="cita"):
+            derogado = " — derogado" if not art["vigente"] else ""
+            yield {"type": "item", "texto": f"Art. {art['numero']} ({art['norma']}){derogado}"}
+    for norma, numero in faltantes:
+        ctx.agregar_nota(formato_articulo(
+            norma, numero,
+            f"[El artículo {numero} de {norma} NO está cargado en la base de conocimiento. No lo "
+            f"reconstruyas ni lo cites de memoria: decí que no está disponible en la base.]",
+        ))
+        yield {"type": "item", "texto": f"Art. {numero} ({norma}) — no está cargado en la base"}
+
+
 # ==========================================
 # 5. VECINDARIO ONTOLÓGICO
 # ==========================================
@@ -310,6 +359,10 @@ def particular(pregunta: str):
         yield {"type": "item", "texto": f"Sujeto identificado: {sujeto}"}
 
     ctx = ContextoAcumulado()
+
+    # Fase 1.5: los artículos citados expresamente, exactos y primero. La búsqueda vectorial no
+    # distingue el número de ley: para «art. 36 de la Ley 27.349» traía el art. 36 de otras normas.
+    yield from _agregar_citas(pregunta, ctx)
 
     # Fase 2: búsqueda vectorial. Se consulta cada frase (y la pregunta cruda) y
     # luego se filtra por sujeto; los duplicados alimentan la señal de frecuencia.

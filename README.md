@@ -93,6 +93,7 @@ Son scripts sueltos, sin pytest, y cada uno sale con código 1 si falla alguno:
 | `tests/test_api_cuenta.py` | Postgres |
 | `tests/test_api_evaluacion.py` | Postgres. La encuesta de la beta: que valide y que aísle por usuario |
 | `tests/test_jurisprudencia.py` | Neo4j y Gemini (`--recuperacion` corre solo la recuperación) |
+| `tests/test_citas_exactas.py` | Neo4j (`--sin-base` corre solo el analizador). Que «art. 36 de la Ley 27.349» traiga ese artículo exacto |
 
 ## Estructura
 
