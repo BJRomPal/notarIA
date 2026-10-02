@@ -90,6 +90,16 @@ def main() -> int:
     for t in resumen:
         por_estado[t["estado"]] = por_estado.get(t["estado"], 0) + 1
     print(f"{len(resumen)} turnos {por_estado}")
+    # Costo y latencia de los turnos que terminaron. El costo es el de las llamadas a Gemini, que
+    # es lo que se registra por llamada; la infraestructura se mira en la facturación de GCP.
+    completos = [t for t in resumen if t["estado"] == "completo"]
+    if completos:
+        costos = [float(t["costo_usd"] or 0) for t in completos]
+        segundos = sorted(float(t["segundos"]) for t in completos if t["segundos"] is not None)
+        percentil = lambda q: segundos[min(len(segundos) - 1, int(q * len(segundos)))] if segundos else 0
+        print(f"costo de Gemini: US$ {sum(costos):.4f} en total, US$ {sum(costos) / len(costos):.4f} por consulta "
+              f"(máximo US$ {max(costos):.4f})")
+        print(f"latencia: mediana {percentil(0.5):.1f} s, percentil 90 {percentil(0.9):.1f} s")
     # El sorteo y el botón «Evaluar» por separado: lo voluntario viene sesgado hacia los extremos,
     # y mezclarlo cambiaría tanto la tasa de respuesta como las medias.
     for origen in ("muestreo", "voluntaria"):
