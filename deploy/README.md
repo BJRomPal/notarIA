@@ -1,10 +1,9 @@
 # Despliegue de la beta en GCP
 
-> **Estado: escrito pero NO ejecutado.** Los Dockerfiles se probaron en local (las dos imágenes
-> levantan, completan un turno y guardan la encuesta a través del proxy), el YAML parsea y el
-> filtro de subida a Cloud Build se simuló contra el disco real. Los comandos de `gcloud` salen
-> de la documentación de Google y todavía no corrieron contra un proyecto. Donde algo falle,
-> corregirlo acá.
+> **Estado: en ejecución.** Ya corrieron contra el proyecto real los pasos 0, 1, 2.2 y el build de
+> las imágenes (2026-10-01); lo demás sigue sin ejecutarse y sale de la documentación de Google.
+> Donde algo falle, corregirlo acá. Un ajuste que ya hizo falta: Cloud Build necesita una cuenta de
+> servicio propia (paso 1), porque la cuenta por defecto no trae permisos.
 
 La beta se publica en **https://chatnotarial.ar**. Todo va en **`us-central1`**, la misma región
 que el grafo en Aura Professional (Aura Pro en GCP no está en Sudamérica). Desde Buenos Aires son
@@ -51,6 +50,15 @@ gcloud services enable run.googleapis.com sqladmin.googleapis.com secretmanager.
   compute.googleapis.com dns.googleapis.com
 
 gcloud artifacts repositories create notaria --repository-format=docker --location=$REGION
+
+# La cuenta con la que Cloud Build construye las imágenes. Por defecto usa la cuenta de servicio de
+# Compute, y en una organización con las políticas de seguridad por defecto esa cuenta no tiene
+# ningún rol: el build falla al leer el código que se acaba de subir (403 storage.objects.get).
+gcloud iam service-accounts create notaria-build --display-name="NotarIA: construir imágenes"
+sleep 30   # la cuenta tarda unos segundos en existir para IAM; sin esto el binding falla
+gcloud projects add-iam-policy-binding $PROYECTO --condition=None \
+  --member=serviceAccount:notaria-build@$PROYECTO.iam.gserviceaccount.com \
+  --role=roles/cloudbuild.builds.builder
 ```
 
 ### 2. Dominio: arrancarlo primero, es lo que más tarda
@@ -244,7 +252,8 @@ Desde la raíz y con el árbol limpio: la versión es el SHA y queda en cada tur
 export VERSION=$(git rev-parse --short HEAD)
 test -z "$(git status --porcelain)" || echo "HAY CAMBIOS SIN COMMITEAR: la versión no los describe"
 
-gcloud builds submit --config cloudbuild.yaml --substitutions=_VERSION=$VERSION
+gcloud builds submit --config cloudbuild.yaml --substitutions=_VERSION=$VERSION \
+  --service-account=projects/$PROYECTO/serviceAccounts/notaria-build@$PROYECTO.iam.gserviceaccount.com
 
 envsubst '${PROYECTO} ${NUMERO_PROYECTO} ${VERSION}' < deploy/servicio.yaml > /tmp/servicio.yaml
 gcloud run services replace /tmp/servicio.yaml --region=$REGION
