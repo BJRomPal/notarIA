@@ -104,7 +104,6 @@ export interface ConsumoConversacion {
   tokens_entrada: number;
   tokens_salida: number;
   tokens_pensamiento: number;
-  costo_usd: number;
 }
 
 /** Totales de consumo del usuario más el detalle por conversación (GET /api/consumo). */
@@ -114,7 +113,6 @@ export interface ResumenConsumo {
   tokens_entrada: number;
   tokens_salida: number;
   tokens_pensamiento: number;
-  costo_usd: number;
   por_conversacion: ConsumoConversacion[];
 }
 

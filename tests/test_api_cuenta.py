@@ -202,8 +202,12 @@ def main() -> int:
         verificar(r.status_code == 200, "GET /api/consumo responde 200", r.text)
         consumo = r.json()
         for clave in ("llamadas", "tokens_entrada", "tokens_salida", "tokens_pensamiento",
-                      "costo_usd", "conversaciones", "por_conversacion"):
+                      "conversaciones", "por_conversacion"):
             verificar(clave in consumo, f"trae {clave}")
+        # Los testers de la beta no tienen que ver el costo: ni en la pantalla ni en la respuesta.
+        verificar("costo_usd" not in consumo
+                  and all("costo_usd" not in c for c in consumo["por_conversacion"]),
+                  "el costo en dólares NO viaja al navegador")
 
         with pool.connection() as conn:
             real = conn.execute(

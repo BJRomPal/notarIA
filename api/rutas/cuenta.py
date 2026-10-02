@@ -234,20 +234,21 @@ def borrar_conversacion(conversacion_id: str, request: Request):
 
 @router.get("/consumo")
 def ver_consumo(request: Request):
-    """Lo que el usuario gastó, en total y por conversación.
+    """Lo que el usuario usó, en total y por conversación: consultas, llamadas y tokens.
 
-    Sale de las dos vistas que `db/001_esquema_notaria.sql` ya define:
-    `consumo_por_conversacion` para el detalle y la misma agregada para los totales. El costo
-    está congelado en cada fila al momento de escribirla, así que esto no recalcula nada — y por
-    eso un cambio de precios no reescribe el pasado.
+    Sale de la vista `consumo_por_conversacion` que `db/001_esquema_notaria.sql` ya define.
+
+    EL COSTO NO VIAJA. Está en la base —congelado en cada fila al escribirla— y se analiza con
+    `exploration/exportar_beta.py`, pero los testers de la beta no tienen que verlo. Por eso no
+    alcanza con ocultarlo en la pantalla: si viniera en esta respuesta, se vería con las
+    herramientas del navegador. Lo cubre tests/test_api_cuenta.py.
     """
     usuario_id, _ = _usuario(request)
     with obtener_pool().connection() as conn:
         filas = conn.execute(
-            "SELECT id, titulo, llamadas, tokens_entrada, tokens_salida, tokens_pensamiento, "
-            "       costo_usd "
+            "SELECT id, titulo, llamadas, tokens_entrada, tokens_salida, tokens_pensamiento "
             "FROM notaria.consumo_por_conversacion WHERE usuario_id = %s "
-            "ORDER BY costo_usd DESC",
+            "ORDER BY tokens_entrada + tokens_salida DESC",
             (usuario_id,),
         ).fetchall()
 
@@ -259,7 +260,6 @@ def ver_consumo(request: Request):
             "tokens_entrada": int(f[3] or 0),
             "tokens_salida": int(f[4] or 0),
             "tokens_pensamiento": int(f[5] or 0),
-            "costo_usd": float(f[6] or 0),
         }
         for f in filas
     ]
@@ -273,6 +273,5 @@ def ver_consumo(request: Request):
         "tokens_entrada": sum(d["tokens_entrada"] for d in detalle),
         "tokens_salida": sum(d["tokens_salida"] for d in detalle),
         "tokens_pensamiento": sum(d["tokens_pensamiento"] for d in detalle),
-        "costo_usd": round(sum(d["costo_usd"] for d in detalle), 6),
         "por_conversacion": detalle,
     }

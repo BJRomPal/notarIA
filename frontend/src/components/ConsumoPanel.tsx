@@ -1,11 +1,10 @@
 "use client";
 
-// Lo que el usuario consumió, en tokens y —en chico— en dólares.
+// Lo que el usuario consumió, en consultas y tokens.
 //
-// POR QUÉ LOS TOKENS ARRIBA Y EL COSTO ABAJO. A un escribano el gasto en dólares por consulta no
-// le dice nada útil y puede inquietarlo sin motivo: son fracciones de centavo. Los tokens son la
-// unidad de uso y es lo que se pidió ver. El costo igual está, porque es el número que sirve si
-// algún día hay que discutir un plan, pero no es el titular.
+// SIN COSTO EN DÓLARES. En la beta los testers no tienen que ver cuánto cuesta cada consulta: el
+// costo se guarda en la base y se analiza aparte, y la API ni siquiera lo manda (api/rutas/cuenta.py).
+// Los tokens son la unidad de uso y es lo que se muestra.
 //
 // Los tokens de pensamiento se muestran aparte y no sumados a la salida, aunque Google los
 // facture juntos: es la única forma de ver cuánto se está gastando en razonamiento invisible, que
@@ -76,7 +75,6 @@ export function ConsumoPanel({ abierto, onCerrar }: { abierto: boolean; onCerrar
               <strong className="font-semibold text-slate-700">{numero.format(datos.llamadas)}</strong>{" "}
               llamadas al modelo
             </span>
-            <span>Costo acumulado US$ {datos.costo_usd.toFixed(4)}</span>
           </div>
 
           {datos.por_conversacion.length > 0 && (
@@ -92,8 +90,7 @@ export function ConsumoPanel({ abierto, onCerrar }: { abierto: boolean; onCerrar
                     <tr className="border-b border-slate-200 text-[10px] tracking-wider text-slate-400 uppercase">
                       <th className="py-2 pr-3 font-semibold">Consulta</th>
                       <th className="py-2 pr-3 text-right font-semibold">Entrada</th>
-                      <th className="py-2 pr-3 text-right font-semibold">Salida</th>
-                      <th className="py-2 text-right font-semibold">US$</th>
+                      <th className="py-2 text-right font-semibold">Salida</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -105,10 +102,7 @@ export function ConsumoPanel({ abierto, onCerrar }: { abierto: boolean; onCerrar
                         <td className="py-2 pr-3 text-right text-slate-500">
                           {numero.format(c.tokens_entrada)}
                         </td>
-                        <td className="py-2 pr-3 text-right text-slate-500">
-                          {numero.format(c.tokens_salida)}
-                        </td>
-                        <td className="py-2 text-right text-slate-500">{c.costo_usd.toFixed(5)}</td>
+                        <td className="py-2 text-right text-slate-500">{numero.format(c.tokens_salida)}</td>
                       </tr>
                     ))}
                   </tbody>
